@@ -1,0 +1,351 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JEE Math Solutions</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+    <script type="module" src="js/auth.js"></script>
+
+  <style>
+    /* Elegant gradient background */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body {
+      background: linear-gradient(-45deg, #fffdf5, #fff8e1, #fef3c7, #fde68a);
+      background-size: 400% 400%;
+      animation: gradientBG 25s ease infinite;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 1s ease forwards; }
+    .animate-fade-in.delay-200 { animation-delay: 0.2s; }
+    .animate-fade-in.delay-400 { animation-delay: 0.4s; }
+    .animate-fade-in.delay-600 { animation-delay: 0.6s; }
+    .animate-fade-in.delay-800 { animation-delay: 0.8s; }
+  </style>
+
+</head>
+<body class="text-yellow-900">
+
+
+
+<!-- Navbar -->
+<header class="bg-yellow-100 shadow-md">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <!-- Left: Logo -->
+    <a href="index.html" class="text-2xl font-bold text-yellow-900">KnowJEE</a>
+    
+    <!-- Center: Navigation -->
+    <nav class="space-x-6">
+      <a href="math.html" class="hover:text-yellow-900">Math</a>
+      <a href="physics.html" class="font-semibold text-yellow-900">Physics</a>
+      <a href="chem.html" class="hover:text-yellow-900">Chemistry</a>
+      <a href="quiz.html" class="hover:text-yellow-900">Quizzes</a>
+    </nav>
+    
+
+      <div id="authContainer" class="text-center">
+        <div id="authSection" class="space-x-4">
+          <button id="loginBtn" class="px-4 py-2 rounded hover:bg-yellow-400"
+            onclick="loginPrompt()">Login</button>
+          <button id="registerBtn" class="px-4 py-2 rounded hover:bg-yellow-400"
+            onclick="registerPrompt()">Register</button>
+        </div>
+
+        <div id="userSection" class="hidden space-x-4">
+          <span id="userEmail" class="font-semibold"></span>
+          <button id="logoutBtn" class="px-4 py-2 bg-red-200 text-white rounded hover:bg-red-500"
+            onclick="logoutPrompt()">Logout</button>
+        </div>
+      </div>
+  </div>
+</header>
+
+
+<script>
+const fsBtn = document.getElementById('fullScreenBtn');
+fsBtn.addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => {
+      alert(`Error attempting to enable full-screen mode: ${err.message}`);
+    });
+    fsBtn.textContent = "🡑 Exit Fullscreen";
+  } else {
+    document.exitFullscreen();
+    fsBtn.textContent = "⛶ Fullscreen";
+  }
+});
+</script>
+
+
+
+<!-- HERO -->
+<section class="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden px-6">
+  <h1 class="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-sm animate-fade-in">
+    ✨ Welcome to <span class="text-yellow-600">KnowJEE</span>!
+  </h1>
+  <p class="text-xl md:text-2xl text-yellow-800/80 mb-10 animate-fade-in delay-200">
+    Learn Smarter. Prepare Better. Crack JEE with Confidence.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-8 animate-fade-in delay-400">
+    <a href="https://t.me/knowiitjee" target="_blank" 
+       class="px-10 py-4 font-semibold text-lg text-yellow-800 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-yellow-200">
+      📢 Telegram
+    </a>
+    <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" 
+       class="px-10 py-4 font-semibold text-lg text-green-700 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-green-200">
+      💬 WhatsApp
+    </a>
+    <a href="https://www.youtube.com/@know_jEE" target="_blank" 
+       class="px-10 py-4 font-semibold text-lg text-red-600 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-red-200">
+      🔔 Subscribe
+    </a>
+  </div>
+
+  <p class="mt-12 text-lg md:text-xl italic animate-fade-in delay-600 text-yellow-700/80">
+    Links are available in the description box <span class="font-bold">KnowJEE</span>.
+  </p>
+
+  <button id="startVideoBtn" 
+          class="mt-10 px-14 py-5 bg-gradient-to-r from-yellow-400 to-amber-400 text-white font-bold text-xl rounded-full hover:from-yellow-500 hover:to-amber-500 transition transform hover:scale-105 shadow-md animate-fade-in delay-800">
+    ▶ Start Learning
+  </button>
+</section>
+
+
+<!-- Hero Section (Elegant Yellowish Theme) -->
+<section class="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-16">
+  <div class="max-w-6xl text-center space-y-8">
+    
+    <p class="text-2xl md:text-3xl text-yellow-800 max-w-4xl mx-auto animate-fade-in delay-200">
+      I am <span class="font-semibold text-orange-600">Braj Bhushan Kumar</span>, M.Tech. from IIT Roorkee and founder of KnowJEE.<br>
+      Learn smarter, practice better, and build confidence with step-by-step learning, personalized mentorship, and exam-focused strategies.<br>
+      Together, we’ll <span class="font-bold text-yellow-700">crack JEE Mains & Advanced</span>!
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 mt-10 animate-fade-in delay-400">
+      
+      <div class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+        <h3 class="text-2xl font-bold text-yellow-700 mb-4">🔥 Why Choose Us?</h3>
+        <ul class="list-disc pl-6 text-yellow-900 space-y-2 text-lg">
+          <li>Learn directly from IIT Roorkee graduate</li>
+          <li>Clear, step-by-step explanations</li>
+          <li>Smart tricks & deep understanding</li>
+          <li>Regular PYQ discussions</li>
+        </ul>
+      </div>
+
+      <div class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+        <h3 class="text-2xl font-bold text-orange-700 mb-4">📢 Join Our Batch</h3>
+        <ul class="list-disc pl-6 text-yellow-900 space-y-2 text-lg">
+          <li>Personalized mentorship & doubt solving</li>
+          <li>Structured study plans</li>
+          <li>Focus on scoring high</li>
+          <li>Comprehensive preparation</li>
+        </ul>
+      </div>
+
+      <div class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+        <h3 class="text-2xl font-bold text-amber-700 mb-4">🚀 Our Mission</h3>
+        <p class="text-yellow-900 text-lg">
+          To empower every aspirant with knowledge, confidence, and the right exam strategy to achieve their IIT dream.<br>
+          Be part of the <span class="font-bold text-yellow-700">KnowJEE family</span> today!
+        </p>
+      </div>
+    </div>
+
+   
+  </div>
+</section>
+
+
+
+<section class="py-24 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+  <div class="container mx-auto text-center mb-12">
+    <h1 class="text-4xl font-bold mb-4">Welcome to KnowJEE</h1>
+    <p class="text-lg">Select a subject to start learning JEE concepts with theory, examples, and quizzes.</p>
+  </div>
+
+  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
+    <!-- Math Card -->
+    <a href="math.html" class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
+      <div class="mb-4">
+        <!-- Calculator Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path d="M3 12h4l3 8 5-16h6" />
+  </svg>
+      </div>
+      <h2 class="text-2xl font-bold mb-2">Mathematics</h2>
+      <p>Explore Algebra, Calculus, Trigonometry, and more.</p>
+    </a>
+
+    <!-- Physics Card -->
+    <a href="physics.html" class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
+      <div class="mb-4">
+        <!-- Atom Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="12" cy="12" r="2" stroke-width="2"/>
+          <ellipse cx="12" cy="12" rx="10" ry="4" stroke-width="2"/>
+          <ellipse cx="12" cy="12" rx="4" ry="10" stroke-width="2"/>
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold mb-2">Physics</h2>
+      <p>Learn Mechanics, Thermodynamics, Optics, and other concepts.</p>
+    </a>
+
+    <!-- Chemistry Card -->
+    <a href="chem.html" class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
+      <div class="mb-4">
+        <!-- Flask Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M10 2v6l-6 10a2 2 0 002 2h12a2 2 0 002-2l-6-10V2" stroke-width="2"/>
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold mb-2">Chemistry</h2>
+      <p>Master Physical, Organic, and Inorganic Chemistry.</p>
+    </a>
+  </div>
+</section>
+
+
+
+
+<!-- Contact & Follow Section (Yellowish Theme, Vertical Stack) -->
+<section class="relative w-full flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-24">
+  <div class="max-w-3xl text-center space-y-6">
+    
+    <h2 class="text-4xl md:text-5xl font-extrabold drop-shadow-sm animate-fade-in">
+      💬 Have a Query or Suggestion?
+    </h2>
+    
+    <p class="text-xl md:text-2xl text-yellow-800 animate-fade-in delay-200">
+      We’d love to hear from you! Drop your comments below, or follow our channels for the latest updates and guidance.
+    </p>
+    
+    <div class="flex flex-col gap-6 mt-8 animate-fade-in delay-400">
+      
+      <a href="mailto:know.iitjee@gmail.com" target="_blank"
+         class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+        know.iitjee@gmail.com
+      </a>
+      
+      <a href="https://t.me/knowiitjee" target="_blank"
+         class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+        📱 Join Our Telegram Channel
+      </a>
+      
+      <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+         class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+        💬 Join Our WhatsApp Channel
+      </a>
+      
+    </div>
+
+    <p class="mt-6 text-yellow-700 text-sm animate-fade-in delay-600">
+      #KnowJEE #JEEPreparation #Queries #Suggestions #FollowUs
+    </p>
+  </div>
+</section>
+
+
+<!-- Contact & Follow Section (Yellowish Theme) -->
+<section class="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-16">
+  <div class="max-w-5xl text-center space-y-8">
+    
+    <h1 class="text-5xl md:text-6xl font-extrabold drop-shadow-sm animate-fade-in">
+      💡 Stay Connected with <span class="text-yellow-600">KnowJEE</span>!
+    </h1>
+    
+    <p class="text-2xl md:text-3xl text-yellow-800 animate-fade-in delay-200">
+      Comment, ask questions, or share your suggestions! Follow our channels for updates and guidance.
+    </p>
+    
+    <div class="flex flex-col md:flex-row justify-center gap-8 mt-10 animate-fade-in delay-400">
+      
+      <a href="https://t.me/knowiitjee" target="_blank"
+         class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+        📱 Telegram <br/> t.me/knowiitjee
+      </a>
+      
+      <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+         class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+        💬 WhatsApp <br/> Join our channel
+      </a>
+      
+      <a href="https://www.youtube.com/@know_jEE" target="_blank"
+         class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+        ▶ YouTube <br/> Subscribe Now
+      </a>
+      
+    </div>
+    
+    <p class="mt-12 text-xl md:text-2xl italic animate-fade-in delay-600 text-yellow-800">
+      Thank you for supporting <span class="font-bold text-yellow-700">KnowJEE</span>!  
+      Links are available above.
+    </p>
+
+
+  </div>
+</section>
+
+
+
+
+  <script type="module">
+    window.registerPrompt = () => {
+      const email = prompt("Enter email:");
+      const password = prompt("Enter password:");
+      if (email && password) registerUser(email, password);
+    }
+
+    window.loginPrompt = () => {
+      const email = prompt("Enter email:");
+      const password = prompt("Enter password:");
+      if (email && password) loginUser(email, password);
+    }
+
+    window.logoutPrompt = () => {
+      logoutUser();
+    }
+
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+
+    const updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
+
+
+
+
+
+</body>
+</html>

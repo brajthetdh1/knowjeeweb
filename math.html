@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>KnowJEE | Math</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="js/auth.js"></script>
+
+</head>
+
+<body class="bg-yellow-50 text-yellow-900">
+
+  <!-- Navbar -->
+  <header class="bg-yellow-100 shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Left: Logo -->
+      <a href="index.html" class="text-2xl font-bold text-yellow-900">KnowJEE</a>
+
+      <!-- Center: Navigation -->
+      <nav class="space-x-6">
+        <a href="math.html" class="hover:text-yellow-900">Math</a>
+        <a href="physics.html" class="font-semibold text-yellow-900">Physics</a>
+        <a href="chem.html" class="hover:text-yellow-900">Chemistry</a>
+        <a href="quiz.html" class="hover:text-yellow-900">Quizzes</a>
+      </nav>
+
+
+      <div id="authContainer" class="text-center">
+        <div id="authSection" class="space-x-4">
+          <button id="loginBtn" class="px-4 py-2 rounded hover:bg-yellow-400" onclick="loginPrompt()">Login</button>
+          <button id="registerBtn" class="px-4 py-2 rounded hover:bg-yellow-400"
+            onclick="registerPrompt()">Register</button>
+        </div>
+
+        <div id="userSection" class="hidden space-x-4">
+          <span id="userEmail" class="font-semibold"></span>
+          <button id="logoutBtn" class="px-4 py-2 bg-red-200 text-white rounded hover:bg-red-500"
+            onclick="logoutPrompt()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <section
+    class="py-32 flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <h1 class="text-4xl font-bold mb-4">Mathematics</h1>
+    <p class="text-lg">Study JEE Math with full theory, solved examples, and quizzes.</p>
+  </section>
+
+  <!-- Tabs & Content -->
+  <section class="container mx-auto py-10 px-6">
+    <!-- Tabs -->
+    <div class="flex space-x-4 border-b border-yellow-400 mb-6">
+      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-t-lg font-semibold" data-subject="algebra">Algebra</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-t-lg" data-subject="calculus">Calculus</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-t-lg"
+        data-subject="trigonometry">Trigonometry</button>
+    </div>
+
+    <!-- Topic Cards -->
+    <div id="topicCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      <p>Select a subject to view topics.</p>
+    </div>
+
+    <!-- Topic Content -->
+    <div id="topicContent" class="bg-yellow-50 p-6 rounded-lg shadow">
+      <p>Select a topic to view content.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-50 text-center py-6 mt-10">
+    <p class="mb-2">Follow us:</p>
+    <div class="space-x-6">
+      <a href="https://youtube.com" target="_blank" class="hover:underline">YouTube</a>
+      <a href="https://wa.me/" target="_blank" class="hover:underline">WhatsApp</a>
+      <a href="https://t.me/" target="_blank" class="hover:underline">Telegram</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Map subjects → topics (file + free/paid)
+    const subjects = {
+      algebra: [
+        { title: "Polynomials", file: "math/algebra/polynomials.html", type: "free" },
+        { title: "Binomial Theorem", file: "math/algebra/binomial.html", type: "paid" },
+        { title: "Quadratic Equation", file: "math/algebra/equation.html", type: "free" }
+      ],
+      calculus: [
+        { title: "Limits", file: "math/calculus/limits.html", type: "free" },
+        { title: "Integration", file: "math/calculus/integration.html", type: "paid" }
+      ],
+      trigonometry: [
+        { title: "Trigonometric Ratios", file: "math/trigonometry/trigonometric-ratios.html", type: "free" }
+      ]
+    };
+
+    const tabs = document.querySelectorAll(".tab-btn");
+    const topicCards = document.getElementById("topicCards");
+    const topicContent = document.getElementById("topicContent");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("bg-yellow-300", "font-semibold"));
+        tab.classList.add("bg-yellow-300", "font-semibold");
+        const subject = tab.dataset.subject;
+        loadTopicCards(subject);
+      });
+    });
+
+    function loadTopicCards(subject) {
+      const topics = subjects[subject];
+      if (!topics) return;
+      topicContent.innerHTML = `<p>Select a topic to view content.</p>`;
+
+      topicCards.innerHTML = "";
+      topics.forEach(topic => {
+        const card = document.createElement("div");
+        card.className = "p-4 rounded-lg shadow bg-yellow-100 cursor-pointer hover:bg-yellow-200";
+        card.innerHTML = `
+          <h3 class="font-bold text-lg">${topic.title} 
+            ${topic.type === "paid" ? '<span class="ml-2 text-sm bg-yellow-400 px-2 py-1 rounded">Paid</span>' : ''}
+          </h3>
+        `;
+        card.addEventListener("click", () => {
+          loadTopicContent(topic);
+        });
+        topicCards.appendChild(card);
+      });
+    }
+
+    async function loadTopicContent(topic) {
+      console.log(`[Load] Loading topic content: ${topic.title}, type=${topic.type}`);
+      topicContent.innerHTML = `<p>Loading...</p>`;
+      try {
+        // If topic is paid, check auth
+        if (topic.type === "paid" && !window.currentUser) {
+          console.log(`[Auth] User not logged in. Blocking paid content: ${topic.title}`);
+          topicContent.innerHTML = `
+        <div class="p-6 bg-yellow-100 rounded shadow text-center">
+          <h3 class="text-xl font-bold mb-4">${topic.title}</h3>
+          <p class="mb-4">🔒 This is paid content. Please login to access.</p>
+          <button onclick="loginPrompt()" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400">Login</button>
+          <button onclick="registerPrompt()" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400 ml-2">Register</button>
+        </div>
+      `;
+          return;
+        }
+
+        const res = await fetch(topic.file);
+        let html = await res.text();
+        console.log(`[Fetch] File loaded for ${topic.title}: ${topic.file}`);
+
+        // Show locked message for logged-in users (simulate unpaid)
+        if (topic.type === "paid" && window.currentUser) {
+          console.log(`[Auth] Logged in as ${window.currentUser.email}, hasPaid=${window.userIsPaid}`);
+          if (!window.userIsPaid) {
+            html = "🔒 You are logged in, but this content requires payment.";
+          }
+        }
+
+        topicContent.innerHTML =
+          `<h3 class="text-xl font-bold mb-4">${topic.title} 
+         ${topic.type === "paid" ? '<span class="ml-2 text-sm bg-yellow-400 px-2 py-1 rounded">Paid</span>' : ''}
+       </h3>` + html;
+
+        if (typeof renderMathInElement === "function") {
+          console.log(`[MathJax] Rendering math in ${topic.title}`);
+          renderMathInElement(topicContent, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "\\[", right: "\\]", display: true },
+              { left: "$", right: "$", display: false },
+              { left: "\\(", right: "\\)", display: false }
+            ]
+          });
+        } else {
+          console.warn("[Warn] renderMathInElement not available");
+        }
+      } catch (err) {
+        console.error(`[Error] Loading topic content failed: ${err}`);
+        topicContent.innerHTML = `<p>Error loading content.</p>`;
+      }
+    }
+
+
+
+  </script>
+
+  <script type="module">
+    window.registerPrompt = () => {
+      const email = prompt("Enter email:");
+      const password = prompt("Enter password:");
+      if (email && password) registerUser(email, password);
+    }
+
+    window.loginPrompt = () => {
+      const email = prompt("Enter email:");
+      const password = prompt("Enter password:");
+      if (email && password) loginUser(email, password);
+    }
+
+    window.logoutPrompt = () => {
+      logoutUser();
+    }
+
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+
+    const updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
+
+</body>
+
+</html>
