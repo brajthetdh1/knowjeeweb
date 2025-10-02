@@ -9,23 +9,26 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script type="module" src="js/auth.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+
 
 </head>
 
 <body class="bg-yellow-50 text-yellow-900">
 
-  <!-- Navbar -->
+   <!-- Navbar -->
   <header class="bg-yellow-100 shadow-md">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <div class="container mx-auto flex justify-between items-center py-4 px-2">
       <!-- Left: Logo -->
-      <a href="index.html" class="text-2xl font-bold text-yellow-900">KnowJEE</a>
+      <a href="index.html" class="text-3xl font-bold text-yellow-900">KnowJEE</a>
 
       <!-- Center: Navigation -->
       <nav class="space-x-6">
         <a href="math.html" class="hover:text-yellow-900">Math</a>
-        <a href="physics.html" class="font-semibold text-yellow-900">Physics</a>
+        <a href="physics.html" class="hover:text-yellow-900">Physics</a>
         <a href="chem.html" class="hover:text-yellow-900">Chemistry</a>
         <a href="quiz.html" class="hover:text-yellow-900">Quizzes</a>
+        <a href="hot.html" class="hover:text-yellow-900">Questions</a>
       </nav>
 
 
@@ -46,6 +49,7 @@
   </header>
 
 
+
   <!-- Hero -->
   <section
     class="py-32 flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
@@ -56,12 +60,38 @@
   <!-- Tabs & Content -->
   <section class="container mx-auto py-10 px-6">
     <!-- Tabs -->
-    <div class="flex space-x-4 border-b border-yellow-400 mb-6">
-      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-t-lg font-semibold" data-subject="algebra">Algebra</button>
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-t-lg" data-subject="calculus">Calculus</button>
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-t-lg"
-        data-subject="trigonometry">Trigonometry</button>
-    </div>
+    <div class="flex flex-wrap justify-center gap-2 border-b border-yellow-400 mb-6 px-2">
+  <!-- Algebra -->
+  <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-lg font-semibold text-sm md:text-base" data-subject="algebra">
+    Algebra
+  </button>
+
+  <!-- Calculus -->
+  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="calculus">
+    Calculus
+  </button>
+
+  <!-- Trigonometry -->
+  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="trigonometry">
+    Trigonometry
+  </button>
+
+  <!-- Coordinate Geometry -->
+  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="coordinate">
+    Coordinate Geometry
+  </button>
+
+  <!-- Vectors & 3D Geometry -->
+  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="vectors">
+    Vectors & 3D
+  </button>
+
+  <!-- Probability & Statistics -->
+  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="probability">
+    Probability & Stats
+  </button>
+</div>
+
 
     <!-- Topic Cards -->
     <div id="topicCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
@@ -88,19 +118,51 @@
   <script>
     // Map subjects → topics (file + free/paid)
     const subjects = {
-      algebra: [
-        { title: "Polynomials", file: "math/algebra/polynomials.html", type: "free" },
-        { title: "Binomial Theorem", file: "math/algebra/binomial.html", type: "paid" },
-        { title: "Quadratic Equation", file: "math/algebra/equation.html", type: "free" }
-      ],
-      calculus: [
-        { title: "Limits", file: "math/calculus/limits.html", type: "free" },
-        { title: "Integration", file: "math/calculus/integration.html", type: "paid" }
-      ],
-      trigonometry: [
-        { title: "Trigonometric Ratios", file: "math/trigonometry/trigonometric-ratios.html", type: "free" }
-      ]
-    };
+  algebra: [
+    { title: "Polynomials", file: "math/algebra/polynomials.html", type: "free" },
+    { title: "Binomial Theorem", file: "math/algebra/binomial.html", type: "paid" },
+    { title: "Quadratic Equations", file: "math/algebra/quadratic.html", type: "free" },
+    { title: "Sequences & Series", file: "math/algebra/sequences.html", type: "paid" },
+    { title: "Complex Numbers", file: "math/algebra/complex.html", type: "free" },
+    { title: "Matrices & Determinants", file: "math/algebra/matrices.html", type: "paid" },
+    { title: "Permutations & Combinations", file: "math/algebra/pc.html", type: "free" }
+  ],
+
+  calculus: [
+    { title: "Limits", file: "math/calculus/limits.html", type: "free" },
+    { title: "Continuity & Differentiability", file: "math/calculus/continuity.html", type: "paid" },
+    { title: "Application of Derivatives", file: "math/calculus/aod.html", type: "free" },
+    { title: "Integration", file: "math/calculus/integration.html", type: "paid" },
+    { title: "Definite Integrals", file: "math/calculus/definite.html", type: "free" },
+    { title: "Differential Equations", file: "math/calculus/de.html", type: "paid" }
+  ],
+
+  trigonometry: [
+    { title: "Trigonometric Ratios & Identities", file: "math/trigonometry/ratios.html", type: "free" },
+    { title: "Trigonometric Equations", file: "math/trigonometry/equations.html", type: "paid" },
+    { title: "Inverse Trigonometric Functions", file: "math/trigonometry/inverse.html", type: "free" },
+    { title: "Properties of Triangle", file: "math/trigonometry/triangle.html", type: "paid" },
+    { title: "Heights & Distances", file: "math/trigonometry/heights.html", type: "free" }
+  ],
+
+  coordinate: [
+    { title: "Straight Lines", file: "math/coordinate/lines.html", type: "free" },
+    { title: "Circles", file: "math/coordinate/circles.html", type: "paid" },
+    { title: "Parabola", file: "math/coordinate/parabola.html", type: "free" },
+    { title: "Ellipse", file: "math/coordinate/ellipse.html", type: "paid" },
+    { title: "Hyperbola", file: "math/coordinate/hyperbola.html", type: "free" }
+  ],
+
+  vectors: [
+    { title: "Vectors", file: "math/vectors/vectors.html", type: "free" },
+    { title: "3D Geometry", file: "math/vectors/3d.html", type: "paid" }
+  ],
+
+  probability: [
+    { title: "Probability", file: "math/probability/probability.html", type: "free" },
+    { title: "Statistics", file: "math/probability/statistics.html", type: "paid" }
+  ]
+};
 
     const tabs = document.querySelectorAll(".tab-btn");
     const topicCards = document.getElementById("topicCards");

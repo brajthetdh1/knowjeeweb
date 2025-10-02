@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>KnowJEE | Math</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+</head>
+
+<body class="bg-yellow-50 text-yellow-900">
+
+  <!-- Navbar -->
+  <header class="bg-yellow-100 shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-2">
+      <!-- Left: Logo -->
+      <a href="index.html" class="text-3xl font-bold text-yellow-900">KnowJEE</a>
+
+      <!-- Center: Navigation -->
+      <nav class="space-x-6">
+        <a href="math.html" class="hover:text-yellow-900">Math</a>
+        <a href="physics.html" class="hover:text-yellow-900">Physics</a>
+        <a href="chem.html" class="hover:text-yellow-900">Chemistry</a>
+        <a href="quiz.html" class="hover:text-yellow-900">Quizzes</a>
+        <a href="hot.html" class="hover:text-yellow-900">Questions</a>
+      </nav>
+
+
+      <div id="authContainer" class="text-center">
+        <div id="authSection" class="space-x-4">
+          <button id="loginBtn" class="px-4 py-2 rounded hover:bg-yellow-400" onclick="loginPrompt()">Login</button>
+          <button id="registerBtn" class="px-4 py-2 rounded hover:bg-yellow-400"
+            onclick="registerPrompt()">Register</button>
+        </div>
+
+        <div id="userSection" class="hidden space-x-4">
+          <span id="userEmail" class="font-semibold"></span>
+          <button id="logoutBtn" class="px-4 py-2 bg-red-200 text-white rounded hover:bg-red-500"
+            onclick="logoutPrompt()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+ 
+
+</body>
+
+</html>

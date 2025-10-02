@@ -1,0 +1,563 @@
+<div class="space-y-6">
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3 md:mb-4">Definition</h3>
+    <p class="mb-3 md:mb-4">
+      A <strong>complex number</strong> <span class="math">$z$</span> is written as:
+      <span class="math">$z = a + ib$</span>, where:
+    </p>
+    <div class="space-y-3">
+      <div class="p-3 rounded-lg">
+        <span class="math font-semibold">$a$</span> → Real part of <span class="math">$z$</span> (<span class="math">$\mathcal{R}(z)$</span>)
+      </div>
+      <div class="p-3 rounded-lg">
+        <span class="math font-semibold">$b$</span> → Imaginary part of <span class="math">$z$</span> (<span class="math">$\mathcal{I}(z)$</span>)
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3 md:mb-4">Example 1</h3>
+    <p class="mb-3 md:mb-4">
+      Consider <span class="math">$z = 5 + 2i$</span>:
+    </p>
+    <div class="space-y-3">
+      <div class="p-3 rounded-lg">
+        <span class="math">$\mathcal{R}(z) = 5$</span>
+      </div>
+      <div class="p-3 rounded-lg">
+        <span class="math">$\mathcal{I}(z) = 2$</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3 md:mb-4">Example 2</h3>
+    <p class="mb-3 md:mb-4">
+      Consider <span class="math">$z = -3 + 7i$</span>:
+    </p>
+    <div class="space-y-3">
+      <div class="p-3 rounded-lg">
+        <span class="math">$\mathcal{R}(z) = -3$</span>
+      </div>
+      <div class="p-3 rounded-lg">
+        <span class="math">$\mathcal{I}(z) = 7$</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="space-y-6 py-6">
+
+   <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">1. Cartesian / Rectangular Form</h3>
+    <p class="mb-3"><span class="math">\(z = x + iy\)</span></p>
+    <div class="space-y-2">
+      <div class="p-3 rounded-lg"><span class="math">\(x = \mathcal{R}(z)\)</span> → Real part</div>
+      <div class="p-3 rounded-lg"><span class="math">\(y = \mathcal{I}(z)\)</span> → Imaginary part</div>
+    </div>
+    <p class="mt-3 mb-2">Example: <span class="math">\(z = 3 + 4i → x = 3, y = 4\)</span></p>
+    <p>Operations easy in Cartesian form: addition, subtraction, conjugate.</p>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">2. Polar Form</h3>
+    <p class="mb-3"><span class="math">\(z = r(\cos\theta + i\sin\theta)\)</span></p>
+    <div class="space-y-2">
+      <div class="p-3 rounded-lg"><span class="math">\(r = |z| = \sqrt{x^2 + y^2}\)</span> → modulus</div>
+      <div class="p-3 rounded-lg"><span class="math">\(\theta = \arg(z) = \tan^{-1}(y/x)\)</span> → argument</div>
+    </div>
+    <p class="mt-3 mb-2">Use: Multiplication, division, powers, roots.</p>
+    <p>Example: <span class="math">\(1 + i = \sqrt{2}(\cos 45^\circ + i \sin 45^\circ)\)</span></p>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">3. Euler / Exponential Form</h3>
+    <p class="mb-3"><span class="math">\(z = r e^{i\theta}\)</span> (Euler’s formula: <span class="math">\(e^{i\theta} = \cos\theta + i\sin\theta\)</span>)</p>
+    <div class="space-y-2">
+      <div class="p-3 rounded-lg">Multiplication: <span class="math">\(z_1 z_2 = r_1 r_2 e^{i(\theta_1 + \theta_2)}\)</span></div>
+      <div class="p-3 rounded-lg">Division: <span class="math">\(z_1 / z_2 = (r_1/r_2) e^{i(\theta_1 - \theta_2)}\)</span></div>
+      <div class="p-3 rounded-lg">Powers: <span class="math">\(z^n = r^n e^{in\theta}\)</span></div>
+    </div>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">4. Trigonometric / Sin-Cos Form</h3>
+    <p class="mb-3">Essentially same as polar form: <span class="math">\(z = r(\cos\theta + i\sin\theta)\)</span></p>
+    <p>Often used in De Moivre’s Theorem.</p>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">5. Modulus-Argument Form</h3>
+    <p class="mb-3"><span class="math">|z| = r, \arg(z) = \theta</span></p>
+    <p>Can write: <span class="math">\(z = |z|(\cos \arg(z) + i \sin \arg(z))\)</span></p>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">6. Conjugate Form</h3>
+    <p class="mb-3"><span class="math">\(z = x + iy, \bar{z} = x - iy\)</span></p>
+    <p>Useful for division, real part extraction:</p>
+    <div class="space-y-2">
+      <div class="p-3 rounded-lg"><span class="math">\(\mathcal{R}(z) = \frac{z + \bar{z}}{2}\)</span></div>
+      <div class="p-3 rounded-lg"><span class="math">\(\mathcal{I}(z) = \frac{z - \bar{z}}{2i}\)</span></div>
+    </div>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">7. Geometric / Vector Form</h3>
+    <p class="mb-3">Consider <span class="math">\(z = x + iy\)</span> as a vector in Argand plane: <span class="math">\(\vec{z} = \langle x, y \rangle\)</span></p>
+    <p>Modulus → magnitude of vector, Argument → angle with positive x-axis</p>
+    <p>JEE often uses this for loci, perpendicularity, collinearity.</p>
+  </div>
+
+  <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+    <h3 class="text-4xl md:text-5xl font-semibold mb-3">8. Matrix Form (Advanced / Optional)</h3>
+    <p class="mb-3"><span class="math">\(z = x + iy \equiv \begin{bmatrix} x & -y \\ y & x \end{bmatrix}\)</span></p>
+    <p>Multiplication of complex numbers ↔ matrix multiplication. Rare in JEE, mostly for Advanced derivations.</p>
+  </div>
+</div>
+
+<div class="space-y-6 py-6">
+
+  <!-- Example Collapsible Property -->
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      1. Equality of Complex Numbers
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+      <p class="mb-3"><span class="math">\(z_1 = x_1 + iy_1, z_2 = x_2 + iy_2\)</span> are equal if <span class="math">\(x_1 = x_2 \text{ and } y_1 = y_2\)</span></p>
+      <p>Example: <span class="math">\(3 + 4i = 3 + 4i\)</span> → True</p>
+    </div>
+  </div>
+
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      2. Addition
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+      <p class="mb-3"><span class="math">\(z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2)\)</span></p>
+      <p>Example: <span class="math">\((2 + 3i) + (1 + 4i) = 3 + 7i\)</span></p>
+    </div>
+  </div>
+
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      3. Subtraction
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+      <p class="mb-3"><span class="math">\(z_1 - z_2 = (x_1 - x_2) + i(y_1 - y_2)\)</span></p>
+      <p>Example: <span class="math">\((5 + 6i) - (2 + 3i) = 3 + 3i\)</span></p>
+    </div>
+  </div>
+
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      4. Multiplication
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+      <p class="mb-3"><span class="math">\(z_1 z_2 = (x_1 x_2 - y_1 y_2) + i(x_1 y_2 + x_2 y_1)\)</span></p>
+      <p>Example: <span class="math">\((1 + 2i)(3 + 4i) = -5 + 10i\)</span></p>
+    </div>
+  </div>
+
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      5. Division
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+      <p class="mb-3"><span class="math">\(\frac{z_1}{z_2} = \frac{(x_1 x_2 + y_1 y_2) + i(y_1 x_2 - x_1 y_2)}{x_2^2 + y_2^2}, z_2 \neq 0\)</span></p>
+      <p>Example: <span class="math">\(\frac{1 + 2i}{1 + i} = 1.5 + 0.5i\)</span></p>
+    </div>
+  </div>
+
+  <!-- Repeat similar pattern for Conjugate, Modulus, Argument -->
+   <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      6. Conjugate
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+      <p class="mb-3"><span class="math">\(\bar{z} = x - iy\)</span></p>
+      <p>Properties:</p>
+      <ul class="list-disc pl-5">
+        <li><span class="math">\(\overline{z_1 + z_2} = \bar{z_1} + \bar{z_2}\)</span></li>
+        <li><span class="math">\(\overline{z_1 z_2} = \bar{z_1} \bar{z_2}\)</span></li>
+        <li><span class="math">\(\overline{\bar{z}} = z\)</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      8. Argument
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+      <p class="mb-3"><span class="math">\(\arg(z) = \theta\)</span> → angle with positive x-axis</p>
+      <p>Properties:</p>
+      <ul class="list-disc pl-5">
+        <li><span class="math">\(\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)\)</span></li>
+        <li><span class="math">\(\arg(z_1 / z_2) = \arg(z_1) - \arg(z_2)\)</span></li>
+        <li><span class="math">\(\arg(\bar{z}) = -\arg(z)\)</span></li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<div class="space-y-4">
+
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+    <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+      JEE Problem: Find the roots
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    
+    <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+      <p class="text-2xl md:text-3xl mb-2">
+        Find the roots of the quadratic equation in complex numbers:
+        <span class="math">\(z^2 - (3 + 4i)z + (5 + 6i) = 0\)</span>
+      </p>
+
+      <h4 class="text-3xl font-semibold mb-2">Solution:</h4>
+      <div class="space-y-2">
+
+        <p class="text-xl md:text-2xl">
+          Use quadratic formula:
+          <span class="math">\(z = \frac{(3+4i) \pm \sqrt{(3+4i)^2 - 4(5+6i)}}{2}\)</span>
+        </p>
+
+        <p class="text-xl md:text-2xl">
+          Step 1: Compute discriminant:
+          <span class="math">\((3+4i)^2 - 4(5+6i) = (9 + 24i - 16) - (20 + 24i) = -7 + 0i\)</span>
+        </p>
+
+        <p class="text-xl md:text-2xl">
+          Step 2: Square root of discriminant:
+          <span class="math">\(\sqrt{-7} = i\sqrt{7}\)</span>
+        </p>
+
+        <p class="text-xl md:text-2xl">
+          Step 3: Apply formula:
+          <span class="math">\(z = \frac{3+4i \pm i\sqrt{7}}{2}\)</span>
+        </p>
+
+        <p class="text-xl md:text-2xl">
+          Step 4: Final roots:
+          <span class="math">
+            \(z_1 = \frac{3 + 4i + i\sqrt{7}}{2} = \frac{3}{2} + i\frac{4+\sqrt{7}}{2}, \quad
+              z_2 = \frac{3 + 4i - i\sqrt{7}}{2} = \frac{3}{2} + i\frac{4-\sqrt{7}}{2}\)
+          </span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Modulus and Argument
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-2">
+    <p>Find the modulus and argument of the complex number:</p>
+    <p class="text-xl md:text-2xl">
+      <span class="math">$z = -1 + \sqrt{3} i$</span>
+    </p>
+
+    <p>Step 1: Modulus:</p>
+    <p class="text-xl md:text-2xl">
+      <span class="math">$|z| = \sqrt{(-1)^2 + (\sqrt{3})^2} = 2$</span>
+    </p>
+
+    <p>Step 2: Argument:</p>
+    <p class="text-xl md:text-2xl">
+      <span class="math">$\theta = \tan^{-1}(y/x) = \tan^{-1}(\sqrt{3}/-1)$</span>
+    </p>
+
+    <p>Step 3: Quadrant check: x < 0, y > 0 → second quadrant:</p>
+    <p class="text-xl md:text-2xl">
+      <span class="math">$\theta = 180^\circ - 60^\circ = 120^\circ = \frac{2 \pi}{3}$</span>
+    </p>
+
+    <p>Final Answer:</p>
+    <p class="text-xl md:text-2xl">
+      <span class="math">$|z| = 2, \quad \arg(z) = \frac{2\pi}{3}$</span>
+    </p>
+  </div>
+</div>
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Locus of Complex Numbers
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+    <p class="text-xl md:text-2xl mb-2">
+      Find the locus of the complex number $z = x + iy$ satisfying $|z - 1| = 2$.
+    </p>
+
+    <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+    <p class="text-xl md:text-2xl">
+      Step 1: Substitute $z = x + iy$:
+      <span class="math">$|(x + iy) - 1| = 2$</span>
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 2: Simplify:
+      <span class="math">$|(x - 1) + iy| = 2 \implies \sqrt{(x-1)^2 + y^2} = 2$</span>
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 3: Square both sides:
+      <span class="math">$(x - 1)^2 + y^2 = 4$</span>
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 4: Interpretation: This represents a circle with center at $(1,0)$ and radius $2$ in the Argand plane.
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold">Answer: Circle, center = (1,0), radius = 2</p>
+  </div>
+</div>
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Quadratic Equation with Complex Coefficients
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+    <p class="text-xl md:text-2xl mb-2">
+      Solve the quadratic equation $z^2 - (3 - 4i)z + (5 - 12i) = 0$.
+    </p>
+
+    <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+    <p class="text-xl md:text-2xl">
+      Step 1: Use quadratic formula:
+      <span class="math">$z = \frac{(3-4i) \pm \sqrt{(3-4i)^2 - 4(5-12i)}}{2}$</span>
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 2: Compute discriminant:
+      <span class="math">$(3-4i)^2 - 4(5-12i) = (9 - 24i + 16i^2) - (20 - 48i) = (-7 - 24i) - (20 - 48i) = -27 + 24i$</span>
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 3: Compute square root of discriminant:  
+      Let $\sqrt{-27 + 24i} = a + bi$. Solve $a^2 - b^2 = -27, 2ab = 24 \implies a = 3, b = 4$  
+      So, $\sqrt{-27 + 24i} = 3 + 4i$
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 4: Roots:
+      <span class="math">$z = \frac{(3-4i) \pm (3+4i)}{2}$</span>
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 5: Compute each root:
+      <span class="math">$z_1 = \frac{(3-4i) + (3+4i)}{2} = \frac{6}{2} = 3$</span>
+    </p>
+    <p class="text-xl md:text-2xl">
+      <span class="math">$z_2 = \frac{(3-4i) - (3+4i)}{2} = \frac{-8i}{2} = -4i$</span>
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z = 3, \; z = -4i$</span></p>
+  </div>
+</div>
+
+
+<!-- Problem 2: Conjugate Relation -->
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Conjugate Relation
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+    <p class="text-xl md:text-2xl mb-2">
+      If $z + \bar{z} = 6$ and $z\bar{z} = 10$, find $z$.
+    </p>
+
+    <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+    <p class="text-xl md:text-2xl">
+      Step 1: Let $z = x + iy$. Then $z + \bar{z} = 2x = 6 \implies x = 3$.
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 2: $z \bar{z} = x^2 + y^2 = 10 \implies 3^2 + y^2 = 10 \implies y^2 = 1 \implies y = \pm 1$.
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z = 3 + i, \; 3 - i$</span></p>
+  </div>
+</div>
+
+
+
+<!-- Problem 4: Multiplication in Polar Form -->
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Multiplication in Polar Form
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+    <p class="text-xl md:text-2xl mb-2">
+      If $z_1 = 2(\cos 30^\circ + i \sin 30^\circ)$ and $z_2 = 3(\cos 45^\circ + i \sin 45^\circ)$, find $z_1 z_2$ in polar form.
+    </p>
+
+    <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+    <p class="text-xl md:text-2xl">
+      Step 1: Modulus of product: $|z_1 z_2| = |z_1||z_2| = 2 \cdot 3 = 6$.
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 2: Argument of product: $\arg(z_1 z_2) = 30^\circ + 45^\circ = 75^\circ$.
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z_1 z_2 = 6(\cos 75^\circ + i \sin 75^\circ)$</span></p>
+  </div>
+</div>
+
+
+<!-- Problem 6: Triangle in Argand Plane -->
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Equilateral Triangle in Argand Plane
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+    <p class="text-xl md:text-2xl mb-2">
+      Points $z_1 = 0$, $z_2 = 2$, and $z_3$ form an equilateral triangle. Find $z_3$.
+    </p>
+
+    <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+    <p class="text-xl md:text-2xl">
+      Step 1: Formula for rotation: $z_3 = z_1 + (z_2 - z_1)e^{i 60^\circ} = 0 + 2 e^{i\pi/3} = 2(\cos 60^\circ + i \sin 60^\circ)$
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 2: Convert to rectangular form: $z_3 = 2(1/2 + i\sqrt{3}/2) = 1 + i\sqrt{3}$
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z_3 = 1 + i\sqrt{3}$</span></p>
+  </div>
+</div>
+
+
+<!-- Problem 10: Solve Complex Equation -->
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Solve Complex Equation
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+    <p class="text-xl md:text-2xl mb-2">
+      Solve for complex number $z$ given $|z - 1| = |z + 1|$.
+    </p>
+
+    <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+    <p class="text-xl md:text-2xl">
+      Step 1: Let $z = x + iy$, then equation becomes:
+      $| (x+iy) - 1 | = | (x+iy) + 1 |$
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 2: Simplify modulus:
+      $\sqrt{(x-1)^2 + y^2} = \sqrt{(x+1)^2 + y^2}$
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 3: Square both sides:
+      $(x-1)^2 + y^2 = (x+1)^2 + y^2$
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 4: Simplify equation:
+      $x^2 - 2x + 1 + y^2 = x^2 + 2x + 1 + y^2 \implies -2x = 2x \implies x = 0$
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 5: Conclusion:
+      $x = 0 \implies z = iy, \text{ any real } y$
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold">
+      Answer: $z = iy, \; y \in \mathbb{R}$
+    </p>
+  </div>
+</div>
+
+
+
+
+<!-- Problem 11: Solve Complex Equation with Conjugate -->
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+  <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+    JEE Problem: Solve Complex Equation with Conjugate
+    <span class="float-right" x-text="open ? '−' : '+'"></span>
+  </button>
+
+  <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+    <p class="text-xl md:text-2xl mb-2">
+      Solve for $z$ if $z + \bar{z} = 4$ and $z \bar{z} = 5$.
+    </p>
+
+    <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+    <p class="text-xl md:text-2xl">
+      Step 1: Let $z = x + iy \implies \bar{z} = x - iy$.
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 2: First equation $z + \bar{z} = 4 \implies (x + iy) + (x - iy) = 4 \implies 2x = 4 \implies x = 2$.
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 3: Second equation $z \bar{z} = 5 \implies (x+iy)(x-iy) = x^2 + y^2 = 5$.
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 4: Substitute $x = 2$: $2^2 + y^2 = 5 \implies 4 + y^2 = 5 \implies y^2 = 1 \implies y = \pm 1$.
+    </p>
+
+    <p class="text-xl md:text-2xl">
+      Step 5: Write all solutions:
+      $z = 2 + i$ or $z = 2 - i$.
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold">
+      Answer: $z = 2 + i, \; 2 - i$
+    </p>
+  </div>
+</div>
+
+
+
+
+</div>
+
