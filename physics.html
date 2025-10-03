@@ -3,34 +3,76 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>KnowJEE | Physics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>JEE Physics Preparation 2025 - Complete Study Material | Mechanics, Thermodynamics, Electromagnetism | KnowJEE</title>
+  <meta name="description"
+    content="Master JEE Physics with comprehensive study material covering Mechanics, Thermodynamics, Electromagnetism, Optics, Modern Physics & Waves. Free solved examples, formulas & practice questions by IIT Roorkee graduate.">
+  <meta name="keywords"
+    content="JEE physics preparation, JEE mechanics, JEE thermodynamics, JEE electromagnetism, optics JEE, modern physics, waves JEE, JEE physics formulas, JEE physics solutions, Newton's laws, current electricity">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://knowjee.sciencegeek.in/physics.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE Physics Complete Preparation 2025 | KnowJEE">
+  <meta property="og:description"
+    content="Learn JEE Physics from IIT Roorkee graduate. Complete coverage of Mechanics, Thermodynamics, Electromagnetism with solved examples.">
+  <meta property="og:url" content="https://knowjee.sciencegeek.in/physics.html">
+  <meta property="og:type" content="educational">
+  <meta property="og:image" content="https://knowjee.sciencegeek.in/images/jee-physics.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE Physics Complete Study Material">
+  <meta name="twitter:description" content="Master JEE Physics with expert guidance from IIT Roorkee graduate.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "JEE Physics Complete Course",
+    "description": "Comprehensive JEE Physics preparation covering all topics",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "KnowJEE"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online"
+    },
+    "teaches": [
+      "Mechanics", "Thermodynamics", "Electromagnetism", 
+      "Optics", "Modern Physics", "Waves"
+    ]
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body);"></script>
-
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script type="module" src="js/auth.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
 
 </head>
 
 <body class="bg-yellow-50 text-yellow-900">
 
-   <!-- Navbar -->
-  <header class="bg-yellow-100 shadow-md">
-    <div class="container mx-auto flex justify-between items-center py-4 px-2">
-      <!-- Left: Logo -->
-      <a href="index.html" class="text-3xl font-bold text-yellow-900">KnowJEE</a>
+  <!-- Navbar -->
+  <header class="bg-yellow-100 shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-4" aria-label="Main navigation">
+      <a href="index.html" class="text-3xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
 
-      <!-- Center: Navigation -->
-      <nav class="space-x-6">
-        <a href="math.html" class="hover:text-yellow-900">Math</a>
-        <a href="physics.html" class="hover:text-yellow-900">Physics</a>
-        <a href="chem.html" class="hover:text-yellow-900">Chemistry</a>
-        <a href="quiz.html" class="hover:text-yellow-900">Quizzes</a>
-        <a href="hot.html" class="hover:text-yellow-900">Questions</a>
-      </nav>
-
+      <div class="hidden md:flex space-x-6">
+        <a href="math.html" class="hover:text-yellow-900">JEE Math</a>
+        <a href="physics.html" class="hover:text-yellow-900 font-semibold">JEE Physics</a>
+        <a href="chem.html" class="hover:text-yellow-900">JEE Chemistry</a>
+        <a href="quiz.html" class="hover:text-yellow-900">Mock Tests</a>
+        <a href="hot.html" class="hover:text-yellow-900">Practice Questions</a>
+      </div>
 
       <div id="authContainer" class="text-center">
         <div id="authSection" class="space-x-4">
@@ -38,36 +80,57 @@
           <button id="registerBtn" class="px-4 py-2 rounded hover:bg-yellow-400"
             onclick="registerPrompt()">Register</button>
         </div>
-
         <div id="userSection" class="hidden space-x-4">
           <span id="userEmail" class="font-semibold"></span>
           <button id="logoutBtn" class="px-4 py-2 bg-red-200 text-white rounded hover:bg-red-500"
             onclick="logoutPrompt()">Logout</button>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
-
-
-
-
 
   <!-- Hero -->
   <section
-    class="py-16 flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
-    <h1 class="text-4xl font-bold mb-4">Physics</h1>
-    <p class="text-lg">Explore JEE Physics with theory, solved examples, and quizzes.</p>
+    class="py-32 flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <h1 class="text-5xl font-bold mb-4">JEE Physics Complete Preparation</h1>
+    <p class="text-xl max-w-3xl text-center px-4">Master all JEE Physics topics with detailed theory, solved examples,
+      formulas, and practice problems. Learn from IIT Roorkee M.Tech graduate.</p>
+    <div class="mt-8 flex gap-4">
+      <a href="#topics" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Start
+        Learning</a>
+      <a href="quiz.html" class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100">Take Mock
+        Test</a>
+    </div>
   </section>
 
+  <!-- Tabs & Content -->
+  <section id="topics" class="container mx-auto py-10 px-6">
+    <!-- Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 border-b border-yellow-400 mb-6 px-2">
+      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-lg font-semibold text-sm md:text-base"
+        data-subject="mechanics">
+        Mechanics
+      </button>
 
-  <!-- Tabs -->
-  <section class="container mx-auto py-10 px-6">
-    <div class="flex space-x-4 border-b border-yellow-400 mb-6">
-      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-t-lg font-semibold"
-        data-subject="mechanics">Mechanics</button>
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-100 rounded-t-lg"
-        data-subject="thermodynamics">Thermodynamics</button>
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-100 rounded-t-lg" data-subject="optics">Optics</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="thermal">
+        Thermodynamics
+      </button>
+
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="electro">
+        Electromagnetism
+      </button>
+
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="optics">
+        Optics
+      </button>
+
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="modern">
+        Modern Physics
+      </button>
+
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="waves">
+        Waves & Sound
+      </button>
     </div>
 
     <!-- Topic Cards -->
@@ -82,35 +145,104 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-yellow-50 text-center py-6 mt-10">
-    <p class="mb-2">Follow us:</p>
-    <div class="space-x-6">
-      <a href="https://youtube.com" target="_blank" class="hover:underline">YouTube</a>
-      <a href="https://wa.me/" target="_blank" class="hover:underline">WhatsApp</a>
-      <a href="https://t.me/" target="_blank" class="hover:underline">Telegram</a>
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+            <li><a href="#thermal" class="hover:text-yellow-300">Thermodynamics</a></li>
+            <li><a href="#electro" class="hover:text-yellow-300">Electromagnetism</a></li>
+            <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="math.html" class="hover:text-yellow-300">JEE Math</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Physics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
     </div>
   </footer>
 
-  <!-- JSON + JS -->
+  <!-- JS -->
   <script>
     const subjects = {
-      "mechanics": [
-        { title: "Laws of Motion", file: "physics/mechanics/laws-of-motion.html", type: "free" },
-        { title: "Work, Power & Energy", file: "physics/mechanics/work-energy.html", type: "paid" }
+      mechanics: [
+        { title: "Kinematics", file: "physics/mechanics/kinematics.html", type: "free" },
+        { title: "Laws of Motion", file: "physics/mechanics/laws.html", type: "free" },
+        { title: "Work, Energy & Power", file: "physics/mechanics/work.html", type: "paid" },
+        { title: "Circular Motion", file: "physics/mechanics/circular.html", type: "free" },
+        { title: "Center of Mass & Momentum", file: "physics/mechanics/momentum.html", type: "paid" },
+        { title: "Rotation", file: "physics/mechanics/rotation.html", type: "paid" },
+        { title: "Gravitation", file: "physics/mechanics/gravitation.html", type: "free" }
       ],
-      "thermodynamics": [
-        { title: "Heat & Temperature", file: "physics/thermo/heat-temperature.html", type: "free" },
-        { title: "Laws of Thermodynamics", file: "physics/thermo/laws.html", type: "paid" }
+
+      thermal: [
+        { title: "Heat & Temperature", file: "physics/thermal/heat.html", type: "free" },
+        { title: "Kinetic Theory of Gases", file: "physics/thermal/kinetic.html", type: "paid" },
+        { title: "Thermodynamics Laws", file: "physics/thermal/laws.html", type: "free" },
+        { title: "Heat Transfer", file: "physics/thermal/transfer.html", type: "paid" },
+        { title: "Calorimetry", file: "physics/thermal/calorimetry.html", type: "free" }
       ],
-      "optics": [
-        { title: "Reflection", file: "physics/optics/reflection.html", type: "free" },
-        { title: "Refraction", file: "physics/optics/refraction.html", type: "paid" }
+
+      electro: [
+        { title: "Electrostatics", file: "physics/electro/electrostatics.html", type: "free" },
+        { title: "Current Electricity", file: "physics/electro/current.html", type: "free" },
+        { title: "Magnetic Effects of Current", file: "physics/electro/magnetic.html", type: "paid" },
+        { title: "Electromagnetic Induction", file: "physics/electro/induction.html", type: "paid" },
+        { title: "AC Circuits", file: "physics/electro/ac.html", type: "paid" },
+        { title: "Electromagnetic Waves", file: "physics/electro/waves.html", type: "free" }
+      ],
+
+      optics: [
+        { title: "Ray Optics", file: "physics/optics/ray.html", type: "free" },
+        { title: "Wave Optics", file: "physics/optics/wave.html", type: "paid" },
+        { title: "Reflection & Refraction", file: "physics/optics/reflection.html", type: "free" },
+        { title: "Optical Instruments", file: "physics/optics/instruments.html", type: "paid" },
+        { title: "Interference & Diffraction", file: "physics/optics/interference.html", type: "free" }
+      ],
+
+      modern: [
+        { title: "Dual Nature of Matter", file: "physics/modern/dual.html", type: "free" },
+        { title: "Photoelectric Effect", file: "physics/modern/photoelectric.html", type: "free" },
+        { title: "Atoms & Nuclei", file: "physics/modern/atoms.html", type: "paid" },
+        { title: "Semiconductors", file: "physics/modern/semiconductors.html", type: "paid" },
+        { title: "Communication Systems", file: "physics/modern/communication.html", type: "free" }
+      ],
+
+      waves: [
+        { title: "Wave Motion", file: "physics/waves/motion.html", type: "free" },
+        { title: "Sound Waves", file: "physics/waves/sound.html", type: "paid" },
+        { title: "Doppler Effect", file: "physics/waves/doppler.html", type: "free" },
+        { title: "Superposition of Waves", file: "physics/waves/superposition.html", type: "paid" }
       ]
     };
 
     const tabs = document.querySelectorAll(".tab-btn");
     const topicCards = document.getElementById("topicCards");
     const topicContent = document.getElementById("topicContent");
+
+    // Load mechanics by default
+    window.addEventListener('DOMContentLoaded', () => {
+      loadTopicCards('mechanics');
+    });
 
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
@@ -124,16 +256,19 @@
     function loadTopicCards(subject) {
       const topics = subjects[subject];
       if (!topics) return;
-      topicContent.innerHTML = `<p>Select a topic to view content.</p>`;
+      
+      topicContent.innerHTML = `<p class="text-lg text-gray-600">Select a topic to view complete study material with theory, formulas, and solved examples.</p>`;
 
       topicCards.innerHTML = "";
       topics.forEach(topic => {
         const card = document.createElement("div");
-        card.className = "p-4 rounded-lg shadow bg-yellow-100 cursor-pointer hover:bg-yellow-200";
+        card.className = "p-6 rounded-lg shadow-lg bg-white border-2 border-yellow-200 cursor-pointer hover:shadow-xl hover:border-yellow-400 transition";
         card.innerHTML = `
-          <h3 class="font-bold text-lg">${topic.title} 
-            ${topic.type === "paid" ? '<span class="ml-2 text-sm bg-yellow-400 px-2 py-1 rounded">Paid</span>' : ''}
-          </h3>
+          <h3 class="font-bold text-xl mb-2">${topic.title}</h3>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-600">Click to learn</span>
+            ${topic.type === "paid" ? '<span class="text-sm bg-yellow-400 px-3 py-1 rounded-full font-semibold">Premium</span>' : '<span class="text-sm bg-green-400 px-3 py-1 rounded-full font-semibold text-white">Free</span>'}
+          </div>
         `;
         card.addEventListener("click", () => {
           loadTopicContent(topic);
@@ -146,7 +281,6 @@
       console.log(`[Load] Loading topic content: ${topic.title}, type=${topic.type}`);
       topicContent.innerHTML = `<p>Loading...</p>`;
       try {
-        // If topic is paid, check auth
         if (topic.type === "paid" && !window.currentUser) {
           console.log(`[Auth] User not logged in. Blocking paid content: ${topic.title}`);
           topicContent.innerHTML = `
@@ -164,7 +298,6 @@
         let html = await res.text();
         console.log(`[Fetch] File loaded for ${topic.title}: ${topic.file}`);
 
-        // Show locked message for logged-in users (simulate unpaid)
         if (topic.type === "paid" && window.currentUser) {
           console.log(`[Auth] Logged in as ${window.currentUser.email}, hasPaid=${window.userIsPaid}`);
           if (!window.userIsPaid) {
@@ -195,9 +328,6 @@
         topicContent.innerHTML = `<p>Error loading content.</p>`;
       }
     }
-
-
-
   </script>
 
   <script type="module">
@@ -235,13 +365,8 @@
 
     document.addEventListener('firebaseAuthUpdated', updateUI);
     updateUI();
-
-
-
-
-
-
   </script>
+
 </body>
 
 </html>

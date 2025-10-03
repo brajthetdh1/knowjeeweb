@@ -3,9 +3,54 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>KnowJEE | Math</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+  <!-- SEO Meta Tags -->
+  <title>JEE Mathematics Preparation 2025 - Complete Study Material | Algebra, Calculus, Trigonometry | KnowJEE</title>
+  <meta name="description"
+    content="Master JEE Mathematics with comprehensive study material covering Algebra, Calculus, Trigonometry, Coordinate Geometry, Vectors & 3D. Free solved examples, formulas & practice questions by IIT Roorkee graduate.">
+  <meta name="keywords"
+    content="JEE math preparation, JEE algebra, JEE calculus, JEE trigonometry, coordinate geometry JEE, vectors 3D geometry, JEE math formulas, JEE math solutions, differential equations, integration, matrices determinants">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://knowjee.sciencegeek.in/math.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE Mathematics Complete Preparation 2025 | KnowJEE">
+  <meta property="og:description"
+    content="Learn JEE Math from IIT Roorkee graduate. Complete coverage of Algebra, Calculus, Trigonometry with solved examples.">
+  <meta property="og:url" content="https://knowjee.sciencegeek.in/math.html">
+  <meta property="og:type" content="educational">
+  <meta property="og:image" content="https://knowjee.sciencegeek.in/images/jee-math.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE Mathematics Complete Study Material">
+  <meta name="twitter:description" content="Master JEE Math with expert guidance from IIT Roorkee graduate.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "JEE Mathematics Complete Course",
+    "description": "Comprehensive JEE Mathematics preparation covering all topics",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "KnowJEE"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online"
+    },
+    "teaches": [
+      "Algebra", "Calculus", "Trigonometry", 
+      "Coordinate Geometry", "Vectors", "3D Geometry",
+      "Probability", "Statistics"
+    ]
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -13,26 +58,22 @@
   <script type="module" src="js/auth.js"></script>
   <script src="//unpkg.com/alpinejs" defer></script>
 
-
 </head>
 
 <body class="bg-yellow-50 text-yellow-900">
 
-   <!-- Navbar -->
-  <header class="bg-yellow-100 shadow-md">
-    <div class="container mx-auto flex justify-between items-center py-4 px-2">
-      <!-- Left: Logo -->
-      <a href="index.html" class="text-3xl font-bold text-yellow-900">KnowJEE</a>
+  <!-- Navbar -->
+  <header class="bg-yellow-100 shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-4" aria-label="Main navigation">
+      <a href="index.html" class="text-3xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
 
-      <!-- Center: Navigation -->
-      <nav class="space-x-6">
-        <a href="math.html" class="hover:text-yellow-900">Math</a>
-        <a href="physics.html" class="hover:text-yellow-900">Physics</a>
-        <a href="chem.html" class="hover:text-yellow-900">Chemistry</a>
-        <a href="quiz.html" class="hover:text-yellow-900">Quizzes</a>
-        <a href="hot.html" class="hover:text-yellow-900">Questions</a>
-      </nav>
-
+      <div class="hidden md:flex space-x-6">
+        <a href="math.html" class="hover:text-yellow-900 font-semibold">JEE Math</a>
+        <a href="physics.html" class="hover:text-yellow-900">JEE Physics</a>
+        <a href="chem.html" class="hover:text-yellow-900">JEE Chemistry</a>
+        <a href="quiz.html" class="hover:text-yellow-900">Mock Tests</a>
+        <a href="hot.html" class="hover:text-yellow-900">Practice Questions</a>
+      </div>
 
       <div id="authContainer" class="text-center">
         <div id="authSection" class="space-x-4">
@@ -40,14 +81,13 @@
           <button id="registerBtn" class="px-4 py-2 rounded hover:bg-yellow-400"
             onclick="registerPrompt()">Register</button>
         </div>
-
         <div id="userSection" class="hidden space-x-4">
           <span id="userEmail" class="font-semibold"></span>
           <button id="logoutBtn" class="px-4 py-2 bg-red-200 text-white rounded hover:bg-red-500"
             onclick="logoutPrompt()">Logout</button>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
 
 
@@ -55,44 +95,52 @@
   <!-- Hero -->
   <section
     class="py-32 flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
-    <h1 class="text-4xl font-bold mb-4">Mathematics</h1>
-    <p class="text-lg">Study JEE Math with full theory, solved examples, and quizzes.</p>
+    <h1 class="text-5xl font-bold mb-4">JEE Mathematics Complete Preparation</h1>
+    <p class="text-xl max-w-3xl text-center px-4">Master all JEE Math topics with detailed theory, solved examples,
+      formulas, and practice problems. Learn from IIT Roorkee M.Tech graduate.</p>
+    <div class="mt-8 flex gap-4">
+      <a href="#topics" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Start
+        Learning</a>
+      <a href="quiz.html" class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100">Take Mock
+        Test</a>
+    </div>
   </section>
 
   <!-- Tabs & Content -->
   <section class="container mx-auto py-10 px-6">
     <!-- Tabs -->
     <div class="flex flex-wrap justify-center gap-2 border-b border-yellow-400 mb-6 px-2">
-  <!-- Algebra -->
-  <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-lg font-semibold text-sm md:text-base" data-subject="algebra">
-    Algebra
-  </button>
+      <!-- Algebra -->
+      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-lg font-semibold text-sm md:text-base"
+        data-subject="algebra">
+        Algebra
+      </button>
 
-  <!-- Calculus -->
-  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="calculus">
-    Calculus
-  </button>
+      <!-- Calculus -->
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="calculus">
+        Calculus
+      </button>
 
-  <!-- Trigonometry -->
-  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="trigonometry">
-    Trigonometry
-  </button>
+      <!-- Trigonometry -->
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="trigonometry">
+        Trigonometry
+      </button>
 
-  <!-- Coordinate Geometry -->
-  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="coordinate">
-    Coordinate Geometry
-  </button>
+      <!-- Coordinate Geometry -->
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="coordinate">
+        Coordinate Geometry
+      </button>
 
-  <!-- Vectors & 3D Geometry -->
-  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="vectors">
-    Vectors & 3D
-  </button>
+      <!-- Vectors & 3D Geometry -->
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="vectors">
+        Vectors & 3D
+      </button>
 
-  <!-- Probability & Statistics -->
-  <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="probability">
-    Probability & Stats
-  </button>
-</div>
+      <!-- Probability & Statistics -->
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="probability">
+        Probability & Stats
+      </button>
+    </div>
 
 
     <!-- Topic Cards -->
@@ -107,69 +155,102 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-yellow-50 text-center py-6 mt-10">
-    <p class="mb-2">Follow us:</p>
-    <div class="space-x-6">
-      <a href="https://youtube.com" target="_blank" class="hover:underline">YouTube</a>
-      <a href="https://wa.me/" target="_blank" class="hover:underline">WhatsApp</a>
-      <a href="https://t.me/" target="_blank" class="hover:underline">Telegram</a>
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+            <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+            <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+            <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
     </div>
   </footer>
+
 
   <!-- JS -->
   <script>
     // Map subjects → topics (file + free/paid)
     const subjects = {
-  algebra: [
-    { title: "Polynomials", file: "math/algebra/polynomials.html", type: "free" },
-    { title: "Binomial Theorem", file: "math/algebra/binomial.html", type: "paid" },
-    { title: "Quadratic Equations", file: "math/algebra/quadratic.html", type: "free" },
-    { title: "Sequences & Series", file: "math/algebra/sequences.html", type: "paid" },
-    { title: "Complex Numbers", file: "math/algebra/complex.html", type: "free" },
-    { title: "Matrices & Determinants", file: "math/algebra/matrices.html", type: "paid" },
-    { title: "Permutations & Combinations", file: "math/algebra/pc.html", type: "free" }
-  ],
+      algebra: [
+        { title: "Polynomials", file: "math/algebra/polynomials.html", type: "free" },
+        { title: "Binomial Theorem", file: "math/algebra/binomial.html", type: "paid" },
+        { title: "Quadratic Equations", file: "math/algebra/quadratic.html", type: "free" },
+        { title: "Sequences & Series", file: "math/algebra/sequences.html", type: "paid" },
+        { title: "Complex Numbers", file: "math/algebra/complex.html", type: "free" },
+        { title: "Matrices & Determinants", file: "math/algebra/matrices.html", type: "paid" },
+        { title: "Permutations & Combinations", file: "math/algebra/pc.html", type: "free" }
+      ],
 
-  calculus: [
-    { title: "Limits", file: "math/calculus/limits.html", type: "free" },
-    { title: "Continuity & Differentiability", file: "math/calculus/continuity.html", type: "paid" },
-    { title: "Application of Derivatives", file: "math/calculus/aod.html", type: "free" },
-    { title: "Integration", file: "math/calculus/integration.html", type: "paid" },
-    { title: "Definite Integrals", file: "math/calculus/definite.html", type: "free" },
-    { title: "Differential Equations", file: "math/calculus/de.html", type: "paid" }
-  ],
+      calculus: [
+        { title: "Limits", file: "math/calculus/limits.html", type: "free" },
+        { title: "Continuity & Differentiability", file: "math/calculus/continuity.html", type: "paid" },
+        { title: "Application of Derivatives", file: "math/calculus/aod.html", type: "free" },
+        { title: "Integration", file: "math/calculus/integration.html", type: "paid" },
+        { title: "Definite Integrals", file: "math/calculus/definite.html", type: "free" },
+        { title: "Differential Equations", file: "math/calculus/de.html", type: "paid" }
+      ],
 
-  trigonometry: [
-    { title: "Trigonometric Ratios & Identities", file: "math/trigonometry/ratios.html", type: "free" },
-    { title: "Trigonometric Equations", file: "math/trigonometry/equations.html", type: "paid" },
-    { title: "Inverse Trigonometric Functions", file: "math/trigonometry/inverse.html", type: "free" },
-    { title: "Properties of Triangle", file: "math/trigonometry/triangle.html", type: "paid" },
-    { title: "Heights & Distances", file: "math/trigonometry/heights.html", type: "free" }
-  ],
+      trigonometry: [
+        { title: "Trigonometric Ratios & Identities", file: "math/trigonometry/ratios.html", type: "free" },
+        { title: "Trigonometric Equations", file: "math/trigonometry/equations.html", type: "paid" },
+        { title: "Inverse Trigonometric Functions", file: "math/trigonometry/inverse.html", type: "free" },
+        { title: "Properties of Triangle", file: "math/trigonometry/triangle.html", type: "paid" },
+        { title: "Heights & Distances", file: "math/trigonometry/heights.html", type: "free" }
+      ],
 
-  coordinate: [
-    { title: "Straight Lines", file: "math/coordinate/lines.html", type: "free" },
-    { title: "Circles", file: "math/coordinate/circles.html", type: "paid" },
-    { title: "Parabola", file: "math/coordinate/parabola.html", type: "free" },
-    { title: "Ellipse", file: "math/coordinate/ellipse.html", type: "paid" },
-    { title: "Hyperbola", file: "math/coordinate/hyperbola.html", type: "free" }
-  ],
+      coordinate: [
+        { title: "Straight Lines", file: "math/coordinate/lines.html", type: "free" },
+        { title: "Circles", file: "math/coordinate/circles.html", type: "paid" },
+        { title: "Parabola", file: "math/coordinate/parabola.html", type: "free" },
+        { title: "Ellipse", file: "math/coordinate/ellipse.html", type: "paid" },
+        { title: "Hyperbola", file: "math/coordinate/hyperbola.html", type: "free" }
+      ],
 
-  vectors: [
-    { title: "Vectors", file: "math/vectors/vectors.html", type: "free" },
-    { title: "3D Geometry", file: "math/vectors/3d.html", type: "paid" }
-  ],
+      vectors: [
+        { title: "Vectors", file: "math/vectors/vectors.html", type: "free" },
+        { title: "3D Geometry", file: "math/vectors/3d.html", type: "paid" }
+      ],
 
-  probability: [
-    { title: "Probability", file: "math/probability/probability.html", type: "free" },
-    { title: "Statistics", file: "math/probability/statistics.html", type: "paid" }
-  ]
-};
+      probability: [
+        { title: "Probability", file: "math/probability/probability.html", type: "free" },
+        { title: "Statistics", file: "math/probability/statistics.html", type: "paid" }
+      ]
+    };
 
     const tabs = document.querySelectorAll(".tab-btn");
     const topicCards = document.getElementById("topicCards");
     const topicContent = document.getElementById("topicContent");
 
+    // Load algebra by default
+    window.addEventListener('DOMContentLoaded', () => {
+      loadTopicCards('algebra');
+    });
+    
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
         tabs.forEach(t => t.classList.remove("bg-yellow-300", "font-semibold"));
@@ -182,16 +263,19 @@
     function loadTopicCards(subject) {
       const topics = subjects[subject];
       if (!topics) return;
-      topicContent.innerHTML = `<p>Select a topic to view content.</p>`;
+      
+      topicContent.innerHTML = `<p class="text-lg text-gray-600">Select a topic to view complete study material with theory, formulas, and solved examples.</p>`;
 
       topicCards.innerHTML = "";
       topics.forEach(topic => {
         const card = document.createElement("div");
-        card.className = "p-4 rounded-lg shadow bg-yellow-100 cursor-pointer hover:bg-yellow-200";
+        card.className = "p-6 rounded-lg shadow-lg bg-white border-2 border-yellow-200 cursor-pointer hover:shadow-xl hover:border-yellow-400 transition";
         card.innerHTML = `
-          <h3 class="font-bold text-lg">${topic.title} 
-            ${topic.type === "paid" ? '<span class="ml-2 text-sm bg-yellow-400 px-2 py-1 rounded">Paid</span>' : ''}
-          </h3>
+          <h3 class="font-bold text-xl mb-2">${topic.title}</h3>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-600">Click to learn</span>
+            ${topic.type === "paid" ? '<span class="text-sm bg-yellow-400 px-3 py-1 rounded-full font-semibold">Premium</span>' : '<span class="text-sm bg-green-400 px-3 py-1 rounded-full font-semibold text-white">Free</span>'}
+          </div>
         `;
         card.addEventListener("click", () => {
           loadTopicContent(topic);
