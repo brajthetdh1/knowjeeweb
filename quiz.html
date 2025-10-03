@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>JEE Practice Quiz 2025 - Free Math, Physics & Chemistry Mock Tests | KnowJEE</title>
+    <meta name="description"
+        content="Practice JEE Main & Advanced with 30+ free online mock tests. Get instant results for Math, Physics & Chemistry quizzes. Perfect for JEE 2025 preparation with detailed solutions.">
+    <meta name="keywords"
+        content="JEE quiz, JEE mock test, JEE practice questions, JEE Math quiz, JEE Physics quiz, JEE Chemistry quiz, free JEE test series, JEE 2025 preparation, JEE online test">
+    <meta name="author" content="KnowJEE">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="JEE Practice Quiz 2025 - Free Mock Tests | KnowJEE">
+    <meta property="og:description"
+        content="Master JEE with 90+ practice questions across Math, Physics & Chemistry. Free online quizzes with instant feedback and detailed solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://knowjee.com/quiz">
+    <meta property="og:image" content="https://knowjee.com/images/jee-quiz-preview.jpg">
+    <meta property="og:site_name" content="KnowJEE">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JEE Practice Quiz 2025 - Free Mock Tests">
+    <meta name="twitter:description"
+        content="Practice JEE Math, Physics & Chemistry with 30-question quizzes. Get instant results and improve your preparation.">
+    <meta name="twitter:image" content="https://knowjee.com/images/jee-quiz-preview.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/quiz">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "KnowJEE",
+      "description": "Free JEE preparation platform with practice quizzes and mock tests",
+      "url": "https://knowjee.com",
+      "logo": "https://knowjee.com/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/knowjee",
+        "https://twitter.com/knowjee",
+        "https://www.instagram.com/knowjee"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "category": "Educational",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "JEE Practice Quiz Series",
+      "description": "Comprehensive JEE practice quizzes covering Mathematics, Physics, and Chemistry",
+      "educationalLevel": "Higher Education",
+      "assesses": ["Mathematics", "Physics", "Chemistry"],
+      "numberOfQuestions": 90,
+      "hasPart": [
+        {
+          "@type": "Quiz",
+          "name": "JEE MATH Series 1",
+          "numberOfQuestions": 30,
+          "educationalLevel": "Easy"
+        },
+        {
+          "@type": "Quiz",
+          "name": "JEE PHYSICS Series 1",
+          "numberOfQuestions": 30,
+          "educationalLevel": "Easy"
+        },
+        {
+          "@type": "Quiz",
+          "name": "JEE CHEMISTRY Series 1",
+          "numberOfQuestions": 30,
+          "educationalLevel": "Easy"
+        }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <style>
+        .quiz-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .option-btn {
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .option-btn.selected {
+            background-color: #fbbf24;
+            border-color: #f59e0b;
+        }
+
+        .modal {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-yellow-50 to-amber-50 min-h-screen">
+
+    <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
+            <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle mobile menu"
+                    aria-expanded="false">
+                    <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
+                <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0" aria-label="Subject navigation">
+                    <a href="math.html" class="py-2 px-3 hover:text-yellow-900 rounded">JEE Math</a>
+                    <a href="physics.html" class="py-2 px-3 hover:text-yellow-900 rounded">JEE Physics</a>
+                    <a href="chem.html" class="py-2 px-3 hover:text-yellow-900 rounded">JEE Chemistry</a>
+                    <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
+                    <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
+                </nav>
+
+                <div
+                    class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+                    <div id="authSection" class="flex space-x-2">
+                        <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+                            onclick="loginPrompt()">Login</button>
+                        <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+                            onclick="registerPrompt()">Register</button>
+                    </div>
+                    <div id="userSection" class="hidden flex space-x-2 items-center">
+                        <span id="userEmail" class="font-semibold"></span>
+                        <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+                            onclick="logoutPrompt()">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
+            <nav class="flex flex-col px-6 py-4 space-y-2">
+                <a href="math.html" class="py-2 px-3 hover:bg-yellow-200 rounded">JEE Math</a>
+                <a href="physics.html" class="py-2 px-3 hover:bg-yellow-200 rounded">JEE Physics</a>
+                <a href="chem.html" class="py-2 px-3 hover:bg-yellow-200 rounded">JEE Chemistry</a>
+                <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
+                <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
+                <div class="pt-2 border-t border-yellow-300">
+                    <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
+                        <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+                            onclick="loginPrompt()">Login</button>
+                        <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+                            onclick="registerPrompt()">Register</button>
+                    </div>
+                    <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
+                        <span id="userEmailMobile" class="font-semibold"></span>
+                        <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+                            onclick="logoutPrompt()">Logout</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const mobileBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileBtn.addEventListener("click", () => {
+            const isExpanded = mobileMenu.classList.contains("hidden");
+            mobileMenu.classList.toggle("hidden");
+            mobileBtn.setAttribute("aria-expanded", isExpanded);
+        });
+    </script>
+
+    <!-- Quiz Cards View -->
+    <div id="quizCardsView" class="container mx-auto px-4 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold text-amber-900 mb-2">Free JEE Practice Quizzes 2025</h1>
+                <p class="text-amber-700 mb-4">Master JEE Main & Advanced with our comprehensive online mock tests.
+                    Practice 90+ questions across Math, Physics, and Chemistry with instant results and detailed
+                    solutions.</p>
+            </div>
+
+            <!-- Mathematics Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
+                    <span class="text-3xl mr-2">📐</span> JEE Mathematics Practice Tests
+                </h2>
+                <p class="text-gray-600 mb-4">Practice calculus, algebra, trigonometry, coordinate geometry, and more
+                    with our comprehensive JEE Math quizzes.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article
+                        class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
+                        onclick="startQuiz(1)">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-amber-900">JEE Math Series 1 - Calculus & Algebra</h3>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Comprehensive practice test covering derivatives, integrals,
+                            trigonometry, matrices, and coordinate geometry for JEE Main preparation.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500">📝 30 Questions</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Easy</span>
+                        </div>
+                    </article>
+
+                    <article
+                        class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
+                        onclick="startQuiz(2)">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-amber-900">JEE Math Series 2 - Advanced Topics</h3>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Advanced JEE questions on trigonometry, coordinate geometry, and
+                            complex numbers for serious aspirants.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500">📝 12 Questions</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Medium</span>
+                        </div>
+                    </article>
+
+                    <article
+                        class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
+                        onclick="startQuiz(3)">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-amber-900">JEE Math Series 3 - JEE Advanced</h3>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Challenging problems on 3D geometry, vectors, differential
+                            equations for JEE Advanced level preparation.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500">📝 15 Questions</span>
+                            <span
+                                class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-semibold">Difficult</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Physics Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
+                    <span class="text-3xl mr-2">⚡</span> JEE Physics Mock Tests
+                </h2>
+                <p class="text-gray-600 mb-4">Master mechanics, electromagnetism, optics, thermodynamics, and modern
+                    physics with our targeted JEE Physics quizzes.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
+                        onclick="startQuiz(4)">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-amber-900">JEE PHYSICS Series 1</h3>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mechanics and Motion</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500">📝 30 Questions</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Easy</span>
+                        </div>
+                    </div>
+
+                    <div class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
+                        onclick="startQuiz(5)">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-amber-900">JEE PHYSICS Series 2</h3>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Electromagnetism and Circuits</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500">📝 12 Questions</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Medium</span>
+                        </div>
+                    </div>
+
+                    <div class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
+                        onclick="startQuiz(6)">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-amber-900">JEE PHYSICS Series 3</h3>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Modern Physics and Optics</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500">📝 15 Questions</span>
+                            <span
+                                class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-semibold">Difficult</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Chemistry Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
+                <span class="text-3xl mr-2">🧪</span> Chemistry
+            </h2>
+            <p class="text-gray-600 mb-4">Explore physical, organic, and inorganic chemistry with our focused JEE
+                Chemistry quizzes, designed to strengthen concepts and problem-solving skills.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article
+                    class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1"
+                    onclick="startQuiz(7)">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-amber-900">JEE Chemistry Series 1</h3>
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Atomic Structure and Bonding</p>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500">📝 30 Questions</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Easy</span>
+                    </div>
+                </article>
+
+
+                <article
+                    class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1"
+                    onclick="startQuiz(8)">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-amber-900">JEE Chemistry Series 2</h3>
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Organic Reactions and Mechanisms</p>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500">📝 12 Questions</span>
+                        <span
+                            class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Medium</span>
+                    </div>
+                </article>
+
+                <article
+                    class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1"
+                    onclick="startQuiz(9)">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-amber-900">JEE Chemistry Series 3</h3>
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Physical Chemistry and Equilibrium</p>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500">📝 15 Questions</span>
+                        <span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-semibold">Difficult</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quizSection" class="hidden container mx-auto px-4 py-24">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6 border-2 border-amber-300">
+                <div class="flex justify-between items-center flex-wrap gap-4">
+                    <div>
+                        <h2 id="quizTitle" class="text-2xl font-bold text-amber-900"></h2>
+                        <p class="text-amber-700">Question <span id="currentQuestion">1</span> of <span
+                                id="totalQuestions">10</span></p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-right">
+                            <p class="text-sm text-amber-700">Time Remaining</p>
+                            <p id="timer" class="text-2xl font-bold text-amber-900">10:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 border-2 border-amber-300">
+                <div id="questionText" class="text-lg text-gray-800 mb-6 font-medium"></div>
+                <div id="optionsContainer" class="space-y-3">
+                    <!-- Options will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between items-center flex-wrap gap-3">
+                <button onclick="cancelQuiz()"
+                    class="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold">
+                    Cancel
+                </button>
+                <div class="flex gap-3">
+                    <button onclick="previousQuestion()" id="prevBtn"
+                        class="px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
+                        Previous
+                    </button>
+                    <button onclick="nextQuestion()" id="nextBtn"
+                        class="px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 font-semibold">
+                        Next
+                    </button>
+                    <button onclick="submitQuiz()" id="submitBtn"
+                        class="hidden px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="hidden fixed inset-0 modal flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border-4 border-amber-300 relative">
+            <button onclick="closeResults()"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">
+                ✕
+            </button>
+
+            <div class="p-8">
+                <h2 class="text-3xl font-bold text-amber-900 mb-6 text-center">Quiz Results</h2>
+
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-amber-100 rounded-full p-8 mb-4">
+                        <p class="text-6xl font-bold text-amber-900" id="scoreDisplay">0/0</p>
+                    </div>
+                    <p class="text-xl text-amber-700 font-semibold" id="percentageDisplay">0%</p>
+                </div>
+
+                <div id="reviewContainer" class="space-y-4 mb-6">
+                    <!-- Review items will be inserted here -->
+                </div>
+
+                <div class="flex justify-center">
+                    <button onclick="closeResults()"
+                        class="px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 font-semibold text-lg">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample quiz data
+        const quizzes = [
+            {
+                id: 1,
+                title: "JEE MATH Series 1",
+                difficulty: "Easy",
+                free: true,
+                duration: 1800,
+                questions: [
+                    {
+                        question: "What is $\\frac{d}{dx}(x^3)$?",
+                        options: ["$x^2$", "$3x^2$", "$3x$", "$x^3$"],
+                        correct: 1
+                    },
+                    {
+                        question: "Evaluate $\\int 2x dx$",
+                        options: ["$x^2 + C$", "$2x^2 + C$", "$\\frac{x^2}{2} + C$", "$x + C$"],
+                        correct: 0
+                    },
+                    {
+                        question: "What is the value of $\\sin(30°)$?",
+                        options: ["$\\frac{1}{2}$", "1", "$\\frac{\\sqrt{3}}{2}$", "0"],
+                        correct: 0
+                    },
+                    {
+                        question: "If $f(x) = x^2 + 3x + 2$, what is $f(1)$?",
+                        options: ["4", "6", "8", "5"],
+                        correct: 1
+                    },
+                    {
+                        question: "The roots of $x^2 - 5x + 6 = 0$ are:",
+                        options: ["2, 3", "1, 6", "-2, -3", "1, 5"],
+                        correct: 0
+                    },
+                    {
+                        question: "What is $\\cos(60°)$?",
+                        options: ["$\\frac{1}{2}$", "$\\frac{\\sqrt{3}}{2}$", "1", "0"],
+                        correct: 0
+                    },
+                    {
+                        question: "The sum of first n natural numbers is:",
+                        options: ["$\\frac{n(n+1)}{2}$", "$n(n+1)$", "$\\frac{n(n-1)}{2}$", "$n^2$"],
+                        correct: 0
+                    },
+                    {
+                        question: "If $\\log_2 8 = x$, then $x$ equals:",
+                        options: ["2", "3", "4", "8"],
+                        correct: 1
+                    },
+                    {
+                        question: "The derivative of $\\sin x$ is:",
+                        options: ["$\\cos x$", "$-\\cos x$", "$\\sin x$", "$-\\sin x$"],
+                        correct: 0
+                    },
+                    {
+                        question: "What is the slope of line $y = 3x + 5$?",
+                        options: ["3", "5", "-3", "8"],
+                        correct: 0
+                    },
+                    {
+                        question: "If $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$, then $|A|$ equals:",
+                        options: ["-2", "2", "10", "-10"],
+                        correct: 0
+                    },
+                    {
+                        question: "The value of $\\tan(45°)$ is:",
+                        options: ["1", "0", "$\\sqrt{3}$", "$\\frac{1}{\\sqrt{3}}$"],
+                        correct: 0
+                    },
+                    {
+                        question: "What is $\\lim_{x \\to 0} \\frac{\\sin x}{x}$?",
+                        options: ["0", "1", "$\\infty$", "Undefined"],
+                        correct: 1
+                    },
+                    {
+                        question: "The area under curve $y = x$ from $x = 0$ to $x = 2$ is:",
+                        options: ["1", "2", "4", "8"],
+                        correct: 1
+                    },
+                    {
+                        question: "If $\\vec{a} \\cdot \\vec{b} = 0$, then vectors are:",
+                        options: ["Parallel", "Perpendicular", "Equal", "Opposite"],
+                        correct: 1
+                    },
+                    {
+                        question: "The sum of angles in a triangle is:",
+                        options: ["90°", "180°", "270°", "360°"],
+                        correct: 1
+                    },
+                    {
+                        question: "What is $(a+b)^2$?",
+                        options: ["$a^2 + b^2$", "$a^2 + 2ab + b^2$", "$a^2 - b^2$", "$2ab$"],
+                        correct: 1
+                    },
+                    {
+                        question: "The value of $e^0$ is:",
+                        options: ["0", "1", "e", "$\\infty$"],
+                        correct: 1
+                    },
+                    {
+                        question: "If $P(A) = 0.3$ and $P(B) = 0.4$, and A and B are independent, then $P(A \\cap B)$ is:",
+                        options: ["0.12", "0.7", "0.1", "0.2"],
+                        correct: 0
+                    },
+                    {
+                        question: "The distance between points $(0,0)$ and $(3,4)$ is:",
+                        options: ["5", "7", "3", "4"],
+                        correct: 0
+                    },
+                    {
+                        question: "What is $\\frac{d}{dx}(e^x)$?",
+                        options: ["$e^x$", "$xe^{x-1}$", "$\\ln x$", "1"],
+                        correct: 0
+                    },
+                    {
+                        question: "The general solution of $\\frac{dy}{dx} = y$ is:",
+                        options: ["$y = Ce^x$", "$y = Cx$", "$y = C\\ln x$", "$y = x + C$"],
+                        correct: 0
+                    },
+                    {
+                        question: "If $z = x + iy$, then $|z|$ equals:",
+                        options: ["$x + y$", "$\\sqrt{x^2 + y^2}$", "$x^2 + y^2$", "$xy$"],
+                        correct: 1
+                    },
+                    {
+                        question: "The equation of circle with center $(0,0)$ and radius $r$ is:",
+                        options: ["$x + y = r$", "$x^2 + y^2 = r$", "$x^2 + y^2 = r^2$", "$xy = r^2$"],
+                        correct: 2
+                    },
+                    {
+                        question: "What is the value of $\\sin^2\\theta + \\cos^2\\theta$?",
+                        options: ["0", "1", "2", "$\\theta$"],
+                        correct: 1
+                    },
+                    {
+                        question: "The mean of 2, 4, 6, 8, 10 is:",
+                        options: ["5", "6", "7", "8"],
+                        correct: 1
+                    },
+                    {
+                        question: "If $f(x) = 3x^2$, then $f'(x)$ equals:",
+                        options: ["$3x$", "$6x$", "$x^2$", "$3$"],
+                        correct: 1
+                    },
+                    {
+                        question: "The number of diagonals in a hexagon is:",
+                        options: ["6", "9", "12", "15"],
+                        correct: 1
+                    },
+                    {
+                        question: "If $\\log_a b = 2$, then $b$ equals:",
+                        options: ["$2a$", "$a^2$", "$a/2$", "$\\sqrt{a}$"],
+                        correct: 1
+                    },
+                    {
+                        question: "The reciprocal of $\\tan\\theta$ is:",
+                        options: ["$\\cot\\theta$", "$\\sec\\theta$", "$\\csc\\theta$", "$\\cos\\theta$"],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: 4,
+                title: "JEE PHYSICS Series 1",
+                difficulty: "Easy",
+                free: true,
+                duration: 1800,
+                questions: [
+                    {
+                        question: "The SI unit of force is:",
+                        options: ["Joule", "Newton", "Watt", "Pascal"],
+                        correct: 1
+                    },
+                    {
+                        question: "A body of mass $m$ moving with velocity $v$ has kinetic energy:",
+                        options: ["$\\frac{1}{2}mv^2$", "$mv^2$", "$\\frac{1}{2}mv$", "$2mv^2$"],
+                        correct: 0
+                    },
+                    {
+                        question: "Newton's first law is also called law of:",
+                        options: ["Motion", "Inertia", "Momentum", "Energy"],
+                        correct: 1
+                    },
+                    {
+                        question: "If $F = ma$, and $m = 10$ kg, $a = 5$ m/s², then $F$ equals:",
+                        options: ["25 N", "50 N", "15 N", "2 N"],
+                        correct: 1
+                    },
+                    {
+                        question: "The dimension of velocity is:",
+                        options: ["$[LT^{-1}]$", "$[LT^{-2}]$", "$[MLT^{-1}]$", "$[L^2T^{-1}]$"],
+                        correct: 0
+                    },
+                    {
+                        question: "The escape velocity from Earth is approximately:",
+                        options: ["5.6 km/s", "11.2 km/s", "7.9 km/s", "15 km/s"],
+                        correct: 1
+                    },
+                    {
+                        question: "Work done is maximum when angle between force and displacement is:",
+                        options: ["0°", "90°", "180°", "45°"],
+                        correct: 0
+                    },
+                    {
+                        question: "The unit of power is:",
+                        options: ["Joule", "Newton", "Watt", "Pascal"],
+                        correct: 2
+                    },
+                    {
+                        question: "According to Newton's third law, action and reaction are:",
+                        options: ["Equal and parallel", "Equal and opposite", "Unequal and opposite", "Equal and perpendicular"],
+                        correct: 1
+                    },
+                    {
+                        question: "The acceleration due to gravity on Earth is approximately:",
+                        options: ["9.8 m/s²", "10.8 m/s²", "8.8 m/s²", "11.2 m/s²"],
+                        correct: 0
+                    },
+                    {
+                        question: "Momentum is the product of:",
+                        options: ["Mass and velocity", "Force and time", "Mass and acceleration", "Force and distance"],
+                        correct: 0
+                    },
+                    {
+                        question: "The SI unit of pressure is:",
+                        options: ["Newton", "Pascal", "Joule", "Watt"],
+                        correct: 1
+                    },
+                    {
+                        question: "Potential energy of a body at height $h$ is:",
+                        options: ["$mgh$", "$\\frac{1}{2}mgh$", "$mh$", "$gh$"],
+                        correct: 0
+                    },
+                    {
+                        question: "The speed of light in vacuum is:",
+                        options: ["$3 \\times 10^8$ m/s", "$3 \\times 10^6$ m/s", "$3 \\times 10^{10}$ m/s", "$3 \\times 10^5$ m/s"],
+                        correct: 0
+                    },
+                    {
+                        question: "Ohm's law states:",
+                        options: ["$V = IR$", "$V = I/R$", "$V = I + R$", "$I = VR$"],
+                        correct: 0
+                    },
+                    {
+                        question: "The SI unit of electric current is:",
+                        options: ["Volt", "Ampere", "Coulomb", "Ohm"],
+                        correct: 1
+                    },
+                    {
+                        question: "The frequency and time period are related as:",
+                        options: ["$f = T$", "$f = 1/T$", "$f = 2T$", "$f = T^2$"],
+                        correct: 1
+                    },
+                    {
+                        question: "Sound cannot travel through:",
+                        options: ["Air", "Water", "Vacuum", "Steel"],
+                        correct: 2
+                    },
+                    {
+                        question: "The refractive index of a medium is:",
+                        options: ["$c/v$", "$v/c$", "$cv$", "$c+v$"],
+                        correct: 0
+                    },
+                    {
+                        question: "A convex lens is also called:",
+                        options: ["Diverging lens", "Converging lens", "Plane lens", "Concave lens"],
+                        correct: 1
+                    },
+                    {
+                        question: "The unit of electric charge is:",
+                        options: ["Ampere", "Volt", "Coulomb", "Ohm"],
+                        correct: 2
+                    },
+                    {
+                        question: "Heat flows from:",
+                        options: ["Cold to hot", "Hot to cold", "Same temperature", "None"],
+                        correct: 1
+                    },
+                    {
+                        question: "The first law of thermodynamics is based on:",
+                        options: ["Conservation of momentum", "Conservation of energy", "Conservation of mass", "Conservation of charge"],
+                        correct: 1
+                    },
+                    {
+                        question: "In a simple pendulum, time period is independent of:",
+                        options: ["Length", "Mass", "Gravity", "Amplitude (for small angles)"],
+                        correct: 1
+                    },
+                    {
+                        question: "The SI unit of magnetic field is:",
+                        options: ["Tesla", "Weber", "Henry", "Gauss"],
+                        correct: 0
+                    },
+                    {
+                        question: "A transformer works on the principle of:",
+                        options: ["Self induction", "Mutual induction", "Electromagnetic induction", "Electrolysis"],
+                        correct: 1
+                    },
+                    {
+                        question: "The resistance of a conductor increases with:",
+                        options: ["Decrease in length", "Increase in area", "Increase in temperature", "Decrease in temperature"],
+                        correct: 2
+                    },
+                    {
+                        question: "In Young's double slit experiment, the fringe width is:",
+                        options: ["$\\frac{\\lambda D}{d}$", "$\\frac{\\lambda d}{D}$", "$\\lambda Dd$", "$\\frac{D}{\\lambda d}$"],
+                        correct: 0
+                    },
+                    {
+                        question: "The photoelectric effect was explained by:",
+                        options: ["Newton", "Einstein", "Bohr", "Planck"],
+                        correct: 1
+                    },
+                    {
+                        question: "The dimensional formula for energy is:",
+                        options: ["$[ML^2T^{-2}]$", "$[MLT^{-2}]$", "$[ML^2T^{-1}]$", "$[MLT^{-1}]$"],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: 7,
+                title: "JEE CHEMISTRY Series 1",
+                difficulty: "Easy",
+                free: true,
+                duration: 1800,
+                questions: [
+                    {
+                        question: "The atomic number of Carbon is:",
+                        options: ["4", "6", "8", "12"],
+                        correct: 1
+                    },
+                    {
+                        question: "Which of the following is a noble gas?",
+                        options: ["Oxygen", "Nitrogen", "Helium", "Hydrogen"],
+                        correct: 2
+                    },
+                    {
+                        question: "The general formula for alkanes is:",
+                        options: ["$C_nH_{2n}$", "$C_nH_{2n+2}$", "$C_nH_{2n-2}$", "$C_nH_n$"],
+                        correct: 1
+                    },
+                    {
+                        question: "Which functional group is present in alcohols?",
+                        options: ["-COOH", "-OH", "-CHO", "-NH₂"],
+                        correct: 1
+                    },
+                    {
+                        question: "The pH of pure water at 25°C is:",
+                        options: ["0", "7", "14", "1"],
+                        correct: 1
+                    },
+                    {
+                        question: "Avogadro's number is approximately:",
+                        options: ["$6.022 \\times 10^{23}$", "$6.022 \\times 10^{22}$", "$6.022 \\times 10^{24}$", "$6.022 \\times 10^{21}$"],
+                        correct: 0
+                    },
+                    {
+                        question: "The SI unit of amount of substance is:",
+                        options: ["Gram", "Kilogram", "Mole", "Liter"],
+                        correct: 2
+                    },
+                    {
+                        question: "An acid is a substance that donates:",
+                        options: ["Electrons", "Protons", "Neutrons", "Atoms"],
+                        correct: 1
+                    },
+                    {
+                        question: "The electronic configuration of Sodium (Z=11) is:",
+                        options: ["2, 8, 1", "2, 7, 2", "2, 8, 2", "2, 9"],
+                        correct: 0
+                    },
+                    {
+                        question: "Which bond is strongest?",
+                        options: ["Ionic bond", "Covalent bond", "Hydrogen bond", "Van der Waals"],
+                        correct: 1
+                    },
+                    {
+                        question: "The oxidation state of Oxygen in H₂O is:",
+                        options: ["+2", "-2", "0", "+1"],
+                        correct: 1
+                    },
+                    {
+                        question: "At STP, one mole of any gas occupies:",
+                        options: ["11.2 L", "22.4 L", "44.8 L", "5.6 L"],
+                        correct: 1
+                    },
+                    {
+                        question: "Which is an exothermic reaction?",
+                        options: ["Photosynthesis", "Combustion", "Evaporation", "Melting"],
+                        correct: 1
+                    },
+                    {
+                        question: "The law of constant composition was given by:",
+                        options: ["Dalton", "Proust", "Avogadro", "Boyle"],
+                        correct: 1
+                    },
+                    {
+                        question: "In the periodic table, elements are arranged by:",
+                        options: ["Mass number", "Atomic number", "Atomic mass", "Valency"],
+                        correct: 1
+                    },
+                    {
+                        question: "The valency of Nitrogen in NH₃ is:",
+                        options: ["1", "2", "3", "4"],
+                        correct: 2
+                    },
+                    {
+                        question: "A catalyst is a substance that:",
+                        options: ["Increases activation energy", "Decreases activation energy", "Changes equilibrium", "Gets consumed"],
+                        correct: 1
+                    },
+                    {
+                        question: "The shape of methane molecule is:",
+                        options: ["Linear", "Planar", "Tetrahedral", "Octahedral"],
+                        correct: 2
+                    },
+                    {
+                        question: "Which is not a state of matter?",
+                        options: ["Solid", "Liquid", "Gas", "Energy"],
+                        correct: 3
+                    },
+                    {
+                        question: "The common name of NaCl is:",
+                        options: ["Baking soda", "Table salt", "Washing soda", "Caustic soda"],
+                        correct: 1
+                    },
+                    {
+                        question: "An element X has mass number 23 and atomic number 11. The number of neutrons is:",
+                        options: ["11", "12", "23", "34"],
+                        correct: 1
+                    },
+                    {
+                        question: "Which gas is released during photosynthesis?",
+                        options: ["CO₂", "O₂", "N₂", "H₂"],
+                        correct: 1
+                    },
+                    {
+                        question: "The process of conversion of solid to gas is called:",
+                        options: ["Melting", "Evaporation", "Sublimation", "Condensation"],
+                        correct: 2
+                    },
+                    {
+                        question: "Hard water contains salts of:",
+                        options: ["Sodium", "Calcium and Magnesium", "Potassium", "Aluminum"],
+                        correct: 1
+                    },
+                    {
+                        question: "The pH of acidic solution is:",
+                        options: ["Less than 7", "Equal to 7", "Greater than 7", "Equal to 14"],
+                        correct: 0
+                    },
+                    {
+                        question: "Which is a greenhouse gas?",
+                        options: ["O₂", "N₂", "CO₂", "He"],
+                        correct: 2
+                    },
+                    {
+                        question: "The molecular formula of benzene is:",
+                        options: ["C₆H₆", "C₆H₁₂", "C₆H₁₄", "C₆H₈"],
+                        correct: 0
+                    },
+                    {
+                        question: "Which vitamin is water soluble?",
+                        options: ["Vitamin A", "Vitamin D", "Vitamin C", "Vitamin K"],
+                        correct: 2
+                    },
+                    {
+                        question: "The atomic mass unit is based on:",
+                        options: ["Hydrogen", "Carbon-12", "Oxygen-16", "Nitrogen-14"],
+                        correct: 1
+                    },
+                    {
+                        question: "Which metal is liquid at room temperature?",
+                        options: ["Sodium", "Mercury", "Aluminum", "Iron"],
+                        correct: 1
+                    }
+                ]
+            }
+        ];
+
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let timerInterval = null;
+        let timeRemaining = 0;
+
+        function startQuiz(quizId) {
+            currentQuiz = quizzes.find(q => q.id === quizId);
+
+            if (!currentQuiz) {
+                alert('This quiz is not available yet!');
+                return;
+            }
+
+            if (!currentQuiz.free) {
+                alert('This is a paid quiz. Please upgrade to access premium content.');
+                return;
+            }
+
+            currentQuestionIndex = 0;
+            userAnswers = new Array(currentQuiz.questions.length).fill(null);
+            timeRemaining = currentQuiz.duration;
+
+            document.getElementById('quizCardsView').classList.add('hidden');
+            document.getElementById('quizheader').classList.add('hidden');
+            document.getElementById('quizSection').classList.remove('hidden');
+            document.getElementById('quizTitle').textContent = currentQuiz.title;
+            document.getElementById('totalQuestions').textContent = currentQuiz.questions.length;
+
+            startTimer();
+            displayQuestion();
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                document.getElementById('timer').textContent =
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz();
+                }
+            }, 1000);
+        }
+
+        function displayQuestion() {
+            const question = currentQuiz.questions[currentQuestionIndex];
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('questionText').innerHTML = question.question;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = question.options.map((option, idx) => `
+                <button onclick="selectOption(${idx})" 
+                        class="option-btn w-full text-left p-4 border-2 border-amber-200 rounded-lg hover:border-amber-400 ${userAnswers[currentQuestionIndex] === idx ? 'selected' : ''}"
+                        id="option-${idx}">
+                    <span class="font-semibold text-amber-900">${String.fromCharCode(65 + idx)}.</span> 
+                    <span class="ml-2">${option}</span>
+                </button>
+            `).join('');
+
+            // Render KaTeX
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false }
+                ]
+            });
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextBtn').classList.toggle('hidden',
+                currentQuestionIndex === currentQuiz.questions.length - 1);
+            document.getElementById('submitBtn').classList.toggle('hidden',
+                currentQuestionIndex !== currentQuiz.questions.length - 1);
+        }
+
+        function selectOption(optionIdx) {
+            userAnswers[currentQuestionIndex] = optionIdx;
+            displayQuestion();
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < currentQuiz.questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+            }
+        }
+
+        function cancelQuiz() {
+            if (confirm('Are you sure you want to cancel? Your progress will be lost.')) {
+                clearInterval(timerInterval);
+                document.getElementById('quizSection').classList.add('hidden');
+                document.getElementById('quizCardsView').classList.remove('hidden');
+                document.getElementById('quizheader').classList.remove('hidden');
+            }
+        }
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+
+            let score = 0;
+            currentQuiz.questions.forEach((q, idx) => {
+                if (userAnswers[idx] === q.correct) score++;
+            });
+
+            document.getElementById('quizSection').classList.add('hidden');
+            document.getElementById('resultsModal').classList.remove('hidden');
+
+            document.getElementById('scoreDisplay').textContent =
+                `${score}/${currentQuiz.questions.length}`;
+            document.getElementById('percentageDisplay').textContent =
+                `${Math.round(score / currentQuiz.questions.length * 100)}% Correct`;
+
+            const reviewContainer = document.getElementById('reviewContainer');
+            reviewContainer.innerHTML = currentQuiz.questions.map((q, idx) => {
+                const isCorrect = userAnswers[idx] === q.correct;
+                const userAnswered = userAnswers[idx] !== null;
+                return `
+                    <div class="p-4 rounded-lg border-2 ${isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300'}">
+                        <p class="font-semibold mb-2 text-gray-800">Q${idx + 1}. ${q.question}</p>
+                        <p class="text-sm mb-1">
+                            <span class="font-medium">Your answer:</span> 
+                            <span class="${isCorrect ? 'text-green-700' : 'text-red-700'} font-semibold">
+                                ${userAnswered ? q.options[userAnswers[idx]] : 'Not answered'}
+                            </span>
+                        </p>
+                        ${!isCorrect ? `<p class="text-sm"><span class="font-medium">Correct answer:</span> <span class="text-green-700 font-semibold">${q.options[q.correct]}</span></p>` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            renderMathInElement(document.getElementById('reviewContainer'), {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false }
+                ]
+            });
+        }
+
+        function closeResults() {
+            document.getElementById('resultsModal').classList.add('hidden');
+            document.getElementById('quizCardsView').classList.remove('hidden');
+            document.getElementById('quizheader').classList.remove('hidden');
+        }
+    </script>
+
+    <script type="module">
+        window.registerPrompt = () => {
+            const email = prompt("Enter email:");
+            const password = prompt("Enter password:");
+            if (email && password) registerUser(email, password);
+        }
+
+        window.loginPrompt = () => {
+            const email = prompt("Enter email:");
+            const password = prompt("Enter password:");
+            if (email && password) loginUser(email, password);
+        }
+
+        window.logoutPrompt = () => {
+            logoutUser();
+        }
+
+        const authSection = document.getElementById("authSection");
+        const userSection = document.getElementById("userSection");
+        const userEmail = document.getElementById("userEmail");
+        const authSectionMobile = document.getElementById("authSectionMobile");
+        const userSectionMobile = document.getElementById("userSectionMobile");
+        const userEmailMobile = document.getElementById("userEmailMobile");
+
+        const updateUI = () => {
+            if (window.currentUser) {
+                authSection.classList.add("hidden");
+                userSection.classList.remove("hidden");
+                userEmail.textContent = window.currentUser.email;
+
+                authSectionMobile.classList.add("hidden");
+                userSectionMobile.classList.remove("hidden");
+                userEmailMobile.textContent = window.currentUser.email;
+            } else {
+                authSection.classList.remove("hidden");
+                userSection.classList.add("hidden");
+                userEmail.textContent = "";
+
+                authSectionMobile.classList.remove("hidden");
+                userSectionMobile.classList.add("hidden");
+                userEmailMobile.textContent = "";
+            }
+        };
+
+        document.addEventListener('firebaseAuthUpdated', updateUI);
+        updateUI();
+    </script>
+
+
+</body>
+
+</html>

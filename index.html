@@ -1,19 +1,113 @@
 
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JEE Math Solutions</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>KnowJEE - Best JEE Preparation Platform 2025 | IIT JEE Main & Advanced Online Coaching</title>
+  <meta name="description" content="KnowJEE offers free JEE preparation with expert guidance from IIT Roorkee M.Tech. Master Math, Physics & Chemistry with step-by-step solutions, mock tests & personalized mentorship for JEE Main & Advanced 2025." />
+  <meta name="keywords" content="JEE preparation, JEE Main 2025, JEE Advanced, IIT JEE coaching, online JEE classes, JEE math solutions, JEE physics, JEE chemistry, IIT Roorkee, free JEE study material, JEE mock tests, JEE previous year questions" />
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://knowjee.com/" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KnowJEE - Best JEE Preparation Platform 2025 | IIT Coaching by IIT Roorkee Graduate" />
+  <meta property="og:description" content="Learn from IIT Roorkee M.Tech graduate. Free JEE preparation with Math, Physics & Chemistry solutions, mock tests, and expert mentorship." />
+  <meta property="og:url" content="https://knowjee.com/" />
+  <meta property="og:site_name" content="KnowJEE" />
+  <meta property="og:image" content="https://knowjee.com/images/og-knowjee.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KnowJEE - Best JEE Preparation Platform 2025" />
+  <meta name="twitter:description" content="Master JEE with expert guidance from IIT Roorkee graduate. Free study material, mock tests & personalized mentorship." />
+  <meta name="twitter:image" content="https://knowjee.com/images/twitter-knowjee.jpg" />
+  <meta name="twitter:site" content="@knowjee" />
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "KnowJEE",
+    "description": "Premier online JEE preparation platform founded by IIT Roorkee M.Tech graduate Braj Bhushan Kumar",
+    "url": "https://knowjee.scincegeek.in",
+    "logo": "https://knowjee.sciencegeek.in/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Braj Bhushan Kumar",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "IIT Roorkee"
+      },
+      "jobTitle": "Founder & Educator"
+    },
+    "sameAs": [
+      "https://t.me/knowiitjee",
+      "https://www.youtube.com/@know_jEE",
+      "https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "know.iitjee@gmail.com",
+      "contactType": "Customer Support"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "JEE Main and Advanced Preparation Course",
+    "description": "Comprehensive JEE preparation covering Mathematics, Physics, and Chemistry with expert guidance",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "KnowJEE"
+    },
+    "educationalLevel": "Higher Education",
+    "teaches": ["Mathematics", "Physics", "Chemistry"],
+    "coursePrerequisites": "Class 11 and 12 Science background",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "courseWorkload": "PT2H"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "KnowJEE",
+    "url": "https://knowjee.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://knowjee.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-
-    <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/auth.js"></script>
 
   <style>
-    /* Elegant gradient background */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -26,7 +120,6 @@
       font-family: 'Inter', sans-serif;
     }
 
-    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -37,297 +130,340 @@
     .animate-fade-in.delay-600 { animation-delay: 0.6s; }
     .animate-fade-in.delay-800 { animation-delay: 0.8s; }
   </style>
-
 </head>
 <body class="text-yellow-900">
 
+  <header class="bg-yellow-100 shadow-md fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
+      <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
 
- <header class="bg-yellow-100 shadow-md fixed w-full z-50">
-  <div class="container mx-auto flex justify-between items-center py-4 px-6">
-    <!-- Logo -->
-    <a href="index.html" class="text-2xl font-bold text-yellow-900">KnowJEE</a>
-
-    <!-- Hamburger (mobile) -->
-    <div class="md:hidden">
-      <button id="mobileMenuBtn" class="focus:outline-none">
-        <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Nav + Auth -->
-    <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
-      <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0">
-        <a href="math.html" class="py-2 px-3 hover:text-yellow-900 rounded">Math</a>
-        <a href="physics.html" class="py-2 px-3 hover:text-yellow-900 rounded">Physics</a>
-        <a href="chem.html" class="py-2 px-3 hover:text-yellow-900 rounded">Chemistry</a>
-        <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Quizzes</a>
-        <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Questions</a>
-      </nav>
-
-      <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
-        <div id="authSection" class="flex space-x-2">
-          <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="loginPrompt()">Login</button>
-          <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="registerPrompt()">Register</button>
-        </div>
-        <div id="userSection" class="hidden flex space-x-2 items-center">
-          <span id="userEmail" class="font-semibold"></span>
-          <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500" onclick="logoutPrompt()">Logout</button>
-        </div>
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
-    </div>
-  </div>
 
-  <!-- Mobile menu overlay -->
-  <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
-    <nav class="flex flex-col px-6 py-4 space-y-2">
-      <a href="math.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Math</a>
-      <a href="physics.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Physics</a>
-      <a href="chem.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Chemistry</a>
-      <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Quizzes</a>
-      <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Questions</a>
-      <div class="pt-2 border-t border-yellow-300">
-        <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
-          <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="loginPrompt()">Login</button>
-          <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="registerPrompt()">Register</button>
-        </div>
-        <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
-          <span id="userEmailMobile" class="font-semibold"></span>
-          <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500" onclick="logoutPrompt()">Logout</button>
+      <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
+        <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0" aria-label="Subject navigation">
+          <a href="math.html" class="py-2 px-3 hover:text-yellow-900 rounded">JEE Math</a>
+          <a href="physics.html" class="py-2 px-3 hover:text-yellow-900 rounded">JEE Physics</a>
+          <a href="chem.html" class="py-2 px-3 hover:text-yellow-900 rounded">JEE Chemistry</a>
+          <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
+          <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
+        </nav>
+
+        <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div id="authSection" class="flex space-x-2">
+            <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="loginPrompt()">Login</button>
+            <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="registerPrompt()">Register</button>
+          </div>
+          <div id="userSection" class="hidden flex space-x-2 items-center">
+            <span id="userEmail" class="font-semibold"></span>
+            <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500" onclick="logoutPrompt()">Logout</button>
+          </div>
         </div>
       </div>
     </nav>
-  </div>
-</header>
 
-<script>
-  const mobileBtn = document.getElementById("mobileMenuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  mobileBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
-
-
-
-
-
-<!-- HERO -->
-<section class="flex flex-col items-center justify-center text-center py-16">
-  <h1 class="pt-12 sm:pt-16 md:pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-sm animate-fade-in text-center md:text-left px-2 py-10">
-   Welcome to <span class="text-yellow-600">KnowJEE</span>!
-</h1>
-
-  <p class="text-xl md:text-2xl text-yellow-800/80 mb-10 animate-fade-in delay-200">
-    Learn Smarter. Prepare Better. Crack JEE with Confidence.
-  </p>
-
-  <div class="flex flex-wrap justify-center gap-8 animate-fade-in delay-400">
-    <a href="https://t.me/knowiitjee" target="_blank" 
-       class="px-10 py-4 font-semibold text-lg text-yellow-800 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-yellow-200">
-      📢 Telegram
-    </a>
-    <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" 
-       class="px-10 py-4 font-semibold text-lg text-green-700 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-green-200">
-      💬 WhatsApp
-    </a>
-    <a href="https://www.youtube.com/@know_jEE" target="_blank" 
-       class="px-10 py-4 font-semibold text-lg text-red-600 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-red-200">
-      🔔 Subscribe
-    </a>
-  </div>
-
-  <p class="mt-12 text-lg md:text-xl italic animate-fade-in delay-600 text-yellow-700/80">
-    Links are available in the description box <span class="font-bold">KnowJEE</span>.
-  </p>
-
-  <button id="startVideoBtn" 
-          class="mt-10 px-14 py-5 bg-gradient-to-r from-yellow-400 to-amber-400 text-white font-bold text-xl rounded-full hover:from-yellow-500 hover:to-amber-500 transition transform hover:scale-105 shadow-md animate-fade-in delay-800">
-    ▶ Start Learning
-  </button>
-</section>
-
-
-<!-- Hero Section (Elegant Yellowish Theme) -->
-<section class="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-16">
-  <div class="max-w-6xl text-center space-y-8">
-    
-    <p class="text-2xl md:text-3xl text-yellow-800 max-w-4xl mx-auto animate-fade-in delay-200">
-      I am <span class="font-semibold text-orange-600">Braj Bhushan Kumar</span>, M.Tech. from IIT Roorkee and founder of KnowJEE.<br>
-      Learn smarter, practice better, and build confidence with step-by-step learning, personalized mentorship, and exam-focused strategies.<br>
-      Together, we’ll <span class="font-bold text-yellow-700">crack JEE Mains & Advanced</span>!
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-8 mt-10 animate-fade-in delay-400">
-      
-      <div class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
-        <h3 class="text-2xl font-bold text-yellow-700 mb-4">🔥 Why Choose Us?</h3>
-        <ul class="list-disc pl-6 text-yellow-900 space-y-2 text-lg">
-          <li>Learn directly from IIT Roorkee graduate</li>
-          <li>Clear, step-by-step explanations</li>
-          <li>Smart tricks & deep understanding</li>
-          <li>Regular PYQ discussions</li>
-        </ul>
-      </div>
-
-      <div class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
-        <h3 class="text-2xl font-bold text-orange-700 mb-4">📢 Join Our Batch</h3>
-        <ul class="list-disc pl-6 text-yellow-900 space-y-2 text-lg">
-          <li>Personalized mentorship & doubt solving</li>
-          <li>Structured study plans</li>
-          <li>Focus on scoring high</li>
-          <li>Comprehensive preparation</li>
-        </ul>
-      </div>
-
-      <div class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
-        <h3 class="text-2xl font-bold text-amber-700 mb-4">🚀 Our Mission</h3>
-        <p class="text-yellow-900 text-lg">
-          To empower every aspirant with knowledge, confidence, and the right exam strategy to achieve their IIT dream.<br>
-          Be part of the <span class="font-bold text-yellow-700">KnowJEE family</span> today!
-        </p>
-      </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
+      <nav class="flex flex-col px-6 py-4 space-y-2">
+        <a href="math.html" class="py-2 px-3 hover:bg-yellow-200 rounded">JEE Math</a>
+        <a href="physics.html" class="py-2 px-3 hover:bg-yellow-200 rounded">JEE Physics</a>
+        <a href="chem.html" class="py-2 px-3 hover:bg-yellow-200 rounded">JEE Chemistry</a>
+        <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
+        <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
+        <div class="pt-2 border-t border-yellow-300">
+          <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="loginPrompt()">Login</button>
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400" onclick="registerPrompt()">Register</button>
+          </div>
+          <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
+            <span id="userEmailMobile" class="font-semibold"></span>
+            <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500" onclick="logoutPrompt()">Logout</button>
+          </div>
+        </div>
+      </nav>
     </div>
+  </header>
 
-   
-  </div>
-</section>
+  <script>
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      const isExpanded = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileBtn.setAttribute("aria-expanded", isExpanded);
+    });
+  </script>
 
-
-
-<section class="py-24 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
-  <div class="container mx-auto text-center mb-12">
-    <h1 class="text-4xl font-bold mb-4">Welcome to KnowJEE</h1>
-    <p class="text-lg">Select a subject to start learning JEE concepts with theory, examples, and quizzes.</p>
-  </div>
-
-  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
-    <!-- Math Card -->
-    <a href="math.html" class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
-      <div class="mb-4">
-        <!-- Calculator Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-    <path d="M3 12h4l3 8 5-16h6" />
-  </svg>
-      </div>
-      <h2 class="text-2xl font-bold mb-2">Mathematics</h2>
-      <p>Explore Algebra, Calculus, Trigonometry, and more.</p>
-    </a>
-
-    <!-- Physics Card -->
-    <a href="physics.html" class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
-      <div class="mb-4">
-        <!-- Atom Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <circle cx="12" cy="12" r="2" stroke-width="2"/>
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke-width="2"/>
-          <ellipse cx="12" cy="12" rx="4" ry="10" stroke-width="2"/>
-        </svg>
-      </div>
-      <h2 class="text-2xl font-bold mb-2">Physics</h2>
-      <p>Learn Mechanics, Thermodynamics, Optics, and other concepts.</p>
-    </a>
-
-    <!-- Chemistry Card -->
-    <a href="chem.html" class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
-      <div class="mb-4">
-        <!-- Flask Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path d="M10 2v6l-6 10a2 2 0 002 2h12a2 2 0 002-2l-6-10V2" stroke-width="2"/>
-        </svg>
-      </div>
-      <h2 class="text-2xl font-bold mb-2">Chemistry</h2>
-      <p>Master Physical, Organic, and Inorganic Chemistry.</p>
-    </a>
-  </div>
-</section>
-
-
-
-
-<!-- Contact & Follow Section (Yellowish Theme, Vertical Stack) -->
-<section class="relative w-full flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-24">
-  <div class="max-w-3xl text-center space-y-6">
-    
-    <h2 class="text-4xl md:text-5xl font-extrabold drop-shadow-sm animate-fade-in">
-      💬 Have a Query or Suggestion?
-    </h2>
-    
-    <p class="text-xl md:text-2xl text-yellow-800 animate-fade-in delay-200">
-      We’d love to hear from you! Drop your comments below, or follow our channels for the latest updates and guidance.
-    </p>
-    
-    <div class="flex flex-col gap-6 mt-8 animate-fade-in delay-400">
-      
-      <a href="mailto:know.iitjee@gmail.com" target="_blank"
-         class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
-        know.iitjee@gmail.com
-      </a>
-      
-      <a href="https://t.me/knowiitjee" target="_blank"
-         class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
-        📱 Join Our Telegram Channel
-      </a>
-      
-      <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
-         class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
-        💬 Join Our WhatsApp Channel
-      </a>
-      
-    </div>
-
-    <p class="mt-6 text-yellow-700 text-sm animate-fade-in delay-600">
-      #KnowJEE #JEEPreparation #Queries #Suggestions #FollowUs
-    </p>
-  </div>
-</section>
-
-
-<!-- Contact & Follow Section (Yellowish Theme) -->
-<section class="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-16">
-  <div class="max-w-5xl text-center space-y-8">
-    
-    <h1 class="text-5xl md:text-6xl font-extrabold drop-shadow-sm animate-fade-in">
-      💡 Stay Connected with <span class="text-yellow-600">KnowJEE</span>!
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center text-center py-16">
+    <h1 class="pt-12 sm:pt-16 md:pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-sm animate-fade-in text-center md:text-left px-2 py-10">
+      Best JEE Preparation Platform 2025 - <span class="text-yellow-600">KnowJEE</span>
     </h1>
-    
-    <p class="text-2xl md:text-3xl text-yellow-800 animate-fade-in delay-200">
-      Comment, ask questions, or share your suggestions! Follow our channels for updates and guidance.
+
+    <p class="text-xl md:text-2xl text-yellow-800/80 mb-10 animate-fade-in delay-200">
+      Learn Smarter. Prepare Better. Crack JEE Main & Advanced with Expert Guidance from IIT Roorkee Graduate.
     </p>
-    
-    <div class="flex flex-col md:flex-row justify-center gap-8 mt-10 animate-fade-in delay-400">
-      
-      <a href="https://t.me/knowiitjee" target="_blank"
-         class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
-        📱 Telegram <br/> t.me/knowiitjee
+
+    <div class="flex flex-wrap justify-center gap-8 animate-fade-in delay-400">
+      <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+         class="px-10 py-4 font-semibold text-lg text-yellow-800 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-yellow-200"
+         aria-label="Join KnowJEE Telegram Channel">
+        📢 Join Telegram Community
       </a>
-      
-      <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
-         class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
-        💬 WhatsApp <br/> Join our channel
+      <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+         class="px-10 py-4 font-semibold text-lg text-green-700 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-green-200"
+         aria-label="Join KnowJEE WhatsApp Channel">
+        💬 Join WhatsApp Updates
       </a>
-      
-      <a href="https://www.youtube.com/@know_jEE" target="_blank"
-         class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
-        ▶ YouTube <br/> Subscribe Now
+      <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+         class="px-10 py-4 font-semibold text-lg text-red-600 rounded-full bg-white/90 shadow-md hover:shadow-lg transition transform hover:scale-105 border border-red-200"
+         aria-label="Subscribe to KnowJEE YouTube Channel">
+        🔔 Subscribe YouTube
       </a>
-      
     </div>
-    
-    <p class="mt-12 text-xl md:text-2xl italic animate-fade-in delay-600 text-yellow-800">
-      Thank you for supporting <span class="font-bold text-yellow-700">KnowJEE</span>!  
-      Links are available above.
+
+    <p class="mt-12 text-lg md:text-xl italic animate-fade-in delay-600 text-yellow-700/80">
+      Join 10,000+ JEE aspirants learning with <span class="font-bold">KnowJEE</span>
     </p>
 
+    <button id="startVideoBtn" 
+            class="mt-10 px-14 py-5 bg-gradient-to-r from-yellow-400 to-amber-400 text-white font-bold text-xl rounded-full hover:from-yellow-500 hover:to-amber-500 transition transform hover:scale-105 shadow-md animate-fade-in delay-800"
+            aria-label="Start Learning JEE Preparation">
+      ▶ Start Free JEE Preparation
+    </button>
+  </section>
 
-  </div>
-</section>
+  <!-- About Founder Section -->
+  <section class="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-16">
+    <div class="max-w-6xl text-center space-y-8">
+      <h2 class="text-4xl md:text-5xl font-extrabold drop-shadow-sm animate-fade-in">
+        Learn from IIT Roorkee M.Tech Graduate
+      </h2>
+      
+      <p class="text-2xl md:text-3xl text-yellow-800 max-w-4xl mx-auto animate-fade-in delay-200">
+        I am <span class="font-semibold text-orange-600">Braj Bhushan Kumar</span>, M.Tech. from IIT Roorkee and founder of KnowJEE.<br>
+        With years of teaching experience, I help JEE aspirants master concepts through step-by-step learning, personalized mentorship, and proven exam strategies.<br>
+        Together, we'll <span class="font-bold text-yellow-700">crack JEE Mains & Advanced</span>!
+      </p>
 
+      <div class="grid md:grid-cols-3 gap-8 mt-10 animate-fade-in delay-400">
+        
+        <article class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+          <h3 class="text-2xl font-bold text-yellow-700 mb-4">🔥 Why Choose KnowJEE?</h3>
+          <ul class="list-disc pl-6 text-yellow-900 space-y-2 text-lg">
+            <li>Learn from IIT Roorkee M.Tech graduate</li>
+            <li>Clear, step-by-step concept explanations</li>
+            <li>Smart shortcuts & deep understanding</li>
+            <li>Regular PYQ analysis & solutions</li>
+            <li>Free study material & resources</li>
+          </ul>
+        </article>
 
+        <article class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+          <h3 class="text-2xl font-bold text-orange-700 mb-4">📢 Personalized Mentorship</h3>
+          <ul class="list-disc pl-6 text-yellow-900 space-y-2 text-lg">
+            <li>One-on-one doubt solving sessions</li>
+            <li>Customized study plans for JEE success</li>
+            <li>Focus on scoring high in competitive exams</li>
+            <li>Comprehensive JEE Main & Advanced prep</li>
+            <li>24/7 community support</li>
+          </ul>
+        </article>
 
+        <article class="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+          <h3 class="text-2xl font-bold text-amber-700 mb-4">🚀 Our Mission</h3>
+          <p class="text-yellow-900 text-lg">
+            To empower every JEE aspirant with quality education, strategic guidance, and the confidence needed to achieve their IIT dream.<br>
+            Be part of the <span class="font-bold text-yellow-700">KnowJEE family</span> and unlock your potential today!
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subject Cards Section -->
+  <section class="py-24 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <div class="container mx-auto text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4">JEE Study Material - Math, Physics & Chemistry</h2>
+      <p class="text-lg">Select a subject to access comprehensive theory, solved examples, practice problems, and topic-wise mock tests for JEE preparation.</p>
+    </div>
+
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
+      
+      <article class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
+        <a href="math.html" class="flex flex-col items-center" aria-label="JEE Mathematics preparation">
+          <div class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M3 12h4l3 8 5-16h6" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">JEE Mathematics</h3>
+          <p>Master Algebra, Calculus, Trigonometry, Coordinate Geometry, Vectors & 3D Geometry for JEE Main & Advanced.</p>
+        </a>
+      </article>
+
+      <article class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
+        <a href="physics.html" class="flex flex-col items-center" aria-label="JEE Physics preparation">
+          <div class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <circle cx="12" cy="12" r="2" stroke-width="2"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4" stroke-width="2"/>
+              <ellipse cx="12" cy="12" rx="4" ry="10" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">JEE Physics</h3>
+          <p>Learn Mechanics, Thermodynamics, Electromagnetism, Optics, Modern Physics & Waves for JEE success.</p>
+        </a>
+      </article>
+
+      <article class="bg-yellow-50 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-8 flex flex-col items-center text-center">
+        <a href="chem.html" class="flex flex-col items-center" aria-label="JEE Chemistry preparation">
+          <div class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path d="M10 2v6l-6 10a2 2 0 002 2h12a2 2 0 002-2l-6-10V2" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">JEE Chemistry</h3>
+          <p>Master Physical Chemistry, Organic Chemistry & Inorganic Chemistry with detailed solutions and tricks.</p>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="relative w-full flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-24">
+    <div class="max-w-3xl text-center space-y-6">
+      
+      <h2 class="text-4xl md:text-5xl font-extrabold drop-shadow-sm animate-fade-in">
+        💬 Have Questions About JEE Preparation?
+      </h2>
+      
+      <p class="text-xl md:text-2xl text-yellow-800 animate-fade-in delay-200">
+        Get instant answers to your doubts! Connect with us through email or join our active Telegram and WhatsApp communities.
+      </p>
+      
+      <div class="flex flex-col gap-6 mt-8 animate-fade-in delay-400">
+        
+        <a href="mailto:know.iitjee@gmail.com" target="_blank" rel="noopener noreferrer"
+           class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105"
+           aria-label="Email KnowJEE">
+          📧 know.iitjee@gmail.com
+        </a>
+        
+        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+           class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105"
+           aria-label="Join Telegram for JEE updates">
+          📱 Join Telegram - Daily JEE Updates
+        </a>
+        
+        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+           class="relative inline-block px-10 py-4 font-semibold text-lg text-white rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 shadow-lg hover:shadow-2xl transition transform hover:scale-105"
+           aria-label="Join WhatsApp for JEE preparation">
+          💬 Join WhatsApp - Free Study Material
+        </a>
+      </div>
+
+      <p class="mt-6 text-yellow-700 text-sm animate-fade-in delay-600">
+        #KnowJEE #JEEPreparation #JEEMain2025 #JEEAdvanced #IITPreparation
+      </p>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900 overflow-hidden px-6 md:px-16 py-16">
+    <div class="max-w-5xl text-center space-y-8">
+      
+      <h2 class="text-5xl md:text-6xl font-extrabold drop-shadow-sm animate-fade-in">
+        💡 Join the <span class="text-yellow-600">KnowJEE Community</span>!
+      </h2>
+      
+      <p class="text-2xl md:text-3xl text-yellow-800 animate-fade-in delay-200">
+        Connect with thousands of JEE aspirants. Get daily tips, solved problems, and motivation. Follow us for regular updates!
+      </p>
+      
+      <div class="flex flex-col md:flex-row justify-center gap-8 mt-10 animate-fade-in delay-400">
+        
+        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+           class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105"
+           aria-label="KnowJEE Telegram Channel">
+          📱 Telegram <br/> t.me/knowiitjee
+        </a>
+        
+        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+           class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105"
+           aria-label="KnowJEE WhatsApp Channel">
+          💬 WhatsApp <br/> Daily Updates
+        </a>
+        
+        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+           class="bg-white/80 backdrop-blur-md rounded-3xl px-12 py-8 font-bold text-2xl text-yellow-900 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105"
+           aria-label="KnowJEE YouTube Channel">
+          ▶ YouTube <br/> Video Solutions
+        </a>
+      </div>
+      
+      <p class="mt-12 text-xl md:text-2xl italic animate-fade-in delay-600 text-yellow-800">
+        Thank you for choosing <span class="font-bold text-yellow-700">KnowJEE</span> for your JEE preparation journey!
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-900 text-yellow-100 py-8">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">KnowJEE</h3>
+          <p class="text-sm">Your trusted partner for JEE Main & Advanced preparation. Founded by IIT Roorkee graduate.</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+            <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/study-material" class="hover:text-yellow-300">Free Study Material</a></li>
+            <li><a href="/previous-year-papers" class="hover:text-yellow-300">Previous Year Questions</a></li>
+            <li><a href="/solutions" class="hover:text-yellow-300">Detailed Solutions</a></li>
+            <li><a href="/tips" class="hover:text-yellow-300">Exam Tips & Tricks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Connect With Us</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-300">Telegram Community</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-300">WhatsApp Channel</a></li>
+            <li><a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-300">YouTube Channel</a></li>
+            <li><a href="mailto:know.iitjee@gmail.com" class="hover:text-yellow-300">Email Support</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center">
+        <p class="text-sm mb-4">© 2025 KnowJEE - Best JEE Preparation Platform. All rights reserved.</p>
+        <div class="flex justify-center gap-4 text-xs">
+          <a href="/privacy-policy" class="hover:text-yellow-300">Privacy Policy</a>
+          <span>|</span>
+          <a href="/terms-conditions" class="hover:text-yellow-300">Terms & Conditions</a>
+          <span>|</span>
+          <a href="/refund-policy" class="hover:text-yellow-300">Refund Policy</a>
+          <span>|</span>
+          <a href="/contact" class="hover:text-yellow-300">Contact Us</a>
+        </div>
+        <p class="text-xs mt-4 text-yellow-300">Founded by Braj Bhushan Kumar - M.Tech IIT Roorkee</p>
+      </div>
+    </div>
+  </footer>
 
   <script type="module">
     window.registerPrompt = () => {
@@ -349,26 +485,33 @@
     const authSection = document.getElementById("authSection");
     const userSection = document.getElementById("userSection");
     const userEmail = document.getElementById("userEmail");
+    const authSectionMobile = document.getElementById("authSectionMobile");
+    const userSectionMobile = document.getElementById("userSectionMobile");
+    const userEmailMobile = document.getElementById("userEmailMobile");
 
     const updateUI = () => {
       if (window.currentUser) {
         authSection.classList.add("hidden");
         userSection.classList.remove("hidden");
         userEmail.textContent = window.currentUser.email;
+        
+        authSectionMobile.classList.add("hidden");
+        userSectionMobile.classList.remove("hidden");
+        userEmailMobile.textContent = window.currentUser.email;
       } else {
         authSection.classList.remove("hidden");
         userSection.classList.add("hidden");
         userEmail.textContent = "";
+        
+        authSectionMobile.classList.remove("hidden");
+        userSectionMobile.classList.add("hidden");
+        userEmailMobile.textContent = "";
       }
     };
 
     document.addEventListener('firebaseAuthUpdated', updateUI);
     updateUI();
   </script>
-
-
-
-
 
 </body>
 </html>
