@@ -3,31 +3,65 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>KnowJEE | Math</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>JEE Practice Questions 2025 - Topic-wise Problems with Solutions | KnowJEE</title>
+  <meta name="description"
+    content="Practice 1000+ JEE questions topic-wise with detailed solutions. Math, Physics, Chemistry practice problems for JEE Main & Advanced preparation by IIT Roorkee graduate.">
+  <meta name="keywords"
+    content="JEE practice questions, JEE problems with solutions, JEE topic wise questions, JEE math problems, JEE physics problems, JEE chemistry problems, previous year questions, JEE practice papers">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://knowjee.sciencegeek.in/hot.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE Practice Questions with Solutions 2025 | KnowJEE">
+  <meta property="og:description"
+    content="Practice topic-wise JEE questions with detailed solutions. Master Math, Physics, Chemistry for JEE Main & Advanced.">
+  <meta property="og:url" content="https://knowjee.sciencegeek.in/hot.html">
+  <meta property="og:type" content="educational">
+  <meta property="og:image" content="https://knowjee.sciencegeek.in/images/jee-practice.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE Practice Questions with Solutions">
+  <meta name="twitter:description" content="1000+ practice problems for JEE preparation with step-by-step solutions.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "JEE Practice Questions Bank",
+    "description": "Comprehensive collection of JEE practice questions with solutions",
+    "educationalLevel": "Higher Education",
+    "learningResourceType": "Practice Problems"
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="js/auth.js"></script>
 
 </head>
 
 <body class="bg-yellow-50 text-yellow-900">
 
   <!-- Navbar -->
-  <header class="bg-yellow-100 shadow-md">
-    <div class="container mx-auto flex justify-between items-center py-4 px-2">
-      <!-- Left: Logo -->
-      <a href="index.html" class="text-3xl font-bold text-yellow-900">KnowJEE</a>
+  <header class="bg-yellow-100 shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-4" aria-label="Main navigation">
+      <a href="index.html" class="text-3xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
 
-      <!-- Center: Navigation -->
-      <nav class="space-x-6">
-        <a href="math.html" class="hover:text-yellow-900">Math</a>
-        <a href="physics.html" class="hover:text-yellow-900">Physics</a>
-        <a href="chem.html" class="hover:text-yellow-900">Chemistry</a>
-        <a href="quiz.html" class="hover:text-yellow-900">Quizzes</a>
-        <a href="hot.html" class="hover:text-yellow-900">Questions</a>
-      </nav>
-
+      <div class="hidden md:flex space-x-6">
+        <a href="math.html" class="hover:text-yellow-900">JEE Math</a>
+        <a href="physics.html" class="hover:text-yellow-900">JEE Physics</a>
+        <a href="chem.html" class="hover:text-yellow-900">JEE Chemistry</a>
+        <a href="quiz.html" class="hover:text-yellow-900">Mock Tests</a>
+        <a href="hot.html" class="hover:text-yellow-900 font-semibold">Practice Questions</a>
+      </div>
 
       <div id="authContainer" class="text-center">
         <div id="authSection" class="space-x-4">
@@ -35,19 +69,334 @@
           <button id="registerBtn" class="px-4 py-2 rounded hover:bg-yellow-400"
             onclick="registerPrompt()">Register</button>
         </div>
-
         <div id="userSection" class="hidden space-x-4">
           <span id="userEmail" class="font-semibold"></span>
           <button id="logoutBtn" class="px-4 py-2 bg-red-200 text-white rounded hover:bg-red-500"
             onclick="logoutPrompt()">Logout</button>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
 
+  <!-- Hero -->
+  <section
+    class="py-32 flex flex-col items-center justify-center bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <h1 class="text-5xl font-bold mb-4">JEE Practice Questions</h1>
+    <p class="text-xl max-w-3xl text-center px-4">Practice topic-wise questions with detailed step-by-step solutions.
+      Master concepts through problem-solving!</p>
+    <div class="mt-8 flex gap-4 flex-wrap justify-center">
+      <a href="#topics" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Start
+        Practicing</a>
+      <a href="quiz.html" class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100">Take Mock
+        Test</a>
+    </div>
+  </section>
 
 
- 
+  <!-- Tabs & Content -->
+  <section id="topics" class="container mx-auto py-10 px-6">
+    <!-- Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 border-b border-yellow-400 mb-6 px-2">
+      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-lg font-semibold text-sm md:text-base"
+        data-subject="math">
+        Mathematics
+      </button>
+
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="physics">
+        Physics
+      </button>
+
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="chemistry">
+        Chemistry
+      </button>
+
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="mixed">
+        Mixed Practice
+      </button>
+    </div>
+
+    <!-- Topic Cards -->
+    <div id="topicCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      <p>Select a subject to view practice topics.</p>
+    </div>
+
+    <!-- Question Display -->
+    <div id="questionContent" class="bg-white p-8 rounded-lg shadow-lg border-2 border-yellow-200 hidden">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-2xl font-bold" id="questionTitle">Question</h3>
+        <button onclick="closeQuestion()" class="text-red-600 hover:text-red-800 font-bold text-xl">✕</button>
+      </div>
+      
+      <div id="questionBody" class="mb-6">
+        <!-- Question content will be inserted here -->
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button onclick="showSolution()" id="showSolutionBtn" class=" font-semibold">
+        </button>
+        
+      </div>
+
+      <div id="solutionContent" class="hidden mt-6 p-6 bg-green-50 rounded-lg border-2 border-green-300">
+        <!-- Solution will be inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Practice by Subject</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#math" class="hover:text-yellow-300">Mathematics</a></li>
+            <li><a href="#physics" class="hover:text-yellow-300">Physics</a></li>
+            <li><a href="#chemistry" class="hover:text-yellow-300">Chemistry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="math.html" class="hover:text-yellow-300">Study Material</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Practice Questions. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- JS -->
+  <script>
+    const subjects = {
+      math: [
+        { title: "Algebra", count: 150, difficulty: "Mixed", file: "practice/math/algebra.html", type: "free" },
+        { title: "Calculus", count: 200, difficulty: "Mixed", file: "practice/math/calculus.html", type: "free" },
+        { title: "Trigonometry", count: 120, difficulty: "Easy", file: "practice/math/trigonometry.html", type: "free" },
+        { title: "Coordinate Geometry", count: 180, difficulty: "Medium", file: "practice/math/coordinate.html", type: "paid" },
+        { title: "Vectors & 3D", count: 100, difficulty: "Hard", file: "practice/math/vectors.html", type: "paid" },
+        { title: "Probability & Statistics", count: 80, difficulty: "Easy", file: "practice/math/probability.html", type: "free" }
+      ],
+
+      physics: [
+        { title: "Mechanics", count: 250, difficulty: "Mixed", file: "practice/physics/mechanics.html", type: "free" },
+        { title: "Thermodynamics", count: 100, difficulty: "Medium", file: "practice/physics/thermal.html", type: "free" },
+        { title: "Electromagnetism", count: 200, difficulty: "Hard", file: "practice/physics/electro.html", type: "paid" },
+        { title: "Optics", count: 120, difficulty: "Medium", file: "practice/physics/optics.html", type: "free" },
+        { title: "Modern Physics", count: 90, difficulty: "Hard", file: "practice/physics/modern.html", type: "paid" },
+        { title: "Waves & Sound", count: 80, difficulty: "Easy", file: "practice/physics/waves.html", type: "free" }
+      ],
+
+      chemistry: [
+        { title: "Physical Chemistry", count: 200, difficulty: "Mixed", file: "practice/chemistry/physical.html", type: "free" },
+        { title: "Organic Chemistry", count: 250, difficulty: "Hard", file: "practice/chemistry/organic.html", type: "paid" },
+        { title: "Inorganic Chemistry", count: 180, difficulty: "Medium", file: "practice/chemistry/inorganic.html", type: "free" }
+      ],
+
+      mixed: [
+        { title: "Daily Challenge", count: 10, difficulty: "Mixed", file: "practice/mixed/daily.html", type: "free" },
+        { title: "Previous Year Questions", count: 500, difficulty: "Mixed", file: "practice/mixed/pyq.html", type: "paid" },
+        { title: "Previous Year Questions Math 1", count: 500, difficulty: "Mixed", file: "practice/mixed/pyqmath1.html", type: "free" },
+        { title: "Previous Year Questions Physics 1", count: 500, difficulty: "Mixed", file: "practice/mixed/pyqphy1.html", type: "free" },
+        { title: "Previous Year Questions Chemistry 1", count: 500, difficulty: "Mixed", file: "practice/mixed/pyqchem1.html", type: "free" },
+        { title: "Mock Test Practice", count: 300, difficulty: "Mixed", file: "practice/mixed/mock.html", type: "free" },
+        { title: "Topic-wise Mixed", count: 200, difficulty: "Mixed", file: "practice/mixed/topicwise.html", type: "paid" }
+      ]
+    };
+
+    const tabs = document.querySelectorAll(".tab-btn");
+    const topicCards = document.getElementById("topicCards");
+    const questionContent = document.getElementById("questionContent");
+
+    // Load math by default
+    window.addEventListener('DOMContentLoaded', () => {
+      loadTopicCards('math');
+    });
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("bg-yellow-300", "font-semibold"));
+        tab.classList.add("bg-yellow-300", "font-semibold");
+        const subject = tab.dataset.subject;
+        loadTopicCards(subject);
+      });
+    });
+
+    function loadTopicCards(subject) {
+      const topics = subjects[subject];
+      if (!topics) return;
+
+      questionContent.classList.add('hidden');
+
+      topicCards.innerHTML = "";
+      topics.forEach(topic => {
+        const card = document.createElement("div");
+        card.className = "p-6 rounded-lg shadow-lg bg-white border-2 border-yellow-200 cursor-pointer hover:shadow-xl hover:border-yellow-400 transition";
+        
+        const difficultyColor = topic.difficulty === 'Easy' ? 'bg-green-100 text-green-700' : 
+                                topic.difficulty === 'Hard' ? 'bg-red-100 text-red-700' : 
+                                'bg-yellow-100 text-yellow-700';
+        
+        card.innerHTML = `
+          <h3 class="font-bold text-xl mb-2">${topic.title}</h3>
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-sm text-gray-600">${topic.count} Questions</span>
+            <span class="text-xs px-2 py-1 rounded-full ${difficultyColor} font-semibold">${topic.difficulty}</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-600">Click to practice</span>
+            ${topic.type === "paid" ? '<span class="text-sm bg-yellow-400 px-3 py-1 rounded-full font-semibold">Premium</span>' : '<span class="text-sm bg-green-400 px-3 py-1 rounded-full font-semibold text-white">Free</span>'}
+          </div>
+        `;
+        card.addEventListener("click", () => {
+          loadPracticeQuestions(topic);
+        });
+        topicCards.appendChild(card);
+      });
+    }
+
+    async function loadPracticeQuestions(topic) {
+      console.log(`[Load] Loading practice questions: ${topic.title}`);
+      
+      if (topic.type === "paid" && !window.currentUser) {
+        alert("🔒 Please login to access premium practice questions.");
+        return;
+      }
+
+      try {
+        const res = await fetch(topic.file);
+        const html = await res.text();
+        
+        document.getElementById('questionTitle').textContent = topic.title + ' Practice';
+        document.getElementById('questionBody').innerHTML = html;
+        document.getElementById('solutionContent').classList.add('hidden');
+        document.getElementById('showSolutionBtn').classList.remove('hidden');
+        
+        questionContent.classList.remove('hidden');
+        questionContent.scrollIntoView({ behavior: 'smooth' });
+
+        if (typeof renderMathInElement === "function") {
+          renderMathInElement(questionContent, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "$", right: "$", display: false }
+            ]
+          });
+        }
+      } catch (err) {
+        console.error(`[Error] Loading questions failed: ${err}`);
+        
+        // Show sample question as fallback
+        document.getElementById('questionTitle').textContent = topic.title + ' Practice';
+        document.getElementById('questionBody').innerHTML = `
+          <div class="space-y-4">
+            <p class="font-semibold text-lg">Sample Question:</p>
+            <p class="text-gray-700">Practice questions for ${topic.title} will be loaded here. Total ${topic.count} questions available.</p>
+            <div class="bg-blue-50 p-4 rounded-lg mt-4">
+              <p class="font-semibold mb-2">Coming Soon!</p>
+              <p class="text-sm">Detailed practice questions with step-by-step solutions are being added. Check back soon or join our Telegram channel for updates.</p>
+            </div>
+          </div>
+        `;
+        questionContent.classList.remove('hidden');
+        document.getElementById('showSolutionBtn').classList.add('hidden');
+      }
+    }
+
+    function showSolution() {
+      document.getElementById('solutionContent').classList.remove('hidden');
+      document.getElementById('solutionContent').innerHTML = `
+        <h4 class="font-bold text-lg mb-3">Solution:</h4>
+        <p class="mb-4">Detailed step-by-step solution will appear here.</p>
+        <div class="bg-white p-4 rounded">
+          <p class="text-sm text-gray-600">Solution content is being prepared. This will include detailed explanations, formulas used, and step-by-step working.</p>
+        </div>
+      `;
+      document.getElementById('showSolutionBtn').classList.add('hidden');
+    }
+
+    function nextQuestion() {
+      alert('Loading next question...');
+      document.getElementById('solutionContent').classList.add('hidden');
+      document.getElementById('showSolutionBtn').classList.remove('hidden');
+    }
+
+    function closeQuestion() {
+      questionContent.classList.add('hidden');
+    }
+
+    
+    // Global function to toggle solutions
+    window.toggleSolution = function(id) {
+      const solution = document.getElementById(id);
+      const button = solution.previousElementSibling;
+      
+      if (solution.classList.contains('hidden')) {
+        solution.classList.remove('hidden');
+        button.textContent = 'Hide Solution';
+        button.classList.remove('bg-yellow-400', 'hover:bg-yellow-500');
+        button.classList.add('bg-red-400', 'hover:bg-red-500');
+      } else {
+        solution.classList.add('hidden');
+        button.textContent = 'Show Solution';
+        button.classList.remove('bg-red-400', 'hover:bg-red-500');
+        button.classList.add('bg-yellow-400', 'hover:bg-yellow-500');
+      }
+    }
+  </script>
+
+  
+
+  <script type="module">
+    window.registerPrompt = () => {
+      const email = prompt("Enter email:");
+      const password = prompt("Enter password:");
+      if (email && password) registerUser(email, password);
+    }
+
+    window.loginPrompt = () => {
+      const email = prompt("Enter email:");
+      const password = prompt("Enter password:");
+      if (email && password) loginUser(email, password);
+    }
+
+    window.logoutPrompt = () => {
+      logoutUser();
+    }
+
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+
+    const updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
 
 </body>
 

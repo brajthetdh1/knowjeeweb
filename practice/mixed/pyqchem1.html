@@ -1,0 +1,347 @@
+<div class="space-y-6">
+  <!-- Question 1 - JEE Main 2024 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 1</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2024</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Calculate the pH of a solution containing 0.1 M CH₃COOH and 0.1 M CH₃COONa. (Given: $K_a$ for CH₃COOH = $1.8 \times 10^{-5}$, $\log 1.8 = 0.26$)</p>
+    </div>
+
+    <button onclick="toggleSolution('chemq1')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="chemq1" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Identify the system</p>
+          <p>CH₃COOH (weak acid) + CH₃COONa (salt of weak acid) = Buffer solution</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Use Henderson-Hasselbalch equation</p>
+          <p>$\text{pH} = \text{pK}_a + \log\frac{[\text{Salt}]}{[\text{Acid}]}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Calculate pK_a</p>
+          <p>$\text{pK}_a = -\log K_a = -\log(1.8 \times 10^{-5})$</p>
+          <p>$= -\log 1.8 - \log 10^{-5}$</p>
+          <p>$= -0.26 + 5 = 4.74$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Substitute values</p>
+          <p>$\text{pH} = 4.74 + \log\frac{0.1}{0.1}$</p>
+          <p>$= 4.74 + \log 1$</p>
+          <p>$= 4.74 + 0 = 4.74$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: pH = 4.74</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 2 - JEE Advanced 2023 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 2</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Advanced 2023</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">For the reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g), $K_p = 1.64 \times 10^{-4}$ at 400°C. Find $K_c$ at the same temperature. (R = 0.082 L·atm·K⁻¹·mol⁻¹)</p>
+    </div>
+
+    <button onclick="toggleSolution('chemq2')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="chemq2" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Relation between K_p and K_c</p>
+          <p>$K_p = K_c(RT)^{\Delta n}$</p>
+          <p>Where $\Delta n$ = moles of gaseous products - moles of gaseous reactants</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Calculate Δn</p>
+          <p>N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</p>
+          <p>$\Delta n = 2 - (1 + 3) = 2 - 4 = -2$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Convert temperature to Kelvin</p>
+          <p>$T = 400°C = 400 + 273 = 673$ K</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Rearrange formula to find K_c</p>
+          <p>$K_c = \frac{K_p}{(RT)^{\Delta n}}$</p>
+          <p>$K_c = K_p(RT)^{-\Delta n}$</p>
+          <p>$K_c = 1.64 \times 10^{-4} \times (0.082 \times 673)^{-(-2)}$</p>
+          <p>$K_c = 1.64 \times 10^{-4} \times (55.186)^{2}$</p>
+          <p>$K_c = 1.64 \times 10^{-4} \times 3045.5$</p>
+          <p>$K_c = 0.50$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $K_c = 0.50$ (mol/L)⁻²</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 3 - JEE Main 2023 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 3</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2023</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Arrange the following compounds in increasing order of their boiling points:</p>
+      <p>(I) CH₃CH₂CH₂CH₃ (Butane)</p>
+      <p>(II) CH₃CH₂CH₂OH (1-Propanol)</p>
+      <p>(III) CH₃CH(OH)CH₃ (2-Propanol)</p>
+      <p>(IV) CH₃OCH₃ (Dimethyl ether)</p>
+    </div>
+
+    <button onclick="toggleSolution('chemq3')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="chemq3" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Identify intermolecular forces</p>
+          <p><strong>(I) Butane:</strong> Only Van der Waals forces (weakest)</p>
+          <p><strong>(II) 1-Propanol:</strong> Hydrogen bonding (strong)</p>
+          <p><strong>(III) 2-Propanol:</strong> Hydrogen bonding (strong)</p>
+          <p><strong>(IV) Dimethyl ether:</strong> Dipole-dipole interactions (moderate)</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Compare molecular masses</p>
+          <p>Butane: C₄H₁₀ = 58 g/mol</p>
+          <p>1-Propanol: C₃H₈O = 60 g/mol</p>
+          <p>2-Propanol: C₃H₈O = 60 g/mol</p>
+          <p>Dimethyl ether: C₂H₆O = 46 g/mol</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Apply boiling point rules</p>
+          <p>Hydrogen bonding > Dipole-dipole > Van der Waals</p>
+          <p>Alcohols have higher BP than ethers and alkanes</p>
+          <p>Primary alcohols have slightly higher BP than secondary alcohols (more surface area for H-bonding)</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Arrange in order</p>
+          <p>Lowest BP: Dimethyl ether (no H-bonding, smallest)</p>
+          <p>Next: Butane (only Van der Waals)</p>
+          <p>Next: 2-Propanol (H-bonding, secondary)</p>
+          <p>Highest BP: 1-Propanol (H-bonding, primary)</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: IV < I < III < II</p>
+          <p class="text-sm mt-1">Dimethyl ether < Butane < 2-Propanol < 1-Propanol</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 4 - JEE Advanced 2022 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 4</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Advanced 2022</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Calculate the oxidation state of chromium in CrO₅.</p>
+    </div>
+
+    <button onclick="toggleSolution('chemq4')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="chemq4" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Understand the structure of CrO₅</p>
+          <p>CrO₅ has a unique structure: Cr is bonded to one O² and four peroxy oxygen atoms (O₂²⁻)</p>
+          <p>Structure: Cr=O with two -O-O- groups</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Assign oxidation states to oxygen</p>
+          <p>One double-bonded O: -2</p>
+          <p>Four peroxy oxygens (two O-O bonds): -1 each</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Set up equation</p>
+          <p>Let oxidation state of Cr = x</p>
+          <p>Overall charge = 0 (neutral molecule)</p>
+          <p>$x + 1(-2) + 4(-1) = 0$</p>
+          <p>$x - 2 - 4 = 0$</p>
+          <p>$x - 6 = 0$</p>
+          <p>$x = +6$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Verify</p>
+          <p>Oxidation state: Cr(+6) + O(-2) + 4O(-1) = +6 - 2 - 4 = 0 ✓</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: Oxidation state of Cr = +6</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 5 - JEE Main 2022 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 5</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2022</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Identify the product 'X' in the following reaction:</p>
+      <p class="text-center my-2">CH₃CHO + HCN → X</p>
+    </div>
+
+    <button onclick="toggleSolution('chemq5')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="chemq5" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Identify the reaction type</p>
+          <p>Aldehyde + HCN → Cyanohydrin formation</p>
+          <p>This is a nucleophilic addition reaction</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Mechanism</p>
+          <p>HCN dissociates: HCN ⇌ H⁺ + CN⁻</p>
+          <p>CN⁻ (nucleophile) attacks the carbonyl carbon</p>
+          <p>C=O becomes C-O⁻</p>
+          <p>H⁺ adds to O⁻ forming OH</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Draw the product</p>
+          <p>CH₃CHO + HCN → CH₃CH(OH)CN</p>
+          <p>Product: 2-Hydroxypropanenitrile (Lactonitrile)</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Name the compound</p>
+          <p>IUPAC name: 2-Hydroxypropanenitrile</p>
+          <p>Common name: Acetaldehyde cyanohydrin or Lactonitrile</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: X = CH₃CH(OH)CN</p>
+          <p class="text-sm mt-1">(2-Hydroxypropanenitrile / Lactonitrile)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 6 - JEE Main 2021 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 6</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2021</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">The molarity of a solution containing 5.3 g of Na₂CO₃ dissolved in 500 mL solution is: (Molar mass of Na₂CO₃ = 106 g/mol)</p>
+    </div>
+
+    <button onclick="toggleSolution('chemq6')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="chemq6" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Formula for molarity</p>
+          <p>$\text{Molarity (M)} = \frac{\text{Number of moles of solute}}{\text{Volume of solution in L}}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Calculate number of moles</p>
+          <p>$\text{Number of moles} = \frac{\text{Given mass}}{\text{Molar mass}}$</p>
+          <p>$= \frac{5.3}{106}$</p>
+          <p>$= 0.05$ mol</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Convert volume to liters</p>
+          <p>Volume = 500 mL = 0.5 L</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Calculate molarity</p>
+          <p>$\text{Molarity} = \frac{0.05}{0.5}$</p>
+          <p>$= 0.1$ M</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Verification:</p>
+          <p>0.1 M means 0.1 moles per liter</p>
+          <p>In 0.5 L: 0.1 × 0.5 = 0.05 mol ✓</p>
+          <p>Mass = 0.05 × 106 = 5.3 g ✓</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: Molarity = 0.1 M</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

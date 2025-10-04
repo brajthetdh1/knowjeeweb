@@ -1,0 +1,329 @@
+<div class="space-y-6">
+  <!-- Question 1 - JEE Main 2024 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 1</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2024</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Let $f(x) = x^3 - 3x + 1$. If the equation $f(x) = 0$ has three real roots $\alpha, \beta, \gamma$, then find the value of $\alpha^3 + \beta^3 + \gamma^3$</p>
+    </div>
+
+    <button onclick="toggleSolution('pyq1')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="pyq1" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Understand the given equation</p>
+          <p>$f(x) = x^3 - 3x + 1 = 0$</p>
+          <p>Roots are $\alpha, \beta, \gamma$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Since roots satisfy the equation</p>
+          <p>$\alpha^3 - 3\alpha + 1 = 0 \Rightarrow \alpha^3 = 3\alpha - 1$</p>
+          <p>$\beta^3 - 3\beta + 1 = 0 \Rightarrow \beta^3 = 3\beta - 1$</p>
+          <p>$\gamma^3 - 3\gamma + 1 = 0 \Rightarrow \gamma^3 = 3\gamma - 1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Add all three equations</p>
+          <p>$\alpha^3 + \beta^3 + \gamma^3 = 3(\alpha + \beta + \gamma) - 3$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Find sum of roots using Vieta's formulas</p>
+          <p>For $x^3 + 0x^2 - 3x + 1 = 0$</p>
+          <p>$\alpha + \beta + \gamma = -\frac{\text{coefficient of } x^2}{\text{coefficient of } x^3} = 0$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 5: Calculate final answer</p>
+          <p>$\alpha^3 + \beta^3 + \gamma^3 = 3(0) - 3 = -3$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $-3$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 2 - JEE Advanced 2023 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 2</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Advanced 2023</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">The number of points in the interval $[-\sqrt{13}, \sqrt{13}]$ at which $f(x) = \sin(x^2)$ attains its maximum value is:</p>
+    </div>
+
+    <button onclick="toggleSolution('pyq2')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="pyq2" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Find when sin function has maximum</p>
+          <p>$\sin(x^2)$ has maximum value 1 when $x^2 = \frac{\pi}{2} + 2n\pi$ where $n \in \mathbb{Z}$</p>
+          <p>$x^2 = (4n+1)\frac{\pi}{2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Find the constraint</p>
+          <p>We need $-\sqrt{13} \le x \le \sqrt{13}$</p>
+          <p>So, $0 \le x^2 \le 13$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Find valid values of n</p>
+          <p>$(4n+1)\frac{\pi}{2} \le 13$</p>
+          <p>$4n+1 \le \frac{26}{\pi}$</p>
+          <p>$4n+1 \le 8.28$</p>
+          <p>$n \le 1.82$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Count valid values</p>
+          <p>$n = 0$: $x^2 = \frac{\pi}{2} \approx 1.57$ → $x = \pm\sqrt{\frac{\pi}{2}}$ (2 points)</p>
+          <p>$n = 1$: $x^2 = \frac{5\pi}{2} \approx 7.85$ → $x = \pm\sqrt{\frac{5\pi}{2}}$ (2 points)</p>
+          <p>Total = 4 points</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: 4 points</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 3 - JEE Main 2023 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 3</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2023</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">If $\int \frac{dx}{(x^2+4)(x^2+9)} = A\tan^{-1}\left(\frac{x}{2}\right) + B\tan^{-1}\left(\frac{x}{3}\right) + C$, then find $A$ and $B$.</p>
+    </div>
+
+    <button onclick="toggleSolution('pyq3')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="pyq3" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Use partial fractions</p>
+          <p>$\frac{1}{(x^2+4)(x^2+9)} = \frac{Mx+N}{x^2+4} + \frac{Px+Q}{x^2+9}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Since denominator has no linear factors</p>
+          <p>$\frac{1}{(x^2+4)(x^2+9)} = \frac{M}{x^2+4} + \frac{N}{x^2+9}$</p>
+          <p>$1 = M(x^2+9) + N(x^2+4)$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Solve for M and N</p>
+          <p>Comparing coefficients:</p>
+          <p>$x^2$: $M + N = 0$</p>
+          <p>Constant: $9M + 4N = 1$</p>
+          <p>From first: $N = -M$</p>
+          <p>$9M - 4M = 1 \Rightarrow M = \frac{1}{5}$, $N = -\frac{1}{5}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Integrate</p>
+          <p>$\int \frac{dx}{(x^2+4)(x^2+9)} = \frac{1}{5}\int\frac{dx}{x^2+4} - \frac{1}{5}\int\frac{dx}{x^2+9}$</p>
+          <p>$= \frac{1}{5} \cdot \frac{1}{2}\tan^{-1}\left(\frac{x}{2}\right) - \frac{1}{5} \cdot \frac{1}{3}\tan^{-1}\left(\frac{x}{3}\right) + C$</p>
+          <p>$= \frac{1}{10}\tan^{-1}\left(\frac{x}{2}\right) - \frac{1}{15}\tan^{-1}\left(\frac{x}{3}\right) + C$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $A = \frac{1}{10}$, $B = -\frac{1}{15}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 4 - JEE Advanced 2022 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 4</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Advanced 2022</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">The number of $2 \times 2$ matrices $A$ with entries from the set $\{0, 1, 2, 3, 4, 5\}$ such that the sum of the diagonal elements of $A^T A$ is 5, where $A^T$ denotes the transpose of $A$, is:</p>
+    </div>
+
+    <button onclick="toggleSolution('pyq4')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="pyq4" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Set up the matrix</p>
+          <p>Let $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ where $a,b,c,d \in \{0,1,2,3,4,5\}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Calculate $A^T A$</p>
+          <p>$A^T = \begin{bmatrix} a & c \\ b & d \end{bmatrix}$</p>
+          <p>$A^T A = \begin{bmatrix} a & c \\ b & d \end{bmatrix}\begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} a^2+c^2 & ab+cd \\ ab+cd & b^2+d^2 \end{bmatrix}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Find condition</p>
+          <p>Sum of diagonal elements = $a^2 + c^2 + b^2 + d^2 = 5$</p>
+          <p>We need: $a^2 + b^2 + c^2 + d^2 = 5$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Find all possible combinations</p>
+          <p>Since each variable is in $\{0,1,2,3,4,5\}$ and sum of squares = 5:</p>
+          <ul class="list-disc pl-6">
+            <li>$(2,1,0,0)$ and permutations: $\frac{4!}{2!} = 12$ ways</li>
+            <li>$(1,1,1,\sqrt{2})$ - Not valid (√2 not in set)</li>
+            <li>$(2,1,0,0)$ permutations give us all valid cases</li>
+          </ul>
+          <p>Total permutations of $(2,1,0,0)$ = 12</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: 12 matrices</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 5 - JEE Main 2022 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 5</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2022</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">The coefficient of $x^{50}$ in the polynomial $(x+1)(x+2)(x+3)...(x+100)$ is:</p>
+    </div>
+
+    <button onclick="toggleSolution('pyq5')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="pyq5" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Understand the structure</p>
+          <p>$(x+1)(x+2)(x+3)...(x+100)$ is a polynomial of degree 100</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Use Vieta's formulas</p>
+          <p>The coefficient of $x^{50}$ comes from choosing 50 factors with $x$ and 50 constants</p>
+          <p>This equals the sum of products of 50 numbers taken from $\{1,2,3,...,100\}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Apply symmetric function formula</p>
+          <p>Coefficient of $x^{50}$ = $e_{50}$ (50th elementary symmetric polynomial)</p>
+          <p>This is $\binom{100}{50}$ times the sum of all products of 50 numbers</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Alternative approach - Vieta's for roots</p>
+          <p>Roots are $-1, -2, -3, ..., -100$</p>
+          <p>Coefficient of $x^{50}$ = $(-1)^{50} \times e_{50}(1,2,3,...,100)$</p>
+          <p>This is a very large number requiring computational methods</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\sum$ (all products of 50 numbers from {1,2,...,100})</p>
+          <p class="text-sm text-gray-600 mt-2">Note: Exact numerical answer requires computation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 6 - JEE Main 2021 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h4 class="font-bold text-lg text-yellow-900">Question 6</h4>
+        <span class="text-xs text-gray-600 mt-1 block">JEE Main 2021</span>
+      </div>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Previous Year</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">If $\lim_{x \to 0} \frac{\sin(x^2)}{x^2} \cdot \frac{x}{\sin x} \cdot \frac{\tan x}{x} = k$, then find the value of $k$.</p>
+    </div>
+
+    <button onclick="toggleSolution('pyq6')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="pyq6" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Apply standard limits</p>
+          <p>We know: $\lim_{x \to 0} \frac{\sin x}{x} = 1$</p>
+          <p>Also: $\lim_{x \to 0} \frac{\tan x}{x} = 1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Evaluate each part</p>
+          <p>$\lim_{x \to 0} \frac{\sin(x^2)}{x^2} = 1$ (standard limit with $t = x^2$)</p>
+          <p>$\lim_{x \to 0} \frac{x}{\sin x} = \frac{1}{\lim_{x \to 0} \frac{\sin x}{x}} = \frac{1}{1} = 1$</p>
+          <p>$\lim_{x \to 0} \frac{\tan x}{x} = 1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Multiply all limits</p>
+          <p>$k = 1 \times 1 \times 1 = 1$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $k = 1$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

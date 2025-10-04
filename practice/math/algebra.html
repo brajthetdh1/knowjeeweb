@@ -1,0 +1,301 @@
+<div class="space-y-6">
+
+    
+
+
+  <!-- Question 1 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 1</h4>
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Easy</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Solve the quadratic equation:</p>
+      <p class="text-center text-lg">$x^2 - 5x + 6 = 0$</p>
+    </div>
+
+    <button onclick="toggleSolution('sol1')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="sol1" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Factorize the equation</p>
+          <p>$x^2 - 5x + 6 = 0$</p>
+          <p>Find two numbers that multiply to give 6 and add to give -5</p>
+          <p>These numbers are -2 and -3</p>
+          <p>$(x - 2)(x - 3) = 0$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Apply zero product property</p>
+          <p>Either $(x - 2) = 0$ or $(x - 3) = 0$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Solve for x</p>
+          <p>$x - 2 = 0 \Rightarrow x = 2$</p>
+          <p>$x - 3 = 0 \Rightarrow x = 3$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $x = 2$ or $x = 3$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 2</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">If $\alpha$ and $\beta$ are the roots of equation $2x^2 - 5x + 3 = 0$, find the value of $\alpha^2 + \beta^2$</p>
+    </div>
+
+    <button onclick="toggleSolution('sol2')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="sol2" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Find sum and product of roots</p>
+          <p>For equation $ax^2 + bx + c = 0$:</p>
+          <p>Sum of roots: $\alpha + \beta = -\frac{b}{a} = -\frac{(-5)}{2} = \frac{5}{2}$</p>
+          <p>Product of roots: $\alpha\beta = \frac{c}{a} = \frac{3}{2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Use the identity</p>
+          <p>$\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Substitute values</p>
+          <p>$\alpha^2 + \beta^2 = \left(\frac{5}{2}\right)^2 - 2 \times \frac{3}{2}$</p>
+          <p>$= \frac{25}{4} - 3$</p>
+          <p>$= \frac{25}{4} - \frac{12}{4}$</p>
+          <p>$= \frac{13}{4}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\alpha^2 + \beta^2 = \frac{13}{4}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 3</h4>
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Easy</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the value of $x$ if:</p>
+      <p class="text-center text-lg">$3x + 7 = 22$</p>
+    </div>
+
+    <button onclick="toggleSolution('sol3')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="sol3" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Subtract 7 from both sides</p>
+          <p>$3x + 7 - 7 = 22 - 7$</p>
+          <p>$3x = 15$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Divide both sides by 3</p>
+          <p>$\frac{3x}{3} = \frac{15}{3}$</p>
+          <p>$x = 5$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Verify the answer</p>
+          <p>Substitute $x = 5$ in original equation:</p>
+          <p>$3(5) + 7 = 15 + 7 = 22$ ✓</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $x = 5$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 4</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Solve for $x$:</p>
+      <p class="text-center text-lg">$\sqrt{x + 3} + \sqrt{x - 2} = 5$</p>
+    </div>
+
+    <button onclick="toggleSolution('sol4')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="sol4" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Isolate one radical</p>
+          <p>$\sqrt{x + 3} = 5 - \sqrt{x - 2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Square both sides</p>
+          <p>$x + 3 = 25 - 10\sqrt{x - 2} + (x - 2)$</p>
+          <p>$x + 3 = 23 + x - 10\sqrt{x - 2}$</p>
+          <p>$10\sqrt{x - 2} = 20$</p>
+          <p>$\sqrt{x - 2} = 2$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Square again</p>
+          <p>$x - 2 = 4$</p>
+          <p>$x = 6$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Verify the solution</p>
+          <p>$\sqrt{6 + 3} + \sqrt{6 - 2} = \sqrt{9} + \sqrt{4} = 3 + 2 = 5$ ✓</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $x = 6$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 5</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the coefficient of $x^5$ in the expansion of $(2x - 3)^7$</p>
+    </div>
+
+    <button onclick="toggleSolution('sol5')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="sol5" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Use Binomial Theorem</p>
+          <p>General term: $T_{r+1} = \binom{n}{r} a^{n-r} b^r$</p>
+          <p>Here, $n = 7$, $a = 2x$, $b = -3$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Find which term contains $x^5$</p>
+          <p>We need $(2x)^{n-r} = (2x)^5$</p>
+          <p>So, $n - r = 5$</p>
+          <p>$7 - r = 5$</p>
+          <p>$r = 2$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Calculate the term</p>
+          <p>$T_3 = \binom{7}{2} (2x)^5 (-3)^2$</p>
+          <p>$= \frac{7!}{2!5!} \times 32x^5 \times 9$</p>
+          <p>$= 21 \times 32 \times 9 \times x^5$</p>
+          <p>$= 6048x^5$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: Coefficient of $x^5$ is $6048$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 6</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">If one root of the equation $x^2 + px + q = 0$ is the square of the other, prove that:</p>
+      <p class="text-center text-lg">$p^3 + q^2 + q = 3pq$</p>
+    </div>
+
+    <button onclick="toggleSolution('sol6')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="sol6" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Define the roots</p>
+          <p>Let the roots be $\alpha$ and $\alpha^2$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Write sum and product</p>
+          <p>Sum of roots: $\alpha + \alpha^2 = -p$</p>
+          <p>Product of roots: $\alpha \times \alpha^2 = \alpha^3 = q$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: From product equation</p>
+          <p>$\alpha^3 = q$</p>
+          <p>So, $\alpha = q^{1/3}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Substitute in sum equation</p>
+          <p>$q^{1/3} + q^{2/3} = -p$</p>
+          <p>Cubing both sides:</p>
+          <p>$(q^{1/3} + q^{2/3})^3 = -p^3$</p>
+          <p>$q + 3q^{1/3} \cdot q^{2/3}(q^{1/3} + q^{2/3}) + q^2 = -p^3$</p>
+          <p>$q + 3q(-p) + q^2 = -p^3$</p>
+          <p>$q - 3pq + q^2 = -p^3$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 5: Rearrange</p>
+          <p>$p^3 + q^2 + q = 3pq$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Hence Proved: $p^3 + q^2 + q = 3pq$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
