@@ -1,0 +1,393 @@
+<div class="space-y-6">
+  <!-- Question 1 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 1</h4>
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Easy</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Prove the identity:</p>
+      <p class="text-center text-lg">$\sin^2\theta + \cos^2\theta = 1$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig1')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig1" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Consider a right triangle</p>
+          <p>In a right triangle with hypotenuse $h$, opposite side $o$, and adjacent side $a$:</p>
+          <p>$\sin\theta = \frac{o}{h}$, $\cos\theta = \frac{a}{h}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Square both sides</p>
+          <p>$\sin^2\theta = \frac{o^2}{h^2}$</p>
+          <p>$\cos^2\theta = \frac{a^2}{h^2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Add the equations</p>
+          <p>$\sin^2\theta + \cos^2\theta = \frac{o^2}{h^2} + \frac{a^2}{h^2} = \frac{o^2 + a^2}{h^2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Apply Pythagorean theorem</p>
+          <p>By Pythagorean theorem: $o^2 + a^2 = h^2$</p>
+          <p>Therefore: $\sin^2\theta + \cos^2\theta = \frac{h^2}{h^2} = 1$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Hence Proved: $\sin^2\theta + \cos^2\theta = 1$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 2</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the general solution of:</p>
+      <p class="text-center text-lg">$\sin 2\theta = \frac{\sqrt{3}}{2}$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig2')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig2" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Identify principal values</p>
+          <p>$\sin\alpha = \frac{\sqrt{3}}{2}$</p>
+          <p>Principal values: $\alpha = 60° = \frac{\pi}{3}$ or $\alpha = 120° = \frac{2\pi}{3}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Write general solution for sin</p>
+          <p>If $\sin x = \sin\alpha$, then $x = n\pi + (-1)^n\alpha$</p>
+          <p>Here, $2\theta = n\pi + (-1)^n \cdot \frac{\pi}{3}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Solve for θ</p>
+          <p>$\theta = \frac{n\pi}{2} + (-1)^n \cdot \frac{\pi}{6}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Alternative form</p>
+          <p>When $n$ is even: $\theta = \frac{n\pi}{2} + \frac{\pi}{6}$</p>
+          <p>When $n$ is odd: $\theta = \frac{n\pi}{2} - \frac{\pi}{6}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\theta = \frac{n\pi}{2} + (-1)^n \cdot \frac{\pi}{6}$, where $n \in \mathbb{Z}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 3</h4>
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Easy</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">If $\sin A = \frac{3}{5}$ and $A$ is in the first quadrant, find $\cos A$ and $\tan A$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig3')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig3" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Use fundamental identity</p>
+          <p>$\sin^2 A + \cos^2 A = 1$</p>
+          <p>$\left(\frac{3}{5}\right)^2 + \cos^2 A = 1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Solve for cos A</p>
+          <p>$\frac{9}{25} + \cos^2 A = 1$</p>
+          <p>$\cos^2 A = 1 - \frac{9}{25} = \frac{16}{25}$</p>
+          <p>$\cos A = \pm\frac{4}{5}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Apply quadrant condition</p>
+          <p>Since $A$ is in first quadrant, both sin and cos are positive</p>
+          <p>$\cos A = +\frac{4}{5}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Find tan A</p>
+          <p>$\tan A = \frac{\sin A}{\cos A} = \frac{3/5}{4/5} = \frac{3}{4}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\cos A = \frac{4}{5}$, $\tan A = \frac{3}{4}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 4</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Prove that:</p>
+      <p class="text-center text-lg">$\frac{\sin A + \sin B}{\cos A + \cos B} = \tan\left(\frac{A+B}{2}\right)$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig4')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig4" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Apply sum-to-product formulas</p>
+          <p>$\sin A + \sin B = 2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)$</p>
+          <p>$\cos A + \cos B = 2\cos\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Substitute in LHS</p>
+          <p>$\frac{\sin A + \sin B}{\cos A + \cos B} = \frac{2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)}{2\cos\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Cancel common terms</p>
+          <p>$= \frac{\sin\left(\frac{A+B}{2}\right)}{\cos\left(\frac{A+B}{2}\right)}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Simplify</p>
+          <p>$= \tan\left(\frac{A+B}{2}\right)$ = RHS</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Hence Proved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 5</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the value of:</p>
+      <p class="text-center text-lg">$\tan^{-1}(1) + \cos^{-1}\left(-\frac{1}{2}\right)$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig5')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig5" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Find tan⁻¹(1)</p>
+          <p>We need angle whose tangent is 1</p>
+          <p>$\tan\theta = 1 \Rightarrow \theta = 45° = \frac{\pi}{4}$</p>
+          <p>$\tan^{-1}(1) = \frac{\pi}{4}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Find cos⁻¹(-1/2)</p>
+          <p>We need angle whose cosine is $-\frac{1}{2}$</p>
+          <p>$\cos\theta = -\frac{1}{2}$</p>
+          <p>In range $[0, \pi]$: $\theta = 120° = \frac{2\pi}{3}$</p>
+          <p>$\cos^{-1}\left(-\frac{1}{2}\right) = \frac{2\pi}{3}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Add the values</p>
+          <p>$\tan^{-1}(1) + \cos^{-1}\left(-\frac{1}{2}\right) = \frac{\pi}{4} + \frac{2\pi}{3}$</p>
+          <p>$= \frac{3\pi}{12} + \frac{8\pi}{12} = \frac{11\pi}{12}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{11\pi}{12}$ or $165°$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 6</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Simplify:</p>
+      <p class="text-center text-lg">$\sin(x+y)\sin(x-y)$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig6')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig6" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Expand using compound angle formulas</p>
+          <p>$\sin(x+y) = \sin x\cos y + \cos x\sin y$</p>
+          <p>$\sin(x-y) = \sin x\cos y - \cos x\sin y$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Multiply using (a+b)(a-b) = a² - b²</p>
+          <p>$\sin(x+y)\sin(x-y) = (\sin x\cos y)^2 - (\cos x\sin y)^2$</p>
+          <p>$= \sin^2 x\cos^2 y - \cos^2 x\sin^2 y$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Factor out common terms</p>
+          <p>$= \sin^2 x\cos^2 y - \cos^2 x\sin^2 y$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Alternative form using identities</p>
+          <p>$= \sin^2 x(1-\sin^2 y) - (1-\sin^2 x)\sin^2 y$</p>
+          <p>$= \sin^2 x - \sin^2 x\sin^2 y - \sin^2 y + \sin^2 x\sin^2 y$</p>
+          <p>$= \sin^2 x - \sin^2 y$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\sin^2 x - \sin^2 y$ or $\sin^2 x\cos^2 y - \cos^2 x\sin^2 y$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 7 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 7</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Express $\sin 3\theta$ in terms of $\sin\theta$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig7')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig7" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Write as sum</p>
+          <p>$\sin 3\theta = \sin(2\theta + \theta)$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Apply sum formula</p>
+          <p>$= \sin 2\theta\cos\theta + \cos 2\theta\sin\theta$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Use double angle formulas</p>
+          <p>$\sin 2\theta = 2\sin\theta\cos\theta$</p>
+          <p>$\cos 2\theta = 1 - 2\sin^2\theta$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Substitute</p>
+          <p>$= (2\sin\theta\cos\theta)\cos\theta + (1-2\sin^2\theta)\sin\theta$</p>
+          <p>$= 2\sin\theta\cos^2\theta + \sin\theta - 2\sin^3\theta$</p>
+          <p>$= 2\sin\theta(1-\sin^2\theta) + \sin\theta - 2\sin^3\theta$</p>
+          <p>$= 2\sin\theta - 2\sin^3\theta + \sin\theta - 2\sin^3\theta$</p>
+          <p>$= 3\sin\theta - 4\sin^3\theta$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\sin 3\theta = 3\sin\theta - 4\sin^3\theta$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 8 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 8</h4>
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Easy</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the value of:</p>
+      <p class="text-center text-lg">$\sin 15° \times \cos 15°$</p>
+    </div>
+
+    <button onclick="toggleSolution('trig8')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="trig8" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Use double angle formula</p>
+          <p>We know: $\sin 2\theta = 2\sin\theta\cos\theta$</p>
+          <p>Therefore: $\sin\theta\cos\theta = \frac{\sin 2\theta}{2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Apply with θ = 15°</p>
+          <p>$\sin 15°\cos 15° = \frac{\sin(2 \times 15°)}{2}$</p>
+          <p>$= \frac{\sin 30°}{2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Evaluate</p>
+          <p>$= \frac{1/2}{2} = \frac{1}{4}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{1}{4}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

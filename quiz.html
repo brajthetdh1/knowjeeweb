@@ -31,14 +31,14 @@
         content="Practice JEE Math, Physics & Chemistry with 30-question quizzes. Get instant results and improve your preparation.">
     <meta name="twitter:image" content="https://knowjee.com/images/jee-quiz-preview.jpg">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P8THGNV3KM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8THGNV3KM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-P8THGNV3KM');
-</script>
+        gtag('config', 'G-P8THGNV3KM');
+    </script>
 
 
     <!-- Canonical URL -->
@@ -225,7 +225,7 @@
             <!-- Mathematics Section -->
             <section class="mb-8">
                 <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
-                    <span class="text-3xl mr-2">📐</span> JEE Mathematics Practice Tests
+                    JEE Mathematics Practice Tests
                 </h2>
                 <p class="text-gray-600 mb-4">Practice calculus, algebra, trigonometry, coordinate geometry, and more
                     with our comprehensive JEE Math quizzes.</p>
@@ -253,12 +253,12 @@
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-xl font-bold text-amber-900">JEE Math Series 2 - Advanced Topics</h3>
                             <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">FREE</span>
                         </div>
                         <p class="text-gray-600 mb-4">Advanced JEE questions on trigonometry, coordinate geometry, and
                             complex numbers for serious aspirants.</p>
                         <div class="flex justify-between items-center text-sm">
-                            <span class="text-gray-500">📝 12 Questions</span>
+                            <span class="text-gray-500">📝 30 Questions</span>
                             <span
                                 class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Medium</span>
                         </div>
@@ -270,7 +270,7 @@
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-xl font-bold text-amber-900">JEE Math Series 3 - JEE Advanced</h3>
                             <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">FREE</span>
                         </div>
                         <p class="text-gray-600 mb-4">Challenging problems on 3D geometry, vectors, differential
                             equations for JEE Advanced level preparation.</p>
@@ -286,7 +286,7 @@
             <!-- Physics Section -->
             <section class="mb-8">
                 <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
-                    <span class="text-3xl mr-2">⚡</span> JEE Physics Mock Tests
+                    JEE Physics Mock Tests
                 </h2>
                 <p class="text-gray-600 mb-4">Master mechanics, electromagnetism, optics, thermodynamics, and modern
                     physics with our targeted JEE Physics quizzes.</p>
@@ -341,7 +341,7 @@
         <!-- Chemistry Section -->
         <div class="mb-8">
             <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
-                <span class="text-3xl mr-2">🧪</span> Chemistry
+                Chemistry
             </h2>
             <p class="text-gray-600 mb-4">Explore physical, organic, and inorganic chemistry with our focused JEE
                 Chemistry quizzes, designed to strengthen concepts and problem-solving skills.</p>
@@ -642,6 +642,452 @@
                         question: "The reciprocal of $\\tan\\theta$ is:",
                         options: ["$\\cot\\theta$", "$\\sec\\theta$", "$\\csc\\theta$", "$\\cos\\theta$"],
                         correct: 0
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "JEE MATH Series 1",
+                difficulty: "Easy",
+                free: true,
+                duration: 2400,
+                questions: [
+                    {
+                        id: 1,
+                        question: "Evaluate: $\\lim_{x \\to 0} \\frac{e^{\\sin x} - 1}{x}$",
+                        options: ["0", "1", "e", "$\\frac{1}{e}$"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 2,
+                        question: "If $y = x^{\\sin x}$, find $\\frac{dy}{dx}$",
+                        options: ["$x^{\\sin x}(\\cos x \\ln x + \\frac{\\sin x}{x})$", "$x^{\\sin x} \\sin x$", "$\\sin x \\cdot x^{\\sin x - 1}$", "$x^{\\sin x} \\ln x$"],
+                        correct: 0,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 3,
+                        question: "The value of $\\int_0^{\\pi/2} \\frac{\\sin x}{\\sin x + \\cos x} dx$ is:",
+                        options: ["$\\frac{\\pi}{2}$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{8}$", "$\\pi$"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 4,
+                        question: "Number of points where $f(x) = |x-1| + |x-2|$ is not differentiable:",
+                        options: ["0", "1", "2", "3"],
+                        correct: 2,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 5,
+                        question: "If $\\int \\frac{dx}{x^2(x^4+1)^{3/4}} = A(1 + \\frac{1}{x^4})^{1/4} + C$, then A equals:",
+                        options: ["1", "-1", "2", "-2"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 6,
+                        question: "The solution of differential equation $\\frac{dy}{dx} = \\frac{y}{x} + \\tan(\\frac{y}{x})$ is:",
+                        options: ["$\\sin(\\frac{y}{x}) = Cx$", "$\\cos(\\frac{y}{x}) = Cx$", "$\\tan(\\frac{y}{x}) = \\ln|Cx|$", "$\\sin(\\frac{y}{x}) = \\ln|Cx|$"],
+                        correct: 0,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 7,
+                        question: "The value of $\\lim_{n \\to \\infty} \\frac{1^2 + 2^2 + ... + n^2}{n^3}$ is:",
+                        options: ["$\\frac{1}{2}$", "$\\frac{1}{3}$", "$\\frac{1}{4}$", "0"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 8,
+                        question: "If $f(x) = \\int_0^x t^2 e^{-t} dt$, then $f'(x)$ equals:",
+                        options: ["$x^2 e^{-x}$", "$e^{-x}$", "$2xe^{-x}$", "$x^2$"],
+                        correct: 0,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 9,
+                        question: "The area enclosed by $y^2 = 4ax$ and $x^2 = 4ay$ is:",
+                        options: ["$\\frac{8a^2}{3}$", "$\\frac{16a^2}{3}$", "$\\frac{32a^2}{3}$", "$\\frac{4a^2}{3}$"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 10,
+                        question: "The maximum value of $\\sin x + \\cos x + 2$ is:",
+                        options: ["3", "$2 + \\sqrt{2}$", "4", "$3 + \\sqrt{2}$"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+
+                    // Algebra - 10 questions
+                    {
+                        id: 11,
+                        question: "If $\\alpha, \\beta, \\gamma$ are roots of $x^3 - 6x^2 + 11x - 6 = 0$, then $\\alpha^2 + \\beta^2 + \\gamma^2$ equals:",
+                        options: ["14", "18", "22", "36"],
+                        correct: 0,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 12,
+                        question: "Number of solutions of $2^{2x} - 2^{x+1} + 1 = 0$:",
+                        options: ["0", "1", "2", "Infinitely many"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 13,
+                        question: "If $|z-2+i| \\leq 2$, then maximum value of $|z|$ is:",
+                        options: ["$2 + \\sqrt{5}$", "$\\sqrt{5}$", "4", "$2\\sqrt{5}$"],
+                        correct: 0,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 14,
+                        question: "The coefficient of $x^{50}$ in $(1+x)^{100} + x(1+x)^{99} + x^2(1+x)^{98} + ... + x^{100}$ is:",
+                        options: ["$^{100}C_{50}$", "$^{101}C_{50}$", "$^{101}C_{51}$", "$^{100}C_{49}$"],
+                        correct: 2,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 15,
+                        question: "If the determinant $\\begin{vmatrix} a & b & c \\\\ b & c & a \\\\ c & a & b \\end{vmatrix} = 0$ and $a+b+c \\neq 0$, then:",
+                        options: ["$a=b=c$", "$a+b+c=1$", "$a^3+b^3+c^3=3abc$", "$abc=0$"],
+                        correct: 2,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 16,
+                        question: "Sum of the infinite series $1 + \\frac{2}{3} + \\frac{3}{3^2} + \\frac{4}{3^3} + ...$ is:",
+                        options: ["$\\frac{3}{2}$", "$\\frac{9}{4}$", "3", "2"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 17,
+                        question: "If $x^2 + y^2 = 1$, then maximum value of $|x| + |y|$ is:",
+                        options: ["1", "$\\sqrt{2}$", "2", "$2\\sqrt{2}$"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 18,
+                        question: "Number of ways to arrange letters of EXAMINATION:",
+                        options: ["$\\frac{11!}{2!}$", "$\\frac{11!}{2!2!}$", "$11!$", "$\\frac{11!}{2!2!2!}$"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 19,
+                        question: "If $\\omega$ is a cube root of unity, then $(1+\\omega-\\omega^2)^6$ equals:",
+                        options: ["64", "-64", "0", "1"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 20,
+                        question: "The number of real roots of $x^5 - 5x + 2 = 0$ is:",
+                        options: ["1", "3", "5", "0"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 21,
+                        question: "The locus of mid-point of chords of circle $x^2+y^2=a^2$ which subtend $90°$ at center is:",
+                        options: ["$x^2+y^2=\\frac{a^2}{2}$", "$x^2+y^2=\\frac{a^2}{4}$", "$x^2+y^2=2a^2$", "$x^2+y^2=a$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 22,
+                        question: "If vectors $\\vec{a}$ and $\\vec{b}$ are perpendicular and $|\\vec{a}|=2$, $|\\vec{b}|=3$, then $|\\vec{a}+\\vec{b}|$ equals:",
+                        options: ["5", "$\\sqrt{13}$", "1", "$\\sqrt{5}$"],
+                        correct: 1,
+                        topic: "Vectors"
+                    },
+                    {
+                        id: 23,
+                        question: "Equation of line passing through $(2,3)$ and perpendicular to line $3x+4y=5$ is:",
+                        options: ["$4x-3y+1=0$", "$4x-3y=1$", "$3x-4y+6=0$", "$4x-3y-1=0$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 24,
+                        question: "Distance between parallel lines $3x+4y=7$ and $6x+8y=5$ is:",
+                        options: ["$\\frac{9}{10}$", "$\\frac{3}{2}$", "$\\frac{1}{2}$", "$\\frac{7}{10}$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 25,
+                        question: "If $\\vec{a}$, $\\vec{b}$, $\\vec{c}$ are mutually perpendicular unit vectors, then $|\\vec{a}+\\vec{b}+\\vec{c}|$ equals:",
+                        options: ["1", "$\\sqrt{2}$", "$\\sqrt{3}$", "3"],
+                        correct: 2,
+                        topic: "Vectors"
+                    },
+                    {
+                        id: 26,
+                        question: "Eccentricity of hyperbola $9x^2-16y^2=144$ is:",
+                        options: ["$\\frac{5}{4}$", "$\\frac{5}{3}$", "$\\frac{4}{3}$", "$\\frac{3}{4}$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 27,
+                        question: "Angle between vectors $\\hat{i}+\\hat{j}$ and $\\hat{j}+\\hat{k}$ is:",
+                        options: ["$30°$", "$45°$", "$60°$", "$90°$"],
+                        correct: 2,
+                        topic: "Vectors"
+                    },
+                    {
+                        id: 28,
+                        question: "Equation of tangent to parabola $y^2=8x$ at $(2,4)$ is:",
+                        options: ["$x-y+2=0$", "$x+y-6=0$", "$x-y-2=0$", "$x-y+6=0$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 29,
+                        question: "If projection of $\\vec{a}$ on $\\vec{b}$ is 3 and $|\\vec{b}|=4$, then $\\vec{a}\\cdot\\vec{b}$ equals:",
+                        options: ["12", "7", "$\\frac{3}{4}$", "1"],
+                        correct: 0,
+                        topic: "Vectors"
+                    },
+                    {
+                        id: 30,
+                        question: "Area of triangle with vertices $(1,2)$, $(3,5)$, $(4,1)$ is:",
+                        options: ["5", "6", "7", "8"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    }
+                ]
+
+            },
+            {
+                id: 3,
+                title: "JEE MATH Series 1",
+                difficulty: "Easy",
+                free: true,
+                duration: 2400,
+                questions: [
+                    // Advanced Calculus
+                    {
+                        id: 31,
+                        question: "If $f(x) = \\int_0^x \\frac{\\sin t}{t} dt$, then $\\lim_{x \\to 0} \\frac{f(x)}{x}$ equals:",
+                        options: ["0", "1", "$\\frac{1}{2}$", "Does not exist"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 32,
+                        question: "The number of critical points of $f(x) = x^4 e^{-2x^2}$ is:",
+                        options: ["1", "2", "3", "4"],
+                        correct: 2,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 33,
+                        question: "If $\\int \\frac{x^2}{(x\\sin x + \\cos x)^2} dx = f(x) + C$, then $f(x)$ is:",
+                        options: ["$\\frac{-x}{x\\sin x + \\cos x}$", "$\\frac{x}{x\\sin x + \\cos x}$", "$\\frac{x\\sin x}{x\\sin x + \\cos x}$", "$\\tan x$"],
+                        correct: 0,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 34,
+                        question: "Value of $\\lim_{n \\to \\infty} \\left(\\frac{1}{n^2+1} + \\frac{2}{n^2+2} + ... + \\frac{n}{n^2+n}\\right)$ is:",
+                        options: ["0", "$\\frac{1}{2}$", "1", "$\\infty$"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 35,
+                        question: "If $y = \\tan^{-1}\\left(\\frac{\\sqrt{1+x^2}-1}{x}\\right)$, then $\\frac{dy}{dx}$ at $x=1$ equals:",
+                        options: ["$\\frac{1}{4}$", "$\\frac{1}{2}$", "$\\frac{1}{8}$", "$\\frac{1}{16}$"],
+                        correct: 0,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 36,
+                        question: "Area bounded by curves $y = \\ln x$, $y = \\ln|x|$, $y = |\\ln x|$ and $y = |\\ln|x||$ is:",
+                        options: ["0", "1", "2", "4"],
+                        correct: 3,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 37,
+                        question: "Solution of $(1+y^2)dx = (\\tan^{-1}y - x)dy$ is:",
+                        options: ["$x = \\tan^{-1}y + Ce^{-\\tan^{-1}y}$", "$x\\tan^{-1}y = C$", "$x + \\tan^{-1}y = Ce^y$", "$x = y\\tan^{-1}y + C$"],
+                        correct: 0,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 38,
+                        question: "If $f(x) = x^3 + x^2f'(1) + xf''(2) + f'''(3)$, then $f(1)$ equals:",
+                        options: ["0", "1", "-1", "2"],
+                        correct: 2,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 39,
+                        question: "Value of $\\int_0^{\\pi} \\frac{x\\sin x}{1+\\cos^2 x} dx$ is:",
+                        options: ["$\\frac{\\pi^2}{4}$", "$\\frac{\\pi^2}{2}$", "$\\pi^2$", "0"],
+                        correct: 0,
+                        topic: "Calculus"
+                    },
+                    {
+                        id: 40,
+                        question: "For $f(x) = e^{-|x|}$, the number of points where $f''(x)$ does not exist is:",
+                        options: ["0", "1", "2", "3"],
+                        correct: 1,
+                        topic: "Calculus"
+                    },
+
+                    // Advanced Algebra
+                    {
+                        id: 41,
+                        question: "If $\\alpha, \\beta$ are roots of $x^2-px+q=0$ and $\\alpha^4, \\beta^4$ are roots of $x^2-rx+s=0$, then $r$ equals:",
+                        options: ["$p^4-4p^2q+2q^2$", "$p^4-2p^2q+2q^2$", "$p^4-4pq+2q^2$", "$p^4-2pq+q^2$"],
+                        correct: 0,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 42,
+                        question: "If $z_1, z_2, z_3$ are vertices of equilateral triangle in complex plane with centroid at origin, then $z_1^2+z_2^2+z_3^2$ equals:",
+                        options: ["0", "1", "$z_1z_2z_3$", "3"],
+                        correct: 0,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 43,
+                        question: "Coefficient of $x^{99}$ in $(x-1)(x-2)...(x-100)$ is:",
+                        options: ["$-\\binom{100}{2}$", "$-5050$", "5050", "$\\binom{100}{2}$"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 44,
+                        question: "If matrix $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$ and $A^{-1} = kA$, then $k$ equals:",
+                        options: ["$\\frac{1}{2}$", "$-\\frac{1}{2}$", "2", "-2"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 45,
+                        question: "Number of 5-digit numbers divisible by 4 that can be formed using digits 0,1,2,3,4,5 (without repetition):",
+                        options: ["144", "120", "156", "132"],
+                        correct: 2,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 46,
+                        question: "If $\\log_2(x) + \\log_2(y) = 5$ and $\\log_2(x^2y) = 7$, then $x+y$ equals:",
+                        options: ["12", "16", "20", "24"],
+                        correct: 2,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 47,
+                        question: "Sum of series $\\sum_{r=1}^{n} r \\cdot r!$ equals:",
+                        options: ["$(n+1)! - 1$", "$n! - 1$", "$(n+1)!$", "$n(n+1)!$"],
+                        correct: 0,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 48,
+                        question: "If $|z-4| \\leq 3$, then maximum value of $|z+2i|$ is:",
+                        options: ["$3+2\\sqrt{5}$", "$7+2\\sqrt{5}$", "$3+\\sqrt{5}$", "10"],
+                        correct: 0,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 49,
+                        question: "Remainder when $2^{2023}$ is divided by 17 is:",
+                        options: ["1", "2", "8", "16"],
+                        correct: 2,
+                        topic: "Algebra"
+                    },
+                    {
+                        id: 50,
+                        question: "If $a_1, a_2, ..., a_n$ are in A.P. with common difference $d \\neq 0$, then $\\sum_{k=1}^{n-1} \\frac{1}{a_k a_{k+1}}$ equals:",
+                        options: ["$\\frac{n-1}{a_1a_n}$", "$\\frac{1}{d}\\left(\\frac{1}{a_1}-\\frac{1}{a_n}\\right)$", "$\\frac{n-1}{d}$", "$\\frac{1}{a_1}-\\frac{1}{a_n}$"],
+                        correct: 1,
+                        topic: "Algebra"
+                    },
+
+                    // Advanced Geometry & Trigonometry
+                    {
+                        id: 51,
+                        question: "If $\\sin^{-1}x + \\sin^{-1}y = \\frac{2\\pi}{3}$, then $\\cos^{-1}x + \\cos^{-1}y$ equals:",
+                        options: ["$\\frac{\\pi}{3}$", "$\\frac{2\\pi}{3}$", "$\\frac{\\pi}{6}$", "$\\frac{5\\pi}{6}$"],
+                        correct: 0,
+                        topic: "Trigonometry"
+                    },
+                    {
+                        id: 52,
+                        question: "In triangle ABC, if $a\\cos A = b\\cos B$, then triangle is:",
+                        options: ["Right-angled", "Isosceles", "Equilateral", "Scalene"],
+                        correct: 1,
+                        topic: "Trigonometry"
+                    },
+                    {
+                        id: 53,
+                        question: "Locus of point of intersection of tangents to circle $x^2+y^2=a^2$ which meet at $90°$ is:",
+                        options: ["$x^2+y^2=2a^2$", "$x^2+y^2=4a^2$", "$x^2+y^2=\\frac{a^2}{2}$", "$x^2+y^2=a^2$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 54,
+                        question: "If $[\\vec{a}\\times\\vec{b}, \\vec{b}\\times\\vec{c}, \\vec{c}\\times\\vec{a}] = \\lambda[\\vec{a}, \\vec{b}, \\vec{c}]^2$, then $\\lambda$ equals:",
+                        options: ["1", "2", "3", "4"],
+                        correct: 0,
+                        topic: "Vectors"
+                    },
+                    {
+                        id: 55,
+                        question: "Equation of circle passing through $(1,0)$, $(0,1)$ and having smallest radius is:",
+                        options: ["$x^2+y^2-x-y=0$", "$x^2+y^2+x+y-2=0$", "$2x^2+2y^2-x-y=0$", "$x^2+y^2=1$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 56,
+                        question: "Value of $\\sin 20° \\sin 40° \\sin 80°$ is:",
+                        options: ["$\\frac{\\sqrt{3}}{8}$", "$\\frac{1}{8}$", "$\\frac{\\sqrt{3}}{4}$", "$\\frac{1}{4}$"],
+                        correct: 0,
+                        topic: "Trigonometry"
+                    },
+                    {
+                        id: 57,
+                        question: "Distance of point $(1,2,3)$ from line $\\frac{x-1}{2}=\\frac{y-2}{3}=\\frac{z-3}{4}$ is:",
+                        options: ["0", "1", "$\\sqrt{2}$", "2"],
+                        correct: 0,
+                        topic: "3D Geometry"
+                    },
+                    {
+                        id: 58,
+                        question: "Combined equation of bisectors of angles between lines $3x-4y+1=0$ and $12x+5y-3=0$ is:",
+                        options: ["$7x^2-24xy-7y^2+14x+2y-1=0$", "$21x^2+24xy-21y^2=0$", "$x^2-y^2=0$", "$7x^2+24xy-7y^2=0$"],
+                        correct: 0,
+                        topic: "Coordinate Geometry"
+                    },
+                    {
+                        id: 59,
+                        question: "If $|\\vec{a}+\\vec{b}| = |\\vec{a}-\\vec{b}|$, then angle between $\\vec{a}$ and $\\vec{b}$ is:",
+                        options: ["$0°$", "$45°$", "$60°$", "$90°$"],
+                        correct: 3,
+                        topic: "Vectors"
+                    },
+                    {
+                        id: 60,
+                        question: "Focus of parabola $y^2-4y-8x+12=0$ is:",
+                        options: ["$(1, 2)$", "$(2, 2)$", "$(3, 2)$", "$(2, 3)$"],
+                        correct: 2,
+                        topic: "Coordinate Geometry"
                     }
                 ]
             },

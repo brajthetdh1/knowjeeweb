@@ -1,0 +1,352 @@
+<div class="space-y-6">
+  <!-- Question 1 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 1</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">If $\vec{a} = 2\hat{i} + 3\hat{j} - \hat{k}$ and $\vec{b} = \hat{i} - 2\hat{j} + 3\hat{k}$, find $\vec{a} \cdot \vec{b}$ and $|\vec{a} \times \vec{b}|$</p>
+    </div>
+
+    <button onclick="toggleSolution('vec1')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="vec1" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Calculate dot product</p>
+          <p>$\vec{a} \cdot \vec{b} = (2)(1) + (3)(-2) + (-1)(3)$</p>
+          <p>$= 2 - 6 - 3 = -7$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Calculate cross product</p>
+          <p>$\vec{a} \times \vec{b} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 2 & 3 & -1 \\ 1 & -2 & 3 \end{vmatrix}$</p>
+          <p>$= \hat{i}(9-2) - \hat{j}(6+1) + \hat{k}(-4-3)$</p>
+          <p>$= 7\hat{i} - 7\hat{j} - 7\hat{k}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Find magnitude</p>
+          <p>$|\vec{a} \times \vec{b}| = \sqrt{7^2 + (-7)^2 + (-7)^2}$</p>
+          <p>$= \sqrt{49 + 49 + 49} = \sqrt{147} = 7\sqrt{3}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\vec{a} \cdot \vec{b} = -7$, $|\vec{a} \times \vec{b}| = 7\sqrt{3}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 2</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the shortest distance between the lines:</p>
+      <p>$\vec{r} = (\hat{i} + 2\hat{j} + 3\hat{k}) + \lambda(2\hat{i} + 3\hat{j} + 4\hat{k})$</p>
+      <p>$\vec{r} = (2\hat{i} + 4\hat{j} + 5\hat{k}) + \mu(3\hat{i} + 4\hat{j} + 5\hat{k})$</p>
+    </div>
+
+    <button onclick="toggleSolution('vec2')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="vec2" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Identify components</p>
+          <p>Line 1: $\vec{a_1} = \hat{i} + 2\hat{j} + 3\hat{k}$, $\vec{b_1} = 2\hat{i} + 3\hat{j} + 4\hat{k}$</p>
+          <p>Line 2: $\vec{a_2} = 2\hat{i} + 4\hat{j} + 5\hat{k}$, $\vec{b_2} = 3\hat{i} + 4\hat{j} + 5\hat{k}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Formula for shortest distance</p>
+          <p>$d = \frac{|(\vec{a_2} - \vec{a_1}) \cdot (\vec{b_1} \times \vec{b_2})|}{|\vec{b_1} \times \vec{b_2}|}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Calculate $\vec{a_2} - \vec{a_1}$</p>
+          <p>$\vec{a_2} - \vec{a_1} = \hat{i} + 2\hat{j} + 2\hat{k}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Calculate $\vec{b_1} \times \vec{b_2}$</p>
+          <p>$\vec{b_1} \times \vec{b_2} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 2 & 3 & 4 \\ 3 & 4 & 5 \end{vmatrix}$</p>
+          <p>$= \hat{i}(15-16) - \hat{j}(10-12) + \hat{k}(8-9)$</p>
+          <p>$= -\hat{i} + 2\hat{j} - \hat{k}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 5: Calculate dot product and magnitude</p>
+          <p>$(\vec{a_2} - \vec{a_1}) \cdot (\vec{b_1} \times \vec{b_2}) = (1)(-1) + (2)(2) + (2)(-1) = -1 + 4 - 2 = 1$</p>
+          <p>$|\vec{b_1} \times \vec{b_2}| = \sqrt{1 + 4 + 1} = \sqrt{6}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 6: Find distance</p>
+          <p>$d = \frac{|1|}{\sqrt{6}} = \frac{1}{\sqrt{6}} = \frac{\sqrt{6}}{6}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{\sqrt{6}}{6}$ units</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 3</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the equation of the plane passing through the point $(2, 3, -4)$ and perpendicular to the vector $\hat{i} + 2\hat{j} - 3\hat{k}$</p>
+    </div>
+
+    <button onclick="toggleSolution('vec3')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="vec3" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: General equation of plane</p>
+          <p>$a(x-x_1) + b(y-y_1) + c(z-z_1) = 0$</p>
+          <p>Where $(a, b, c)$ is normal vector and $(x_1, y_1, z_1)$ is a point on plane</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Identify values</p>
+          <p>Point: $(2, 3, -4)$</p>
+          <p>Normal vector: $\vec{n} = \hat{i} + 2\hat{j} - 3\hat{k}$</p>
+          <p>So, $a = 1, b = 2, c = -3$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Substitute</p>
+          <p>$1(x-2) + 2(y-3) + (-3)(z-(-4)) = 0$</p>
+          <p>$x - 2 + 2y - 6 - 3z - 12 = 0$</p>
+          <p>$x + 2y - 3z - 20 = 0$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $x + 2y - 3z = 20$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 4</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">If $\vec{a}$, $\vec{b}$, $\vec{c}$ are unit vectors such that $\vec{a} + \vec{b} + \vec{c} = \vec{0}$, find the value of $\vec{a} \cdot \vec{b} + \vec{b} \cdot \vec{c} + \vec{c} \cdot \vec{a}$</p>
+    </div>
+
+    <button onclick="toggleSolution('vec4')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="vec4" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Given conditions</p>
+          <p>$|\vec{a}| = |\vec{b}| = |\vec{c}| = 1$ (unit vectors)</p>
+          <p>$\vec{a} + \vec{b} + \vec{c} = \vec{0}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Take dot product with itself</p>
+          <p>$(\vec{a} + \vec{b} + \vec{c}) \cdot (\vec{a} + \vec{b} + \vec{c}) = 0$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Expand</p>
+          <p>$\vec{a} \cdot \vec{a} + \vec{b} \cdot \vec{b} + \vec{c} \cdot \vec{c} + 2\vec{a} \cdot \vec{b} + 2\vec{b} \cdot \vec{c} + 2\vec{c} \cdot \vec{a} = 0$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Use unit vector property</p>
+          <p>$|\vec{a}|^2 = 1$, $|\vec{b}|^2 = 1$, $|\vec{c}|^2 = 1$</p>
+          <p>$1 + 1 + 1 + 2(\vec{a} \cdot \vec{b} + \vec{b} \cdot \vec{c} + \vec{c} \cdot \vec{a}) = 0$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 5: Solve</p>
+          <p>$3 + 2(\vec{a} \cdot \vec{b} + \vec{b} \cdot \vec{c} + \vec{c} \cdot \vec{a}) = 0$</p>
+          <p>$\vec{a} \cdot \vec{b} + \vec{b} \cdot \vec{c} + \vec{c} \cdot \vec{a} = -\frac{3}{2}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $-\frac{3}{2}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 5</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the angle between the vectors $\vec{a} = \hat{i} + \hat{j} + \hat{k}$ and $\vec{b} = \hat{i} - \hat{j}$</p>
+    </div>
+
+    <button onclick="toggleSolution('vec5')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="vec5" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Formula for angle between vectors</p>
+          <p>$\cos\theta = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Calculate dot product</p>
+          <p>$\vec{a} \cdot \vec{b} = (1)(1) + (1)(-1) + (1)(0) = 1 - 1 + 0 = 0$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Calculate magnitudes</p>
+          <p>$|\vec{a}| = \sqrt{1^2 + 1^2 + 1^2} = \sqrt{3}$</p>
+          <p>$|\vec{b}| = \sqrt{1^2 + (-1)^2 + 0^2} = \sqrt{2}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Find angle</p>
+          <p>$\cos\theta = \frac{0}{\sqrt{3} \times \sqrt{2}} = 0$</p>
+          <p>$\theta = \cos^{-1}(0) = 90°$ or $\frac{\pi}{2}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $90°$ or $\frac{\pi}{2}$ radians (perpendicular vectors)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 6</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the distance of the point $(1, 2, 3)$ from the plane $x + 2y + 2z = 5$</p>
+    </div>
+
+    <button onclick="toggleSolution('vec6')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="vec6" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Formula for distance from point to plane</p>
+          <p>$d = \frac{|ax_1 + by_1 + cz_1 - d|}{\sqrt{a^2 + b^2 + c^2}}$</p>
+          <p>For plane $ax + by + cz = d$ and point $(x_1, y_1, z_1)$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Identify values</p>
+          <p>Plane: $x + 2y + 2z = 5$</p>
+          <p>$a = 1, b = 2, c = 2, d = 5$</p>
+          <p>Point: $(1, 2, 3)$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Substitute in formula</p>
+          <p>$d = \frac{|(1)(1) + (2)(2) + (2)(3) - 5|}{\sqrt{1^2 + 2^2 + 2^2}}$</p>
+          <p>$= \frac{|1 + 4 + 6 - 5|}{\sqrt{1 + 4 + 4}}$</p>
+          <p>$= \frac{|6|}{\sqrt{9}}$</p>
+          <p>$= \frac{6}{3} = 2$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: 2 units</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 7 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 7</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the vector equation of the line passing through $(1, 2, 3)$ and parallel to the line $\frac{x-2}{3} = \frac{y+1}{2} = \frac{z-4}{5}$</p>
+    </div>
+
+    <button onclick="toggleSolution('vec7')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="vec7" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Vector equation of a line</p>
+          <p>$\vec{r} = \vec{a} + \lambda\vec{b}$</p>
+          <p>Where $\vec{a}$ is position vector of a point and $\vec{b}$ is direction vector</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Find direction vector</p>
+          <p>Given line: $\frac{x-2}{3} = \frac{y+1}{2} = \frac{z-4}{5}$</p>
+          <p>Direction ratios: $(3, 2, 5)$</p>
+          <p>So, $\vec{b} = 3\hat{i} + 2\hat{j} + 5\hat{k}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Position vector of given point</p>
+          <p>Point: $(1, 2, 3)$</p>
+          <p>$\vec{a} = \hat{i} + 2\hat{j} + 3\hat{k}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Write equation</p>
+          <p>$\vec{r} = (\hat{i} + 2\hat{j} + 3\hat{k}) + \lambda(3\hat{i} + 2\hat{j} + 5\hat{k})$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\vec{r} = (\hat{i} + 2\hat{j} + 3\hat{k}) + \lambda(3\hat{i} + 2\hat{j} + 5\hat{k})$</p>
+        </div>
+      </div>
+    </div>
+  </div>
