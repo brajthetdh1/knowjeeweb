@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
@@ -219,7 +220,7 @@
 
       calculus: [
         { title: "Limits", file: "math/calculus/limits.html", type: "free" },
-        { title: "Continuity & Differentiability", file: "math/calculus/continuity.html", type: "paid" },
+        { title: "Continuity & Differentiability", file: "math/calculus/continuity.html", type: "free" },
         { title: "Application of Derivatives", file: "math/calculus/aod.html", type: "free" },
         { title: "Integration", file: "math/calculus/integration.html", type: "paid" },
         { title: "Definite Integrals", file: "math/calculus/definite.html", type: "free" },
@@ -282,7 +283,7 @@
         const card = document.createElement("div");
         card.className = "p-6 rounded-lg shadow-lg bg-white border-2 border-yellow-200 cursor-pointer hover:shadow-xl hover:border-yellow-400 transition";
         card.innerHTML = `
-          <h3 class="font-bold text-xl mb-2">${topic.title}</h3>
+          <h3 class="font-bold text-2xl mb-2">${topic.title}</h3>
           <div class="flex justify-between items-center">
             <span class="text-sm text-gray-600">Click to learn</span>
             ${topic.type === "paid" ? '<span class="text-sm bg-yellow-400 px-3 py-1 rounded-full font-semibold">Premium</span>' : '<span class="text-sm bg-green-400 px-3 py-1 rounded-full font-semibold text-white">Free</span>'}
@@ -326,7 +327,7 @@
         }
 
         topicContent.innerHTML =
-          `<h3 class="text-xl font-bold mb-4">${topic.title} 
+          `<h3 class="text-xl text-center font-bold mb-4">${topic.title} 
          ${topic.type === "paid" ? '<span class="ml-2 text-sm bg-yellow-400 px-2 py-1 rounded">Paid</span>' : ''}
        </h3>` + html;
 

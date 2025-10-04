@@ -1,0 +1,378 @@
+<div class="space-y-6">
+  <!-- Question 1 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 1</h4>
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Easy</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Evaluate the limit:</p>
+      <p class="text-center text-lg">$\lim_{x \to 0} \frac{\sin 5x}{3x}$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc1')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc1" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Recall standard limit</p>
+          <p>$\lim_{x \to 0} \frac{\sin x}{x} = 1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Manipulate to standard form</p>
+          <p>$\lim_{x \to 0} \frac{\sin 5x}{3x} = \lim_{x \to 0} \frac{\sin 5x}{5x} \times \frac{5x}{3x}$</p>
+          <p>$= \lim_{x \to 0} \frac{\sin 5x}{5x} \times \frac{5}{3}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Apply limit</p>
+          <p>Let $t = 5x$, when $x \to 0$, then $t \to 0$</p>
+          <p>$= \lim_{t \to 0} \frac{\sin t}{t} \times \frac{5}{3}$</p>
+          <p>$= 1 \times \frac{5}{3} = \frac{5}{3}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{5}{3}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 2</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find $\frac{dy}{dx}$ if $y = x^x$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc2')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc2" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Take logarithm on both sides</p>
+          <p>$y = x^x$</p>
+          <p>$\ln y = \ln(x^x)$</p>
+          <p>$\ln y = x \ln x$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Differentiate using implicit differentiation</p>
+          <p>$\frac{d}{dx}(\ln y) = \frac{d}{dx}(x \ln x)$</p>
+          <p>$\frac{1}{y} \cdot \frac{dy}{dx} = \ln x + x \cdot \frac{1}{x}$</p>
+          <p>$\frac{1}{y} \cdot \frac{dy}{dx} = \ln x + 1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Solve for dy/dx</p>
+          <p>$\frac{dy}{dx} = y(\ln x + 1)$</p>
+          <p>$\frac{dy}{dx} = x^x(\ln x + 1)$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{dy}{dx} = x^x(\ln x + 1)$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 3</h4>
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Easy</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Evaluate the integral:</p>
+      <p class="text-center text-lg">$\int x^2 dx$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc3')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc3" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Use power rule for integration</p>
+          <p>$\int x^n dx = \frac{x^{n+1}}{n+1} + C$ where $n \neq -1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Apply the formula</p>
+          <p>Here, $n = 2$</p>
+          <p>$\int x^2 dx = \frac{x^{2+1}}{2+1} + C$</p>
+          <p>$= \frac{x^3}{3} + C$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Verify by differentiation</p>
+          <p>$\frac{d}{dx}\left(\frac{x^3}{3} + C\right) = \frac{3x^2}{3} = x^2$ ✓</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{x^3}{3} + C$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 4</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Evaluate using L'Hôpital's Rule:</p>
+      <p class="text-center text-lg">$\lim_{x \to 0} \frac{e^x - 1 - x}{x^2}$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc4')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc4" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Check indeterminate form</p>
+          <p>At $x = 0$: $\frac{e^0 - 1 - 0}{0^2} = \frac{0}{0}$ (indeterminate)</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Apply L'Hôpital's Rule (1st time)</p>
+          <p>$\lim_{x \to 0} \frac{e^x - 1 - x}{x^2} = \lim_{x \to 0} \frac{e^x - 1}{2x}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Check again</p>
+          <p>At $x = 0$: $\frac{e^0 - 1}{0} = \frac{0}{0}$ (still indeterminate)</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Apply L'Hôpital's Rule (2nd time)</p>
+          <p>$= \lim_{x \to 0} \frac{e^x}{2}$</p>
+          <p>$= \frac{e^0}{2} = \frac{1}{2}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{1}{2}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 5</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the area bounded by the curve $y = x^2$, x-axis, and the lines $x = 0$ and $x = 2$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc5')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc5" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Set up the definite integral</p>
+          <p>Area = $\int_0^2 x^2 dx$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Find the antiderivative</p>
+          <p>$\int x^2 dx = \frac{x^3}{3}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Apply limits</p>
+          <p>Area = $\left[\frac{x^3}{3}\right]_0^2$</p>
+          <p>$= \frac{2^3}{3} - \frac{0^3}{3}$</p>
+          <p>$= \frac{8}{3} - 0$</p>
+          <p>$= \frac{8}{3}$ square units</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{8}{3}$ square units</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 6</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Evaluate the integral using integration by parts:</p>
+      <p class="text-center text-lg">$\int x e^x dx$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc6')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc6" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Formula for integration by parts</p>
+          <p>$\int u \, dv = uv - \int v \, du$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Choose u and dv</p>
+          <p>Let $u = x$ and $dv = e^x dx$</p>
+          <p>Then $du = dx$ and $v = e^x$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Apply the formula</p>
+          <p>$\int x e^x dx = x \cdot e^x - \int e^x dx$</p>
+          <p>$= xe^x - e^x + C$</p>
+          <p>$= e^x(x - 1) + C$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Verify by differentiation</p>
+          <p>$\frac{d}{dx}[e^x(x-1)] = e^x(x-1) + e^x = xe^x$ ✓</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $e^x(x - 1) + C$ or $xe^x - e^x + C$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 7 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 7</h4>
+      <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the derivative of $y = \sin^{-1}(2x)$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc7')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc7" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Formula for derivative of sin⁻¹(x)</p>
+          <p>$\frac{d}{dx}[\sin^{-1}(x)] = \frac{1}{\sqrt{1-x^2}}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Apply chain rule</p>
+          <p>Let $u = 2x$, then $y = \sin^{-1}(u)$</p>
+          <p>$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Calculate each part</p>
+          <p>$\frac{dy}{du} = \frac{1}{\sqrt{1-u^2}} = \frac{1}{\sqrt{1-(2x)^2}} = \frac{1}{\sqrt{1-4x^2}}$</p>
+          <p>$\frac{du}{dx} = 2$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Multiply</p>
+          <p>$\frac{dy}{dx} = \frac{1}{\sqrt{1-4x^2}} \times 2 = \frac{2}{\sqrt{1-4x^2}}$</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: $\frac{dy}{dx} = \frac{2}{\sqrt{1-4x^2}}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 8 -->
+  <div class="bg-white border-2 border-yellow-300 rounded-lg p-6 shadow-md">
+    <div class="flex justify-between items-start mb-4">
+      <h4 class="font-bold text-lg text-yellow-900">Question 8</h4>
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Hard</span>
+    </div>
+    
+    <div class="mb-4">
+      <p class="text-gray-800 mb-2">Find the maximum and minimum values of $f(x) = x^3 - 3x^2 - 9x + 5$ in the interval $[-2, 4]$</p>
+    </div>
+
+    <button onclick="toggleSolution('calc8')" class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
+      Show Solution
+    </button>
+
+    <div id="calc8" class="hidden mt-4 p-4 bg-green-50 border-2 border-green-300 rounded-lg">
+      <h5 class="font-bold text-green-800 mb-3">Solution:</h5>
+      
+      <div class="space-y-3 text-gray-800">
+        <div>
+          <p class="font-semibold">Step 1: Find critical points</p>
+          <p>$f'(x) = 3x^2 - 6x - 9 = 3(x^2 - 2x - 3) = 3(x-3)(x+1)$</p>
+          <p>Set $f'(x) = 0$: $x = 3$ or $x = -1$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 2: Check which critical points are in [-2, 4]</p>
+          <p>$x = -1$ ✓ (in interval)</p>
+          <p>$x = 3$ ✓ (in interval)</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 3: Evaluate at critical points and endpoints</p>
+          <p>$f(-2) = (-2)^3 - 3(-2)^2 - 9(-2) + 5 = -8 - 12 + 18 + 5 = 3$</p>
+          <p>$f(-1) = (-1)^3 - 3(-1)^2 - 9(-1) + 5 = -1 - 3 + 9 + 5 = 10$</p>
+          <p>$f(3) = 3^3 - 3(3)^2 - 9(3) + 5 = 27 - 27 - 27 + 5 = -22$</p>
+          <p>$f(4) = 4^3 - 3(4)^2 - 9(4) + 5 = 64 - 48 - 36 + 5 = -15$</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Step 4: Compare values</p>
+          <p>Maximum value = 10 (at $x = -1$)</p>
+          <p>Minimum value = -22 (at $x = 3$)</p>
+        </div>
+
+        <div class="bg-white p-3 rounded border-l-4 border-green-500">
+          <p class="font-bold text-green-700">Answer: Maximum = 10, Minimum = -22</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

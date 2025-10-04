@@ -1,0 +1,262 @@
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Concept of Limit</span></p>
+    <p><span>Consider a function</span></p>
+    <div class="text-center text-2xl my-2">\( f(x) \)</div>
+    <p><span>defined near</span> \( x = a \) <span>(except possibly at \( a \) itself).</span></p>
+    <p><span>We want to understand what value</span> \( f(x) \) <span>approaches as \( x \) gets closer and closer to \( a \).</span></p>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Informal Definition</span></p>
+    <p><span>The limit of</span> \( f(x) \) <span>as</span> \( x \to a \) <span>is</span> \( L \) <span>if:</span></p>
+    <div class="text-center text-2xl my-2">\( \displaystyle \lim_{x \to a} f(x) = L \)</div>
+    <p><span>meaning</span> \( f(x) \) <span>can be made arbitrarily close to</span> \( L \) <span>by taking</span> \( x \) <span>sufficiently close to</span> \( a \) <span>(but \( x \neq a \)).</span></p>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: Left-hand and Right-hand Limits</span></p>
+    <p><span>Left-hand limit:</span></p>
+    <div class="text-center text-2xl my-2">\( \displaystyle \lim_{x \to a^-} f(x) = L \)</div>
+    <p><span>Right-hand limit:</span></p>
+    <div class="text-center text-2xl my-2">\( \displaystyle \lim_{x \to a^+} f(x) = L \)</div>
+    <p><span>The limit exists if:</span></p>
+    <div class="text-center my-2">\( \displaystyle \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L \)</div>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Rigorous ε-δ Definition</span></p>
+    <p><span>The limit of</span> \( f(x) \) <span>as</span> \( x \to a \) <span>is</span> \( L \) <span>means:</span></p>
+    <div class="text-center my-4 px-2 break-words">
+      $$
+      \displaystyle
+      \lim_{x \to a} f(x) = L 
+      \iff 
+      \forall \varepsilon > 0, \; \exists \delta > 0 :\\
+      0 < |x - a| < \delta \implies |f(x) - L| < \varepsilon
+      $$
+    </div>
+
+    <div class="text-yellow-900 text-lg px-4 sm:px-2 md:px-6 my-4">
+  <p>
+    In the rigorous ε-δ definition of a limit: 
+    <span class="font-semibold">ε (epsilon)</span> represents how close we want 
+    <span class="font-mono">f(x)</span> to be to 
+    <span class="font-mono">L</span>, and 
+    <span class="font-semibold">δ (delta)</span> represents how close 
+    <span class="font-mono">x</span> should be to 
+    <span class="font-mono">a</span> (excluding 
+    <span class="font-mono">a</span> itself). 
+    No matter how small ε is, we can always find a δ that ensures 
+    <span class="font-mono">f(x)</span> stays within ε of 
+    <span class="font-mono">L</span>.
+  </p>
+</div>
+
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 5: Important Notes</span></p>
+    <p><span>1. Function need not be defined at</span> \( x = a \).</p>
+    <p><span>2. Limits can be finite or infinite.</span></p>
+    <p><span>3. One-sided limits are useful for studying discontinuities.</span></p>
+    <p><span>4. JEE problems often involve algebraic manipulation to evaluate limits.</span></p>
+  </div>
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <h1 class="text-2xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+        Here are some examples</h1>
+  <!-- Step 1: Simple Limit -->
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Simple Limit Example</span></p>
+    <p><span>Evaluate:</span> \( \lim_{x \to 2} (3x + 1) \)</p>
+    <div class="text-center text-2xl my-2">\( \lim_{x \to 2} (3x + 1) = ? \)</div>
+    <p><span>Solution: Substitute \( x = 2 \)</span></p>
+    <div class="text-center text-2xl my-2">\( 3(2) + 1 = 7 \)</div>
+    <p><span>Answer: 7</span></p>
+  </div>
+
+  <!-- Step 2: Limit Leading to 0/0 -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Limit Leading to 0/0</span></p>
+    <p><span>Evaluate:</span> \( \lim_{x \to 2} \frac{x^2 - 4}{x - 2} \)</p>
+    <div class="text-center text-2xl my-2">\( \frac{x^2 - 4}{x - 2} \)</div>
+    <p><span>Solution: Factor numerator:</span></p>
+    <div class="text-center text-2xl my-2">\( x^2 - 4 = (x-2)(x+2) \)</div>
+    <p><span>Cancel (x-2):</span></p>
+    <div class="text-center text-2xl my-2">\( \lim_{x \to 2} (x + 2) = 4 \)</div>
+    <p><span>Answer: 4</span></p>
+  </div>
+
+  <!-- Step 3: One-sided limits -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: One-Sided Limits</span></p>
+    <p><span>Function:</span></p>
+    <div class="text-center text-2xl my-2">
+      \( f(x) = 
+      \begin{cases} 
+        x^2 & x < 1 \\ 
+        2x + 1 & x \ge 1 
+      \end{cases} 
+      \)
+    </div>
+    <p><span>Left-hand limit:</span> \( \lim_{x \to 1^-} f(x) = 1^2 = 1 \)</p>
+    <p><span>Right-hand limit:</span> \( \lim_{x \to 1^+} f(x) = 2(1) + 1 = 3 \)</p>
+    <p><span>Since LHL ≠ RHL, overall limit does not exist.</span></p>
+  </div>
+
+  <!-- Step 4: Limit at Infinity -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Limit at Infinity</span></p>
+    <p><span>Evaluate:</span> \( \lim_{x \to \infty} \frac{3x^2 + 5}{2x^2 - x} \)</p>
+    <p><span>Divide numerator & denominator by \( x^2 \):</span></p>
+    <div class="text-center text-2xl my-2">\( \frac{3 + 5/x^2}{2 - 1/x} \to \frac{3}{2} \)</div>
+    <p><span>Answer: 3/2</span></p>
+  </div>
+
+  <!-- Step 5: Standard Tricky Limit -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 5: Standard Tricky Limit</span></p>
+    <p><span>Evaluate:</span> \( \lim_{x \to 0} \frac{\sin x}{x} \)</p>
+    <p><span>Answer: 1 (well-known JEE standard limit)</span></p>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Main Title -->
+  <h1 class="text-2xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Standard Limits in Calculus
+  </h1>
+
+  <!-- Step 1: Definition -->
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Definition of a Limit</span></p>
+    <p><span>The limit of a function</span> \( f(x) \) <span>as</span> \( x \to a \) <span>is the value that</span> \( f(x) \) <span>approaches as</span> \( x \) <span>gets arbitrarily close to</span> \( a \) <span>(but \( x \neq a \)).</span></p>
+    <div class="text-center text-2xl my-2">\( \displaystyle \lim_{x \to a} f(x) = L \)</div>
+  </div>
+
+  <!-- Step 2: Standard Limits -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Some Standard Limits</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>\( \displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1 \)</li>
+      <li>\( \displaystyle \lim_{x \to 0} \frac{1 - \cos x}{x} = 0 \)</li>
+      <li>\( \displaystyle \lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2} \)</li>
+      <li>\( \displaystyle \lim_{x \to 0} \frac{\tan x}{x} = 1 \)</li>
+      <li>\( \displaystyle \lim_{x \to 0} (1 + x)^{1/x} = e \)</li>
+      <li>\( \displaystyle \lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e \)</li>
+    </ul>
+  </div>
+
+  <!-- Step 3: Examples -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: Examples</span></p>
+    <p><span>Example 1:</span> \( \displaystyle \lim_{x \to 0} \frac{\sin 5x}{x} \)</p>
+    <div class="text-center text-2xl my-2">\( \displaystyle \lim_{x \to 0} \frac{\sin 5x}{x} = \lim_{x \to 0} 5 \cdot \frac{\sin 5x}{5x} = 5 \)</div>
+
+    <p class="mt-4"><span>Example 2:</span> \( \displaystyle \lim_{x \to 0} \frac{1 - \cos 3x}{x^2} \)</p>
+    <div class="text-center text-2xl my-2">\( \displaystyle \lim_{x \to 0} \frac{1 - \cos 3x}{x^2} = \lim_{x \to 0} \frac{9(1 - \cos 3x)}{(3x)^2} = \frac{9}{2} \)</div>
+  </div>
+
+  <!-- Step 4: Important Notes -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Important Notes</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>Always look for standard limits before applying L'Hôpital's Rule.</li>
+      <li>Multiplying and dividing by constants can simplify limits.</li>
+      <li>Many JEE questions combine these limits with algebraic manipulation.</li>
+      <li>Trigonometric limits often require using small angle approximations: \( \sin x \approx x, \tan x \approx x, \cos x \approx 1 - \frac{x^2}{2} \) as \( x \to 0 \).</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Main Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Techniques to Evaluate Limits
+  </h1>
+
+  <!-- Step 1: Direct Substitution -->
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Direct Substitution</span></p>
+    <p><span>If the function is continuous at the point, directly substitute the value of</span> \( x \) <span>to find the limit.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      \( \displaystyle \lim_{x \to 2} (3x^2 + 5) = 3(2)^2 + 5 = 17 \)
+    </div>
+  </div>
+
+  <!-- Step 2: Factorization -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Factorization</span></p>
+    <p><span>If direct substitution gives an indeterminate form like</span> \( \frac{0}{0} \), <span>try factoring numerator and denominator.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      \( \displaystyle \lim_{x \to 3} \frac{x^2 - 9}{x - 3} = \lim_{x \to 3} \frac{(x-3)(x+3)}{x-3} = \lim_{x \to 3} (x+3) = 6 \)
+    </div>
+  </div>
+
+  <!-- Step 3: Rationalization -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: Rationalization</span></p>
+    <p><span>Multiply by the conjugate if the limit involves square roots to remove indeterminate forms.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      \( \displaystyle \lim_{x \to 4} \frac{\sqrt{x} - 2}{x-4} = \lim_{x \to 4} \frac{\sqrt{x}-2}{x-4} \cdot \frac{\sqrt{x}+2}{\sqrt{x}+2} = \lim_{x \to 4} \frac{x-4}{(x-4)(\sqrt{x}+2)} = \frac{1}{4} \)
+    </div>
+  </div>
+
+  <!-- Step 4: Standard Limits -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Using Standard Limits</span></p>
+    <p><span>Apply well-known standard limits such as:</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>\( \displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1 \)</li>
+      <li>\( \displaystyle \lim_{x \to 0} (1+x)^{1/x} = e \)</li>
+      <li>\( \displaystyle \lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2} \)</li>
+    </ul>
+  </div>
+
+  <!-- Step 5: L'Hôpital's Rule -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 5: L'Hôpital's Rule</span></p>
+    <p><span>For indeterminate forms like</span> \( \frac{0}{0} \) <span>or</span> \( \frac{\infty}{\infty} \), <span>take derivatives of numerator and denominator:</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      \( \displaystyle \lim_{x \to 0} \frac{\sin x}{x} = \lim_{x \to 0} \frac{\cos x}{1} = 1 \)
+    </div>
+  </div>
+
+  <!-- Step 6: Algebraic Manipulation -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 6: Algebraic Manipulation</span></p>
+    <p><span>Sometimes rearranging terms or splitting fractions helps simplify limits.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      \( \displaystyle \lim_{x \to 0} \frac{x^2 + 3x}{x} = \lim_{x \to 0} (x + 3) = 3 \)
+    </div>
+  </div>
+
+  <!-- Step 7: Important Notes -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 7: Important Notes</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>Always check if the limit can be evaluated directly before using advanced methods.</li>
+      <li>Factorization and rationalization are the most commonly used techniques in JEE problems.</li>
+      <li>Keep standard limits handy—they save a lot of computation time.</li>
+      <li>Check for one-sided limits in case of piecewise functions.</li>
+    </ul>
+  </div>
+
+</div>
+
+
