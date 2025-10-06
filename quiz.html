@@ -41,6 +41,9 @@
     </script>
 
 
+<script type="module" src="js/auth.js"></script>
+
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://knowjee.com/quiz">
 
@@ -70,37 +73,6 @@
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Quiz",
-      "name": "JEE Practice Quiz Series",
-      "description": "Comprehensive JEE practice quizzes covering Mathematics, Physics, and Chemistry",
-      "educationalLevel": "Higher Education",
-      "assesses": ["Mathematics", "Physics", "Chemistry"],
-      "numberOfQuestions": 90,
-      "hasPart": [
-        {
-          "@type": "Quiz",
-          "name": "JEE MATH Series 1",
-          "numberOfQuestions": 30,
-          "educationalLevel": "Easy"
-        },
-        {
-          "@type": "Quiz",
-          "name": "JEE PHYSICS Series 1",
-          "numberOfQuestions": 30,
-          "educationalLevel": "Easy"
-        },
-        {
-          "@type": "Quiz",
-          "name": "JEE CHEMISTRY Series 1",
-          "numberOfQuestions": 30,
-          "educationalLevel": "Easy"
-        }
-      ]
-    }
-    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -201,7 +173,8 @@
             </nav>
         </div>
     </header>
-
+    
+   <!-- header  -->
     <script>
         const mobileBtn = document.getElementById("mobileMenuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
@@ -211,191 +184,109 @@
             mobileBtn.setAttribute("aria-expanded", isExpanded);
         });
     </script>
+    
 
     <!-- Quiz Cards View -->
     <div id="quizCardsView" class="container mx-auto px-4 py-24">
         <div class="max-w-7xl mx-auto">
-            <div class="mb-8">
-                <h1 class="text-4xl font-bold text-amber-900 mb-2">Free JEE Practice Quizzes 2025</h1>
-                <p class="text-amber-700 mb-4">Master JEE Main & Advanced with our comprehensive online mock tests.
-                    Practice 90+ questions across Math, Physics, and Chemistry with instant results and detailed
-                    solutions.</p>
-            </div>
-
-            <!-- Mathematics Section -->
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
-                    JEE Mathematics Practice Tests
-                </h2>
-                <p class="text-gray-600 mb-4">Practice calculus, algebra, trigonometry, coordinate geometry, and more
-                    with our comprehensive JEE Math quizzes.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <article
-                        class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
-                        onclick="startQuiz(1)">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-amber-900">JEE Math Series 1 - Calculus & Algebra</h3>
-                            <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Comprehensive practice test covering derivatives, integrals,
-                            trigonometry, matrices, and coordinate geometry for JEE Main preparation.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-gray-500">📝 30 Questions</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Easy</span>
-                        </div>
-                    </article>
-
-                    <article
-                        class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
-                        onclick="startQuiz(2)">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-amber-900">JEE Math Series 2 - Advanced Topics</h3>
-                            <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">FREE</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Advanced JEE questions on trigonometry, coordinate geometry, and
-                            complex numbers for serious aspirants.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-gray-500">📝 30 Questions</span>
-                            <span
-                                class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Medium</span>
-                        </div>
-                    </article>
-
-                    <article
-                        class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
-                        onclick="startQuiz(3)">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-amber-900">JEE Math Series 3 - JEE Advanced</h3>
-                            <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">FREE</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Challenging problems on 3D geometry, vectors, differential
-                            equations for JEE Advanced level preparation.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-gray-500">📝 15 Questions</span>
-                            <span
-                                class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-semibold">Difficult</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Physics Section -->
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
-                    JEE Physics Mock Tests
-                </h2>
-                <p class="text-gray-600 mb-4">Master mechanics, electromagnetism, optics, thermodynamics, and modern
-                    physics with our targeted JEE Physics quizzes.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
-                        onclick="startQuiz(4)">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-amber-900">JEE PHYSICS Series 1</h3>
-                            <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Mechanics and Motion</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-gray-500">📝 30 Questions</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Easy</span>
-                        </div>
+            <!-- Hero Section -->
+            <div class="mb-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-4">JEE Complete Practice Tests 2025</h1>
+                <p class="text-lg md:text-xl text-amber-700 mb-6">180 comprehensive test series with 9,000+ carefully crafted questions</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 text-base md:text-lg">
+                    <div class="bg-green-100 px-6 py-3 rounded-lg">
+                        <span class="font-bold text-green-800 block">90 FREE Tests</span>
+                        <p class="text-sm text-green-700">Requires login - 50 questions - 1 hour each</p>
                     </div>
-
-                    <div class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
-                        onclick="startQuiz(5)">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-amber-900">JEE PHYSICS Series 2</h3>
-                            <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Electromagnetism and Circuits</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-gray-500">📝 12 Questions</span>
-                            <span
-                                class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Medium</span>
-                        </div>
-                    </div>
-
-                    <div class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer"
-                        onclick="startQuiz(6)">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-amber-900">JEE PHYSICS Series 3</h3>
-                            <span
-                                class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Modern Physics and Optics</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-gray-500">📝 15 Questions</span>
-                            <span
-                                class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-semibold">Difficult</span>
-                        </div>
+                    <div class="bg-amber-100 px-6 py-3 rounded-lg">
+                        <span class="font-bold text-amber-800 block">90 PREMIUM Tests</span>
+                        <p class="text-sm text-amber-700">50 questions - 1.5 hours each</p>
                     </div>
                 </div>
-        </div>
+            </div>
 
-        <!-- Chemistry Section -->
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
-                Chemistry
-            </h2>
-            <p class="text-gray-600 mb-4">Explore physical, organic, and inorganic chemistry with our focused JEE
-                Chemistry quizzes, designed to strengthen concepts and problem-solving skills.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article
-                    class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1"
-                    onclick="startQuiz(7)">
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-xl font-bold text-amber-900">JEE Chemistry Series 1</h3>
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Atomic Structure and Bonding</p>
-                    <div class="flex justify-between items-center text-sm">
-                        <span class="text-gray-500">📝 30 Questions</span>
-                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Easy</span>
-                    </div>
-                </article>
+            <!-- Subject Tabs -->
+            <div class="flex justify-center mb-8 gap-4 flex-wrap">
+                <button onclick="switchSubject('math')" id="tabMath" class="px-6 py-3 rounded-lg font-semibold text-lg bg-blue-500 text-white shadow-lg">
+                    Mathematics
+                </button>
+                <button onclick="switchSubject('physics')" id="tabPhysics" class="px-6 py-3 rounded-lg font-semibold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+                    Physics
+                </button>
+                <button onclick="switchSubject('chemistry')" id="tabChemistry" class="px-6 py-3 rounded-lg font-semibold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+                    Chemistry
+                </button>
+            </div>
 
+            <!-- Login Notice for Free Quizzes
+            <div id="loginNotice" class="hidden bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-8 rounded">
+                <p class="text-yellow-800 font-semibold">Please login to access free practice tests. Premium tests are available for purchase.</p>
+                <button onclick="showLoginPrompt()" class="mt-2 px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 font-semibold">Login Now</button>
+            </div> -->
 
-                <article
-                    class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1"
-                    onclick="startQuiz(8)">
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-xl font-bold text-amber-900">JEE Chemistry Series 2</h3>
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
+            <!-- Mathematics Quizzes -->
+            <div id="mathQuizzes" class="subject-content">
+                <section class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-6 border-b-4 border-green-500 pb-2">
+                        Free Math Practice Tests (1-30)
+                    </h2>
+                    <p class="text-gray-700 mb-6">Build strong foundations in calculus, algebra, coordinate geometry, and trigonometry. Login required to access.</p>
+                    <div id="mathFreeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     </div>
-                    <p class="text-gray-600 mb-4">Organic Reactions and Mechanisms</p>
-                    <div class="flex justify-between items-center text-sm">
-                        <span class="text-gray-500">📝 12 Questions</span>
-                        <span
-                            class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Medium</span>
-                    </div>
-                </article>
+                </section>
 
-                <article
-                    class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1"
-                    onclick="startQuiz(9)">
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-xl font-bold text-amber-900">JEE Chemistry Series 3</h3>
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PAID</span>
+                <section class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6 border-b-4 border-amber-500 pb-2">
+                        Premium Math Practice Tests (31-60)
+                    </h2>
+                    <p class="text-gray-700 mb-6">Advanced questions with extended time. Includes detailed solutions and performance analytics.</p>
+                    <div id="mathPremiumGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     </div>
-                    <p class="text-gray-600 mb-4">Physical Chemistry and Equilibrium</p>
-                    <div class="flex justify-between items-center text-sm">
-                        <span class="text-gray-500">📝 15 Questions</span>
-                        <span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-semibold">Difficult</span>
-                    </div>
-                </article>
+                </section>
+            </div>
 
+            <!-- Physics Quizzes -->
+            <div id="physicsQuizzes" class="subject-content hidden">
+                <section class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-6 border-b-4 border-green-500 pb-2">
+                        Free Physics Practice Tests (1-30)
+                    </h2>
+                    <p class="text-gray-700 mb-6">Master mechanics, electromagnetism, optics, thermodynamics, and modern physics. Login required to access.</p>
+                    <div id="physicsFreeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    </div>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6 border-b-4 border-amber-500 pb-2">
+                        Premium Physics Practice Tests (31-60)
+                    </h2>
+                    <p class="text-gray-700 mb-6">Complex physics problems with detailed solutions and conceptual clarity.</p>
+                    <div id="physicsPremiumGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Chemistry Quizzes -->
+            <div id="chemistryQuizzes" class="subject-content hidden">
+                <section class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-6 border-b-4 border-green-500 pb-2">
+                        Free Chemistry Practice Tests (1-30)
+                    </h2>
+                    <p class="text-gray-700 mb-6">Explore physical, organic, and inorganic chemistry concepts. Login required to access.</p>
+                    <div id="chemistryFreeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    </div>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6 border-b-4 border-amber-500 pb-2">
+                        Premium Chemistry Practice Tests (31-60)
+                    </h2>
+                    <p class="text-gray-700 mb-6">Advanced chemistry problems with reaction mechanisms and detailed explanations.</p>
+                    <div id="chemistryPremiumGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    </div>
+                </section>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Quiz Section -->
@@ -405,44 +296,38 @@
             <div class="bg-white rounded-lg shadow-lg p-6 mb-6 border-2 border-amber-300">
                 <div class="flex justify-between items-center flex-wrap gap-4">
                     <div>
-                        <h2 id="quizTitle" class="text-2xl font-bold text-amber-900"></h2>
-                        <p class="text-amber-700">Question <span id="currentQuestion">1</span> of <span
-                                id="totalQuestions">10</span></p>
+                        <h2 id="quizTitle" class="text-xl md:text-2xl font-bold text-amber-900"></h2>
+                        <p class="text-amber-700">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">50</span></p>
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="text-right">
                             <p class="text-sm text-amber-700">Time Remaining</p>
-                            <p id="timer" class="text-2xl font-bold text-amber-900">10:00</p>
+                            <p id="timer" class="text-2xl font-bold text-amber-900">60:00</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Question Card -->
-            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 border-2 border-amber-300">
-                <div id="questionText" class="text-lg text-gray-800 mb-6 font-medium"></div>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-6 border-2 border-amber-300">
+                <div id="questionText" class="text-base md:text-lg text-gray-800 mb-6 font-medium"></div>
                 <div id="optionsContainer" class="space-y-3">
-                    <!-- Options will be inserted here -->
                 </div>
             </div>
 
             <!-- Navigation -->
             <div class="flex justify-between items-center flex-wrap gap-3">
-                <button onclick="cancelQuiz()"
-                    class="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold">
+                <button onclick="cancelQuiz()" class="px-4 md:px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold">
                     Cancel
                 </button>
                 <div class="flex gap-3">
-                    <button onclick="previousQuestion()" id="prevBtn"
-                        class="px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
+                    <button onclick="previousQuestion()" id="prevBtn" class="px-4 md:px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
                         Previous
                     </button>
-                    <button onclick="nextQuestion()" id="nextBtn"
-                        class="px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 font-semibold">
+                    <button onclick="nextQuestion()" id="nextBtn" class="px-4 md:px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 font-semibold">
                         Next
                     </button>
-                    <button onclick="submitQuiz()" id="submitBtn"
-                        class="hidden px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold">
+                    <button onclick="submitQuiz()" id="submitBtn" class="hidden px-4 md:px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold">
                         Submit
                     </button>
                 </div>
@@ -451,31 +336,27 @@
     </div>
 
     <!-- Results Modal -->
-    <div id="resultsModal" class="hidden fixed inset-0 modal flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border-4 border-amber-300 relative">
-            <button onclick="closeResults()"
-                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">
+    <div id="resultsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border-4 border-amber-300 relative">
+            <button onclick="closeResults()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">
                 ✕
             </button>
 
-            <div class="p-8">
-                <h2 class="text-3xl font-bold text-amber-900 mb-6 text-center">Quiz Results</h2>
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-900 mb-6 text-center">Quiz Results</h2>
 
                 <div class="text-center mb-8">
                     <div class="inline-block bg-amber-100 rounded-full p-8 mb-4">
-                        <p class="text-6xl font-bold text-amber-900" id="scoreDisplay">0/0</p>
+                        <p class="text-4xl md:text-6xl font-bold text-amber-900" id="scoreDisplay">0/50</p>
                     </div>
                     <p class="text-xl text-amber-700 font-semibold" id="percentageDisplay">0%</p>
                 </div>
 
                 <div id="reviewContainer" class="space-y-4 mb-6">
-                    <!-- Review items will be inserted here -->
                 </div>
 
                 <div class="flex justify-center">
-                    <button onclick="closeResults()"
-                        class="px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 font-semibold text-lg">
+                    <button onclick="closeResults()" class="px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 font-semibold text-lg">
                         OK
                     </button>
                 </div>
@@ -483,962 +364,1013 @@
         </div>
     </div>
 
+    
+    <!-- functionality  -->
     <script>
-        // Sample quiz data
-        const quizzes = [
-            {
-                id: 1,
-                title: "JEE MATH Series 1",
-                difficulty: "Easy",
-                free: true,
-                duration: 1800,
-                questions: [
-                    {
-                        question: "What is $\\frac{d}{dx}(x^3)$?",
-                        options: ["$x^2$", "$3x^2$", "$3x$", "$x^3$"],
-                        correct: 1
-                    },
-                    {
-                        question: "Evaluate $\\int 2x dx$",
-                        options: ["$x^2 + C$", "$2x^2 + C$", "$\\frac{x^2}{2} + C$", "$x + C$"],
-                        correct: 0
-                    },
-                    {
-                        question: "What is the value of $\\sin(30°)$?",
-                        options: ["$\\frac{1}{2}$", "1", "$\\frac{\\sqrt{3}}{2}$", "0"],
-                        correct: 0
-                    },
-                    {
-                        question: "If $f(x) = x^2 + 3x + 2$, what is $f(1)$?",
-                        options: ["4", "6", "8", "5"],
-                        correct: 1
-                    },
-                    {
-                        question: "The roots of $x^2 - 5x + 6 = 0$ are:",
-                        options: ["2, 3", "1, 6", "-2, -3", "1, 5"],
-                        correct: 0
-                    },
-                    {
-                        question: "What is $\\cos(60°)$?",
-                        options: ["$\\frac{1}{2}$", "$\\frac{\\sqrt{3}}{2}$", "1", "0"],
-                        correct: 0
-                    },
-                    {
-                        question: "The sum of first n natural numbers is:",
-                        options: ["$\\frac{n(n+1)}{2}$", "$n(n+1)$", "$\\frac{n(n-1)}{2}$", "$n^2$"],
-                        correct: 0
-                    },
-                    {
-                        question: "If $\\log_2 8 = x$, then $x$ equals:",
-                        options: ["2", "3", "4", "8"],
-                        correct: 1
-                    },
-                    {
-                        question: "The derivative of $\\sin x$ is:",
-                        options: ["$\\cos x$", "$-\\cos x$", "$\\sin x$", "$-\\sin x$"],
-                        correct: 0
-                    },
-                    {
-                        question: "What is the slope of line $y = 3x + 5$?",
-                        options: ["3", "5", "-3", "8"],
-                        correct: 0
-                    },
-                    {
-                        question: "If $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$, then $|A|$ equals:",
-                        options: ["-2", "2", "10", "-10"],
-                        correct: 0
-                    },
-                    {
-                        question: "The value of $\\tan(45°)$ is:",
-                        options: ["1", "0", "$\\sqrt{3}$", "$\\frac{1}{\\sqrt{3}}$"],
-                        correct: 0
-                    },
-                    {
-                        question: "What is $\\lim_{x \\to 0} \\frac{\\sin x}{x}$?",
-                        options: ["0", "1", "$\\infty$", "Undefined"],
-                        correct: 1
-                    },
-                    {
-                        question: "The area under curve $y = x$ from $x = 0$ to $x = 2$ is:",
-                        options: ["1", "2", "4", "8"],
-                        correct: 1
-                    },
-                    {
-                        question: "If $\\vec{a} \\cdot \\vec{b} = 0$, then vectors are:",
-                        options: ["Parallel", "Perpendicular", "Equal", "Opposite"],
-                        correct: 1
-                    },
-                    {
-                        question: "The sum of angles in a triangle is:",
-                        options: ["90°", "180°", "270°", "360°"],
-                        correct: 1
-                    },
-                    {
-                        question: "What is $(a+b)^2$?",
-                        options: ["$a^2 + b^2$", "$a^2 + 2ab + b^2$", "$a^2 - b^2$", "$2ab$"],
-                        correct: 1
-                    },
-                    {
-                        question: "The value of $e^0$ is:",
-                        options: ["0", "1", "e", "$\\infty$"],
-                        correct: 1
-                    },
-                    {
-                        question: "If $P(A) = 0.3$ and $P(B) = 0.4$, and A and B are independent, then $P(A \\cap B)$ is:",
-                        options: ["0.12", "0.7", "0.1", "0.2"],
-                        correct: 0
-                    },
-                    {
-                        question: "The distance between points $(0,0)$ and $(3,4)$ is:",
-                        options: ["5", "7", "3", "4"],
-                        correct: 0
-                    },
-                    {
-                        question: "What is $\\frac{d}{dx}(e^x)$?",
-                        options: ["$e^x$", "$xe^{x-1}$", "$\\ln x$", "1"],
-                        correct: 0
-                    },
-                    {
-                        question: "The general solution of $\\frac{dy}{dx} = y$ is:",
-                        options: ["$y = Ce^x$", "$y = Cx$", "$y = C\\ln x$", "$y = x + C$"],
-                        correct: 0
-                    },
-                    {
-                        question: "If $z = x + iy$, then $|z|$ equals:",
-                        options: ["$x + y$", "$\\sqrt{x^2 + y^2}$", "$x^2 + y^2$", "$xy$"],
-                        correct: 1
-                    },
-                    {
-                        question: "The equation of circle with center $(0,0)$ and radius $r$ is:",
-                        options: ["$x + y = r$", "$x^2 + y^2 = r$", "$x^2 + y^2 = r^2$", "$xy = r^2$"],
-                        correct: 2
-                    },
-                    {
-                        question: "What is the value of $\\sin^2\\theta + \\cos^2\\theta$?",
-                        options: ["0", "1", "2", "$\\theta$"],
-                        correct: 1
-                    },
-                    {
-                        question: "The mean of 2, 4, 6, 8, 10 is:",
-                        options: ["5", "6", "7", "8"],
-                        correct: 1
-                    },
-                    {
-                        question: "If $f(x) = 3x^2$, then $f'(x)$ equals:",
-                        options: ["$3x$", "$6x$", "$x^2$", "$3$"],
-                        correct: 1
-                    },
-                    {
-                        question: "The number of diagonals in a hexagon is:",
-                        options: ["6", "9", "12", "15"],
-                        correct: 1
-                    },
-                    {
-                        question: "If $\\log_a b = 2$, then $b$ equals:",
-                        options: ["$2a$", "$a^2$", "$a/2$", "$\\sqrt{a}$"],
-                        correct: 1
-                    },
-                    {
-                        question: "The reciprocal of $\\tan\\theta$ is:",
-                        options: ["$\\cot\\theta$", "$\\sec\\theta$", "$\\csc\\theta$", "$\\cos\\theta$"],
-                        correct: 0
-                    }
-                ]
-            },
-            {
-                id: 2,
-                title: "JEE MATH Series 1",
-                difficulty: "Easy",
-                free: true,
-                duration: 2400,
-                questions: [
-                    {
-                        id: 1,
-                        question: "Evaluate: $\\lim_{x \\to 0} \\frac{e^{\\sin x} - 1}{x}$",
-                        options: ["0", "1", "e", "$\\frac{1}{e}$"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 2,
-                        question: "If $y = x^{\\sin x}$, find $\\frac{dy}{dx}$",
-                        options: ["$x^{\\sin x}(\\cos x \\ln x + \\frac{\\sin x}{x})$", "$x^{\\sin x} \\sin x$", "$\\sin x \\cdot x^{\\sin x - 1}$", "$x^{\\sin x} \\ln x$"],
-                        correct: 0,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 3,
-                        question: "The value of $\\int_0^{\\pi/2} \\frac{\\sin x}{\\sin x + \\cos x} dx$ is:",
-                        options: ["$\\frac{\\pi}{2}$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{8}$", "$\\pi$"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 4,
-                        question: "Number of points where $f(x) = |x-1| + |x-2|$ is not differentiable:",
-                        options: ["0", "1", "2", "3"],
-                        correct: 2,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 5,
-                        question: "If $\\int \\frac{dx}{x^2(x^4+1)^{3/4}} = A(1 + \\frac{1}{x^4})^{1/4} + C$, then A equals:",
-                        options: ["1", "-1", "2", "-2"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 6,
-                        question: "The solution of differential equation $\\frac{dy}{dx} = \\frac{y}{x} + \\tan(\\frac{y}{x})$ is:",
-                        options: ["$\\sin(\\frac{y}{x}) = Cx$", "$\\cos(\\frac{y}{x}) = Cx$", "$\\tan(\\frac{y}{x}) = \\ln|Cx|$", "$\\sin(\\frac{y}{x}) = \\ln|Cx|$"],
-                        correct: 0,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 7,
-                        question: "The value of $\\lim_{n \\to \\infty} \\frac{1^2 + 2^2 + ... + n^2}{n^3}$ is:",
-                        options: ["$\\frac{1}{2}$", "$\\frac{1}{3}$", "$\\frac{1}{4}$", "0"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 8,
-                        question: "If $f(x) = \\int_0^x t^2 e^{-t} dt$, then $f'(x)$ equals:",
-                        options: ["$x^2 e^{-x}$", "$e^{-x}$", "$2xe^{-x}$", "$x^2$"],
-                        correct: 0,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 9,
-                        question: "The area enclosed by $y^2 = 4ax$ and $x^2 = 4ay$ is:",
-                        options: ["$\\frac{8a^2}{3}$", "$\\frac{16a^2}{3}$", "$\\frac{32a^2}{3}$", "$\\frac{4a^2}{3}$"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 10,
-                        question: "The maximum value of $\\sin x + \\cos x + 2$ is:",
-                        options: ["3", "$2 + \\sqrt{2}$", "4", "$3 + \\sqrt{2}$"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
+        // User authentication state
+        let currentUser = null;
+        let currentSubject = 'math';
 
-                    // Algebra - 10 questions
-                    {
-                        id: 11,
-                        question: "If $\\alpha, \\beta, \\gamma$ are roots of $x^3 - 6x^2 + 11x - 6 = 0$, then $\\alpha^2 + \\beta^2 + \\gamma^2$ equals:",
-                        options: ["14", "18", "22", "36"],
-                        correct: 0,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 12,
-                        question: "Number of solutions of $2^{2x} - 2^{x+1} + 1 = 0$:",
-                        options: ["0", "1", "2", "Infinitely many"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 13,
-                        question: "If $|z-2+i| \\leq 2$, then maximum value of $|z|$ is:",
-                        options: ["$2 + \\sqrt{5}$", "$\\sqrt{5}$", "4", "$2\\sqrt{5}$"],
-                        correct: 0,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 14,
-                        question: "The coefficient of $x^{50}$ in $(1+x)^{100} + x(1+x)^{99} + x^2(1+x)^{98} + ... + x^{100}$ is:",
-                        options: ["$^{100}C_{50}$", "$^{101}C_{50}$", "$^{101}C_{51}$", "$^{100}C_{49}$"],
-                        correct: 2,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 15,
-                        question: "If the determinant $\\begin{vmatrix} a & b & c \\\\ b & c & a \\\\ c & a & b \\end{vmatrix} = 0$ and $a+b+c \\neq 0$, then:",
-                        options: ["$a=b=c$", "$a+b+c=1$", "$a^3+b^3+c^3=3abc$", "$abc=0$"],
-                        correct: 2,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 16,
-                        question: "Sum of the infinite series $1 + \\frac{2}{3} + \\frac{3}{3^2} + \\frac{4}{3^3} + ...$ is:",
-                        options: ["$\\frac{3}{2}$", "$\\frac{9}{4}$", "3", "2"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 17,
-                        question: "If $x^2 + y^2 = 1$, then maximum value of $|x| + |y|$ is:",
-                        options: ["1", "$\\sqrt{2}$", "2", "$2\\sqrt{2}$"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 18,
-                        question: "Number of ways to arrange letters of EXAMINATION:",
-                        options: ["$\\frac{11!}{2!}$", "$\\frac{11!}{2!2!}$", "$11!$", "$\\frac{11!}{2!2!2!}$"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 19,
-                        question: "If $\\omega$ is a cube root of unity, then $(1+\\omega-\\omega^2)^6$ equals:",
-                        options: ["64", "-64", "0", "1"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 20,
-                        question: "The number of real roots of $x^5 - 5x + 2 = 0$ is:",
-                        options: ["1", "3", "5", "0"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 21,
-                        question: "The locus of mid-point of chords of circle $x^2+y^2=a^2$ which subtend $90°$ at center is:",
-                        options: ["$x^2+y^2=\\frac{a^2}{2}$", "$x^2+y^2=\\frac{a^2}{4}$", "$x^2+y^2=2a^2$", "$x^2+y^2=a$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 22,
-                        question: "If vectors $\\vec{a}$ and $\\vec{b}$ are perpendicular and $|\\vec{a}|=2$, $|\\vec{b}|=3$, then $|\\vec{a}+\\vec{b}|$ equals:",
-                        options: ["5", "$\\sqrt{13}$", "1", "$\\sqrt{5}$"],
-                        correct: 1,
-                        topic: "Vectors"
-                    },
-                    {
-                        id: 23,
-                        question: "Equation of line passing through $(2,3)$ and perpendicular to line $3x+4y=5$ is:",
-                        options: ["$4x-3y+1=0$", "$4x-3y=1$", "$3x-4y+6=0$", "$4x-3y-1=0$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 24,
-                        question: "Distance between parallel lines $3x+4y=7$ and $6x+8y=5$ is:",
-                        options: ["$\\frac{9}{10}$", "$\\frac{3}{2}$", "$\\frac{1}{2}$", "$\\frac{7}{10}$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 25,
-                        question: "If $\\vec{a}$, $\\vec{b}$, $\\vec{c}$ are mutually perpendicular unit vectors, then $|\\vec{a}+\\vec{b}+\\vec{c}|$ equals:",
-                        options: ["1", "$\\sqrt{2}$", "$\\sqrt{3}$", "3"],
-                        correct: 2,
-                        topic: "Vectors"
-                    },
-                    {
-                        id: 26,
-                        question: "Eccentricity of hyperbola $9x^2-16y^2=144$ is:",
-                        options: ["$\\frac{5}{4}$", "$\\frac{5}{3}$", "$\\frac{4}{3}$", "$\\frac{3}{4}$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 27,
-                        question: "Angle between vectors $\\hat{i}+\\hat{j}$ and $\\hat{j}+\\hat{k}$ is:",
-                        options: ["$30°$", "$45°$", "$60°$", "$90°$"],
-                        correct: 2,
-                        topic: "Vectors"
-                    },
-                    {
-                        id: 28,
-                        question: "Equation of tangent to parabola $y^2=8x$ at $(2,4)$ is:",
-                        options: ["$x-y+2=0$", "$x+y-6=0$", "$x-y-2=0$", "$x-y+6=0$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 29,
-                        question: "If projection of $\\vec{a}$ on $\\vec{b}$ is 3 and $|\\vec{b}|=4$, then $\\vec{a}\\cdot\\vec{b}$ equals:",
-                        options: ["12", "7", "$\\frac{3}{4}$", "1"],
-                        correct: 0,
-                        topic: "Vectors"
-                    },
-                    {
-                        id: 30,
-                        question: "Area of triangle with vertices $(1,2)$, $(3,5)$, $(4,1)$ is:",
-                        options: ["5", "6", "7", "8"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    }
-                ]
+        
 
-            },
-            {
-                id: 3,
-                title: "JEE MATH Series 1",
-                difficulty: "Easy",
-                free: true,
-                duration: 2400,
-                questions: [
-                    // Advanced Calculus
-                    {
-                        id: 31,
-                        question: "If $f(x) = \\int_0^x \\frac{\\sin t}{t} dt$, then $\\lim_{x \\to 0} \\frac{f(x)}{x}$ equals:",
-                        options: ["0", "1", "$\\frac{1}{2}$", "Does not exist"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 32,
-                        question: "The number of critical points of $f(x) = x^4 e^{-2x^2}$ is:",
-                        options: ["1", "2", "3", "4"],
-                        correct: 2,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 33,
-                        question: "If $\\int \\frac{x^2}{(x\\sin x + \\cos x)^2} dx = f(x) + C$, then $f(x)$ is:",
-                        options: ["$\\frac{-x}{x\\sin x + \\cos x}$", "$\\frac{x}{x\\sin x + \\cos x}$", "$\\frac{x\\sin x}{x\\sin x + \\cos x}$", "$\\tan x$"],
-                        correct: 0,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 34,
-                        question: "Value of $\\lim_{n \\to \\infty} \\left(\\frac{1}{n^2+1} + \\frac{2}{n^2+2} + ... + \\frac{n}{n^2+n}\\right)$ is:",
-                        options: ["0", "$\\frac{1}{2}$", "1", "$\\infty$"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 35,
-                        question: "If $y = \\tan^{-1}\\left(\\frac{\\sqrt{1+x^2}-1}{x}\\right)$, then $\\frac{dy}{dx}$ at $x=1$ equals:",
-                        options: ["$\\frac{1}{4}$", "$\\frac{1}{2}$", "$\\frac{1}{8}$", "$\\frac{1}{16}$"],
-                        correct: 0,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 36,
-                        question: "Area bounded by curves $y = \\ln x$, $y = \\ln|x|$, $y = |\\ln x|$ and $y = |\\ln|x||$ is:",
-                        options: ["0", "1", "2", "4"],
-                        correct: 3,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 37,
-                        question: "Solution of $(1+y^2)dx = (\\tan^{-1}y - x)dy$ is:",
-                        options: ["$x = \\tan^{-1}y + Ce^{-\\tan^{-1}y}$", "$x\\tan^{-1}y = C$", "$x + \\tan^{-1}y = Ce^y$", "$x = y\\tan^{-1}y + C$"],
-                        correct: 0,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 38,
-                        question: "If $f(x) = x^3 + x^2f'(1) + xf''(2) + f'''(3)$, then $f(1)$ equals:",
-                        options: ["0", "1", "-1", "2"],
-                        correct: 2,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 39,
-                        question: "Value of $\\int_0^{\\pi} \\frac{x\\sin x}{1+\\cos^2 x} dx$ is:",
-                        options: ["$\\frac{\\pi^2}{4}$", "$\\frac{\\pi^2}{2}$", "$\\pi^2$", "0"],
-                        correct: 0,
-                        topic: "Calculus"
-                    },
-                    {
-                        id: 40,
-                        question: "For $f(x) = e^{-|x|}$, the number of points where $f''(x)$ does not exist is:",
-                        options: ["0", "1", "2", "3"],
-                        correct: 1,
-                        topic: "Calculus"
-                    },
+        // Sample questions
+        const sampleQuestions = {
 
-                    // Advanced Algebra
-                    {
-                        id: 41,
-                        question: "If $\\alpha, \\beta$ are roots of $x^2-px+q=0$ and $\\alpha^4, \\beta^4$ are roots of $x^2-rx+s=0$, then $r$ equals:",
-                        options: ["$p^4-4p^2q+2q^2$", "$p^4-2p^2q+2q^2$", "$p^4-4pq+2q^2$", "$p^4-2pq+q^2$"],
-                        correct: 0,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 42,
-                        question: "If $z_1, z_2, z_3$ are vertices of equilateral triangle in complex plane with centroid at origin, then $z_1^2+z_2^2+z_3^2$ equals:",
-                        options: ["0", "1", "$z_1z_2z_3$", "3"],
-                        correct: 0,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 43,
-                        question: "Coefficient of $x^{99}$ in $(x-1)(x-2)...(x-100)$ is:",
-                        options: ["$-\\binom{100}{2}$", "$-5050$", "5050", "$\\binom{100}{2}$"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 44,
-                        question: "If matrix $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$ and $A^{-1} = kA$, then $k$ equals:",
-                        options: ["$\\frac{1}{2}$", "$-\\frac{1}{2}$", "2", "-2"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 45,
-                        question: "Number of 5-digit numbers divisible by 4 that can be formed using digits 0,1,2,3,4,5 (without repetition):",
-                        options: ["144", "120", "156", "132"],
-                        correct: 2,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 46,
-                        question: "If $\\log_2(x) + \\log_2(y) = 5$ and $\\log_2(x^2y) = 7$, then $x+y$ equals:",
-                        options: ["12", "16", "20", "24"],
-                        correct: 2,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 47,
-                        question: "Sum of series $\\sum_{r=1}^{n} r \\cdot r!$ equals:",
-                        options: ["$(n+1)! - 1$", "$n! - 1$", "$(n+1)!$", "$n(n+1)!$"],
-                        correct: 0,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 48,
-                        question: "If $|z-4| \\leq 3$, then maximum value of $|z+2i|$ is:",
-                        options: ["$3+2\\sqrt{5}$", "$7+2\\sqrt{5}$", "$3+\\sqrt{5}$", "10"],
-                        correct: 0,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 49,
-                        question: "Remainder when $2^{2023}$ is divided by 17 is:",
-                        options: ["1", "2", "8", "16"],
-                        correct: 2,
-                        topic: "Algebra"
-                    },
-                    {
-                        id: 50,
-                        question: "If $a_1, a_2, ..., a_n$ are in A.P. with common difference $d \\neq 0$, then $\\sum_{k=1}^{n-1} \\frac{1}{a_k a_{k+1}}$ equals:",
-                        options: ["$\\frac{n-1}{a_1a_n}$", "$\\frac{1}{d}\\left(\\frac{1}{a_1}-\\frac{1}{a_n}\\right)$", "$\\frac{n-1}{d}$", "$\\frac{1}{a_1}-\\frac{1}{a_n}$"],
-                        correct: 1,
-                        topic: "Algebra"
-                    },
+math: [
+     {//1
+    "question": "If $\\alpha$ and $\\beta$ are the roots of $x^2 - 6x + 8 = 0$, find the value of $\\alpha^3 + \\beta^3$.",
+    "options": ["152", "216", "224", "280"],
+    "correct": 2
+  },
+  {//2
+    "question": "If $\\sin(\\theta + 30^\\circ) = \\cos(45^\\circ - \\theta)$, then the value of $\\theta$ is:",
+    "options": ["$7.5^\\circ$", "$15^\\circ$", "$22.5^\\circ$", "$30^\\circ$"],
+    "correct": 2
+  },
+  {//3
+    "question": "If $a, b, c$ are in G.P. and $a + b + c = 14$, $a^2 + b^2 + c^2 = 84$, then find the value of $a$.",
+    "options": ["2", "3", "4", "5"],
+    "correct": 2
+  },
+  {//4
+    "question": "The sum of the coefficients in the expansion of $(2x - 3)^7$ is:",
+    "options": ["-1", "128", "2187", "-2187"],
+    "correct": 3
+  },
+  {//5
+    "question": "If $\\int_0^{\\pi/2} \\sin^4 x\\,dx = I$, then $8I$ equals:",
+    "options": ["3\\pi/4", "3\\pi/8", "3\\pi/2", "\\pi"],
+    "correct": 0
+  },
+  {//6
+    "question": "If $f(x) = \\tan^{-1}\\left(\\frac{1+x}{1-x}\\right)$, then $f'(x)$ equals:",
+    "options": ["$\\frac{2}{1+x^2}$", "$\\frac{1}{1+x^2}$", "$\\frac{2}{(1-x)^2}$", "$\\frac{1}{(1-x)^2}$"],
+    "correct": 0
+  },
+  {//7
+    "question": "If $\\log_3 (x + 1) - \\log_3 (x - 1) = 2$, then $x$ equals:",
+    "options": ["2", "3", "4", "5"],
+    "correct": 2
+  },
+  {//8
+    "question": "The eccentricity of the hyperbola $9x^2 - 16y^2 = 144$ is:",
+    "options": ["$\\frac{4}{3}$", "$\\frac{3}{4}$", "$\\frac{5}{3}$", "$\\frac{3}{5}$"],
+    "correct": 0
+  },
+  {//9
+    "question": "If $A = \\begin{pmatrix}2 & 1\\\\3 & 2\\end{pmatrix}$, then $A^{10}$ equals:",
+    "options": ["$1024A$", "$A$", "$A^2$", "$2^{10}A$"],
+    "correct": 3
+  },
+  {//10
+    "question": "If $\\vec{a}$ and $\\vec{b}$ are unit vectors and angle between them is $60^\\circ$, then $|\\vec{a} - \\vec{b}|$ is:",
+    "options": ["1", "$\\sqrt{2}$", "$\\sqrt{3}$", "2"],
+    "correct": 2
+  },
+  {//11
+    "question": "If the sum of an infinite G.P. is 4 and the sum of the first two terms is 3, then the first term is:",
+    "options": ["1.6", "1.8", "2", "2.2"],
+    "correct": 1
+  },
+  {//12
+    "question": "If $y = e^{x^2}$, find $\\frac{d^2y}{dx^2}$ at $x=1$.",
+    "options": ["4e^1", "6e", "8e", "10e"],
+    "correct": 1
+  },
+  {//13
+    "question": "The number of possible matrices $A = [a_{ij}]_{2\\times2}$ with entries 0 or 1 such that $|A| = 0$ is:",
+    "options": ["10", "12", "14", "16"],
+    "correct": 1
+  },
+  {//14
+    "question": "The locus of the midpoints of chords of the circle $x^2 + y^2 = 4$ that subtend a right angle at the center is:",
+    "options": ["$x^2 + y^2 = 2$", "$x^2 + y^2 = 1$", "$x^2 + y^2 = 3$", "$x^2 + y^2 = 4$"],
+    "correct": 0
+  },
+  {//15
+    "question": "If $\\int_0^1 (3x^2 + 2x + 1)\\,dx = k$, then $k$ equals:",
+    "options": ["2", "$\\frac{17}{6}$", "$\\frac{11}{6}$", "3"],
+    "correct": 1
+  },
+  {//16
+    "question": "If the arithmetic mean of two numbers is 10 and their geometric mean is 8, find the numbers.",
+    "options": ["6 and 14", "4 and 16", "8 and 12", "2 and 18"],
+    "correct": 0
+  },
+  {//17
+    "question": "The minimum value of $x^2 + \\frac{9}{x^2}$ for $x > 0$ is:",
+    "options": ["2", "3", "4", "6"],
+    "correct": 3
+  },
+  {//18
+    "question": "If $\\tan A = 3/4$ and $\\tan B = 5/12$, find $\\tan(A + B)$.",
+    "options": ["1", "$\\frac{56}{33}$", "$\\frac{33}{56}$", "2"],
+    "correct": 1
+  },
+  {//19
+    "question": "The term independent of $x$ in $(x^2 + \\frac{3}{x})^6$ is:",
+    "options": ["135", "405", "729", "243"],
+    "correct": 3
+  },
+  {//20
+    "question": "If $z = 2 + i$, find the principal argument of $z^3$.",
+    "options": ["$\\tan^{-1}(3/4)$", "$3\\tan^{-1}(1/2)$", "$3\\tan^{-1}(1/2)$ reduced\\ to\\ (-\\pi, \\pi]$", "$\\pi/3$"],
+    "correct": 2
+  },
 
-                    // Advanced Geometry & Trigonometry
-                    {
-                        id: 51,
-                        question: "If $\\sin^{-1}x + \\sin^{-1}y = \\frac{2\\pi}{3}$, then $\\cos^{-1}x + \\cos^{-1}y$ equals:",
-                        options: ["$\\frac{\\pi}{3}$", "$\\frac{2\\pi}{3}$", "$\\frac{\\pi}{6}$", "$\\frac{5\\pi}{6}$"],
-                        correct: 0,
-                        topic: "Trigonometry"
-                    },
-                    {
-                        id: 52,
-                        question: "In triangle ABC, if $a\\cos A = b\\cos B$, then triangle is:",
-                        options: ["Right-angled", "Isosceles", "Equilateral", "Scalene"],
-                        correct: 1,
-                        topic: "Trigonometry"
-                    },
-                    {
-                        id: 53,
-                        question: "Locus of point of intersection of tangents to circle $x^2+y^2=a^2$ which meet at $90°$ is:",
-                        options: ["$x^2+y^2=2a^2$", "$x^2+y^2=4a^2$", "$x^2+y^2=\\frac{a^2}{2}$", "$x^2+y^2=a^2$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 54,
-                        question: "If $[\\vec{a}\\times\\vec{b}, \\vec{b}\\times\\vec{c}, \\vec{c}\\times\\vec{a}] = \\lambda[\\vec{a}, \\vec{b}, \\vec{c}]^2$, then $\\lambda$ equals:",
-                        options: ["1", "2", "3", "4"],
-                        correct: 0,
-                        topic: "Vectors"
-                    },
-                    {
-                        id: 55,
-                        question: "Equation of circle passing through $(1,0)$, $(0,1)$ and having smallest radius is:",
-                        options: ["$x^2+y^2-x-y=0$", "$x^2+y^2+x+y-2=0$", "$2x^2+2y^2-x-y=0$", "$x^2+y^2=1$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 56,
-                        question: "Value of $\\sin 20° \\sin 40° \\sin 80°$ is:",
-                        options: ["$\\frac{\\sqrt{3}}{8}$", "$\\frac{1}{8}$", "$\\frac{\\sqrt{3}}{4}$", "$\\frac{1}{4}$"],
-                        correct: 0,
-                        topic: "Trigonometry"
-                    },
-                    {
-                        id: 57,
-                        question: "Distance of point $(1,2,3)$ from line $\\frac{x-1}{2}=\\frac{y-2}{3}=\\frac{z-3}{4}$ is:",
-                        options: ["0", "1", "$\\sqrt{2}$", "2"],
-                        correct: 0,
-                        topic: "3D Geometry"
-                    },
-                    {
-                        id: 58,
-                        question: "Combined equation of bisectors of angles between lines $3x-4y+1=0$ and $12x+5y-3=0$ is:",
-                        options: ["$7x^2-24xy-7y^2+14x+2y-1=0$", "$21x^2+24xy-21y^2=0$", "$x^2-y^2=0$", "$7x^2+24xy-7y^2=0$"],
-                        correct: 0,
-                        topic: "Coordinate Geometry"
-                    },
-                    {
-                        id: 59,
-                        question: "If $|\\vec{a}+\\vec{b}| = |\\vec{a}-\\vec{b}|$, then angle between $\\vec{a}$ and $\\vec{b}$ is:",
-                        options: ["$0°$", "$45°$", "$60°$", "$90°$"],
-                        correct: 3,
-                        topic: "Vectors"
-                    },
-                    {
-                        id: 60,
-                        question: "Focus of parabola $y^2-4y-8x+12=0$ is:",
-                        options: ["$(1, 2)$", "$(2, 2)$", "$(3, 2)$", "$(2, 3)$"],
-                        correct: 2,
-                        topic: "Coordinate Geometry"
-                    }
-                ]
-            },
-            {
-                id: 4,
-                title: "JEE PHYSICS Series 1",
-                difficulty: "Easy",
-                free: true,
-                duration: 1800,
-                questions: [
-                    {
-                        question: "The SI unit of force is:",
-                        options: ["Joule", "Newton", "Watt", "Pascal"],
-                        correct: 1
-                    },
-                    {
-                        question: "A body of mass $m$ moving with velocity $v$ has kinetic energy:",
-                        options: ["$\\frac{1}{2}mv^2$", "$mv^2$", "$\\frac{1}{2}mv$", "$2mv^2$"],
-                        correct: 0
-                    },
-                    {
-                        question: "Newton's first law is also called law of:",
-                        options: ["Motion", "Inertia", "Momentum", "Energy"],
-                        correct: 1
-                    },
-                    {
-                        question: "If $F = ma$, and $m = 10$ kg, $a = 5$ m/s², then $F$ equals:",
-                        options: ["25 N", "50 N", "15 N", "2 N"],
-                        correct: 1
-                    },
-                    {
-                        question: "The dimension of velocity is:",
-                        options: ["$[LT^{-1}]$", "$[LT^{-2}]$", "$[MLT^{-1}]$", "$[L^2T^{-1}]$"],
-                        correct: 0
-                    },
-                    {
-                        question: "The escape velocity from Earth is approximately:",
-                        options: ["5.6 km/s", "11.2 km/s", "7.9 km/s", "15 km/s"],
-                        correct: 1
-                    },
-                    {
-                        question: "Work done is maximum when angle between force and displacement is:",
-                        options: ["0°", "90°", "180°", "45°"],
-                        correct: 0
-                    },
-                    {
-                        question: "The unit of power is:",
-                        options: ["Joule", "Newton", "Watt", "Pascal"],
-                        correct: 2
-                    },
-                    {
-                        question: "According to Newton's third law, action and reaction are:",
-                        options: ["Equal and parallel", "Equal and opposite", "Unequal and opposite", "Equal and perpendicular"],
-                        correct: 1
-                    },
-                    {
-                        question: "The acceleration due to gravity on Earth is approximately:",
-                        options: ["9.8 m/s²", "10.8 m/s²", "8.8 m/s²", "11.2 m/s²"],
-                        correct: 0
-                    },
-                    {
-                        question: "Momentum is the product of:",
-                        options: ["Mass and velocity", "Force and time", "Mass and acceleration", "Force and distance"],
-                        correct: 0
-                    },
-                    {
-                        question: "The SI unit of pressure is:",
-                        options: ["Newton", "Pascal", "Joule", "Watt"],
-                        correct: 1
-                    },
-                    {
-                        question: "Potential energy of a body at height $h$ is:",
-                        options: ["$mgh$", "$\\frac{1}{2}mgh$", "$mh$", "$gh$"],
-                        correct: 0
-                    },
-                    {
-                        question: "The speed of light in vacuum is:",
-                        options: ["$3 \\times 10^8$ m/s", "$3 \\times 10^6$ m/s", "$3 \\times 10^{10}$ m/s", "$3 \\times 10^5$ m/s"],
-                        correct: 0
-                    },
-                    {
-                        question: "Ohm's law states:",
-                        options: ["$V = IR$", "$V = I/R$", "$V = I + R$", "$I = VR$"],
-                        correct: 0
-                    },
-                    {
-                        question: "The SI unit of electric current is:",
-                        options: ["Volt", "Ampere", "Coulomb", "Ohm"],
-                        correct: 1
-                    },
-                    {
-                        question: "The frequency and time period are related as:",
-                        options: ["$f = T$", "$f = 1/T$", "$f = 2T$", "$f = T^2$"],
-                        correct: 1
-                    },
-                    {
-                        question: "Sound cannot travel through:",
-                        options: ["Air", "Water", "Vacuum", "Steel"],
-                        correct: 2
-                    },
-                    {
-                        question: "The refractive index of a medium is:",
-                        options: ["$c/v$", "$v/c$", "$cv$", "$c+v$"],
-                        correct: 0
-                    },
-                    {
-                        question: "A convex lens is also called:",
-                        options: ["Diverging lens", "Converging lens", "Plane lens", "Concave lens"],
-                        correct: 1
-                    },
-                    {
-                        question: "The unit of electric charge is:",
-                        options: ["Ampere", "Volt", "Coulomb", "Ohm"],
-                        correct: 2
-                    },
-                    {
-                        question: "Heat flows from:",
-                        options: ["Cold to hot", "Hot to cold", "Same temperature", "None"],
-                        correct: 1
-                    },
-                    {
-                        question: "The first law of thermodynamics is based on:",
-                        options: ["Conservation of momentum", "Conservation of energy", "Conservation of mass", "Conservation of charge"],
-                        correct: 1
-                    },
-                    {
-                        question: "In a simple pendulum, time period is independent of:",
-                        options: ["Length", "Mass", "Gravity", "Amplitude (for small angles)"],
-                        correct: 1
-                    },
-                    {
-                        question: "The SI unit of magnetic field is:",
-                        options: ["Tesla", "Weber", "Henry", "Gauss"],
-                        correct: 0
-                    },
-                    {
-                        question: "A transformer works on the principle of:",
-                        options: ["Self induction", "Mutual induction", "Electromagnetic induction", "Electrolysis"],
-                        correct: 1
-                    },
-                    {
-                        question: "The resistance of a conductor increases with:",
-                        options: ["Decrease in length", "Increase in area", "Increase in temperature", "Decrease in temperature"],
-                        correct: 2
-                    },
-                    {
-                        question: "In Young's double slit experiment, the fringe width is:",
-                        options: ["$\\frac{\\lambda D}{d}$", "$\\frac{\\lambda d}{D}$", "$\\lambda Dd$", "$\\frac{D}{\\lambda d}$"],
-                        correct: 0
-                    },
-                    {
-                        question: "The photoelectric effect was explained by:",
-                        options: ["Newton", "Einstein", "Bohr", "Planck"],
-                        correct: 1
-                    },
-                    {
-                        question: "The dimensional formula for energy is:",
-                        options: ["$[ML^2T^{-2}]$", "$[MLT^{-2}]$", "$[ML^2T^{-1}]$", "$[MLT^{-1}]$"],
-                        correct: 0
-                    }
-                ]
-            },
-            {
-                id: 7,
-                title: "JEE CHEMISTRY Series 1",
-                difficulty: "Easy",
-                free: true,
-                duration: 1800,
-                questions: [
-                    {
-                        question: "The atomic number of Carbon is:",
-                        options: ["4", "6", "8", "12"],
-                        correct: 1
-                    },
-                    {
-                        question: "Which of the following is a noble gas?",
-                        options: ["Oxygen", "Nitrogen", "Helium", "Hydrogen"],
-                        correct: 2
-                    },
-                    {
-                        question: "The general formula for alkanes is:",
-                        options: ["$C_nH_{2n}$", "$C_nH_{2n+2}$", "$C_nH_{2n-2}$", "$C_nH_n$"],
-                        correct: 1
-                    },
-                    {
-                        question: "Which functional group is present in alcohols?",
-                        options: ["-COOH", "-OH", "-CHO", "-NH₂"],
-                        correct: 1
-                    },
-                    {
-                        question: "The pH of pure water at 25°C is:",
-                        options: ["0", "7", "14", "1"],
-                        correct: 1
-                    },
-                    {
-                        question: "Avogadro's number is approximately:",
-                        options: ["$6.022 \\times 10^{23}$", "$6.022 \\times 10^{22}$", "$6.022 \\times 10^{24}$", "$6.022 \\times 10^{21}$"],
-                        correct: 0
-                    },
-                    {
-                        question: "The SI unit of amount of substance is:",
-                        options: ["Gram", "Kilogram", "Mole", "Liter"],
-                        correct: 2
-                    },
-                    {
-                        question: "An acid is a substance that donates:",
-                        options: ["Electrons", "Protons", "Neutrons", "Atoms"],
-                        correct: 1
-                    },
-                    {
-                        question: "The electronic configuration of Sodium (Z=11) is:",
-                        options: ["2, 8, 1", "2, 7, 2", "2, 8, 2", "2, 9"],
-                        correct: 0
-                    },
-                    {
-                        question: "Which bond is strongest?",
-                        options: ["Ionic bond", "Covalent bond", "Hydrogen bond", "Van der Waals"],
-                        correct: 1
-                    },
-                    {
-                        question: "The oxidation state of Oxygen in H₂O is:",
-                        options: ["+2", "-2", "0", "+1"],
-                        correct: 1
-                    },
-                    {
-                        question: "At STP, one mole of any gas occupies:",
-                        options: ["11.2 L", "22.4 L", "44.8 L", "5.6 L"],
-                        correct: 1
-                    },
-                    {
-                        question: "Which is an exothermic reaction?",
-                        options: ["Photosynthesis", "Combustion", "Evaporation", "Melting"],
-                        correct: 1
-                    },
-                    {
-                        question: "The law of constant composition was given by:",
-                        options: ["Dalton", "Proust", "Avogadro", "Boyle"],
-                        correct: 1
-                    },
-                    {
-                        question: "In the periodic table, elements are arranged by:",
-                        options: ["Mass number", "Atomic number", "Atomic mass", "Valency"],
-                        correct: 1
-                    },
-                    {
-                        question: "The valency of Nitrogen in NH₃ is:",
-                        options: ["1", "2", "3", "4"],
-                        correct: 2
-                    },
-                    {
-                        question: "A catalyst is a substance that:",
-                        options: ["Increases activation energy", "Decreases activation energy", "Changes equilibrium", "Gets consumed"],
-                        correct: 1
-                    },
-                    {
-                        question: "The shape of methane molecule is:",
-                        options: ["Linear", "Planar", "Tetrahedral", "Octahedral"],
-                        correct: 2
-                    },
-                    {
-                        question: "Which is not a state of matter?",
-                        options: ["Solid", "Liquid", "Gas", "Energy"],
-                        correct: 3
-                    },
-                    {
-                        question: "The common name of NaCl is:",
-                        options: ["Baking soda", "Table salt", "Washing soda", "Caustic soda"],
-                        correct: 1
-                    },
-                    {
-                        question: "An element X has mass number 23 and atomic number 11. The number of neutrons is:",
-                        options: ["11", "12", "23", "34"],
-                        correct: 1
-                    },
-                    {
-                        question: "Which gas is released during photosynthesis?",
-                        options: ["CO₂", "O₂", "N₂", "H₂"],
-                        correct: 1
-                    },
-                    {
-                        question: "The process of conversion of solid to gas is called:",
-                        options: ["Melting", "Evaporation", "Sublimation", "Condensation"],
-                        correct: 2
-                    },
-                    {
-                        question: "Hard water contains salts of:",
-                        options: ["Sodium", "Calcium and Magnesium", "Potassium", "Aluminum"],
-                        correct: 1
-                    },
-                    {
-                        question: "The pH of acidic solution is:",
-                        options: ["Less than 7", "Equal to 7", "Greater than 7", "Equal to 14"],
-                        correct: 0
-                    },
-                    {
-                        question: "Which is a greenhouse gas?",
-                        options: ["O₂", "N₂", "CO₂", "He"],
-                        correct: 2
-                    },
-                    {
-                        question: "The molecular formula of benzene is:",
-                        options: ["C₆H₆", "C₆H₁₂", "C₆H₁₄", "C₆H₈"],
-                        correct: 0
-                    },
-                    {
-                        question: "Which vitamin is water soluble?",
-                        options: ["Vitamin A", "Vitamin D", "Vitamin C", "Vitamin K"],
-                        correct: 2
-                    },
-                    {
-                        question: "The atomic mass unit is based on:",
-                        options: ["Hydrogen", "Carbon-12", "Oxygen-16", "Nitrogen-14"],
-                        correct: 1
-                    },
-                    {
-                        question: "Which metal is liquid at room temperature?",
-                        options: ["Sodium", "Mercury", "Aluminum", "Iron"],
-                        correct: 1
-                    }
-                ]
+  
+  {//21
+    "question": "If $\\alpha$ and $\\beta$ are the roots of $x^2 - 7x + 10 = 0$, find the value of $\\alpha^2 + \\beta^2$.",
+    "options": ["39", "49", "29", "59"],
+    "correct": 2
+  },
+  {//22
+    "question": "If $\\tan(2\\theta) = 3$, find $\\tan \\theta$.",
+    "options": ["$\\frac{3 - \\sqrt{13}}{2}$", "$\\frac{3 + \\sqrt{13}}{2}$", "3", "$\\sqrt{3}$"],
+    "correct": 0
+  },
+  {//23
+    "question": "If $\\log_5(x - 1) + \\log_5(x + 3) = 2$, find $x$.",
+    "options": ["2", "3", "4", "5"],
+    "correct": 2
+  },
+  {//24
+    "question": "If $\\sin A + \\cos A = \\frac{5}{4}$, then find $\\sin 2A$.",
+    "options": ["$\\frac{7}{8}$", "$\\frac{3}{4}$", "$\\frac{5}{8}$", "$\\frac{9}{16}$"],
+    "correct": 1
+  },
+  {//25
+    "question": "Find the sum of the series $1 + 3 + 5 + \\dots + 99$.",
+    "options": ["2400", "2500", "2600", "2550"],
+    "correct": 1
+  },
+  {//26
+    "question": "If $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$, find $A^{-1}$.",
+    "options": [
+      "$\\begin{pmatrix} -2 & 1 \\\\ 1.5 & -0.5 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 2 & -1 \\\\ -1.5 & 0.5 \\end{pmatrix}$",
+      "$\\begin{pmatrix} -2 & 1 \\\\ 1 & -0.5 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 1 & -2 \\\\ -3 & 4 \\end{pmatrix}$"
+    ],
+    "correct": 0
+  },
+  {//27
+    "question": "If $\\int (2x^3 + 3x^2)\\,dx = f(x)$, find $f(2) - f(1)$.",
+    "options": ["15", "20", "25", "30"],
+    "correct": 2
+  },
+  {//28
+    "question": "Find the coordinates of the centroid of the triangle with vertices $(1,2)$, $(3,4)$, and $(5,0)$.",
+    "options": ["(3,2)", "(2,3)", "(4,2)", "(3,3)"],
+    "correct": 0
+  },
+  {//29
+    "question": "If $\\sum_{k=1}^{n} (2k-1) = 81$, find $n$.",
+    "options": ["8", "9", "10", "11"],
+    "correct": 1
+  },
+  {//30
+    "question": "If the mean and variance of a binomial distribution are 4 and 2 respectively, find $n$ and $p$.",
+    "options": ["n=8, p=0.5", "n=8, p=0.25", "n=4, p=0.5", "n=2, p=0.5"],
+    "correct": 1
+  },
+  {//31
+    "question": "Find the angle between the lines whose direction ratios are $(1,2,2)$ and $(2,1,-2)$.",
+    "options": ["$90^\\circ$", "$60^\\circ$", "$45^\\circ$", "$30^\\circ$"],
+    "correct": 1
+  },
+  {//32
+    "question": "If $y = x^x$, find $\\frac{dy}{dx}$ at $x = 1$.",
+    "options": ["1", "2", "e", "$1 + \\ln x$"],
+    "correct": 1
+  },
+  {//33
+    "question": "If $a$ and $b$ are the roots of $x^2 - 2x + 4 = 0$, find $a^{20} + b^{20}$.",
+    "options": ["0", "2", "4", "8"],
+    "correct": 1
+  },
+  {//34
+    "question": "The distance between the parallel lines $3x - 4y + 7 = 0$ and $3x - 4y - 5 = 0$ is:",
+    "options": ["2", "3", "4", "$\\frac{12}{5}$"],
+    "correct": 3
+  },
+  {//35
+    "question": "The area bounded by the parabola $y^2 = 4x$ and the line $x = 4$ is:",
+    "options": ["$\\frac{64}{3}$", "$\\frac{32}{3}$", "16", "8"],
+    "correct": 1
+  },
+  {//36
+    "question": "If $\\sin 2\\theta = \\frac{3}{5}$, find $\\cos 2\\theta$.",
+    "options": ["$\\frac{4}{5}$", "$\\frac{3}{4}$", "$\\frac{5}{3}$", "$\\frac{1}{5}$"],
+    "correct": 0
+  },
+  {//37
+    "question": "If $\\sum_{k=1}^{10} k^2 = 385$, find $\\sum_{k=1}^{10} (2k-1)^2$.",
+    "options": ["1330", "1230", "1100", "990"],
+    "correct": 0
+  },
+  {//38
+    "question": "Find the range of the function $f(x) = 2 + |x - 3|$.",
+    "options": ["$[2, \\infty)$", "$(-\\infty, 2]$", "$[3, \\infty)$", "$(-\\infty, 3]$"],
+    "correct": 0
+  },
+  {//39
+    "question": "Find the point on the line $x - 2y + 3 = 0$ which is closest to the origin.",
+    "options": ["$(1,2)$", "$(2,1)$", "$(1, -1)$", "$(2, -1)$"],
+    "correct": 3
+  },
+  {//40
+    "question": "If $A = \\begin{pmatrix} 1 & 1 \\\\ 1 & 0 \\end{pmatrix}$, find $A^5$.",
+    "options": [
+      "$\\begin{pmatrix} 8 & 5 \\\\ 5 & 3 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 5 & 3 \\\\ 3 & 2 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 13 & 8 \\\\ 8 & 5 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 21 & 13 \\\\ 13 & 8 \\end{pmatrix}$"
+    ],
+    "correct": 0
+  },
+  {//41
+    "question": "Find the number of terms in the expansion of $(x^2 + 1/x^3)^{20}$ containing $x$ with non-negative exponents.",
+    "options": ["7", "8", "9", "10"],
+    "correct": 1
+  },
+  { //42
+    "question": "If $f(x) = x^3 - 3x^2 + 2x$, find the points where $f'(x) = 0$.",
+    "options": ["0, 1", "1, 2", "0, 2", "1, 3"],
+    "correct": 1
+  },
+  { //43
+    "question": "If $z = 1 + i\\sqrt{3}$, find the cube roots of unity related to $z$.",
+    "options": ["$1, \\omega, \\omega^2$", "$1, i, -i$", "$1, -1, i$", "$i, -i, -1$"],
+    "correct": 0
+  },
+  { //44
+    "question": "Find the sum of the first 10 terms of an A.P. whose 3rd term is 5 and 7th term is 17.",
+    "options": ["110", "120", "100", "130"],
+    "correct": 1
+  },
+  { //45
+    "question": "Find the eccentricity of the ellipse $\\frac{x^2}{9} + \\frac{y^2}{4} = 1$.",
+    "options": ["$\\frac{2}{3}$", "$\\frac{\\sqrt{5}}{3}$", "$\\frac{1}{2}$", "$\\frac{3}{4}$"],
+    "correct": 1
+  },
+  { //46
+    "question": "If $A$ and $B$ are independent events with $P(A)=0.4$, $P(B)=0.5$, find $P(A \\cup B)$.",
+    "options": ["0.7", "0.8", "0.6", "0.9"],
+    "correct": 1
+  },
+  { //47
+    "question": "Find the equation of the tangent to $y^2 = 4x$ at $(1,2)$.",
+    "options": ["$y = x + 1$", "$y = x + 2$", "$y = x$", "$y = 2x - 1$"],
+    "correct": 0
+  },
+  { //48
+    "question": "If the mean of 5 observations is 10 and the sum of their squares is 600, find the standard deviation.",
+    "options": ["2", "3", "4", "5"],
+    "correct": 3
+  },
+  { //49
+    "question": "If $\\sin \\theta = 0.6$, find $\\tan \\frac{\\theta}{2}$.",
+    "options": ["$\\frac{1 - 0.8}{0.6}$", "$\\frac{1 - 0.6}{1 + 0.6}$", "$\\frac{0.4}{1.6}$", "$\\frac{0.8}{0.6}$"],
+    "correct": 2
+  },
+
+//    math quiz 2
+  { //50
+    "question": "The equation of a line through $(2,3)$ and perpendicular to $x - 3y + 4 = 0$ is:",
+    "options": ["$3x + y - 9 = 0$", "$x + 3y - 11 = 0$", "$3x + y - 11 = 0$", "$x + 3y - 9 = 0$"],
+    "correct": 1
+  },
+  { //51
+    "question": "If $\\int_0^{\\pi} \\sin^2 x\\,dx = I$, then $4I$ equals:",
+    "options": ["$2\\pi$", "$\\pi$", "$\\frac{3\\pi}{2}$", "$\\frac{\\pi}{2}$"],
+    "correct": 1
+  },
+  { //52
+    "question": "If $\\log(x) + \\log(2x) = 3$, find $x$.",
+    "options": [
+      "100",
+      "200",
+      "300",
+      "400"
+    ],
+    "correct": 2
+  },
+  {     //53
+    "question": "If $A = \\begin{pmatrix} 1 & 1 \\\\ 1 & 0 \\end{pmatrix}$, find $A^5$.",
+    "options": [
+      "$\\begin{pmatrix} 8 & 5 \\\\ 5 & 3 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 5 & 3 \\\\ 3 & 2 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 13 & 8 \\\\ 8 & 5 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 21 & 13 \\\\ 13 & 8 \\end{pmatrix}$"
+    ],
+    "correct": 0
+  },
+  { //54
+    "question": "Find the equation of the tangent to the curve $y = x^2$ at the point $(1,1)$.",
+    "options": [
+      "$y = 2x - 1$",
+      "$y = x - 1$",
+      "$y = x + 1$",
+      "$y = 2x + 1$"
+    ],
+    "correct": 0
+  },
+  { //55
+    "question": "Evaluate $\\int_0^\\infty e^{-x} \\, dx$.",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 0
+  },
+  { //56
+    "question": "If $A = \\begin{pmatrix} 2 & 3 \\\\ 4 & 5 \\end{pmatrix}$, find $A^{-1}$.",
+    "options": [
+      "$\\begin{pmatrix} -5 & 3 \\\\ 4 & -2 \\end{pmatrix}$",
+      "$\\begin{pmatrix} -5 & -3 \\\\ -4 & -2 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 5 & -3 \\\\ -4 & 2 \\end{pmatrix}$",
+      "$\\begin{pmatrix} 5 & 3 \\\\ 4 & 2 \\end{pmatrix}$"
+    ],
+    "correct": 0
+  },
+ {  //57
+    "question": "If $x^2 + y^2 = 25$ and $x + y = 7$, find $x \\cdot y$.",
+    "options": [
+      "6",
+      "12",
+      "6.5",
+      "10"
+    ],
+    "correct": 1
+  },
+  { //58
+    "question": "Find the sum of all real solutions of $\\sqrt{x+5} + \\sqrt{5-x} = 5$.",
+    "options": [
+      "5",
+      "0",
+      "1",
+      "10"
+    ],
+    "correct": 1
+  },
+  { //59
+    "question": "Evaluate $\\int_0^1 \\frac{1+x}{1+x^2} \\, dx$.",
+    "options": [
+      "$\\ln 2$",
+      "$1$",
+      "$1 + \\ln 2$",
+      "$2$"
+    ],
+    "correct": 2
+  },
+  { //60
+    "question": "Find the coordinates of the point which divides the line segment joining $(2,3)$ and $(5,7)$ in the ratio $2:3$.",
+    "options": [
+      "$(3,4)$",
+      "$(4,5)$",
+      "$(3.4,4.2)$",
+      "$(2,7)$"
+    ],
+    "correct": 1
+  },
+  { //61
+    "question": "The sum of the roots of $x^4 - 5x^3 + 6x^2 - 2 = 0$ is:",
+    "options": [
+      "5",
+      "-5",
+      "0",
+      "6"
+    ],
+    "correct": 0
+  },
+  { //62
+    "question": "If $\\sin \\theta + \\cos \\theta = 1$, find $\\sin^3 \\theta + \\cos^3 \\theta$.",
+    "options": [
+      "1",
+      "0",
+      "$\\frac{1}{2}$",
+      "$\\frac{3}{4}$"
+    ],
+    "correct": 3
+  },
+  { //63
+    "question": "If $x^2 - 3x + 1 = 0$, find $x^4 + \\frac{1}{x^4}$.",
+    "options": [
+      "7",
+      "18",
+      "19",
+      "20"
+    ],
+    "correct": 2
+  },
+  { //64
+    "question": "Find the maximum value of $f(x) = x(10-x)$ for real $x$.",
+    "options": [
+      "25",
+      "20",
+      "30",
+      "50"
+    ],
+    "correct": 0
+  },
+  { //65
+    "question": "If $x+y+z = 6$ and $x^2+y^2+z^2 = 14$, find $xy+yz+zx$.",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct": 2
+  },
+  { //66
+    "question": "If $f(x) = x^2 + kx + 1$ has equal roots, find $k$.",
+    "options": [
+      "2",
+      "-2",
+      "1",
+      "-1"
+    ],
+    "correct": 1
+  },
+  { //67
+    "question": "Evaluate $\\int_0^{\\pi/4} \\frac{dx}{1+\\tan x}$.",
+    "options": [
+      "$\\frac{\\pi}{8}$",
+      "$\\frac{\\pi}{4}$",
+      "$\\frac{1}{2}$",
+      "1"
+    ],
+    "correct": 0
+  },
+  { //68
+    "question": "If $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$, find $\\det(A^2)$.",
+    "options": [
+      "-2",
+      "-5",
+      "4",
+      "0"
+    ],
+    "correct": 1
+  },
+  { //69
+    "question": "If $a$ and $b$ are roots of $x^2 - x + 1 = 0$, find $a^{12} + b^{12}$.",
+    "options": [
+      "2",
+      "0",
+      "1",
+      "-1"
+    ],
+    "correct": 1
+  },
+  { //70
+    "question": "The distance between the lines $x - y = 1$ and $x - y = 4$ is:",
+    "options": [
+      "$\\sqrt{2}$",
+      "$3\\sqrt{2}$",
+      "3",
+      "1"
+    ],
+    "correct": 1
+  },
+  { //71
+    "question": "If $x^2 + y^2 = 1$ and $xy = \\frac{1}{4}$, find $(x-y)^2$.",
+    "options": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{4}$",
+      "$\\frac{3}{4}$",
+      "1"
+    ],
+    "correct": 2
+  },
+  { //72
+    "question": "If $a, b, c$ are in AP and $a^2, b^2, c^2$ are in GP, find $\\frac{b}{a}$.",
+    "options": [
+      "$2$",
+      "$1$",
+      "$3$",
+      "$-1$"
+    ],
+    "correct": 1
+  },
+  { //73
+    "question": "Solve $\\log_2(x+3) + \\log_2(x-1) = 3$.",
+    "options": [
+      "3",
+      "1",
+      "5",
+      "7"
+    ],
+    "correct": 0
+  },
+  { //74
+    "question": "If $x^2 + px + q = 0$ has roots in ratio $1:2$, find $q$ in terms of $p$.",
+    "options": [
+      "$\\frac{p^2}{2}$",
+      "$\\frac{p^2}{3}$",
+      "$\\frac{2p^2}{9}$",
+      "$\\frac{p^2}{4}$"
+    ],
+    "correct": 2
+  },
+  { //75
+    "question": "If $\\sum_{n=1}^{\\infty} \\frac{1}{2^n} = S$, find $2S$.",
+    "options": [
+      "2",
+      "1",
+      "3",
+      "4"
+    ],
+    "correct": 0
+  },
+  { //76
+    "question": "Find the sum of the series $1\\cdot2 + 2\\cdot3 + 3\\cdot4 + ... + 10\\cdot11$.",
+    "options": [
+      "440",
+      "385",
+      "420",
+      "495"
+    ],
+    "correct": 2
+  },
+  { //77
+    "question": "Find the sum of all solutions of $x^4 - 4x^3 + 6x^2 - 4x + 1 = 0$.",
+    "options": [
+      "4",
+      "2",
+      "1",
+      "0"
+    ],
+    "correct": 0
+  },
+  { //78
+    "question": "If $\\sin A + \\sin B = \\sqrt{3}$ and $\\cos A + \\cos B = 1$, find $A+B$.",
+    "options": [
+      "$90^\\circ$",
+      "$60^\\circ$",
+      "$120^\\circ$",
+      "$30^\\circ$"
+    ],
+    "correct": 0
+  },
+  { //79
+    "question": "If $x = a \\cos t$, $y = b \\sin t$, find $\\frac{dy}{dx}$.",
+    "options": [
+      "$\\frac{b}{a} \\cot t$",
+      "$\\frac{b}{a} \\tan t$",
+      "$\\frac{a}{b} \\tan t$",
+      "$\\frac{a}{b} \\cot t$"
+    ],
+    "correct": 1
+  },
+  { //80
+    "question": "If $a$ and $b$ are roots of $x^2 - 2x + 2 = 0$, find $a^8 + b^8$.",
+    "options": [
+      "2",
+      "4",
+      "0",
+      "1"
+    ],
+    "correct": 1
+  },
+  { //81
+    "question": "The number of real roots of $x^4 + 4x^2 + 16 = 0$ is:",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "4"
+    ],
+    "correct": 0
+  },
+  { //82
+    "question": "If $\\int_0^1 x^n dx = \\frac{1}{n+1}$, find $\\int_0^1 x^2 dx$.",
+    "options": [
+      "$\\frac{1}{3}$",
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$\\frac{1}{4}$"
+    ],
+    "correct": 0
+  },
+  { //83
+    "question": "Evaluate $\\int_0^1 \\frac{x^3 - 1}{x-1} dx$.",
+    "options": [
+      "0",
+      "$-\\frac{1}{4}$",
+      "$\\frac{1}{4}$",
+      "1"
+    ],
+    "correct": 2
+  },
+  { //84
+    "question": "If $x = \\cos^3 \\theta - \\sin^3 \\theta$, $y = 3 \\sin \\theta \\cos \\theta$, find $\\frac{dy}{dx}$.",
+    "options": [
+      "$\\frac{3}{2}$",
+      "$1$",
+      "$\\frac{1}{2}$",
+      "$2$"
+    ],
+    "correct": 0
+  },
+  { //85
+    "question": "Find the number of real solutions of $\\cos x = x$.",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "correct": 1
+  },
+  { //86
+    "question": "If $\\int_0^1 x^m (1-x)^n dx = B(m+1,n+1)$, find $\\int_0^1 x(1-x)^2 dx$.",
+    "options": [
+      "$\\frac{1}{12}$",
+      "$\\frac{1}{6}$",
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{3}$"
+    ],
+    "correct": 0
+  },
+  { //87
+    "question": "The sum of all solutions of $2^x + 2^{-x} = 5$ is:",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "5"
+    ],
+    "correct": 0
+  },
+  { //88
+    "question": "If $x = 2 \\cos \\theta$, $y = 2 \\sin \\theta$, find $x^2 + y^2$.",
+    "options": [
+      "2",
+      "4",
+      "1",
+      "8"
+    ],
+    "correct": 1
+  },
+  { //89
+    "question": "If $x = t^2$, $y = t^3 - t$, find $\\frac{dy}{dx}$ in terms of $t$.",
+    "options": [
+      "$\\frac{3t^2-1}{2t}$",
+      "$\\frac{3t-1}{2t}$",
+      "$\\frac{3t^2+1}{2t}$",
+      "$\\frac{t^2-1}{2t}$"
+    ],
+    "correct": 0
+  },
+  { //90
+    "question": "If $\\sum_{n=1}^{\\infty} \\frac{n}{2^n} = S$, find $S$.",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 1
+  },
+  { //91
+    "question": "Find the number of terms in $(1 + x^2 - x^3)^{10}$ which are independent of $x$.",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 1
+  },
+  { //92
+    "question": "Find the coordinates of the foot of perpendicular from $(1,2,3)$ to the plane $x+y+z=6$.",
+    "options": [
+      "$(1,2,3)$",
+      "$(2,1,3)$",
+      "$(2,3,1)$",
+      "$(3,2,1)$"
+    ],
+    "correct": 0
+  },
+  { //93
+    "question": "Find the sum of squares of roots of $x^3 - 3x + 2 = 0$.",
+    "options": [
+      "1",
+      "3",
+      "5",
+      "7"
+    ],
+    "correct": 2
+  },
+  { //94
+    "question": "If $\\tan A + \\tan B = 3$ and $\\tan A \\tan B = 2$, find $\\tan(A+B)$.",
+    "options": [
+      "$-1$",
+      "$1$",
+      "$2$",
+      "$0$"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "If $f(x) = x^3 - 3x^2 + 2x$, find $f''(x)$ and determine where $f(x)$ is concave up.",
+    "options": ["$x < 1$", "$x > 1$", "$x < 0$", "$x > 2$"],
+    "correct": 1
+  },
+  {
+    "question": "Evaluate $\\int_0^1 (3x^2 + 2x) dx$.",
+    "options": ["2", "2.5", "1.5", "1"],
+    "correct": 2
+  },
+  {
+    "question": "If $f(x) = e^{2x}$, find $\\frac{d}{dx} \\left( x f(x) \\right)$.",
+    "options": ["$e^{2x}$", "$e^{2x} + 2xe^{2x}$", "$2xe^{2x}$", "$x e^{2x}$"],
+    "correct": 1
+  },
+  {
+    "question": "Find $\\int \\frac{dx}{x^2 \\sqrt{x^2-1}}$.",
+    "options": ["$-\\frac{\\sqrt{x^2-1}}{x}$", "$\\frac{\\sqrt{x^2-1}}{x}$", "$\\ln|x+\\sqrt{x^2-1}|$", "$\\frac{1}{\\sqrt{x^2-1}}$"],
+    "correct": 0
+  },
+  {
+    "question": "If $y = \\ln(\\sin x)$, find $\\frac{dy}{dx}$.",
+    "options": ["$\\cot x$", "$\\tan x$", "$\\csc x$", "$\\sec x$"],
+    "correct": 0
+  },
+  {
+    "question": "The probability of drawing 2 aces from a deck of 52 cards is:",
+    "options": ["$\\frac{1}{221}$", "$\\frac{1}{1326}$", "$\\frac{1}{13}$", "$\\frac{1}{26}$"],
+    "correct": 0
+  },
+  {
+    "question": "A box contains 5 red and 3 blue balls. Two balls are drawn at random. Probability both are red is:",
+    "options": ["$\\frac{5}{8}$", "$\\frac{5}{14}$", "$\\frac{5}{28}$", "$\\frac{10}{28}$"],
+    "correct": 3
+  },
+  {
+    "question": "Find $\\lim_{x \\to 0} \\frac{\\sin 5x}{x}$.",
+    "options": ["5", "1", "0", "$\\infty$"],
+    "correct": 0
+  },
+  {
+    "question": "If $x$ varies directly as $y^2$ and $x=16$ when $y=2$, find $x$ when $y=3$.",
+    "options": ["36", "18", "24", "32"],
+    "correct": 3
+  },
+  {
+    "question": "The number of ways to arrange 4 boys and 3 girls in a row such that girls are not together is:",
+    "options": ["360", "120", "240", "480"],
+    "correct": 2
+  },
+  {
+    "question": "If $f(x) = x^4 - 4x^3 + 6x^2$, find local maxima and minima.",
+    "options": ["Min at 0, Max at 1", "Min at 1, Max at 2", "Min at 2, Max at 1", "Min at 1, Max at 0"],
+    "correct": 0
+  },
+  {
+    "question": "A die is thrown twice. Probability the sum is 7 or 11 is:",
+    "options": ["$\\frac{1}{6}$", "$\\frac{1}{9}$", "$\\frac{1}{12}$", "$\\frac{1}{8}$"],
+    "correct": 0
+  },
+  {
+    "question": "Evaluate $\\int_0^{\\pi/2} \\sin^2 x dx$.",
+    "options": ["$\\frac{\\pi}{4}$", "$\\frac{\\pi}{2}$", "$1$", "$\\frac{1}{2}$"],
+    "correct": 0
+  },
+  {
+    "question": "The number of 3-digit numbers divisible by 5 is:",
+    "options": ["180", "150", "200", "160"],
+    "correct": 1
+  },
+  {
+    "question": "If $y = x \\sqrt{x^2 + 1}$, find $\\frac{dy}{dx}$.",
+    "options": ["$\\frac{2x^2+1}{\\sqrt{x^2+1}}$", "$\\frac{x^2+1}{x}$", "$2x\\sqrt{x^2+1}$", "$\\sqrt{x^2+1}$"],
+    "correct": 0
+  },
+  {
+    "question": "From 5 men and 6 women, a committee of 4 is formed containing at least 2 women. Number of ways:",
+    "options": ["150", "105", "210", "120"],
+    "correct": 2
+  },
+  {
+    "question": "Find $\\int_0^1 x e^{x^2} dx$.",
+    "options": ["$\\frac{1}{2}(e - 1)$", "$e - 1$", "$1$", "$\\frac{1}{2}$"],
+    "correct": 0
+  },
+  {
+    "question": "Probability that a leap year has 53 Sundays is:",
+    "options": ["$\\frac{2}{7}$", "$\\frac{1}{7}$", "$\\frac{3}{7}$", "$\\frac{1}{2}$"],
+    "correct": 0
+  },
+  {
+    "question": "Evaluate $\\lim_{x \\to 0} \\frac{1 - \\cos 3x}{x^2}$.",
+    "options": ["$\\frac{9}{2}$", "$3$", "$\\frac{3}{2}$", "9"],
+    "correct": 0
+  },
+  {
+    "question": "The number of words that can be formed using letters of 'SUCCESS' is:",
+    "options": ["420", "840", "1260", "5040"],
+    "correct": 2
+  },
+  {
+    "question": "If $y = \\tan^{-1}(x^2)$, find $\\frac{dy}{dx}$.",
+    "options": ["$\\frac{2x}{1+x^4}$", "$\\frac{1}{1+x^2}$", "$\\frac{2}{1+x^2}$", "$\\frac{2x}{1+x^2}$"],
+    "correct": 0
+  },
+  {
+    "question": "From 6 different books, in how many ways can you select 3?",
+    "options": ["20", "15", "18", "10"],
+    "correct": 0
+  },
+  {
+    "question": "Evaluate $\\int_1^e \\frac{\\ln x}{x} dx$.",
+    "options": ["$\\frac{1}{2}$", "1", "$\\frac{e}{2}$", "$\\ln e$"],
+    "correct": 0
+  },
+  {
+    "question": "A box contains 4 white and 6 black balls. One ball is drawn at random. Probability it is white is:",
+    "options": ["$\\frac{2}{5}$", "$\\frac{1}{2}$", "$\\frac{4}{10}$", "$\\frac{3}{5}$"],
+    "correct": 0
+  },
+  {
+    "question": "Find $\\frac{d}{dx} (x^x)$.",
+    "options": ["$x^x$", "$x^x (1+\\ln x)$", "$x^x \\ln x$", "$x^{x-1}$"],
+    "correct": 1
+  },
+  {
+    "question": "A box contains 10 balls numbered 1 to 10. One ball is drawn at random. Probability it is divisible by 2 or 3 is:",
+    "options": ["$\\frac{1}{2}$", "$\\frac{2}{5}$", "$\\frac{4}{5}$", "$\\frac{3}{5}$"],
+    "correct": 3
+  },
+  {
+    "question": "Evaluate $\\int_0^1 \\frac{dx}{\\sqrt{1-x^2}}$.",
+    "options": ["$\\frac{\\pi}{2}$", "$\\pi$", "$1$", "$0$"],
+    "correct": 0
+  },
+  {
+    "question": "In how many ways can 5 boys and 4 girls be seated in a row so that boys and girls alternate?",
+    "options": ["17280", "2880", "1440", "5760"],
+    "correct": 0
+  }
+
+
+
+
+
+],
+
+
+
+           
+physics: [
+                { question: "The SI unit of force is:", options: ["Joule", "Newton", "Watt", "Pascal"], correct: 1 },
+                { question: "Kinetic energy formula is:", options: ["$\\frac{1}{2}mv^2$", "$mv^2$", "$\\frac{1}{2}mv$", "$2mv^2$"], correct: 0 },
+                { question: "Newton's first law is law of:", options: ["Motion", "Inertia", "Momentum", "Energy"], correct: 1 },
+                { question: "Speed of light in vacuum:", options: ["$3 \\times 10^8$ m/s", "$3 \\times 10^6$ m/s", "$3 \\times 10^{10}$ m/s", "$3 \\times 10^5$ m/s"], correct: 0 },
+                { question: "Ohm's law states:", options: ["$V = IR$", "$V = I/R$", "$V = I + R$", "$I = VR$"], correct: 0 }
+            ],
+            chemistry: [
+                { question: "Atomic number of Carbon:", options: ["4", "6", "8", "12"], correct: 1 },
+                { question: "Which is a noble gas?", options: ["Oxygen", "Nitrogen", "Helium", "Hydrogen"], correct: 2 },
+                { question: "Formula for alkanes:", options: ["$C_nH_{2n}$", "$C_nH_{2n+2}$", "$C_nH_{2n-2}$", "$C_nH_n$"], correct: 1 },
+                { question: "pH of pure water:", options: ["0", "7", "14", "1"], correct: 1 },
+                { question: "Avogadro's number:", options: ["$6.022 \\times 10^{23}$", "$6.022 \\times 10^{22}$", "$6.022 \\times 10^{24}$", "$6.022 \\times 10^{21}$"], correct: 0 }
+            ]
+        };
+
+        // Generate questions
+        function generateQuestions(subject, index) {
+            const questions = [];
+            const subjectQuestions = sampleQuestions[subject];
+            let i = (index - 1) * 50; // 5 questions per quiz
+            for (let j=i; j < i+50; j++) {
+                questions.push({...subjectQuestions[j]});
             }
-        ];
+            return questions;
+        }
 
+        // Generate all quizzes
+        const quizzes = {};
+        ['math', 'physics', 'chemistry'].forEach(subject => {
+            quizzes[subject] = [];
+            
+            // Free quizzes (1-30)
+            for (let i = 1; i <= 30; i++) {
+                quizzes[subject].push({
+                    id: `${subject}-${i}`,
+                    title: `${subject.charAt(0).toUpperCase() + subject.slice(1)} Series ${i}`,
+                    free: true,
+                    duration: 3600,
+                    questions: generateQuestions(subject, i),
+                });
+            }
+
+            // Premium quizzes (31-60)
+            for (let i = 31; i <= 60; i++) {
+                quizzes[subject].push({
+                    id: `${subject}-${i}`,
+                    title: `${subject.charAt(0).toUpperCase() + subject.slice(1)} Premium ${i}`,
+                    free: false,
+                    duration: 5400,
+                    questions: generateQuestions(subject, i),
+                });
+            }
+        });
+
+        // Render quiz cards
+        function renderQuizCards(subject) {
+            const freeGrid = document.getElementById(`${subject}FreeGrid`);
+            const premiumGrid = document.getElementById(`${subject}PremiumGrid`);
+
+            freeGrid.innerHTML = quizzes[subject].filter(q => q.free).map(quiz => `
+                <article class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-green-200 cursor-pointer" onclick="startQuiz('${quiz.id}')">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-bold text-gray-900">${quiz.title}</h3>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">FREE</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500">50 Questions</span>
+                        <span class="text-gray-500">60 min</span>
+                    </div>
+                </article>
+            `).join('');
+
+            premiumGrid.innerHTML = quizzes[subject].filter(q => !q.free).map(quiz => `
+                <article class="quiz-card bg-white rounded-lg shadow-md p-6 border-2 border-amber-200 cursor-pointer" onclick="startQuiz('${quiz.id}')">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-bold text-gray-900">${quiz.title}</h3>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">PREMIUM</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500">50 Questions</span>
+                        <span class="text-gray-500">90 min</span>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Switch subject
+        function switchSubject(subject) {
+            currentSubject = subject;
+            
+            // Update tabs
+            ['math', 'physics', 'chemistry'].forEach(s => {
+                const tab = document.getElementById(`tab${s.charAt(0).toUpperCase() + s.slice(1)}`);
+                const content = document.getElementById(`${s}Quizzes`);
+                
+                if (s === subject) {
+                    tab.className = 'px-6 py-3 rounded-lg font-semibold text-lg bg-blue-500 text-white shadow-lg';
+                    content.classList.remove('hidden');
+                } else {
+                    tab.className = 'px-6 py-3 rounded-lg font-semibold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300';
+                    content.classList.add('hidden');
+                }
+            });
+            
+            // checkLoginStatus();
+        }
+
+       
+
+        
+
+
+        // Quiz functionality
         let currentQuiz = null;
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let timerInterval = null;
         let timeRemaining = 0;
+        console.log("Quizzes loaded:", quizzes);
 
         function startQuiz(quizId) {
-            currentQuiz = quizzes.find(q => q.id === quizId);
+            console.log("Starting quiz:", quizId);
+            const [subject, id] = quizId.split('-');
+            currentQuiz = quizzes[subject].find(q => q.id === quizId);
 
-            if (!currentQuiz) {
-                alert('This quiz is not available yet!');
+            console.log("Current quiz:", currentQuiz);
+            if (currentQuiz.free && !window.currentUser) {
+                alert('Please login to access free quizzes!');
+                loginPrompt();
                 return;
             }
 
             if (!currentQuiz.free) {
-                alert('This is a paid quiz. Please upgrade to access premium content.');
+                alert('This is a premium quiz. Please upgrade to access premium content.');
                 return;
             }
 
             currentQuestionIndex = 0;
-            userAnswers = new Array(currentQuiz.questions.length).fill(null);
+            userAnswers = new Array(50).fill(null);
             timeRemaining = currentQuiz.duration;
 
             document.getElementById('quizCardsView').classList.add('hidden');
-            document.getElementById('quizheader').classList.add('hidden');
             document.getElementById('quizSection').classList.remove('hidden');
             document.getElementById('quizTitle').textContent = currentQuiz.title;
-            document.getElementById('totalQuestions').textContent = currentQuiz.questions.length;
 
             startTimer();
             displayQuestion();
@@ -1449,8 +1381,7 @@
                 timeRemaining--;
                 const minutes = Math.floor(timeRemaining / 60);
                 const seconds = timeRemaining % 60;
-                document.getElementById('timer').textContent =
-                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
                 if (timeRemaining <= 0) {
                     clearInterval(timerInterval);
@@ -1474,7 +1405,6 @@
                 </button>
             `).join('');
 
-            // Render KaTeX
             renderMathInElement(document.body, {
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
@@ -1482,16 +1412,13 @@
                 ]
             });
 
-            // Update navigation buttons
             document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
-            document.getElementById('nextBtn').classList.toggle('hidden',
-                currentQuestionIndex === currentQuiz.questions.length - 1);
-            document.getElementById('submitBtn').classList.toggle('hidden',
-                currentQuestionIndex !== currentQuiz.questions.length - 1);
+            document.getElementById('nextBtn').disabled = currentQuestionIndex === currentQuiz.questions.length - 1;
+            document.getElementById('submitBtn').classList.toggle('hidden', currentQuestionIndex !== currentQuiz.questions.length - 1);
         }
 
-        function selectOption(optionIdx) {
-            userAnswers[currentQuestionIndex] = optionIdx;
+        function selectOption(idx) {
+            userAnswers[currentQuestionIndex] = idx;
             displayQuestion();
         }
 
@@ -1510,11 +1437,10 @@
         }
 
         function cancelQuiz() {
-            if (confirm('Are you sure you want to cancel? Your progress will be lost.')) {
+            if (confirm("Are you sure you want to cancel the quiz?")) {
                 clearInterval(timerInterval);
                 document.getElementById('quizSection').classList.add('hidden');
                 document.getElementById('quizCardsView').classList.remove('hidden');
-                document.getElementById('quizheader').classList.remove('hidden');
             }
         }
 
@@ -1526,47 +1452,49 @@
                 if (userAnswers[idx] === q.correct) score++;
             });
 
-            document.getElementById('quizSection').classList.add('hidden');
-            document.getElementById('resultsModal').classList.remove('hidden');
-
-            document.getElementById('scoreDisplay').textContent =
-                `${score}/${currentQuiz.questions.length}`;
-            document.getElementById('percentageDisplay').textContent =
-                `${Math.round(score / currentQuiz.questions.length * 100)}% Correct`;
+            document.getElementById('scoreDisplay').textContent = `${score}/${currentQuiz.questions.length}`;
+            const percent = ((score / currentQuiz.questions.length) * 100).toFixed(2);
+            document.getElementById('percentageDisplay').textContent = `${percent}%`;
 
             const reviewContainer = document.getElementById('reviewContainer');
             reviewContainer.innerHTML = currentQuiz.questions.map((q, idx) => {
+                const userAns = userAnswers[idx] !== null ? q.options[userAnswers[idx]] : 'Not Attempted';
+                const correctAns = q.options[q.correct];
                 const isCorrect = userAnswers[idx] === q.correct;
-                const userAnswered = userAnswers[idx] !== null;
                 return `
-                    <div class="p-4 rounded-lg border-2 ${isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300'}">
-                        <p class="font-semibold mb-2 text-gray-800">Q${idx + 1}. ${q.question}</p>
-                        <p class="text-sm mb-1">
-                            <span class="font-medium">Your answer:</span> 
-                            <span class="${isCorrect ? 'text-green-700' : 'text-red-700'} font-semibold">
-                                ${userAnswered ? q.options[userAnswers[idx]] : 'Not answered'}
-                            </span>
-                        </p>
-                        ${!isCorrect ? `<p class="text-sm"><span class="font-medium">Correct answer:</span> <span class="text-green-700 font-semibold">${q.options[q.correct]}</span></p>` : ''}
+                    <div class="p-4 border rounded-lg ${isCorrect ? 'bg-green-100' : 'bg-red-100'}">
+                        <p class="font-semibold">Q${idx + 1}: ${q.question}</p>
+                        <p>Your Answer: ${userAns}</p>
+                        <p>Correct Answer: ${correctAns}</p>
                     </div>
                 `;
             }).join('');
 
-            renderMathInElement(document.getElementById('reviewContainer'), {
+             renderMathInElement(document.body, {
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
                     { left: '$', right: '$', display: false }
                 ]
             });
+
+            document.getElementById('quizSection').classList.add('hidden');
+            document.getElementById('resultsModal').classList.remove('hidden');
         }
 
         function closeResults() {
             document.getElementById('resultsModal').classList.add('hidden');
             document.getElementById('quizCardsView').classList.remove('hidden');
-            document.getElementById('quizheader').classList.remove('hidden');
         }
+
+        // Initial setup
+        window.onload = () => {
+            updateUI();
+            ['math', 'physics', 'chemistry'].forEach(subject => renderQuizCards(subject));
+        };
     </script>
 
+
+   <!-- auth  -->
     <script type="module">
         window.registerPrompt = () => {
             const email = prompt("Enter email:");
@@ -1591,7 +1519,7 @@
         const userSectionMobile = document.getElementById("userSectionMobile");
         const userEmailMobile = document.getElementById("userEmailMobile");
 
-        const updateUI = () => {
+        window.updateUI = () => {
             if (window.currentUser) {
                 authSection.classList.add("hidden");
                 userSection.classList.remove("hidden");
