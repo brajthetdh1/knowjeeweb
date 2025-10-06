@@ -30,14 +30,14 @@
   <meta name="twitter:description" content="Master JEE Math with expert guidance from IIT Roorkee graduate.">
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P8THGNV3KM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8THGNV3KM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-P8THGNV3KM');
-</script>
+    gtag('config', 'G-P8THGNV3KM');
+  </script>
 
 
   <!-- Structured Data -->
@@ -118,51 +118,4164 @@
     </div>
   </section>
 
-  <!-- Tabs & Content -->
-  <section class="container mx-auto py-10 px-6">
+  <!-- Main Content -->
+  <section id="topics" class="container mx-auto py-10 px-6">
     <!-- Tabs -->
     <div class="flex flex-wrap justify-center gap-2 border-b border-yellow-400 mb-6 px-2">
-      <!-- Algebra -->
-      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-lg font-semibold text-sm md:text-base"
-        data-subject="algebra">
-        Algebra
-      </button>
-
-      <!-- Calculus -->
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="calculus">
-        Calculus
-      </button>
-
-      <!-- Trigonometry -->
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="trigonometry">
-        Trigonometry
-      </button>
-
-      <!-- Coordinate Geometry -->
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="coordinate">
-        Coordinate Geometry
-      </button>
-
-      <!-- Vectors & 3D Geometry -->
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="vectors">
-        Vectors & 3D
-      </button>
-
-      <!-- Probability & Statistics -->
-      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base" data-subject="probability">
-        Probability & Stats
-      </button>
+      <button class="tab-btn py-2 px-4 bg-yellow-100 rounded-lg font-semibold text-sm md:text-base active"
+        data-subject="algebra">Algebra</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base"
+        data-subject="calculus">Calculus</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base"
+        data-subject="trigonometry">Trigonometry</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base"
+        data-subject="coordinate">Coordinate Geometry</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base"
+        data-subject="vectors">Vectors & 3D</button>
+      <button class="tab-btn py-2 px-4 hover:bg-yellow-200 rounded-lg text-sm md:text-base"
+        data-subject="probability">Probability & Stats</button>
     </div>
-
 
     <!-- Topic Cards -->
-    <div id="topicCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-      <p>Select a subject to view topics.</p>
+    <div id="topicCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"></div>
+
+    <!-- Content Sections (All Inline) -->
+    <div id="topicContent" class="bg-yellow-50 p-6 rounded-lg shadow">
+
+      <!-- Algebra Content -->
+
+      <!-- polynomial -->
+      <div id="algebra-polynomials" class="topic-content hidden">
+          <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Definition of Polynomial
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="text-2xl">
+      A <span class="font-semibold">polynomial</span> in a variable <span class="font-mono">x</span> is an algebraic expression of the form:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ f(x) = a_nx^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \dots + a_1x + a_0 $
+    </div>
+    <p>
+      where $ a_0, a_1, a_2, \dots, a_n $ are real or complex constants called <span class="font-semibold">coefficients</span>,
+      $ n $ is a non-negative integer called the <span class="font-semibold">degree</span> of the polynomial,
+      and $ a_n \neq 0 $.
+    </p>
+  </div>
+
+  <!-- Examples -->
+  <div>
+    <p class="font-semibold text-2xl">Examples:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>$ f(x) = 3x^2 + 2x + 1 $ — Quadratic Polynomial</li>
+      <li>$ f(x) = 5x^3 - 4x^2 + 2 $ — Cubic Polynomial</li>
+      <li>$ f(x) = 7 $ — Constant Polynomial</li>
+    </ul>
+  </div>
+
+  <!-- Note -->
+  <div>
+    <p class="italic text-teal-700">
+      Note: Expressions containing terms like $ x^{-1} $ or $ \sqrt{x} $ are <span class="font-semibold">not polynomials</span>.
+    </p>
+  </div>
+
+         </div>
+
+         <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Degree of a Polynomial
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="text-2xl">
+      The <span class="font-semibold">degree</span> of a polynomial is the highest power of the variable $x$ 
+      that appears with a non-zero coefficient.
+    </p>
+    <p class="mt-2">
+      For a general polynomial $f(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0$, 
+      the degree is $n$, provided $a_n \neq 0$.
+    </p>
+  </div>
+
+  <!-- Examples -->
+  <div>
+    <p class="font-semibold text-2xl">Examples:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>$f(x) = 3x^4 + 2x^3 - 5x + 1$ → Degree $= 4$</li>
+      <li>$g(x) = 7x^2 + 9$ → Degree $= 2$</li>
+      <li>$h(x) = 5$ → Degree $= 0$ (Constant polynomial)</li>
+    </ul>
+  </div>
+
+  <!-- Special Notes -->
+  <div>
+    <p class="font-semibold text-2xl">Special Cases:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>If all coefficients are $0$, it is called the <span class="font-semibold">zero polynomial</span>, and its degree is <span class="italic">not defined</span>.</li>
+      <li>For non-zero constant polynomials, the degree is $0$.</li>
+    </ul>
+  </div>
+
+         </div>
+
+         <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Types of Polynomials
+  </h1>
+
+  <!-- Based on Degree -->
+  <div>
+    <p class="font-semibold text-2xl">1. Based on Degree:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li><span class="font-semibold">Zero Polynomial:</span> All coefficients are $0$. Degree is not defined.</li>
+      <li><span class="font-semibold">Constant Polynomial:</span> Degree $= 0$, example: $f(x) = 7$.</li>
+      <li><span class="font-semibold">Linear Polynomial:</span> Degree $= 1$, example: $f(x) = 3x + 2$.</li>
+      <li><span class="font-semibold">Quadratic Polynomial:</span> Degree $= 2$, example: $f(x) = x^2 - 4x + 3$.</li>
+      <li><span class="font-semibold">Cubic Polynomial:</span> Degree $= 3$, example: $f(x) = 2x^3 + x^2 - 5$.</li>
+      <li><span class="font-semibold">Quartic Polynomial:</span> Degree $= 4$, example: $f(x) = x^4 + 2x^3 - x + 1$.</li>
+    </ul>
+  </div>
+
+  <!-- Based on Number of Terms -->
+  <div>
+    <p class="font-semibold text-2xl">2. Based on Number of Terms:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li><span class="font-semibold">Monomial:</span> A polynomial with one term. Example: $5x^3$.</li>
+      <li><span class="font-semibold">Binomial:</span> A polynomial with two terms. Example: $3x^2 + 2x$.</li>
+      <li><span class="font-semibold">Trinomial:</span> A polynomial with three terms. Example: $x^2 - 3x + 2$.</li>
+      <li><span class="font-semibold">Multinomial:</span> A polynomial having more than three terms. Example: $x^4 + 2x^3 + x^2 + x + 1$.</li>
+    </ul>
+  </div>
+
+  <!-- Important Note -->
+  <div>
+    <p class="font-semibold text-2xl">Important Note:</p>
+    <p>
+      A polynomial can be categorized both by its <span class="font-semibold">degree</span> and by its <span class="font-semibold">number of terms</span>.  
+      For example, $x^2 + 3x + 2$ is a <span class="italic">quadratic trinomial</span>.
+    </p>
+  </div>
+
+         </div>
+
+         <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Roots of a Polynomial
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="font-semibold text-2xl">Definition:</p>
+    <p>
+      A <span class="font-semibold">root</span> (or zero) of a polynomial $f(x)$ is the value of $x$ for which  
+      $f(x) = 0$.  
+    </p>
+    <p>
+      In other words, if $f(a) = 0$, then $x = a$ is called a root of the polynomial $f(x)$.
+    </p>
+  </div>
+
+  <!-- Example -->
+  <div>
+    <p class="font-semibold text-2xl">Example:</p>
+    <p>Consider the polynomial $f(x) = x^2 - 5x + 6$.</p>
+    <p>
+      To find its roots, set $f(x) = 0$:  
+      $x^2 - 5x + 6 = 0$
+    </p>
+    <p>
+      Factorize: $(x - 2)(x - 3) = 0$
+    </p>
+    <p>
+      Therefore, the roots are $x = 2$ and $x = 3$.
+    </p>
+  </div>
+
+  <!-- Number of Roots -->
+  <div>
+    <p class="font-semibold text-2xl">Number of Roots:</p>
+    <p>
+      A polynomial of degree $n$ can have at most $n$ roots.
+    </p>
+    <p>
+      Example:  
+      - A linear polynomial $(ax + b = 0)$ has 1 root.  
+      - A quadratic polynomial $(ax^2 + bx + c = 0)$ has 2 roots.  
+      - A cubic polynomial $(ax^3 + bx^2 + cx + d = 0)$ has 3 roots.
+    </p>
+  </div>
+
+  <!-- Important Notes -->
+  <div>
+    <p class="font-semibold text-2xl">Important Notes:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>Every polynomial of degree $n$ has exactly $n$ roots (real or complex) when counted with multiplicity.</li>
+      <li>If a root is repeated, it is called a <span class="font-semibold">multiple root</span>.</li>
+      <li>If $(x - a)$ is a factor of $f(x)$, then $a$ is a root of $f(x)$.</li>
+      <li>The relation between roots and factors is given by the <span class="italic">Factor Theorem</span>.</li>
+    </ul>
+  </div>
+
+  <!-- Example with verification -->
+  <div>
+    <p class="font-semibold text-2xl">Verification Example:</p>
+    <p>
+      Let $f(x) = x^2 - 4x + 3$.  
+      Check if $x = 1$ is a root.
+    </p>
+    <p>
+      $f(1) = (1)^2 - 4(1) + 3 = 0$
+    </p>
+    <p>
+      Therefore, $x = 1$ is a root of $f(x)$.
+    </p>
+  </div>
+
+         </div>
+
+
+         <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Theorems of Polynomials
+  </h1>
+
+  <!-- Factor Theorem -->
+  <div>
+    <p class="font-semibold text-2xl">1. Factor Theorem:</p>
+    <p>
+      If $f(x)$ is a polynomial and $f(a) = 0$, then $(x - a)$ is a factor of $f(x)$.
+    </p>
+    <p>
+      Conversely, if $(x - a)$ is a factor of $f(x)$, then $f(a) = 0$.
+    </p>
+    <p class="mt-2 font-semibold">Example:</p>
+    <p>
+      Let $f(x) = x^2 - 5x + 6$.  
+      Since $f(2) = 0$, $(x - 2)$ is a factor of $f(x)$.
+    </p>
+    <p>
+      Therefore, $f(x) = (x - 2)(x - 3)$.
+    </p>
+  </div>
+
+  <!-- Remainder Theorem -->
+  <div>
+    <p class="font-semibold text-2xl">2. Remainder Theorem:</p>
+    <p>
+      If a polynomial $f(x)$ is divided by $(x - a)$, the remainder is $f(a)$.
+    </p>
+    <p class="mt-2 font-semibold">Example:</p>
+    <p>
+      Divide $f(x) = x^3 - 2x^2 + 4x - 8$ by $(x - 2)$.
+    </p>
+    <p>
+      By Remainder Theorem, remainder $= f(2) = 8 - 8 + 8 - 8 = 0$.
+    </p>
+    <p>
+      Hence, $(x - 2)$ is a factor of $f(x)$.
+    </p>
+  </div>
+
+  <!-- Fundamental Theorem of Algebra -->
+  <div>
+    <p class="font-semibold text-2xl">3. Fundamental Theorem of Algebra:</p>
+    <p>
+      Every non-zero polynomial of degree $n$ has exactly $n$ roots in the complex number system  
+      (counting multiplicities).
+    </p>
+    <p class="mt-2 font-semibold">Example:</p>
+    <p>
+      The cubic equation $x^3 - 1 = 0$ has 3 roots:  
+      $x = 1$, $x = \omega$, and $x = \omega^2$,  
+      where $\omega = e^{i2\pi/3}$.
+    </p>
+  </div>
+
+  <!-- Relation Between Coefficients and Roots -->
+  <div>
+    <p class="font-semibold text-2xl">4. Relation Between Coefficients and Roots:</p>
+    <p>
+      For a quadratic equation $ax^2 + bx + c = 0$ with roots $\alpha$ and $\beta$:
+    </p>
+    <div class="text-center text-2xl my-2">
+      $\alpha + \beta = -\dfrac{b}{a}$  
+      <br>
+      $\alpha \beta = \dfrac{c}{a}$
+    </div>
+    <p>
+      For a cubic equation $ax^3 + bx^2 + cx + d = 0$ with roots $\alpha, \beta, \gamma$:
+    </p>
+    <div class="text-center text-2xl my-2">
+      $\alpha + \beta + \gamma = -\dfrac{b}{a}$  
+      <br>
+      $\alpha\beta + \beta\gamma + \gamma\alpha = \dfrac{c}{a}$  
+      <br>
+      $\alpha\beta\gamma = -\dfrac{d}{a}$
+    </div>
+  </div>
+
+  <!-- Polynomial Identity Theorem -->
+  <div>
+    <p class="font-semibold text-2xl">5. Polynomial Identity Theorem:</p>
+    <p>
+      If two polynomials are equal for infinitely many values of $x$,  
+      then their corresponding coefficients are equal.
+    </p>
+    <p class="mt-2 font-semibold">Example:</p>
+    <p>
+      If $2x^2 + 3x + k = 2x^2 + 3x + 5$ for all $x$, then $k = 5$.
+    </p>
+  </div>
+
+  <!-- Important Note -->
+  <div>
+    <p class="font-semibold text-2xl">Important Notes:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>Use the Factor Theorem to find roots quickly by substitution.</li>
+      <li>The Remainder Theorem helps in checking divisibility.</li>
+      <li>The Fundamental Theorem guarantees the total number of roots (real + complex).</li>
+      <li>Relations between coefficients and roots are frequently used in JEE problems.</li>
+    </ul>
+  </div>
+
+         </div>
+
+
+         <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Relations Between Coefficients and Roots of a Polynomial
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p>
+      If a polynomial equation of degree $n$ is given by:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $a_nx^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \dots + a_1x + a_0 = 0$
+    </div>
+    <p>
+      and its roots are $\alpha_1, \alpha_2, \alpha_3, \dots, \alpha_n$,  
+      then the sum and products of the roots are related to the coefficients by fixed algebraic relations.
+    </p>
+  </div>
+
+  <!-- Quadratic Case -->
+  <div>
+    <p class="font-semibold text-2xl">1. Quadratic Equation</p>
+    <p>
+      For $ax^2 + bx + c = 0$ with roots $\alpha$ and $\beta$:
+    </p>
+    <div class="text-center text-2xl my-2">
+      $\alpha + \beta = -\dfrac{b}{a}$  
+      <br>
+      $\alpha \beta = \dfrac{c}{a}$
+    </div>
+    <p>
+      These are called the <span class="font-semibold text-teal-700">relations between roots and coefficients</span>.
+    </p>
+  </div>
+
+  <!-- Cubic Case -->
+  <div>
+    <p class="font-semibold text-2xl">2. Cubic Equation</p>
+    <p>
+      For $ax^3 + bx^2 + cx + d = 0$ with roots $\alpha, \beta, \gamma$:
+    </p>
+    <div class="text-center text-2xl my-2">
+      $\alpha + \beta + \gamma = -\dfrac{b}{a}$  
+      <br>
+      $\alpha\beta + \beta\gamma + \gamma\alpha = \dfrac{c}{a}$  
+      <br>
+      $\alpha\beta\gamma = -\dfrac{d}{a}$
+    </div>
+  </div>
+
+  <!-- Quartic Case -->
+  <div>
+    <p class="font-semibold text-2xl">3. Quartic Equation</p>
+    <p>
+      For $ax^4 + bx^3 + cx^2 + dx + e = 0$ with roots $\alpha, \beta, \gamma, \delta$:
+    </p>
+    <div class="text-center text-2xl my-2">
+      $\alpha + \beta + \gamma + \delta = -\dfrac{b}{a}$  
+      <br>
+      $\alpha\beta + \alpha\gamma + \alpha\delta + \beta\gamma + \beta\delta + \gamma\delta = \dfrac{c}{a}$  
+      <br>
+      $\alpha\beta\gamma + \alpha\beta\delta + \beta\gamma\delta + \gamma\alpha\delta = -\dfrac{d}{a}$  
+      <br>
+      $\alpha\beta\gamma\delta = \dfrac{e}{a}$
+    </div>
+  </div>
+
+  <!-- General Form -->
+  <div>
+    <p class="font-semibold text-2xl">4. General Form (for any degree $n$)</p>
+    <p>
+      For polynomial  
+      $a_nx^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \dots + a_1x + a_0 = 0$  
+      having roots $\alpha_1, \alpha_2, \dots, \alpha_n$, we have:
+    </p>
+    <div class="text-center text-2xl my-2">
+      $\displaystyle \sum \alpha_i = -\dfrac{a_{n-1}}{a_n}$  
+      <br>
+      $\displaystyle \sum \alpha_i\alpha_j = \dfrac{a_{n-2}}{a_n}$  
+      <br>
+      $\displaystyle \sum \alpha_i\alpha_j\alpha_k = -\dfrac{a_{n-3}}{a_n}$  
+      <br>
+      $\vdots$  
+      <br>
+      $\alpha_1\alpha_2\cdots\alpha_n = (-1)^n \dfrac{a_0}{a_n}$
+    </div>
+  </div>
+
+  <!-- Example -->
+  <div>
+    <p class="font-semibold text-2xl">5. Example</p>
+    <p>
+      Find the sum and product of roots of $2x^2 - 5x + 3 = 0$.
+    </p>
+    <p>
+      Comparing with $ax^2 + bx + c = 0$, we get $a = 2$, $b = -5$, $c = 3$.
+    </p>
+    <div class="text-center text-2xl my-2">
+      $\alpha + \beta = -\dfrac{b}{a} = \dfrac{5}{2}$  
+      <br>
+      $\alpha\beta = \dfrac{c}{a} = \dfrac{3}{2}$
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <div>
+    <p class="font-semibold text-2xl">Important Notes:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>These relations are frequently used to form equations when roots are known.</li>
+      <li>They also help in solving symmetric functions of roots without finding actual roots.</li>
+      <li>Always divide the given polynomial by its leading coefficient before applying formulas.</li>
+    </ul>
+  </div>
+
+         </div>
+
+
+         <!-- Problem 1 -->
+  <div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 1: Relation Between Coefficients and Roots
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        If $\alpha$ and $\beta$ are the roots of $x^2 - 5x + 6 = 0$, find the value of $\alpha^2 + \beta^2$.
+      </p>
+
+      <p class="font-semibold">Solution:</p>
+
+      <p>We know from the relation between coefficients and roots:</p>
+      <div class="text-center text-2xl my-3">
+        $\alpha + \beta = 5$,  $\alpha\beta = 6$
+      </div>
+
+      <p>We need to find $\alpha^2 + \beta^2$.</p>
+      <div class="text-center text-2xl my-3">
+        $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$
+      </div>
+
+      <p>Substitute the values:</p>
+      <div class="text-center text-2xl my-3">
+        $\alpha^2 + \beta^2 = 5^2 - 2(6) = 25 - 12 = 13$
+      </div>
+
+      <p class="text-center text-2xl">
+        ⇒ $\alpha^2 + \beta^2 = 13$
+      </p>
+
+      <p class="italic text-center">
+        Concept used: symmetric functions of roots and standard relations.
+      </p>
+    </div>
+  </div>
+
+
+   <div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 2: Formation of Polynomial from Given Roots
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Form a quadratic polynomial whose roots are $2$ and $3$.
+      </p>
+
+      <p class="font-semibold">Solution:</p>
+
+      <p>Let the required polynomial be:</p>
+      <div class="text-center text-2xl my-3">
+        $x^2 - (\alpha + \beta)x + \alpha\beta = 0$
+      </div>
+
+      <p>Here, $\alpha = 2$, $\beta = 3$.</p>
+      <div class="text-center text-2xl my-3">
+        $\alpha + \beta = 5$, $\alpha\beta = 6$
+      </div>
+
+      <p>Substitute the values:</p>
+      <div class="text-center text-2xl my-3">
+        $x^2 - 5x + 6 = 0$
+      </div>
+
+      <p class="text-center font-semibold text-2xl">
+        ⇒ Required polynomial is $x^2 - 5x + 6 = 0$
+      </p>
+
+      <p class="italic text-center">
+        Concept used: General form of polynomial with given roots.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Problem 3 -->
+    <div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+
+      Problem 3: Polynomial with Given Sum and Product of Roots
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Find the quadratic polynomial whose sum of roots is $p$ and product of roots is $q$.
+      </p>
+
+      <p class="font-semibold">Solution:</p>
+
+      <p>Let the required polynomial be:</p>
+      <div class="text-center text-2xl my-3">
+        $x^2 - (\alpha + \beta)x + \alpha\beta = 0$
+      </div>
+
+      <p>Given:</p>
+      <div class="text-center text-2xl my-3">
+        $\alpha + \beta = p$, $\alpha\beta = q$
+      </div>
+
+      <p>Substitute these values:</p>
+      <div class="text-center text-2xl my-3">
+        $x^2 - px + q = 0$
+      </div>
+
+      <p class="text-center font-semibold text-2xl">
+        ⇒ Required polynomial is $x^2 - px + q = 0$
+      </p>
+
+      <p class="italic text-center">
+        Concept used: Standard form of a quadratic equation using sum and product of roots.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Problem 4 -->
+    <div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 4: Relation Between Roots and Coefficients (Cubic)
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Let the cubic polynomial be $ax^3 + bx^2 + cx + d = 0$ whose roots are $\alpha, \beta, \gamma$.
+      </p>
+
+      <p class="font-semibold">We need to express:</p>
+      <ul class="list-disc list-inside ml-6 space-y-2">
+        <li>Sum of roots: $\alpha + \beta + \gamma$</li>
+        <li>Sum of product of roots taken two at a time: $\alpha\beta + \beta\gamma + \gamma\alpha$</li>
+        <li>Product of roots: $\alpha\beta\gamma$</li>
+      </ul>
+
+      <p class="font-semibold text-indigo-700">Solution:</p>
+
+      <p>Compare $ax^3 + bx^2 + cx + d = 0$ with $a(x - \alpha)(x - \beta)(x - \gamma) = 0$.</p>
+
+      <p>Expanding the RHS:</p>
+      <div class="text-center text-2xl my-3">
+        $a[x^3 - (\alpha + \beta + \gamma)x^2 + (\alpha\beta + \beta\gamma + \gamma\alpha)x - \alpha\beta\gamma] = 0$
+      </div>
+
+      <p>Comparing coefficients with $ax^3 + bx^2 + cx + d = 0$, we get:</p>
+
+      <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+        <li>$\alpha + \beta + \gamma = -\dfrac{b}{a}$</li>
+        <li>$\alpha\beta + \beta\gamma + \gamma\alpha = \dfrac{c}{a}$</li>
+        <li>$\alpha\beta\gamma = -\dfrac{d}{a}$</li>
+      </ul>
+
+      <p class="text-green-700 font-semibold text-2xl">
+        ⇒ Relations between roots and coefficients:
+        $$
+        \begin{aligned}
+        \alpha + \beta + \gamma &= -\frac{b}{a} \\
+        \alpha\beta + \beta\gamma + \gamma\alpha &= \frac{c}{a} \\
+        \alpha\beta\gamma &= -\frac{d}{a}
+        \end{aligned}
+        $$
+      </p>
+
+      <p class="italic text-center">
+        Concept used: Comparison of coefficients from expanded and standard forms.
+      </p>
+    </div>
+  </div>
+
+   <!-- Problem 5: find k -->
+    <div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 5: Find $k$ if the roots are in A.P.
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Determine the value(s) of $k$ for which the cubic
+        $$x^{3} - 6x^{2} + kx - 6 = 0$$
+        has its three roots in arithmetic progression.
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Let the roots be in A.P.</strong></p>
+      <p>Assume the three roots are $(a-d),\; a,\; (a+d)$.</p>
+
+      <p><strong>Step 2 — Use sum of roots (coefficient comparison)</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle (a-d)+a+(a+d)=3a \;=\; 6 \quad\Rightarrow\quad a=2$
+      </div>
+
+      <p><strong>Step 3 — Use product of roots (constant term)</strong></p>
+      <p>For cubic $x^3 + p x^2 + q x + r=0$, product of roots = $-r$. Here $r=-6$, so product = $6$. Thus</p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle (a-d)\,a\,(a+d)=a(a^2-d^2)=6$
+      </div>
+      <p>Substitute $a=2$:</p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle 2(4-d^2)=6 \;\Rightarrow\; 8-2d^2=6 \;\Rightarrow\; 2d^2=2 \;\Rightarrow\; d^2=1$
+      </div>
+
+      <p><strong>Step 4 — Use sum of pairwise products to find $k$</strong></p>
+      <p>Coefficient of $x$ in $x^3-6x^2+kx-6$ equals the sum of products of roots taken two at a time (with sign +). So:</p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle \alpha\beta+\beta\gamma+\gamma\alpha \;=\; k$
+      </div>
+      <p>For roots $(a-d),a,(a+d)$ the sum is:</p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle (a-d)a + a(a+d) + (a-d)(a+d) = 3a^2 - d^2$
+      </div>
+      <p>Substitute $a=2$ and $d^2=1$:</p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle k = 3(2)^2 - 1 = 12 - 1 = 11$
+      </div>
+
+      <p class="font-semibold text-2xl">
+        ⇒ $\boxed{k = 11}$
+      </p>
+
+      <p class="italic text-gray-600">
+        (You can verify: with $k=11$ the cubic becomes $x^3-6x^2+11x-6=(x-1)(x-2)(x-3)$ whose roots $1,2,3$ are in A.P.)
+      </p>
+    </div>
+  </div>
+
+
+  
+   <!-- Problem 6: roots in G.P. -->
+    <div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 6: Find all real $k$ if the roots are in G.P.
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Determine all real values of $k$ for which the cubic
+        $$x^{3} - kx^{2} + kx - 1 = 0$$
+        has three real roots in geometric progression (G.P.).
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Let the roots be in G.P.</strong></p>
+      <p>Assume the three roots are $\displaystyle \frac{1}{r},\; 1,\; r$ (we scale the middle term to $1$ because product will be convenient).</p>
+
+      <p><strong>Step 2 — Use the product of roots</strong></p>
+      <p>Product of roots $= \dfrac{1}{r}\cdot 1 \cdot r = 1$. This matches the constant term $(-1)^{3}\cdot(-1)=1$, so scaling is consistent (no contradiction).</p>
+
+      <p><strong>Step 3 — Sum of roots gives $k$</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle \alpha+\beta+\gamma = \frac{1}{r} + 1 + r = k$
+      </div>
+
+      <p><strong>Step 4 — Sum of pairwise products also equals $k$ (consistency check)</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\displaystyle \alpha\beta+\beta\gamma+\gamma\alpha
+        = \frac{1}{r}\cdot 1 + 1\cdot r + \frac{1}{r}\cdot r
+        = \frac{1}{r} + r + 1 = k$
+      </div>
+
+      <p class="font-semibold">Thus</p>
+      <div class="text-center text-2xl my-3">
+        $\boxed{\,k = r + 1 + \dfrac{1}{r}\,}$, where $r\in\mathbb{R}\setminus\{0\}$ and the three numbers $\dfrac{1}{r},1,r$ are real.
+      </div>
+
+      <p><strong>Step 5 — Find the range of real $k$ (so that all three roots are real)</strong></p>
+      <p>Consider the function $f(r)=r+1+\dfrac{1}{r}$ for real $r\ne0$. Analyze for $r>0$ and $r<0$:</p>
+
+      <div class="text-center text-2xl my-3">
+        For $r>0$: by AM-GM, $r + \dfrac{1}{r} \ge 2$, so $f(r)\ge 1+2=3$, equality at $r=1$.<br>
+        For $r<0$: put $r=-s$ with $s>0$, then $f(r)=1 -\big(s+\dfrac{1}{s}\big)\le 1-2=-1$, equality at $s=1$ (i.e. $r=-1$).
+      </div>
+
+      <p>Therefore the set of real values attained by $k$ is</p>
+      <div class="text-center text-2xl my-3">
+        $\boxed{\,k\in (-\infty,-1] \;\cup\; [3,\infty)\, }$
+      </div>
+
+      <p class="font-semibold text-2xl">
+        Final: $k = r + 1 + \dfrac{1}{r}$ for some real $r\ne0$, and the real values of $k$ are exactly $(-\infty,-1]\cup[3,\infty)$.
+      </p>
+
+      <p class="italic text-gray-600">
+        (Verification example: for $r=1$ we get $k=3$ and polynomial $x^{3}-3x^{2}+3x-1=(x-1)^3$; for $r=2$ we get $k=2+1+\tfrac12=3.5$ and roots $\tfrac12,1,2$.)
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+
+      <!-- quadratic  -->
+      <div id="algebra-quadratic" class="topic-content hidden">
+        <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Quadratic Equation
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="text-2xl">
+      A <span class="font-semibold">quadratic equation</span> in one variable <span class="font-mono">x</span> is an equation of the form:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ ax^2 + bx + c = 0 $
+    </div>
+    <p>
+      where $ a, b, c $ are real coefficients and $ a \neq 0 $.  
+      The highest power of $ x $ is $ 2 $, hence it is called a <span class="font-semibold">quadratic</span> equation.
+    </p>
+  </div>
+
+  <!-- Standard Form -->
+  <div>
+    <p class="font-semibold text-2xl">Standard Form:</p>
+    <div class="text-center text-2xl my-4">
+      $ ax^2 + bx + c = 0 $
+    </div>
+    <p>
+      Here,
+      <br>• $ a $ = coefficient of $ x^2 $
+      <br>• $ b $ = coefficient of $ x $
+      <br>• $ c $ = constant term
+    </p>
+  </div>
+
+  <!-- Roots Formula -->
+  <div>
+    <p class="font-semibold text-2xl">Roots of the Quadratic Equation:</p>
+    <div class="text-center text-2xl my-4">
+      $ x = \dfrac{ -b \pm \sqrt{b^2 - 4ac} }{2a} $
+    </div>
+    <p>
+      The values of $ x $ that satisfy the equation are called its <span class="font-semibold">roots</span> or <span class="font-semibold">solutions</span>.
+    </p>
+  </div>
+
+  <!-- Nature of Roots -->
+  <div>
+    <p class="font-semibold text-2xl">Nature of Roots:</p>
+    <p class="mt-2">
+      Let $ D = b^2 - 4ac $ be the <span class="font-semibold">discriminant</span>.
+    </p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>If $ D > 0 $, the roots are <span class="font-semibold">real and distinct</span>.</li>
+      <li>If $ D = 0 $, the roots are <span class="font-semibold">real and equal</span>.</li>
+      <li>If $ D < 0 $, the roots are <span class="font-semibold">complex conjugates</span>.</li>
+    </ul>
+  </div>
+
+  <!-- Example -->
+  <div>
+    <p class="font-semibold text-2xl">Example:</p>
+    <p class="mt-2">
+      Solve $ 2x^2 + 3x - 2 = 0 $
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ x = \dfrac{ -3 \pm \sqrt{3^2 - 4(2)(-2)} }{2(2)} = \dfrac{ -3 \pm \sqrt{25} }{4} $
+      <br>
+      $ \Rightarrow x = \dfrac{1}{2},\ -2 $
+    </div>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Forms of Quadratic Equations
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      A quadratic equation can be expressed in several equivalent forms.
+      Each form reveals different properties of the equation or graph of the quadratic function.
+    </p>
+  </div>
+
+  <!-- 1. Standard Form -->
+  <div>
+    <p class="font-semibold text-2xl">1. Standard Form:</p>
+    <div class="text-center text-2xl my-4">
+      $ y = ax^2 + bx + c $
+    </div>
+    <p>
+      This is the most common representation of a quadratic equation.
+      It clearly shows the coefficients and constant term.
+    </p>
+  </div>
+
+  <!-- 2. Factored Form -->
+  <div>
+    <p class="font-semibold text-2xl">2. Factored Form:</p>
+    <div class="text-center text-2xl my-4">
+      $ y = a(x - r_1)(x - r_2) $
+    </div>
+    <p>
+      In this form, $ r_1 $ and $ r_2 $ are the <span class="font-semibold">roots</span> of the equation,
+      i.e., the values of $ x $ where $ y = 0 $.
+    </p>
+  </div>
+
+  <!-- 3. Vertex Form -->
+  <div>
+    <p class="font-semibold text-2xl">3. Vertex Form:</p>
+    <div class="text-center text-2xl my-4">
+      $ y = a(x - h)^2 + k $
+    </div>
+    <p>
+      This form shows the <span class="font-semibold">vertex</span> of the parabola at the point $(h, k)$.
+      <br>
+      It is useful for analyzing the <span class="font-semibold">maximum or minimum</span> value of the quadratic function.
+    </p>
+  </div>
+
+  <!-- Conversion -->
+  <div>
+    <p class="font-semibold text-2xl">Conversion Between Forms:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>Standard → Vertex form: by <span class="font-semibold">completing the square</span>.</li>
+      <li>Standard → Factored form: by <span class="font-semibold">factoring</span> or using the <span class="font-semibold">quadratic formula</span>.</li>
+    </ul>
+  </div>
+
+  <!-- Example -->
+  <div>
+    <p class="font-semibold text-2xl">Example:</p>
+    <p class="mt-2">
+      Convert $ y = 2x^2 - 4x + 1 $ into vertex form.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ y = 2(x^2 - 2x) + 1 $
+      <br>
+      $ = 2[(x - 1)^2 - 1] + 1 $
+      <br>
+      $ = 2(x - 1)^2 - 1 $
+    </div>
+    <p>
+      So, the vertex form is $ y = 2(x - 1)^2 - 1 $ and the vertex is $(1, -1)$.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Graph of a Quadratic Equation
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      The graph of a quadratic equation 
+      <span class="font-semibold">$ y = ax^2 + bx + c $</span> 
+      is a <span class="font-semibold">parabola</span>.  
+      The shape and orientation of the parabola depend on the sign and value of the coefficient $ a $.
+    </p>
+  </div>
+
+  <!-- Shape and Orientation -->
+  <div>
+    <p class="font-semibold text-2xl">1. Shape and Orientation:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>If $ a > 0 $, the parabola <span class="font-semibold text-green-700">opens upwards</span>.</li>
+      <li>If $ a < 0 $, the parabola <span class="font-semibold text-red-700">opens downwards</span>.</li>
+    </ul>
+    <div class="text-center text-2xl my-4">
+      $ \text{Parabola: } y = ax^2 + bx + c $
+    </div>
+  </div>
+
+  <!-- Vertex -->
+  <div>
+    <p class="font-semibold text-2xl">2. Vertex:</p>
+    <p class="mt-2">
+      The vertex is the <span class="font-semibold">turning point</span> of the parabola.
+      For the equation $ y = ax^2 + bx + c $, the coordinates of the vertex are:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ \left( -\dfrac{b}{2a},\ \dfrac{4ac - b^2}{4a} \right) $
+    </div>
+    <p>
+      • If $ a > 0 $, the vertex gives the <span class="font-semibold">minimum</span> value of $ y $.  
+      <br>
+      • If $ a < 0 $, the vertex gives the <span class="font-semibold">maximum</span> value of $ y $.
+    </p>
+  </div>
+
+  <!-- Axis of Symmetry -->
+  <div>
+    <p class="font-semibold text-2xl">3. Axis of Symmetry:</p>
+    <p class="mt-2">
+      The parabola is symmetric about a vertical line passing through the vertex called the 
+      <span class="font-semibold">axis of symmetry</span>.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ x = -\dfrac{b}{2a} $
+    </div>
+  </div>
+
+  <!-- Y-Intercept -->
+  <div>
+    <p class="font-semibold text-2xl">4. Y-Intercept:</p>
+    <p class="mt-2">
+      The point where the parabola cuts the $ y $-axis is called the <span class="font-semibold">y-intercept</span>.
+      It occurs when $ x = 0 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ y = c $
+    </div>
+  </div>
+
+  <!-- X-Intercepts -->
+  <div>
+    <p class="font-semibold text-2xl">5. X-Intercepts (Roots):</p>
+    <p class="mt-2">
+      The points where the parabola cuts the $ x $-axis correspond to the <span class="font-semibold">roots</span> of the equation,
+      obtained by solving $ ax^2 + bx + c = 0 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ x = \dfrac{ -b \pm \sqrt{b^2 - 4ac} }{2a} $
+    </div>
+  </div>
+
+  <!-- Example -->
+  <div>
+    <p class="font-semibold text-2xl">Example:</p>
+    <p class="mt-2">
+      For $ y = x^2 - 4x + 3 $:
+    </p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>$ a = 1,\ b = -4,\ c = 3 $</li>
+      <li>Vertex: $ (2, -1) $</li>
+      <li>Axis of Symmetry: $ x = 2 $</li>
+      <li>Y-Intercept: $ (0, 3) $</li>
+      <li>X-Intercepts: $ x = 1,\ 3 $</li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Relationship Between Coefficients and Roots
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      Let the roots of the quadratic equation 
+      <span class="font-semibold">$ ax^2 + bx + c = 0 $</span> 
+      be $ \alpha $ and $ \beta $.  
+      These roots satisfy the equation for both values of $ x $.
+    </p>
+  </div>
+
+  <!-- Derivation -->
+  <div>
+    <p class="font-semibold text-2xl">1. Derivation:</p>
+    <p class="mt-2">
+      Since $ \alpha $ and $ \beta $ are roots,
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ a(x - \alpha)(x - \beta) = 0 $
+    </div>
+    <p>
+      Expanding this expression:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ a(x^2 - (\alpha + \beta)x + \alpha\beta) = 0 $
+    </div>
+    <p>
+      Comparing with $ ax^2 + bx + c = 0 $, we get:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ \alpha + \beta = -\dfrac{b}{a} $  
+      <br>
+      $ \alpha \beta = \dfrac{c}{a} $
+    </div>
+  </div>
+
+  <!-- Relation -->
+  <div>
+    <p class="font-semibold text-2xl">2. Relationship:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li><span class="font-semibold">Sum of roots</span> = $ \alpha + \beta = -\dfrac{b}{a} $</li>
+      <li><span class="font-semibold">Product of roots</span> = $ \alpha\beta = \dfrac{c}{a} $</li>
+    </ul>
+  </div>
+
+  <!-- Equation from roots -->
+  <div>
+    <p class="font-semibold text-2xl">3. Forming a Quadratic Equation from Given Roots:</p>
+    <p class="mt-2">
+      If the roots of a quadratic equation are known to be $ \alpha $ and $ \beta $,  
+      then the equation can be written as:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ x^2 - (\alpha + \beta)x + \alpha\beta = 0 $
+    </div>
+  </div>
+
+  <!-- Example 1 -->
+  <div>
+    <p class="font-semibold text-2xl">Example 1:</p>
+    <p class="mt-2">
+      If the roots of a quadratic equation are $ 2 $ and $ 3 $, find the equation.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ \alpha + \beta = 2 + 3 = 5 $  
+      <br>
+      $ \alpha\beta = 2 \times 3 = 6 $
+      <br>
+      Therefore, $ x^2 - 5x + 6 = 0 $
+    </div>
+  </div>
+
+  <!-- Example 2 -->
+  <div>
+    <p class="font-semibold text-2xl">Example 2:</p>
+    <p class="mt-2">
+      Find the sum and product of the roots of $ 2x^2 - 3x + 5 = 0 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ \alpha + \beta = -\dfrac{-3}{2} = \dfrac{3}{2} $  
+      <br>
+      $ \alpha\beta = \dfrac{5}{2} $
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Nature of Roots and Discriminant
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      The <span class="font-semibold">discriminant</span> of a quadratic equation 
+      <span class="font-semibold">$ ax^2 + bx + c = 0 $</span> is given by:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ D = b^2 - 4ac $
+    </div>
+    <p>
+      The discriminant helps determine the <span class="font-semibold">nature of the roots</span> of the quadratic equation.
+    </p>
+  </div>
+
+  <!-- Cases -->
+  <div>
+    <p class="font-semibold text-2xl">Cases Based on Discriminant:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>If $ D > 0 $, the equation has <span class="font-semibold">two distinct real roots</span>.</li>
+      <li>If $ D = 0 $, the equation has <span class="font-semibold">two equal real roots</span> (a repeated root).</li>
+      <li>If $ D < 0 $, the equation has <span class="font-semibold">two complex conjugate roots</span>.</li>
+    </ul>
+  </div>
+
+  <!-- Examples -->
+  <div>
+    <p class="font-semibold text-2xl">Example 1:</p>
+    <p class="mt-2">
+      Find the nature of roots of $ x^2 - 5x + 6 = 0 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ D = (-5)^2 - 4(1)(6) = 25 - 24 = 1 > 0 $  
+      <br>
+      Therefore, roots are <span class="font-semibold">real and distinct</span>.
+    </div>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl">Example 2:</p>
+    <p class="mt-2">
+      Find the nature of roots of $ 2x^2 - 4x + 2 = 0 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ D = (-4)^2 - 4(2)(2) = 16 - 16 = 0 $  
+      <br>
+      Therefore, roots are <span class="font-semibold">real and equal</span>.
+    </div>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl">Example 3:</p>
+    <p class="mt-2">
+      Find the nature of roots of $ x^2 + x + 1 = 0 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ D = 1^2 - 4(1)(1) = 1 - 4 = -3 < 0 $  
+      <br>
+      Therefore, roots are <span class="font-semibold">complex conjugates</span>.
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Forming Quadratic Equations with Given Conditions
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      Quadratic equations can be constructed if certain properties of the roots are known, such as the sum, product, or actual values of roots.
+    </p>
+  </div>
+
+  <!-- Using Roots -->
+  <div>
+    <p class="font-semibold text-2xl">1. If Roots Are Given:</p>
+    <p class="mt-2">
+      If the roots of the quadratic equation are $ \alpha $ and $ \beta $, the equation can be written as:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ x^2 - (\alpha + \beta)x + \alpha\beta = 0 $
+    </div>
+  </div>
+
+  <!-- Using Sum and Product -->
+  <div>
+    <p class="font-semibold text-2xl">2. If Sum and Product of Roots Are Given:</p>
+    <p class="mt-2">
+      Let $ S = \alpha + \beta $ and $ P = \alpha \beta $, then the quadratic equation is:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ x^2 - Sx + P = 0 $
+    </div>
+  </div>
+
+  <!-- Using Relation Between Roots -->
+  <div>
+    <p class="font-semibold text-2xl">3. If Roots Have a Certain Relationship:</p>
+    <p class="mt-2">
+      Suppose the roots are in a specific ratio or differ by a certain number, say $ m $ and $ n $.  
+      First, express the roots in terms of a variable, then use sum and product to form the equation.
+    </p>
+  </div>
+
+  <!-- Example 1 -->
+  <div>
+    <p class="font-semibold text-2xl">Example 1:</p>
+    <p class="mt-2">
+      Form a quadratic equation whose roots are $ 3 $ and $ -2 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $ x^2 - (3 + (-2))x + (3 \cdot -2) = 0 $  
+      <br>
+      $ x^2 - x - 6 = 0 $
+    </div>
+  </div>
+
+  <!-- Example 2 -->
+  <div>
+    <p class="font-semibold text-2xl">Example 2:</p>
+    <p class="mt-2">
+      Form a quadratic equation whose roots are in the ratio $ 2:3 $ and sum $ 10 $.
+    </p>
+    <div class="text-center text-2xl my-4">
+      Let roots be $ 2k $ and $ 3k $.  
+      <br>
+      $ 2k + 3k = 5k = 10 \Rightarrow k = 2 $  
+      <br>
+      Roots: $ 4 $ and $ 6 $  
+      <br>
+      Equation: $ x^2 - (4+6)x + (4 \cdot 6) = 0 \Rightarrow x^2 - 10x + 24 = 0 $
+    </div>
+  </div>
+
+</div>
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 1: Find the roots of the quadratic equation
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Solve:
+        $$ x^2 - 7x + 12 = 0 $$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Identify coefficients</strong></p>
+      <p>Here, $a=1$, $b=-7$, $c=12$.</p>
+
+      <p><strong>Step 2 — Use quadratic formula</strong></p>
+      <div class="text-center text-2xl my-3">
+        $ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} = \dfrac{-(-7) \pm \sqrt{(-7)^2 - 4(1)(12)}}{2(1)} $
+      </div>
+
+      <p><strong>Step 3 — Simplify</strong></p>
+      <div class="text-center text-2xl my-3">
+        $ x = \dfrac{7 \pm \sqrt{49 - 48}}{2} = \dfrac{7 \pm 1}{2} $
+      </div>
+
+      <p><strong>Step 4 — Find the roots</strong></p>
+      <div class="text-center text-2xl my-3">
+        $ x = 4, \; 3 $
+      </div>
+
+      <p class="italic text-gray-600">
+        Verification: $(x-4)(x-3) = x^2 - 7x + 12$ ✅
+      </p>
+    </div>
+</div>
+
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 2: Find $k$ if roots are in geometric progression
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Determine all real values of $k$ for which the cubic
+        $$ x^3 - kx^2 + kx - 1 = 0 $$
+        has three real roots in geometric progression (G.P.).
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Let roots be in G.P.</strong></p>
+      <p>Assume the roots are $\dfrac{1}{r}, 1, r$ for some real $r \neq 0$.</p>
+
+      <p><strong>Step 2 — Sum of roots</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\dfrac{1}{r} + 1 + r = k$
+      </div>
+
+      <p><strong>Step 3 — Pairwise sum of products (consistency check)</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\dfrac{1}{r}\cdot 1 + 1\cdot r + \dfrac{1}{r}\cdot r = \dfrac{1}{r} + r + 1 = k$
+      </div>
+
+      <p><strong>Step 4 — Determine range of $k$ for real roots</strong></p>
+      <div class="text-center text-2xl my-3">
+        $f(r) = r + 1 + \dfrac{1}{r}$  
+        <br>
+        $r > 0 → r + 1/r ≥ 2 → f(r) ≥ 3 (equality at r=1)$  
+        <br>
+       $ r < 0 → r + 1/r + 1 ≤ -1 (equality at r=-1)$
+      </div>
+
+      <p><strong>Step 5 — Conclusion</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\boxed{k \in (-\infty, -1] \cup [3, \infty)}$
+      </div>
+
+      <p class="italic text-gray-600">
+        Verification: For r=1, k=3 and roots are (1,1,1); for r=2, k=3.5 and roots are (1/2,1,2).
+      </p>
+    </div>
+</div>
+
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 3: Find quadratic equation with roots in ratio
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Find a quadratic equation whose roots are in the ratio $2:3$ and whose sum is $25$.
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Let roots be in ratio 2:3</strong></p>
+      <p>Assume roots are $2k$ and $3k$ for some real $k$.</p>
+
+      <p><strong>Step 2 — Use sum of roots</strong></p>
+      <div class="text-center text-2xl my-3">
+       $ 2k + 3k = 5k = 25 \;\Rightarrow\; k = 5$
+      </div>
+
+      <p><strong>Step 3 — Determine the roots</strong></p>
+      <div class="text-center text-2xl my-3">
+       $ \text{Roots: } 2k = 10, \; 3k = 15$
+      </div>
+
+      <p><strong>Step 4 — Form the quadratic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+        $x^2 - (\text{sum of roots})x + (\text{product of roots}) = 0$  
+        <br>
+        $x^2 - (10 + 15)x + (10 \cdot 15) = 0 $ 
+        <br>
+        $x^2 - 25x + 150 = 0$
+      </div>
+
+      <p class="italic text-gray-600">
+        Verification: Sum = 10+15=25 ✅, Product = 10*15=150 ✅
+      </p>
+    </div>
+</div>
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 4: Find quadratic equation with roots differing by 3
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Find a quadratic equation whose roots differ by $3$ and whose sum is $7$.
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Let roots differ by 3</strong></p>
+      <p>Assume roots are $ \alpha $ and $ \alpha + 3 $.</p>
+
+      <p><strong>Step 2 — Use sum of roots</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\alpha + (\alpha + 3) = 2\alpha + 3 = 7 \;\Rightarrow\; 2\alpha = 4 \;\Rightarrow\; \alpha = 2$
+      </div>
+
+      <p><strong>Step 3 — Determine the roots</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\alpha = 2, \;\alpha + 3 = 5 $ 
+        <br>
+        $\text{Roots: } 2, 5$
+      </div>
+
+      <p><strong>Step 4 — Form the quadratic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+        $x^2 - (\text{sum of roots})x + (\text{product of roots}) = 0$  
+        <br>
+       $ x^2 - (2+5)x + (2*5) = 0 $ 
+        <br>
+        $x^2 - 7x + 10 = 0$
+      </div>
+
+      <p class="italic text-gray-600">
+        Verification: Roots differ by 3 ✅, Sum = 2+5=7 ✅, Product = 2*5=10 ✅
+      </p>
+    </div>
+</div>
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 5: Quadratic with roots satisfying sum-of-squares condition
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Find a quadratic equation whose roots $ \alpha $ and $ \beta $ satisfy
+        $$ \alpha + \beta = 5 \quad \text{and} \quad \alpha^2 + \beta^2 = 13. $$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Express product using sum-of-squares</strong></p>
+      <div class="text-center text-2xl my-3">
+        $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$  
+        $\Rightarrow 13 = 5^2 - 2\alpha\beta \;\Rightarrow 13 = 25 - 2\alpha\beta$
+      </div>
+
+      <p><strong>Step 2 — Solve for product of roots</strong></p>
+      <div class="text-center text-2xl my-3">
+        $2\alpha\beta = 25 - 13 = 12 \;\Rightarrow\; \alpha\beta = 6$
+      </div>
+
+      <p><strong>Step 3 — Form the quadratic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+       $ x^2 - (\text{sum of roots})x + (\text{product of roots}) = 0 $ 
+        <br>
+        $x^2 - 5x + 6 = 0$
+      </div>
+
+      <p class="italic text-gray-600">
+        Verification: Sum = 2+3=5 ✅, Sum of squares = 2^2 + 3^2 = 4+9=13 ✅
+      </p>
+    </div>
+</div>
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 6: Quadratic with roots satisfying sum-of-reciprocals condition
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Find a quadratic equation whose roots $\alpha$ and $\beta$ satisfy
+        $$ \frac{1}{\alpha} + \frac{1}{\beta} = 5 \quad \text{and} \quad \alpha + \beta = 6. $$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Express sum of reciprocals in terms of sum and product</strong></p>
+      <div class="text-center text-2xl my-3">
+       $ \frac{1}{\alpha} + \frac{1}{\beta} = \frac{\alpha + \beta}{\alpha\beta} = 5 \;\Rightarrow\; \frac{6}{\alpha\beta} = 5$
+      </div>
+
+      <p><strong>Step 2 — Solve for product of roots</strong></p>
+      <div class="text-center text-2xl my-3">
+       $ \alpha\beta = \frac{6}{5}$
+      </div>
+
+      <p><strong>Step 3 — Form the quadratic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+        $x^2 - (\text{sum of roots})x + (\text{product of roots}) = 0 $ 
+        <br>
+        $x^2 - 6x + \frac{6}{5} = 0$  
+        <br>
+        $5x^2 - 30x + 6 = 0 \quad (\text{clear denominators})$
+      </div>
+
+      <p class="italic text-gray-600">
+        Verification: Sum = 6 ✅, Product = 6/5 ✅, Sum of reciprocals = 6 / (6/5) = 5 ✅
+      </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+      </div>
+
+      <!-- binomial -->
+      <div id="algebra-binomial" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Binomial Theorem</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">General Expansion</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p class="text-center text-lg">$(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">Properties & Applications</h4>
+          <ul class="list-disc pl-6 mb-4">
+            <li>$(n+1)$ terms in the expansion.</li>
+            <li>Coefficients are symmetric: $\binom{n}{k} = \binom{n}{n-k}$.</li>
+            <li>Used for finding coefficients, approximations, and combinatorics.</li>
+          </ul>
+          <h4 class="font-semibold mt-4 mb-2">JEE Problem & Solution</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p class="font-semibold mb-2">Problem:</p>
+            <p>Find the term independent of $x$ in the expansion of $\left(x^3 + \frac{2}{x^2}\right)^{10}$.</p>
+            <p class="font-semibold mt-4 mb-2">Solution:</p>
+            <p>
+              General term: $T_{k+1} = \binom{10}{k} (x^3)^{10-k} \left(\frac{2}{x^2}\right)^k = \binom{10}{k} x^{30-5k}
+              2^k$<br>
+              Set $30-5k=0 \implies k=6$<br>
+              $T_7 = \binom{10}{6} \cdot 2^6 = 210 \times 64 = 13440$
+            </p>
+            <p class="font-semibold mt-2">Final Answer: <span class="text-blue-700">13440</span></p>
+          </div>
+        </section>
+      </div>
+
+      <!-- sequences and series -->
+      <div id="algebra-sequences" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Sequences & Series</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">AP, GP, HP</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>AP: $a_n = a_1 + (n-1)d$, $S_n = \frac{n}{2}[2a_1 + (n-1)d]$</p>
+            <p>GP: $a_n = a_1 r^{n-1}$, $S_n = a_1 \frac{1 - r^n}{1 - r}$</p>
+            <p>HP: Reciprocals of AP terms.</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find the sum of first $10$ terms of AP: $2, 5, 8, ...$</p>
+            <p>$S_{10} = \frac{10}{2}[2 \times 2 + 9 \times 3] = 5 \times 31 = 155$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- complex numbers -->
+      <div id="algebra-complex" class="topic-content hidden">
+        <div class="space-y-6">
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3 md:mb-4">Definition</h3>
+            <p class="mb-3 md:mb-4">
+              A <strong>complex number</strong> <span class="math">$z$</span> is written as:
+              <span class="math">$z = a + ib$</span>, where:
+            </p>
+            <div class="space-y-3">
+              <div class="p-3 rounded-lg">
+                <span class="math font-semibold">$a$</span> → Real part of <span class="math">$z$</span> (<span
+                  class="math">$\mathcal{R}(z)$</span>)
+              </div>
+              <div class="p-3 rounded-lg">
+                <span class="math font-semibold">$b$</span> → Imaginary part of <span class="math">$z$</span> (<span
+                  class="math">$\mathcal{I}(z)$</span>)
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3 md:mb-4">Example 1</h3>
+            <p class="mb-3 md:mb-4">
+              Consider <span class="math">$z = 5 + 2i$</span>:
+            </p>
+            <div class="space-y-3">
+              <div class="p-3 rounded-lg">
+                <span class="math">$\mathcal{R}(z) = 5$</span>
+              </div>
+              <div class="p-3 rounded-lg">
+                <span class="math">$\mathcal{I}(z) = 2$</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3 md:mb-4">Example 2</h3>
+            <p class="mb-3 md:mb-4">
+              Consider <span class="math">$z = -3 + 7i$</span>:
+            </p>
+            <div class="space-y-3">
+              <div class="p-3 rounded-lg">
+                <span class="math">$\mathcal{R}(z) = -3$</span>
+              </div>
+              <div class="p-3 rounded-lg">
+                <span class="math">$\mathcal{I}(z) = 7$</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+          <h3 class="text-4xl md:text-5xl font-semibold mb-3">1. Cartesian / Rectangular Form</h3>
+          <p class="mb-3"><span class="math">$z = x + iy$</span></p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg"><span class="math">$x = \mathcal{R}(z)$</span> → Real part</div>
+            <div class="p-3 rounded-lg"><span class="math">$y = \mathcal{I}(z)$</span> → Imaginary part</div>
+          </div>
+          <p class="mt-3 mb-2">Example: <span class="math">$z = 3 + 4i → x = 3, y = 4$</span></p>
+          <p>Operations easy in Cartesian form: addition, subtraction, conjugate.</p>
+        </div>
+
+        <div class="space-y-6 py-6">
+
+
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3">2. Polar Form</h3>
+            <p class="mb-3"><span class="math">$z = r(\cos\theta + i\sin\theta)$</span></p>
+            <div class="space-y-2">
+              <div class="p-3 rounded-lg"><span class="math">$r = |z| = \sqrt{x^2 + y^2}$</span> → modulus</div>
+              <div class="p-3 rounded-lg"><span class="math">$\theta = \arg(z) = \tan^{-1}(y/x)$</span> → argument
+              </div>
+            </div>
+            <p class="mt-3 mb-2">Use: Multiplication, division, powers, roots.</p>
+            <p>Example: <span class="math">$1 + i = \sqrt{2}(\cos 45^\circ + i \sin 45^\circ)$</span></p>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3">3. Euler / Exponential Form</h3>
+            <p class="mb-3"><span class="math">$z = r e^{i\theta}$</span> (Euler’s formula: <span
+                class="math">$e^{i\theta} = \cos\theta + i\sin\theta$</span>)</p>
+            <div class="space-y-2">
+              <div class="p-3 rounded-lg">Multiplication: <span class="math">$z_1 z_2 = r_1 r_2 e^{i(\theta_1 +
+                  \theta_2)}$</span></div>
+              <div class="p-3 rounded-lg">Division: <span class="math">$z_1 / z_2 = (r_1/r_2) e^{i(\theta_1 -
+                  \theta_2)}$</span></div>
+              <div class="p-3 rounded-lg">Powers: <span class="math">$z^n = r^n e^{in\theta}$</span></div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3">4. Trigonometric / Sin-Cos Form</h3>
+            <p class="mb-3">Essentially same as polar form: <span class="math">$z = r(\cos\theta +
+                i\sin\theta)$</span></p>
+            <p>Often used in De Moivre’s Theorem.</p>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3">5. Modulus-Argument Form</h3>
+            <p class="mb-3"><span class="math">|z| = r, \arg(z) = \theta</span></p>
+            <p>Can write: <span class="math">$z = |z|(\cos \arg(z) + i \sin \arg(z))$</span></p>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3">6. Conjugate Form</h3>
+            <p class="mb-3"><span class="math">$z = x + iy, \bar{z} = x - iy$</span></p>
+            <p>Useful for division, real part extraction:</p>
+            <div class="space-y-2">
+              <div class="p-3 rounded-lg"><span class="math">$\mathcal{R}(z) = \frac{z + \bar{z}}{2}$</span></div>
+              <div class="p-3 rounded-lg"><span class="math">$\mathcal{I}(z) = \frac{z - \bar{z}}{2i}$</span></div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3">7. Geometric / Vector Form</h3>
+            <p class="mb-3">Consider <span class="math">$z = x + iy$</span> as a vector in Argand plane: <span
+                class="math">$\vec{z} = \langle x, y \rangle$</span></p>
+            <p>Modulus → magnitude of vector, Argument → angle with positive x-axis</p>
+            <p>JEE often uses this for loci, perpendicularity, collinearity.</p>
+          </div>
+
+          <div class="bg-yellow-50 p-4 md:p-6 rounded-xl shadow-lg text-3xl md:text-4xl">
+            <h3 class="text-4xl md:text-5xl font-semibold mb-3">8. Matrix Form (Advanced / Optional)</h3>
+            <p class="mb-3"><span class="math">$z = x + iy \equiv \begin{bmatrix} x & -y \\ y & x
+                \end{bmatrix}$</span></p>
+            <p>Multiplication of complex numbers ↔ matrix multiplication. Rare in JEE, mostly for Advanced
+              derivations.</p>
+          </div>
+        </div>
+
+        <div class="space-y-6 py-6">
+
+          <!-- Example Collapsible Property -->
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              1. Equality of Complex Numbers
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+              <p class="mb-3"><span class="math">$z_1 = x_1 + iy_1, z_2 = x_2 + iy_2$</span> are equal if <span
+                  class="math">$x_1 = x_2 \text{ and } y_1 = y_2$</span></p>
+              <p>Example: <span class="math">$3 + 4i = 3 + 4i$</span> → True</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              2. Addition
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+              <p class="mb-3"><span class="math">$z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2)$</span></p>
+              <p>Example: <span class="math">$(2 + 3i) + (1 + 4i) = 3 + 7i$</span></p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              3. Subtraction
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+              <p class="mb-3"><span class="math">$z_1 - z_2 = (x_1 - x_2) + i(y_1 - y_2)$</span></p>
+              <p>Example: <span class="math">$(5 + 6i) - (2 + 3i) = 3 + 3i$</span></p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              4. Multiplication
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+              <p class="mb-3"><span class="math">$z_1 z_2 = (x_1 x_2 - y_1 y_2) + i(x_1 y_2 + x_2 y_1)$</span></p>
+              <p>Example: <span class="math">$(1 + 2i)(3 + 4i) = -5 + 10i$</span></p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              5. Division
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+              <p class="mb-3"><span class="math">$\frac{z_1}{z_2} = \frac{(x_1 x_2 + y_1 y_2) + i(y_1 x_2 - x_1
+                  y_2)}{x_2^2 + y_2^2}, z_2 \neq 0$</span></p>
+              <p>Example: <span class="math">$\frac{1 + 2i}{1 + i} = 1.5 + 0.5i$</span></p>
+            </div>
+          </div>
+
+          <!-- Repeat similar pattern for Conjugate, Modulus, Argument -->
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              6. Conjugate
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+              <p class="mb-3"><span class="math">$\bar{z} = x - iy$</span></p>
+              <p>Properties:</p>
+              <ul class="list-disc pl-5">
+                <li><span class="math">$\overline{z_1 + z_2} = \bar{z_1} + \bar{z_2}$</span></li>
+                <li><span class="math">$\overline{z_1 z_2} = \bar{z_1} \bar{z_2}$</span></li>
+                <li><span class="math">$\overline{\bar{z}} = z$</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              8. Argument
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300">
+              <p class="mb-3"><span class="math">$\arg(z) = \theta$</span> → angle with positive x-axis</p>
+              <p>Properties:</p>
+              <ul class="list-disc pl-5">
+                <li><span class="math">$\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$</span></li>
+                <li><span class="math">$\arg(z_1 / z_2) = \arg(z_1) - \arg(z_2)$</span></li>
+                <li><span class="math">$\arg(\bar{z}) = -\arg(z)$</span></li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+        <div class="space-y-4">
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Find the roots
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-2xl md:text-3xl mb-2">
+                Find the roots of the quadratic equation in complex numbers:
+                <span class="math">$z^2 - (3 + 4i)z + (5 + 6i) = 0$</span>
+              </p>
+
+              <h4 class="text-3xl font-semibold mb-2">Solution:</h4>
+              <div class="space-y-2">
+
+                <p class="text-xl md:text-2xl">
+                  Use quadratic formula:
+                  <span class="math">$z = \frac{(3+4i) \pm \sqrt{(3+4i)^2 - 4(5+6i)}}{2}$</span>
+                </p>
+
+                <p class="text-xl md:text-2xl">
+                  Step 1: Compute discriminant:
+                  <span class="math">$(3+4i)^2 - 4(5+6i) = (9 + 24i - 16) - (20 + 24i) = -7 + 0i$</span>
+                </p>
+
+                <p class="text-xl md:text-2xl">
+                  Step 2: Square root of discriminant:
+                  <span class="math">$\sqrt{-7} = i\sqrt{7}$</span>
+                </p>
+
+                <p class="text-xl md:text-2xl">
+                  Step 3: Apply formula:
+                  <span class="math">$z = \frac{3+4i \pm i\sqrt{7}}{2}$</span>
+                </p>
+
+                <p class="text-xl md:text-2xl">
+                  Step 4: Final roots:
+                  <span class="math">
+                    $z_1 = \frac{3 + 4i + i\sqrt{7}}{2} = \frac{3}{2} + i\frac{4+\sqrt{7}}{2}, \quad
+                    z_2 = \frac{3 + 4i - i\sqrt{7}}{2} = \frac{3}{2} + i\frac{4-\sqrt{7}}{2}$
+                  </span>
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Modulus and Argument
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-2">
+              <p>Find the modulus and argument of the complex number:</p>
+              <p class="text-xl md:text-2xl">
+                <span class="math">$z = -1 + \sqrt{3} i$</span>
+              </p>
+
+              <p>Step 1: Modulus:</p>
+              <p class="text-xl md:text-2xl">
+                <span class="math">$|z| = \sqrt{(-1)^2 + (\sqrt{3})^2} = 2$</span>
+              </p>
+
+              <p>Step 2: Argument:</p>
+              <p class="text-xl md:text-2xl">
+                <span class="math">$\theta = \tan^{-1}(y/x) = \tan^{-1}(\sqrt{3}/-1)$</span>
+              </p>
+
+              <p>Step 3: Quadrant check: x < 0, y> 0 → second quadrant:</p>
+              <p class="text-xl md:text-2xl">
+                <span class="math">$\theta = 180^\circ - 60^\circ = 120^\circ = \frac{2 \pi}{3}$</span>
+              </p>
+
+              <p>Final Answer:</p>
+              <p class="text-xl md:text-2xl">
+                <span class="math">$|z| = 2, \quad \arg(z) = \frac{2\pi}{3}$</span>
+              </p>
+            </div>
+          </div>
+
+
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Locus of Complex Numbers
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-xl md:text-2xl mb-2">
+                Find the locus of the complex number $z = x + iy$ satisfying $|z - 1| = 2$.
+              </p>
+
+              <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+              <p class="text-xl md:text-2xl">
+                Step 1: Substitute $z = x + iy$:
+                <span class="math">$|(x + iy) - 1| = 2$</span>
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 2: Simplify:
+                <span class="math">$|(x - 1) + iy| = 2 \implies \sqrt{(x-1)^2 + y^2} = 2$</span>
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 3: Square both sides:
+                <span class="math">$(x - 1)^2 + y^2 = 4$</span>
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 4: Interpretation: This represents a circle with center at $(1,0)$ and radius $2$ in the Argand
+                plane.
+              </p>
+
+              <p class="text-xl md:text-2xl font-semibold">Answer: Circle, center = (1,0), radius = 2</p>
+            </div>
+          </div>
+
+
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Quadratic Equation with Complex Coefficients
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-xl md:text-2xl mb-2">
+                Solve the quadratic equation $z^2 - (3 - 4i)z + (5 - 12i) = 0$.
+              </p>
+
+              <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+              <p class="text-xl md:text-2xl">
+                Step 1: Use quadratic formula:
+                <span class="math">$z = \frac{(3-4i) \pm \sqrt{(3-4i)^2 - 4(5-12i)}}{2}$</span>
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 2: Compute discriminant:
+                <span class="math">$(3-4i)^2 - 4(5-12i) = (9 - 24i + 16i^2) - (20 - 48i) = (-7 - 24i) - (20 - 48i) =
+                  -27 + 24i$</span>
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 3: Compute square root of discriminant:
+                Let $\sqrt{-27 + 24i} = a + bi$. Solve $a^2 - b^2 = -27, 2ab = 24 \implies a = 3, b = 4$
+                So, $\sqrt{-27 + 24i} = 3 + 4i$
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 4: Roots:
+                <span class="math">$z = \frac{(3-4i) \pm (3+4i)}{2}$</span>
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 5: Compute each root:
+                <span class="math">$z_1 = \frac{(3-4i) + (3+4i)}{2} = \frac{6}{2} = 3$</span>
+              </p>
+              <p class="text-xl md:text-2xl">
+                <span class="math">$z_2 = \frac{(3-4i) - (3+4i)}{2} = \frac{-8i}{2} = -4i$</span>
+              </p>
+
+              <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z = 3, \; z = -4i$</span></p>
+            </div>
+          </div>
+
+
+          <!-- Problem 2: Conjugate Relation -->
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Conjugate Relation
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-xl md:text-2xl mb-2">
+                If $z + \bar{z} = 6$ and $z\bar{z} = 10$, find $z$.
+              </p>
+
+              <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+              <p class="text-xl md:text-2xl">
+                Step 1: Let $z = x + iy$. Then $z + \bar{z} = 2x = 6 \implies x = 3$.
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 2: $z \bar{z} = x^2 + y^2 = 10 \implies 3^2 + y^2 = 10 \implies y^2 = 1 \implies y = \pm 1$.
+              </p>
+
+              <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z = 3 + i, \; 3 - i$</span></p>
+            </div>
+          </div>
+
+
+
+          <!-- Problem 4: Multiplication in Polar Form -->
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Multiplication in Polar Form
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-xl md:text-2xl mb-2">
+                If $z_1 = 2(\cos 30^\circ + i \sin 30^\circ)$ and $z_2 = 3(\cos 45^\circ + i \sin 45^\circ)$, find
+                $z_1 z_2$ in polar form.
+              </p>
+
+              <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+              <p class="text-xl md:text-2xl">
+                Step 1: Modulus of product: $|z_1 z_2| = |z_1||z_2| = 2 \cdot 3 = 6$.
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 2: Argument of product: $\arg(z_1 z_2) = 30^\circ + 45^\circ = 75^\circ$.
+              </p>
+
+              <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z_1 z_2 = 6(\cos 75^\circ + i
+                  \sin 75^\circ)$</span></p>
+            </div>
+          </div>
+
+
+          <!-- Problem 6: Triangle in Argand Plane -->
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Equilateral Triangle in Argand Plane
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-xl md:text-2xl mb-2">
+                Points $z_1 = 0$, $z_2 = 2$, and $z_3$ form an equilateral triangle. Find $z_3$.
+              </p>
+
+              <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+              <p class="text-xl md:text-2xl">
+                Step 1: Formula for rotation: $z_3 = z_1 + (z_2 - z_1)e^{i 60^\circ} = 0 + 2 e^{i\pi/3} = 2(\cos
+                60^\circ + i \sin 60^\circ)$
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 2: Convert to rectangular form: $z_3 = 2(1/2 + i\sqrt{3}/2) = 1 + i\sqrt{3}$
+              </p>
+
+              <p class="text-xl md:text-2xl font-semibold">Answer: <span class="math">$z_3 = 1 + i\sqrt{3}$</span></p>
+            </div>
+          </div>
+
+
+          <!-- Problem 10: Solve Complex Equation -->
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Solve Complex Equation
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-xl md:text-2xl mb-2">
+                Solve for complex number $z$ given $|z - 1| = |z + 1|$.
+              </p>
+
+              <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+              <p class="text-xl md:text-2xl">
+                Step 1: Let $z = x + iy$, then equation becomes:
+                $| (x+iy) - 1 | = | (x+iy) + 1 |$
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 2: Simplify modulus:
+                $\sqrt{(x-1)^2 + y^2} = \sqrt{(x+1)^2 + y^2}$
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 3: Square both sides:
+                $(x-1)^2 + y^2 = (x+1)^2 + y^2$
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 4: Simplify equation:
+                $x^2 - 2x + 1 + y^2 = x^2 + 2x + 1 + y^2 \implies -2x = 2x \implies x = 0$
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 5: Conclusion:
+                $x = 0 \implies z = iy, \text{ any real } y$
+              </p>
+
+              <p class="text-xl md:text-2xl font-semibold">
+                Answer: $z = iy, \; y \in \mathbb{R}$
+              </p>
+            </div>
+          </div>
+
+
+
+
+          <!-- Problem 11: Solve Complex Equation with Conjugate -->
+          <div x-data="{ open: false }" class="bg-yellow-50 rounded-xl shadow-lg my-4">
+            <button @click="open = !open" class="w-full p-4 md:p-6 text-left text-3xl md:text-4xl font-semibold">
+              JEE Problem: Solve Complex Equation with Conjugate
+              <span class="float-right" x-text="open ? '−' : '+'"></span>
+            </button>
+
+            <div x-show="open" x-transition class="p-4 md:p-6 border-t border-yellow-300 space-y-3">
+              <p class="text-xl md:text-2xl mb-2">
+                Solve for $z$ if $z + \bar{z} = 4$ and $z \bar{z} = 5$.
+              </p>
+
+              <h4 class="text-2xl md:text-3xl font-semibold">Solution:</h4>
+
+              <p class="text-xl md:text-2xl">
+                Step 1: Let $z = x + iy \implies \bar{z} = x - iy$.
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 2: First equation $z + \bar{z} = 4 \implies (x + iy) + (x - iy) = 4 \implies 2x = 4 \implies x =
+                2$.
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 3: Second equation $z \bar{z} = 5 \implies (x+iy)(x-iy) = x^2 + y^2 = 5$.
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 4: Substitute $x = 2$: $2^2 + y^2 = 5 \implies 4 + y^2 = 5 \implies y^2 = 1 \implies y = \pm 1$.
+              </p>
+
+              <p class="text-xl md:text-2xl">
+                Step 5: Write all solutions:
+                $z = 2 + i$ or $z = 2 - i$.
+              </p>
+
+              <p class="text-xl md:text-2xl font-semibold">
+                Answer: $z = 2 + i, \; 2 - i$
+              </p>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+      </div>
+
+      <!-- matrices and determinants -->
+      <div id="algebra-matrices" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Matrices & Determinants</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Key Concepts</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Matrix operations: Addition, Multiplication, Transpose</p>
+            <p>Determinant: $|A|$</p>
+            <p>Inverse: $A^{-1}$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>If $A = \begin{pmatrix}1 & 2\\3 & 4\end{pmatrix}$, find $|A|$.</p>
+            <p>$|A| = 1 \times 4 - 2 \times 3 = 4 - 6 = -2$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- logarithms -->
+      <div id="algebra-logarithms" class="topic-content hidden">
+        
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Definition of Logarithms
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      A <span class="font-semibold">logarithm</span> is the inverse operation of exponentiation. 
+      In other words, it tells us the power to which a certain number, called the base, must be raised 
+      to obtain another number.
+    </p>
+  </div>
+
+  <!-- 1. Basic Definition -->
+  <div>
+    <p class="font-semibold text-2xl">1. Basic Definition:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_b a = c \iff b^c = a $
+    </div>
+    <p>
+      Where: 
+      <ul class="list-disc list-inside ml-6 space-y-2">
+        <li>$b > 0$ and $b \neq 1$ is the <span class="font-semibold">base</span></li>
+        <li>$a > 0$ is the <span class="font-semibold">argument</span> or the number whose logarithm is being found</li>
+        <li>$c$ is the <span class="font-semibold">logarithm</span> itself, i.e., the exponent to which $b$ must be raised to obtain $a$</li>
+      </ul>
+    </p>
+  </div>
+
+  <!-- 2. Example -->
+  <div>
+    <p class="font-semibold text-2xl">2. Example:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_2 8 = 3 \quad \text{because} \quad 2^3 = 8 $
+    </div>
+    <p>
+      This means 2 must be raised to the power 3 to get 8.
+    </p>
+  </div>
+
+  <!-- 3. Inverse Relation with Exponentials -->
+  <div>
+    <p class="font-semibold text-2xl">3. Inverse Relation with Exponentials:</p>
+    <p class="text-2xl">
+      Logarithms and exponentials are inverse functions. 
+      If $y = b^x$, then $\log_b y = x$.  
+      Conversely, if $y = \log_b x$, then $b^y = x$.
+    </p>
+  </div>
+
+  <!-- 4. Conditions -->
+  <div>
+    <p class="font-semibold text-2xl">4. Conditions for Logarithms to Exist:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>The base $b$ must be positive and not equal to 1: $b > 0$, $b \neq 1$</li>
+      <li>The argument $a$ must be positive: $a > 0$</li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Basic Properties and Laws of Logarithms
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      Logarithms follow specific rules and properties which make it easier to simplify expressions 
+      and solve equations involving logarithms.
+    </p>
+  </div>
+
+  <!-- 1. Logarithm of 1 and the Base -->
+  <div>
+    <p class="font-semibold text-2xl">1. Logarithm of 1 and the Base:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_b 1 = 0, \quad \log_b b = 1 $
+    </div>
+    <p>
+      These come directly from the definition, because $b^0 = 1$ and $b^1 = b$.
+    </p>
+  </div>
+
+  <!-- 2. Product Rule -->
+  <div>
+    <p class="font-semibold text-2xl">2. Product Rule:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_b(xy) = \log_b x + \log_b y $
+    </div>
+    <p>
+      The logarithm of a product is the sum of the logarithms.
+    </p>
+  </div>
+
+  <!-- 3. Quotient Rule -->
+  <div>
+    <p class="font-semibold text-2xl">3. Quotient Rule:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_b\left(\dfrac{x}{y}\right) = \log_b x - \log_b y $
+    </div>
+    <p>
+      The logarithm of a quotient is the difference of the logarithms.
+    </p>
+  </div>
+
+  <!-- 4. Power Rule -->
+  <div>
+    <p class="font-semibold text-2xl">4. Power Rule:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_b(x^n) = n \log_b x $
+    </div>
+    <p>
+      The logarithm of a number raised to a power is equal to the exponent times the logarithm of the number.
+    </p>
+  </div>
+
+  <!-- 5. Change of Base Formula -->
+  <div>
+    <p class="font-semibold text-2xl">5. Change of Base Formula:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_b a = \dfrac{\log_k a}{\log_k b} $
+    </div>
+    <p>
+      This allows converting logarithms from one base to another, commonly used with base 10 or base $e$.
+    </p>
+  </div>
+
+  <!-- 6. Reciprocal Base Formula -->
+  <div>
+    <p class="font-semibold text-2xl">6. Reciprocal Base Formula:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_{1/b} x = -\log_b x $
+    </div>
+    <p>
+      Flipping the base to its reciprocal changes the sign of the logarithm.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Logarithmic Equations
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      A <span class="font-semibold">logarithmic equation</span> is an equation in which the unknown variable 
+      appears inside a logarithm. Solving these equations usually involves applying the <span class="font-semibold">laws of logarithms</span> and ensuring 
+      that all arguments of logarithms remain positive.
+    </p>
+  </div>
+
+  <!-- 1. General Form -->
+  <div>
+    <p class="font-semibold text-2xl">1. General Form:</p>
+    <div class="text-center text-2xl my-4">
+      $ \log_b f(x) = \log_b g(x) \quad \Rightarrow \quad f(x) = g(x), \quad f(x) > 0, g(x) > 0 $
+    </div>
+    <p>
+      For real solutions, the arguments of the logarithms must be positive, and the bases must satisfy $b>0$, $b \neq 1$.
+    </p>
+  </div>
+
+  <!-- 2. Example 1: Simple Logarithmic Equation -->
+  <div>
+    <p class="font-semibold text-2xl">2. Example 1:</p>
+    <p class="mt-2">
+      Solve for $x$: 
+      <div class="text-center text-2xl my-4">
+        $ \log_2(x-1) = 3 $
+      </div>
+    </p>
+
+    <p class="font-semibold">Solution (step-by-step):</p>
+
+    <p><strong>Step 1 — Convert to exponential form:</strong></p>
+    <div class="text-center text-2xl my-3">
+      $ 2^3 = x - 1 $
     </div>
 
-    <!-- Topic Content -->
-    <div id="topicContent" class="bg-yellow-50 p-6 rounded-lg shadow">
-      <p>Select a topic to view content.</p>
+    <p><strong>Step 2 — Solve for x:</strong></p>
+    <div class="text-center text-2xl my-3">
+      $ x - 1 = 8 \quad \Rightarrow \quad x = 9 $
+    </div>
+
+    <p><strong>Step 3 — Check domain condition:</strong></p>
+    <p>
+      Argument must be positive: $x - 1 > 0 \;\Rightarrow\; 9 - 1 > 0$ ✅ Valid.
+    </p>
+
+    <p class="italic text-gray-600">
+      Final Answer: $x = 9$
+    </p>
+  </div>
+
+  <!-- 3. Important Note -->
+  <div>
+    <p class="italic text-teal-700">
+      Note: Always check the domain of the logarithm. Any solution that makes the argument non-positive is invalid.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Example 2: Logarithmic Equation with Variables on Both Sides
+  </h1>
+
+  <!-- Problem -->
+  <div>
+    <p class="text-2xl">
+      Solve for $x$: 
+      <div class="text-center text-2xl my-4">
+        $ \log_3(x+2) - \log_3(x-1) = 1 $
+      </div>
+    </p>
+
+    <p class="font-semibold">Solution (step-by-step):</p>
+
+    <p><strong>Step 1 — Apply the Quotient Rule:</strong></p>
+    <div class="text-center text-2xl my-3">
+      $\log_3\left(\frac{x+2}{x-1}\right) = 1$
+    </div>
+
+    <p><strong>Step 2 — Convert to exponential form:</strong></p>
+    <div class="text-center text-2xl my-3">
+      $\frac{x+2}{x-1} = 3^1 = 3$
+    </div>
+
+    <p><strong>Step 3 — Solve for x:</strong></p>
+    <div class="text-center text-2xl my-3">
+      $x + 2 = 3(x - 1) \;\Rightarrow\; x + 2 = 3x - 3 \;\Rightarrow\; 2 + 3 = 3x - x \;\Rightarrow\; 5 = 2x \;\Rightarrow\; x = \frac{5}{2}$
+    </div>
+
+    <p><strong>Step 4 — Check domain conditions:</strong></p>
+    <p>
+      Arguments must be positive: $x + 2 > 0 \;\Rightarrow\; \frac{5}{2}+2 >0$ ✅,  
+      $x - 1 > 0 \;\Rightarrow\; \frac{5}{2}-1 = \frac{3}{2}>0$ ✅
+    </p>
+
+    <p class="italic text-gray-600">
+      Final Answer: $x = \dfrac{5}{2}$
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Example 5: Logarithmic Equation with Unknown Inside and Outside
+  </h1>
+
+  <!-- Problem -->
+  <div>
+    <p class="text-2xl">
+      Solve for $$x$$:
+      <div class="text-center text-2xl my-4">
+        $$ \log(x) + x = 3 $$
+      </div>
+    </p>
+
+    <p class="font-semibold">Solution (step-by-step):</p>
+
+    <p><strong>Step 1 — Consider substitution:</strong></p>
+    <p>
+      Let $$y = \log(x) \implies x = 10^y$$. Substituting gives:
+    </p>
+    <div class="text-center text-2xl my-3">
+      $$ y + 10^y = 3 $$
+    </div>
+
+    <p><strong>Step 2 — Solve for $$y$$:</strong></p>
+    <p>
+      This is a transcendental equation and can be solved using inspection for small integer solutions.
+      Try $$y = 1$$: $$1 + 10^1 = 1 + 10 = 11 \neq 3$$  
+      Try $$y = 0$$: $$0 + 10^0 = 1 \neq 3$$  
+      Try $$y = \log(2) \approx 0.301$$: $$0.301 + 2 \approx 2.301 \neq 3$$  
+      Try $$y = \log(2) +?$$ ...
+    </p>
+
+    <p class="italic text-gray-600">
+      Note: Equations like $$\log(x)+x=3$$ usually require **graphical or numerical methods** (trial/error or Newton-Raphson) for exact solution.  
+      For JEE-level, an approximate solution is often acceptable.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 1: Solve the logarithmic equation
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Solve for $$x$$:
+        $$\log_2(x-1) + \log_2(x-3) = 3$$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Apply the Product Rule of Logarithms</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$\log_2\big((x-1)(x-3)\big) = 3$$
+      </div>
+
+      <p><strong>Step 2 — Convert to exponential form</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$(x-1)(x-3) = 2^3 = 8$$
+      </div>
+
+      <p><strong>Step 3 — Expand and form a quadratic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$x^2 - 4x + 3 = 8 \quad \Rightarrow \quad x^2 - 4x - 5 = 0$$
+      </div>
+
+      <p><strong>Step 4 — Solve the quadratic</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$x = \frac{4 \pm \sqrt{16 + 20}}{2} = \frac{4 \pm \sqrt{36}}{2} = \frac{4 \pm 6}{2}$$
+        <br>
+        $$x = 5 \quad \text{or} \quad x = -1$$
+      </div>
+
+      <p><strong>Step 5 — Check domain restrictions</strong></p>
+      <p>
+        Arguments must be positive: $$x-1>0 \implies x>1$$, $$x-3>0 \implies x>3$$  
+        So only $$x = 5$$ is valid.
+      </p>
+
+      <p class="italic text-gray-600">
+        Final Answer: $$x = 5$$
+      </p>
+    </div>
+</div>
+
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 2: Solve logarithmic equation with different bases
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Solve for $$x$$:
+        $$\log_2(x) + \log_4(x-2) = 3$$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Convert all logarithms to the same base</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$\log_4(x-2) = \frac{\log_2(x-2)}{\log_2 4} = \frac{\log_2(x-2)}{2}$$  
+        $$\Rightarrow \log_2(x) + \frac{1}{2}\log_2(x-2) = 3$$
+      </div>
+
+      <p><strong>Step 2 — Multiply through by 2</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$2\log_2(x) + \log_2(x-2) = 6$$
+      </div>
+
+      <p><strong>Step 3 — Apply the Product Rule</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$\log_2(x^2) + \log_2(x-2) = \log_2(x^2(x-2)) = 6$$
+      </div>
+
+      <p><strong>Step 4 — Convert to exponential form</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$x^2(x-2) = 2^6 = 64$$  
+        $$x^3 - 2x^2 - 64 = 0$$
+      </div>
+
+      <p><strong>Step 5 — Solve the cubic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+        Try factorization: $$(x-4)(x^2 + 2x + 16) = 0$$  
+        Only real solution: $$x = 4$$
+      </div>
+
+      <p><strong>Step 6 — Check domain conditions</strong></p>
+      <p>
+        Arguments must be positive: $$x>0 \quad \text{and} \quad x-2>0 \implies x>2$$  
+        Valid solution: $$x = 4$$ ✅
+      </p>
+
+      <p class="italic text-gray-600">
+        Final Answer: $$x = 4$$
+      </p>
+    </div>
+</div>
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 3: Solve logarithmic equation with different bases
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Solve for $$x$$:
+        $$\log_3(x+1) + \log_9(x-2) = 2$$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Express all logs in base 3</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$\log_9(x-2) = \frac{\log_3(x-2)}{\log_3 9} = \frac{\log_3(x-2)}{2}$$  
+        $$\Rightarrow \log_3(x+1) + \frac{1}{2}\log_3(x-2) = 2$$
+      </div>
+
+      <p><strong>Step 2 — Multiply both sides by 2</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$2\log_3(x+1) + \log_3(x-2) = 4$$
+      </div>
+
+      <p><strong>Step 3 — Apply the Product Rule of Logarithms</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$\log_3((x+1)^2) + \log_3(x-2) = \log_3((x+1)^2(x-2)) = 4$$
+      </div>
+
+      <p><strong>Step 4 — Convert to exponential form</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$(x+1)^2(x-2) = 3^4 = 81$$
+      </div>
+
+      <p><strong>Step 5 — Expand and form a cubic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$(x^2 + 2x + 1)(x-2) = x^3 - 2x^2 + 2x^2 - 4x + x - 2 = x^3 - x - 2 = 81$$  
+        $$x^3 - x - 83 = 0$$
+      </div>
+
+      <p><strong>Step 6 — Solve the cubic equation (approximation)</strong></p>
+      <p>
+        This cubic does not factor nicely; approximate solution using trial or graphing:
+        $$x \approx 4.4$$
+      </p>
+
+      <p><strong>Step 7 — Check domain restrictions</strong></p>
+      <p>
+        Arguments must be positive: $$x+1>0 \implies x>-1$$, $$x-2>0 \implies x>2$$  
+        Approximate solution $$x \approx 4.4$$ satisfies both ✅
+      </p>
+
+      <p class="italic text-gray-600">
+        Final Answer (approximate): $$x \approx 4.4$$
+      </p>
+    </div>
+</div>
+
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 4: Solve logarithmic equation with quadratic inside
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Solve for $$x$$:
+        $$\log_2(x^2 - 5x + 6) = 3$$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Convert to exponential form</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$x^2 - 5x + 6 = 2^3 = 8$$
+      </div>
+
+      <p><strong>Step 2 — Form the quadratic equation</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$x^2 - 5x + 6 - 8 = 0 \quad \Rightarrow \quad x^2 - 5x - 2 = 0$$
+      </div>
+
+      <p><strong>Step 3 — Solve the quadratic</strong></p>
+      <div class="text-center text-2xl my-3">
+        $$x = \frac{5 \pm \sqrt{25 + 8}}{2} = \frac{5 \pm \sqrt{33}}{2}$$
+      </div>
+
+      <p><strong>Step 4 — Check domain restrictions</strong></p>
+      <p>
+        Argument of log must be positive: $$x^2 - 5x + 6 > 0$$  
+        Factor: $$(x-2)(x-3) > 0 \implies x < 2 \text{ or } x > 3$$  
+        Only $$x = \frac{5 + \sqrt{33}}{2} \approx 5.372$$ satisfies $$x>3$$
+      </p>
+
+      <p class="italic text-gray-600">
+        Final Answer: $$x = \frac{5 + \sqrt{33}}{2}$$
+      </p>
+    </div>
+</div>
+
+
+
+<div x-data="{ open: false }" class="bg-yellow-50 rounded-2xl shadow-md space-y-6 md:text-2xl text-purple-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+    <button @click="open = !open" class="w-full text-3xl md:text-4xl font-bold text-center text-purple-800 mb-6 py-6">
+      Problem 5: Solve equation with unknown inside log and linearly
+      <span class="float-right" x-text="open ? '−' : '+'"></span>
+    </button>
+
+    <div x-show="open" class="mt-4 space-y-4 text-xl">
+      <p>
+        Solve for $$x$$:
+        $$x + \log_2(x-1) = 5$$
+      </p>
+
+      <p class="font-semibold">Solution (step-by-step):</p>
+
+      <p><strong>Step 1 — Domain restriction</strong></p>
+      <p>
+        Argument of log must be positive: $$x-1 > 0 \implies x > 1$$
+      </p>
+
+      <p><strong>Step 2 — Substitution</strong></p>
+      <p>
+        Let $$y = x - 1 \implies x = y + 1$$. Then the equation becomes:
+      </p>
+      <div class="text-center text-2xl my-3">
+        $$y + 1 + \log_2(y) = 5 \quad \Rightarrow \quad y + \log_2(y) = 4$$
+      </div>
+
+      <p><strong>Step 3 — Solve using trial/iteration</strong></p>
+      <p>
+        Since this is a transcendental equation, try integer powers of 2:
+      </p>
+      <ul class="list-disc list-inside ml-6 space-y-2">
+        <li>Try $$y = 2$$: $$2 + \log_2(2) = 2 + 1 = 3 \neq 4$$</li>
+        <li>Try $$y = 4$$: $$4 + \log_2(4) = 4 + 2 = 6 \neq 4$$</li>
+        <li>Try $$y = 3$$: $$3 + \log_2(3) \approx 3 + 1.585 = 4.585 \approx 4?$$</li>
+      </ul>
+
+      <p>
+        Using closer approximation, the solution is around $$y \approx 2.415 \implies x \approx 3.415$$
+      </p>
+
+      <p><strong>Step 4 — Final answer</strong></p>
+      <p class="italic text-gray-600">
+        Approximate solution: $$x \approx 3.415$$
+      </p>
+    </div>
+</div>
+
+
+
+
+
+
+      </div>
+
+      <!-- theory of equations -->
+      <div id="algebra-theory" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Theory of Equations</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Key Points</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Relation between roots and coefficients for quadratic: $x^2 + px + q = 0$</p>
+            <p>Sum of roots: $-p$, Product of roots: $q$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>If roots of $x^2 - 5x + 6 = 0$ are $a$ and $b$, find $a+b$ and $ab$.</p>
+            <p>$a+b = 5$, $ab = 6$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Calculus Content -->
+
+      <!-- limits  -->
+      <div id="calculus-limits" class="topic-content hidden">
+        
+          <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Concept of Limit</span></p>
+    <p><span>Consider a function</span></p>
+    <div class="text-center text-2xl my-2">$ f(x) $</div>
+    <p><span>defined near</span> $ x = a $ <span>(except possibly at $ a $ itself).</span></p>
+    <p><span>We want to understand what value</span> $ f(x) $ <span>approaches as $ x $ gets closer and closer to $ a $.</span></p>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Informal Definition</span></p>
+    <p><span>The limit of</span> $ f(x) $ <span>as</span> $ x \to a $ <span>is</span> $ L $ <span>if:</span></p>
+    <div class="text-center text-2xl my-2">$ \displaystyle \lim_{x \to a} f(x) = L $</div>
+    <p><span>meaning</span> $ f(x) $ <span>can be made arbitrarily close to</span> $ L $ <span>by taking</span> $ x $ <span>sufficiently close to</span> $ a $ <span>(but $ x \neq a $).</span></p>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: Left-hand and Right-hand Limits</span></p>
+    <p><span>Left-hand limit:</span></p>
+    <div class="text-center text-2xl my-2">$ \displaystyle \lim_{x \to a^-} f(x) = L $</div>
+    <p><span>Right-hand limit:</span></p>
+    <div class="text-center text-2xl my-2">$ \displaystyle \lim_{x \to a^+} f(x) = L $</div>
+    <p><span>The limit exists if:</span></p>
+    <div class="text-center my-2">$ \displaystyle \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L $</div>
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Rigorous ε-δ Definition</span></p>
+    <p><span>The limit of</span> $ f(x) $ <span>as</span> $ x \to a $ <span>is</span> $ L $ <span>means:</span></p>
+    <div class="text-center my-4 px-2 break-words">
+      $$
+      \displaystyle
+      \lim_{x \to a} f(x) = L 
+      \iff 
+      \forall \varepsilon > 0, \; \exists \delta > 0 :\\
+      0 < |x - a| < \delta \implies |f(x) - L| < \varepsilon
+      $$
+    </div>
+
+    <div class="text-yellow-900 text-lg px-4 sm:px-2 md:px-6 my-4">
+  <p>
+    In the rigorous ε-δ definition of a limit: 
+    <span class="font-semibold">ε (epsilon)</span> represents how close we want 
+    <span class="font-mono">f(x)</span> to be to 
+    <span class="font-mono">L</span>, and 
+    <span class="font-semibold">δ (delta)</span> represents how close 
+    <span class="font-mono">x</span> should be to 
+    <span class="font-mono">a</span> (excluding 
+    <span class="font-mono">a</span> itself). 
+    No matter how small ε is, we can always find a δ that ensures 
+    <span class="font-mono">f(x)</span> stays within ε of 
+    <span class="font-mono">L</span>.
+  </p>
+</div>
+
+  </div>
+
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 5: Important Notes</span></p>
+    <p><span>1. Function need not be defined at</span> $ x = a $.</p>
+    <p><span>2. Limits can be finite or infinite.</span></p>
+    <p><span>3. One-sided limits are useful for studying discontinuities.</span></p>
+    <p><span>4. JEE problems often involve algebraic manipulation to evaluate limits.</span></p>
+  </div>
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <h1 class="text-2xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+        Here are some examples</h1>
+  <!-- Step 1: Simple Limit -->
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Simple Limit Example</span></p>
+    <p><span>Evaluate:</span> $ \lim_{x \to 2} (3x + 1) $</p>
+    <div class="text-center text-2xl my-2">$ \lim_{x \to 2} (3x + 1) = ? $</div>
+    <p><span>Solution: Substitute $ x = 2 $</span></p>
+    <div class="text-center text-2xl my-2">$ 3(2) + 1 = 7 $</div>
+    <p><span>Answer: 7</span></p>
+  </div>
+
+  <!-- Step 2: Limit Leading to 0/0 -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Limit Leading to 0/0</span></p>
+    <p><span>Evaluate:</span> $ \lim_{x \to 2} \frac{x^2 - 4}{x - 2} $</p>
+    <div class="text-center text-2xl my-2">$ \frac{x^2 - 4}{x - 2} $</div>
+    <p><span>Solution: Factor numerator:</span></p>
+    <div class="text-center text-2xl my-2">$ x^2 - 4 = (x-2)(x+2) $</div>
+    <p><span>Cancel (x-2):</span></p>
+    <div class="text-center text-2xl my-2">$ \lim_{x \to 2} (x + 2) = 4 $</div>
+    <p><span>Answer: 4</span></p>
+  </div>
+
+  <!-- Step 3: One-sided limits -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: One-Sided Limits</span></p>
+    <p><span>Function:</span></p>
+    <div class="text-center text-2xl my-2">
+      $ f(x) = 
+      \begin{cases} 
+        x^2 & x < 1 \\ 
+        2x + 1 & x \ge 1 
+      \end{cases} 
+      $
+    </div>
+    <p><span>Left-hand limit:</span> $ \lim_{x \to 1^-} f(x) = 1^2 = 1 $</p>
+    <p><span>Right-hand limit:</span> $ \lim_{x \to 1^+} f(x) = 2(1) + 1 = 3 $</p>
+    <p><span>Since LHL ≠ RHL, overall limit does not exist.</span></p>
+  </div>
+
+  <!-- Step 4: Limit at Infinity -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Limit at Infinity</span></p>
+    <p><span>Evaluate:</span> $ \lim_{x \to \infty} \frac{3x^2 + 5}{2x^2 - x} $</p>
+    <p><span>Divide numerator & denominator by $ x^2 $:</span></p>
+    <div class="text-center text-2xl my-2">$ \frac{3 + 5/x^2}{2 - 1/x} \to \frac{3}{2} $</div>
+    <p><span>Answer: 3/2</span></p>
+  </div>
+
+  <!-- Step 5: Standard Tricky Limit -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 5: Standard Tricky Limit</span></p>
+    <p><span>Evaluate:</span> $ \lim_{x \to 0} \frac{\sin x}{x} $</p>
+    <p><span>Answer: 1 (well-known JEE standard limit)</span></p>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Main Title -->
+  <h1 class="text-2xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Standard Limits in Calculus
+  </h1>
+
+  <!-- Step 1: Definition -->
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Definition of a Limit</span></p>
+    <p><span>The limit of a function</span> $ f(x) $ <span>as</span> $ x \to a $ <span>is the value that</span> $ f(x) $ <span>approaches as</span> $ x $ <span>gets arbitrarily close to</span> $ a $ <span>(but $ x \neq a $).</span></p>
+    <div class="text-center text-2xl my-2">$ \displaystyle \lim_{x \to a} f(x) = L $</div>
+  </div>
+
+  <!-- Step 2: Standard Limits -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Some Standard Limits</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>$ \displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1 $</li>
+      <li>$ \displaystyle \lim_{x \to 0} \frac{1 - \cos x}{x} = 0 $</li>
+      <li>$ \displaystyle \lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2} $</li>
+      <li>$ \displaystyle \lim_{x \to 0} \frac{\tan x}{x} = 1 $</li>
+      <li>$ \displaystyle \lim_{x \to 0} (1 + x)^{1/x} = e $</li>
+      <li>$ \displaystyle \lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e $</li>
+    </ul>
+  </div>
+
+  <!-- Step 3: Examples -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: Examples</span></p>
+    <p><span>Example 1:</span> $ \displaystyle \lim_{x \to 0} \frac{\sin 5x}{x} $</p>
+    <div class="text-center text-2xl my-2">$ \displaystyle \lim_{x \to 0} \frac{\sin 5x}{x} = \lim_{x \to 0} 5 \cdot \frac{\sin 5x}{5x} = 5 $</div>
+
+    <p class="mt-4"><span>Example 2:</span> $ \displaystyle \lim_{x \to 0} \frac{1 - \cos 3x}{x^2} $</p>
+    <div class="text-center text-2xl my-2">$ \displaystyle \lim_{x \to 0} \frac{1 - \cos 3x}{x^2} = \lim_{x \to 0} \frac{9(1 - \cos 3x)}{(3x)^2} = \frac{9}{2} $</div>
+  </div>
+
+  <!-- Step 4: Important Notes -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Important Notes</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>Always look for standard limits before applying L'Hôpital's Rule.</li>
+      <li>Multiplying and dividing by constants can simplify limits.</li>
+      <li>Many JEE questions combine these limits with algebraic manipulation.</li>
+      <li>Trigonometric limits often require using small angle approximations: $ \sin x \approx x, \tan x \approx x, \cos x \approx 1 - \frac{x^2}{2} $ as $ x \to 0 $.</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Main Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Techniques to Evaluate Limits
+  </h1>
+
+  <!-- Step 1: Direct Substitution -->
+  <div class="py-4">
+    <p class="font-semibold"><span>Step 1: Direct Substitution</span></p>
+    <p><span>If the function is continuous at the point, directly substitute the value of</span> $ x $ <span>to find the limit.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      $ \displaystyle \lim_{x \to 2} (3x^2 + 5) = 3(2)^2 + 5 = 17 $
+    </div>
+  </div>
+
+  <!-- Step 2: Factorization -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 2: Factorization</span></p>
+    <p><span>If direct substitution gives an indeterminate form like</span> $ \frac{0}{0} $, <span>try factoring numerator and denominator.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      $ \displaystyle \lim_{x \to 3} \frac{x^2 - 9}{x - 3} = \lim_{x \to 3} \frac{(x-3)(x+3)}{x-3} = \lim_{x \to 3} (x+3) = 6 $
+    </div>
+  </div>
+
+  <!-- Step 3: Rationalization -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 3: Rationalization</span></p>
+    <p><span>Multiply by the conjugate if the limit involves square roots to remove indeterminate forms.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      $ \displaystyle \lim_{x \to 4} \frac{\sqrt{x} - 2}{x-4} = \lim_{x \to 4} \frac{\sqrt{x}-2}{x-4} \cdot \frac{\sqrt{x}+2}{\sqrt{x}+2} = \lim_{x \to 4} \frac{x-4}{(x-4)(\sqrt{x}+2)} = \frac{1}{4} $
+    </div>
+  </div>
+
+  <!-- Step 4: Standard Limits -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 4: Using Standard Limits</span></p>
+    <p><span>Apply well-known standard limits such as:</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>$ \displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1 $</li>
+      <li>$ \displaystyle \lim_{x \to 0} (1+x)^{1/x} = e $</li>
+      <li>$ \displaystyle \lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2} $</li>
+    </ul>
+  </div>
+
+  <!-- Step 5: L'Hôpital's Rule -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 5: L'Hôpital's Rule</span></p>
+    <p><span>For indeterminate forms like</span> $ \frac{0}{0} $ <span>or</span> $ \frac{\infty}{\infty} $, <span>take derivatives of numerator and denominator:</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      $ \displaystyle \lim_{x \to 0} \frac{\sin x}{x} = \lim_{x \to 0} \frac{\cos x}{1} = 1 $
+    </div>
+  </div>
+
+  <!-- Step 6: Algebraic Manipulation -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 6: Algebraic Manipulation</span></p>
+    <p><span>Sometimes rearranging terms or splitting fractions helps simplify limits.</span></p>
+    <p><span>Example:</span></p>
+    <div class="text-center text-2xl my-2">
+      $ \displaystyle \lim_{x \to 0} \frac{x^2 + 3x}{x} = \lim_{x \to 0} (x + 3) = 3 $
+    </div>
+  </div>
+
+  <!-- Step 7: Important Notes -->
+  <div>
+    <p class="font-semibold text-2xl"><span>Step 7: Important Notes</span></p>
+    <ul class="list-disc list-inside ml-6 space-y-2">
+      <li>Always check if the limit can be evaluated directly before using advanced methods.</li>
+      <li>Factorization and rationalization are the most commonly used techniques in JEE problems.</li>
+      <li>Keep standard limits handy—they save a lot of computation time.</li>
+      <li>Check for one-sided limits in case of piecewise functions.</li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+          
+
+      </div>
+
+      <!-- intergration  -->
+      <div id="calculus-integration" class="topic-content hidden">
+        
+        
+        <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Definition of Integration
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="text-2xl">
+      <span class="font-semibold">Integration</span> is the inverse process of differentiation.
+      It is a fundamental operation in calculus that allows us to find:
+    </p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>The original function from its derivative.</li>
+      <li>The area under a curve represented by a function.</li>
+      <li>The accumulation of quantities over an interval, such as distance from velocity or total growth from a rate of change.</li>
+    </ul>
+
+    <p class="text-2xl mt-4">
+      If $$F(x)$$ is a function such that 
+      $$\frac{d}{dx}F(x) = f(x),$$ 
+      then $$F(x)$$ is called an <span class="font-semibold">antiderivative</span> or <span class="font-semibold">indefinite integral</span> of $$f(x)$$.
+    </p>
+
+    <div class="text-center text-2xl my-4">
+      $$ \int f(x)\,dx = F(x) + C $$
+    </div>
+
+    <p class="text-2xl">
+      where:
+    </p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$$f(x)$$ is called the <span class="font-semibold">integrand</span>.</li>
+      <li>$$dx$$ indicates the variable of integration.</li>
+      <li>$$C$$ is the <span class="font-semibold">constant of integration</span>, representing the fact that there are infinitely many antiderivatives differing by a constant.</li>
+    </ul>
+
+    <p class="text-2xl mt-4">
+      <span class="font-semibold">Example:</span>  
+      If $$f(x) = 2x$$, then
+    </p>
+
+    <div class="text-center text-2xl my-4">
+      $$ \int 2x \, dx = x^2 + C $$
+    </div>
+
+    <p class="text-2xl">
+      Integration can also be interpreted geometrically as the area under the curve $$y = f(x)$$ between two points $$x = a$$ and $$x = b$$:
+    </p>
+
+    <div class="text-center text-2xl my-4">
+      $$ \int_a^b f(x) \, dx = \text{Area under the curve from } x=a \text{ to } x=b $$
+    </div>
+
+    <p class="italic text-gray-600">
+      Note: Integration is widely used in physics, engineering, and other fields to calculate quantities such as displacement, area, volume, work, and probability.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Types of Integration
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      Integration can be broadly classified into the following types, depending on the limits and the method used:
+    </p>
+  </div>
+
+  <!-- 1. Indefinite Integral -->
+  <div>
+    <p class="font-semibold text-2xl">1. Indefinite Integral:</p>
+    <p class="text-2xl">
+      Represents the general antiderivative of a function without specifying the limits of integration.
+      It includes an arbitrary constant $$C$$.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $$ \int f(x)\,dx = F(x) + C $$
+    </div>
+    <p class="text-2xl">
+      Example: $$ \int 3x^2 \, dx = x^3 + C $$
+    </p>
+  </div>
+
+  <!-- 2. Definite Integral -->
+  <div>
+    <p class="font-semibold text-2xl">2. Definite Integral:</p>
+    <p class="text-2xl">
+      Represents the net area under the curve of a function between two limits $$x = a$$ and $$x = b$$.
+      The result is a number, not a function.
+    </p>
+    <div class="text-center text-2xl my-4">
+      $$ \int_a^b f(x)\,dx = F(b) - F(a) $$
+    </div>
+    <p class="text-2xl">
+      Example: $$ \int_0^2 2x \, dx = [x^2]_0^2 = 4 - 0 = 4 $$
+    </p>
+  </div>
+
+  <!-- 3. Methods of Integration -->
+  <div>
+    <p class="font-semibold text-2xl">3. Methods of Integration:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li><span class="font-semibold">Integration by Substitution:</span> Used when a part of the integrand is a derivative of another part.</li>
+      <li><span class="font-semibold">Integration by Parts:</span> Based on the formula $$\int u \, dv = uv - \int v \, du$$</li>
+      <li><span class="font-semibold">Partial Fraction Decomposition:</span> Used for rational functions to break them into simpler fractions before integrating.</li>
+      <li><span class="font-semibold">Trigonometric Substitution:</span> Useful when the integrand contains square roots of quadratic expressions.</li>
+    </ul>
+  </div>
+
+  <!-- Note -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Note: Mastery of these types and methods is essential for solving complex JEE calculus problems, including area, volume, and physics applications.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Properties and Formulas of Integration
+  </h1>
+
+  <!-- Introduction -->
+  <div>
+    <p class="text-2xl">
+      Integration follows several important properties and formulas that simplify the process of evaluating integrals:
+    </p>
+  </div>
+
+  <!-- 1. Linearity -->
+  <div>
+    <p class="font-semibold text-2xl">1. Linearity:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$$ \int [f(x) + g(x)] \, dx = \int f(x) \, dx + \int g(x) \, dx $$</li>
+      <li>$$ \int k \, f(x) \, dx = k \int f(x) \, dx $$ where $$k$$ is a constant</li>
+    </ul>
+  </div>
+
+  <!-- 2. Integration of a sum/difference -->
+  <div>
+    <p class="font-semibold text-2xl">2. Integration of a sum/difference:</p>
+    <p class="text-2xl">
+      The integral of a sum or difference of functions equals the sum or difference of their integrals:
+    </p>
+    <div class="text-center text-2xl my-4">
+      $$ \int [f(x) \pm g(x)] \, dx = \int f(x) \, dx \pm \int g(x) \, dx $$
+    </div>
+  </div>
+
+  <!-- 3. Definite integral properties -->
+  <div>
+    <p class="font-semibold text-2xl">3. Properties of definite integrals:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$$ \int_a^a f(x) \, dx = 0 $$</li>
+      <li>$$ \int_a^b f(x) \, dx = - \int_b^a f(x) \, dx $$</li>
+      <li>$$ \int_a^b [f(x) + g(x)] \, dx = \int_a^b f(x) \, dx + \int_a^b g(x) \, dx $$</li>
+      <li>Splitting limits: $$ \int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx $$</li>
+    </ul>
+  </div>
+
+  <!-- 4. Standard Integrals -->
+  <div>
+    <p class="font-semibold text-2xl">4. Standard Integrals:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$$ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C, \quad n \neq -1 $$</li>
+      <li>$$ \int \frac{dx}{x} = \ln|x| + C $$</li>
+      <li>$$ \int e^x \, dx = e^x + C $$</li>
+      <li>$$ \int a^x \, dx = \frac{a^x}{\ln a} + C, \quad a>0, a\neq1 $$</li>
+      <li>$$ \int \sin x \, dx = -\cos x + C $$</li>
+      <li>$$ \int \cos x \, dx = \sin x + C $$</li>
+      <li>$$ \int \sec^2 x \, dx = \tan x + C $$</li>
+      <li>$$ \int \csc^2 x \, dx = -\cot x + C $$</li>
+      <li>$$ \int \sec x \tan x \, dx = \sec x + C $$</li>
+      <li>$$ \int \csc x \cot x \, dx = -\csc x + C $$</li>
+    </ul>
+  </div>
+
+  <!-- Note -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Note: Remembering these properties and standard formulas is crucial for solving JEE-level integration problems efficiently.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Important Concepts in Integration
+  </h1>
+
+  <!-- 1. Definite and Indefinite Integral Recap -->
+  <div>
+    <p class="font-semibold text-2xl">1. Definite vs Indefinite Integrals:</p>
+    <p class="text-2xl">
+      <span class="font-semibold">Indefinite Integral:</span> $$ \int f(x)\,dx = F(x) + C $$  
+      It gives the general antiderivative of $$f(x)$$.  
+      <br>
+      <span class="font-semibold">Definite Integral:</span> $$ \int_a^b f(x)\,dx = F(b) - F(a) $$  
+      It represents the net area under the curve between $$x=a$$ and $$x=b$$.
+    </p>
+  </div>
+
+  <!-- 2. Geometric Interpretation -->
+  <div>
+    <p class="font-semibold text-2xl">2. Geometric Interpretation:</p>
+    <p class="text-2xl">
+      The definite integral $$ \int_a^b f(x)\,dx $$ represents the **signed area** between the curve $$y=f(x)$$ and the x-axis.  
+      Positive area is above the x-axis, negative below.
+    </p>
+  </div>
+
+  <!-- 3. Fundamental Theorem of Calculus -->
+  <div>
+    <p class="font-semibold text-2xl">3. Fundamental Theorem of Calculus:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>If $$F(x)$$ is an antiderivative of $$f(x)$$, then $$ \int_a^b f(x) \, dx = F(b) - F(a) $$</li>
+      <li>It connects **differentiation and integration**, showing they are inverse operations.</li>
+    </ul>
+  </div>
+
+  
+
+  <!-- 5. Applications of Integration -->
+  <div>
+    <p class="font-semibold text-2xl">5. Applications of Integration:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>Area under curves: $$\int_a^b f(x) \, dx$$</li>
+      <li>Area between two curves: $$\int_a^b [f(x)-g(x)] \, dx$$</li>
+      <li>Volume of solids of revolution: $$ V = \pi \int_a^b [f(x)]^2 \, dx $$</li>
+      <li>Work done by a variable force: $$ W = \int F(x) \, dx $$</li>
+      <li>Average value of a function: $$ f_{\text{avg}} = \frac{1}{b-a} \int_a^b f(x)\, dx $$</li>
+    </ul>
+  </div>
+
+  <!-- 6. Important Tips for JEE -->
+  <div>
+    <p class="font-semibold text-2xl">6. Important Tips:</p>
+    <p class="italic text-gray-600 text-2xl">
+     
+      1. Always check **domain restrictions** before integrating functions like $$\frac{1}{x}, \sqrt{x}, \ln x$$.  <br>
+      2. Factorize polynomials first if possible.  <br>
+      3. Look for substitution that converts complex functions into standard forms.  <br>
+      4. Use symmetry properties for definite integrals: if $$f(x)$$ is even or odd over $$[-a,a]$$.<br>
+    </p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+      </div>
+
+      <!-- Continuity -->
+      <div id="calculus-continuity" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Continuity & Differentiability</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Definitions</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Function $f(x)$ is continuous at $x=a$ if $\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = f(a)$</p>
+            <p>Differentiable if derivative exists at $x=a$.</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Check continuity of $f(x) = |x|$ at $x=0$.</p>
+            <p>Yes, $f(x)$ is continuous at $x=0$.</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Application of Derivatives -->
+      <div id="calculus-application" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Application of Derivatives</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Maxima & Minima</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Critical points: $f'(x) = 0$</p>
+            <p>Second derivative test: $f''(x)$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find maxima/minima of $f(x) = x^2$</p>
+            <p>Minimum at $x=0$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Definite Integrals -->
+      <div id="calculus-definite" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Definite Integrals</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Properties</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>$\int_a^b f(x) dx = F(b) - F(a)$</p>
+            <p>$\int_a^b f(x) dx = \int_a^b f(a+b-x) dx$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Evaluate $\int_0^1 x dx$</p>
+            <p>$= \frac{1}{2}$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Differential Equations -->
+      <div id="calculus-differential" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Differential Equations</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Basics</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Order: Highest derivative, Degree: Power of highest derivative</p>
+            <p>General solution: Contains arbitrary constants</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Solve $\frac{dy}{dx} = 3x^2$</p>
+            <p>$y = x^3 + C$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Area under Curve -->
+      <div id="calculus-area" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Area under Curve</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Formula</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Area between $x=a$ and $x=b$: $\int_a^b f(x) dx$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find area under $y=x$ from $x=0$ to $x=2$</p>
+            <p>$\int_0^2 x dx = [\frac{x^2}{2}]_0^2 = 2$</p>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- Trigonometry Content -->
+
+      <!-- trigonometric ratios and identities   -->
+      <div id="trigonometry-ratios" class="topic-content hidden">
+        
+
+        <div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Trigonometric Ratios and Identities
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="text-2xl">
+      <span class="font-semibold">Trigonometric ratios</span> relate the angles of a right-angled triangle to the ratios of its sides.  
+      For a right triangle with angle $\theta$, hypotenuse $h$, opposite side $o$, and adjacent side $a$:
+    </p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$$ \sin \theta = \frac{\text{opposite}}{\text{hypotenuse}} = \frac{o}{h} $$</li>
+      <li>$$ \cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}} = \frac{a}{h} $$</li>
+      <li>$$ \tan \theta = \frac{\text{opposite}}{\text{adjacent}} = \frac{o}{a} $$</li>
+      <li>$$ \csc \theta = \frac{1}{\sin \theta} = \frac{h}{o} $$</li>
+      <li>$$ \sec \theta = \frac{1}{\cos \theta} = \frac{h}{a} $$</li>
+      <li>$$ \cot \theta = \frac{1}{\tan \theta} = \frac{a}{o} $$</li>
+    </ul>
+  </div>
+
+  <!-- Fundamental Identities -->
+  <div>
+    <p class="font-semibold text-2xl">Fundamental Trigonometric Identities:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>Pythagorean Identity: $$ \sin^2 \theta + \cos^2 \theta = 1 $$</li>
+      <li>Derived identities:
+        <div class="text-center text-2xl my-2">
+          $$ 1 + \tan^2 \theta = \sec^2 \theta $$  
+          $$ 1 + \cot^2 \theta = \csc^2 \theta $$
+        </div>
+      </li>
+      <li>Reciprocal relations: $$ \csc \theta = \frac{1}{\sin \theta},\; \sec \theta = \frac{1}{\cos \theta},\; \cot \theta = \frac{1}{\tan \theta} $$</li>
+      <li>Quotient relations: $$ \tan \theta = \frac{\sin \theta}{\cos \theta},\; \cot \theta = \frac{\cos \theta}{\sin \theta} $$</li>
+    </ul>
+  </div>
+
+  <!-- Importance for JEE -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Note: These basic ratios and identities are the foundation for solving all trigonometric equations and proving advanced identities in JEE.  
+      Memorizing them thoroughly will save time in problem-solving.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Definition and Concept of Trigonometric Ratios
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="text-2xl">
+      <span class="font-semibold">Trigonometry</span> is a branch of mathematics that studies the relationships between the sides and angles of triangles.  
+      The basic idea is to associate each angle with specific ratios of the sides of a right-angled triangle.  
+      These ratios are called <span class="font-semibold">trigonometric ratios</span>.
+    </p>
+  </div>
+
+  <!-- Detailed Explanation -->
+  <div>
+    <p class="text-2xl">
+      Consider a right-angled triangle ABC, with:
+    </p>
+    <!-- Replace the selected block with this: -->
+
+<ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+  <li>Angle $ \theta $ at vertex A</li>
+  <li>Hypotenuse $ h $ (opposite the right angle)</li>
+  <li>Side opposite $ \theta $: $ o $</li>
+  <li>Side adjacent to $ \theta $: $ a $</li>
+</ul>
+<p class="text-2xl">
+  Then, the six primary trigonometric ratios are defined as:
+</p>
+<ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+  <li>$ \sin \theta = \frac{o}{h} $ — sine: ratio of opposite side to hypotenuse</li>
+  <li>$ \cos \theta = \frac{a}{h} $ — cosine: ratio of adjacent side to hypotenuse</li>
+  <li>$ \tan \theta = \frac{o}{a} $ — tangent: ratio of opposite side to adjacent side</li>
+  <li>$ \csc \theta = \frac{h}{o} $ — cosecant: reciprocal of sine</li>
+  <li>$ \sec \theta = \frac{h}{a} $ — secant: reciprocal of cosine</li>
+  <li>$ \cot \theta = \frac{a}{o} $ — cotangent: reciprocal of tangent</li>
+</ul>
+  </div>
+
+  <!-- Conceptual Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes:  
+      1. These ratios are defined only for angles in a right triangle (0° < θ < 90°).  <br>
+      2. Trigonometric ratios can also be extended to any angle using the unit circle. <br> 
+      3. These ratios are fundamental for solving triangle problems, proving identities, and solving trigonometric equations in JEE-level mathematics.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Extension of Trigonometric Ratios to Any Angle
+  </h1>
+
+  <!-- Definition -->
+  <div>
+    <p class="text-2xl">
+      Trigonometric ratios can be defined for **any angle** (not just acute angles) using the **unit circle**.
+      A unit circle is a circle of radius 1 centered at the origin of the coordinate plane.
+    </p>
+  </div>
+
+  <!-- Explanation -->
+  <div>
+    <p class="text-2xl">
+      Consider a point $P(x, y)$ on the unit circle, corresponding to an angle $\theta$ measured from the positive x-axis:
+    </p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+  <li>$ \sin \theta = y $ — vertical coordinate</li>
+  <li>$ \cos \theta = x $ — horizontal coordinate</li>
+  <li>$ \tan \theta = \frac{y}{x} $, provided $ x \neq 0 $</li>
+  <li>$ \csc \theta = \frac{1}{y} $, provided $ y \neq 0 $</li>
+  <li>$ \sec \theta = \frac{1}{x} $, provided $ x \neq 0 $</li>
+  <li>$ \cot \theta = \frac{x}{y} $, provided $ y \neq 0 $</li>
+</ul>
+  </div>
+
+  <!-- Important Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes:  
+      1. This definition allows trigonometric functions to be used for **angles greater than 90°**, **negative angles**, and **angles beyond 360°**.  <br>
+      2. The **sign of the ratio** depends on the quadrant:  <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;• Quadrant I: all positive  
+      &nbsp;&nbsp;&nbsp;&nbsp;• Quadrant II: sine positive, others negative  
+      &nbsp;&nbsp;&nbsp;&nbsp;• Quadrant III: tangent positive, others negative  
+      &nbsp;&nbsp;&nbsp;&nbsp;• Quadrant IV: cosine positive, others negative  <br>
+      3. This unit-circle approach is essential for proving **trigonometric identities** and solving **JEE-level equations**.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Fundamental Trigonometric Identities
+  </h1>
+
+  <!-- Pythagorean Identities -->
+  <div>
+    <p class="font-semibold text-2xl">1. Pythagorean Identities:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin^2 \theta + \cos^2 \theta = 1$</li>
+      <li>$1 + \tan^2 \theta = \sec^2 \theta$</li>
+      <li>$1 + \cot^2 \theta = \csc^2 \theta$</li>
+    </ul>
+  </div>
+
+  <!-- Reciprocal Identities -->
+  <div>
+    <p class="font-semibold text-2xl">2. Reciprocal Identities:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\csc \theta = 1 / \sin \theta$</li>
+      <li>$\sec \theta = 1 / \cos \theta$</li>
+      <li>$\cot \theta = 1 / \tan \theta$</li>
+    </ul>
+  </div>
+
+  <!-- Quotient Identities -->
+  <div>
+    <p class="font-semibold text-2xl">3. Quotient Identities:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\tan \theta = \sin \theta / \cos \theta$</li>
+      <li>$\cot \theta = \cos \theta / \sin \theta$</li>
+    </ul>
+  </div>
+
+  <!-- Co-function Identities -->
+  <div>
+    <p class="font-semibold text-2xl">4. Co-function Identities:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin (90^\circ - \theta) = \cos \theta$</li>
+      <li>$\cos (90^\circ - \theta) = \sin \theta$</li>
+      <li>$\tan (90^\circ - \theta) = \cot \theta$</li>
+      <li>$\cot (90^\circ - \theta) = \tan \theta$</li>
+      <li>$\sec (90^\circ - \theta) = \csc \theta$</li>
+      <li>$\csc (90^\circ - \theta) = \sec \theta$</li>
+    </ul>
+  </div>
+
+  <!-- Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes: These identities form the **foundation of all trigonometric problem-solving** in JEE.  
+      Memorize them thoroughly for proving advanced identities and solving equations efficiently.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Angle Sum and Difference Formulas
+  </h1>
+
+  <!-- Sine Formulas -->
+  <div>
+    <p class="font-semibold text-2xl">1. Sine Formulas:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin(A + B) = \sin A \cos B + \cos A \sin B$</li>
+      <li>$\sin(A - B) = \sin A \cos B - \cos A \sin B$</li>
+    </ul>
+  </div>
+
+  <!-- Cosine Formulas -->
+  <div>
+    <p class="font-semibold text-2xl">2. Cosine Formulas:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\cos(A + B) = \cos A \cos B - \sin A \sin B$</li>
+      <li>$\cos(A - B) = \cos A \cos B + \sin A \sin B$</li>
+    </ul>
+  </div>
+
+  <!-- Tangent Formulas -->
+  <div>
+    <p class="font-semibold text-2xl">3. Tangent Formulas:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\tan(A + B) = \frac{\tan A + \tan B}{1 - \tan A \tan B}$</li>
+      <li>$\tan(A - B) = \frac{\tan A - \tan B}{1 + \tan A \tan B}$</li>
+    </ul>
+  </div>
+
+  <!-- Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes: These formulas are essential for solving trigonometric equations, proving identities, and calculating exact values of angles in JEE problems.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Double Angle and Half Angle Formulas
+  </h1>
+
+  <!-- Double Angle Formulas -->
+  <div>
+    <p class="font-semibold text-2xl">1. Double Angle Formulas:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin 2A = 2 \sin A \cos A$</li>
+      <li>$\cos 2A = \cos^2 A - \sin^2 A = 2 \cos^2 A - 1 = 1 - 2 \sin^2 A$</li>
+      <li>$\tan 2A = \frac{2 \tan A}{1 - \tan^2 A}$</li>
+    </ul>
+  </div>
+
+  <!-- Half Angle Formulas -->
+  <div>
+    <p class="font-semibold text-2xl">2. Half Angle Formulas:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin \frac{A}{2} = \pm \sqrt{\frac{1 - \cos A}{2}}$</li>
+      <li>$\cos \frac{A}{2} = \pm \sqrt{\frac{1 + \cos A}{2}}$</li>
+      <li>$\tan \frac{A}{2} = \pm \sqrt{\frac{1 - \cos A}{1 + \cos A}} = \frac{\sin A}{1 + \cos A} = \frac{1 - \cos A}{\sin A}$</li>
+    </ul>
+  </div>
+
+  <!-- Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes: These formulas are extensively used in JEE-level trigonometric equations, simplifying expressions, and calculating exact values of angles.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Product-to-Sum and Sum-to-Product Formulas
+  </h1>
+
+  <!-- Product-to-Sum Formulas -->
+  <div>
+    <p class="font-semibold text-2xl">1. Product-to-Sum Formulas:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin A \sin B = \frac{1}{2} [\cos(A - B) - \cos(A + B)]$</li>
+      <li>$\cos A \cos B = \frac{1}{2} [\cos(A - B) + \cos(A + B)]$</li>
+      <li>$\sin A \cos B = \frac{1}{2} [\sin(A + B) + \sin(A - B)]$</li>
+    </ul>
+  </div>
+
+  <!-- Sum-to-Product Formulas -->
+  <div>
+    <p class="font-semibold text-2xl">2. Sum-to-Product Formulas:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin A + \sin B = 2 \sin\frac{A + B}{2} \cos\frac{A - B}{2}$</li>
+      <li>$\sin A - \sin B = 2 \cos\frac{A + B}{2} \sin\frac{A - B}{2}$</li>
+      <li>$\cos A + \cos B = 2 \cos\frac{A + B}{2} \cos\frac{A - B}{2}$</li>
+      <li>$\cos A - \cos B = -2 \sin\frac{A + B}{2} \sin\frac{A - B}{2}$</li>
+    </ul>
+  </div>
+
+  <!-- Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes: These formulas are extremely useful for simplifying complex trigonometric expressions, evaluating integrals, and solving advanced JEE-level problems.
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Important Trigonometric Values and Special Angles
+  </h1>
+
+  <!-- Standard Angles -->
+  <div>
+    <p class="font-semibold text-2xl">1. Standard Angle Values (in degrees and radians):</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$0^\circ (0)$: $\sin 0 = 0$, $\cos 0 = 1$, $\tan 0 = 0$</li>
+      <li>$30^\circ (\pi/6)$: $\sin 30^\circ = 1/2$, $\cos 30^\circ = \sqrt{3}/2$, $\tan 30^\circ = 1/\sqrt{3}$</li>
+      <li>$45^\circ (\pi/4)$: $\sin 45^\circ = \cos 45^\circ = 1/\sqrt{2}$, $\tan 45^\circ = 1$</li>
+      <li>$60^\circ (\pi/3)$: $\sin 60^\circ = \sqrt{3}/2$, $\cos 60^\circ = 1/2$, $\tan 60^\circ = \sqrt{3}$</li>
+      <li>$90^\circ (\pi/2)$: $\sin 90^\circ = 1$, $\cos 90^\circ = 0$, $\tan 90^\circ$ undefined</li>
+    </ul>
+  </div>
+
+  <!-- Notes on Negative and Quadrantal Angles -->
+  <div>
+    <p class="font-semibold text-2xl">2. Negative and Quadrantal Angles:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>$\sin(-\theta) = -\sin \theta$, $\cos(-\theta) = \cos \theta$, $\tan(-\theta) = -\tan \theta$</li>
+      <li>Quadrantal angles (0°, 90°, 180°, 270°) have sine or cosine equal to 0 or ±1</li>
+    </ul>
+  </div>
+
+  <!-- Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes: Memorizing these standard values is crucial for solving trigonometric equations, evaluating integrals, and quickly checking answers in JEE problems.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="space-y-6 md:text-2xl text-teal-900 px-4 sm:px-2 md:px-10 max-w-5xl mx-auto">
+
+  <!-- Title -->
+  <h1 class="text-3xl md:text-4xl font-bold text-center text-teal-800 mb-6 py-6">
+    Trigonometric Equations and Their General Solutions
+  </h1>
+
+  <!-- Sine Equations -->
+  <div>
+    <p class="font-semibold text-2xl">1. Sine Equations:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>Equation: $\sin \theta = k$</li>
+      <li>General Solution: $\theta = \sin^{-1} k + 360^\circ n$ or $\theta = 180^\circ - \sin^{-1} k + 360^\circ n$, $n \in \mathbb{Z}$</li>
+    </ul>
+  </div>
+
+  <!-- Cosine Equations -->
+  <div>
+    <p class="font-semibold text-2xl">2. Cosine Equations:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>Equation: $\cos \theta = k$</li>
+      <li>General Solution: $\theta = \cos^{-1} k + 360^\circ n$ or $\theta = -\cos^{-1} k + 360^\circ n$, $n \in \mathbb{Z}$</li>
+    </ul>
+  </div>
+
+  <!-- Tangent Equations -->
+  <div>
+    <p class="font-semibold text-2xl">3. Tangent Equations:</p>
+    <ul class="list-disc list-inside ml-6 space-y-2 text-2xl">
+      <li>Equation: $\tan \theta = k$</li>
+      <li>General Solution: $\theta = \tan^{-1} k + 180^\circ n$, $n \in \mathbb{Z}$</li>
+    </ul>
+  </div>
+
+  <!-- Notes -->
+  <div>
+    <p class="italic text-gray-600 text-2xl">
+      Notes: Understanding these general solutions is critical for solving trigonometric equations in JEE, including multiple-angle equations, and for finding all possible solutions in a given interval.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+      </div>
+
+
+      <!-- Trigonometry equation -->
+      <div id="trigonometry-equations" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Trigonometric Equations</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">General Solutions</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>$\sin x = 0 \implies x = n\pi$</p>
+            <p>$\cos x = 0 \implies x = (2n+1)\frac{\pi}{2}$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Solve $\sin x = \frac{1}{2}$</p>
+            <p>$x = \frac{\pi}{6} + 2n\pi$, $x = \frac{5\pi}{6} + 2n\pi$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- inverse trigonometric functions -->
+      <div id="trigonometry-inverse" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Inverse Trigonometric Functions</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Key Formulas</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>$\sin^{-1}x + \cos^{-1}x = \frac{\pi}{2}$</p>
+            <p>$\tan^{-1}x + \cot^{-1}x = \frac{\pi}{2}$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find $\sin^{-1}\left(\frac{1}{2}\right)$</p>
+            <p>$= \frac{\pi}{6}$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- properties of triangle -->
+      <div id="trigonometry-properties" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Properties of Triangle</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Key Results</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Sine Rule: $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$</p>
+            <p>Cosine Rule: $a^2 = b^2 + c^2 - 2bc\cos A$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find $a$ if $b=4$, $c=5$, $A=60^\circ$</p>
+            <p>$a^2 = 16 + 25 - 40 \times \frac{1}{2} = 41 - 20 = 21 \implies a = \sqrt{21}$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- heights and distances -->
+      <div id="trigonometry-heights" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Heights & Distances</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Key Concepts</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Use trigonometric ratios to solve real-life problems involving heights and distances.</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>If angle of elevation is $30^\circ$ and distance is $10$ m, find height.</p>
+            <p>$h = 10 \tan 30^\circ = 10 \times \frac{1}{\sqrt{3}} \approx 5.77$ m</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Coordinate Geometry Content -->
+      <!-- lines  -->
+      <div id="coordinate-lines" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Straight Lines</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Important Formulas</h3>
+          <div class="space-y-3">
+            <div class="bg-blue-50 p-3 rounded">
+              <p class="font-semibold">Distance Formula:</p>
+              <p>$d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$</p>
+            </div>
+            <div class="bg-blue-50 p-3 rounded">
+              <p class="font-semibold">Slope Formula:</p>
+              <p>$m = \frac{y_2-y_1}{x_2-x_1}$</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- Coordinate Circles -->
+      <div id="coordinate-circles" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Circles</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Equation</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Standard: $(x-h)^2 + (y-k)^2 = r^2$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find center and radius of $x^2 + y^2 - 4x + 6y - 12 = 0$</p>
+            <p>Center: $(2, -3)$, Radius: $5$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Coordinate Parabola, Ellipse, Hyperbola -->
+      <div id="coordinate-parabola" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Parabola</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Equation</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Standard: $y^2 = 4ax$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find vertex of $y^2 = 8x$</p>
+            <p>Vertex: $(0,0)$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- coordinate-ellipse  -->
+      <div id="coordinate-ellipse" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Ellipse</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Equation</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Standard: $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find foci of $\frac{x^2}{9} + \frac{y^2}{4} = 1$</p>
+            <p>Foci: $(\pm \sqrt{5}, 0)$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- coordinate-hyperbola  -->
+      <div id="coordinate-hyperbola" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Hyperbola</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Equation</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Standard: $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find vertices of $\frac{x^2}{16} - \frac{y^2}{9} = 1$</p>
+            <p>Vertices: $(\pm 4, 0)$</p>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- Vectors Content -->
+      <div id="vectors-vectors" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Vectors</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Vector Operations</h3>
+          <div class="space-y-3">
+            <div class="bg-blue-50 p-3 rounded">
+              <p class="font-semibold">Dot Product:</p>
+              <p>$\vec{a} \cdot \vec{b} = |\vec{a}||\vec{b}|\cos\theta$</p>
+            </div>
+            <div class="bg-blue-50 p-3 rounded">
+              <p class="font-semibold">Cross Product:</p>
+              <p>$|\vec{a} \times \vec{b}| = |\vec{a}||\vec{b}|\sin\theta$</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Probability Content -->
+      <div id="probability-probability" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Probability</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Basic Formulas</h3>
+          <div class="space-y-3">
+            <div class="bg-blue-50 p-3 rounded">
+              <p>$P(A \cup B) = P(A) + P(B) - P(A \cap B)$</p>
+            </div>
+            <div class="bg-blue-50 p-3 rounded">
+              <p>$P(A|B) = \frac{P(A \cap B)}{P(B)}$</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+
+      <!-- permutation and combination -->
+      <div id="algebra-permutation" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Permutation & Combination</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Formulas</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Permutations: $nPr = \frac{n!}{(n-r)!}$</p>
+            <p>Combinations: $nCr = \frac{n!}{r!(n-r)!}$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>How many ways can 3 books be selected from 5?</p>
+            <p>$5C3 = 10$</p>
+          </div>
+        </section>
+      </div>
+
+
+
+
+
+      <!-- Vectors 3d -->
+      <div id="vectors-3d" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">3D Geometry</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Key Concepts</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Equation of line: $\frac{x-x_1}{l} = \frac{y-y_1}{m} = \frac{z-z_1}{n}$</p>
+            <p>Equation of plane: $ax + by + cz = d$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find distance between $(1,2,3)$ and $(4,5,6)$</p>
+            <p>$= \sqrt{(4-1)^2 + (5-2)^2 + (6-3)^2} = \sqrt{27} = 3\sqrt{3}$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- direction cosines and ratios -->
+      <div id="vectors-direction" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Direction Cosines & Ratios</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Definitions</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>Direction cosines: $\cos\alpha, \cos\beta, \cos\gamma$</p>
+            <p>Direction ratios: $a, b, c$</p>
+            <p>Relation: $\frac{a}{\cos\alpha} = \frac{b}{\cos\beta} = \frac{c}{\cos\gamma}$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>If direction ratios are $2,3,6$, find direction cosines.</p>
+            <p>$\sqrt{2^2+3^2+6^2}=7$, so $\cos\alpha=\frac{2}{7}$, $\cos\beta=\frac{3}{7}$, $\cos\gamma=\frac{6}{7}$
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- statistics -->
+      <div id="probability-statistics" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Statistics</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Key Formulas</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Mean: $\bar{x} = \frac{\sum x_i}{n}$</p>
+            <p>Variance: $\sigma^2 = \frac{\sum (x_i - \bar{x})^2}{n}$</p>
+            <p>Standard deviation: $\sigma = \sqrt{\sigma^2}$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find mean of $2,4,6,8$</p>
+            <p>$\bar{x} = \frac{2+4+6+8}{4} = 5$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- random variables -->
+      <div id="probability-random" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Random Variables</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Definition</h3>
+          <div class="bg-yellow-50 p-4 rounded mb-4">
+            <p>A random variable assigns a real number to each outcome in a sample space.</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>If $X$ is number on a die, possible values: $1,2,3,4,5,6$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- probability distributions -->
+      <div id="probability-distributions" class="topic-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Probability Distributions</h2>
+        <section class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Types</h3>
+          <div class="bg-blue-50 p-4 rounded mb-4">
+            <p>Binomial, Poisson, Normal distributions</p>
+            <p>Binomial: $P(X=k) = nCk p^k q^{n-k}$</p>
+          </div>
+          <h4 class="font-semibold mt-4 mb-2">JEE Example</h4>
+          <div class="bg-green-50 p-4 rounded mb-4">
+            <p>Find probability of 2 heads in 3 tosses of a coin.</p>
+            <p>$P(X=2) = 3C2 \left(\frac{1}{2}\right)^2 \left(\frac{1}{2}\right)^1 = 3 \times \frac{1}{4} \times
+              \frac{1}{2} = \frac{3}{8}$</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Default message -->
+      <div id="default-message">
+        <p class="text-lg text-gray-600">Select a topic from above to view complete study material with theory,
+          formulas, and solved examples.</p>
+      </div>
     </div>
   </section>
 
@@ -191,9 +4304,12 @@
         <div>
           <h3 class="text-xl font-bold mb-4">Follow Us</h3>
           <div class="space-y-2 text-sm">
-            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">YouTube</a>
-            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">Telegram</a>
-            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">WhatsApp</a>
           </div>
         </div>
       </div>
@@ -204,154 +4320,150 @@
   </footer>
 
 
-  <!-- JS -->
   <script>
-    // Map subjects → topics (file + free/paid)
+
+
     const subjects = {
       algebra: [
-        { title: "Polynomials", file: "math/algebra/polynomials.html", type: "free" },
-        { title: "Binomial Theorem", file: "math/algebra/binomial.html", type: "paid" },
-        { title: "Quadratic Equations", file: "math/algebra/quadratic.html", type: "free" },
-        { title: "Sequences & Series", file: "math/algebra/sequences.html", type: "paid" },
-        { title: "Complex Numbers", file: "math/algebra/complex.html", type: "free" },
-        { title: "Matrices & Determinants", file: "math/algebra/matrices.html", type: "paid" },
-        { title: "Permutations & Combinations", file: "math/algebra/pc.html", type: "free" }
+        { title: "Polynomials", contentId: "algebra-polynomials", type: "free" },
+        { title: "Quadratic Equations", contentId: "algebra-quadratic", type: "free" },
+        { title: "Logarithms", contentId: "algebra-logarithms", type: "free" },
+        { title: "Theory of Equations", contentId: "algebra-theory", type: "paid" },
+        { title: "Permutation & Combination", contentId: "algebra-permutation", type: "paid" },
+        { title: "Binomial Theorem", contentId: "algebra-binomial", type: "paid" },
+        { title: "Sequences & Series", contentId: "algebra-sequences", type: "paid" },
+        { title: "Complex Numbers", contentId: "algebra-complex", type: "free" },
+        { title: "Matrices & Determinants", contentId: "algebra-matrices", type: "paid" }
       ],
-
       calculus: [
-        { title: "Limits", file: "math/calculus/limits.html", type: "free" },
-        { title: "Continuity & Differentiability", file: "math/calculus/continuity.html", type: "free" },
-        { title: "Application of Derivatives", file: "math/calculus/aod.html", type: "free" },
-        { title: "Integration", file: "math/calculus/integration.html", type: "paid" },
-        { title: "Definite Integrals", file: "math/calculus/definite.html", type: "free" },
-        { title: "Differential Equations", file: "math/calculus/de.html", type: "paid" }
+        { title: "Limits", contentId: "calculus-limits", type: "free" },
+        { title: "Continuity & Differentiability", contentId: "calculus-continuity", type: "paid" },
+        { title: "Integration", contentId: "calculus-integration", type: "free" },
+        { title: "Application of Derivatives", contentId: "calculus-application", type: "paid" },
+        { title: "Definite Integrals", contentId: "calculus-definite", type: "paid" },
+        { title: "Differential Equations", contentId: "calculus-differential", type: "paid" },
+        { title: "Area under Curve", contentId: "calculus-area", type: "paid" }
       ],
-
       trigonometry: [
-        { title: "Trigonometric Ratios & Identities", file: "math/trigonometry/ratios.html", type: "free" },
-        { title: "Trigonometric Equations", file: "math/trigonometry/equations.html", type: "paid" },
-        { title: "Inverse Trigonometric Functions", file: "math/trigonometry/inverse.html", type: "free" },
-        { title: "Properties of Triangle", file: "math/trigonometry/triangle.html", type: "paid" },
-        { title: "Heights & Distances", file: "math/trigonometry/heights.html", type: "free" }
+        { title: "Trigonometric Ratios & Identities", contentId: "trigonometry-ratios", type: "free" },
+        { title: "Trigonometric Equations", contentId: "trigonometry-equations", type: "paid" },
+        { title: "Inverse Trigonometric Functions", contentId: "trigonometry-inverse", type: "free" },
+        { title: "Properties of Triangle", contentId: "trigonometry-properties", type: "paid" },
+        { title: "Heights & Distances", contentId: "trigonometry-heights", type: "free" }
       ],
-
       coordinate: [
-        { title: "Straight Lines", file: "math/coordinate/lines.html", type: "free" },
-        { title: "Circles", file: "math/coordinate/circles.html", type: "paid" },
-        { title: "Parabola", file: "math/coordinate/parabola.html", type: "free" },
-        { title: "Ellipse", file: "math/coordinate/ellipse.html", type: "paid" },
-        { title: "Hyperbola", file: "math/coordinate/hyperbola.html", type: "free" }
+        { title: "Straight Lines", contentId: "coordinate-lines", type: "free" },
+        { title: "Circles", contentId: "coordinate-circles", type: "paid" },
+        { title: "Parabola", contentId: "coordinate-parabola", type: "free" },
+        { title: "Ellipse", contentId: "coordinate-ellipse", type: "paid" },
+        { title: "Hyperbola", contentId: "coordinate-hyperbola", type: "paid" }
       ],
-
       vectors: [
-        { title: "Vectors", file: "math/vectors/vectors.html", type: "free" },
-        { title: "3D Geometry", file: "math/vectors/3d.html", type: "paid" }
+        { title: "Vectors", contentId: "vectors-vectors", type: "free" },
+        { title: "Direction Cosines & Ratios", contentId: "vectors-direction", type: "free" },
+        { title: "3D Geometry", contentId: "vectors-3d", type: "paid" }
       ],
-
       probability: [
-        { title: "Probability", file: "math/probability/probability.html", type: "free" },
-        { title: "Statistics", file: "math/probability/statistics.html", type: "paid" }
+        { title: "Probability", contentId: "probability-probability", type: "free" },
+        { title: "Statistics", contentId: "probability-statistics", type: "paid" },
+        { title: "Random Variables", contentId: "probability-random", type: "paid" },
+        { title: "Probability Distributions", contentId: "probability-distributions", type: "paid" }
       ]
     };
 
+
+
+    let currentSubject = 'algebra';
+
     const tabs = document.querySelectorAll(".tab-btn");
     const topicCards = document.getElementById("topicCards");
-    const topicContent = document.getElementById("topicContent");
 
-    // Load algebra by default
-    window.addEventListener('DOMContentLoaded', () => {
-      loadTopicCards('algebra');
-    });
-    
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("bg-yellow-300", "font-semibold"));
-        tab.classList.add("bg-yellow-300", "font-semibold");
-        const subject = tab.dataset.subject;
-        loadTopicCards(subject);
+        tabs.forEach(t => {
+          t.classList.remove("bg-yellow-300", "font-semibold", "active");
+          t.classList.add("hover:bg-yellow-200");
+        });
+        tab.classList.add("bg-yellow-300", "font-semibold", "active");
+        tab.classList.remove("hover:bg-yellow-200");
+        currentSubject = tab.dataset.subject;
+        loadTopicCards(currentSubject);
       });
     });
 
     function loadTopicCards(subject) {
       const topics = subjects[subject];
-      if (!topics) return;
-      
-      topicContent.innerHTML = `<p class="text-lg text-gray-600">Select a topic to view complete study material with theory, formulas, and solved examples.</p>`;
-
       topicCards.innerHTML = "";
       topics.forEach(topic => {
         const card = document.createElement("div");
         card.className = "p-6 rounded-lg shadow-lg bg-white border-2 border-yellow-200 cursor-pointer hover:shadow-xl hover:border-yellow-400 transition";
         card.innerHTML = `
-          <h3 class="font-bold text-2xl mb-2">${topic.title}</h3>
+          <h3 class="font-bold text-xl mb-2">${topic.title}</h3>
           <div class="flex justify-between items-center">
             <span class="text-sm text-gray-600">Click to learn</span>
             ${topic.type === "paid" ? '<span class="text-sm bg-yellow-400 px-3 py-1 rounded-full font-semibold">Premium</span>' : '<span class="text-sm bg-green-400 px-3 py-1 rounded-full font-semibold text-white">Free</span>'}
           </div>
         `;
-        card.addEventListener("click", () => {
-          loadTopicContent(topic);
-        });
+        card.addEventListener("click", () => showContent(topic));
         topicCards.appendChild(card);
       });
     }
 
-    async function loadTopicContent(topic) {
-      console.log(`[Load] Loading topic content: ${topic.title}, type=${topic.type}`);
-      topicContent.innerHTML = `<p>Loading...</p>`;
-      try {
-        // If topic is paid, check auth
-        if (topic.type === "paid" && !window.currentUser) {
-          console.log(`[Auth] User not logged in. Blocking paid content: ${topic.title}`);
-          topicContent.innerHTML = `
-        <div class="p-6 bg-yellow-100 rounded shadow text-center">
-          <h3 class="text-xl font-bold mb-4">${topic.title}</h3>
-          <p class="mb-4">🔒 This is paid content. Please login to access.</p>
-          <button onclick="loginPrompt()" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400">Login</button>
-          <button onclick="registerPrompt()" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400 ml-2">Register</button>
-        </div>
-      `;
-          return;
-        }
+    function showContent(topic) {
+      // Hide all topic-content sections and default message
+      document.querySelectorAll('.topic-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById('default-message')?.classList.add('hidden');
+      // Hide any previous coming soon message
+      let comingSoon = document.getElementById('coming-soon-message');
+      if (comingSoon) comingSoon.remove();
 
-        const res = await fetch(topic.file);
-        let html = await res.text();
-        console.log(`[Fetch] File loaded for ${topic.title}: ${topic.file}`);
-
-        // Show locked message for logged-in users (simulate unpaid)
-        if (topic.type === "paid" && window.currentUser) {
-          console.log(`[Auth] Logged in as ${window.currentUser.email}, hasPaid=${window.userIsPaid}`);
-          if (!window.userIsPaid) {
-            html = "🔒 You are logged in, but this content requires payment.";
+      if (topic.type === "paid" && !window.currentUser) {
+        document.querySelectorAll('.topic-content').forEach(el => el.classList.add('hidden'));
+        document.getElementById('default-message')?.classList.add('hidden');
+        // Show premium login prompt
+        document.getElementById('topicContent').innerHTML += `
+      <div id="coming-soon-message" class="p-8 bg-yellow-100 rounded-lg shadow text-center">
+        <h3 class="text-2xl font-bold mb-4">${topic.title}</h3>
+        <p class="mb-6">🔒 This is premium content. Please login to access.</p>
+        <button onclick="loginPrompt()" class="px-6 py-3 bg-yellow-400 rounded-lg hover:bg-yellow-500 font-semibold">Login</button>
+      </div>
+    `;
+        return;
+      }
+      if (topic.contentId) {
+        // Show the relevant content section
+        const content = document.getElementById(topic.contentId);
+        if (content) {
+          content.classList.remove('hidden');
+          if (typeof renderMathInElement === "function") {
+            renderMathInElement(content, {
+              delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+              ]
+            });
           }
         }
-
-        topicContent.innerHTML =
-          `<h3 class="text-xl text-center font-bold mb-4">${topic.title} 
-         ${topic.type === "paid" ? '<span class="ml-2 text-sm bg-yellow-400 px-2 py-1 rounded">Paid</span>' : ''}
-       </h3>` + html;
-
-        if (typeof renderMathInElement === "function") {
-          console.log(`[MathJax] Rendering math in ${topic.title}`);
-          renderMathInElement(topicContent, {
-            delimiters: [
-              { left: "$$", right: "$$", display: true },
-              { left: "\\[", right: "\\]", display: true },
-              { left: "$", right: "$", display: false },
-              { left: "\\(", right: "\\)", display: false }
-            ]
-          });
-        } else {
-          console.warn("[Warn] renderMathInElement not available");
-        }
-      } catch (err) {
-        console.error(`[Error] Loading topic content failed: ${err}`);
-        topicContent.innerHTML = `<p>Error loading content.</p>`;
+      } else {
+        // Show "coming soon" message without removing other content
+        document.getElementById('topicContent').innerHTML += `
+      <div id="coming-soon-message" class="p-8 bg-yellow-100 rounded-lg shadow text-center">
+        <h2 class="text-2xl font-bold mb-4">${topic.title}</h2>
+        <p class="text-gray-600">Content coming soon...</p>
+      </div>
+    `;
       }
     }
 
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      loadTopicCards('algebra');
+    });
 
-
+    // Auth functions
+    window.loginPrompt = () => alert("Login functionality");
+    window.registerPrompt = () => alert("Register functionality");
+    window.logoutPrompt = () => alert("Logout functionality");
   </script>
 
   <script type="module">
