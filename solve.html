@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Q&A Viewer - Soft Rose</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<style>
+  .katex { margin: 0 0.25rem; }
+  .fade { transition: opacity 0.2s ease-in-out; }
+</style>
+</head>
+<body class="bg-rose-50 min-h-screen flex items-center justify-center p-6">
+
+<div class="w-full max-w-5xl bg-white border border-rose-200 rounded-2xl shadow-lg p-8 space-y-6">
+
+  <!-- Question -->
+  <div id="question" class="text-center text-rose-700 text-2xl font-semibold"></div>
+
+  <!-- Solution -->
+  <div id="solutionArea" class="bg-fuchsia-50 text-fuchsia-800 p-6 rounded-xl min-h-[220px] text-lg leading-relaxed whitespace-pre-wrap fade">
+    Click “Next” to start the solution.
+  </div>
+
+  <!-- Navigation -->
+  <div class="flex justify-between items-center">
+    <button id="prevBtn" class="px-4 py-2 bg-rose-400 text-white rounded-md hover:bg-rose-500 disabled:opacity-50" disabled>Previous</button>
+    <button id="nextBtn" class="px-4 py-2 bg-fuchsia-500 text-white rounded-md hover:bg-fuchsia-600">Next</button>
+  </div>
+
+  <!-- Prompt Box -->
+  <div id="promptPanel" class="bg-pink-50 border border-pink-200 rounded-xl p-4 space-y-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <label class="text-sm text-gray-700">Text color:</label>
+        <select id="colorSelect" class="border border-pink-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300">
+          <option value="text-teal-800">teal</option>
+          <option value="text-purple-700">Purple</option>
+          <option value="text-red-700">red</option>
+        </select>
+        <button id="clearNotes" class="px-3 py-1 bg-pink-400 text-white rounded-md hover:bg-pink-500 text-sm">Clear</button>
+      </div>
+    </div>
+
+    <textarea id="promptInput" rows="6" placeholder="Write your notes here..." class="w-full text-2xl text-center justify-center p-3 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-300 text-gray-800"></textarea>
+  </div>
+
+</div>
+
+<script>
+const data = {
+  question: "If $\\alpha$ and $\\beta$ are roots of $$x^2 - 4x + 3 = 0$$, find the value of $$\\sin^2\\alpha + \\cos^2\\beta$$.",
+  steps: [
+    "Given quadratic equation: $$x^2 - 4x + 3 = 0$$ with roots $\\alpha$ and $\\beta$.",
+    "Sum of roots: $$\\alpha + \\beta = 4$$, Product of roots: $$\\alpha \\beta = 3$$.",
+    "We want: $$\\sin^2\\alpha + \\cos^2\\beta = 1 - \\cos^2\\alpha + \\cos^2\\beta = 1 + (\\cos^2\\beta - \\cos^2\\alpha)$$",
+    "Use difference of squares: $$\\cos^2\\beta - \\cos^2\\alpha = (\\cos\\beta - \\cos\\alpha)(\\cos\\beta + \\cos\\alpha)$$",
+    "Use trig formulas: \\\\ " +
+    "$$\\cos A - \\cos B = -2 \\sin\\frac{A+B}{2} \\sin\\frac{A-B}{2}$$ \\\\ " +
+    "$$\\cos A + \\cos B = 2 \\cos\\frac{A+B}{2} \\cos\\frac{A-B}{2}$$",
+    "Combine: \\\\ " +
+    "$$(\\cos\\beta - \\cos\\alpha)(\\cos\\beta + \\cos\\alpha) = (-2 \\sin\\frac{\\alpha+\\beta}{2} \\sin\\frac{\\beta-\\alpha}{2})" +
+    "(2 \\cos\\frac{\\alpha+\\beta}{2} \\cos\\frac{\\beta-\\alpha}{2})$$",
+    "Simplify using $2\\sin x\\cos x = \\sin 2x$: \\\\ " +
+    "$$-4 \\sin\\frac{\\alpha+\\beta}{2} \\cos\\frac{\\alpha+\\beta}{2} \\sin\\frac{\\beta-\\alpha}{2} \\cos\\frac{\\beta-\\alpha}{2} = -\\sin(\\alpha+\\beta) \\sin(\\beta-\\alpha)$$",
+    "Substitute values: \\\\ " +
+    "$$\\alpha + \\beta = 4, \\quad \\beta - \\alpha = \\sqrt{(\\alpha+\\beta)^2 - 4\\alpha\\beta} = \\sqrt{16 - 12} = 2$$",
+    "So: \\\\ $$\\cos^2\\beta - \\cos^2\\alpha = -\\sin 4 \\cdot \\sin 2$$",
+    "Finally: \\\\ $$\\sin^2\\alpha + \\cos^2\\beta = 1 + (\\cos^2\\beta - \\cos^2\\alpha) = 1 - \\sin 4 \\cdot \\sin 2$$",
+    "Numeric approximation: \\\\ $$\\sin^2\\alpha + \\cos^2\\beta \\approx 1 - (0.7568 \\cdot 0.9093) = 1 - 0.6875 \\approx 0.3125$$"
+  ]
+}
+
+
+const q = document.getElementById("question")
+const s = document.getElementById("solutionArea")
+const next = document.getElementById("nextBtn")
+const prev = document.getElementById("prevBtn")
+const promptInput = document.getElementById("promptInput")
+const colorSelect = document.getElementById("colorSelect")
+const clearNotes = document.getElementById("clearNotes")
+
+let step = -1
+
+function renderMath(text) {
+  const inline = /\$([^\$]+)\$/g
+  const block = /\$\$([\s\S]+?)\$\$/g
+  return text
+    .replace(block, (_, exp) => katex.renderToString(exp, { displayMode: true }))
+    .replace(inline, (_, exp) => katex.renderToString(exp, { displayMode: false }))
+}
+
+function showQuestion() {
+  q.innerHTML = renderMath(data.question)
+}
+
+function showStep(index) {
+  if (index < 0 || index >= data.steps.length) return
+  step = index
+  s.classList.add("opacity-0")
+  setTimeout(() => {
+    s.innerHTML = renderMath(data.steps[step])
+    s.classList.remove("opacity-0")
+  }, 150)
+  prev.disabled = step === 0
+  next.disabled = step === data.steps.length - 1
+}
+
+next.addEventListener("click", () => {
+  if (step < data.steps.length - 1) showStep(step + 1)
+})
+prev.addEventListener("click", () => {
+  if (step > 0) showStep(step - 1)
+})
+
+colorSelect.addEventListener("change", () => {
+  promptInput.className = `w-full text-2xl text-center justify-center p-3 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-300 ${colorSelect.value}`
+})
+
+clearNotes.addEventListener("click", () => {
+  promptInput.value = ""
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+  showQuestion()
+})
+</script>
+
+</body>
+</html>
