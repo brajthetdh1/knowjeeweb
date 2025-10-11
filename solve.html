@@ -53,29 +53,37 @@
 
 <script>
  const data = {
-  question: "Find the equation of the tangent to the parabola $y^2 = 4ax$ which passes through the point $(x_1, y_1)$ lying outside the parabola, and determine the condition for tangency.",
+  question: "A block of mass $m$ is placed on a rough inclined plane making an angle $\\theta$ with the horizontal. A horizontal force $F$ is applied on the block so that it moves up the incline with constant velocity. Find the magnitude of $F$ and the coefficient of friction $\\mu$ between the block and the incline.",
   steps: [
-    "The equation of the given parabola is $$y^2 = 4ax.$$ Its standard form corresponds to a parabola opening to the right with vertex at the origin $(0,0)$ and focus $(a,0)$.",
-    "Equation of a general line passing through $(x_1, y_1)$ is $$y - y_1 = m(x - x_1),$$ where $m$ is the slope of the line.",
-    "To find the tangent condition, substitute $y = m(x - x_1) + y_1$ into the parabola $y^2 = 4ax$.",
-    "Substitute and expand: \\\\ " +
-    "$$(m(x - x_1) + y_1)^2 = 4ax.$$",
-    "Simplify the expression: \\\\ " +
-    "$$m^2(x - x_1)^2 + 2m y_1(x - x_1) + y_1^2 - 4ax = 0.$$",
-    "Expand the square and rearrange as a quadratic in $x$: \\\\ " +
-    "$$(m^2)x^2 + 2x(m y_1 - m^2 x_1 - 2a) + (m^2 x_1^2 - 2m y_1 x_1 + y_1^2) = 0.$$",
-    "For the line to be a tangent to the parabola, this quadratic in $x$ must have exactly one solution (i.e., discriminant $=0$).",
-    "Compute discriminant $D$: \\\\ " +
-    "$$D = [2(m y_1 - m^2 x_1 - 2a)]^2 - 4(m^2)(m^2 x_1^2 - 2m y_1 x_1 + y_1^2).$$",
-    "Simplify the discriminant step by step: \\\\ " +
-    "$$D = 4[(m y_1 - m^2 x_1 - 2a)^2 - m^2(m^2 x_1^2 - 2m y_1 x_1 + y_1^2)].$$",
-    "After simplification, the condition for tangency reduces to: \\\\ " +
-    "$$y_1 = m x_1 + \\frac{a}{m}.$$",
-    "Thus, the equation of the tangent to the parabola is given by replacing $(x_1, y_1)$ with general $(x, y)$: \\\\ " +
-    "$$y = m x + \\frac{a}{m}.$$",
-    "Hence, the final answer is: \\\\ " +
-    "$$\\boxed{y = m x + \\frac{a}{m}}$$ \\\\ " +
-    "where $m$ satisfies the tangency condition $$y_1 = m x_1 + \\frac{a}{m}.$$"
+    "The block moves **up the incline with constant velocity**, so its acceleration is zero. Hence, the net force along the incline is zero.",
+    "Let the weight of the block be $mg$. The forces acting on the block are: \\\\ " +
+    "- Gravitational force: $mg$ (vertically downward) \\\\ " +
+    "- Normal reaction: $N$ (perpendicular to incline) \\\\ " +
+    "- Frictional force: $f = \\mu N$ (acting down the incline, opposing motion) \\\\ " +
+    "- Applied horizontal force: $F$ (at angle $\\theta$ with the plane).",
+    "Resolve the horizontal force $F$ into components: \\\\ " +
+    "- Along the incline: $F\\cos\\theta$ (up the plane) \\\\ " +
+    "- Perpendicular to the incline: $F\\sin\\theta$ (toward the plane).",
+    "Balance forces perpendicular to the incline (no motion perpendicular): \\\\ " +
+    "$$N = mg\\cos\\theta + F\\sin\\theta.$$",
+    "Now, balance forces **along** the incline. Since the block moves with constant velocity, \\\\ " +
+    "$$F\\cos\\theta = mg\\sin\\theta + f.$$",
+    "Substitute $f = \\mu N$ into the equation: \\\\ " +
+    "$$F\\cos\\theta = mg\\sin\\theta + \\mu (mg\\cos\\theta + F\\sin\\theta).$$",
+    "Rearrange terms to isolate $F$: \\\\ " +
+    "$$F(\\cos\\theta - \\mu\\sin\\theta) = mg(\\sin\\theta + \\mu\\cos\\theta).$$",
+    "Hence, the required horizontal force is: \\\\ " +
+    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta + \\mu\\cos\\theta)}{\\cos\\theta - \\mu\\sin\\theta}}.$$",
+    "If $F$ is adjusted such that the block moves with **constant velocity down the incline**, the equation becomes: \\\\ " +
+    "$$F\\cos\\theta + \\mu(mg\\cos\\theta + F\\sin\\theta) = mg\\sin\\theta.$$",
+    "Simplifying gives: \\\\ " +
+    "$$F(\\cos\\theta + \\mu\\sin\\theta) = mg(\\sin\\theta - \\mu\\cos\\theta).$$",
+    "Hence, for downward constant velocity: \\\\ " +
+    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta - \\mu\\cos\\theta)}{\\cos\\theta + \\mu\\sin\\theta}}.$$",
+    "If the motion is to remain constant (neither accelerating upward nor downward), friction must adjust to balance net forces, and $F$ must lie between the two values found above.",
+    "Thus, the complete result: \\\\ " +
+    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta + \\mu\\cos\\theta)}{\\cos\\theta - \\mu\\sin\\theta}} \\text{ for upward motion,}$$ \\\\ " +
+    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta - \\mu\\cos\\theta)}{\\cos\\theta + \\mu\\sin\\theta}} \\text{ for downward motion.}$$"
   ]
 }
 
