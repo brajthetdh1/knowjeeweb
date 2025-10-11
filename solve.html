@@ -53,37 +53,28 @@
 
 <script>
  const data = {
-  question: "A block of mass $m$ is placed on a rough inclined plane making an angle $\\theta$ with the horizontal. A horizontal force $F$ is applied on the block so that it moves up the incline with constant velocity. Find the magnitude of $F$ and the coefficient of friction $\\mu$ between the block and the incline.",
+  question: "A light inextensible string is wrapped around a solid cylindrical pulley of radius $R$ and moment of inertia $I$ about its axis. Two masses $m_1$ and $m_2$ ($m_1>m_2$) hang from the two ends of the string and are released from rest. Assuming the string does not slip on the pulley, find (a) the linear acceleration $a$ of the masses, (b) the angular acceleration $\\alpha$ of the pulley, (c) the tensions $T_1$ and $T_2$ in the two sides of the string, (d) the speed $v$ of the masses after $m_1$ descends a distance $h$, and (e) the condition on $m_1,m_2,I,R$ for the no-slip assumption to be valid.",
   steps: [
-    "The block moves **up the incline with constant velocity**, so its acceleration is zero. Hence, the net force along the incline is zero.",
-    "Let the weight of the block be $mg$. The forces acting on the block are: \\\\ " +
-    "- Gravitational force: $mg$ (vertically downward) \\\\ " +
-    "- Normal reaction: $N$ (perpendicular to incline) \\\\ " +
-    "- Frictional force: $f = \\mu N$ (acting down the incline, opposing motion) \\\\ " +
-    "- Applied horizontal force: $F$ (at angle $\\theta$ with the plane).",
-    "Resolve the horizontal force $F$ into components: \\\\ " +
-    "- Along the incline: $F\\cos\\theta$ (up the plane) \\\\ " +
-    "- Perpendicular to the incline: $F\\sin\\theta$ (toward the plane).",
-    "Balance forces perpendicular to the incline (no motion perpendicular): \\\\ " +
-    "$$N = mg\\cos\\theta + F\\sin\\theta.$$",
-    "Now, balance forces **along** the incline. Since the block moves with constant velocity, \\\\ " +
-    "$$F\\cos\\theta = mg\\sin\\theta + f.$$",
-    "Substitute $f = \\mu N$ into the equation: \\\\ " +
-    "$$F\\cos\\theta = mg\\sin\\theta + \\mu (mg\\cos\\theta + F\\sin\\theta).$$",
-    "Rearrange terms to isolate $F$: \\\\ " +
-    "$$F(\\cos\\theta - \\mu\\sin\\theta) = mg(\\sin\\theta + \\mu\\cos\\theta).$$",
-    "Hence, the required horizontal force is: \\\\ " +
-    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta + \\mu\\cos\\theta)}{\\cos\\theta - \\mu\\sin\\theta}}.$$",
-    "If $F$ is adjusted such that the block moves with **constant velocity down the incline**, the equation becomes: \\\\ " +
-    "$$F\\cos\\theta + \\mu(mg\\cos\\theta + F\\sin\\theta) = mg\\sin\\theta.$$",
-    "Simplifying gives: \\\\ " +
-    "$$F(\\cos\\theta + \\mu\\sin\\theta) = mg(\\sin\\theta - \\mu\\cos\\theta).$$",
-    "Hence, for downward constant velocity: \\\\ " +
-    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta - \\mu\\cos\\theta)}{\\cos\\theta + \\mu\\sin\\theta}}.$$",
-    "If the motion is to remain constant (neither accelerating upward nor downward), friction must adjust to balance net forces, and $F$ must lie between the two values found above.",
-    "Thus, the complete result: \\\\ " +
-    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta + \\mu\\cos\\theta)}{\\cos\\theta - \\mu\\sin\\theta}} \\text{ for upward motion,}$$ \\\\ " +
-    "$$\\boxed{F = \\dfrac{mg(\\sin\\theta - \\mu\\cos\\theta)}{\\cos\\theta + \\mu\\sin\\theta}} \\text{ for downward motion.}$$"
+    "Draw free-body diagrams. For mass $m_1$ (descending) the forces along vertical: $m_1 g$ (down) and $T_1$ (up). For mass $m_2$ (ascending): $T_2$ (up) and $m_2 g$ (down). On the pulley the net torque is due to $T_1$ and $T_2$.",
+    "Write Newton's second law for translation of each mass (taking downward positive for $m_1$ and upward positive for $m_2$): \\\\ $$m_1 a = m_1 g - T_1, \\qquad m_2 a = T_2 - m_2 g.$$ \\\\ Here $a$ is the magnitude of linear acceleration of each mass (same for both since string is inextensible).",
+    "Write rotational equation for the pulley. Taking counterclockwise as positive (choose sign consistent with motion): the net torque from tensions is $$\\tau = (T_1 - T_2)R$$ (since $T_1$ tends to rotate pulley one way, $T_2$ the opposite). Using $\\tau = I\\alpha$, we get: \\\\ $$ (T_1 - T_2)R = I\\alpha. $$",
+    "Use the no-slip (pure rolling between string and pulley) condition that relates linear acceleration and angular acceleration: \\\\ $$ a = \\alpha R \\quad\\Rightarrow\\quad \\alpha = a/R.$$",
+    "Substitute $\\alpha$ into the rotational equation to eliminate $\\alpha$: \\\\ $$ (T_1 - T_2)R = I \\frac{a}{R} \\quad\\Rightarrow\\quad T_1 - T_2 = \\frac{I}{R^2}a. $$",
+    "Now we have three linear equations in unknowns $T_1,T_2,a$: \\\\ $$m_1 a = m_1 g - T_1, \\qquad m_2 a = T_2 - m_2 g, \\qquad T_1 - T_2 = \\frac{I}{R^2}a.$$",
+    "Eliminate $T_1$ and $T_2$. From the first two: $$T_1 = m_1 g - m_1 a, \\qquad T_2 = m_2 g + m_2 a.$$ Substitute into the difference equation: \\\\ $$ (m_1 g - m_1 a) - (m_2 g + m_2 a) = \\frac{I}{R^2}a. $$",
+    "Collect terms and solve for $a$: \\\\ $$ m_1 g - m_2 g - (m_1 + m_2)a = \\frac{I}{R^2}a. $$ \\\\ Rearranged: $$ (m_1 - m_2)g = a\\left(m_1 + m_2 + \\frac{I}{R^2}\\right). $$",
+    "Therefore the linear acceleration is: \\\\ $$\\boxed{\\;a = \\dfrac{(m_1 - m_2)g}{\\,m_1 + m_2 + I/R^2\\;}}.$$",
+    "Angular acceleration of the pulley follows from $\\alpha = a/R$: \\\\ $$\\boxed{\\;\\alpha = \\dfrac{(m_1 - m_2)g}{R\\left(m_1 + m_2 + I/R^2\\right)}\\;}. $$",
+    "Find tensions using $T_1 = m_1 g - m_1 a$ and $T_2 = m_2 g + m_2 a$. Substitute $a$: \\\\ $$T_1 = m_1 g - m_1\\cdot\\dfrac{(m_1 - m_2)g}{m_1 + m_2 + I/R^2} = g\\left( m_1 - \\dfrac{m_1(m_1 - m_2)}{m_1 + m_2 + I/R^2} \\right).$$ \\\\ $$T_2 = m_2 g + m_2\\cdot\\dfrac{(m_1 - m_2)g}{m_1 + m_2 + I/R^2} = g\\left( m_2 + \\dfrac{m_2(m_1 - m_2)}{m_1 + m_2 + I/R^2} \\right).$$",
+    "These can be simplified to cleaner forms by combining fractions: \\\\ $$T_1 = g\\cdot\\dfrac{m_1(m_1 + m_2 + I/R^2) - m_1(m_1 - m_2)}{m_1 + m_2 + I/R^2} = g\\cdot\\dfrac{m_1(2m_2 + I/R^2)}{m_1 + m_2 + I/R^2},$$ \\\\ $$T_2 = g\\cdot\\dfrac{m_2(m_1 + m_2 + I/R^2) + m_2(m_1 - m_2)}{m_1 + m_2 + I/R^2} = g\\cdot\\dfrac{m_2(2m_1 + I/R^2)}{m_1 + m_2 + I/R^2}.$$",
+    "Energy method check (optional): if $m_1$ descends by $h$, work done by gravity is $(m_1 - m_2)gh$ and final kinetic energy (both translational and rotational) is $$K = \\tfrac{1}{2}m_1 v^2 + \\tfrac{1}{2}m_2 v^2 + \\tfrac{1}{2}I\\omega^2.$$ Using $\\omega = v/R$, we get $$K = \\tfrac{1}{2}(m_1 + m_2 + I/R^2)v^2.$$ Equating $(m_1 - m_2)gh = K$ gives the same result for $v$ below.",
+    "Hence the speed $v$ after descent $h$ is (from energy conservation): \\\\ $$\\tfrac{1}{2}(m_1 + m_2 + I/R^2)v^2 = (m_1 - m_2)gh \\quad\\Rightarrow\\quad v = \\sqrt{\\dfrac{2(m_1 - m_2)gh}{m_1 + m_2 + I/R^2}}.$$ \\\\ So $$\\boxed{\\;v = \\sqrt{\\dfrac{2(m_1 - m_2)gh}{m_1 + m_2 + I/R^2}}\\; }.$$",
+    "No-slip (static friction) validity: the string transmits tensions $T_1,T_2$ producing torque $(T_1-T_2)R$ on the pulley. For no slip the string exerts static frictional force at the contact sufficient to supply this torque. If the string–pulley contact can support a maximum frictional force $f_{\\max}$, then the difference in tensions must satisfy $T_1 - T_2 \\le f_{\\max}$. In many ideal problems the string is assumed massless and does not slip if the material/connection allows arbitrary tension difference; physically one requires the contact friction capability between string and pulley (or adequate wrap).",
+    "Quantitative no-slip condition if the string can support a maximum friction coefficient $\\mu_s$ with normal $N$ (idealized): require $$T_1 - T_2 = \\frac{I}{R^2}a \\le f_{\\max} = \\mu_s N.$$ If $N$ is the normal between string and pulley (model-dependent) one plugs in values. In absence of detailed friction model the standard requirement is simply that the calculated $a$ satisfies the mechanism's friction limits; otherwise slipping occurs and the above formula for $a$ is invalid.",
+    "Special case: for a solid cylindrical pulley $I = \\tfrac{1}{2}M_p R^2$ (where $M_p$ is pulley mass). Then $I/R^2 = M_p/2$ and acceleration becomes $$a = \\dfrac{(m_1 - m_2)g}{m_1 + m_2 + M_p/2}.$$",
+    "Summary (boxed results): \\\\ " +
+    "$$\\boxed{\\;a = \\dfrac{(m_1 - m_2)g}{m_1 + m_2 + I/R^2}\\;}, \\qquad \\boxed{\\;\\alpha = \\dfrac{a}{R}\\;}, \\qquad \\boxed{\\;v = \\sqrt{\\dfrac{2(m_1 - m_2)gh}{m_1 + m_2 + I/R^2}}\\;}$$ \\\\ " +
+    "and tensions $$\\boxed{\\;T_1 = g\\cdot\\dfrac{m_1(2m_2 + I/R^2)}{m_1 + m_2 + I/R^2}, \\quad T_2 = g\\cdot\\dfrac{m_2(2m_1 + I/R^2)}{m_1 + m_2 + I/R^2}\\; }.$$"
   ]
 }
 
