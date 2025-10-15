@@ -3,1090 +3,700 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEE Limits & Continuity Mastery | KnowJEE</title>
-    <meta name="description" content="Master JEE Limits & Continuity with interactive tutorials. Learn limit concepts, continuity, differentiability with animations and practice problems for IIT-JEE preparation.">
-    <meta name="keywords" content="JEE Limits, JEE Continuity, Limits and Continuity, IIT-JEE Maths, JEE Main, JEE Advanced, Calculus">
-    <meta name="author" content="KnowJEE">
-    
+    <title>KnowJEE: Electromagnetic Induction | JEE 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        
+        .slide {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
         }
-        @keyframes slideIn {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        
+        .slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
         }
-        .animate-fadeIn { animation: fadeIn 0.8s ease-out; }
-        .animate-pulse-slow { animation: pulse 3s infinite; }
-        .animate-slideIn { animation: slideIn 0.6s ease-out; }
-        .animate-bounce-slow { animation: bounce 2s infinite; }
-        .slide { display: none; }
-        .slide.active { display: block; animation: fadeIn 0.8s ease-out; }
-        .graph-container { 
-            position: relative; 
-            width: 100%; 
-            height: 300px; 
-            background: linear-gradient(to right, #f0f9ff, #e0f2fe);
-            border: 1px solid #bae6fd;
-            border-radius: 8px;
+        
+        .circuit-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .circuit-element:hover {
+            transform: scale(1.05);
+        }
+        
+        .magnetic-field {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        .wave-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
-        .limit-point {
+        
+        .wave {
             position: absolute;
-            width: 12px;
-            height: 12px;
-            background: #ef4444;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+            animation: waveMove 3s linear infinite;
         }
-        .approach-line {
+        
+        @keyframes waveMove {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        
+        .slide-transition {
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        
+        .step {
+            display: none;
+        }
+        
+        .step.active {
+            display: block;
+        }
+        
+        .formula-box {
+            background: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .knowjee-theme {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+        }
+        
+        .knowjee-accent {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        
+        .jee-badge {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        
+        .magnetic-field-line {
             position: absolute;
-            height: 2px;
-            background: #10b981;
-            transform-origin: 0 0;
-        }
-        .approach-line::after {
-            content: '';
-            position: absolute;
-            right: -6px;
-            top: -4px;
-            width: 0;
-            height: 0;
-            border-left: 6px solid #10b981;
-            border-top: 4px solid transparent;
-            border-bottom: 4px solid transparent;
-        }
-        .function-point {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #3b82f6;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .discontinuity-point {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border: 2px solid #ef4444;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-        }
-        .highlight { 
-            background-color: #fef3c7; 
-            transition: background-color 0.5s ease;
-        }
-        .typewriter {
-            overflow: hidden;
-            border-right: 2px solid #3b82f6;
-            white-space: nowrap;
-            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #3b82f6 }
-        }
-        .breadcrumb {
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-        .breadcrumb a {
-            color: #3b82f6;
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        canvas {
-            border-radius: 8px;
+            width: 2px;
+            height: 100%;
+            background-color: rgba(59, 130, 246, 0.5);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-purple-100 min-h-screen p-4 md:p-8">
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen p-6">
     <div class="max-w-6xl mx-auto">
-        <!-- Breadcrumb -->
-        <nav class="breadcrumb mb-4" aria-label="Breadcrumb">
-            <a href="#">Home</a> > 
-            <a href="#">JEE Mathematics</a> > 
-            <a href="#">Calculus</a> > 
-            <span>Limits & Continuity</span>
-        </nav>
-
         <!-- Header -->
-        <header class="text-center mb-12 animate-fadeIn">
-            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                KNOWJEE Limits & Continuity Mastery
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Master the fundamental concepts of Limits, Continuity and Differentiability with interactive visualizations
-            </p>
-            <div class="mt-4 flex flex-wrap justify-center gap-2">
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JEE Main</span>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">JEE Advanced</span>
-                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Calculus</span>
-                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Limits</span>
-                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Continuity</span>
+        <header class="text-center mb-10">
+            <div class="flex items-center justify-center mb-4">
+                <div class="jee-badge text-white px-4 py-1 rounded-full text-sm font-bold mr-4">
+                    JEE 2026
+                </div>
+                <h1 class="text-4xl font-bold text-indigo-800">KnowJEE: Electromagnetic Induction</h1>
             </div>
+            <p class="text-lg text-gray-600">Master Faraday's Law, Lenz's Law, and Problem Solving for JEE Main & Advanced</p>
         </header>
-
+        
         <!-- Main Content -->
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 animate-slideIn">
-            <!-- Navigation -->
-            <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-4">
-                <div class="flex justify-between items-center">
-                    <div class="text-white font-semibold text-lg">
-                        Topic: Limits & Continuity
-                    </div>
-                    <div class="flex space-x-2">
-                        <button id="prev-btn" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition disabled:opacity-50 disabled:cursor-not-allowed">
-                            <i class="fas fa-arrow-left mr-2"></i>Previous
-                        </button>
-                        <button id="next-btn" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">
-                            Next<i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Content Area -->
-            <div class="p-6 md:p-8">
-                <!-- Progress Bar -->
-                <div class="mb-8">
-                    <div class="flex justify-between text-sm text-gray-500 mb-2">
-                        <span>Progress</span>
-                        <span id="progress-text">1/6</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-500 ease-in-out" style="width: 16.66%"></div>
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden slide-transition">
+            <div class="flex">
+                <!-- Sidebar with slide navigation -->
+                <div class="w-1/4 knowjee-theme text-white p-6">
+                    <h2 class="text-xl font-bold mb-4">Lesson Slides</h2>
+                    <ul id="slideList" class="space-y-2">
+                        <li class="slide-item p-2 rounded cursor-pointer knowjee-accent" data-slide="0">Introduction</li>
+                        <li class="slide-item p-2 rounded cursor-pointer hover:bg-indigo-700" data-slide="1">Faraday's Law</li>
+                        <li class="slide-item p-2 rounded cursor-pointer hover:bg-indigo-700" data-slide="2">Lenz's Law</li>
+                        <li class="slide-item p-2 rounded cursor-pointer hover:bg-indigo-700" data-slide="3">Problem 1</li>
+                        <li class="slide-item p-2 rounded cursor-pointer hover:bg-indigo-700" data-slide="4">Problem 2</li>
+                        <li class="slide-item p-2 rounded cursor-pointer hover:bg-indigo-700" data-slide="5">Summary</li>
+                    </ul>
+                    
+                    <div class="mt-8 p-4 bg-indigo-900 rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">JEE Focus</h3>
+                        <ul class="text-sm space-y-1">
+                            <li><i class="fas fa-star text-yellow-400 mr-1"></i> High-weightage topic</li>
+                            <li><i class="fas fa-clock text-blue-300 mr-1"></i> 2-3 questions in JEE</li>
+                            <li><i class="fas fa-lightbulb text-yellow-300 mr-1"></i> Conceptual + Numerical</li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Slides Container -->
-                <div id="slides-container" class="min-h-[500px]">
-                    <!-- Slide 1: Introduction -->
-                    <div class="slide active">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <div>
-                                <h2 class="text-2xl font-bold text-gray-800 mb-4">Limits & Continuity in JEE</h2>
-                                <div class="space-y-4 text-gray-700">
-                                    <p>Limits form the foundation of calculus and are crucial for understanding derivatives and integrals. This topic appears in both JEE Main and Advanced every year.</p>
-                                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 animate-pulse-slow">
-                                        <span class="font-semibold">JEE Importance:</span> Typically 1-2 questions every year, often testing conceptual understanding through tricky problems.
-                                    </div>
-                                    <div class="bg-yellow-50 p-4 rounded-lg">
-                                        <h3 class="font-bold text-yellow-700 mb-2">Key Concepts:</h3>
-                                        <ul class="list-disc pl-5 space-y-1">
-                                            <li>Concept of Limits and Existence</li>
-                                            <li>Standard Limits</li>
-                                            <li>Continuity and Differentiability</li>
-                                            <li>L'Hôpital's Rule</li>
-                                            <li>Sandwich Theorem</li>
-                                        </ul>
+                
+                <!-- Slide Content Area -->
+                <div class="w-3/4 p-8 relative overflow-hidden" style="min-height: 600px;">
+                    <!-- Slide 0: Introduction -->
+                    <div class="slide active" id="slide0">
+                        <div class="text-center">
+                            <h2 class="text-3xl font-bold text-indigo-700 mb-4">Electromagnetic Induction</h2>
+                            <p class="text-xl text-gray-600 mb-6">The phenomenon of generating EMF by changing magnetic flux</p>
+                            <div class="flex justify-center mb-8">
+                                <div class="w-64 h-64 relative">
+                                    <div class="absolute inset-0 rounded-full bg-blue-200 animate-pulse"></div>
+                                    <div class="absolute inset-4 rounded-full bg-blue-300 animate-pulse" style="animation-delay: 0.5s;"></div>
+                                    <div class="absolute inset-8 rounded-full bg-blue-400 animate-pulse" style="animation-delay: 1s;"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-bolt text-yellow-400 text-6xl"></i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-center">
-                                <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-6 rounded-xl border-2 border-blue-200 w-full max-w-md animate-pulse-slow">
+                            <div class="max-w-2xl mx-auto text-left">
+                                <p class="text-lg text-gray-700 mb-4">When a conductor is placed in a changing magnetic field, an electromotive force (EMF) is induced, which causes a current to flow if the circuit is closed.</p>
+                                <div class="formula-box">
+                                    <p class="text-blue-700 font-mono text-lg">Φ = B ⋅ A = BA cosθ</p>
+                                    <p class="text-gray-600 mt-2">Magnetic flux (Φ) depends on magnetic field strength (B), area (A), and angle (θ) between field and area vector.</p>
+                                </div>
+                                <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                                    <p class="text-yellow-700"><i class="fas fa-exclamation-circle mr-2"></i> <strong>JEE Tip:</strong> This topic frequently appears in both JEE Main and Advanced. Focus on conceptual understanding and problem-solving speed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 1: Faraday's Law -->
+                    <div class="slide" id="slide1">
+                        <h2 class="text-2xl font-bold text-indigo-700 mb-4">Faraday's Law of Electromagnetic Induction</h2>
+                        <div class="flex mb-6">
+                            <div class="w-1/2 pr-4">
+                                <p class="text-gray-700 mb-4">Faraday's law states that the induced EMF in a coil is equal to the negative rate of change of magnetic flux through the coil.</p>
+                                <div class="formula-box">
+                                    <p class="text-blue-800 text-center text-xl font-mono">ε = -N dΦ<sub>B</sub>/dt</p>
+                                </div>
+                                <p class="text-gray-700 mt-4">Where:</p>
+                                <ul class="text-gray-700 list-disc ml-6">
+                                    <li>ε is the induced EMF (in volts)</li>
+                                    <li>N is the number of turns in the coil</li>
+                                    <li>dΦ<sub>B</sub>/dt is the rate of change of magnetic flux</li>
+                                    <li>The negative sign indicates direction (Lenz's Law)</li>
+                                </ul>
+                                <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+                                    <p class="text-blue-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i> <strong>JEE Focus:</strong> Remember that induced EMF depends on the rate of change of flux, not the flux itself.</p>
+                                </div>
+                            </div>
+                            <div class="w-1/2 relative h-64 bg-gray-100 rounded-lg p-4">
+                                <div class="flex justify-between items-center h-full">
                                     <div class="text-center">
-                                        <i class="fas fa-infinity text-5xl text-blue-600 mb-4"></i>
-                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Limit Fundamentals</h3>
-                                        <p class="text-gray-600">Understanding behavior of functions as they approach specific points</p>
-                                        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-                                            Start Learning
-                                        </button>
+                                        <div class="w-20 h-20 mx-auto mb-2 border-4 border-blue-500 rounded-full flex items-center justify-center">
+                                            <div class="w-16 h-16 border-2 border-blue-300 rounded-full"></div>
+                                        </div>
+                                        <p class="text-sm">Coil</p>
                                     </div>
+                                    <div class="text-center">
+                                        <i class="fas fa-long-arrow-alt-right text-3xl text-blue-500 mb-2"></i>
+                                        <p class="text-sm">Changing B</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mx-auto mb-2 bg-yellow-400 rounded-lg flex items-center justify-center text-white font-bold">
+                                            ε
+                                        </div>
+                                        <p class="text-sm">Induced EMF</p>
+                                    </div>
+                                </div>
+                                <div class="wave-animation">
+                                    <div class="wave" style="top: 30%;"></div>
+                                    <div class="wave" style="top: 60%; animation-delay: 1s;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <p class="text-gray-700"><strong>Key Insight:</strong> The magnitude of induced EMF depends only on the rate of change of flux, not the flux itself.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2: Lenz's Law -->
+                    <div class="slide" id="slide2">
+                        <h2 class="text-2xl font-bold text-indigo-700 mb-4">Lenz's Law</h2>
+                        <div class="flex mb-6">
+                            <div class="w-1/2 pr-4">
+                                <p class="text-gray-700 mb-4">Lenz's law gives the direction of the induced current: The induced current will flow in a direction that opposes the change in magnetic flux that produced it.</p>
+                                <div class="bg-red-100 p-4 rounded-lg mb-4">
+                                    <p class="text-red-800 text-center font-semibold">"Nature abhors a change in flux"</p>
+                                </div>
+                                <p class="text-gray-700">This is the reason for the negative sign in Faraday's law.</p>
+                                <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+                                    <p class="text-blue-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i> <strong>Remember:</strong> If flux is increasing, induced current creates opposite field. If flux is decreasing, induced current creates same field.</p>
+                                </div>
+                                <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                                    <p class="text-green-700"><i class="fas fa-check-circle mr-2"></i> <strong>JEE Strategy:</strong> Use the right-hand rule to determine current direction in Lenz's Law problems.</p>
+                                </div>
+                            </div>
+                            <div class="w-1/2 relative h-64 bg-gray-100 rounded-lg p-4">
+                                <div id="magnet2" class="absolute left-1/4 top-1/2 transform -translate-y-1/2 w-16 h-32 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold">
+                                    N S
+                                </div>
+                                <div id="coil2" class="absolute right-1/4 top-1/2 transform -translate-y-1/2 w-20 h-20 border-4 border-blue-500 rounded-full flex items-center justify-center">
+                                    <div class="w-16 h-16 border-2 border-blue-300 rounded-full"></div>
+                                </div>
+                                <div class="absolute right-10 top-1/2 transform -translate-y-1/2 text-center">
+                                    <div id="currentIndicator" class="w-12 h-8 bg-gray-300 rounded flex items-center justify-center text-xs mb-1">
+                                        I = 0
+                                    </div>
+                                    <p class="text-xs">Current</p>
+                                </div>
+                                <div class="magnetic-field" id="magneticField2"></div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex-1" id="moveTowardsBtn">Move Magnet Towards Coil</button>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex-1" id="moveAwayBtn">Move Magnet Away From Coil</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3: Problem 1 -->
+                    <div class="slide" id="slide3">
+                        <h2 class="text-2xl font-bold text-indigo-700 mb-4">Problem 1: Calculating Induced EMF</h2>
+                        <div class="bg-white p-6 rounded-lg border-2 border-indigo-200 mb-6">
+                            <p class="text-gray-700 mb-6 text-lg">A circular coil of 100 turns with a cross-sectional area of 0.01 m² is placed in a magnetic field of 0.1 T. If the magnetic field is reduced to zero in 0.1 seconds, what is the magnitude of the induced EMF?</p>
+                            
+                            <div class="steps-container">
+                                <div class="step active" id="step1">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 1: Identify known values</h3>
+                                    <ul class="text-gray-700 list-disc ml-6 mb-4">
+                                        <li>Number of turns, N = 100</li>
+                                        <li>Area, A = 0.01 m²</li>
+                                        <li>Initial magnetic field, B₁ = 0.1 T</li>
+                                        <li>Final magnetic field, B₂ = 0 T</li>
+                                        <li>Time interval, Δt = 0.1 s</li>
+                                    </ul>
+                                    <button class="next-step bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" data-next="2">Next Step</button>
+                                </div>
+                                
+                                <div class="step" id="step2">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 2: Calculate change in magnetic flux</h3>
+                                    <p class="text-gray-700 mb-2">Initial flux, Φ₁ = B₁ × A = 0.1 × 0.01 = 0.001 Wb</p>
+                                    <p class="text-gray-700 mb-2">Final flux, Φ₂ = B₂ × A = 0 × 0.01 = 0 Wb</p>
+                                    <p class="text-gray-700 mb-4">Change in flux, ΔΦ = Φ₂ - Φ₁ = 0 - 0.001 = -0.001 Wb</p>
+                                    <div class="flex space-x-2">
+                                        <button class="prev-step bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg" data-prev="1">Previous</button>
+                                        <button class="next-step bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" data-next="3">Next Step</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="step" id="step3">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 3: Apply Faraday's Law</h3>
+                                    <p class="text-gray-700 mb-2">According to Faraday's Law:</p>
+                                    <div class="formula-box mb-4">
+                                        <p class="text-blue-800 text-center font-mono">|ε| = N × |ΔΦ/Δt|</p>
+                                    </div>
+                                    <p class="text-gray-700 mb-2">|ε| = 100 × |(-0.001) / 0.1|</p>
+                                    <p class="text-gray-700 mb-2">|ε| = 100 × 0.01</p>
+                                    <p class="text-gray-700 mb-4 font-semibold">|ε| = 1.0 V</p>
+                                    <div class="flex space-x-2">
+                                        <button class="prev-step bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg" data-prev="2">Previous</button>
+                                        <button class="next-step bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" data-next="4">Next Step</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="step" id="step4">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 4: Final Answer</h3>
+                                    <div class="bg-green-100 p-4 rounded-lg mb-4">
+                                        <p class="text-green-700 text-center text-xl font-semibold">The magnitude of induced EMF is 1.0 V</p>
+                                    </div>
+                                    <p class="text-gray-700 mb-4">Note: The negative sign in Faraday's law indicates direction (Lenz's Law), but the question asks for magnitude, so we take the absolute value.</p>
+                                    <div class="p-3 bg-yellow-50 rounded-lg">
+                                        <p class="text-yellow-700"><i class="fas fa-clock mr-2"></i> <strong>Time Management:</strong> This type of problem should take 2-3 minutes in JEE.</p>
+                                    </div>
+                                    <button class="prev-step bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg" data-prev="3">Previous</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Slide 2: Limit Concept -->
-                    <div class="slide">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Understanding Limits</h2>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <div>
-                                <div class="graph-container mb-4" id="limit-graph-1">
-                                    <canvas id="basicLimitChart"></canvas>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg mb-4">
-                                    <p class="text-gray-700">
-                                        <span class="font-semibold">Limit Definition:</span>
-                                    </p>
-                                    <div class="bg-white p-3 rounded mt-2">
-                                        <p class="font-mono text-lg text-center">\[ \lim_{x \to a} f(x) = L \]</p>
-                                    </div>
-                                    <p class="text-gray-600 text-sm mt-2 text-center">
-                                        As x approaches a, f(x) approaches L
-                                    </p>
-                                </div>
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <span>Function:</span>
-                                        <select id="function-select" class="border rounded px-3 py-1">
-                                            <option value="linear">f(x) = 2x + 1</option>
-                                            <option value="quadratic">f(x) = x²</option>
-                                            <option value="rational">f(x) = (x²-1)/(x-1)</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-center justify-between">
-                                        <span>Approach Point (a):</span>
-                                        <input type="range" id="approach-point" min="-2" max="2" step="0.1" value="1" class="w-1/2 mx-2">
-                                        <span id="approach-value" class="w-10">1</span>
-                                    </div>
-                                    <div class="flex items-center justify-between">
-                                        <span>Approach Distance (ε):</span>
-                                        <input type="range" id="approach-distance" min="0.1" max="1" step="0.1" value="0.5" class="w-1/2 mx-2">
-                                        <span id="distance-value" class="w-10">0.5</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mb-6">
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-3">The Limit Concept</h3>
-                                    <p class="text-gray-700 mb-4">
-                                        A limit describes the value that a function approaches as the input approaches some value. Limits are essential for defining derivatives and integrals.
-                                    </p>
-                                    <div class="bg-white p-4 rounded-lg mb-4">
-                                        <p class="text-gray-700 text-center font-semibold" id="limit-result">
-                                            \[ \lim_{x \to 1} f(x) = 3 \]
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="space-y-4">
-                                    <div class="flex items-start">
-                                        <div class="bg-green-100 p-2 rounded-full mr-3 mt-1">
-                                            <i class="fas fa-lightbulb text-green-600"></i>
+                    
+                    <!-- Slide 4: Problem 2 -->
+                    <div class="slide" id="slide4">
+                        <h2 class="text-2xl font-bold text-indigo-700 mb-4">Problem 2: Lenz's Law Application</h2>
+                        <div class="bg-white p-6 rounded-lg border-2 border-indigo-200 mb-6">
+                            <p class="text-gray-700 mb-6 text-lg">A magnet is falling through a vertical copper pipe. Explain why the magnet falls slower than it would in free fall, using Lenz's law.</p>
+                            
+                            <div class="steps-container">
+                                <div class="step active" id="p2step1">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 1: Understand the setup</h3>
+                                    <p class="text-gray-700 mb-4">As the magnet falls through the copper pipe, the magnetic flux through sections of the pipe changes with time.</p>
+                                    <div class="flex justify-center mb-4">
+                                        <div class="w-48 h-64 border-2 border-gray-400 rounded-lg relative">
+                                            <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-12 h-20 bg-red-500 rounded-lg flex items-center justify-center text-white text-xs">
+                                                N S
+                                            </div>
+                                            <div class="absolute bottom-0 left-0 right-0 h-2 bg-yellow-500"></div>
                                         </div>
-                                        <p class="text-gray-700">
-                                            Adjust the parameters to see how the limit changes. Notice how the function approaches the limit value.
-                                        </p>
                                     </div>
-                                    <div class="flex items-start">
-                                        <div class="bg-purple-100 p-2 rounded-full mr-3 mt-1">
-                                            <i class="fas fa-exclamation-circle text-purple-600"></i>
-                                        </div>
-                                        <p class="text-gray-700">
-                                            For a limit to exist, the left-hand limit and right-hand limit must be equal.
-                                        </p>
+                                    <button class="next-step bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" data-next="p2step2">Next Step</button>
+                                </div>
+                                
+                                <div class="step" id="p2step2">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 2: Apply Faraday's Law</h3>
+                                    <p class="text-gray-700 mb-4">The changing magnetic flux induces eddy currents in the copper pipe according to Faraday's Law.</p>
+                                    <div class="formula-box mb-4">
+                                        <p class="text-blue-800 text-center font-mono">ε = -dΦ/dt</p>
                                     </div>
+                                    <div class="flex space-x-2">
+                                        <button class="prev-step bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg" data-prev="p2step1">Previous</button>
+                                        <button class="next-step bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" data-next="p2step3">Next Step</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="step" id="p2step3">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 3: Apply Lenz's Law</h3>
+                                    <p class="text-gray-700 mb-4">According to Lenz's Law, the induced eddy currents will create magnetic fields that oppose the change causing them.</p>
+                                    <div class="bg-red-100 p-4 rounded-lg mb-4">
+                                        <p class="text-red-800 text-center">The falling magnet causes increasing downward flux below it and decreasing downward flux above it.</p>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button class="prev-step bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg" data-prev="p2step2">Previous</button>
+                                        <button class="next-step bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" data-next="p2step4">Next Step</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="step" id="p2step4">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 4: Determine the effect</h3>
+                                    <p class="text-gray-700 mb-4">The induced currents create magnetic fields that:</p>
+                                    <ul class="text-gray-700 list-disc ml-6 mb-4">
+                                        <li>Below the magnet: Create an upward magnetic field (opposing increasing downward flux)</li>
+                                        <li>Above the magnet: Create a downward magnetic field (opposing decreasing downward flux)</li>
+                                    </ul>
+                                    <p class="text-gray-700 mb-4">Both effects result in an upward force on the magnet, opposing its motion.</p>
+                                    <div class="flex space-x-2">
+                                        <button class="prev-step bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg" data-prev="p2step3">Previous</button>
+                                        <button class="next-step bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" data-next="p2step5">Next Step</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="step" id="p2step5">
+                                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Step 5: Final Answer</h3>
+                                    <div class="bg-green-100 p-4 rounded-lg mb-4">
+                                        <p class="text-green-700 text-center text-xl font-semibold">The magnet falls slower due to electromagnetic braking caused by eddy currents induced in the pipe, which create opposing magnetic fields according to Lenz's Law.</p>
+                                    </div>
+                                    <div class="p-3 bg-blue-50 rounded-lg">
+                                        <p class="text-blue-700"><i class="fas fa-graduation-cap mr-2"></i> <strong>JEE Insight:</strong> This is a classic demonstration of Lenz's Law and appears frequently in JEE conceptual questions.</p>
+                                    </div>
+                                    <button class="prev-step bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg" data-prev="p2step4">Previous</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Slide 3: One-Sided Limits -->
-                    <div class="slide">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">One-Sided Limits</h2>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <div>
-                                <div class="graph-container mb-4">
-                                    <canvas id="sidedLimitChart"></canvas>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <p class="text-gray-700 mb-2">
-                                        <span class="font-semibold">One-Sided Limits:</span>
-                                    </p>
-                                    <div class="grid grid-cols-2 gap-4 mt-2">
-                                        <div class="bg-white p-3 rounded text-center">
-                                            <p class="font-mono text-sm">\[ \lim_{x \to a^-} f(x) \]</p>
-                                            <p class="text-gray-600 text-xs mt-1">Left-hand limit</p>
-                                        </div>
-                                        <div class="bg-white p-3 rounded text-center">
-                                            <p class="font-mono text-sm">\[ \lim_{x \to a^+} f(x) \]</p>
-                                            <p class="text-gray-600 text-xs mt-1">Right-hand limit</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    
+                    <!-- Slide 5: Summary -->
+                    <div class="slide" id="slide5">
+                        <h2 class="text-2xl font-bold text-indigo-700 mb-4">Summary: Electromagnetic Induction</h2>
+                        <div class="grid grid-cols-2 gap-6 mb-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-bold text-blue-700 mb-2">Key Concepts</h3>
+                                <ul class="text-gray-700 list-disc ml-5">
+                                    <li>Electromagnetic induction produces EMF in a changing magnetic field</li>
+                                    <li>Faraday's Law: ε = -N dΦ/dt</li>
+                                    <li>Lenz's Law determines direction of induced current</li>
+                                    <li>Magnetic flux: Φ = BA cosθ</li>
+                                    <li>Flux changes if B, A, or θ changes</li>
+                                </ul>
                             </div>
-                            <div>
-                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mb-6">
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Understanding One-Sided Limits</h3>
-                                    <p class="text-gray-700 mb-4">
-                                        One-sided limits examine the behavior of a function as it approaches a point from only one direction - either from the left or from the right.
-                                    </p>
-                                    <div class="space-y-4">
-                                        <div>
-                                            <label class="block text-sm font-medium text-gray-700">Function Type</label>
-                                            <select id="sided-function" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
-                                                <option value="step">Step Function</option>
-                                                <option value="piecewise">Piecewise Function</option>
-                                                <option value="absolute">Absolute Value</option>
-                                            </select>
-                                        </div>
-                                        <div class="bg-white p-4 rounded-lg border border-green-200">
-                                            <p class="text-gray-700 text-center font-semibold" id="sided-limit-result">
-                                                Left limit: 1, Right limit: 2
-                                            </p>
-                                            <p class="text-gray-600 text-center text-sm mt-1" id="limit-existence">
-                                                Limit does not exist at x = 0
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-4">
-                                    <div class="flex items-start">
-                                        <div class="bg-green-100 p-2 rounded-full mr-3 mt-1">
-                                            <i class="fas fa-lightbulb text-green-600"></i>
-                                        </div>
-                                        <p class="text-gray-700">
-                                            For a limit to exist at a point, the left-hand and right-hand limits must be equal.
-                                        </p>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <div class="bg-purple-100 p-2 rounded-full mr-3 mt-1">
-                                            <i class="fas fa-exclamation-circle text-purple-600"></i>
-                                        </div>
-                                        <p class="text-gray-700">
-                                            Discontinuities often occur when one-sided limits are different.
-                                        </p>
-                                    </div>
-                                </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-bold text-green-700 mb-2">Problem Solving Approach</h3>
+                                <ul class="text-gray-700 list-disc ml-5">
+                                    <li>Identify changing flux (B, A, or θ)</li>
+                                    <li>Calculate rate of change of flux</li>
+                                    <li>Apply Faraday's Law for EMF magnitude</li>
+                                    <li>Use Lenz's Law for current direction</li>
+                                    <li>Consider practical applications (generators, transformers)</li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Slide 4: Continuity -->
-                    <div class="slide">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Continuity of Functions</h2>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <div>
-                                <div class="graph-container mb-4">
-                                    <canvas id="continuityChart"></canvas>
-                                </div>
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700">Function Type</label>
-                                        <select id="continuity-function" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
-                                            <option value="continuous">Continuous Function</option>
-                                            <option value="jump">Jump Discontinuity</option>
-                                            <option value="removable">Removable Discontinuity</option>
-                                            <option value="infinite">Infinite Discontinuity</option>
-                                        </select>
-                                    </div>
-                                    <div class="bg-gray-50 p-4 rounded-lg">
-                                        <p class="text-gray-700">
-                                            <span class="font-semibold">Continuity Conditions:</span>
-                                        </p>
-                                        <ol class="list-decimal pl-5 mt-2 text-sm text-gray-600 space-y-1">
-                                            <li>f(a) is defined</li>
-                                            <li>limₓ→ₐ f(x) exists</li>
-                                            <li>limₓ→ₐ f(x) = f(a)</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 mb-6">
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Understanding Continuity</h3>
-                                    <div class="space-y-4">
-                                        <div class="flex items-start">
-                                            <div class="bg-blue-100 p-2 rounded-lg mr-3">
-                                                <i class="fas fa-check-circle text-blue-600"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-semibold text-gray-800">Continuous Function</h4>
-                                                <p class="text-gray-700 text-sm">Can be drawn without lifting the pen from paper</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-start">
-                                            <div class="bg-yellow-100 p-2 rounded-lg mr-3">
-                                                <i class="fas fa-exclamation-triangle text-yellow-600"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-semibold text-gray-800">Jump Discontinuity</h4>
-                                                <p class="text-gray-700 text-sm">Left and right limits exist but are different</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-start">
-                                            <div class="bg-red-100 p-2 rounded-lg mr-3">
-                                                <i class="fas fa-times-circle text-red-600"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-semibold text-gray-800">Removable Discontinuity</h4>
-                                                <p class="text-gray-700 text-sm">Limit exists but f(a) is not defined or different</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-start">
-                                            <div class="bg-purple-100 p-2 rounded-lg mr-3">
-                                                <i class="fas fa-infinity text-purple-600"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-semibold text-gray-800">Infinite Discontinuity</h4>
-                                                <p class="text-gray-700 text-sm">Function approaches ±∞ at the point</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-4 rounded-lg border border-gray-200">
-                                    <h4 class="font-semibold text-gray-800 mb-2">Continuity Check</h4>
-                                    <div class="space-y-2 text-sm" id="continuity-check">
-                                        <div class="flex justify-between">
-                                            <span>f(a) defined:</span>
-                                            <span id="check-defined" class="text-green-600">Yes</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span>Limit exists:</span>
-                                            <span id="check-limit" class="text-green-600">Yes</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span>Limit = f(a):</span>
-                                            <span id="check-equal" class="text-green-600">Yes</span>
-                                        </div>
-                                        <div class="flex justify-between font-semibold mt-2">
-                                            <span>Conclusion:</span>
-                                            <span id="check-conclusion" class="text-green-600">Continuous</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-6">
+                            <h3 class="text-lg font-bold text-yellow-700 mb-2">JEE Preparation Tips</h3>
+                            <ul class="text-gray-700 list-disc ml-5">
+                                <li>Practice both conceptual and numerical problems</li>
+                                <li>Memorize key formulas and their applications</li>
+                                <li>Understand the physical significance of Lenz's Law</li>
+                                <li>Solve previous years' JEE questions on this topic</li>
+                                <li>Time yourself while solving problems</li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <!-- Slide 5: Example Problem -->
-                    <div class="slide">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">JEE Limit Problem</h2>
-                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200 mb-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4">JEE Main 2022 Question</h3>
-                            <div class="bg-white p-4 rounded-lg mb-4">
-                                <p class="text-lg text-gray-700">
-                                    Evaluate: \[ \lim_{x \to 0} \frac{\sin(3x) \cdot \tan(2x)}{x^2} \]
-                                </p>
+                        <div class="text-center mt-8">
+                            <div class="inline-flex items-center bg-indigo-100 px-6 py-3 rounded-full">
+                                <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                                <span class="text-indigo-700 font-medium text-lg">You've completed the Electromagnetic Induction lesson!</span>
                             </div>
-                            <div class="space-y-4" id="solution-steps">
-                                <div class="flex solution-step">
-                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</div>
-                                    <p class="text-gray-700 pt-1">
-                                        Use the standard limit: \( \lim_{x \to 0} \frac{\sin x}{x} = 1 \)
-                                    </p>
-                                </div>
-                                <div class="flex solution-step opacity-50">
-                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</div>
-                                    <p class="text-gray-700 pt-1">
-                                        Rewrite the expression: \( \frac{\sin(3x)}{x} \cdot \frac{\tan(2x)}{x} \)
-                                    </p>
-                                </div>
-                                <div class="flex solution-step opacity-50">
-                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</div>
-                                    <p class="text-gray-700 pt-1">
-                                        Apply the standard limits: \( 3 \cdot \frac{\sin(3x)}{3x} \cdot 2 \cdot \frac{\tan(2x)}{2x} \)
-                                    </p>
-                                </div>
-                                <div class="flex solution-step opacity-50">
-                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</div>
-                                    <p class="text-gray-700 pt-1">
-                                        Simplify: \( 3 \cdot 1 \cdot 2 \cdot 1 = 6 \)
-                                    </p>
-                                </div>
-                                <div class="flex solution-step opacity-50">
-                                    <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">✓</div>
-                                    <p class="text-gray-700 pt-1 font-semibold">
-                                        Therefore, the limit is 6
-                                    </p>
-                                </div>
+                            <div class="mt-4">
+                                <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg">
+                                    <i class="fas fa-book mr-2"></i> Practice More Problems
+                                </a>
                             </div>
-                            <button id="show-next-step" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-                                Show Next Step
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Slide 6: Practice Problem -->
-                    <div class="slide">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Problem</h2>
-                        <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 mb-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4">JEE Advanced Practice Question</h3>
-                            <div class="bg-white p-4 rounded-lg mb-6">
-                                <p class="text-lg text-gray-700">
-                                    Let \( f(x) = \begin{cases} 
-                                    x^2 + 1 & \text{if } x < 1 \\
-                                    ax + b & \text{if } x \geq 1 
-                                    \end{cases} \)
-                                    <br>
-                                    If f(x) is continuous at x = 1, find the values of a and b.
-                                </p>
-                            </div>
-                            <div class="space-y-4" id="options-container">
-                                <div class="flex items-center option">
-                                    <input type="radio" id="option1" name="answer" class="mr-3 h-5 w-5 text-blue-600">
-                                    <label for="option1" class="text-gray-700">a = 2, b = 0</label>
-                                </div>
-                                <div class="flex items-center option">
-                                    <input type="radio" id="option2" name="answer" class="mr-3 h-5 w-5 text-blue-600">
-                                    <label for="option2" class="text-gray-700">a = 1, b = 1</label>
-                                </div>
-                                <div class="flex items-center option">
-                                    <input type="radio" id="option3" name="answer" class="mr-3 h-5 w-5 text-blue-600">
-                                    <label for="option3" class="text-gray-700">a = 2, b = -1</label>
-                                </div>
-                                <div class="flex items-center option">
-                                    <input type="radio" id="option4" name="answer" class="mr-3 h-5 w-5 text-blue-600">
-                                    <label for="option4" class="text-gray-700">a = 3, b = -2</label>
-                                </div>
-                            </div>
-                            <button id="check-answer" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition mt-4">
-                                Check Answer
-                            </button>
-                        </div>
-                        <div id="answer-feedback" class="hidden bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-                            <h4 class="font-semibold text-yellow-700 mb-2">Solution:</h4>
-                            <p class="text-gray-700">
-                                For continuity at x = 1:<br>
-                                1. Left-hand limit: \( \lim_{x \to 1^-} f(x) = 1^2 + 1 = 2 \)<br>
-                                2. Right-hand limit: \( \lim_{x \to 1^+} f(x) = a(1) + b = a + b \)<br>
-                                3. f(1) = a + b<br>
-                                For continuity: 2 = a + b<br>
-                                Also, the function must be differentiable at x = 1 for a unique solution.<br>
-                                Left derivative: 2, Right derivative: a ⇒ a = 2, then b = 0<br>
-                                Answer: a = 2, b = 0
-                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Key Takeaways -->
-        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8 animate-fadeIn">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Limits & Continuity Key Takeaways</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 transform transition-transform hover:scale-105">
-                    <div class="text-blue-600 text-center mb-2">
-                        <i class="fas fa-calculator text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-center">Limit Concept</h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">Behavior of functions near points</p>
+            
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between p-6 bg-gray-100">
+                <button id="prevBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Previous
+                </button>
+                <div class="text-gray-600">
+                    Slide <span id="currentSlideNumber">1</span> of <span id="totalSlidesNumber">6</span>
                 </div>
-                <div class="bg-green-50 p-4 rounded-lg border border-green-200 transform transition-transform hover:scale-105">
-                    <div class="text-green-600 text-center mb-2">
-                        <i class="fas fa-arrows-alt-h text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-center">One-Sided Limits</h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">Left-hand and right-hand limits</p>
-                </div>
-                <div class="bg-purple-50 p-4 rounded-lg border border-purple-200 transform transition-transform hover:scale-105">
-                    <div class="text-purple-600 text-center mb-2">
-                        <i class="fas fa-infinity text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-center">Continuity</h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">Three conditions for continuity</p>
-                </div>
-                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 transform transition-transform hover:scale-105">
-                    <div class="text-yellow-600 text-center mb-2">
-                        <i class="fas fa-exclamation-triangle text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-center">Discontinuities</h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">Jump, removable, infinite types</p>
-                </div>
+                <button id="nextBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg flex items-center">
+                    Next <i class="fas fa-arrow-right ml-2"></i>
+                </button>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="text-center text-gray-600 py-6">
-            <p>© 2026 KnowJEE - JEE Preparation Made Interactive</p>
-            <p class="text-sm mt-2">For more content, subscribe to our YouTube channel</p>
-        </footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all interactive components
-            initSlideshow();
-            initLimitVisualization();
-            initOneSidedLimits();
-            initContinuity();
-            initPracticeProblem();
+        // Slide management
+        let currentSlide = 0;
+        const totalSlides = 6;
+        
+        // DOM elements
+        const slideElements = document.querySelectorAll('.slide');
+        const slideItems = document.querySelectorAll('.slide-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideNumber = document.getElementById('currentSlideNumber');
+        const totalSlidesNumber = document.getElementById('totalSlidesNumber');
+        const moveTowardsBtn = document.getElementById('moveTowardsBtn');
+        const moveAwayBtn = document.getElementById('moveAwayBtn');
+        
+        // Initialize
+        updateNavigation();
+        createParticles();
+        totalSlidesNumber.textContent = totalSlides;
+        
+        // Event listeners
+        prevBtn.addEventListener('click', showPreviousSlide);
+        nextBtn.addEventListener('click', showNextSlide);
+        moveTowardsBtn.addEventListener('click', () => moveMagnet('towards'));
+        moveAwayBtn.addEventListener('click', () => moveMagnet('away'));
+        
+        // Step navigation for problems
+        document.querySelectorAll('.next-step').forEach(button => {
+            button.addEventListener('click', function() {
+                const nextStep = this.getAttribute('data-next');
+                const currentStep = this.closest('.step');
+                currentStep.classList.remove('active');
+                document.getElementById(`step${nextStep}`).classList.add('active');
+            });
         });
-
-        function initSlideshow() {
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const progressBar = document.getElementById('progress-bar');
-            const progressText = document.getElementById('progress-text');
+        
+        document.querySelectorAll('.prev-step').forEach(button => {
+            button.addEventListener('click', function() {
+                const prevStep = this.getAttribute('data-prev');
+                const currentStep = this.closest('.step');
+                currentStep.classList.remove('active');
+                document.getElementById(`step${prevStep}`).classList.add('active');
+            });
+        });
+        
+        // Slide navigation
+        slideItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                showSlide(slideIndex);
+            });
+        });
+        
+        function showSlide(index) {
+            // Validate index
+            if (index < 0 || index >= totalSlides) return;
             
-            let currentSlide = 0;
+            // Hide current slide
+            slideElements[currentSlide].classList.remove('active');
+            slideItems[currentSlide].classList.remove('knowjee-accent');
+            slideItems[currentSlide].classList.add('hover:bg-indigo-700');
             
-            function updateSlide() {
-                slides.forEach((slide, index) => {
-                    if (index === currentSlide) {
-                        slide.classList.remove('hidden');
-                        slide.classList.add('active');
-                    } else {
-                        slide.classList.add('hidden');
-                        slide.classList.remove('active');
-                    }
+            // Update current slide
+            currentSlide = index;
+            
+            // Show new slide
+            slideElements[currentSlide].classList.add('active');
+            slideItems[currentSlide].classList.add('knowjee-accent');
+            slideItems[currentSlide].classList.remove('hover:bg-indigo-700');
+            
+            // Reset problem steps to first step
+            if (currentSlide === 3) {
+                document.querySelectorAll('#slide3 .step').forEach(step => {
+                    step.classList.remove('active');
                 });
-                
-                // Update progress
-                const progress = ((currentSlide + 1) / slides.length) * 100;
-                progressBar.style.width = `${progress}%`;
-                progressText.textContent = `${currentSlide + 1}/${slides.length}`;
-                
-                // Update button states
-                prevBtn.disabled = currentSlide === 0;
-                nextBtn.disabled = currentSlide === slides.length - 1;
+                document.getElementById('step1').classList.add('active');
             }
             
-            prevBtn.addEventListener('click', function() {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateSlide();
-                }
-            });
+            if (currentSlide === 4) {
+                document.querySelectorAll('#slide4 .step').forEach(step => {
+                    step.classList.remove('active');
+                });
+                document.getElementById('p2step1').classList.add('active');
+            }
             
-            nextBtn.addEventListener('click', function() {
-                if (currentSlide < slides.length - 1) {
-                    currentSlide++;
-                    updateSlide();
-                }
-            });
+            // Animate slide entrance
+            gsap.fromTo(`#slide${currentSlide}`, 
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.5 }
+            );
             
-            updateSlide();
+            // Trigger slide-specific animations
+            triggerSlideAnimations(currentSlide);
+            
+            updateNavigation();
         }
-
-        function initLimitVisualization() {
-            const functionSelect = document.getElementById('function-select');
-            const approachPoint = document.getElementById('approach-point');
-            const approachValue = document.getElementById('approach-value');
-            const approachDistance = document.getElementById('approach-distance');
-            const distanceValue = document.getElementById('distance-value');
-            const limitResult = document.getElementById('limit-result');
+        
+        function showPreviousSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        function showNextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function updateNavigation() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+            currentSlideNumber.textContent = currentSlide + 1;
             
-            let basicLimitChart = null;
+            if (prevBtn.disabled) {
+                prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
             
-            function updateLimitVisualization() {
-                const funcType = functionSelect.value;
-                const a = parseFloat(approachPoint.value);
-                const epsilon = parseFloat(approachDistance.value);
-                
-                approachValue.textContent = a;
-                distanceValue.textContent = epsilon;
-                
-                // Create or update chart
-                const ctx = document.getElementById('basicLimitChart').getContext('2d');
-                
-                if (basicLimitChart) {
-                    basicLimitChart.destroy();
-                }
-                
-                // Define functions
-                let func, limitValue;
-                switch(funcType) {
-                    case 'linear':
-                        func = x => 2*x + 1;
-                        limitValue = 2*a + 1;
-                        break;
-                    case 'quadratic':
-                        func = x => x*x;
-                        limitValue = a*a;
-                        break;
-                    case 'rational':
-                        func = x => (x*x - 1) / (x - 1);
-                        limitValue = a + 1; // Simplified form
-                        break;
-                }
-                
-                // Generate data
-                const data = [];
-                const labels = [];
-                const start = a - 1.5;
-                const end = a + 1.5;
-                const step = (end - start) / 100;
-                
-                for (let x = start; x <= end; x += step) {
-                    if (funcType === 'rational' && Math.abs(x - 1) < 0.01) {
-                        // Skip the point of discontinuity
-                        continue;
-                    }
-                    labels.push(x.toFixed(2));
-                    data.push(func(x));
-                }
-                
-                basicLimitChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'f(x)',
-                            data: data,
-                            borderColor: '#3b82f6',
-                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                            borderWidth: 2,
-                            fill: false,
-                            tension: 0.4
-                        }, {
-                            label: 'Limit Point',
-                            data: [{x: a, y: limitValue}],
-                            pointBackgroundColor: '#ef4444',
-                            pointBorderColor: '#ef4444',
-                            pointRadius: 6,
-                            showLine: false
-                        }]
+            if (nextBtn.disabled) {
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+        
+        function triggerSlideAnimations(slideIndex) {
+            switch(slideIndex) {
+                case 2:
+                    // Reset magnet position for Lenz's Law demo
+                    gsap.set('#magnet2', { x: 0 });
+                    document.getElementById('currentIndicator').textContent = 'I = 0';
+                    document.getElementById('currentIndicator').className = 'w-12 h-8 bg-gray-300 rounded flex items-center justify-center text-xs mb-1';
+                    break;
+            }
+        }
+        
+        function moveMagnet(direction) {
+            const magnet = document.getElementById('magnet2');
+            const currentIndicator = document.getElementById('currentIndicator');
+            
+            // Create magnetic field lines
+            createMagneticField('magneticField2', 8);
+            
+            if (direction === 'towards') {
+                // Move magnet towards coil
+                gsap.to(magnet, {
+                    x: 150,
+                    duration: 2,
+                    onUpdate: function() {
+                        // Show induced current opposing the approach
+                        currentIndicator.textContent = 'I →';
+                        currentIndicator.className = 'w-12 h-8 bg-red-300 rounded flex items-center justify-center text-xs mb-1';
                     },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'x'
-                                }
-                            },
-                            y: {
-                                title: {
-                                    display: true,
-                                    text: 'f(x)'
-                                }
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                position: 'top',
-                            },
-                            tooltip: {
-                                mode: 'index',
-                                intersect: false
-                            }
-                        }
+                    onComplete: function() {
+                        // Reset after a delay
+                        setTimeout(() => {
+                            currentIndicator.textContent = 'I = 0';
+                            currentIndicator.className = 'w-12 h-8 bg-gray-300 rounded flex items-center justify-center text-xs mb-1';
+                        }, 1000);
                     }
                 });
-                
-                // Update limit result
-                limitResult.innerHTML = `\\[ \\lim_{x \\to ${a}} f(x) = ${limitValue.toFixed(2)} \\]`;
-                MathJax.typeset();
-            }
-            
-            functionSelect.addEventListener('change', updateLimitVisualization);
-            approachPoint.addEventListener('input', updateLimitVisualization);
-            approachDistance.addEventListener('input', updateLimitVisualization);
-            
-            updateLimitVisualization();
-        }
-
-        function initOneSidedLimits() {
-            const sidedFunction = document.getElementById('sided-function');
-            const sidedLimitResult = document.getElementById('sided-limit-result');
-            const limitExistence = document.getElementById('limit-existence');
-            
-            let sidedLimitChart = null;
-            
-            function updateOneSidedLimits() {
-                const funcType = sidedFunction.value;
-                const ctx = document.getElementById('sidedLimitChart').getContext('2d');
-                
-                if (sidedLimitChart) {
-                    sidedLimitChart.destroy();
-                }
-                
-                let data = [];
-                let labels = [];
-                let leftLimit, rightLimit;
-                
-                switch(funcType) {
-                    case 'step':
-                        // Step function with jump at x=0
-                        for (let x = -2; x <= 2; x += 0.1) {
-                            labels.push(x.toFixed(1));
-                            if (x < 0) {
-                                data.push(1);
-                            } else {
-                                data.push(2);
-                            }
-                        }
-                        leftLimit = 1;
-                        rightLimit = 2;
-                        break;
-                    case 'piecewise':
-                        // Piecewise function
-                        for (let x = -2; x <= 2; x += 0.1) {
-                            labels.push(x.toFixed(1));
-                            if (x < 0) {
-                                data.push(x*x + 1);
-                            } else {
-                                data.push(2 - x);
-                            }
-                        }
-                        leftLimit = 1;
-                        rightLimit = 2;
-                        break;
-                    case 'absolute':
-                        // Absolute value function
-                        for (let x = -2; x <= 2; x += 0.1) {
-                            labels.push(x.toFixed(1));
-                            data.push(Math.abs(x));
-                        }
-                        leftLimit = 0;
-                        rightLimit = 0;
-                        break;
-                }
-                
-                sidedLimitChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'f(x)',
-                            data: data,
-                            borderColor: '#3b82f6',
-                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                            borderWidth: 2,
-                            fill: false,
-                            tension: 0
-                        }]
+            } else {
+                // Move magnet away from coil
+                gsap.to(magnet, {
+                    x: -150,
+                    duration: 2,
+                    onUpdate: function() {
+                        // Show induced current opposing the retreat
+                        currentIndicator.textContent = '← I';
+                        currentIndicator.className = 'w-12 h-8 bg-blue-300 rounded flex items-center justify-center text-xs mb-1';
                     },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'x'
-                                }
-                            },
-                            y: {
-                                title: {
-                                    display: true,
-                                    text: 'f(x)'
-                                }
-                            }
-                        }
+                    onComplete: function() {
+                        // Reset after a delay
+                        setTimeout(() => {
+                            currentIndicator.textContent = 'I = 0';
+                            currentIndicator.className = 'w-12 h-8 bg-gray-300 rounded flex items-center justify-center text-xs mb-1';
+                        }, 1000);
                     }
                 });
-                
-                // Update results
-                sidedLimitResult.textContent = `Left limit: ${leftLimit}, Right limit: ${rightLimit}`;
-                if (leftLimit === rightLimit) {
-                    limitExistence.textContent = `Limit exists at x = 0 and equals ${leftLimit}`;
-                    limitExistence.className = 'text-green-600 text-center text-sm mt-1';
-                } else {
-                    limitExistence.textContent = 'Limit does not exist at x = 0';
-                    limitExistence.className = 'text-red-600 text-center text-sm mt-1';
-                }
             }
-            
-            sidedFunction.addEventListener('change', updateOneSidedLimits);
-            updateOneSidedLimits();
         }
-
-        function initContinuity() {
-            const continuityFunction = document.getElementById('continuity-function');
-            const checkDefined = document.getElementById('check-defined');
-            const checkLimit = document.getElementById('check-limit');
-            const checkEqual = document.getElementById('check-equal');
-            const checkConclusion = document.getElementById('check-conclusion');
+        
+        function createMagneticField(containerId, lineCount) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
             
-            let continuityChart = null;
-            
-            function updateContinuity() {
-                const funcType = continuityFunction.value;
-                const ctx = document.getElementById('continuityChart').getContext('2d');
+            for (let i = 0; i < lineCount; i++) {
+                const line = document.createElement('div');
+                line.className = 'magnetic-field-line';
+                line.style.position = 'absolute';
+                line.style.width = '2px';
+                line.style.height = '100%';
+                line.style.backgroundColor = 'rgba(59, 130, 246, 0.5)';
+                line.style.left = `${(i / (lineCount - 1)) * 100}%`;
+                line.style.top = '0';
                 
-                if (continuityChart) {
-                    continuityChart.destroy();
-                }
+                // Animate the field lines
+                gsap.fromTo(line, 
+                    { scaleY: 0, transformOrigin: "50% 50%" },
+                    { scaleY: 1, duration: 0.5, delay: i * 0.1 }
+                );
                 
-                let data = [];
-                let labels = [];
-                let isDefined, limitExists, isEqual;
-                
-                switch(funcType) {
-                    case 'continuous':
-                        // Continuous function
-                        for (let x = -2; x <= 2; x += 0.1) {
-                            labels.push(x.toFixed(1));
-                            data.push(x*x);
-                        }
-                        isDefined = true;
-                        limitExists = true;
-                        isEqual = true;
-                        break;
-                    case 'jump':
-                        // Jump discontinuity
-                        for (let x = -2; x <= 2; x += 0.1) {
-                            labels.push(x.toFixed(1));
-                            if (x < 0) {
-                                data.push(x);
-                            } else {
-                                data.push(x + 1);
-                            }
-                        }
-                        isDefined = true;
-                        limitExists = false;
-                        isEqual = false;
-                        break;
-                    case 'removable':
-                        // Removable discontinuity
-                        for (let x = -2; x <= 2; x += 0.1) {
-                            labels.push(x.toFixed(1));
-                            if (x !== 0) {
-                                data.push((x*x - 1) / (x - 1));
-                            } else {
-                                data.push(NaN); // Hole at x=0
-                            }
-                        }
-                        isDefined = false;
-                        limitExists = true;
-                        isEqual = false;
-                        break;
-                    case 'infinite':
-                        // Infinite discontinuity
-                        for (let x = -2; x <= 2; x += 0.1) {
-                            labels.push(x.toFixed(1));
-                            if (x !== 0) {
-                                data.push(1/x);
-                            } else {
-                                data.push(NaN);
-                            }
-                        }
-                        isDefined = false;
-                        limitExists = false;
-                        isEqual = false;
-                        break;
-                }
-                
-                continuityChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'f(x)',
-                            data: data,
-                            borderColor: '#3b82f6',
-                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                            borderWidth: 2,
-                            fill: false,
-                            tension: 0
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'x'
-                                }
-                            },
-                            y: {
-                                title: {
-                                    display: true,
-                                    text: 'f(x)'
-                                }
-                            }
-                        }
-                    }
-                });
-                
-                // Update continuity check
-                checkDefined.textContent = isDefined ? 'Yes' : 'No';
-                checkDefined.className = isDefined ? 'text-green-600' : 'text-red-600';
-                
-                checkLimit.textContent = limitExists ? 'Yes' : 'No';
-                checkLimit.className = limitExists ? 'text-green-600' : 'text-red-600';
-                
-                checkEqual.textContent = isEqual ? 'Yes' : 'No';
-                checkEqual.className = isEqual ? 'text-green-600' : 'text-red-600';
-                
-                const isContinuous = isDefined && limitExists && isEqual;
-                checkConclusion.textContent = isContinuous ? 'Continuous' : 'Not Continuous';
-                checkConclusion.className = isContinuous ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold';
+                container.appendChild(line);
             }
-            
-            continuityFunction.addEventListener('change', updateContinuity);
-            updateContinuity();
         }
-
-        function initPracticeProblem() {
-            const showNextStepBtn = document.getElementById('show-next-step');
-            const solutionSteps = document.querySelectorAll('.solution-step');
-            const checkAnswerBtn = document.getElementById('check-answer');
-            const answerFeedback = document.getElementById('answer-feedback');
-            const options = document.querySelectorAll('.option');
+        
+        function createParticles() {
+            const colors = ['#3B82F6', '#10B981', '#8B5CF6', '#F59E0B'];
             
-            let currentStep = 0;
-            
-            function resetSolutionSteps() {
-                currentStep = 0;
-                solutionSteps.forEach((step, index) => {
-                    step.classList.remove('highlight');
-                    step.style.opacity = index === 0 ? '1' : '0.5';
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = `${Math.random() * 10 + 5}px`;
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                
+                document.querySelector('.max-w-6xl').appendChild(particle);
+                
+                // Animate particles
+                gsap.to(particle, {
+                    x: `+=${(Math.random() - 0.5) * 100}`,
+                    y: `+=${(Math.random() - 0.5) * 100}`,
+                    duration: Math.random() * 10 + 10,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
                 });
-                showNextStepBtn.textContent = 'Show Next Step';
-                showNextStepBtn.disabled = false;
             }
-            
-            function showNextStep() {
-                if (currentStep < solutionSteps.length - 1) {
-                    solutionSteps[currentStep].classList.remove('highlight');
-                    currentStep++;
-                    solutionSteps[currentStep].style.opacity = '1';
-                    solutionSteps[currentStep].classList.add('highlight');
-                    
-                    if (currentStep === solutionSteps.length - 1) {
-                        showNextStepBtn.textContent = 'Solution Complete';
-                        showNextStepBtn.disabled = true;
-                    }
-                }
-            }
-            
-            showNextStepBtn.addEventListener('click', showNextStep);
-            
-            checkAnswerBtn.addEventListener('click', function() {
-                const selectedOption = document.querySelector('input[name="answer"]:checked');
-                if (selectedOption) {
-                    answerFeedback.classList.remove('hidden');
-                    answerFeedback.scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Highlight correct answer (option 1: a=2, b=0)
-                    if (selectedOption.id === 'option1') {
-                        selectedOption.parentElement.classList.add('bg-green-100', 'p-2', 'rounded', 'border', 'border-green-300');
-                    } else {
-                        selectedOption.parentElement.classList.add('bg-red-100', 'p-2', 'rounded', 'border', 'border-red-300');
-                        document.getElementById('option1').parentElement.classList.add('bg-green-100', 'p-2', 'rounded', 'border', 'border-green-300');
-                    }
-                } else {
-                    alert('Please select an answer first!');
-                }
-            });
-            
-            // Animate options on hover
-            options.forEach(option => {
-                option.addEventListener('mouseenter', function() {
-                    if (!this.classList.contains('bg-green-100') && !this.classList.contains('bg-red-100')) {
-                        this.classList.add('bg-blue-50', 'p-2', 'rounded', 'transition-all', 'duration-300');
-                    }
-                });
-                option.addEventListener('mouseleave', function() {
-                    if (!this.classList.contains('bg-green-100') && !this.classList.contains('bg-red-100')) {
-                        this.classList.remove('bg-blue-50', 'p-2', 'rounded');
-                    }
-                });
-            });
-            
-            resetSolutionSteps();
         }
     </script>
 </body>
