@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Limits & Continuity Mastery | KnowJEE</title>
+    <meta name="description" content="Master JEE Limits & Continuity with interactive tutorials. Learn limit concepts, continuity, differentiability with animations and practice problems for IIT-JEE preparation.">
+    <meta name="keywords" content="JEE Limits, JEE Continuity, Limits and Continuity, IIT-JEE Maths, JEE Main, JEE Advanced, Calculus">
+    <meta name="author" content="KnowJEE">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-fadeIn { animation: fadeIn 0.8s ease-out; }
+        .animate-pulse-slow { animation: pulse 3s infinite; }
+        .animate-slideIn { animation: slideIn 0.6s ease-out; }
+        .animate-bounce-slow { animation: bounce 2s infinite; }
+        .slide { display: none; }
+        .slide.active { display: block; animation: fadeIn 0.8s ease-out; }
+        .graph-container { 
+            position: relative; 
+            width: 100%; 
+            height: 300px; 
+            background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .limit-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ef4444;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .approach-line {
+            position: absolute;
+            height: 2px;
+            background: #10b981;
+            transform-origin: 0 0;
+        }
+        .approach-line::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid #10b981;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        .function-point {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #3b82f6;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .discontinuity-point {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ef4444;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+        }
+        .highlight { 
+            background-color: #fef3c7; 
+            transition: background-color 0.5s ease;
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #3b82f6;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6 }
+        }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        canvas {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb mb-4" aria-label="Breadcrumb">
+            <a href="#">Home</a> > 
+            <a href="#">JEE Mathematics</a> > 
+            <a href="#">Calculus</a> > 
+            <span>Limits & Continuity</span>
+        </nav>
+
+        <!-- Header -->
+        <header class="text-center mb-12 animate-fadeIn">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                JEE Limits & Continuity Mastery
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Master the fundamental concepts of Limits, Continuity and Differentiability with interactive visualizations
+            </p>
+            <div class="mt-4 flex flex-wrap justify-center gap-2">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JEE Main</span>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">JEE Advanced</span>
+                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Calculus</span>
+                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Limits</span>
+                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Continuity</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 animate-slideIn">
+            <!-- Navigation -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-4">
+                <div class="flex justify-between items-center">
+                    <div class="text-white font-semibold text-lg">
+                        Topic: Limits & Continuity
+                    </div>
+                    <div class="flex space-x-2">
+                        <button id="prev-btn" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                            <i class="fas fa-arrow-left mr-2"></i>Previous
+                        </button>
+                        <button id="next-btn" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">
+                            Next<i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-6 md:p-8">
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between text-sm text-gray-500 mb-2">
+                        <span>Progress</span>
+                        <span id="progress-text">1/6</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-500 ease-in-out" style="width: 16.66%"></div>
+                    </div>
+                </div>
+
+                <!-- Slides Container -->
+                <div id="slides-container" class="min-h-[500px]">
+                    <!-- Slide 1: Introduction -->
+                    <div class="slide active">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-800 mb-4">Limits & Continuity in JEE</h2>
+                                <div class="space-y-4 text-gray-700">
+                                    <p>Limits form the foundation of calculus and are crucial for understanding derivatives and integrals. This topic appears in both JEE Main and Advanced every year.</p>
+                                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 animate-pulse-slow">
+                                        <span class="font-semibold">JEE Importance:</span> Typically 1-2 questions every year, often testing conceptual understanding through tricky problems.
+                                    </div>
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <h3 class="font-bold text-yellow-700 mb-2">Key Concepts:</h3>
+                                        <ul class="list-disc pl-5 space-y-1">
+                                            <li>Concept of Limits and Existence</li>
+                                            <li>Standard Limits</li>
+                                            <li>Continuity and Differentiability</li>
+                                            <li>L'Hôpital's Rule</li>
+                                            <li>Sandwich Theorem</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-6 rounded-xl border-2 border-blue-200 w-full max-w-md animate-pulse-slow">
+                                    <div class="text-center">
+                                        <i class="fas fa-infinity text-5xl text-blue-600 mb-4"></i>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Limit Fundamentals</h3>
+                                        <p class="text-gray-600">Understanding behavior of functions as they approach specific points</p>
+                                        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                                            Start Learning
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Limit Concept -->
+                    <div class="slide">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Understanding Limits</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <div class="graph-container mb-4" id="limit-graph-1">
+                                    <canvas id="basicLimitChart"></canvas>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold">Limit Definition:</span>
+                                    </p>
+                                    <div class="bg-white p-3 rounded mt-2">
+                                        <p class="font-mono text-lg text-center">\[ \lim_{x \to a} f(x) = L \]</p>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mt-2 text-center">
+                                        As x approaches a, f(x) approaches L
+                                    </p>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span>Function:</span>
+                                        <select id="function-select" class="border rounded px-3 py-1">
+                                            <option value="linear">f(x) = 2x + 1</option>
+                                            <option value="quadratic">f(x) = x²</option>
+                                            <option value="rational">f(x) = (x²-1)/(x-1)</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Approach Point (a):</span>
+                                        <input type="range" id="approach-point" min="-2" max="2" step="0.1" value="1" class="w-1/2 mx-2">
+                                        <span id="approach-value" class="w-10">1</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Approach Distance (ε):</span>
+                                        <input type="range" id="approach-distance" min="0.1" max="1" step="0.1" value="0.5" class="w-1/2 mx-2">
+                                        <span id="distance-value" class="w-10">0.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mb-6">
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-3">The Limit Concept</h3>
+                                    <p class="text-gray-700 mb-4">
+                                        A limit describes the value that a function approaches as the input approaches some value. Limits are essential for defining derivatives and integrals.
+                                    </p>
+                                    <div class="bg-white p-4 rounded-lg mb-4">
+                                        <p class="text-gray-700 text-center font-semibold" id="limit-result">
+                                            \[ \lim_{x \to 1} f(x) = 3 \]
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 p-2 rounded-full mr-3 mt-1">
+                                            <i class="fas fa-lightbulb text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">
+                                            Adjust the parameters to see how the limit changes. Notice how the function approaches the limit value.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-purple-100 p-2 rounded-full mr-3 mt-1">
+                                            <i class="fas fa-exclamation-circle text-purple-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">
+                                            For a limit to exist, the left-hand limit and right-hand limit must be equal.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: One-Sided Limits -->
+                    <div class="slide">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">One-Sided Limits</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <div class="graph-container mb-4">
+                                    <canvas id="sidedLimitChart"></canvas>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-gray-700 mb-2">
+                                        <span class="font-semibold">One-Sided Limits:</span>
+                                    </p>
+                                    <div class="grid grid-cols-2 gap-4 mt-2">
+                                        <div class="bg-white p-3 rounded text-center">
+                                            <p class="font-mono text-sm">\[ \lim_{x \to a^-} f(x) \]</p>
+                                            <p class="text-gray-600 text-xs mt-1">Left-hand limit</p>
+                                        </div>
+                                        <div class="bg-white p-3 rounded text-center">
+                                            <p class="font-mono text-sm">\[ \lim_{x \to a^+} f(x) \]</p>
+                                            <p class="text-gray-600 text-xs mt-1">Right-hand limit</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mb-6">
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Understanding One-Sided Limits</h3>
+                                    <p class="text-gray-700 mb-4">
+                                        One-sided limits examine the behavior of a function as it approaches a point from only one direction - either from the left or from the right.
+                                    </p>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700">Function Type</label>
+                                            <select id="sided-function" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                                <option value="step">Step Function</option>
+                                                <option value="piecewise">Piecewise Function</option>
+                                                <option value="absolute">Absolute Value</option>
+                                            </select>
+                                        </div>
+                                        <div class="bg-white p-4 rounded-lg border border-green-200">
+                                            <p class="text-gray-700 text-center font-semibold" id="sided-limit-result">
+                                                Left limit: 1, Right limit: 2
+                                            </p>
+                                            <p class="text-gray-600 text-center text-sm mt-1" id="limit-existence">
+                                                Limit does not exist at x = 0
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 p-2 rounded-full mr-3 mt-1">
+                                            <i class="fas fa-lightbulb text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">
+                                            For a limit to exist at a point, the left-hand and right-hand limits must be equal.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-purple-100 p-2 rounded-full mr-3 mt-1">
+                                            <i class="fas fa-exclamation-circle text-purple-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">
+                                            Discontinuities often occur when one-sided limits are different.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Continuity -->
+                    <div class="slide">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Continuity of Functions</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <div class="graph-container mb-4">
+                                    <canvas id="continuityChart"></canvas>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Function Type</label>
+                                        <select id="continuity-function" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                            <option value="continuous">Continuous Function</option>
+                                            <option value="jump">Jump Discontinuity</option>
+                                            <option value="removable">Removable Discontinuity</option>
+                                            <option value="infinite">Infinite Discontinuity</option>
+                                        </select>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <p class="text-gray-700">
+                                            <span class="font-semibold">Continuity Conditions:</span>
+                                        </p>
+                                        <ol class="list-decimal pl-5 mt-2 text-sm text-gray-600 space-y-1">
+                                            <li>f(a) is defined</li>
+                                            <li>limₓ→ₐ f(x) exists</li>
+                                            <li>limₓ→ₐ f(x) = f(a)</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 mb-6">
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Understanding Continuity</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start">
+                                            <div class="bg-blue-100 p-2 rounded-lg mr-3">
+                                                <i class="fas fa-check-circle text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Continuous Function</h4>
+                                                <p class="text-gray-700 text-sm">Can be drawn without lifting the pen from paper</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="bg-yellow-100 p-2 rounded-lg mr-3">
+                                                <i class="fas fa-exclamation-triangle text-yellow-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Jump Discontinuity</h4>
+                                                <p class="text-gray-700 text-sm">Left and right limits exist but are different</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="bg-red-100 p-2 rounded-lg mr-3">
+                                                <i class="fas fa-times-circle text-red-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Removable Discontinuity</h4>
+                                                <p class="text-gray-700 text-sm">Limit exists but f(a) is not defined or different</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="bg-purple-100 p-2 rounded-lg mr-3">
+                                                <i class="fas fa-infinity text-purple-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Infinite Discontinuity</h4>
+                                                <p class="text-gray-700 text-sm">Function approaches ±∞ at the point</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-semibold text-gray-800 mb-2">Continuity Check</h4>
+                                    <div class="space-y-2 text-sm" id="continuity-check">
+                                        <div class="flex justify-between">
+                                            <span>f(a) defined:</span>
+                                            <span id="check-defined" class="text-green-600">Yes</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Limit exists:</span>
+                                            <span id="check-limit" class="text-green-600">Yes</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Limit = f(a):</span>
+                                            <span id="check-equal" class="text-green-600">Yes</span>
+                                        </div>
+                                        <div class="flex justify-between font-semibold mt-2">
+                                            <span>Conclusion:</span>
+                                            <span id="check-conclusion" class="text-green-600">Continuous</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Example Problem -->
+                    <div class="slide">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">JEE Limit Problem</h2>
+                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200 mb-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">JEE Main 2022 Question</h3>
+                            <div class="bg-white p-4 rounded-lg mb-4">
+                                <p class="text-lg text-gray-700">
+                                    Evaluate: \[ \lim_{x \to 0} \frac{\sin(3x) \cdot \tan(2x)}{x^2} \]
+                                </p>
+                            </div>
+                            <div class="space-y-4" id="solution-steps">
+                                <div class="flex solution-step">
+                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</div>
+                                    <p class="text-gray-700 pt-1">
+                                        Use the standard limit: \( \lim_{x \to 0} \frac{\sin x}{x} = 1 \)
+                                    </p>
+                                </div>
+                                <div class="flex solution-step opacity-50">
+                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</div>
+                                    <p class="text-gray-700 pt-1">
+                                        Rewrite the expression: \( \frac{\sin(3x)}{x} \cdot \frac{\tan(2x)}{x} \)
+                                    </p>
+                                </div>
+                                <div class="flex solution-step opacity-50">
+                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</div>
+                                    <p class="text-gray-700 pt-1">
+                                        Apply the standard limits: \( 3 \cdot \frac{\sin(3x)}{3x} \cdot 2 \cdot \frac{\tan(2x)}{2x} \)
+                                    </p>
+                                </div>
+                                <div class="flex solution-step opacity-50">
+                                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</div>
+                                    <p class="text-gray-700 pt-1">
+                                        Simplify: \( 3 \cdot 1 \cdot 2 \cdot 1 = 6 \)
+                                    </p>
+                                </div>
+                                <div class="flex solution-step opacity-50">
+                                    <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">✓</div>
+                                    <p class="text-gray-700 pt-1 font-semibold">
+                                        Therefore, the limit is 6
+                                    </p>
+                                </div>
+                            </div>
+                            <button id="show-next-step" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                                Show Next Step
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Practice Problem -->
+                    <div class="slide">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Problem</h2>
+                        <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 mb-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">JEE Advanced Practice Question</h3>
+                            <div class="bg-white p-4 rounded-lg mb-6">
+                                <p class="text-lg text-gray-700">
+                                    Let \( f(x) = \begin{cases} 
+                                    x^2 + 1 & \text{if } x < 1 \\
+                                    ax + b & \text{if } x \geq 1 
+                                    \end{cases} \)
+                                    <br>
+                                    If f(x) is continuous at x = 1, find the values of a and b.
+                                </p>
+                            </div>
+                            <div class="space-y-4" id="options-container">
+                                <div class="flex items-center option">
+                                    <input type="radio" id="option1" name="answer" class="mr-3 h-5 w-5 text-blue-600">
+                                    <label for="option1" class="text-gray-700">a = 2, b = 0</label>
+                                </div>
+                                <div class="flex items-center option">
+                                    <input type="radio" id="option2" name="answer" class="mr-3 h-5 w-5 text-blue-600">
+                                    <label for="option2" class="text-gray-700">a = 1, b = 1</label>
+                                </div>
+                                <div class="flex items-center option">
+                                    <input type="radio" id="option3" name="answer" class="mr-3 h-5 w-5 text-blue-600">
+                                    <label for="option3" class="text-gray-700">a = 2, b = -1</label>
+                                </div>
+                                <div class="flex items-center option">
+                                    <input type="radio" id="option4" name="answer" class="mr-3 h-5 w-5 text-blue-600">
+                                    <label for="option4" class="text-gray-700">a = 3, b = -2</label>
+                                </div>
+                            </div>
+                            <button id="check-answer" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition mt-4">
+                                Check Answer
+                            </button>
+                        </div>
+                        <div id="answer-feedback" class="hidden bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <h4 class="font-semibold text-yellow-700 mb-2">Solution:</h4>
+                            <p class="text-gray-700">
+                                For continuity at x = 1:<br>
+                                1. Left-hand limit: \( \lim_{x \to 1^-} f(x) = 1^2 + 1 = 2 \)<br>
+                                2. Right-hand limit: \( \lim_{x \to 1^+} f(x) = a(1) + b = a + b \)<br>
+                                3. f(1) = a + b<br>
+                                For continuity: 2 = a + b<br>
+                                Also, the function must be differentiable at x = 1 for a unique solution.<br>
+                                Left derivative: 2, Right derivative: a ⇒ a = 2, then b = 0<br>
+                                Answer: a = 2, b = 0
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8 animate-fadeIn">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Limits & Continuity Key Takeaways</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 transform transition-transform hover:scale-105">
+                    <div class="text-blue-600 text-center mb-2">
+                        <i class="fas fa-calculator text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-center">Limit Concept</h3>
+                    <p class="text-gray-600 text-sm text-center mt-2">Behavior of functions near points</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg border border-green-200 transform transition-transform hover:scale-105">
+                    <div class="text-green-600 text-center mb-2">
+                        <i class="fas fa-arrows-alt-h text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-center">One-Sided Limits</h3>
+                    <p class="text-gray-600 text-sm text-center mt-2">Left-hand and right-hand limits</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg border border-purple-200 transform transition-transform hover:scale-105">
+                    <div class="text-purple-600 text-center mb-2">
+                        <i class="fas fa-infinity text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-center">Continuity</h3>
+                    <p class="text-gray-600 text-sm text-center mt-2">Three conditions for continuity</p>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 transform transition-transform hover:scale-105">
+                    <div class="text-yellow-600 text-center mb-2">
+                        <i class="fas fa-exclamation-triangle text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-center">Discontinuities</h3>
+                    <p class="text-gray-600 text-sm text-center mt-2">Jump, removable, infinite types</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 py-6">
+            <p>© 2023 KnowJEE - JEE Preparation Made Interactive</p>
+            <p class="text-sm mt-2">For more content, subscribe to our YouTube channel</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all interactive components
+            initSlideshow();
+            initLimitVisualization();
+            initOneSidedLimits();
+            initContinuity();
+            initPracticeProblem();
+        });
+
+        function initSlideshow() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            let currentSlide = 0;
+            
+            function updateSlide() {
+                slides.forEach((slide, index) => {
+                    if (index === currentSlide) {
+                        slide.classList.remove('hidden');
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.add('hidden');
+                        slide.classList.remove('active');
+                    }
+                });
+                
+                // Update progress
+                const progress = ((currentSlide + 1) / slides.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${currentSlide + 1}/${slides.length}`;
+                
+                // Update button states
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === slides.length - 1;
+            }
+            
+            prevBtn.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide();
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlide();
+                }
+            });
+            
+            updateSlide();
+        }
+
+        function initLimitVisualization() {
+            const functionSelect = document.getElementById('function-select');
+            const approachPoint = document.getElementById('approach-point');
+            const approachValue = document.getElementById('approach-value');
+            const approachDistance = document.getElementById('approach-distance');
+            const distanceValue = document.getElementById('distance-value');
+            const limitResult = document.getElementById('limit-result');
+            
+            let basicLimitChart = null;
+            
+            function updateLimitVisualization() {
+                const funcType = functionSelect.value;
+                const a = parseFloat(approachPoint.value);
+                const epsilon = parseFloat(approachDistance.value);
+                
+                approachValue.textContent = a;
+                distanceValue.textContent = epsilon;
+                
+                // Create or update chart
+                const ctx = document.getElementById('basicLimitChart').getContext('2d');
+                
+                if (basicLimitChart) {
+                    basicLimitChart.destroy();
+                }
+                
+                // Define functions
+                let func, limitValue;
+                switch(funcType) {
+                    case 'linear':
+                        func = x => 2*x + 1;
+                        limitValue = 2*a + 1;
+                        break;
+                    case 'quadratic':
+                        func = x => x*x;
+                        limitValue = a*a;
+                        break;
+                    case 'rational':
+                        func = x => (x*x - 1) / (x - 1);
+                        limitValue = a + 1; // Simplified form
+                        break;
+                }
+                
+                // Generate data
+                const data = [];
+                const labels = [];
+                const start = a - 1.5;
+                const end = a + 1.5;
+                const step = (end - start) / 100;
+                
+                for (let x = start; x <= end; x += step) {
+                    if (funcType === 'rational' && Math.abs(x - 1) < 0.01) {
+                        // Skip the point of discontinuity
+                        continue;
+                    }
+                    labels.push(x.toFixed(2));
+                    data.push(func(x));
+                }
+                
+                basicLimitChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'f(x)',
+                            data: data,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: false,
+                            tension: 0.4
+                        }, {
+                            label: 'Limit Point',
+                            data: [{x: a, y: limitValue}],
+                            pointBackgroundColor: '#ef4444',
+                            pointBorderColor: '#ef4444',
+                            pointRadius: 6,
+                            showLine: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'x'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'f(x)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false
+                            }
+                        }
+                    }
+                });
+                
+                // Update limit result
+                limitResult.innerHTML = `\\[ \\lim_{x \\to ${a}} f(x) = ${limitValue.toFixed(2)} \\]`;
+                MathJax.typeset();
+            }
+            
+            functionSelect.addEventListener('change', updateLimitVisualization);
+            approachPoint.addEventListener('input', updateLimitVisualization);
+            approachDistance.addEventListener('input', updateLimitVisualization);
+            
+            updateLimitVisualization();
+        }
+
+        function initOneSidedLimits() {
+            const sidedFunction = document.getElementById('sided-function');
+            const sidedLimitResult = document.getElementById('sided-limit-result');
+            const limitExistence = document.getElementById('limit-existence');
+            
+            let sidedLimitChart = null;
+            
+            function updateOneSidedLimits() {
+                const funcType = sidedFunction.value;
+                const ctx = document.getElementById('sidedLimitChart').getContext('2d');
+                
+                if (sidedLimitChart) {
+                    sidedLimitChart.destroy();
+                }
+                
+                let data = [];
+                let labels = [];
+                let leftLimit, rightLimit;
+                
+                switch(funcType) {
+                    case 'step':
+                        // Step function with jump at x=0
+                        for (let x = -2; x <= 2; x += 0.1) {
+                            labels.push(x.toFixed(1));
+                            if (x < 0) {
+                                data.push(1);
+                            } else {
+                                data.push(2);
+                            }
+                        }
+                        leftLimit = 1;
+                        rightLimit = 2;
+                        break;
+                    case 'piecewise':
+                        // Piecewise function
+                        for (let x = -2; x <= 2; x += 0.1) {
+                            labels.push(x.toFixed(1));
+                            if (x < 0) {
+                                data.push(x*x + 1);
+                            } else {
+                                data.push(2 - x);
+                            }
+                        }
+                        leftLimit = 1;
+                        rightLimit = 2;
+                        break;
+                    case 'absolute':
+                        // Absolute value function
+                        for (let x = -2; x <= 2; x += 0.1) {
+                            labels.push(x.toFixed(1));
+                            data.push(Math.abs(x));
+                        }
+                        leftLimit = 0;
+                        rightLimit = 0;
+                        break;
+                }
+                
+                sidedLimitChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'f(x)',
+                            data: data,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: false,
+                            tension: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'x'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'f(x)'
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                // Update results
+                sidedLimitResult.textContent = `Left limit: ${leftLimit}, Right limit: ${rightLimit}`;
+                if (leftLimit === rightLimit) {
+                    limitExistence.textContent = `Limit exists at x = 0 and equals ${leftLimit}`;
+                    limitExistence.className = 'text-green-600 text-center text-sm mt-1';
+                } else {
+                    limitExistence.textContent = 'Limit does not exist at x = 0';
+                    limitExistence.className = 'text-red-600 text-center text-sm mt-1';
+                }
+            }
+            
+            sidedFunction.addEventListener('change', updateOneSidedLimits);
+            updateOneSidedLimits();
+        }
+
+        function initContinuity() {
+            const continuityFunction = document.getElementById('continuity-function');
+            const checkDefined = document.getElementById('check-defined');
+            const checkLimit = document.getElementById('check-limit');
+            const checkEqual = document.getElementById('check-equal');
+            const checkConclusion = document.getElementById('check-conclusion');
+            
+            let continuityChart = null;
+            
+            function updateContinuity() {
+                const funcType = continuityFunction.value;
+                const ctx = document.getElementById('continuityChart').getContext('2d');
+                
+                if (continuityChart) {
+                    continuityChart.destroy();
+                }
+                
+                let data = [];
+                let labels = [];
+                let isDefined, limitExists, isEqual;
+                
+                switch(funcType) {
+                    case 'continuous':
+                        // Continuous function
+                        for (let x = -2; x <= 2; x += 0.1) {
+                            labels.push(x.toFixed(1));
+                            data.push(x*x);
+                        }
+                        isDefined = true;
+                        limitExists = true;
+                        isEqual = true;
+                        break;
+                    case 'jump':
+                        // Jump discontinuity
+                        for (let x = -2; x <= 2; x += 0.1) {
+                            labels.push(x.toFixed(1));
+                            if (x < 0) {
+                                data.push(x);
+                            } else {
+                                data.push(x + 1);
+                            }
+                        }
+                        isDefined = true;
+                        limitExists = false;
+                        isEqual = false;
+                        break;
+                    case 'removable':
+                        // Removable discontinuity
+                        for (let x = -2; x <= 2; x += 0.1) {
+                            labels.push(x.toFixed(1));
+                            if (x !== 0) {
+                                data.push((x*x - 1) / (x - 1));
+                            } else {
+                                data.push(NaN); // Hole at x=0
+                            }
+                        }
+                        isDefined = false;
+                        limitExists = true;
+                        isEqual = false;
+                        break;
+                    case 'infinite':
+                        // Infinite discontinuity
+                        for (let x = -2; x <= 2; x += 0.1) {
+                            labels.push(x.toFixed(1));
+                            if (x !== 0) {
+                                data.push(1/x);
+                            } else {
+                                data.push(NaN);
+                            }
+                        }
+                        isDefined = false;
+                        limitExists = false;
+                        isEqual = false;
+                        break;
+                }
+                
+                continuityChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'f(x)',
+                            data: data,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: false,
+                            tension: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'x'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'f(x)'
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                // Update continuity check
+                checkDefined.textContent = isDefined ? 'Yes' : 'No';
+                checkDefined.className = isDefined ? 'text-green-600' : 'text-red-600';
+                
+                checkLimit.textContent = limitExists ? 'Yes' : 'No';
+                checkLimit.className = limitExists ? 'text-green-600' : 'text-red-600';
+                
+                checkEqual.textContent = isEqual ? 'Yes' : 'No';
+                checkEqual.className = isEqual ? 'text-green-600' : 'text-red-600';
+                
+                const isContinuous = isDefined && limitExists && isEqual;
+                checkConclusion.textContent = isContinuous ? 'Continuous' : 'Not Continuous';
+                checkConclusion.className = isContinuous ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold';
+            }
+            
+            continuityFunction.addEventListener('change', updateContinuity);
+            updateContinuity();
+        }
+
+        function initPracticeProblem() {
+            const showNextStepBtn = document.getElementById('show-next-step');
+            const solutionSteps = document.querySelectorAll('.solution-step');
+            const checkAnswerBtn = document.getElementById('check-answer');
+            const answerFeedback = document.getElementById('answer-feedback');
+            const options = document.querySelectorAll('.option');
+            
+            let currentStep = 0;
+            
+            function resetSolutionSteps() {
+                currentStep = 0;
+                solutionSteps.forEach((step, index) => {
+                    step.classList.remove('highlight');
+                    step.style.opacity = index === 0 ? '1' : '0.5';
+                });
+                showNextStepBtn.textContent = 'Show Next Step';
+                showNextStepBtn.disabled = false;
+            }
+            
+            function showNextStep() {
+                if (currentStep < solutionSteps.length - 1) {
+                    solutionSteps[currentStep].classList.remove('highlight');
+                    currentStep++;
+                    solutionSteps[currentStep].style.opacity = '1';
+                    solutionSteps[currentStep].classList.add('highlight');
+                    
+                    if (currentStep === solutionSteps.length - 1) {
+                        showNextStepBtn.textContent = 'Solution Complete';
+                        showNextStepBtn.disabled = true;
+                    }
+                }
+            }
+            
+            showNextStepBtn.addEventListener('click', showNextStep);
+            
+            checkAnswerBtn.addEventListener('click', function() {
+                const selectedOption = document.querySelector('input[name="answer"]:checked');
+                if (selectedOption) {
+                    answerFeedback.classList.remove('hidden');
+                    answerFeedback.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Highlight correct answer (option 1: a=2, b=0)
+                    if (selectedOption.id === 'option1') {
+                        selectedOption.parentElement.classList.add('bg-green-100', 'p-2', 'rounded', 'border', 'border-green-300');
+                    } else {
+                        selectedOption.parentElement.classList.add('bg-red-100', 'p-2', 'rounded', 'border', 'border-red-300');
+                        document.getElementById('option1').parentElement.classList.add('bg-green-100', 'p-2', 'rounded', 'border', 'border-green-300');
+                    }
+                } else {
+                    alert('Please select an answer first!');
+                }
+            });
+            
+            // Animate options on hover
+            options.forEach(option => {
+                option.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('bg-green-100') && !this.classList.contains('bg-red-100')) {
+                        this.classList.add('bg-blue-50', 'p-2', 'rounded', 'transition-all', 'duration-300');
+                    }
+                });
+                option.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('bg-green-100') && !this.classList.contains('bg-red-100')) {
+                        this.classList.remove('bg-blue-50', 'p-2', 'rounded');
+                    }
+                });
+            });
+            
+            resetSolutionSteps();
+        }
+    </script>
+</body>
+</html>
