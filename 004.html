@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Physics Solution | KnowJEE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .slide { display: none; }
+        .slide.active { display: block; animation: fadeIn 0.8s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .content-line { opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+        .content-line.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Progress Bar -->
+            <div class="h-1 bg-gray-200">
+                <div id="progressBar" class="h-full bg-blue-600 transition-all duration-500" style="width: 12.5%"></div>
+            </div>
+            
+            <!-- Slides Container -->
+            <div class="min-h-[600px] p-8">
+                <!-- Slide 1: Question -->
+                <div id="slide1" class="slide active">
+                    <div class="text-center mb-8">
+                        <h1 class="text-4xl font-bold text-blue-800">Know<span class="text-orange-500">JEE</span></h1>
+                        <p class="text-gray-600">JEE Advanced Physics Solution</p>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+                        <h2 class="text-2xl font-bold text-blue-800 mb-4">PROBLEM STATEMENT</h2>
+                        <p class="text-3xl font-bold text-gray-800 leading-tight">
+                            A block of mass 2 kg is placed on a rough inclined plane with angle 37°. 
+                            The coefficient of friction is 0.5. 
+                            Will the block slide down? If yes, find its acceleration.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-2">Given Values</h3>
+                            <p>Mass, m = 2 kg</p>
+                            <p>Angle, θ = 37°</p>
+                            <p>μ = 0.5</p>
+                            <p>g = 10 m/s²</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-2">Required</h3>
+                            <p>• Will block slide?</p>
+                            <p>• If yes, acceleration = ?</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <p class="text-yellow-800 font-semibold">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            This problem tests understanding of friction and inclined plane mechanics
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Understanding the Problem -->
+                <div id="slide2" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Understanding the Problem</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="content-line bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-gray-800 mb-2">Key Concept</h3>
+                            <p>When an object is placed on an inclined plane, two forces compete:</p>
+                            <p class="ml-4 mt-2">• <span class="text-green-600">Component of gravity pulling down</span> = mg sinθ</p>
+                            <p class="ml-4">• <span class="text-red-600">Maximum static friction holding back</span> = μ mg cosθ</p>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-2">Decision Making</h3>
+                            <p>The block will slide only if:</p>
+                            <p class="text-center text-xl font-mono my-3">mg sinθ > μ mg cosθ</p>
+                            <p>Which simplifies to:</p>
+                            <p class="text-center text-xl font-mono my-3">tanθ > μ</p>
+                        </div>
+
+                        <div class="content-line bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-2">Our Specific Case</h3>
+                            <p>We need to compare:</p>
+                            <p class="ml-4">• tan(37°) = ?</p>
+                            <p class="ml-4">• μ = 0.5</p>
+                            <p>If tan(37°) > 0.5, the block will slide. Otherwise, it stays at rest.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Step 1 - Check if Block Slides -->
+                <div id="slide3" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 1: Will the Block Slide?</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Calculate tanθ</h3>
+                            <p class="mb-2">For angle θ = 37°, we know:</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">sin37° = 0.6, cos37° = 0.8</p>
+                            <p class="mt-3">Therefore:</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">tan37° = sin37°/cos37° = 0.6/0.8 = 0.75</p>
+                        </div>
+
+                        <div class="content-line bg-red-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">Compare with μ</h3>
+                            <p class="mb-2">We have:</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">tanθ = 0.75 and μ = 0.5</p>
+                            <p class="mt-3 text-center text-2xl font-bold text-green-700">Since 0.75 > 0.5</p>
+                            <p class="text-center text-xl font-bold mt-2">✓ YES, the block will slide down</p>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-2">Explanation</h3>
+                            <p>The component of gravity pulling the block down (mg sinθ) is stronger than the maximum static friction (μ mg cosθ) that can hold it back.</p>
+                            <p class="mt-2">This is because tanθ > μ, meaning the angle is steep enough to overcome friction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Step 2 - Free Body Diagram -->
+                <div id="slide4" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 2: Free Body Diagram Analysis</h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="content-line bg-purple-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-4">Forces Acting on Block</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                                    <p><span class="font-bold">Weight (mg)</span> = 2 × 10 = 20 N downward</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                                    <p><span class="font-bold">Normal Force (N)</span> = mg cosθ perpendicular to plane</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                    <p><span class="font-bold">Friction (f)</span> = μN opposing motion</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-white p-4 rounded">
+                                <h4 class="font-bold mb-2">Force Components</h4>
+                                <p>• Down the plane: mg sinθ</p>
+                                <p>• Perpendicular: mg cosθ</p>
+                                <p>• Friction: μ mg cosθ up the plane</p>
+                            </div>
+                        </div>
+                        
+                        <div class="content-line bg-yellow-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-4">Visual Representation</h3>
+                            <div class="bg-white p-4 rounded-lg text-center">
+                                <div class="text-gray-400 mb-2">Inclined Plane (37°)</div>
+                                <div class="w-32 h-8 bg-blue-200 mx-auto mb-2 rounded">Block</div>
+                                <div class="text-sm text-gray-600 space-y-1">
+                                    <p>↓ mg sinθ (down plane)</p>
+                                    <p>↑ μ mg cosθ (friction)</p>
+                                    <p>↙ mg (gravity)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 bg-white p-3 rounded">
+                                <p class="text-sm text-gray-700">Since the block is sliding, we use <span class="font-bold">kinetic friction</span> which equals μN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Step 3 - Net Force Calculation -->
+                <div id="slide5" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 3: Calculate Net Force</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Force Down the Plane</h3>
+                            <p class="mb-2">Component of gravity pulling block down:</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">F_down = mg sinθ</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded mt-2">= 2 × 10 × sin37° = 20 × 0.6 = 12 N</p>
+                        </div>
+
+                        <div class="content-line bg-red-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">Friction Force Opposing</h3>
+                            <p class="mb-2">Kinetic friction acting up the plane:</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">f = μ mg cosθ</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded mt-2">= 0.5 × 2 × 10 × cos37° = 10 × 0.8 = 8 N</p>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Net Force</h3>
+                            <p class="mb-2">Net force causing acceleration:</p>
+                            <p class="text-center text-2xl font-mono bg-white p-4 rounded">F_net = F_down - f</p>
+                            <p class="text-center text-2xl font-mono bg-white p-4 rounded mt-2">= 12 N - 8 N = 4 N</p>
+                            <p class="text-center mt-3 text-lg">This net force acts down the inclined plane</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Step 4 - Acceleration Calculation -->
+                <div id="slide6" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 4: Find Acceleration</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-purple-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-4">Using Newton's Second Law</h3>
+                            <p class="mb-4">According to Newton's second law:</p>
+                            <p class="text-center text-2xl font-mono bg-white p-4 rounded mb-4">F_net = m × a</p>
+                            <p class="text-center text-xl">Where:</p>
+                            <p class="text-center text-xl">F_net = 4 N (from previous step)</p>
+                            <p class="text-center text-xl">m = 2 kg</p>
+                        </div>
+
+                        <div class="content-line bg-orange-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-4">Solve for Acceleration</h3>
+                            <p class="text-center text-2xl font-mono bg-white p-4 rounded mb-4">4 = 2 × a</p>
+                            <p class="text-center text-2xl font-mono bg-white p-4 rounded">a = 4 ÷ 2 = 2 m/s²</p>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-2">Final Answer</h3>
+                            <p class="text-center text-3xl font-bold text-green-700">Acceleration = 2 m/s²</p>
+                            <p class="text-center mt-2">The block slides down the incline with constant acceleration of 2 m/s²</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Verification -->
+                <div id="slide7" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 5: Verification</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-3">Check Using General Formula</h3>
+                            <p class="mb-2">For object sliding down rough incline:</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">a = g(sinθ - μ cosθ)</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded mt-2">= 10 × (sin37° - 0.5 × cos37°)</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">= 10 × (0.6 - 0.5 × 0.8)</p>
+                            <p class="text-center text-xl font-mono bg-white p-3 rounded">= 10 × (0.6 - 0.4) = 10 × 0.2 = 2 m/s²</p>
+                            <p class="text-center mt-3 text-green-700 font-bold">✓ Matches our step-by-step calculation</p>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Physical Significance</h3>
+                            <p>The acceleration is positive (2 m/s²), confirming the block slides down.</p>
+                            <p class="mt-2">If we got zero or negative acceleration, it would mean the block doesn't move or moves up, which would be physically impossible in this scenario.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Summary -->
+                <div id="slide8" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Complete Solution Summary</h2>
+                    
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-2xl mb-6">
+                        <h3 class="text-2xl font-bold mb-4 text-center">FINAL ANSWERS</h3>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white/20 p-4 rounded-lg">
+                                <p class="text-lg">Will it slide?</p>
+                                <p class="text-2xl font-bold">YES</p>
+                            </div>
+                            <div class="bg-white/20 p-4 rounded-lg">
+                                <p class="text-lg">Acceleration</p>
+                                <p class="text-2xl font-bold">2 m/s²</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="content-line bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-2">Key Learning Points</h3>
+                            <p>• To check if block slides: Compare tanθ with μ</p>
+                            <p>• If tanθ > μ, block slides down</p>
+                            <p>• Net force = mg sinθ - μ mg cosθ</p>
+                            <p>• Acceleration = g(sinθ - μ cosθ)</p>
+                        </div>
+
+                        <div class="content-line bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-2">Common Mistakes to Avoid</h3>
+                            <p>• Using static friction when object is moving</p>
+                            <p>• Forgetting to resolve forces properly</p>
+                            <p>• Using wrong angle in trigonometric functions</p>
+                            <p>• Not verifying if sliding occurs first</p>
+                        </div>
+
+                        <div class="text-center mt-6">
+                            <div class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-bold">
+                                <i class="fab fa-youtube mr-2"></i>
+                                Like and Subscribe KnowJEE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="flex justify-between items-center p-4 bg-gray-100 border-t">
+                <button id="prevBtn" class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                    <i class="fas fa-arrow-left mr-2"></i> Previous
+                </button>
+                
+                <div class="flex space-x-1">
+                    <div class="progress-dot active w-2 h-2 bg-blue-600 rounded-full cursor-pointer" data-slide="0"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="1"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="2"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="3"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="4"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="5"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="6"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="7"></div>
+                </div>
+                
+                <div class="text-gray-600">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">8</span>
+                </div>
+                
+                <button id="nextBtn" class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                    Next <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentSlideEl = document.getElementById('currentSlide');
+            const totalSlidesEl = document.getElementById('totalSlides');
+            const progressBar = document.getElementById('progressBar');
+            const progressDots = document.querySelectorAll('.progress-dot');
+            
+            let currentSlideIndex = 0;
+            totalSlidesEl.textContent = slides.length;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+                
+                const progress = ((index + 1) / slides.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                
+                currentSlideEl.textContent = index + 1;
+                
+                progressDots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-blue-600', i === index);
+                    dot.classList.toggle('bg-gray-400', i !== index);
+                });
+                
+                animateContentLines(slides[index]);
+            }
+            
+            function animateContentLines(slide) {
+                const contentLines = slide.querySelectorAll('.content-line');
+                contentLines.forEach((line, index) => {
+                    line.classList.remove('visible');
+                    setTimeout(() => line.classList.add('visible'), 300 * (index + 1));
+                });
+            }
+            
+            function nextSlide() {
+                if (currentSlideIndex < slides.length - 1) {
+                    currentSlideIndex++;
+                    showSlide(currentSlideIndex);
+                }
+            }
+            
+            function prevSlide() {
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    showSlide(currentSlideIndex);
+                }
+            }
+            
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') nextSlide();
+                else if (e.key === 'ArrowLeft') prevSlide();
+            });
+            
+            progressDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlideIndex = index;
+                    showSlide(currentSlideIndex);
+                });
+            });
+            
+            showSlide(currentSlideIndex);
+        });
+    </script>
+</body>
+</html>
