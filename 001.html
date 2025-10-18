@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friction | JEE Physics | KnowJEE</title>
+    <title>Law of Inertia | JEE Physics | KnowJEE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -72,12 +72,14 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-        .friction-slide {
-            animation: frictionMove 3s ease-in-out infinite;
+        .inertia-demo {
+            animation: inertiaMove 4s ease-in-out infinite;
         }
-        @keyframes frictionMove {
+        @keyframes inertiaMove {
             0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(20px); }
+            25% { transform: translateX(50px); }
+            50% { transform: translateX(0); }
+            75% { transform: translateX(-50px); }
         }
     </style>
 </head>
@@ -113,29 +115,30 @@
                             </div>
                             
                             <h2 class="text-6xl font-black text-white mb-6 leading-tight">
-                                FRICTION
+                                LAW OF INERTIA
                             </h2>
                             
                             <div class="flex justify-center mb-8">
                                 <div class="relative">
-                                    <div class="w-32 h-8 bg-gray-400 rounded-lg"></div>
-                                    <div class="w-16 h-16 bg-red-500 rounded-lg friction-slide absolute -top-4"></div>
+                                    <div class="w-24 h-4 bg-gray-400 rounded-lg"></div>
+                                    <div class="w-8 h-8 bg-red-500 rounded-full inertia-demo absolute -top-2"></div>
+                                    <div class="w-2 h-12 bg-yellow-500 absolute -left-4 top-4"></div>
                                 </div>
                             </div>
                             
                             <div class="space-y-3 text-lg text-blue-200 max-w-2xl mx-auto">
+                                <p class="content-line">Newton's First Law of Motion</p>
                                 <p class="content-line">Complete Masterclass for JEE Main & Advanced</p>
-                                <p class="content-line">Static, Kinetic, Rolling Friction + PYQs + Applications</p>
                             </div>
                         </div>
                         
                         <div class="text-center mt-8">
-                            <p class="content-line text-blue-200">Sponsored by KnowJEE</p>
+                            <p class="content-line text-blue-200">"Every body continues in its state of rest or uniform motion..."</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2: What is Friction? -->
+                <!-- Slide 2: Newton's First Law -->
                 <div id="slide2" class="slide p-8">
                     <div class="flex items-center mb-6">
                         <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
@@ -144,45 +147,44 @@
                         <h1 class="text-2xl font-bold text-blue-900">Know<span class="text-yellow-500">JEE</span></h1>
                     </div>
                     
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">What is Friction?</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Newton's First Law of Motion</h2>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="space-y-4 text-gray-700">
-                            <p class="content-line"><span class="font-semibold text-blue-900">Friction</span> is the force that opposes relative motion between two surfaces in contact.</p>
-                            
-                            <div class="formula-box p-4 rounded-lg">
-                                <p class="content-line font-semibold text-center">Friction Force</p>
-                                <p class="content-line text-center text-xl font-mono mt-2">f ≤ μN</p>
-                                <p class="content-line text-center text-sm">μ = coefficient of friction</p>
+                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                                <p class="content-line font-semibold text-blue-900 text-center">The Law Statement</p>
+                                <p class="content-line text-center text-lg mt-3 italic">
+                                    "Every body continues in its state of rest or of uniform motion in a straight line unless it is compelled to change that state by forces impressed upon it."
+                                </p>
                             </div>
                             
                             <div class="important-note p-4 rounded-lg">
-                                <p class="content-line font-semibold">Key Characteristics:</p>
-                                <p class="content-line text-sm">• Parallel to contact surface</p>
-                                <p class="content-line text-sm">• Opposes relative motion</p>
-                                <p class="content-line text-sm">• Depends on nature of surfaces</p>
-                                <p class="content-line text-sm">• Independent of contact area</p>
+                                <p class="content-line font-semibold">Key Points:</p>
+                                <p class="content-line text-sm">• Defines the concept of INERTIA</p>
+                                <p class="content-line text-sm">• Qualitative law (no formula)</p>
+                                <p class="content-line text-sm">• Defines inertial frames of reference</p>
+                                <p class="content-line text-sm">• Foundation for Newton's Second Law</p>
                             </div>
                         </div>
                         
                         <div class="flex flex-col items-center justify-center space-y-4">
                             <div class="text-6xl text-blue-900">
-                                <i class="fas fa-hand-paper"></i>
+                                <i class="fas fa-balance-scale"></i>
                             </div>
                             <div class="text-center">
-                                <p class="content-line text-sm text-gray-600">Friction effects:</p>
+                                <p class="content-line text-sm text-gray-600">Also known as:</p>
                                 <div class="flex justify-center space-x-4 mt-2">
                                     <div class="text-blue-500">
-                                        <i class="fas fa-walking"></i>
-                                        <p class="text-xs">Walking</p>
+                                        <i class="fas fa-law"></i>
+                                        <p class="text-xs">Law of Inertia</p>
                                     </div>
                                     <div class="text-purple-500">
-                                        <i class="fas fa-car"></i>
-                                        <p class="text-xs">Braking</p>
+                                        <i class="fas fa-ruler"></i>
+                                        <p class="text-xs">First Law</p>
                                     </div>
                                     <div class="text-green-500">
-                                        <i class="fas fa-grip-lines"></i>
-                                        <p class="text-xs">Gripping</p>
+                                        <i class="fas fa-atom"></i>
+                                        <p class="text-xs">Galileo's Law</p>
                                     </div>
                                 </div>
                             </div>
@@ -190,188 +192,223 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: Types of Friction -->
+                <!-- Slide 3: What is Inertia? -->
                 <div id="slide3" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Types of Friction</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Static Friction</h3>
-                                <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ 0 ≤ f<sub>s</sub> ≤ μ<sub>s</sub>N</p>
-                                    <p class="content-line text-sm">✓ Opposes impending motion</p>
-                                    <p class="content-line text-sm">✓ Self-adjusting force</p>
-                                    <p class="content-line text-sm">✓ μ<sub>s</sub> is maximum</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
-                                <h3 class="content-line font-semibold text-red-700 text-center">Kinetic Friction</h3>
-                                <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ f<sub>k</sub> = μ<sub>k</sub>N</p>
-                                    <p class="content-line text-sm">✓ Opposes actual motion</p>
-                                    <p class="content-line text-sm">✓ Constant magnitude</p>
-                                    <p class="content-line text-sm">✓ μ<sub>k</sub> < μ<sub>s</sub></p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                                <h3 class="content-line font-semibold text-blue-700 text-center">Rolling Friction</h3>
-                                <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ f<sub>r</sub> = μ<sub>r</sub>N</p>
-                                    <p class="content-line text-sm">✓ Opposes rolling motion</p>
-                                    <p class="content-line text-sm">✓ Smallest of all</p>
-                                    <p class="content-line text-sm">✓ μ<sub>r</sub> << μ<sub>k</sub></p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Memory Tip: μ<sub>static</sub> > μ<sub>kinetic</sub> > μ<sub>rolling</sub> - Remember this order!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4: Static Friction Details -->
-                <div id="slide4" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Static Friction</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">What is Inertia?</h2>
                     
                     <div class="space-y-6">
                         <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Static Friction Range</p>
+                            <p class="content-line font-semibold text-center mb-4">Definition of Inertia</p>
                             <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">0 ≤ f<sub>s</sub> ≤ μ<sub>s</sub>N</p>
-                                <p class="content-line">Self-adjusting force up to maximum value</p>
+                                <p class="content-line text-xl">"The tendency of an object to resist changes in its state of motion"</p>
+                                <p class="content-line text-sm">Mass is the quantitative measure of inertia</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line font-semibold text-purple-700 text-center">Key Features</p>
+                                <p class="content-line font-semibold text-purple-700 text-center">Types of Inertia</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Adjusts to prevent motion</p>
-                                    <p class="content-line text-sm">✓ Maximum at impending motion</p>
-                                    <p class="content-line text-sm">✓ f<sub>s max</sub> = μ<sub>s</sub>N</p>
-                                    <p class="content-line text-sm">✓ Angle of friction: tanθ = μ<sub>s</sub></p>
+                                    <p class="content-line text-sm">✓ Inertia of Rest</p>
+                                    <p class="content-line text-sm">✓ Inertia of Motion</p>
+                                    <p class="content-line text-sm">✓ Inertia of Direction</p>
+                                    <p class="content-line text-sm">✓ Rotational Inertia</p>
                                 </div>
                             </div>
                             
                             <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line font-semibold text-red-700 text-center">Examples</p>
+                                <p class="content-line font-semibold text-red-700 text-center">Mass vs Inertia</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Pushing heavy furniture</p>
-                                    <p class="content-line text-sm">✓ Car on inclined road</p>
-                                    <p class="content-line text-sm">✓ Ladder against wall</p>
-                                    <p class="content-line text-sm">✓ Banking of roads</p>
+                                    <p class="content-line text-sm">• Mass measures inertia</p>
+                                    <p class="content-line text-sm">• More mass = More inertia</p>
+                                    <p class="content-line text-sm">• Scalar quantity</p>
+                                    <p class="content-line text-sm">• SI unit: kilogram (kg)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="jee-tip p-4 rounded-lg">
+                            <p class="content-line font-semibold">JEE Memory Tip: Inertia is the 'laziness' of an object - its resistance to change in motion!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Types of Inertia -->
+                <div id="slide4" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Types of Inertia</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                                <h3 class="content-line font-semibold text-green-700 text-center">Inertia of Rest</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Tendency to remain at rest</p>
+                                    <p class="content-line text-sm">✓ Example: Sudden bus stop</p>
+                                    <p class="content-line text-sm">✓ Dust from carpet beating</p>
+                                    <p class="content-line text-sm">✓ Coin on card trick</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                                <h3 class="content-line font-semibold text-blue-700 text-center">Inertia of Motion</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Tendency to remain in motion</p>
+                                    <p class="content-line text-sm">✓ Example: Sudden bus start</p>
+                                    <p class="content-line text-sm">✓ Athlete running before jump</p>
+                                    <p class="content-line text-sm">✓ Seat belts in cars</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500">
+                                <h3 class="content-line font-semibold text-purple-700 text-center">Inertia of Direction</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Tendency to maintain direction</p>
+                                    <p class="content-line text-sm">✓ Example: Turning car</p>
+                                    <p class="content-line text-sm">✓ Stone from sling</p>
+                                    <p class="content-line text-sm">✓ Planetary motion</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                                <h3 class="content-line font-semibold text-red-700 text-center">Rotational Inertia</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Resistance to rotational change</p>
+                                    <p class="content-line text-sm">✓ Depends on mass distribution</p>
+                                    <p class="content-line text-sm">✓ Example: Spinning top</p>
+                                    <p class="content-line text-sm">✓ Gyroscope stability</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 5: Kinetic Friction Details -->
+                <!-- Slide 5: Real-life Examples -->
                 <div id="slide5" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Kinetic Friction</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Real-life Examples of Inertia</h2>
                     
                     <div class="space-y-6">
-                        <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
-                            <h3 class="content-line font-semibold text-red-700 text-center">Kinetic Friction Formula</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 border border-blue-200 rounded-lg">
+                                <div class="text-blue-900 text-3xl mb-3">
+                                    <i class="fas fa-bus"></i>
+                                </div>
+                                <p class="content-line font-semibold">Sudden Bus Stop</p>
+                                <p class="content-line text-sm mt-2">Passengers fall forward due to inertia of motion</p>
+                            </div>
+                            
+                            <div class="p-4 border border-blue-200 rounded-lg">
+                                <div class="text-blue-900 text-3xl mb-3">
+                                    <i class="fas fa-car-crash"></i>
+                                </div>
+                                <p class="content-line font-semibold">Seat Belts</p>
+                                <p class="content-line text-sm mt-2">Prevent forward motion during sudden stops</p>
+                            </div>
+                            
+                            <div class="p-4 border border-blue-200 rounded-lg">
+                                <div class="text-blue-900 text-3xl mb-3">
+                                    <i class="fas fa-baseball-ball"></i>
+                                </div>
+                                <p class="content-line font-semibold">Catching a Ball</p>
+                                <p class="content-line text-sm mt-2">Hand moves back to reduce force (inertia of motion)</p>
+                            </div>
+                            
+                            <div class="p-4 border border-blue-200 rounded-lg">
+                                <div class="text-blue-900 text-3xl mb-3">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <p class="content-line font-semibold">Athlete's Run-up</p>
+                                <p class="content-line text-sm mt-2">Builds inertia of motion before long jump</p>
+                            </div>
+                            
+                            <div class="p-4 border border-blue-200 rounded-lg">
+                                <div class="text-blue-900 text-3xl mb-3">
+                                    <i class="fas fa-fan"></i>
+                                </div>
+                                <p class="content-line font-semibold">Ceiling Fan</p>
+                                <p class="content-line text-sm mt-2">Continues rotating after switch off (inertia of motion)</p>
+                            </div>
+                            
+                            <div class="p-4 border border-blue-200 rounded-lg">
+                                <div class="text-blue-900 text-3xl mb-3">
+                                    <i class="fas fa-satellite"></i>
+                                </div>
+                                <p class="content-line font-semibold">Satellite Motion</p>
+                                <p class="content-line text-sm mt-2">Continues orbital motion due to inertia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Inertial Frames -->
+                <div id="slide6" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Inertial Frames of Reference</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                            <h3 class="content-line font-semibold text-blue-700 text-center">Definition</h3>
                             <div class="mt-4 space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">f<sub>k</sub> = μ<sub>k</sub>N</p>
-                                <p class="content-line text-sm">Constant magnitude, independent of speed</p>
+                                <p class="content-line text-xl">"A frame of reference in which Newton's First Law holds true"</p>
+                                <p class="content-line text-sm">No acceleration, no rotation</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Characteristics</p>
+                                <p class="content-line font-semibold text-green-700 text-center">Examples of Inertial Frames</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Constant for given surfaces</p>
-                                    <p class="content-line text-sm">✓ Independent of velocity</p>
-                                    <p class="content-line text-sm">✓ Always opposes motion</p>
-                                    <p class="content-line text-sm">✓ Causes energy dissipation</p>
+                                    <p class="content-line text-sm">• Earth (approximately)</p>
+                                    <p class="content-line text-sm">• Laboratory at rest</p>
+                                    <p class="content-line text-sm">• Train moving with constant velocity</p>
+                                    <p class="content-line text-sm">• Spaceship with constant velocity</p>
                                 </div>
                             </div>
                             
-                            <div class="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
-                                <p class="content-line font-semibold text-yellow-700 text-center">Applications</p>
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">Non-Inertial Frames</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Sliding objects</p>
-                                    <p class="content-line text-sm">✓ Braking systems</p>
-                                    <p class="content-line text-sm">✓ Sandpaper smoothing</p>
-                                    <p class="content-line text-sm">✓ Matchstick ignition</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6: Angle of Friction & Repose -->
-                <div id="slide6" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Angle of Friction & Repose</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                                <h3 class="content-line font-semibold text-blue-700 text-center">Angle of Friction (λ)</h3>
-                                <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ tanλ = μ<sub>s</sub></p>
-                                    <p class="content-line text-sm">✓ Angle between resultant and normal</p>
-                                    <p class="content-line text-sm">✓ R = √(N² + f²)</p>
-                                    <p class="content-line text-sm">✓ Important for inclined planes</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Angle of Repose (θ)</h3>
-                                <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ tanθ = μ<sub>s</sub></p>
-                                    <p class="content-line text-sm">✓ Maximum angle before sliding</p>
-                                    <p class="content-line text-sm">✓ θ = λ (angle of friction)</p>
-                                    <p class="content-line text-sm">✓ Used in material handling</p>
+                                    <p class="content-line text-sm">• Accelerating car</p>
+                                    <p class="content-line text-sm">• Rotating platform</p>
+                                    <p class="content-line text-sm">• Merry-go-round</p>
+                                    <p class="content-line text-sm">• Taking off airplane</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Strategy: For inclined plane problems, use μ = tanθ where θ is angle of repose</p>
+                            <p class="content-line font-semibold">JEE Advanced: In non-inertial frames, we introduce pseudo forces to apply Newton's laws!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 7: Friction on Inclined Plane -->
+                <!-- Slide 7: Historical Background -->
                 <div id="slide7" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Friction on Inclined Plane</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Historical Development</h2>
                     
                     <div class="space-y-6">
-                        <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Critical Angle Formulas</p>
-                            <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">θ<sub>max</sub> = tan⁻¹(μ<sub>s</sub>)</p>
-                                <p class="content-line text-xl font-mono">a = g(sinθ - μ<sub>k</sub>cosθ)</p>
-                                <p class="content-line">For motion down the incline</p>
-                            </div>
-                        </div>
-                        
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line font-semibold text-purple-700 text-center">Up the Incline</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">F > mg(sinθ + μ<sub>k</sub>cosθ)</p>
-                                    <p class="content-line text-sm">a = [F - mg(sinθ + μ<sub>k</sub>cosθ)]/m</p>
-                                    <p class="content-line text-sm">Friction opposes motion</p>
+                            <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500">
+                                <h3 class="content-line font-semibold text-purple-700 text-center">Aristotle's View</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Natural state is rest</p>
+                                    <p class="content-line text-sm">✓ Force needed for motion</p>
+                                    <p class="content-line text-sm">✓ Wrong but influential</p>
+                                    <p class="content-line text-sm">✓ Dominated for 2000 years</p>
                                 </div>
                             </div>
                             
-                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line font-semibold text-red-700 text-center">Down the Incline</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">mg sinθ > μ<sub>k</sub>mg cosθ</p>
-                                    <p class="content-line text-sm">a = g(sinθ - μ<sub>k</sub>cosθ)</p>
-                                    <p class="content-line text-sm">Friction opposes motion</p>
+                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                                <h3 class="content-line font-semibold text-green-700 text-center">Galileo's Contribution</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Inclined plane experiments</p>
+                                    <p class="content-line text-sm">✓ Concept of inertia</p>
+                                    <p class="content-line text-sm">✓ Father of modern physics</p>
+                                    <p class="content-line text-sm">✓ Paved way for Newton</p>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="important-note p-4 rounded-lg">
+                            <p class="content-line font-semibold">Newton's Achievement: Combined Galileo's inertia concept with his own mathematical formulation to create the three laws of motion.</p>
                         </div>
                     </div>
                 </div>
@@ -381,28 +418,29 @@
                     <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 1</h2>
                     
                     <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Main 2023 Question:</p>
-                        <p class="content-line mt-3">A block of mass 2 kg rests on a rough surface (μ<sub>s</sub> = 0.6, μ<sub>k</sub> = 0.4). Find the minimum force required to move the block and the acceleration if force is 15 N.</p>
+                        <p class="content-line font-semibold text-purple-700">JEE Main 2022 Question:</p>
+                        <p class="content-line mt-3">Why do passengers in a moving bus tend to fall forward when the bus suddenly stops? Explain using Newton's First Law.</p>
                         
                         <div class="mt-6 p-4 bg-white rounded-lg">
                             <p class="content-line font-semibold text-green-700">Solution:</p>
                             
                             <div class="mt-4 space-y-4">
                                 <div>
-                                    <p class="content-line font-semibold">Step 1: Minimum force to move</p>
-                                    <p class="content-line text-sm">f<sub>max</sub> = μ<sub>s</sub>N = 0.6 × 2 × 9.8 = 11.76 N</p>
-                                    <p class="content-line text-sm">F<sub>min</sub> = 11.76 N</p>
+                                    <p class="content-line font-semibold">Step 1: Identify the inertia type</p>
+                                    <p class="content-line text-sm">This demonstrates <strong>inertia of motion</strong></p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 2: For F = 15 N (kinetic friction)</p>
-                                    <p class="content-line text-sm">f<sub>k</sub> = μ<sub>k</sub>N = 0.4 × 19.6 = 7.84 N</p>
+                                    <p class="content-line font-semibold">Step 2: Analyze the situation</p>
+                                    <p class="content-line text-sm">• Bus and passengers are moving together</p>
+                                    <p class="content-line text-sm">• When bus stops suddenly, lower body stops due to friction</p>
+                                    <p class="content-line text-sm">• Upper body continues moving forward due to inertia</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 3: Net force and acceleration</p>
-                                    <p class="content-line text-sm">F<sub>net</sub> = 15 - 7.84 = 7.16 N</p>
-                                    <p class="content-line text-sm">a = F<sub>net</sub>/m = 7.16/2 = 3.58 m/s²</p>
+                                    <p class="content-line font-semibold">Step 3: Newton's First Law application</p>
+                                    <p class="content-line text-sm">"Body continues in state of uniform motion unless acted upon by external force"</p>
+                                    <p class="content-line text-sm">No external force acts on upper body immediately, so it continues forward motion</p>
                                 </div>
                             </div>
                         </div>
@@ -414,120 +452,119 @@
                     <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 2</h2>
                     
                     <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2021 Question:</p>
-                        <p class="content-line mt-3">A block is placed on an inclined plane with μ = 1/√3. Find the angle at which the block just starts sliding and the acceleration if angle is 45°.</p>
+                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2020 Question:</p>
+                        <p class="content-line mt-3">A coin is placed on a card covering a glass. When the card is flicked quickly, the coin falls into the glass. Explain this using Law of Inertia.</p>
                         
                         <div class="mt-6 p-4 bg-white rounded-lg">
                             <p class="content-line font-semibold text-green-700">Solution:</p>
                             
                             <div class="mt-4 space-y-4">
                                 <div>
-                                    <p class="content-line font-semibold">Step 1: Angle of repose</p>
-                                    <p class="content-line text-sm">θ = tan⁻¹(μ) = tan⁻¹(1/√3) = 30°</p>
-                                    <p class="content-line text-sm">Block starts sliding at 30°</p>
+                                    <p class="content-line font-semibold">Step 1: Identify inertia type</p>
+                                    <p class="content-line text-sm">This demonstrates <strong>inertia of rest</strong></p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 2: At θ = 45°</p>
-                                    <p class="content-line text-sm">a = g(sinθ - μcosθ)</p>
-                                    <p class="content-line text-sm">a = 9.8(sin45° - (1/√3)cos45°)</p>
+                                    <p class="content-line font-semibold">Step 2: Analyze the forces</p>
+                                    <p class="content-line text-sm">• Card receives quick horizontal force</p>
+                                    <p class="content-line text-sm">• Coin tends to remain at rest due to inertia</p>
+                                    <p class="content-line text-sm">• Very little friction between card and coin</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 3: Calculate acceleration</p>
-                                    <p class="content-line text-sm">a = 9.8(0.707 - 0.577 × 0.707)</p>
-                                    <p class="content-line text-sm">a = 9.8 × 0.707 × (1 - 0.577)</p>
-                                    <p class="content-line text-sm">a = 9.8 × 0.707 × 0.423 = 2.93 m/s²</p>
+                                    <p class="content-line font-semibold">Step 3: Newton's First Law application</p>
+                                    <p class="content-line text-sm">"Body continues in state of rest unless acted upon by external force"</p>
+                                    <p class="content-line text-sm">Coin remains almost stationary while card moves away, then falls due to gravity</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 10: Applications -->
+                <!-- Slide 10: Applications in Technology -->
                 <div id="slide10" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Real-World Applications</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Technological Applications</h2>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-car-brake"></i>
+                                <i class="fas fa-car-side"></i>
                             </div>
-                            <p class="content-line font-semibold">Braking Systems</p>
-                            <p class="content-line text-sm mt-2">Kinetic friction stops vehicles safely</p>
+                            <p class="content-line font-semibold">Automobile Safety</p>
+                            <p class="content-line text-sm mt-2">Seat belts, airbags designed considering inertia</p>
                         </div>
                         
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-walking"></i>
+                                <i class="fas fa-satellite-dish"></i>
                             </div>
-                            <p class="content-line font-semibold">Walking & Running</p>
-                            <p class="content-line text-sm mt-2">Static friction prevents slipping</p>
+                            <p class="content-line font-semibold">Space Technology</p>
+                            <p class="content-line text-sm mt-2">Satellites use inertia for orbital stability</p>
                         </div>
                         
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-tire"></i>
+                                <i class="fas fa-compass"></i>
                             </div>
-                            <p class="content-line font-semibold">Tire Design</p>
-                            <p class="content-line text-sm mt-2">Tread patterns optimize friction</p>
+                            <p class="content-line font-semibold">Gyroscopes</p>
+                            <p class="content-line text-sm mt-2">Use rotational inertia for navigation</p>
                         </div>
                         
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-industry"></i>
+                                <i class="fas fa-baseball-ball"></i>
                             </div>
-                            <p class="content-line font-semibold">Manufacturing</p>
-                            <p class="content-line text-sm mt-2">Polishing and grinding processes</p>
+                            <p class="content-line font-semibold">Sports Equipment</p>
+                            <p class="content-line text-sm mt-2">Design considers inertia for better performance</p>
                         </div>
                         
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-mountain"></i>
+                                <i class="fas fa-shield-alt"></i>
                             </div>
-                            <p class="content-line font-semibold">Mountaineering</p>
-                            <p class="content-line text-sm mt-2">Friction for grip on rocky surfaces</p>
+                            <p class="content-line font-semibold">Crash Test Dummies</p>
+                            <p class="content-line text-sm mt-2">Test vehicle safety considering human inertia</p>
                         </div>
                         
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-bolt"></i>
+                                <i class="fas fa-wind"></i>
                             </div>
-                            <p class="content-line font-semibold">Matchstick Ignition</p>
-                            <p class="content-line text-sm mt-2">Heat from friction starts fire</p>
+                            <p class="content-line font-semibold">Wind Turbines</p>
+                            <p class="content-line text-sm mt-2">Rotational inertia maintains constant rotation</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 11: Reducing Friction -->
+                <!-- Slide 11: Common Misconceptions -->
                 <div id="slide11" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Methods to Reduce Friction</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Common Misconceptions</h2>
                     
                     <div class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Lubrication</h3>
+                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                                <h3 class="content-line font-semibold text-red-700 text-center">Wrong Concepts</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Oil, grease between surfaces</p>
-                                    <p class="content-line text-sm">✓ Reduces μ significantly</p>
-                                    <p class="content-line text-sm">✓ Prevents wear and tear</p>
-                                    <p class="content-line text-sm">✓ Used in engines, machines</p>
+                                    <p class="content-line text-sm">✗ Force is needed to maintain motion</p>
+                                    <p class="content-line text-sm">✗ Objects naturally come to rest</p>
+                                    <p class="content-line text-sm">✗ Inertia is a force</p>
+                                    <p class="content-line text-sm">✗ Heavier objects fall faster</p>
                                 </div>
                             </div>
                             
-                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                                <h3 class="content-line font-semibold text-blue-700 text-center">Ball Bearings</h3>
+                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                                <h3 class="content-line font-semibold text-green-700 text-center">Correct Concepts</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Convert sliding to rolling</p>
-                                    <p class="content-line text-sm">✓ μ<sub>rolling</sub> << μ<sub>sliding</sub></p>
-                                    <p class="content-line text-sm">✓ Used in wheels, motors</p>
-                                    <p class="content-line text-sm">✓ Increases efficiency</p>
+                                    <p class="content-line text-sm">✓ Force changes motion</p>
+                                    <p class="content-line text-sm">✓ Friction stops objects</p>
+                                    <p class="content-line text-sm">✓ Inertia is a property</p>
+                                    <p class="content-line text-sm">✓ All objects fall equally</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Note: Streamlining reduces fluid friction, polishing reduces surface roughness, and using wheels converts sliding to rolling friction.</p>
+                            <p class="content-line font-semibold">JEE Strategy: Always remember - Inertia is NOT a force! It's the property of matter to resist changes in motion.</p>
                         </div>
                     </div>
                 </div>
@@ -546,28 +583,28 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
                             <div>
-                                <p class="content-line font-semibold text-blue-900">Must Remember Formulas:</p>
+                                <p class="content-line font-semibold text-blue-900">Must Remember:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">f<sub>s max</sub> = μ<sub>s</sub>N</li>
-                                    <li class="content-line">f<sub>k</sub> = μ<sub>k</sub>N</li>
-                                    <li class="content-line">tanθ = μ (angle of repose)</li>
-                                    <li class="content-line">a = g(sinθ - μcosθ)</li>
+                                    <li class="content-line">Law of Inertia definition</li>
+                                    <li class="content-line">Types of inertia</li>
+                                    <li class="content-line">Inertial vs Non-inertial frames</li>
+                                    <li class="content-line">Real-life examples</li>
                                 </ul>
                             </div>
                             
                             <div>
                                 <p class="content-line font-semibold text-blue-900">JEE Strategy:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">Identify friction type first</li>
-                                    <li class="content-line">Check if motion occurs</li>
-                                    <li class="content-line">Use correct μ value</li>
-                                    <li class="content-line">Practice inclined plane problems</li>
+                                    <li class="content-line">Identify inertia type in problems</li>
+                                    <li class="content-line">Apply Newton's First Law correctly</li>
+                                    <li class="content-line">Understand frame of reference</li>
+                                    <li class="content-line">Practice conceptual questions</li>
                                 </ul>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg mt-6 max-w-2xl mx-auto">
-                            <p class="content-line font-semibold">JEE Success: Friction problems are scoring - master the concepts of static vs kinetic friction and inclined plane applications!</p>
+                            <p class="content-line font-semibold">JEE Success: Law of Inertia forms the foundation of mechanics - master the concepts for both theory and numerical problems!</p>
                         </div>
 
                         <div class="mt-8 flex justify-center space-x-4">
@@ -645,7 +682,7 @@
                 const contentLines = slide.querySelectorAll('.content-line');
                 contentLines.forEach((line, index) => {
                     line.classList.remove('visible');
-                    setTimeout(() => line.classList.add('visible'), 3000 * (index + 1));
+                    setTimeout(() => line.classList.add('visible'), 300 * (index + 1));
                 });
             }
             
