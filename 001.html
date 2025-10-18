@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Momentum | JEE Physics | KnowJEE</title>
+    <title>Circular Motion | JEE Physics | KnowJEE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -72,6 +72,13 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        .circular-animation {
+            animation: spin 5s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 text-gray-800">
@@ -106,12 +113,18 @@
                             </div>
                             
                             <h2 class="text-6xl font-black text-white mb-6 leading-tight">
-                                MOMENTUM
+                                CIRCULAR MOTION
                             </h2>
+                            
+                            <div class="flex justify-center mb-8">
+                                <div class="w-32 h-32 border-4 border-yellow-500 rounded-full flex items-center justify-center circular-animation">
+                                    <i class="fas fa-sync-alt text-yellow-500 text-4xl"></i>
+                                </div>
+                            </div>
                             
                             <div class="space-y-3 text-lg text-blue-200 max-w-2xl mx-auto">
                                 <p class="content-line">Complete Masterclass for JEE Main & Advanced</p>
-                                <p class="content-line">Quantity of Motion & Conservation Principles</p>
+                                <p class="content-line">Uniform & Non-uniform Motion + Centripetal Force + Applications</p>
                             </div>
                         </div>
                         
@@ -130,42 +143,41 @@
                         <h1 class="text-2xl font-bold text-blue-900">Know<span class="text-yellow-500">JEE</span></h1>
                     </div>
                     
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">What is Momentum?</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">What is Circular Motion?</h2>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="space-y-4 text-gray-700">
-                            <p class="content-line"><span class="font-semibold text-blue-900">Momentum</span> is the product of mass and velocity of an object.</p>
-                            <p class="content-line">It's a <span class="font-semibold">vector quantity</span> with both magnitude and direction.</p>
+                            <p class="content-line"><span class="font-semibold text-blue-900">Circular Motion</span> is the movement of an object along the circumference of a circle or rotation along a circular path.</p>
+                            <p class="content-line">Even with constant speed, it involves <span class="font-semibold">acceleration</span> due to continuous change in direction.</p>
                             
                             <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                                <p class="content-line font-semibold text-blue-900">Key Formula:</p>
-                                <p class="content-line text-center text-xl font-mono">p = m·v</p>
-                                <p class="content-line text-sm">SI Unit: kg·m/s</p>
+                                <p class="content-line font-semibold text-blue-900">Key Concept:</p>
+                                <p class="content-line">Acceleration is always directed towards the center (centripetal acceleration)</p>
                             </div>
                             
                             <div class="important-note p-4 rounded-lg">
-                                <p class="content-line font-semibold">JEE Significance: Foundation for collision problems and conservation laws.</p>
+                                <p class="content-line font-semibold">JEE Significance: 2-3 questions every year. Essential for mechanics section.</p>
                             </div>
                         </div>
                         
                         <div class="flex flex-col items-center justify-center space-y-4">
                             <div class="text-6xl text-blue-900">
-                                <i class="fas fa-running"></i>
+                                <i class="fas fa-circle-notch"></i>
                             </div>
                             <div class="text-center">
-                                <p class="content-line text-sm text-gray-600">Key aspects:</p>
+                                <p class="content-line text-sm text-gray-600">Real-world examples:</p>
                                 <div class="flex justify-center space-x-4 mt-2">
                                     <div class="text-blue-500">
-                                        <i class="fas fa-weight-hanging"></i>
-                                        <p class="text-xs">Mass</p>
+                                        <i class="fas fa-satellite"></i>
+                                        <p class="text-xs">Satellites</p>
                                     </div>
                                     <div class="text-purple-500">
-                                        <i class="fas fa-bolt"></i>
-                                        <p class="text-xs">Velocity</p>
+                                        <i class="fas fa-car"></i>
+                                        <p class="text-xs">Turning Cars</p>
                                     </div>
                                     <div class="text-green-500">
-                                        <i class="fas fa-arrows-alt"></i>
-                                        <p class="text-xs">Vector</p>
+                                        <i class="fas fa-atom"></i>
+                                        <p class="text-xs">Atomic Models</p>
                                     </div>
                                 </div>
                             </div>
@@ -173,283 +185,327 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: Types of Momentum -->
+                <!-- Slide 3: Types of Circular Motion -->
                 <div id="slide3" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Types of Momentum</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Types of Circular Motion</h2>
                     
                     <div class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Linear Momentum</h3>
+                                <h3 class="content-line font-semibold text-green-700 text-center">Uniform Circular Motion</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ p = m·v</p>
-                                    <p class="content-line text-sm">✓ For translational motion</p>
-                                    <p class="content-line text-sm">✓ Conserved in isolated systems</p>
-                                    <p class="content-line text-sm">✓ JEE Main favorite</p>
+                                    <p class="content-line text-sm">✓ Constant speed</p>
+                                    <p class="content-line text-sm">✓ Constant angular velocity</p>
+                                    <p class="content-line text-sm">✓ Only centripetal acceleration</p>
+                                    <p class="content-line text-sm">✓ Tangential acceleration = 0</p>
+                                    <p class="content-line text-sm">Example: Earth's revolution</p>
                                 </div>
                             </div>
                             
-                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                                <h3 class="content-line font-semibold text-blue-700 text-center">Angular Momentum</h3>
+                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                                <h3 class="content-line font-semibold text-red-700 text-center">Non-uniform Circular Motion</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ L = r × p</p>
-                                    <p class="content-line text-sm">✓ For rotational motion</p>
-                                    <p class="content-line text-sm">✓ L = I·ω (rigid body)</p>
-                                    <p class="content-line text-sm">✓ JEE Advanced focus</p>
+                                    <p class="content-line text-sm">✓ Speed changes with time</p>
+                                    <p class="content-line text-sm">✓ Angular velocity not constant</p>
+                                    <p class="content-line text-sm">✓ Both centripetal & tangential acceleration</p>
+                                    <p class="content-line text-sm">✓ Net acceleration not towards center</p>
+                                    <p class="content-line text-sm">Example: Roller coaster</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Memory Tip: Linear momentum for straight-line motion, angular for rotation</p>
+                            <p class="content-line font-semibold">JEE Memory Tip: "Uniform = Constant speed, changing direction" | "Non-uniform = Changing speed and direction"</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 4: Impulse-Momentum Theorem -->
+                <!-- Slide 4: Key Parameters -->
                 <div id="slide4" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Impulse-Momentum Theorem</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Key Parameters</h2>
                     
                     <div class="space-y-6">
                         <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Impulse-Momentum Theorem</p>
+                            <p class="content-line font-semibold text-center mb-4">Fundamental Formulas</p>
                             <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">J = Δp = F·Δt</p>
-                                <p class="content-line">Impulse equals change in momentum</p>
+                                <p class="content-line text-xl font-mono">a<sub>c</sub> = v²/r = ω²r</p>
+                                <p class="content-line text-xl font-mono">F<sub>c</sub> = mv²/r = mω²r</p>
+                                <p class="content-line">Centripetal acceleration and force</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line font-semibold text-purple-700 text-center">Impulse (J)</p>
+                                <p class="content-line font-semibold text-purple-700 text-center">Linear Parameters</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ J = F·Δt</p>
-                                    <p class="content-line text-sm">✓ Area under F-t graph</p>
-                                    <p class="content-line text-sm">✓ Vector quantity</p>
+                                    <p class="content-line text-sm">✓ v = linear velocity</p>
+                                    <p class="content-line text-sm">✓ a<sub>c</sub> = centripetal acceleration</p>
+                                    <p class="content-line text-sm">✓ a<sub>t</sub> = tangential acceleration</p>
                                 </div>
                             </div>
                             
-                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line font-semibold text-red-700 text-center">Applications</p>
+                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
+                                <p class="content-line font-semibold text-blue-700 text-center">Angular Parameters</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Cushioning in collisions</p>
-                                    <p class="content-line text-sm">✓ Airbags in cars</p>
-                                    <p class="content-line text-sm">✓ Catching a ball</p>
+                                    <p class="content-line text-sm">✓ ω = angular velocity</p>
+                                    <p class="content-line text-sm">✓ α = angular acceleration</p>
+                                    <p class="content-line text-sm">✓ θ = angular displacement</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 5: Conservation of Momentum -->
+                <!-- Slide 5: Centripetal Force -->
                 <div id="slide5" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Conservation of Momentum</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Centripetal Force</h2>
                     
                     <div class="space-y-6">
-                        <p class="content-line text-gray-700">Fundamental law in physics:</p>
+                        <p class="content-line text-gray-700">Centripetal force is the net force acting towards the center that causes circular motion.</p>
                         
                         <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Law of Conservation of Momentum</p>
+                            <p class="content-line font-semibold text-center mb-4">Centripetal Force Formula</p>
                             <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">Σp<sub>initial</sub> = Σp<sub>final</sub></p>
-                                <p class="content-line">In an isolated system, total momentum remains constant</p>
+                                <p class="content-line text-xl font-mono">F<sub>c</sub> = mv²/r = mω²r</p>
+                                <p class="content-line">Always directed towards the center</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Conditions</p>
+                                <p class="content-line font-semibold text-green-700 text-center">Important Points</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ No external force</p>
-                                    <p class="content-line text-sm">✓ Net F<sub>ext</sub> = 0</p>
-                                    <p class="content-line text-sm">✓ Isolated system</p>
+                                    <p class="content-line text-sm">✓ Not a new force</p>
+                                    <p class="content-line text-sm">✓ Role played by existing forces</p>
+                                    <p class="content-line text-sm">✓ Perpendicular to velocity</p>
+                                    <p class="content-line text-sm">✓ Does zero work</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">Common Sources</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Tension (string)</p>
+                                    <p class="content-line text-sm">✓ Friction (roads)</p>
+                                    <p class="content-line text-sm">✓ Normal reaction</p>
+                                    <p class="content-line text-sm">✓ Gravitational force</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Banking of Roads -->
+                <div id="slide6" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Banking of Roads</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="formula-box p-6 rounded-lg">
+                            <p class="content-line font-semibold text-center mb-4">Banking Angle Formula</p>
+                            <div class="space-y-3 text-center">
+                                <p class="content-line text-xl font-mono">tanθ = v²/rg</p>
+                                <p class="content-line">Ideal banking angle for frictionless turning</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
+                                <p class="content-line font-semibold text-purple-700 text-center">Concept</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Outer edge raised</p>
+                                    <p class="content-line text-sm">✓ Component of normal reaction provides centripetal force</p>
+                                    <p class="content-line text-sm">✓ Eliminates need for friction at ideal speed</p>
                                 </div>
                             </div>
                             
                             <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
                                 <p class="content-line font-semibold text-blue-700 text-center">Applications</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Collisions</p>
-                                    <p class="content-line text-sm">✓ Explosions</p>
-                                    <p class="content-line text-sm">✓ Rocket propulsion</p>
+                                    <p class="content-line text-sm">✓ Highway curves</p>
+                                    <p class="content-line text-sm">✓ Race tracks</p>
+                                    <p class="content-line text-sm">✓ Railway tracks</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 6: Collisions -->
-                <div id="slide6" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Types of Collisions</h2>
+                <!-- Slide 7: Vertical Circular Motion -->
+                <div id="slide7" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Vertical Circular Motion</h2>
                     
                     <div class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Elastic Collision</h3>
+                                <h3 class="content-line font-semibold text-green-700 text-center">Critical Points</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Momentum conserved</p>
-                                    <p class="content-line text-sm">✓ Kinetic energy conserved</p>
-                                    <p class="content-line text-sm">✓ e = 1 (coefficient of restitution)</p>
-                                    <p class="content-line text-sm">✓ Example: Billiard balls</p>
+                                    <p class="content-line text-sm">✓ Highest point: v<sub>min</sub> = √(rg)</p>
+                                    <p class="content-line text-sm">✓ Lowest point: Maximum tension</p>
+                                    <p class="content-line text-sm">✓ Complete loop: v ≥ √(5gr) at bottom</p>
+                                    <p class="content-line text-sm">✓ Energy conservation applies</p>
                                 </div>
                             </div>
                             
                             <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
-                                <h3 class="content-line font-semibold text-red-700 text-center">Inelastic Collision</h3>
+                                <h3 class="content-line font-semibold text-red-700 text-center">Tension Analysis</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Momentum conserved</p>
-                                    <p class="content-line text-sm">✓ Kinetic energy NOT conserved</p>
-                                    <p class="content-line text-sm">✓ 0 ≤ e < 1</p>
-                                    <p class="content-line text-sm">✓ Example: Car crash</p>
+                                    <p class="content-line text-sm">✓ Top: T = mv²/r - mg</p>
+                                    <p class="content-line text-sm">✓ Bottom: T = mv²/r + mg</p>
+                                    <p class="content-line text-sm">✓ Horizontal: T = mv²/r</p>
+                                    <p class="content-line text-sm">✓ Energy: v<sub>bottom</sub>² = v<sub>top</sub>² + 4gr</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Strategy: For perfectly inelastic collision, bodies stick together after collision</p>
+                            <p class="content-line font-semibold">JEE Strategy: For complete vertical loop, minimum speed at bottom = √(5gr) and at top = √(gr)</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 7: Example Problem 1 -->
-                <div id="slide7" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 1</h2>
-                    
-                    <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Main 2022 Question:</p>
-                        <p class="content-line mt-3">A 2 kg ball moving at 4 m/s collides head-on with a stationary 3 kg ball. If the collision is perfectly elastic, find their velocities after collision.</p>
-                        
-                        <div class="mt-6 p-4 bg-white rounded-lg">
-                            <p class="content-line font-semibold text-green-700">Solution:</p>
-                            
-                            <div class="mt-4 space-y-4">
-                                <div>
-                                    <p class="content-line font-semibold">Step 1: Conservation of Momentum</p>
-                                    <p class="content-line text-sm">m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</p>
-                                    <p class="content-line text-sm font-mono">2×4 + 3×0 = 2v₁ + 3v₂</p>
-                                    <p class="content-line text-sm font-mono">8 = 2v₁ + 3v₂  ...(1)</p>
-                                </div>
-                                
-                                <div>
-                                    <p class="content-line font-semibold">Step 2: Elastic Collision (e=1)</p>
-                                    <p class="content-line text-sm">v₂ - v₁ = u₁ - u₂</p>
-                                    <p class="content-line text-sm font-mono">v₂ - v₁ = 4 - 0 = 4  ...(2)</p>
-                                </div>
-                                
-                                <div>
-                                    <p class="content-line font-semibold">Step 3: Solve Equations</p>
-                                    <p class="content-line text-sm">From (1) and (2):</p>
-                                    <p class="content-line text-sm font-mono">v₁ = -0.8 m/s, v₂ = 3.2 m/s</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 8: Example Problem 2 -->
+                <!-- Slide 8: Conical Pendulum -->
                 <div id="slide8" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 2</h2>
-                    
-                    <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2020 Question:</p>
-                        <p class="content-line mt-3">A bullet of mass 10 g moving horizontally at 400 m/s strikes a wooden block of mass 2 kg suspended by a string. If the bullet embeds in the block, find the height to which the block rises.</p>
-                        
-                        <div class="mt-6 p-4 bg-white rounded-lg">
-                            <p class="content-line font-semibold text-green-700">Solution:</p>
-                            
-                            <div class="mt-4 space-y-4">
-                                <div>
-                                    <p class="content-line font-semibold">Step 1: Perfectly Inelastic Collision</p>
-                                    <p class="content-line text-sm">m₁u₁ + m₂u₂ = (m₁+m₂)v</p>
-                                    <p class="content-line text-sm font-mono">0.01×400 + 2×0 = (0.01+2)v</p>
-                                    <p class="content-line text-sm font-mono">4 = 2.01v ⇒ v ≈ 1.99 m/s</p>
-                                </div>
-                                
-                                <div>
-                                    <p class="content-line font-semibold">Step 2: Energy Conservation</p>
-                                    <p class="content-line text-sm">½(m₁+m₂)v² = (m₁+m₂)gh</p>
-                                    <p class="content-line text-sm font-mono">½×2.01×(1.99)² = 2.01×9.8×h</p>
-                                    <p class="content-line text-sm font-mono">h ≈ 0.202 m = 20.2 cm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 9: Rocket Propulsion -->
-                <div id="slide9" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Rocket Propulsion</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Conical Pendulum</h2>
                     
                     <div class="space-y-6">
                         <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Rocket Equation</p>
+                            <p class="content-line font-semibold text-center mb-4">Time Period Formula</p>
                             <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">v = u + vₑ·ln(m₀/m)</p>
-                                <p class="content-line">Where vₑ is exhaust velocity relative to rocket</p>
+                                <p class="content-line text-xl font-mono">T = 2π√(Lcosθ/g)</p>
+                                <p class="content-line">Independent of mass of bob</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line font-semibold text-purple-700 text-center">Principle</p>
+                                <p class="content-line font-semibold text-purple-700 text-center">Key Relationships</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Conservation of momentum</p>
-                                    <p class="content-line text-sm">✓ Ejection of mass</p>
-                                    <p class="content-line text-sm">✓ Thrust = vₑ·(dm/dt)</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line font-semibold text-red-700 text-center">JEE Focus</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Variable mass systems</p>
-                                    <p class="content-line text-sm">✓ Calculus application</p>
-                                    <p class="content-line text-sm">✓ JEE Advanced favorite</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 10: Angular Momentum -->
-                <div id="slide10" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Angular Momentum</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
-                            <h3 class="content-line font-semibold text-red-700 text-center">Conservation of Angular Momentum</h3>
-                            <div class="mt-4 space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">L = I·ω = constant</p>
-                                <p class="content-line text-sm">✓ When τ<sub>ext</sub> = 0</p>
-                                <p class="content-line text-sm">✓ Ice skater effect</p>
-                                <p class="content-line text-sm">✓ Planetary motion</p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Point Mass</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ L = r × p</p>
-                                    <p class="content-line text-sm">✓ L = mvr sinθ</p>
-                                    <p class="content-line text-sm">✓ Perpendicular to r and v</p>
+                                    <p class="content-line text-sm">✓ Tension T = mg/cosθ</p>
+                                    <p class="content-line text-sm">✓ Angular speed ω = √(g/Lcosθ)</p>
+                                    <p class="content-line text-sm">✓ Radius r = Lsinθ</p>
+                                    <p class="content-line text-sm">✓ Speed v = √(rg tanθ)</p>
                                 </div>
                             </div>
                             
                             <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line font-semibold text-blue-700 text-center">Rigid Body</p>
+                                <p class="content-line font-semibold text-blue-700 text-center">Characteristics</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ L = I·ω</p>
-                                    <p class="content-line text-sm">✓ I = moment of inertia</p>
-                                    <p class="content-line text-sm">✓ ω = angular velocity</p>
+                                    <p class="content-line text-sm">✓ Bob moves in horizontal circle</p>
+                                    <p class="content-line text-sm">✓ String traces conical surface</p>
+                                    <p class="content-line text-sm">✓ Uniform circular motion</p>
+                                    <p class="content-line text-sm">✓ Constant time period</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 11: Summary -->
+                <!-- Slide 9: Centrifugal Force -->
+                <div id="slide9" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Centrifugal vs Centripetal</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                                <h3 class="content-line font-semibold text-red-700 text-center">Centrifugal Force</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Pseudo force</p>
+                                    <p class="content-line text-sm">✓ Appears in rotating frames</p>
+                                    <p class="content-line text-sm">✓ Directed away from center</p>
+                                    <p class="content-line text-sm">✓ F<sub>cf</sub> = mv²/r</p>
+                                    <p class="content-line text-sm">Example: Turning car</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                                <h3 class="content-line font-semibold text-blue-700 text-center">Centripetal Force</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Real force</p>
+                                    <p class="content-line text-sm">✓ Acts in inertial frames</p>
+                                    <p class="content-line text-sm">✓ Directed toward center</p>
+                                    <p class="content-line text-sm">✓ F<sub>c</sub> = mv²/r</p>
+                                    <p class="content-line text-sm">Example: String tension</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="important-note p-4 rounded-lg">
+                            <p class="content-line font-semibold">JEE Note: Centrifugal force is used in non-inertial frames to apply Newton's laws. In inertial frames, only centripetal force exists.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 10: Example Problem 1 -->
+                <div id="slide10" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 1</h2>
+                    
+                    <div class="example-box p-6 rounded-lg">
+                        <p class="content-line font-semibold text-purple-700">JEE Main 2021 Question:</p>
+                        <p class="content-line mt-3">A stone of mass 0.5 kg is attached to a string of length 2 m and whirled in a horizontal circle. If the string can withstand a maximum tension of 100 N, what is the maximum speed with which the stone can be whirled?</p>
+                        
+                        <div class="mt-6 p-4 bg-white rounded-lg">
+                            <p class="content-line font-semibold text-green-700">Solution:</p>
+                            
+                            <div class="mt-4 space-y-4">
+                                <div>
+                                    <p class="content-line font-semibold">Step 1: Identify centripetal force</p>
+                                    <p class="content-line text-sm">Tension provides centripetal force: T = mv²/r</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 2: Apply maximum tension</p>
+                                    <p class="content-line text-sm font-mono">T<sub>max</sub> = mv²<sub>max</sub>/r</p>
+                                    <p class="content-line text-sm font-mono">100 = (0.5 × v²<sub>max</sub>) / 2</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 3: Solve for maximum speed</p>
+                                    <p class="content-line text-sm font-mono">100 = 0.25 × v²<sub>max</sub></p>
+                                    <p class="content-line text-sm font-mono">v²<sub>max</sub> = 400</p>
+                                    <p class="content-line text-sm font-mono">v<sub>max</sub> = 20 m/s</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 11: Example Problem 2 -->
                 <div id="slide11" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 2</h2>
+                    
+                    <div class="example-box p-6 rounded-lg">
+                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2019 Question:</p>
+                        <p class="content-line mt-3">A small block slides from rest from the top of a frictionless hemispherical bowl of radius R. Find the angle θ at which the block will leave the surface of the bowl.</p>
+                        
+                        <div class="mt-6 p-4 bg-white rounded-lg">
+                            <p class="content-line font-semibold text-green-700">Solution Approach:</p>
+                            
+                            <div class="mt-4 space-y-4">
+                                <div>
+                                    <p class="content-line font-semibold">Step 1: Energy conservation</p>
+                                    <p class="content-line text-sm font-mono">mgR = mgRcosθ + ½mv²</p>
+                                    <p class="content-line text-sm font-mono">v² = 2gR(1 - cosθ)</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 2: Circular motion at leaving point</p>
+                                    <p class="content-line text-sm">When block leaves, normal reaction becomes zero</p>
+                                    <p class="content-line text-sm font-mono">mgcosθ = mv²/R</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 3: Solve for θ</p>
+                                    <p class="content-line text-sm font-mono">mgcosθ = m[2gR(1 - cosθ)]/R</p>
+                                    <p class="content-line text-sm font-mono">cosθ = 2(1 - cosθ)</p>
+                                    <p class="content-line text-sm font-mono">cosθ = 2/3 ⇒ θ = cos⁻¹(2/3)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 12: Summary -->
+                <div id="slide12" class="slide p-8">
                     <div class="text-center">
                         <div class="flex justify-center items-center mb-6">
                             <div class="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mr-4">
@@ -462,28 +518,28 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
                             <div>
-                                <p class="content-line font-semibold text-blue-900">Must Remember:</p>
+                                <p class="content-line font-semibold text-blue-900">Must Remember Formulas:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">p = m·v (vector)</li>
-                                    <li class="content-line">Conservation of momentum</li>
-                                    <li class="content-line">J = Δp = F·Δt</li>
-                                    <li class="content-line">L = r × p = I·ω</li>
+                                    <li class="content-line">a<sub>c</sub> = v²/r = ω²r</li>
+                                    <li class="content-line">F<sub>c</sub> = mv²/r = mω²r</li>
+                                    <li class="content-line">Banking: tanθ = v²/rg</li>
+                                    <li class="content-line">Vertical circle: v<sub>min</sub> = √(gr)</li>
                                 </ul>
                             </div>
                             
                             <div>
                                 <p class="content-line font-semibold text-blue-900">JEE Strategy:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">Collision analysis</li>
-                                    <li class="content-line">System approach for conservation</li>
-                                    <li class="content-line">Variable mass problems</li>
-                                    <li class="content-line">Angular momentum in rotation</li>
+                                    <li class="content-line">Identify centripetal force source</li>
+                                    <li class="content-line">Use energy methods for vertical circles</li>
+                                    <li class="content-line">Practice banking problems</li>
+                                    <li class="content-line">Master conical pendulum</li>
                                 </ul>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg mt-6 max-w-2xl mx-auto">
-                            <p class="content-line font-semibold">JEE Success: Momentum concepts are crucial for mechanics - master conservation principles!</p>
+                            <p class="content-line font-semibold">JEE Success: Circular motion problems are scoring if you systematically apply force analysis and energy conservation!</p>
                         </div>
 
                         <div class="mt-8 flex justify-center space-x-4">
@@ -515,10 +571,11 @@
                     <div class="progress-dot" data-slide="8"></div>
                     <div class="progress-dot" data-slide="9"></div>
                     <div class="progress-dot" data-slide="10"></div>
+                    <div class="progress-dot" data-slide="11"></div>
                 </div>
                 
                 <div class="text-gray-600">
-                    Slide <span id="currentSlide">1</span> of <span id="totalSlides">11</span>
+                    Slide <span id="currentSlide">1</span> of <span id="totalSlides">12</span>
                 </div>
                 
                 <!-- Simple KnowJEE -->
@@ -560,7 +617,7 @@
                 const contentLines = slide.querySelectorAll('.content-line');
                 contentLines.forEach((line, index) => {
                     line.classList.remove('visible');
-                    setTimeout(() => line.classList.add('visible'), 3000 * (index + 1));
+                    setTimeout(() => line.classList.add('visible'), 300 * (index + 1));
                 });
             }
             
