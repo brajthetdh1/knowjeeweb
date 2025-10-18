@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energy | JEE Physics | KnowJEE</title>
+    <title>Pendulum Systems | JEE Physics | KnowJEE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -67,6 +67,19 @@
             background: linear-gradient(135deg, #FF0000, #CC0000);
             animation: pulse 2s infinite;
         }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pendulum-swing {
+            animation: swing 2s ease-in-out infinite;
+            transform-origin: top center;
+        }
+        @keyframes swing {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 text-gray-800">
@@ -74,7 +87,7 @@
         <div class="card rounded-2xl shadow-2xl overflow-hidden">
             <!-- Progress Bar -->
             <div class="h-2 bg-gray-200">
-                <div id="progressBar" class="h-full bg-yellow-500 transition-all duration-500" style="width: 8.33%"></div>
+                <div id="progressBar" class="h-full bg-yellow-500 transition-all duration-500" style="width: 7.69%"></div>
             </div>
             
             <!-- Slides Container -->
@@ -101,12 +114,20 @@
                             </div>
                             
                             <h2 class="text-6xl font-black text-white mb-6 leading-tight">
-                                ENERGY
+                                PENDULUM SYSTEMS
                             </h2>
+                            
+                            <div class="flex justify-center mb-8">
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-gray-400 rounded-full absolute -top-4 left-1/2 transform -translate-x-1/2"></div>
+                                    <div class="w-1 h-32 bg-gray-400 mx-auto"></div>
+                                    <div class="w-8 h-8 bg-yellow-500 rounded-full pendulum-swing"></div>
+                                </div>
+                            </div>
                             
                             <div class="space-y-3 text-lg text-blue-200 max-w-2xl mx-auto">
                                 <p class="content-line">Complete Masterclass for JEE Main & Advanced</p>
-                                <p class="content-line">Capacity to Do Work</p>
+                                <p class="content-line">Simple, Compound, Conical & Spring Pendulums</p>
                             </div>
                         </div>
                         
@@ -116,7 +137,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 2: Introduction -->
+                <!-- Slide 2: Simple Pendulum -->
                 <div id="slide2" class="slide p-8">
                     <div class="flex items-center mb-6">
                         <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
@@ -125,42 +146,46 @@
                         <h1 class="text-2xl font-bold text-blue-900">Know<span class="text-yellow-500">JEE</span></h1>
                     </div>
                     
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">What is Energy?</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Simple Pendulum</h2>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="space-y-4 text-gray-700">
-                            <p class="content-line"><span class="font-semibold text-blue-900">Energy</span> is the capacity to do work.</p>
-                            <p class="content-line">It's a <span class="font-semibold">scalar quantity</span> with magnitude only.</p>
+                            <p class="content-line">A <span class="font-semibold text-blue-900">simple pendulum</span> consists of a point mass suspended by a massless, inextensible string.</p>
                             
-                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                                <p class="content-line font-semibold text-blue-900">SI Unit:</p>
-                                <p class="content-line text-center text-xl font-mono">Joule (J)</p>
-                                <p class="content-line text-sm">1 J = 1 N·m = 1 kg·m²/s²</p>
+                            <div class="formula-box p-4 rounded-lg">
+                                <p class="content-line font-semibold text-center">Time Period Formula</p>
+                                <p class="content-line text-center text-xl font-mono mt-2">T = 2π√(L/g)</p>
+                                <p class="content-line text-center text-sm">For small oscillations (θ < 10°)</p>
                             </div>
                             
                             <div class="important-note p-4 rounded-lg">
-                                <p class="content-line font-semibold">JEE Significance: Fundamental concept in mechanics, thermodynamics, and modern physics.</p>
+                                <p class="content-line font-semibold">Key Features:</p>
+                                <p class="content-line text-sm">• Independent of mass</p>
+                                <p class="content-line text-sm">• Depends only on L and g</p>
+                                <p class="content-line text-sm">• SHM for small angles</p>
                             </div>
                         </div>
                         
                         <div class="flex flex-col items-center justify-center space-y-4">
-                            <div class="text-6xl text-blue-900">
-                                <i class="fas fa-bolt"></i>
+                            <div class="relative">
+                                <div class="w-4 h-4 bg-gray-600 rounded-full absolute -top-2 left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1 h-24 bg-gray-400 mx-auto"></div>
+                                <div class="w-6 h-6 bg-yellow-500 rounded-full pendulum-swing"></div>
                             </div>
                             <div class="text-center">
-                                <p class="content-line text-sm text-gray-600">Key aspects:</p>
+                                <p class="content-line text-sm text-gray-600">Components:</p>
                                 <div class="flex justify-center space-x-4 mt-2">
                                     <div class="text-blue-500">
-                                        <i class="fas fa-recycle"></i>
-                                        <p class="text-xs">Conserved</p>
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <p class="text-xs">Bob</p>
                                     </div>
                                     <div class="text-purple-500">
-                                        <i class="fas fa-exchange-alt"></i>
-                                        <p class="text-xs">Transformable</p>
+                                        <i class="fas fa-ruler"></i>
+                                        <p class="text-xs">Length L</p>
                                     </div>
                                     <div class="text-green-500">
-                                        <i class="fas fa-calculator"></i>
-                                        <p class="text-xs">Scalar</p>
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                        <p class="text-xs">Oscillation</p>
                                     </div>
                                 </div>
                             </div>
@@ -168,227 +193,353 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: Types of Energy -->
+                <!-- Slide 3: Compound Pendulum -->
                 <div id="slide3" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Types of Energy</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Compound Pendulum</h2>
                     
                     <div class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Kinetic Energy</h3>
+                                <h3 class="content-line font-semibold text-green-700 text-center">Physical Pendulum</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Energy of motion</p>
-                                    <p class="content-line text-sm">✓ K = ½mv²</p>
-                                    <p class="content-line text-sm">✓ Always positive</p>
-                                    <p class="content-line text-sm">✓ Frame dependent</p>
+                                    <p class="content-line text-sm">✓ Rigid body oscillating</p>
+                                    <p class="content-line text-sm">✓ Axis not through COM</p>
+                                    <p class="content-line text-sm">✓ T = 2π√(I/mgh)</p>
+                                    <p class="content-line text-sm">✓ I = Moment of Inertia</p>
+                                    <p class="content-line text-sm">✓ h = distance from pivot to COM</p>
                                 </div>
                             </div>
                             
                             <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                                <h3 class="content-line font-semibold text-blue-700 text-center">Potential Energy</h3>
+                                <h3 class="content-line font-semibold text-blue-700 text-center">Equivalent Length</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Stored energy</p>
-                                    <p class="content-line text-sm">✓ Position dependent</p>
-                                    <p class="content-line text-sm">✓ Can be negative</p>
-                                    <p class="content-line text-sm">✓ Conservative forces</p>
+                                    <p class="content-line text-sm">✓ L<sub>eq</sub> = I/mh</p>
+                                    <p class="content-line text-sm">✓ Same period as simple pendulum</p>
+                                    <p class="content-line text-sm">✓ Center of oscillation concept</p>
+                                    <p class="content-line text-sm">✓ Important for JEE Advanced</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Memory Tip: Kinetic energy depends on frame, Potential energy depends on reference point.</p>
+                            <p class="content-line font-semibold">JEE Memory Tip: For uniform rod pivoted at end, T = 2π√(2L/3g) and L<sub>eq</sub> = 2L/3</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 4: Kinetic Energy Formulas -->
+                <!-- Slide 4: Conical Pendulum -->
                 <div id="slide4" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Kinetic Energy Formulas</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Conical Pendulum</h2>
                     
                     <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="formula-box p-6 rounded-lg">
-                                <h3 class="content-line font-semibold text-center">Linear Motion</h3>
-                                <p class="content-line text-center text-xl font-mono mt-3">K = ½mv²</p>
-                                <p class="content-line text-sm text-center mt-2">m = mass, v = speed</p>
-                            </div>
-                            
-                            <div class="formula-box p-6 rounded-lg">
-                                <h3 class="content-line font-semibold text-center">Rotational Motion</h3>
-                                <p class="content-line text-center text-xl font-mono mt-3">K = ½Iω²</p>
-                                <p class="content-line text-sm text-center mt-2">I = moment of inertia, ω = angular velocity</p>
+                        <div class="formula-box p-6 rounded-lg">
+                            <p class="content-line font-semibold text-center mb-4">Time Period Formula</p>
+                            <div class="space-y-3 text-center">
+                                <p class="content-line text-xl font-mono">T = 2π√(Lcosθ/g)</p>
+                                <p class="content-line">Independent of mass, depends on θ</p>
                             </div>
                         </div>
                         
-                        <div class="important-note p-4 rounded-lg">
-                            <p class="content-line font-semibold">Work-Energy Theorem: Net work done = Change in kinetic energy</p>
-                            <p class="content-line text-center text-xl font-mono mt-2">W_net = ΔK = K_final - K_initial</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5: Potential Energy Types -->
-                <div id="slide5" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Potential Energy Types</h2>
-                    
-                    <div class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Gravitational PE</p>
-                                <p class="content-line text-center text-xl font-mono mt-2">U = mgh</p>
-                                <p class="content-line text-sm text-center mt-2">Near Earth's surface</p>
-                            </div>
-                            
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line font-semibold text-blue-700 text-center">Spring PE</p>
-                                <p class="content-line text-center text-xl font-mono mt-2">U = ½kx²</p>
-                                <p class="content-line text-sm text-center mt-2">Elastic potential energy</p>
-                            </div>
-                            
                             <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line font-semibold text-purple-700 text-center">Electric PE</p>
-                                <p class="content-line text-center text-xl font-mono mt-2">U = kq₁q₂/r</p>
-                                <p class="content-line text-sm text-center mt-2">Coulomb's law</p>
-                            </div>
-                            
-                            <div class="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
-                                <p class="content-line font-semibold text-yellow-700 text-center">Gravitational PE</p>
-                                <p class="content-line text-center text-xl font-mono mt-2">U = -GMm/r</p>
-                                <p class="content-line text-sm text-center mt-2">Universal gravitation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6: Conservation of Energy -->
-                <div id="slide6" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Conservation of Energy</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                            <h3 class="content-line font-semibold text-green-700 text-center">Law of Conservation of Energy</h3>
-                            <div class="mt-4 space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">K_initial + U_initial = K_final + U_final</p>
-                                <p class="content-line text-sm">Total mechanical energy remains constant</p>
-                                <p class="content-line text-sm">Valid for conservative forces only</p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line font-semibold text-blue-700 text-center">Conservative Forces</p>
+                                <p class="content-line font-semibold text-purple-700 text-center">Key Relationships</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Work independent of path</p>
-                                    <p class="content-line text-sm">✓ Mechanical energy conserved</p>
-                                    <p class="content-line text-sm">✓ Examples: Gravity, Spring</p>
+                                    <p class="content-line text-sm">✓ Tension T = mg/cosθ</p>
+                                    <p class="content-line text-sm">✓ Angular speed ω = √(g/Lcosθ)</p>
+                                    <p class="content-line text-sm">✓ Radius r = Lsinθ</p>
+                                    <p class="content-line text-sm">✓ Speed v = √(rg tanθ)</p>
                                 </div>
                             </div>
                             
                             <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line font-semibold text-red-700 text-center">Non-conservative Forces</p>
+                                <p class="content-line font-semibold text-red-700 text-center">Characteristics</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Work depends on path</p>
-                                    <p class="content-line text-sm">✓ Mechanical energy not conserved</p>
-                                    <p class="content-line text-sm">✓ Examples: Friction, Air resistance</p>
+                                    <p class="content-line text-sm">✓ Bob moves in horizontal circle</p>
+                                    <p class="content-line text-sm">✓ String traces conical surface</p>
+                                    <p class="content-line text-sm">✓ Uniform circular motion</p>
+                                    <p class="content-line text-sm">✓ Constant time period</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 7: Example Problem 1 -->
-                <div id="slide7" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 1</h2>
-                    
-                    <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Main 2022 Question:</p>
-                        <p class="content-line mt-3">A ball of mass 2kg is dropped from 20m height. Find its kinetic energy just before hitting the ground.</p>
-                        
-                        <div class="mt-6 p-4 bg-white rounded-lg">
-                            <p class="content-line font-semibold text-green-700">Solution:</p>
-                            
-                            <div class="mt-4 space-y-4">
-                                <div>
-                                    <p class="content-line font-semibold">Method 1: Using Conservation of Energy</p>
-                                    <p class="content-line text-sm">Initial energy: U = mgh = 2×9.8×20 = 392J</p>
-                                    <p class="content-line text-sm">Final energy: K = ½mv²</p>
-                                    <p class="content-line text-sm font-mono">K_final = U_initial = 392J</p>
-                                </div>
-                                
-                                <div>
-                                    <p class="content-line font-semibold">Method 2: Using Kinematics</p>
-                                    <p class="content-line text-sm">v² = u² + 2gh = 0 + 2×9.8×20 = 392</p>
-                                    <p class="content-line text-sm font-mono">K = ½×2×392 = 392J</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 8: Example Problem 2 -->
-                <div id="slide8" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 2</h2>
-                    
-                    <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2020 Question:</p>
-                        <p class="content-line mt-3">A block of mass m compresses a spring by x and is released. Find maximum height reached if it leaves the spring vertically.</p>
-                        
-                        <div class="mt-6 p-4 bg-white rounded-lg">
-                            <p class="content-line font-semibold text-green-700">Solution:</p>
-                            
-                            <div class="mt-4 space-y-4">
-                                <div>
-                                    <p class="content-line font-semibold">Step 1: Spring energy converts to kinetic energy</p>
-                                    <p class="content-line text-sm font-mono">½kx² = ½mv²</p>
-                                    <p class="content-line text-sm">v = √(kx²/m)</p>
-                                </div>
-                                
-                                <div>
-                                    <p class="content-line font-semibold">Step 2: Kinetic energy converts to potential energy</p>
-                                    <p class="content-line text-sm font-mono">½mv² = mgh</p>
-                                    <p class="content-line text-sm">½m(kx²/m) = mgh</p>
-                                    <p class="content-line text-sm font-mono">h = kx²/(2mg)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 9: Power -->
-                <div id="slide9" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Power</h2>
+                <!-- Slide 5: Spring-Mass System -->
+                <div id="slide5" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Spring-Mass System</h2>
                     
                     <div class="space-y-6">
                         <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Power = Rate of doing work</p>
+                            <p class="content-line font-semibold text-center mb-4">Time Period Formula</p>
                             <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">P = W/t = F·v</p>
-                                <p class="content-line">SI Unit: Watt (W) = 1 J/s</p>
+                                <p class="content-line text-xl font-mono">T = 2π√(m/k)</p>
+                                <p class="content-line">Depends on mass and spring constant</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line font-semibold text-blue-700 text-center">Average Power</p>
+                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
+                                <p class="content-line font-semibold text-green-700 text-center">Spring Combinations</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">P_avg = Total work / Total time</p>
-                                    <p class="content-line text-sm">Use for constant force</p>
+                                    <p class="content-line text-sm">✓ Series: 1/k<sub>eq</sub> = 1/k₁ + 1/k₂</p>
+                                    <p class="content-line text-sm">✓ Parallel: k<sub>eq</sub> = k₁ + k₂</p>
+                                    <p class="content-line text-sm">✓ Series: T = 2π√(m/k<sub>eq</sub>)</p>
+                                    <p class="content-line text-sm">✓ Energy: E = ½kA²</p>
                                 </div>
                             </div>
                             
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Instantaneous Power</p>
+                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
+                                <p class="content-line font-semibold text-blue-700 text-center">Oscillation Energy</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">P_inst = dW/dt = F·v</p>
-                                    <p class="content-line text-sm">Use for variable force</p>
+                                    <p class="content-line text-sm">✓ PE<sub>max</sub> = ½kA²</p>
+                                    <p class="content-line text-sm">✓ KE<sub>max</sub> = ½mω²A²</p>
+                                    <p class="content-line text-sm">✓ Total E = constant</p>
+                                    <p class="content-line text-sm">✓ SHM characteristics</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 10: Summary -->
+                <!-- Slide 6: Torsional Pendulum -->
+                <div id="slide6" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Torsional Pendulum</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500">
+                                <h3 class="content-line font-semibold text-purple-700 text-center">Working Principle</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Rotational SHM</p>
+                                    <p class="content-line text-sm">✓ Restoring torque τ = -κθ</p>
+                                    <p class="content-line text-sm">✓ κ = Torsional constant</p>
+                                    <p class="content-line text-sm">✓ T = 2π√(I/κ)</p>
+                                    <p class="content-line text-sm">Example: Balance wheel</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                                <h3 class="content-line font-semibold text-red-700 text-center">Applications</h3>
+                                <div class="mt-4 space-y-3">
+                                    <p class="content-line text-sm">✓ Mechanical watches</p>
+                                    <p class="content-line text-sm">✓ Gravitational experiments</p>
+                                    <p class="content-line text-sm">✓ Cavendish experiment</p>
+                                    <p class="content-line text-sm">✓ JEE Advanced focus</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="jee-tip p-4 rounded-lg">
+                            <p class="content-line font-semibold">JEE Strategy: For disc suspended by wire, I = ½MR² and T = 2π√(MR²/2κ)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Second's Pendulum -->
+                <div id="slide7" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Second's Pendulum</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                            <h3 class="content-line font-semibold text-blue-700 text-center">Definition & Formula</h3>
+                            <div class="mt-4 space-y-3 text-center">
+                                <p class="content-line text-xl font-mono">T = 2 seconds</p>
+                                <p class="content-line text-sm">✓ Half period = 1 second</p>
+                                <p class="content-line text-sm">✓ Length L = g/π²</p>
+                                <p class="content-line text-sm">✓ At Earth's surface: L ≈ 1 meter</p>
+                                <p class="content-line text-sm">✓ Used in old pendulum clocks</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
+                                <p class="content-line font-semibold text-green-700 text-center">Key Points</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ T = 2s exactly</p>
+                                    <p class="content-line text-sm">✓ Length depends on g</p>
+                                    <p class="content-line text-sm">✓ g = π²L</p>
+                                    <p class="content-line text-sm">✓ Historical importance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">JEE Focus</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Numerical problems</p>
+                                    <p class="content-line text-sm">✓ g variation effects</p>
+                                    <p class="content-line text-sm">✓ Length calculations</p>
+                                    <p class="content-line text-sm">✓ Time period changes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Damped Oscillations -->
+                <div id="slide8" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Damped Oscillations</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                <h3 class="content-line font-semibold text-green-700 text-center">Underdamped</h3>
+                                <div class="mt-2 space-y-1">
+                                    <p class="content-line text-sm">✓ Oscillations with decreasing amplitude</p>
+                                    <p class="content-line text-sm">✓ b < 2√(mk)</p>
+                                    <p class="content-line text-sm">✓ Most common case</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                <h3 class="content-line font-semibold text-yellow-700 text-center">Critically Damped</h3>
+                                <div class="mt-2 space-y-1">
+                                    <p class="content-line text-sm">✓ Quickest return to equilibrium</p>
+                                    <p class="content-line text-sm">✓ b = 2√(mk)</p>
+                                    <p class="content-line text-sm">✓ No oscillations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                <h3 class="content-line font-semibold text-red-700 text-center">Overdamped</h3>
+                                <div class="mt-2 space-y-1">
+                                    <p class="content-line text-sm">✓ Slow return to equilibrium</p>
+                                    <p class="content-line text-sm">✓ b > 2√(mk)</p>
+                                    <p class="content-line text-sm">✓ No oscillations</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="important-note p-4 rounded-lg">
+                            <p class="content-line font-semibold">JEE Advanced: Damping force F = -bv, where b is damping constant. Amplitude decays exponentially.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 9: Example Problem 1 -->
+                <div id="slide9" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 1</h2>
+                    
+                    <div class="example-box p-6 rounded-lg">
+                        <p class="content-line font-semibold text-purple-700">JEE Main 2022 Question:</p>
+                        <p class="content-line mt-3">A simple pendulum has time period T. What happens to T when the pendulum is taken to a height equal to Earth's radius above the surface?</p>
+                        
+                        <div class="mt-6 p-4 bg-white rounded-lg">
+                            <p class="content-line font-semibold text-green-700">Solution:</p>
+                            
+                            <div class="mt-4 space-y-4">
+                                <div>
+                                    <p class="content-line font-semibold">Step 1: Gravity variation with height</p>
+                                    <p class="content-line text-sm">g' = g/(1 + h/R)²</p>
+                                    <p class="content-line text-sm">At h = R: g' = g/4</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 2: Time period formula</p>
+                                    <p class="content-line text-sm">T = 2π√(L/g)</p>
+                                    <p class="content-line text-sm">T' = 2π√(L/g')</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 3: Ratio calculation</p>
+                                    <p class="content-line text-sm">T'/T = √(g/g') = √4 = 2</p>
+                                    <p class="content-line text-sm font-mono">Time period doubles</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 10: Example Problem 2 -->
                 <div id="slide10" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 2</h2>
+                    
+                    <div class="example-box p-6 rounded-lg">
+                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2020 Question:</p>
+                        <p class="content-line mt-3">A spring-mass system has time period T. The spring is cut into two equal parts and connected in parallel. Find the new time period with the same mass.</p>
+                        
+                        <div class="mt-6 p-4 bg-white rounded-lg">
+                            <p class="content-line font-semibold text-green-700">Solution:</p>
+                            
+                            <div class="mt-4 space-y-4">
+                                <div>
+                                    <p class="content-line font-semibold">Step 1: Spring constant for half spring</p>
+                                    <p class="content-line text-sm">For spring: k ∝ 1/L</p>
+                                    <p class="content-line text-sm">k' = 2k (when length halved)</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 2: Parallel combination</p>
+                                    <p class="content-line text-sm">k<sub>eq</sub> = k' + k' = 4k</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 3: New time period</p>
+                                    <p class="content-line text-sm">T = 2π√(m/k)</p>
+                                    <p class="content-line text-sm">T' = 2π√(m/4k) = T/2</p>
+                                    <p class="content-line text-sm font-mono">Time period halves</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 11: Applications -->
+                <div id="slide11" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Real-World Applications</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <p class="content-line font-semibold">Pendulum Clocks</p>
+                            <p class="content-line text-sm mt-2">Simple pendulum used for timekeeping in traditional clocks</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-seismograph"></i>
+                            </div>
+                            <p class="content-line font-semibold">Seismographs</p>
+                            <p class="content-line text-sm mt-2">Compound pendulums detect and measure earthquakes</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-weight-hanging"></i>
+                            </div>
+                            <p class="content-line font-semibold">Gravity Measurement</p>
+                            <p class="content-line text-sm mt-2">Pendulums used to measure 'g' accurately</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <p class="content-line font-semibold">Vehicle Suspensions</p>
+                            <p class="content-line text-sm mt-2">Spring-mass systems in car suspensions</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <p class="content-line font-semibold">Building Safety</p>
+                            <p class="content-line text-sm mt-2">Tuned mass dampers in skyscrapers</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <p class="content-line font-semibold">Atomic Models</p>
+                            <p class="content-line text-sm mt-2">Quantum harmonic oscillators</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 12: Summary -->
+                <div id="slide12" class="slide p-8">
                     <div class="text-center">
                         <div class="flex justify-center items-center mb-6">
                             <div class="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mr-4">
@@ -401,28 +552,28 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
                             <div>
-                                <p class="content-line font-semibold text-blue-900">Must Remember:</p>
+                                <p class="content-line font-semibold text-blue-900">Must Remember Formulas:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">K = ½mv², U = mgh</li>
-                                    <li class="content-line">Energy conservation principle</li>
-                                    <li class="content-line">Work-Energy theorem</li>
-                                    <li class="content-line">Power = F·v</li>
+                                    <li class="content-line">Simple: T = 2π√(L/g)</li>
+                                    <li class="content-line">Compound: T = 2π√(I/mgh)</li>
+                                    <li class="content-line">Conical: T = 2π√(Lcosθ/g)</li>
+                                    <li class="content-line">Spring: T = 2π√(m/k)</li>
                                 </ul>
                             </div>
                             
                             <div>
                                 <p class="content-line font-semibold text-blue-900">JEE Strategy:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">Use energy methods for complex motion</li>
-                                    <li class="content-line">Identify conservative forces</li>
-                                    <li class="content-line">Apply conservation laws</li>
-                                    <li class="content-line">Practice spring problems</li>
+                                    <li class="content-line">Identify pendulum type</li>
+                                    <li class="content-line">Apply correct formula</li>
+                                    <li class="content-line">Consider g variations</li>
+                                    <li class="content-line">Practice spring combinations</li>
                                 </ul>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg mt-6 max-w-2xl mx-auto">
-                            <p class="content-line font-semibold">JEE Success: Energy concepts appear in 30%+ of physics problems - master them thoroughly!</p>
+                            <p class="content-line font-semibold">JEE Success: Pendulum problems are highly scoring - master time period formulas and their variations!</p>
                         </div>
 
                         <div class="mt-8 flex justify-center space-x-4">
@@ -453,10 +604,12 @@
                     <div class="progress-dot" data-slide="7"></div>
                     <div class="progress-dot" data-slide="8"></div>
                     <div class="progress-dot" data-slide="9"></div>
+                    <div class="progress-dot" data-slide="10"></div>
+                    <div class="progress-dot" data-slide="11"></div>
                 </div>
                 
                 <div class="text-gray-600">
-                    Slide <span id="currentSlide">1</span> of <span id="totalSlides">10</span>
+                    Slide <span id="currentSlide">1</span> of <span id="totalSlides">12</span>
                 </div>
                 
                 <!-- Simple KnowJEE -->
