@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendulum Systems | JEE Physics | KnowJEE</title>
+    <title>Force & Laws of Motion | JEE Physics | KnowJEE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -72,13 +72,12 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-        .pendulum-swing {
-            animation: swing 2s ease-in-out infinite;
-            transform-origin: top center;
+        .force-arrow {
+            animation: push 2s ease-in-out infinite;
         }
-        @keyframes swing {
-            0%, 100% { transform: rotate(-15deg); }
-            50% { transform: rotate(15deg); }
+        @keyframes push {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
         }
     </style>
 </head>
@@ -87,7 +86,7 @@
         <div class="card rounded-2xl shadow-2xl overflow-hidden">
             <!-- Progress Bar -->
             <div class="h-2 bg-gray-200">
-                <div id="progressBar" class="h-full bg-yellow-500 transition-all duration-500" style="width: 7.69%"></div>
+                <div id="progressBar" class="h-full bg-yellow-500 transition-all duration-500" style="width: 7.14%"></div>
             </div>
             
             <!-- Slides Container -->
@@ -114,20 +113,21 @@
                             </div>
                             
                             <h2 class="text-6xl font-black text-white mb-6 leading-tight">
-                                PENDULUM SYSTEMS
+                                FORCE & LAWS OF MOTION
                             </h2>
                             
                             <div class="flex justify-center mb-8">
                                 <div class="relative">
-                                    <div class="w-8 h-8 bg-gray-400 rounded-full absolute -top-4 left-1/2 transform -translate-x-1/2"></div>
-                                    <div class="w-1 h-32 bg-gray-400 mx-auto"></div>
-                                    <div class="w-8 h-8 bg-yellow-500 rounded-full pendulum-swing"></div>
+                                    <div class="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center force-arrow">
+                                        <i class="fas fa-arrow-right text-white text-2xl"></i>
+                                    </div>
+                                    <div class="w-24 h-8 bg-gray-300 rounded mt-4"></div>
                                 </div>
                             </div>
                             
                             <div class="space-y-3 text-lg text-blue-200 max-w-2xl mx-auto">
                                 <p class="content-line">Complete Masterclass for JEE Main & Advanced</p>
-                                <p class="content-line">Simple, Compound, Conical & Spring Pendulums</p>
+                                <p class="content-line">Newton's Laws + Friction + Applications + PYQs</p>
                             </div>
                         </div>
                         
@@ -137,7 +137,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 2: Simple Pendulum -->
+                <!-- Slide 2: What is Force? -->
                 <div id="slide2" class="slide p-8">
                     <div class="flex items-center mb-6">
                         <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
@@ -146,46 +146,45 @@
                         <h1 class="text-2xl font-bold text-blue-900">Know<span class="text-yellow-500">JEE</span></h1>
                     </div>
                     
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Simple Pendulum</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">What is Force?</h2>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="space-y-4 text-gray-700">
-                            <p class="content-line">A <span class="font-semibold text-blue-900">simple pendulum</span> consists of a point mass suspended by a massless, inextensible string.</p>
+                            <p class="content-line"><span class="font-semibold text-blue-900">Force</span> is a push or pull that can change the state of motion or shape of a body.</p>
                             
                             <div class="formula-box p-4 rounded-lg">
-                                <p class="content-line font-semibold text-center">Time Period Formula</p>
-                                <p class="content-line text-center text-xl font-mono mt-2">T = 2π√(L/g)</p>
-                                <p class="content-line text-center text-sm">For small oscillations (θ < 10°)</p>
+                                <p class="content-line font-semibold text-center">Newton's Second Law</p>
+                                <p class="content-line text-center text-xl font-mono mt-2">F = ma</p>
+                                <p class="content-line text-center text-sm">SI Unit: Newton (N)</p>
                             </div>
                             
                             <div class="important-note p-4 rounded-lg">
-                                <p class="content-line font-semibold">Key Features:</p>
-                                <p class="content-line text-sm">• Independent of mass</p>
-                                <p class="content-line text-sm">• Depends only on L and g</p>
-                                <p class="content-line text-sm">• SHM for small angles</p>
+                                <p class="content-line font-semibold">Key Characteristics:</p>
+                                <p class="content-line text-sm">• Vector quantity</p>
+                                <p class="content-line text-sm">• SI Unit: Newton (N)</p>
+                                <p class="content-line text-sm">• 1 N = 1 kg·m/s²</p>
+                                <p class="content-line text-sm">• Superposition principle applies</p>
                             </div>
                         </div>
                         
                         <div class="flex flex-col items-center justify-center space-y-4">
-                            <div class="relative">
-                                <div class="w-4 h-4 bg-gray-600 rounded-full absolute -top-2 left-1/2 transform -translate-x-1/2"></div>
-                                <div class="w-1 h-24 bg-gray-400 mx-auto"></div>
-                                <div class="w-6 h-6 bg-yellow-500 rounded-full pendulum-swing"></div>
+                            <div class="text-6xl text-blue-900">
+                                <i class="fas fa-hand-paper"></i>
                             </div>
                             <div class="text-center">
-                                <p class="content-line text-sm text-gray-600">Components:</p>
+                                <p class="content-line text-sm text-gray-600">Force effects:</p>
                                 <div class="flex justify-center space-x-4 mt-2">
                                     <div class="text-blue-500">
-                                        <i class="fas fa-weight-hanging"></i>
-                                        <p class="text-xs">Bob</p>
+                                        <i class="fas fa-running"></i>
+                                        <p class="text-xs">Motion</p>
                                     </div>
                                     <div class="text-purple-500">
-                                        <i class="fas fa-ruler"></i>
-                                        <p class="text-xs">Length L</p>
+                                        <i class="fas fa-compress-arrows-alt"></i>
+                                        <p class="text-xs">Deformation</p>
                                     </div>
                                     <div class="text-green-500">
-                                        <i class="fas fa-arrows-alt-v"></i>
-                                        <p class="text-xs">Oscillation</p>
+                                        <i class="fas fa-sync-alt"></i>
+                                        <p class="text-xs">Rotation</p>
                                     </div>
                                 </div>
                             </div>
@@ -193,224 +192,227 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: Compound Pendulum -->
+                <!-- Slide 3: Newton's First Law -->
                 <div id="slide3" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Compound Pendulum</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Newton's First Law</h2>
                     
                     <div class="space-y-6">
+                        <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                            <h3 class="content-line font-semibold text-blue-700 text-center">Law of Inertia</h3>
+                            <div class="mt-4 space-y-3 text-center">
+                                <p class="content-line text-xl font-mono">"A body continues in its state of rest or uniform motion unless acted upon by a net external force"</p>
+                            </div>
+                        </div>
+                        
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Physical Pendulum</h3>
-                                <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Rigid body oscillating</p>
-                                    <p class="content-line text-sm">✓ Axis not through COM</p>
-                                    <p class="content-line text-sm">✓ T = 2π√(I/mgh)</p>
-                                    <p class="content-line text-sm">✓ I = Moment of Inertia</p>
-                                    <p class="content-line text-sm">✓ h = distance from pivot to COM</p>
+                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
+                                <p class="content-line font-semibold text-green-700 text-center">Key Concepts</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Defines inertia</p>
+                                    <p class="content-line text-sm">✓ Qualitative law</p>
+                                    <p class="content-line text-sm">✓ Defines inertial frames</p>
+                                    <p class="content-line text-sm">✓ No quantitative formula</p>
                                 </div>
                             </div>
                             
-                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                                <h3 class="content-line font-semibold text-blue-700 text-center">Equivalent Length</h3>
-                                <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ L<sub>eq</sub> = I/mh</p>
-                                    <p class="content-line text-sm">✓ Same period as simple pendulum</p>
-                                    <p class="content-line text-sm">✓ Center of oscillation concept</p>
-                                    <p class="content-line text-sm">✓ Important for JEE Advanced</p>
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">Examples</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Sudden bus braking</p>
+                                    <p class="content-line text-sm">✓ Coin on card trick</p>
+                                    <p class="content-line text-sm">✓ Seat belts in cars</p>
+                                    <p class="content-line text-sm">✓ Planetary motion</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Memory Tip: For uniform rod pivoted at end, T = 2π√(2L/3g) and L<sub>eq</sub> = 2L/3</p>
+                            <p class="content-line font-semibold">JEE Memory Tip: Inertia is the tendency to resist change in motion. Mass is quantitative measure of inertia.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 4: Conical Pendulum -->
+                <!-- Slide 4: Newton's Second Law -->
                 <div id="slide4" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Conical Pendulum</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Newton's Second Law</h2>
                     
                     <div class="space-y-6">
                         <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Time Period Formula</p>
+                            <p class="content-line font-semibold text-center mb-4">Fundamental Law of Motion</p>
                             <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">T = 2π√(Lcosθ/g)</p>
-                                <p class="content-line">Independent of mass, depends on θ</p>
+                                <p class="content-line text-xl font-mono">F = dp/dt = ma</p>
+                                <p class="content-line">Force = Rate of change of momentum</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line font-semibold text-purple-700 text-center">Key Relationships</p>
+                                <p class="content-line font-semibold text-purple-700 text-center">Key Points</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Tension T = mg/cosθ</p>
-                                    <p class="content-line text-sm">✓ Angular speed ω = √(g/Lcosθ)</p>
-                                    <p class="content-line text-sm">✓ Radius r = Lsinθ</p>
-                                    <p class="content-line text-sm">✓ Speed v = √(rg tanθ)</p>
+                                    <p class="content-line text-sm">✓ Vector equation</p>
+                                    <p class="content-line text-sm">✓ Instantaneous law</p>
+                                    <p class="content-line text-sm">✓ F = ma (constant mass)</p>
+                                    <p class="content-line text-sm">✓ F = dp/dt (variable mass)</p>
                                 </div>
                             </div>
                             
-                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line font-semibold text-red-700 text-center">Characteristics</p>
+                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
+                                <p class="content-line font-semibold text-blue-700 text-center">Applications</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Bob moves in horizontal circle</p>
-                                    <p class="content-line text-sm">✓ String traces conical surface</p>
-                                    <p class="content-line text-sm">✓ Uniform circular motion</p>
-                                    <p class="content-line text-sm">✓ Constant time period</p>
+                                    <p class="content-line text-sm">✓ Rocket propulsion</p>
+                                    <p class="content-line text-sm">✓ Variable mass systems</p>
+                                    <p class="content-line text-sm">✓ All mechanics problems</p>
+                                    <p class="content-line text-sm">✓ JEE Main favorite</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 5: Spring-Mass System -->
+                <!-- Slide 5: Newton's Third Law -->
                 <div id="slide5" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Spring-Mass System</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Newton's Third Law</h2>
                     
                     <div class="space-y-6">
-                        <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Time Period Formula</p>
-                            <div class="space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">T = 2π√(m/k)</p>
-                                <p class="content-line">Depends on mass and spring constant</p>
+                        <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                            <h3 class="content-line font-semibold text-red-700 text-center">Action-Reaction Law</h3>
+                            <div class="mt-4 space-y-3 text-center">
+                                <p class="content-line text-xl font-mono">"For every action, there is an equal and opposite reaction"</p>
+                                <p class="content-line text-sm">F<sub>AB</sub> = -F<sub>BA</sub></p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Spring Combinations</p>
+                                <p class="content-line font-semibold text-green-700 text-center">Important Features</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Series: 1/k<sub>eq</sub> = 1/k₁ + 1/k₂</p>
-                                    <p class="content-line text-sm">✓ Parallel: k<sub>eq</sub> = k₁ + k₂</p>
-                                    <p class="content-line text-sm">✓ Series: T = 2π√(m/k<sub>eq</sub>)</p>
-                                    <p class="content-line text-sm">✓ Energy: E = ½kA²</p>
+                                    <p class="content-line text-sm">✓ Forces act on different bodies</p>
+                                    <p class="content-line text-sm">✓ Same nature forces</p>
+                                    <p class="content-line text-sm">✓ Act simultaneously</p>
+                                    <p class="content-line text-sm">✓ Never cancel each other</p>
                                 </div>
                             </div>
                             
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line font-semibold text-blue-700 text-center">Oscillation Energy</p>
+                            <div class="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
+                                <p class="content-line font-semibold text-yellow-700 text-center">Examples</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ PE<sub>max</sub> = ½kA²</p>
-                                    <p class="content-line text-sm">✓ KE<sub>max</sub> = ½mω²A²</p>
-                                    <p class="content-line text-sm">✓ Total E = constant</p>
-                                    <p class="content-line text-sm">✓ SHM characteristics</p>
+                                    <p class="content-line text-sm">✓ Walking on ground</p>
+                                    <p class="content-line text-sm">✓ Rocket propulsion</p>
+                                    <p class="content-line text-sm">✓ Swimming</p>
+                                    <p class="content-line text-sm">✓ Book on table</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 6: Torsional Pendulum -->
+                <!-- Slide 6: Types of Forces -->
                 <div id="slide6" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Torsional Pendulum</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Types of Forces</h2>
                     
                     <div class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500">
-                                <h3 class="content-line font-semibold text-purple-700 text-center">Working Principle</h3>
+                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                                <h3 class="content-line font-semibold text-blue-700 text-center">Fundamental Forces</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Rotational SHM</p>
-                                    <p class="content-line text-sm">✓ Restoring torque τ = -κθ</p>
-                                    <p class="content-line text-sm">✓ κ = Torsional constant</p>
-                                    <p class="content-line text-sm">✓ T = 2π√(I/κ)</p>
-                                    <p class="content-line text-sm">Example: Balance wheel</p>
+                                    <p class="content-line text-sm">✓ Gravitational Force</p>
+                                    <p class="content-line text-sm">✓ Electromagnetic Force</p>
+                                    <p class="content-line text-sm">✓ Strong Nuclear Force</p>
+                                    <p class="content-line text-sm">✓ Weak Nuclear Force</p>
                                 </div>
                             </div>
                             
-                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
-                                <h3 class="content-line font-semibold text-red-700 text-center">Applications</h3>
+                            <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                                <h3 class="content-line font-semibold text-green-700 text-center">Mechanical Forces</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Mechanical watches</p>
-                                    <p class="content-line text-sm">✓ Gravitational experiments</p>
-                                    <p class="content-line text-sm">✓ Cavendish experiment</p>
-                                    <p class="content-line text-sm">✓ JEE Advanced focus</p>
+                                    <p class="content-line text-sm">✓ Normal Force</p>
+                                    <p class="content-line text-sm">✓ Frictional Force</p>
+                                    <p class="content-line text-sm">✓ Tension Force</p>
+                                    <p class="content-line text-sm">✓ Spring Force</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Strategy: For disc suspended by wire, I = ½MR² and T = 2π√(MR²/2κ)</p>
+                            <p class="content-line font-semibold">JEE Focus: Always draw free body diagrams and identify all forces acting on the system.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 7: Second's Pendulum -->
+                <!-- Slide 7: Friction -->
                 <div id="slide7" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Second's Pendulum</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Friction</h2>
                     
                     <div class="space-y-6">
-                        <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                            <h3 class="content-line font-semibold text-blue-700 text-center">Definition & Formula</h3>
-                            <div class="mt-4 space-y-3 text-center">
-                                <p class="content-line text-xl font-mono">T = 2 seconds</p>
-                                <p class="content-line text-sm">✓ Half period = 1 second</p>
-                                <p class="content-line text-sm">✓ Length L = g/π²</p>
-                                <p class="content-line text-sm">✓ At Earth's surface: L ≈ 1 meter</p>
-                                <p class="content-line text-sm">✓ Used in old pendulum clocks</p>
+                        <div class="formula-box p-6 rounded-lg">
+                            <p class="content-line font-semibold text-center mb-4">Friction Formulas</p>
+                            <div class="space-y-3 text-center">
+                                <p class="content-line text-xl font-mono">f<sub>max</sub> = μ<sub>s</sub>N</p>
+                                <p class="content-line text-xl font-mono">f<sub>k</sub> = μ<sub>k</sub>N</p>
+                                <p class="content-line">Static and Kinetic Friction</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Key Points</p>
+                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
+                                <p class="content-line font-semibold text-purple-700 text-center">Static Friction</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ T = 2s exactly</p>
-                                    <p class="content-line text-sm">✓ Length depends on g</p>
-                                    <p class="content-line text-sm">✓ g = π²L</p>
-                                    <p class="content-line text-sm">✓ Historical importance</p>
+                                    <p class="content-line text-sm">✓ 0 ≤ f<sub>s</sub> ≤ μ<sub>s</sub>N</p>
+                                    <p class="content-line text-sm">✓ Self-adjusting force</p>
+                                    <p class="content-line text-sm">✓ μ<sub>s</sub> > μ<sub>k</sub></p>
+                                    <p class="content-line text-sm">✓ Opposes impending motion</p>
                                 </div>
                             </div>
                             
                             <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line font-semibold text-red-700 text-center">JEE Focus</p>
+                                <p class="content-line font-semibold text-red-700 text-center">Kinetic Friction</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Numerical problems</p>
-                                    <p class="content-line text-sm">✓ g variation effects</p>
-                                    <p class="content-line text-sm">✓ Length calculations</p>
-                                    <p class="content-line text-sm">✓ Time period changes</p>
+                                    <p class="content-line text-sm">✓ f<sub>k</sub> = μ<sub>k</sub>N</p>
+                                    <p class="content-line text-sm">✓ Constant magnitude</p>
+                                    <p class="content-line text-sm">✓ Opposes relative motion</p>
+                                    <p class="content-line text-sm">✓ Independent of area</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 8: Damped Oscillations -->
+                <!-- Slide 8: Free Body Diagrams -->
                 <div id="slide8" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Damped Oscillations</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Free Body Diagrams (FBD)</h2>
                     
                     <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center">Underdamped</h3>
-                                <div class="mt-2 space-y-1">
-                                    <p class="content-line text-sm">✓ Oscillations with decreasing amplitude</p>
-                                    <p class="content-line text-sm">✓ b < 2√(mk)</p>
-                                    <p class="content-line text-sm">✓ Most common case</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
-                                <h3 class="content-line font-semibold text-yellow-700 text-center">Critically Damped</h3>
-                                <div class="mt-2 space-y-1">
-                                    <p class="content-line text-sm">✓ Quickest return to equilibrium</p>
-                                    <p class="content-line text-sm">✓ b = 2√(mk)</p>
-                                    <p class="content-line text-sm">✓ No oscillations</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
-                                <h3 class="content-line font-semibold text-red-700 text-center">Overdamped</h3>
-                                <div class="mt-2 space-y-1">
-                                    <p class="content-line text-sm">✓ Slow return to equilibrium</p>
-                                    <p class="content-line text-sm">✓ b > 2√(mk)</p>
-                                    <p class="content-line text-sm">✓ No oscillations</p>
-                                </div>
+                        <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                            <h3 class="content-line font-semibold text-green-700 text-center">FBD Strategy</h3>
+                            <div class="mt-4 space-y-3">
+                                <p class="content-line text-sm">✓ Isolate the object</p>
+                                <p class="content-line text-sm">✓ Identify all forces</p>
+                                <p class="content-line text-sm">✓ Draw force vectors</p>
+                                <p class="content-line text-sm">✓ Choose coordinate system</p>
+                                <p class="content-line text-sm">✓ Apply Newton's laws</p>
                             </div>
                         </div>
                         
-                        <div class="important-note p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Advanced: Damping force F = -bv, where b is damping constant. Amplitude decays exponentially.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
+                                <p class="content-line font-semibold text-blue-700 text-center">Common Forces in FBD</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">• Weight (mg downward)</p>
+                                    <p class="content-line text-sm">• Normal force (⊥ surface)</p>
+                                    <p class="content-line text-sm">• Friction (∥ surface)</p>
+                                    <p class="content-line text-sm">• Tension (along string)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
+                                <p class="content-line font-semibold text-purple-700 text-center">JEE Importance</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Essential for mechanics</p>
+                                    <p class="content-line text-sm">✓ Prevents missing forces</p>
+                                    <p class="content-line text-sm">✓ Systematic approach</p>
+                                    <p class="content-line text-sm">✓ 90% of JEE mechanics needs FBD</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -420,29 +422,33 @@
                     <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 1</h2>
                     
                     <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Main 2022 Question:</p>
-                        <p class="content-line mt-3">A simple pendulum has time period T. What happens to T when the pendulum is taken to a height equal to Earth's radius above the surface?</p>
+                        <p class="content-line font-semibold text-purple-700">JEE Main 2023 Question:</p>
+                        <p class="content-line mt-3">A block of mass 5 kg is pulled with a force of 20 N at 30° to horizontal on a rough surface (μ = 0.4). Find the acceleration of the block.</p>
                         
                         <div class="mt-6 p-4 bg-white rounded-lg">
                             <p class="content-line font-semibold text-green-700">Solution:</p>
                             
                             <div class="mt-4 space-y-4">
                                 <div>
-                                    <p class="content-line font-semibold">Step 1: Gravity variation with height</p>
-                                    <p class="content-line text-sm">g' = g/(1 + h/R)²</p>
-                                    <p class="content-line text-sm">At h = R: g' = g/4</p>
+                                    <p class="content-line font-semibold">Step 1: Resolve forces</p>
+                                    <p class="content-line text-sm">F<sub>x</sub> = 20 cos30° = 17.32 N</p>
+                                    <p class="content-line text-sm">F<sub>y</sub> = 20 sin30° = 10 N</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 2: Time period formula</p>
-                                    <p class="content-line text-sm">T = 2π√(L/g)</p>
-                                    <p class="content-line text-sm">T' = 2π√(L/g')</p>
+                                    <p class="content-line font-semibold">Step 2: Normal force</p>
+                                    <p class="content-line text-sm">N = mg - F<sub>y</sub> = 5×9.8 - 10 = 39 N</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 3: Ratio calculation</p>
-                                    <p class="content-line text-sm">T'/T = √(g/g') = √4 = 2</p>
-                                    <p class="content-line text-sm font-mono">Time period doubles</p>
+                                    <p class="content-line font-semibold">Step 3: Friction force</p>
+                                    <p class="content-line text-sm">f = μN = 0.4 × 39 = 15.6 N</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 4: Net force & acceleration</p>
+                                    <p class="content-line text-sm">F<sub>net</sub> = 17.32 - 15.6 = 1.72 N</p>
+                                    <p class="content-line text-sm">a = F<sub>net</sub>/m = 1.72/5 = 0.344 m/s²</p>
                                 </div>
                             </div>
                         </div>
@@ -454,29 +460,32 @@
                     <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 2</h2>
                     
                     <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2020 Question:</p>
-                        <p class="content-line mt-3">A spring-mass system has time period T. The spring is cut into two equal parts and connected in parallel. Find the new time period with the same mass.</p>
+                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2021 Question:</p>
+                        <p class="content-line mt-3">Two blocks of masses 3 kg and 5 kg are connected by a string and pulled with force F on a frictionless surface. If tension in string is 15 N, find force F.</p>
                         
                         <div class="mt-6 p-4 bg-white rounded-lg">
                             <p class="content-line font-semibold text-green-700">Solution:</p>
                             
                             <div class="mt-4 space-y-4">
                                 <div>
-                                    <p class="content-line font-semibold">Step 1: Spring constant for half spring</p>
-                                    <p class="content-line text-sm">For spring: k ∝ 1/L</p>
-                                    <p class="content-line text-sm">k' = 2k (when length halved)</p>
+                                    <p class="content-line font-semibold">Step 1: FBD for 3 kg block</p>
+                                    <p class="content-line text-sm">T = m₁a ⇒ 15 = 3a ⇒ a = 5 m/s²</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 2: Parallel combination</p>
-                                    <p class="content-line text-sm">k<sub>eq</sub> = k' + k' = 4k</p>
+                                    <p class="content-line font-semibold">Step 2: FBD for system</p>
+                                    <p class="content-line text-sm">F = (m₁ + m₂)a</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 3: New time period</p>
-                                    <p class="content-line text-sm">T = 2π√(m/k)</p>
-                                    <p class="content-line text-sm">T' = 2π√(m/4k) = T/2</p>
-                                    <p class="content-line text-sm font-mono">Time period halves</p>
+                                    <p class="content-line font-semibold">Step 3: Calculate F</p>
+                                    <p class="content-line text-sm">F = (3 + 5) × 5 = 40 N</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="content-line font-semibold">Step 4: Verification</p>
+                                    <p class="content-line text-sm">For 5 kg block: F - T = 40 - 15 = 25 N</p>
+                                    <p class="content-line text-sm">m₂a = 5 × 5 = 25 N ✓</p>
                                 </div>
                             </div>
                         </div>
@@ -490,50 +499,50 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <p class="content-line font-semibold">Pendulum Clocks</p>
-                            <p class="content-line text-sm mt-2">Simple pendulum used for timekeeping in traditional clocks</p>
-                        </div>
-                        
-                        <div class="p-4 border border-blue-200 rounded-lg">
-                            <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-seismograph"></i>
-                            </div>
-                            <p class="content-line font-semibold">Seismographs</p>
-                            <p class="content-line text-sm mt-2">Compound pendulums detect and measure earthquakes</p>
-                        </div>
-                        
-                        <div class="p-4 border border-blue-200 rounded-lg">
-                            <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-weight-hanging"></i>
-                            </div>
-                            <p class="content-line font-semibold">Gravity Measurement</p>
-                            <p class="content-line text-sm mt-2">Pendulums used to measure 'g' accurately</p>
-                        </div>
-                        
-                        <div class="p-4 border border-blue-200 rounded-lg">
-                            <div class="text-blue-900 text-3xl mb-3">
                                 <i class="fas fa-car"></i>
                             </div>
-                            <p class="content-line font-semibold">Vehicle Suspensions</p>
-                            <p class="content-line text-sm mt-2">Spring-mass systems in car suspensions</p>
+                            <p class="content-line font-semibold">Vehicle Dynamics</p>
+                            <p class="content-line text-sm mt-2">Friction for braking, Normal force for support</p>
                         </div>
                         
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-building"></i>
+                                <i class="fas fa-rocket"></i>
                             </div>
-                            <p class="content-line font-semibold">Building Safety</p>
-                            <p class="content-line text-sm mt-2">Tuned mass dampers in skyscrapers</p>
+                            <p class="content-line font-semibold">Rocket Propulsion</p>
+                            <p class="content-line text-sm mt-2">Newton's third law for thrust generation</p>
                         </div>
                         
                         <div class="p-4 border border-blue-200 rounded-lg">
                             <div class="text-blue-900 text-3xl mb-3">
-                                <i class="fas fa-atom"></i>
+                                <i class="fas fa-walking"></i>
                             </div>
-                            <p class="content-line font-semibold">Atomic Models</p>
-                            <p class="content-line text-sm mt-2">Quantum harmonic oscillators</p>
+                            <p class="content-line font-semibold">Human Movement</p>
+                            <p class="content-line text-sm mt-2">Friction enables walking and running</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-bridge"></i>
+                            </div>
+                            <p class="content-line font-semibold">Structural Engineering</p>
+                            <p class="content-line text-sm mt-2">Force analysis in bridges and buildings</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-satellite"></i>
+                            </div>
+                            <p class="content-line font-semibold">Orbital Mechanics</p>
+                            <p class="content-line text-sm mt-2">Gravitational force for satellite motion</p>
+                        </div>
+                        
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <p class="content-line font-semibold">Atomic Physics</p>
+                            <p class="content-line text-sm mt-2">Electromagnetic forces in atoms</p>
                         </div>
                     </div>
                 </div>
@@ -554,26 +563,26 @@
                             <div>
                                 <p class="content-line font-semibold text-blue-900">Must Remember Formulas:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">Simple: T = 2π√(L/g)</li>
-                                    <li class="content-line">Compound: T = 2π√(I/mgh)</li>
-                                    <li class="content-line">Conical: T = 2π√(Lcosθ/g)</li>
-                                    <li class="content-line">Spring: T = 2π√(m/k)</li>
+                                    <li class="content-line">F = ma (Newton's Second Law)</li>
+                                    <li class="content-line">f<sub>max</sub> = μ<sub>s</sub>N (Static Friction)</li>
+                                    <li class="content-line">f<sub>k</sub> = μ<sub>k</sub>N (Kinetic Friction)</li>
+                                    <li class="content-line">F<sub>AB</sub> = -F<sub>BA</sub> (Third Law)</li>
                                 </ul>
                             </div>
                             
                             <div>
                                 <p class="content-line font-semibold text-blue-900">JEE Strategy:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">Identify pendulum type</li>
-                                    <li class="content-line">Apply correct formula</li>
-                                    <li class="content-line">Consider g variations</li>
-                                    <li class="content-line">Practice spring combinations</li>
+                                    <li class="content-line">Always draw FBD first</li>
+                                    <li class="content-line">Identify all forces</li>
+                                    <li class="content-line">Apply Newton's laws systematically</li>
+                                    <li class="content-line">Practice constraint relations</li>
                                 </ul>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg mt-6 max-w-2xl mx-auto">
-                            <p class="content-line font-semibold">JEE Success: Pendulum problems are highly scoring - master time period formulas and their variations!</p>
+                            <p class="content-line font-semibold">JEE Success: Force & Laws of Motion form the foundation of Mechanics - Master FBD and systematic approach!</p>
                         </div>
 
                         <div class="mt-8 flex justify-center space-x-4">
