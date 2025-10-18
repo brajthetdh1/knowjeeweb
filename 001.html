@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed & Velocity | JEE Physics | KnowJEE</title>
+    <title>Distance & Displacement | JEE Physics | KnowJEE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -47,7 +46,6 @@
         .card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .formula-box {
             background: linear-gradient(135deg, #FEF3C7, #F59E0B);
@@ -69,35 +67,21 @@
             background: linear-gradient(135deg, #FF0000, #CC0000);
             animation: pulse 2s infinite;
         }
-        .wave-animation {
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: wave 3s infinite linear;
-        }
-        @keyframes wave {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        .concept-box {
-            background: linear-gradient(135deg, #F0F9FF, #E0F2FE);
-            border: 2px solid #0EA5E9;
-        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 text-gray-800">
     <div class="max-w-4xl w-full">
-        <!-- Presentation Container -->
         <div class="card rounded-2xl shadow-2xl overflow-hidden">
             <!-- Progress Bar -->
             <div class="h-2 bg-gray-200">
-                <div id="progressBar" class="h-full bg-yellow-500 transition-all duration-500" style="width: 6.67%"></div>
+                <div id="progressBar" class="h-full bg-yellow-500 transition-all duration-500" style="width: 8.33%"></div>
             </div>
             
             <!-- Slides Container -->
             <div class="min-h-[600px]">
-                <!-- Slide 1: YouTube Thumbnail -->
+                <!-- Slide 1: Title -->
                 <div id="slide1" class="slide active bg-gradient-to-br from-blue-900 to-gray-900 text-white">
                     <div class="p-8 h-full flex flex-col justify-between">
-                        <!-- YouTube Badge -->
                         <div class="flex justify-end">
                             <div class="youtube-badge text-white px-4 py-2 rounded-lg font-bold flex items-center">
                                 <i class="fab fa-youtube mr-2"></i>
@@ -105,7 +89,6 @@
                             </div>
                         </div>
                         
-                        <!-- Main Content -->
                         <div class="text-center flex-1 flex flex-col justify-center">
                             <div class="mb-8">
                                 <div class="flex justify-center items-center mb-6">
@@ -118,14 +101,12 @@
                             </div>
                             
                             <h2 class="text-6xl font-black text-white mb-6 leading-tight">
-                                SPEED &<br>VELOCITY
+                                DISTANCE &<br>DISPLACEMENT
                             </h2>
-                            
-                            <div class="wave-animation h-1 w-64 mx-auto mb-8 rounded-full"></div>
                             
                             <div class="space-y-3 text-lg text-blue-200 max-w-2xl mx-auto">
                                 <p class="content-line">Complete Masterclass for JEE Main & Advanced</p>
-                                <p class="content-line">Theory + Problems + PYQs</p>
+                                <p class="content-line">Scalar vs Vector Quantities</p>
                             </div>
                         </div>
                         
@@ -135,7 +116,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 2: Introduction to Speed and Velocity -->
+                <!-- Slide 2: Introduction -->
                 <div id="slide2" class="slide p-8">
                     <div class="flex items-center mb-6">
                         <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
@@ -144,37 +125,37 @@
                         <h1 class="text-2xl font-bold text-blue-900">Know<span class="text-yellow-500">JEE</span></h1>
                     </div>
                     
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Speed vs Velocity</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Distance vs Displacement</h2>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="space-y-4 text-gray-700">
-                            <p class="content-line"><span class="font-semibold text-blue-900">Speed</span> is a scalar quantity that refers to "how fast an object is moving."</p>
-                            <p class="content-line"><span class="font-semibold text-blue-900">Velocity</span> is a vector quantity that refers to "the rate at which an object changes its position."</p>
+                            <p class="content-line"><span class="font-semibold text-blue-900">Distance</span> is the total path length traveled by an object.</p>
+                            <p class="content-line"><span class="font-semibold text-blue-900">Displacement</span> is the shortest straight-line path between initial and final positions.</p>
                             
-                            <div class="concept-box p-4 rounded-lg">
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
                                 <p class="content-line font-semibold text-blue-900">Key Difference:</p>
-                                <p class="content-line">Speed has magnitude only, Velocity has both magnitude and direction.</p>
+                                <p class="content-line">Distance is scalar (magnitude only), Displacement is vector (magnitude + direction).</p>
                             </div>
                             
                             <div class="important-note p-4 rounded-lg">
-                                <p class="content-line font-semibold">JEE Significance: Fundamental kinematics concepts appearing in every JEE paper.</p>
+                                <p class="content-line font-semibold">JEE Significance: Fundamental kinematics concept tested every year.</p>
                             </div>
                         </div>
                         
                         <div class="flex flex-col items-center justify-center space-y-4">
                             <div class="text-6xl text-blue-900">
-                                <i class="fas fa-tachometer-alt"></i>
+                                <i class="fas fa-route"></i>
                             </div>
                             <div class="text-center">
                                 <p class="content-line text-sm text-gray-600">Key aspects:</p>
                                 <div class="flex justify-center space-x-4 mt-2">
                                     <div class="text-blue-500">
                                         <i class="fas fa-ruler"></i>
-                                        <p class="text-xs">Magnitude</p>
+                                        <p class="text-xs">Path Length</p>
                                     </div>
                                     <div class="text-purple-500">
-                                        <i class="fas fa-arrows-alt"></i>
-                                        <p class="text-xs">Direction</p>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <p class="text-xs">Shortest Path</p>
                                     </div>
                                     <div class="text-green-500">
                                         <i class="fas fa-calculator"></i>
@@ -186,108 +167,104 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: Speed - Detailed Explanation -->
+                <!-- Slide 3: Distance - Detailed -->
                 <div id="slide3" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Speed - Scalar Quantity</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Distance - Scalar Quantity</h2>
                     
                     <div class="space-y-6">
-                        <p class="content-line text-gray-700">Speed measures how fast an object moves regardless of direction.</p>
+                        <p class="content-line text-gray-700">Distance measures the total path covered regardless of direction.</p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                                <h3 class="content-line font-semibold text-green-700 text-center text-xl">Formula</h3>
+                                <h3 class="content-line font-semibold text-green-700 text-center text-xl">Properties</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-center text-xl font-mono">Speed = Distance / Time</p>
                                     <p class="content-line text-sm">✓ Always positive</p>
-                                    <p class="content-line text-sm">✓ SI unit: m/s</p>
-                                    <p class="content-line text-sm">✓ Other units: km/h, mph</p>
+                                    <p class="content-line text-sm">✓ Path-dependent</p>
+                                    <p class="content-line text-sm">✓ SI unit: meter (m)</p>
+                                    <p class="content-line text-sm">✓ Increases with motion</p>
                                 </div>
                             </div>
                             
                             <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                                <h3 class="content-line font-semibold text-blue-700 text-center text-xl">Types of Speed</h3>
+                                <h3 class="content-line font-semibold text-blue-700 text-center text-xl">Examples</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Instantaneous Speed</p>
-                                    <p class="content-line text-sm">✓ Average Speed</p>
-                                    <p class="content-line text-sm">✓ Uniform Speed</p>
-                                    <p class="content-line text-sm">✓ Variable Speed</p>
+                                    <p class="content-line text-sm">✓ Car odometer reading</p>
+                                    <p class="content-line text-sm">✓ Marathon race route</p>
+                                    <p class="content-line text-sm">✓ Hiking trail length</p>
+                                    <p class="content-line text-sm">✓ GPS tracked path</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line font-semibold">JEE Memory Tip: Speed = scalar, always positive. Distance = total path length.</p>
+                            <p class="content-line font-semibold">JEE Memory Tip: Distance ≥ |Displacement| always. They're equal only for straight-line motion.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 4: Velocity - Detailed Explanation -->
+                <!-- Slide 4: Displacement - Detailed -->
                 <div id="slide4" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Velocity - Vector Quantity</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Displacement - Vector Quantity</h2>
                     
                     <div class="space-y-6">
-                        <p class="content-line text-gray-700">Velocity measures rate of change of position with direction.</p>
+                        <p class="content-line text-gray-700">Displacement measures change in position with direction.</p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500">
-                                <h3 class="content-line font-semibold text-purple-700 text-center text-xl">Formula</h3>
+                                <h3 class="content-line font-semibold text-purple-700 text-center text-xl">Properties</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-center text-xl font-mono">Velocity = Displacement / Time</p>
-                                    <p class="content-line text-sm">✓ Can be positive or negative</p>
-                                    <p class="content-line text-sm">✓ SI unit: m/s</p>
-                                    <p class="content-line text-sm">✓ Direction matters</p>
+                                    <p class="content-line text-sm">✓ Can be positive/negative</p>
+                                    <p class="content-line text-sm">✓ Path-independent</p>
+                                    <p class="content-line text-sm">✓ SI unit: meter (m)</p>
+                                    <p class="content-line text-sm">✓ Can be zero</p>
                                 </div>
                             </div>
                             
                             <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                                <h3 class="content-line font-semibold text-yellow-700 text-center text-xl">Types of Velocity</h3>
+                                <h3 class="content-line font-semibold text-yellow-700 text-center text-xl">Mathematical Form</h3>
                                 <div class="mt-4 space-y-3">
-                                    <p class="content-line text-sm">✓ Instantaneous Velocity</p>
-                                    <p class="content-line text-sm">✓ Average Velocity</p>
-                                    <p class="content-line text-sm">✓ Uniform Velocity</p>
-                                    <p class="content-line text-sm">✓ Variable Velocity</p>
+                                    <p class="content-line text-center text-xl font-mono">Δr = r_final - r_initial</p>
+                                    <p class="content-line text-sm">✓ Vector subtraction</p>
+                                    <p class="content-line text-sm">✓ Direction matters</p>
+                                    <p class="content-line text-sm">✓ Coordinate dependent</p>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="important-note p-4 rounded-lg">
-                            <p class="content-line font-semibold">Key Insight: Velocity changes if either speed or direction changes.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 5: Key Differences -->
                 <div id="slide5" class="slide p-8">
-                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Speed vs Velocity: Key Differences</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Distance vs Displacement: Key Differences</h2>
                     
                     <div class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line font-semibold text-green-700 text-center">Speed (Scalar)</p>
+                                <p class="content-line font-semibold text-green-700 text-center">Distance (Scalar)</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Magnitude only</p>
+                                    <p class="content-line text-sm">✓ Total path length</p>
                                     <p class="content-line text-sm">✓ Always positive</p>
-                                    <p class="content-line text-sm">✓ Distance / Time</p>
-                                    <p class="content-line text-sm">✓ Example: 60 km/h</p>
+                                    <p class="content-line text-sm">✓ Path dependent</p>
+                                    <p class="content-line text-sm">✓ Never decreases</p>
                                 </div>
                             </div>
                             
                             <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line font-semibold text-blue-700 text-center">Velocity (Vector)</p>
+                                <p class="content-line font-semibold text-blue-700 text-center">Displacement (Vector)</p>
                                 <div class="mt-3 space-y-2">
-                                    <p class="content-line text-sm">✓ Magnitude + Direction</p>
-                                    <p class="content-line text-sm">✓ Can be positive/negative</p>
-                                    <p class="content-line text-sm">✓ Displacement / Time</p>
-                                    <p class="content-line text-sm">✓ Example: 60 km/h North</p>
+                                    <p class="content-line text-sm">✓ Shortest path</p>
+                                    <p class="content-line text-sm">✓ Can be zero/negative</p>
+                                    <p class="content-line text-sm">✓ Path independent</p>
+                                    <p class="content-line text-sm">✓ Can decrease</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line font-semibold text-center mb-4">Mathematical Relationship</p>
+                            <p class="content-line font-semibold text-center mb-4">Important Relationship</p>
                             <div class="space-y-3 text-center">
-                                <p class="content-line">|Velocity| = Speed</p>
-                                <p class="content-line">Magnitude of velocity equals speed when motion is in straight line</p>
+                                <p class="content-line text-xl font-mono">Distance ≥ |Displacement|</p>
+                                <p class="content-line">Equality holds only for straight-line motion without direction change</p>
                             </div>
                         </div>
                     </div>
@@ -298,27 +275,25 @@
                     <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 1</h2>
                     
                     <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Main 2021 Question:</p>
-                        <p class="content-line mt-3">A car travels from point A to B at 60 km/h and returns from B to A at 40 km/h. Calculate the average speed and average velocity for the entire journey.</p>
+                        <p class="content-line font-semibold text-purple-700">JEE Main 2022 Question:</p>
+                        <p class="content-line mt-3">A particle moves from point A to B (4m East), then to C (3m North). Calculate total distance and displacement.</p>
                         
                         <div class="mt-6 p-4 bg-white rounded-lg">
                             <p class="content-line font-semibold text-green-700">Solution:</p>
                             
                             <div class="mt-4 space-y-4">
                                 <div>
-                                    <p class="content-line font-semibold">Step 1: Average Speed</p>
-                                    <p class="content-line text-sm">Let distance AB = d</p>
-                                    <p class="content-line text-sm">Time from A to B = d/60</p>
-                                    <p class="content-line text-sm">Time from B to A = d/40</p>
-                                    <p class="content-line text-sm">Total distance = 2d</p>
-                                    <p class="content-line text-sm">Total time = d/60 + d/40 = d/24</p>
-                                    <p class="content-line text-sm font-mono">Average Speed = 2d / (d/24) = 48 km/h</p>
+                                    <p class="content-line font-semibold">Step 1: Total Distance</p>
+                                    <p class="content-line text-sm">Distance AB = 4m</p>
+                                    <p class="content-line text-sm">Distance BC = 3m</p>
+                                    <p class="content-line text-sm font-mono">Total Distance = 4 + 3 = 7m</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 2: Average Velocity</p>
-                                    <p class="content-line text-sm">Total displacement = 0 (returned to starting point)</p>
-                                    <p class="content-line text-sm font-mono">Average Velocity = 0</p>
+                                    <p class="content-line font-semibold">Step 2: Displacement</p>
+                                    <p class="content-line text-sm">Using Pythagoras theorem:</p>
+                                    <p class="content-line text-sm font-mono">|Displacement| = √(4² + 3²) = √25 = 5m</p>
+                                    <p class="content-line text-sm">Direction: tan⁻¹(3/4) = 36.87° North of East</p>
                                 </div>
                             </div>
                         </div>
@@ -330,37 +305,178 @@
                     <h2 class="text-3xl font-bold mb-6 text-blue-900">JEE Example Problem 2</h2>
                     
                     <div class="example-box p-6 rounded-lg">
-                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2019 Question:</p>
-                        <p class="content-line mt-3">A particle moves in a straight line with velocity v(t) = 3t² - 2t + 1 m/s. Find the speed and velocity at t = 2 seconds.</p>
+                        <p class="content-line font-semibold text-purple-700">JEE Advanced 2020 Question:</p>
+                        <p class="content-line mt-3">A particle moves in a circle of radius R. Find distance and displacement for: (a) Half revolution (b) Full revolution</p>
                         
                         <div class="mt-6 p-4 bg-white rounded-lg">
-                            <p class="content-line font-semibold text-green-700">Solution Approach:</p>
+                            <p class="content-line font-semibold text-green-700">Solution:</p>
                             
                             <div class="mt-4 space-y-4">
                                 <div>
-                                    <p class="content-line font-semibold">Step 1: Velocity at t=2</p>
-                                    <p class="content-line text-sm">v(2) = 3(2)² - 2(2) + 1</p>
-                                    <p class="content-line text-sm">v(2) = 12 - 4 + 1 = 9 m/s</p>
+                                    <p class="content-line font-semibold">(a) Half Revolution</p>
+                                    <p class="content-line text-sm">Distance = Half circumference = πR</p>
+                                    <p class="content-line text-sm">Displacement = Diameter = 2R</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 2: Speed at t=2</p>
-                                    <p class="content-line text-sm">Since velocity is positive at t=2</p>
-                                    <p class="content-line text-sm">Speed = |Velocity| = |9| = 9 m/s</p>
+                                    <p class="content-line font-semibold">(b) Full Revolution</p>
+                                    <p class="content-line text-sm">Distance = Circumference = 2πR</p>
+                                    <p class="content-line text-sm">Displacement = 0 (returns to start)</p>
                                 </div>
                                 
                                 <div>
-                                    <p class="content-line font-semibold">Step 3: Interpretation</p>
-                                    <p class="content-line text-sm">Velocity = 9 m/s in positive direction</p>
-                                    <p class="content-line text-sm">Speed = 9 m/s (magnitude only)</p>
+                                    <p class="content-line font-semibold">Key Insight</p>
+                                    <p class="content-line text-sm">Displacement can be zero even when distance is large!</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 8: Summary & Key Takeaways -->
+                <!-- Slide 8: Graphical Analysis -->
                 <div id="slide8" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Graphical Analysis</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
+                                <p class="content-line font-semibold text-blue-700 text-center">Distance from v-t Graph</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Area under |v-t| graph</p>
+                                    <p class="content-line text-sm">✓ Always positive</p>
+                                    <p class="content-line text-sm">✓ Magnitude only</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
+                                <p class="content-line font-semibold text-green-700 text-center">Displacement from v-t Graph</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-sm">✓ Area under v-t graph</p>
+                                    <p class="content-line text-sm">✓ Signed area</p>
+                                    <p class="content-line text-sm">✓ Direction considered</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="jee-tip p-4 rounded-lg">
+                            <p class="content-line font-semibold">JEE Strategy: Always check if the graph shows speed or velocity. Speed graphs give distance, velocity graphs give displacement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 9: Calculus Connection -->
+                <div id="slide9" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Calculus Connection</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
+                                <p class="content-line font-semibold text-purple-700 text-center">From Velocity</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-center font-mono">Δr = ∫v dt</p>
+                                    <p class="content-line text-sm">Displacement = Integral of velocity</p>
+                                    <p class="content-line text-sm">Distance = ∫|v| dt</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
+                                <p class="content-line font-semibold text-yellow-700 text-center">From Acceleration</p>
+                                <div class="mt-3 space-y-2">
+                                    <p class="content-line text-center font-mono">v = ∫a dt</p>
+                                    <p class="content-line text-sm">Then find displacement</p>
+                                    <p class="content-line text-sm">JEE Advanced favorite</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="important-note p-4 rounded-lg">
+                            <p class="content-line font-semibold">Key Insight: For variable acceleration, calculus methods are essential for finding displacement and distance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 10: Real World Applications -->
+                <div id="slide10" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Real World Applications</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 border border-blue-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <p class="content-line font-semibold">Navigation Systems</p>
+                            <p class="content-line text-sm mt-2">GPS shows displacement to destination, odometer shows distance traveled</p>
+                        </div>
+                        
+                        <div class="p-4 border border-green-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <p class="content-line font-semibold">Sports Analytics</p>
+                            <p class="content-line text-sm mt-2">Football: Total distance run vs net displacement from start position</p>
+                        </div>
+                        
+                        <div class="p-4 border border-purple-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-satellite"></i>
+                            </div>
+                            <p class="content-line font-semibold">Orbital Mechanics</p>
+                            <p class="content-line text-sm mt-2">Satellites: Large orbital distance, but displacement relative to Earth may be small</p>
+                        </div>
+                        
+                        <div class="p-4 border border-yellow-200 rounded-lg">
+                            <div class="text-blue-900 text-3xl mb-3">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <p class="content-line font-semibold">Weather Patterns</p>
+                            <p class="content-line text-sm mt-2">Storm tracking: Path length vs straight-line displacement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 11: Common Misconceptions -->
+                <div id="slide11" class="slide p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-900">Common Misconceptions</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">Misconception</p>
+                                <p class="content-line text-center mt-2">"Distance and displacement are always equal"</p>
+                                <div class="mt-3 p-2 bg-white rounded">
+                                    <p class="content-line text-xs text-center">Truth: Equal only for straight-line motion without direction change</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">Misconception</p>
+                                <p class="content-line text-center mt-2">"Displacement can never be greater than distance"</p>
+                                <div class="mt-3 p-2 bg-white rounded">
+                                    <p class="content-line text-xs text-center">Truth: |Displacement| ≤ Distance always</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">Misconception</p>
+                                <p class="content-line text-center mt-2">"Zero displacement means no motion"</p>
+                                <div class="mt-3 p-2 bg-white rounded">
+                                    <p class="content-line text-xs text-center">Truth: Can have motion and return to start (circular path)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
+                                <p class="content-line font-semibold text-red-700 text-center">Misconception</p>
+                                <p class="content-line text-center mt-2">"Distance decreases when returning"</p>
+                                <div class="mt-3 p-2 bg-white rounded">
+                                    <p class="content-line text-xs text-center">Truth: Distance never decreases, displacement can</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 12: Summary -->
+                <div id="slide12" class="slide p-8">
                     <div class="text-center">
                         <div class="flex justify-center items-center mb-6">
                             <div class="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mr-4">
@@ -373,28 +489,40 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
                             <div>
-                                <p class="content-line font-semibold text-blue-900">Must Remember Concepts:</p>
+                                <p class="content-line font-semibold text-blue-900">Must Remember:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">Speed = scalar, Velocity = vector</li>
-                                    <li class="content-line">Speed = Distance/Time</li>
-                                    <li class="content-line">Velocity = Displacement/Time</li>
-                                    <li class="content-line">Average vs Instantaneous</li>
+                                    <li class="content-line">Distance = scalar, Displacement = vector</li>
+                                    <li class="content-line">Distance ≥ |Displacement|</li>
+                                    <li class="content-line">Displacement can be zero</li>
+                                    <li class="content-line">Distance never decreases</li>
                                 </ul>
                             </div>
                             
                             <div>
-                                <p class="content-line font-semibold text-blue-900">Practice Strategy:</p>
+                                <p class="content-line font-semibold text-blue-900">JEE Strategy:</p>
                                 <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line">Identify scalar vs vector quantities</li>
-                                    <li class="content-line">Use correct formulas</li>
-                                    <li class="content-line">Pay attention to direction</li>
-                                    <li class="content-line">Practice differentiation problems</li>
+                                    <li class="content-line">Identify scalar vs vector</li>
+                                    <li class="content-line">Use Pythagoras for 2D motion</li>
+                                    <li class="content-line">Graph area interpretation</li>
+                                    <li class="content-line">Calculus for variable motion</li>
                                 </ul>
                             </div>
                         </div>
                         
                         <div class="jee-tip p-4 rounded-lg mt-6 max-w-2xl mx-auto">
-                            <p class="content-line font-semibold">JEE Success Tip: Speed and Velocity are fundamental to kinematics. Master these concepts as they form the basis for more complex motion problems!</p>
+                            <p class="content-line font-semibold">JEE Success: Master Distance & Displacement - they're the foundation for all kinematics problems!</p>
+                        </div>
+
+                        <div class="mt-8 flex justify-center space-x-4">
+                            <button class="flex items-center px-4 py-2 bg-red-500 text-white rounded-lg">
+                                <i class="fas fa-thumbs-up mr-2"></i> Like
+                            </button>
+                            <button class="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg">
+                                <i class="fab fa-youtube mr-2"></i> Subscribe
+                            </button>
+                            <button class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg">
+                                <i class="fas fa-share mr-2"></i> Share
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -411,23 +539,19 @@
                     <div class="progress-dot" data-slide="5"></div>
                     <div class="progress-dot" data-slide="6"></div>
                     <div class="progress-dot" data-slide="7"></div>
+                    <div class="progress-dot" data-slide="8"></div>
+                    <div class="progress-dot" data-slide="9"></div>
+                    <div class="progress-dot" data-slide="10"></div>
+                    <div class="progress-dot" data-slide="11"></div>
                 </div>
                 
                 <div class="text-gray-600">
-                    Slide <span id="currentSlide">1</span> of <span id="totalSlides">8</span>
+                    Slide <span id="currentSlide">1</span> of <span id="totalSlides">12</span>
                 </div>
                 
-                <!-- Like, Subscribe, Share buttons -->
-                <div class="flex space-x-2">
-                    <button class="flex items-center px-3 py-2 bg-red-500 text-white rounded-lg">
-                        <i class="fas fa-thumbs-up mr-1"></i> Like
-                    </button>
-                    <button class="flex items-center px-3 py-2 bg-red-600 text-white rounded-lg">
-                        <i class="fab fa-youtube mr-1"></i> Subscribe
-                    </button>
-                    <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg">
-                        <i class="fas fa-share mr-1"></i> Share
-                    </button>
+                <!-- Simple KnowJEE -->
+                <div class="text-blue-900 font-bold">
+                    KnowJEE
                 </div>
             </div>
         </div>
@@ -444,49 +568,27 @@
             let currentSlideIndex = 0;
             totalSlidesEl.textContent = slides.length;
             
-            // Initialize first slide
-            showSlide(currentSlideIndex);
-            
-            // Navigation functions
             function showSlide(index) {
-                // Hide all slides
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                
-                // Show the selected slide
+                slides.forEach(slide => slide.classList.remove('active'));
                 slides[index].classList.add('active');
                 
-                // Update progress bar
                 const progress = ((index + 1) / slides.length) * 100;
                 progressBar.style.width = `${progress}%`;
                 
-                // Update current slide indicator
                 currentSlideEl.textContent = index + 1;
                 
-                // Update progress dots
                 progressDots.forEach((dot, i) => {
-                    if (i === index) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
+                    dot.classList.toggle('active', i === index);
                 });
                 
-                // Animate content lines
                 animateContentLines(slides[index]);
             }
             
             function animateContentLines(slide) {
                 const contentLines = slide.querySelectorAll('.content-line');
                 contentLines.forEach((line, index) => {
-                    // Reset animation
                     line.classList.remove('visible');
-                    
-                    // Animate with delay
-                    setTimeout(() => {
-                        line.classList.add('visible');
-                    }, 3000 * (index + 1));
+                    setTimeout(() => line.classList.add('visible'), 300 * (index + 1));
                 });
             }
             
@@ -504,7 +606,6 @@
                 }
             }
             
-            // Progress dots navigation
             progressDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     currentSlideIndex = index;
@@ -512,37 +613,25 @@
                 });
             });
             
-            // Keyboard navigation
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') {
-                    nextSlide();
-                } else if (e.key === 'ArrowLeft') {
-                    prevSlide();
-                }
+                if (e.key === 'ArrowRight') nextSlide();
+                else if (e.key === 'ArrowLeft') prevSlide();
             });
             
-            // Touch swipe support for mobile
             let touchStartX = 0;
-            let touchEndX = 0;
-            
             document.addEventListener('touchstart', function(e) {
                 touchStartX = e.changedTouches[0].screenX;
             });
             
             document.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-            
-            function handleSwipe() {
+                const touchEndX = e.changedTouches[0].screenX;
                 const swipeThreshold = 50;
                 
-                if (touchEndX < touchStartX - swipeThreshold) {
-                    nextSlide();
-                } else if (touchEndX > touchStartX + swipeThreshold) {
-                    prevSlide();
-                }
-            }
+                if (touchEndX < touchStartX - swipeThreshold) nextSlide();
+                else if (touchEndX > touchStartX + swipeThreshold) prevSlide();
+            });
+            
+            showSlide(currentSlideIndex);
         });
     </script>
 </body>
