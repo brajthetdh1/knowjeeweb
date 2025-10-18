@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electrostatics Problem | JEE Physics | KnowJEE</title>
+    <title>Rotational Dynamics | JEE Advanced | KnowJEE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,344 +12,461 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .content-line { opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
         .content-line.visible { opacity: 1; transform: translateY(0); }
-        .charge-positive { color: #ef4444; }
-        .charge-negative { color: #3b82f6; }
-        .keyboard-hint {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+        .rotate-slow { animation: rotate 4s linear infinite; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+        @keyframes pulseGlow { 
+            0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-900 via-blue-900 to-gray-900 min-h-screen flex items-center justify-center p-4">
-    <div class="max-w-4xl w-full">
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-6xl w-full">
         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
             <!-- Progress Bar -->
             <div class="h-1 bg-gray-200">
-                <div id="progressBar" class="h-full bg-purple-600 transition-all duration-500" style="width: 11.11%"></div>
+                <div id="progressBar" class="h-full bg-blue-600 transition-all duration-500" style="width: 7.14%"></div>
             </div>
             
             <!-- Slides Container -->
             <div class="min-h-[600px] p-8">
-                <!-- Slide 1: Question -->
+                <!-- Slide 1: Complex Problem Statement -->
                 <div id="slide1" class="slide active">
                     <div class="text-center mb-8">
-                        <h1 class="text-4xl font-bold text-purple-800">Know<span class="text-orange-500">JEE</span></h1>
-                        <p class="text-gray-600">JEE Advanced Electrostatics</p>
+                        <h1 class="text-4xl font-bold text-blue-800">Know<span class="text-orange-500">JEE</span></h1>
+                        <p class="text-gray-600">JEE Advanced Mechanics</p>
                     </div>
 
-                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-600 p-8 rounded-lg mb-6">
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-red-600 p-8 rounded-lg mb-6 pulse-glow">
                         <div class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full text-sm font-bold mb-4">
-                            <i class="fas fa-bolt mr-2"></i> JEE ADVANCED LEVEL
+                            <i class="fas fa-star mr-2"></i> JEE ADVANCED CHALLENGE
                         </div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">ELECTROSTATICS PROBLEM</h2>
-                        <p class="text-2xl font-bold text-gray-800 leading-tight text-center">
-                            Three charges +Q, -2Q, and +Q are placed at vertices of an equilateral triangle of side 'a'. 
-                            Find the electric field and potential at the centroid of the triangle.
-                        </p>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">COMPLEX ROTATIONAL DYNAMICS</h2>
+                        
+                        <div class="bg-white p-6 rounded-lg border-2 border-dashed border-blue-300 mb-4">
+                            <p class="text-2xl font-bold text-gray-800 leading-tight text-center">
+                                A uniform solid cylinder of mass M and radius R rolls without slipping on a rough horizontal surface. 
+                                A light string wrapped around the cylinder passes over a massless pulley and connects to a block of mass m 
+                                hanging vertically. The system is released from rest. Find the acceleration of the block, angular acceleration 
+                                of the cylinder, and tension in the string.
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-lg">
+                                <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
+                                <span class="font-semibold">Multiple Concepts Combined: Rolling + Pulley + Constraints</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-2 gap-6 mb-6">
                         <div class="bg-orange-50 p-4 rounded-lg">
-                            <h3 class="font-bold text-orange-800 mb-3">Given Values</h3>
-                            <p>• Charge 1: +Q</p>
-                            <p>• Charge 2: -2Q</p>
-                            <p>• Charge 3: +Q</p>
-                            <p>• Side length: a</p>
-                            <p>• Equilateral triangle</p>
+                            <h3 class="font-bold text-orange-800 mb-3">System Parameters</h3>
+                            <p>• Cylinder mass: M, Radius: R</p>
+                            <p>• Hanging mass: m</p>
+                            <p>• No slipping condition</p>
+                            <p>• Massless pulley, frictionless axle</p>
+                            <p>• Light inextensible string</p>
                         </div>
                         <div class="bg-green-50 p-4 rounded-lg">
-                            <h3 class="font-bold text-green-800 mb-3">Required</h3>
-                            <p>• Electric field at centroid</p>
-                            <p>• Electric potential at centroid</p>
-                            <p>• Direction of net field</p>
+                            <h3 class="font-bold text-green-800 mb-3">Quantities to Find</h3>
+                            <p>• Acceleration of block (a)</p>
+                            <p>• Angular acceleration of cylinder (α)</p>
+                            <p>• Tension in string (T)</p>
+                            <p>• Friction force at contact</p>
+                            <p>• Constraint relations</p>
                         </div>
                     </div>
-
-                    <div class="bg-yellow-50 p-4 rounded-lg">
-                        <p class="text-yellow-800 font-semibold text-center">
-                            <i class="fas fa-lightbulb mr-2"></i>
-                            This problem tests vector addition of electric fields and scalar addition of potentials
-                        </p>
-                    </div>
-
-                    
                 </div>
 
-                <!-- Slide 2: Understanding the Setup -->
+                <!-- Slide 2: System Analysis -->
                 <div id="slide2" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Understanding the Geometry</h2>
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 1: System Analysis & Constraints</h2>
                     
                     <div class="space-y-6">
                         <div class="content-line bg-blue-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-blue-800 mb-3">Triangle Configuration</h3>
-                            <p class="mb-3">We have an equilateral triangle with:</p>
-                            <div class="grid grid-cols-3 gap-4 text-center mb-4">
-                                <div class="bg-white p-3 rounded">
-                                    <p class="font-bold charge-positive">Vertex A: +Q</p>
+                            <h3 class="font-bold text-blue-800 mb-3">Physical Setup Understanding</h3>
+                            <p class="mb-3">We have a combined translational and rotational system:</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded">
+                                    <p class="font-semibold text-green-600">Cylinder Motion</p>
+                                    <p>• Rolls without slipping</p>
+                                    <p>• Has both translation and rotation</p>
+                                    <p>• Constrained by string</p>
                                 </div>
-                                <div class="bg-white p-3 rounded">
-                                    <p class="font-bold charge-negative">Vertex B: -2Q</p>
-                                </div>
-                                <div class="bg-white p-3 rounded">
-                                    <p class="font-bold charge-positive">Vertex C: +Q</p>
-                                </div>
-                            </div>
-                            <p>The centroid is equidistant from all vertices.</p>
-                        </div>
-
-                        <div class="content-line bg-green-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-green-800 mb-3">Key Distances</h3>
-                            <p>For an equilateral triangle of side 'a':</p>
-                            <div class="bg-white p-4 rounded mt-3">
-                                <p class="text-center font-mono text-lg">Distance from vertex to centroid, r = a/√3</p>
-                            </div>
-                            <p class="mt-3 text-sm text-gray-600">This comes from geometry: centroid divides median in 2:1 ratio</p>
-                        </div>
-
-                        <div class="content-line bg-purple-50 p-4 rounded-lg">
-                            <h3 class="font-bold text-purple-800 mb-2">Symmetry Analysis</h3>
-                            <p>The system has symmetry about the line through vertex B (-2Q) and centroid.</p>
-                            <p class="mt-2">The two +Q charges are symmetric with respect to this line.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3: Electric Field Concept -->
-                <div id="slide3" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Electric Field - Vector Quantity</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="content-line bg-red-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-red-800 mb-3">Electric Field Formula</h3>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded mb-4">
-                                E = kQ/r² (magnitude)
-                            </p>
-                            <p class="mb-3">Direction: Away from positive charges, toward negative charges</p>
-                            <p>Since electric field is a vector, we need to add them vectorially.</p>
-                        </div>
-
-                        <div class="content-line bg-yellow-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-yellow-800 mb-3">Field Directions at Centroid</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-center">
-                                    <span class="charge-positive font-bold mr-3">+Q at A:</span>
-                                    <span>Field points AWAY from A</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="charge-negative font-bold mr-3">-2Q at B:</span>
-                                    <span>Field points TOWARD B</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="charge-positive font-bold mr-3">+Q at C:</span>
-                                    <span>Field points AWAY from C</span>
+                                <div class="bg-white p-4 rounded">
+                                    <p class="font-semibold text-purple-600">Block Motion</p>
+                                    <p>• Pure translation</p>
+                                    <p>• Connected via pulley</p>
+                                    <p>• Moves vertically</p>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="content-line bg-blue-50 p-4 rounded-lg">
-                            <h3 class="font-bold text-blue-800 mb-2">Symmetry Advantage</h3>
-                            <p>The fields from the two +Q charges (A and C) are symmetric.</p>
-                            <p class="mt-2">Their horizontal components cancel out, leaving only vertical components.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4: Electric Field Calculation -->
-                <div id="slide4" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 1: Calculate Electric Field</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="content-line bg-green-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-green-800 mb-3">Distance Calculation</h3>
-                            <p class="mb-3">All charges are at equal distance from centroid:</p>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
-                                r = a/√3
-                            </p>
                         </div>
 
                         <div class="content-line bg-purple-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-purple-800 mb-3">Field Magnitudes</h3>
+                            <h3 class="font-bold text-purple-800 mb-3">Key Constraint Relations</h3>
                             <div class="space-y-3">
-                                <p class="font-mono">E₁ = kQ/r² (from +Q at A)</p>
-                                <p class="font-mono">E₂ = k(2Q)/r² (from -2Q at B)</p>
-                                <p class="font-mono">E₃ = kQ/r² (from +Q at C)</p>
-                            </div>
-                            <p class="mt-3">Note: E₂ is twice as large as E₁ and E₃</p>
-                        </div>
-
-                        <div class="content-line bg-orange-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-orange-800 mb-3">Vector Components</h3>
-                            <p>Due to symmetry, fields from A and C cancel horizontally.</p>
-                            <p class="mt-2">Let's consider angles: In equilateral triangle, angle between lines from centroid to vertices is 120°.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5: Field Vector Addition -->
-                <div id="slide5" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 2: Vector Addition of Fields</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="content-line bg-red-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-red-800 mb-3">Coordinate System</h3>
-                            <p>Place centroid at origin, vertex B (-2Q) on positive y-axis.</p>
-                            <p class="mt-2">Then vertices A and C are symmetric about y-axis.</p>
-                        </div>
-
-                        <div class="content-line bg-blue-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-blue-800 mb-3">Field from -2Q at B</h3>
-                            <p>Since it's negative charge, field points toward it (negative y-direction):</p>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
-                                E₂ = - (2kQ/r²) ĵ
-                            </p>
-                        </div>
-
-                        <div class="content-line bg-green-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-green-800 mb-3">Fields from +Q charges</h3>
-                            <p>Due to symmetry, x-components cancel, y-components add:</p>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
-                                E₁ + E₃ = 2 × (kQ/r²) × cos30° ĵ
-                            </p>
-                            <p class="text-center mt-2">= 2 × (kQ/r²) × (√3/2) ĵ = (√3 kQ/r²) ĵ</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6: Net Electric Field -->
-                <div id="slide6" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 3: Net Electric Field</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="content-line bg-purple-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-purple-800 mb-3">Total Field Calculation</h3>
-                            <p class="mb-3">Net electric field E_net = E₁ + E₂ + E₃</p>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
-                                E_net = [√3 kQ/r² - 2kQ/r²] ĵ
-                            </p>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
-                                = kQ/r² (√3 - 2) ĵ
-                            </p>
-                        </div>
-
-                        <div class="content-line bg-yellow-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-yellow-800 mb-3">Substitute r = a/√3</h3>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
-                                E_net = kQ/(a²/3) × (√3 - 2) ĵ
-                            </p>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
-                                = (3kQ/a²)(√3 - 2) ĵ
-                            </p>
-                        </div>
-
-                        <div class="content-line bg-red-50 p-4 rounded-lg">
-                            <h3 class="font-bold text-red-800 mb-2">Direction Analysis</h3>
-                            <p>Since √3 ≈ 1.732, then (√3 - 2) ≈ -0.268 (negative)</p>
-                            <p class="mt-2">Therefore, net field is in negative y-direction (toward the -2Q charge).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 7: Electric Potential -->
-                <div id="slide7" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 4: Electric Potential at Centroid</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="content-line bg-green-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-green-800 mb-3">Potential Formula</h3>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded mb-4">
-                                V = kQ/r (scalar)
-                            </p>
-                            <p>Electric potential is a scalar quantity - we simply add algebraically.</p>
-                        </div>
-
-                        <div class="content-line bg-blue-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-blue-800 mb-3">Potential from Each Charge</h3>
-                            <div class="space-y-3">
-                                <p class="font-mono">V₁ = k(+Q)/r = kQ/r</p>
-                                <p class="font-mono">V₂ = k(-2Q)/r = -2kQ/r</p>
-                                <p class="font-mono">V₃ = k(+Q)/r = kQ/r</p>
-                            </div>
-                        </div>
-
-                        <div class="content-line bg-orange-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-orange-800 mb-3">Total Potential</h3>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
-                                V_total = V₁ + V₂ + V₃
-                            </p>
-                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
-                                = kQ/r - 2kQ/r + kQ/r = 0
-                            </p>
-                            <p class="text-center text-2xl font-bold text-green-700 mt-3">✓ Potential at centroid is ZERO</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 8: Final Answers -->
-                <div id="slide8" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Final Results & Verification</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="content-line bg-gradient-to-r from-purple-500 to-blue-500 text-white p-8 rounded-2xl">
-                            <h3 class="text-2xl font-bold mb-4 text-center">FINAL ANSWERS</h3>
-                            <div class="grid grid-cols-2 gap-6">
-                                <div class="bg-white/20 p-4 rounded-lg">
-                                    <p class="text-lg font-semibold">Electric Field</p>
-                                    <p class="text-xl font-mono mt-2">E = (3kQ/a²)(√3 - 2) ĵ</p>
-                                    <p class="text-sm mt-2">Direction: Toward -2Q charge</p>
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-mono">No slipping condition: v_cylinder = Rω</p>
+                                    <p class="text-sm text-gray-600">Differentiating: a_cylinder = Rα</p>
                                 </div>
-                                <div class="bg-white/20 p-4 rounded-lg">
-                                    <p class="text-lg font-semibold">Electric Potential</p>
-                                    <p class="text-2xl font-bold mt-2">V = 0</p>
-                                    <p class="text-sm mt-2">Scalar sum cancels out</p>
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-mono">String constraint: a_block = 2 × a_cylinder</p>
+                                    <p class="text-sm text-gray-600">Block moves twice as fast as cylinder center</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-mono">Let a_block = a, then a_cylinder = a/2</p>
+                                    <p class="text-sm text-gray-600">And α = a_cylinder/R = a/(2R)</p>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="content-line bg-green-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-green-800 mb-3">Physical Interpretation</h3>
-                            <p>• Electric field is NON-ZERO: There is force on test charge</p>
-                            <p>• Electric potential is ZERO: Work done to bring test charge from infinity is zero</p>
-                            <p class="mt-3">This is a common scenario in electrostatics - zero potential doesn't mean zero field!</p>
                         </div>
 
                         <div class="content-line bg-yellow-50 p-4 rounded-lg">
-                            <h3 class="font-bold text-yellow-800 mb-2">JEE Strategy</h3>
-                            <p>• Remember: E is vector (add vectorially), V is scalar (add algebraically)</p>
-                            <p>• Use symmetry to simplify calculations</p>
-                            <p>• Always check if result makes physical sense</p>
+                            <h3 class="font-bold text-yellow-800 mb-2">Why a_block = 2a_cylinder?</h3>
+                            <p>When cylinder rolls, the point where string leaves moves with velocity 2v_cylinder relative to ground.</p>
+                            <p class="mt-2">This is crucial for setting up correct equations!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 9: Summary -->
-                <div id="slide9" class="slide">
-                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Complete Solution Summary</h2>
+                <!-- Slide 3: Free Body Diagrams -->
+                <div id="slide3" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 2: Free Body Diagrams</h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="content-line bg-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-4">For Hanging Block (mass m)</h3>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="font-semibold mb-2">Forces:</p>
+                                <p>• Weight: mg downward</p>
+                                <p>• Tension: T upward</p>
+                                <p class="mt-3 font-semibold">Newton's 2nd Law:</p>
+                                <p class="font-mono text-center bg-gray-100 p-2 rounded">mg - T = ma</p>
+                                <p class="text-center">(Taking downward as positive)</p>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-4">For Cylinder</h3>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="font-semibold mb-2">Forces in x-direction:</p>
+                                <p>• Tension: T to the right</p>
+                                <p>• Friction: f to the left</p>
+                                <p class="font-semibold mt-3">Forces in y-direction:</p>
+                                <p>• Weight: Mg downward</p>
+                                <p>• Normal: N upward</p>
+                                <p class="font-semibold mt-3">Torque about center:</p>
+                                <p>• T and f both create torque</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-line bg-blue-50 p-6 rounded-lg mt-6">
+                        <h3 class="font-bold text-blue-800 mb-3">Important Note about Friction</h3>
+                        <p>Since rolling occurs without slipping, the friction is static friction.</p>
+                        <p class="mt-2">It can be in either direction depending on the situation, and its magnitude is just enough to prevent slipping.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Cylinder Translation Equation -->
+                <div id="slide4" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 3: Cylinder Translation Motion</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-purple-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-3">Newton's 2nd Law for Translation</h3>
+                            <p>For the cylinder's center of mass motion in horizontal direction:</p>
+                            <div class="bg-white p-4 rounded-lg mt-3">
+                                <p class="text-center text-xl font-mono">T - f = M × a_cylinder</p>
+                            </div>
+                            <p class="mt-3">But from constraints: a_cylinder = a/2</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">∴ T - f = M × (a/2)</p>
+                                <p class="text-center text-lg">[Equation 1]</p>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-orange-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-3">Vertical Forces</h3>
+                            <p>In vertical direction, no acceleration:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">N = Mg</p>
+                            </div>
+                            <p class="mt-3">This will be useful later for friction analysis if needed.</p>
+                        </div>
+
+                        <div class="content-line bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-2">Direction Convention</h3>
+                            <p>We've taken rightward as positive for cylinder motion, and downward as positive for block motion.</p>
+                            <p class="mt-2">Consistency in sign convention is crucial for correct solutions!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Cylinder Rotation Equation -->
+                <div id="slide5" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 4: Cylinder Rotational Motion</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">Torque Analysis</h3>
+                            <p>Taking torque about cylinder's center:</p>
+                            <div class="space-y-3 mt-3">
+                                <div class="bg-white p-3 rounded">
+                                    <p>• Tension T acts at top: torque = T × R (clockwise)</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <p>• Friction f acts at bottom: torque = f × R (counter-clockwise)</p>
+                                </div>
+                            </div>
+                            <p class="mt-3">Net torque = T × R - f × R</p>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Rotational Dynamics Equation</h3>
+                            <p>Using τ = Iα:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">T × R - f × R = I × α</p>
+                            </div>
+                            <p class="mt-3">For solid cylinder: I = (1/2)MR²</p>
+                            <p>From constraints: α = a/(2R)</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">T × R - f × R = (1/2)MR² × (a/(2R))</p>
+                                <p class="text-center text-xl font-mono">T - f = (1/4)Ma</p>
+                                <p class="text-center text-lg">[Equation 2]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Block Motion Equation -->
+                <div id="slide6" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 5: Block Motion Equation</h2>
                     
                     <div class="space-y-6">
                         <div class="content-line bg-blue-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-blue-800 mb-3">Key Steps Recap</h3>
-                            <div class="space-y-3">
-                                <p>1. <span class="font-semibold">Geometry:</span> r = a/√3 from centroid to vertices</p>
-                                <p>2. <span class="font-semibold">Field Magnitudes:</span> E = kQ/r² for each charge</p>
-                                <p>3. <span class="font-semibold">Vector Addition:</span> Use symmetry, cancel x-components</p>
-                                <p>4. <span class="font-semibold">Net Field:</span> E_net = (3kQ/a²)(√3 - 2) ĵ</p>
-                                <p>5. <span class="font-semibold">Potential:</span> V_total = kQ/r - 2kQ/r + kQ/r = 0</p>
+                            <h3 class="font-bold text-blue-800 mb-3">For Hanging Block</h3>
+                            <p>From Newton's 2nd law for the block:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">mg - T = ma</p>
+                                <p class="text-center text-lg">[Equation 3]</p>
+                            </div>
+                            <p class="mt-3">Where a is the acceleration of the block (downward positive).</p>
+                        </div>
+
+                        <div class="content-line bg-purple-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-3">Current Equation System</h3>
+                            <div class="space-y-3 bg-white p-4 rounded-lg">
+                                <p class="font-mono border-b pb-2">(1) T - f = M × (a/2)</p>
+                                <p class="font-mono border-b pb-2">(2) T - f = (1/4)Ma</p>
+                                <p class="font-mono">(3) mg - T = ma</p>
+                            </div>
+                            <p class="mt-3 text-green-600 font-semibold">Notice: Equations (1) and (2) both equal T - f!</p>
+                        </div>
+
+                        <div class="content-line bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-2">Key Insight</h3>
+                            <p>From equations (1) and (2), we can eliminate friction and find a relationship between T and a.</p>
+                            <p class="mt-2">This is the power of having multiple equations - we can eliminate unknowns!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Solving the System -->
+                <div id="slide7" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 6: Solving the Equations</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">From Equations (1) and (2)</h3>
+                            <p>Both equal T - f, so set them equal:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">M × (a/2) = (1/4)Ma</p>
+                            </div>
+                            <p class="mt-3">This gives us information about the consistency of our approach.</p>
+                            <p>Actually, let's use equations (1) and (2) differently...</p>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Better Approach: Use All Three Equations</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <p>From equation (3): T = mg - ma</p>
+                                </div>
+                                <div>
+                                    <p>From equations (1) and (2), we see they're identical if we're consistent.</p>
+                                    <p>Let's use equation (2): T - f = (1/4)Ma</p>
+                                </div>
+                                <div>
+                                    <p>But we don't know f yet. Let's think differently...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Energy Method Insight</h3>
+                            <p>Sometimes it's easier to use energy methods for such complex systems.</p>
+                            <p class="mt-2">Total mechanical energy conservation:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center">Loss in PE = Gain in (KE_trans + KE_rot)</p>
+                            </div>
+                            <p>But let's stick with Newtonian mechanics for now.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Correct Solution Path -->
+                <div id="slide8" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 7: Correct Mathematical Approach</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-purple-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-3">Let's Solve Systematically</h3>
+                            <p>We have three equations:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2 space-y-2">
+                                <p>1. T - f = M(a/2)</p>
+                                <p>2. T × R - f × R = (1/2)MR² × (a/(2R))</p>
+                                <p>3. mg - T = ma</p>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-orange-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-3">From Equation (2)</h3>
+                            <p>Divide both sides by R:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">T - f = (1/2)M × (a/2)</p>
+                                <p class="text-center text-xl font-mono">T - f = (1/4)Ma</p>
+                            </div>
+                            <p class="mt-3">Now compare with equation (1): T - f = M(a/2)</p>
+                            <p class="text-red-600 font-semibold">Wait! We have a contradiction unless we reconsider our approach.</p>
+                        </div>
+
+                        <div class="content-line bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-2">The Issue</h3>
+                            <p>The problem is in our torque equation. When cylinder rolls, the point of application of forces matters.</p>
+                            <p class="mt-2">We need to be more careful about the torque calculation!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 9: Final Correct Solution -->
+                <div id="slide9" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Step 8: Final Correct Equations</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">Correct Torque Analysis</h3>
+                            <p>For rolling without slipping, we should use:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2">
+                                <p class="text-center text-xl font-mono">τ = Iα about instantaneous center of rotation</p>
+                            </div>
+                            <p class="mt-3">Or use the point of contact as reference to eliminate friction.</p>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Using Energy Methods (Simpler)</h3>
+                            <p>Let's use work-energy theorem:</p>
+                            <div class="bg-white p-4 rounded-lg mt-2 space-y-2">
+                                <p>When block descends distance h:</p>
+                                <p>• PE loss = mgh</p>
+                                <p>• KE gain = ½mv² + ½Mv_cyl² + ½Iω²</p>
+                                <p>• With constraints: v_cyl = v/2, ω = v/(2R)</p>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Energy Conservation</h3>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-center text-xl font-mono">mgh = ½mv² + ½M(v/2)² + ½(½MR²)(v/(2R))²</p>
+                                <p class="text-center text-xl font-mono">mgh = ½mv² + (1/8)Mv² + (1/16)Mv²</p>
+                                <p class="text-center text-xl font-mono">mgh = ½mv² + (3/16)Mv²</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 10: Final Answers -->
+                <div id="slide10" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Final Results</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-6 text-center">SOLUTION SUMMARY</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-white/20 p-4 rounded-lg text-center">
+                                    <p class="text-lg font-semibold">Block Acceleration</p>
+                                    <p class="text-xl font-mono mt-2">a = 4mg/(4m + 3M)</p>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-lg text-center">
+                                    <p class="text-lg font-semibold">Angular Acceleration</p>
+                                    <p class="text-xl font-mono mt-2">α = 2mg/(R(4m + 3M))</p>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-lg text-center">
+                                    <p class="text-lg font-semibold">Tension</p>
+                                    <p class="text-xl font-mono mt-2">T = 3Mmg/(4m + 3M)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-yellow-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-3">Verification</h3>
+                            <p>• When M >> m: a → 0 (heavy cylinder hard to move)</p>
+                            <p>• When m >> M: a → g (light cylinder, block falls freely)</p>
+                            <p>• Dimensions check: all formulas have correct units</p>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-2">JEE Advanced Strategy</h3>
+                            <p>• Always verify constraint relations carefully</p>
+                            <p>• Use energy methods as cross-check</p>
+                            <p>• Check limiting cases for physical plausibility</p>
+                            <p>• Pay attention to direction of friction in rolling</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 11: Summary & Learning -->
+                <div id="slide11" class="slide">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">Key Learning Points</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Important Concepts Mastered</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded">
+                                    <p class="font-semibold">Rolling Constraints</p>
+                                    <p class="text-sm">v = Rω, a = Rα</p>
+                                </div>
+                                <div class="bg-white p-4 rounded">
+                                    <p class="font-semibold">String Constraints</p>
+                                    <p class="text-sm">a_block = 2a_cylinder</p>
+                                </div>
+                                <div class="bg-white p-4 rounded">
+                                    <p class="font-semibold">Rotational Dynamics</p>
+                                    <p class="text-sm">τ = Iα</p>
+                                </div>
+                                <div class="bg-white p-4 rounded">
+                                    <p class="font-semibold">Energy Methods</p>
+                                    <p class="text-sm">Cross-verification tool</p>
+                                </div>
                             </div>
                         </div>
 
                         <div class="content-line bg-red-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-red-800 mb-3">Important Concepts</h3>
-                            <p>• Electric Field: Vector, follows superposition principle vectorially</p>
-                            <p>• Electric Potential: Scalar, follows superposition principle algebraically</p>
-                            <p>• Symmetry: Powerful tool to simplify problems</p>
-                            <p>• Distance: In equilateral triangle, centroid is equidistant from vertices</p>
+                            <h3 class="font-bold text-red-800 mb-3">Common Mistakes to Avoid</h3>
+                            <div class="space-y-2">
+                                <p>• Incorrect constraint relations</p>
+                                <p>• Wrong torque calculations</p>
+                                <p>• Sign convention errors</p>
+                                <p>• Forgetting rolling condition</p>
+                                <p>• Misidentifying friction direction</p>
+                            </div>
                         </div>
 
                         <div class="text-center mt-8">
-                            <div class="inline-flex items-center bg-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all">
+                            <div class="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg">
                                 <i class="fab fa-youtube mr-3"></i>
                                 Like, Subscribe, Share, Simple KnowJEE
                             </div>
@@ -358,28 +475,27 @@
                 </div>
             </div>
             
-            <!-- Navigation - Hidden but functional -->
+            <!-- Navigation -->
             <div class="flex justify-between items-center p-6 bg-gray-100 border-t">
-                <!-- Hidden navigation buttons -->
-                <button id="prevBtn" class="hidden" aria-hidden="true"></button>
-                <button id="nextBtn" class="hidden" aria-hidden="true"></button>
+                <button id="prevBtn" class="hidden"></button>
+                <button id="nextBtn" class="hidden"></button>
                 
-                <!-- Progress dots - still visible for navigation -->
-                <div class="flex space-x-1 mx-auto">
-                    <div class="progress-dot active w-3 h-3 bg-purple-600 rounded-full cursor-pointer" data-slide="0"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="1"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="2"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="3"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="4"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="5"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="6"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="7"></div>
-                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="8"></div>
+                <div class="flex space-x-1 mx-auto flex-wrap justify-center">
+                    <div class="progress-dot active w-2 h-2 bg-blue-600 rounded-full cursor-pointer" data-slide="0"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="1"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="2"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="3"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="4"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="5"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="6"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="7"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="8"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="9"></div>
+                    <div class="progress-dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer" data-slide="10"></div>
                 </div>
                 
-                <!-- Slide counter -->
                 <div class="text-gray-600 font-semibold">
-                    <span id="currentSlide">1</span> / <span id="totalSlides">9</span>
+                    <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
                 </div>
             </div>
         </div>
@@ -408,7 +524,7 @@
                 currentSlideEl.textContent = index + 1;
                 
                 progressDots.forEach((dot, i) => {
-                    dot.classList.toggle('bg-purple-600', i === index);
+                    dot.classList.toggle('bg-blue-600', i === index);
                     dot.classList.toggle('bg-gray-400', i !== index);
                 });
                 
@@ -419,7 +535,7 @@
                 const contentLines = slide.querySelectorAll('.content-line');
                 contentLines.forEach((line, index) => {
                     line.classList.remove('visible');
-                    setTimeout(() => line.classList.add('visible'), 3000 * (index + 1));
+                    setTimeout(() => line.classList.add('visible'), 300 * (index + 1));
                 });
             }
             
@@ -437,16 +553,11 @@
                 }
             }
             
-            // Keyboard navigation
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') {
-                    nextSlide();
-                } else if (e.key === 'ArrowLeft') {
-                    prevSlide();
-                }
+                if (e.key === 'ArrowRight') nextSlide();
+                else if (e.key === 'ArrowLeft') prevSlide();
             });
             
-            // Progress dots navigation
             progressDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     currentSlideIndex = index;
@@ -454,16 +565,14 @@
                 });
             });
             
-            // Initialize
-            showSlide(currentSlideIndex);
-
-            // Add click event to entire slide area for forward navigation
+            // Click on slide to advance
             document.querySelector('.min-h-\\[600px\\]').addEventListener('click', function(e) {
-                // Only proceed if not clicking on progress dots or other interactive elements
                 if (!e.target.closest('.progress-dot')) {
                     nextSlide();
                 }
             });
+            
+            showSlide(currentSlideIndex);
         });
     </script>
 </body>
