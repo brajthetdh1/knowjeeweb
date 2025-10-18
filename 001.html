@@ -3,350 +3,468 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEE Problem Solution | Newton's Laws</title>
+    <title>Electrostatics Problem | JEE Physics | KnowJEE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .slide { display: none; }
+        .slide.active { display: block; animation: fadeIn 0.8s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .content-line { opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+        .content-line.visible { opacity: 1; transform: translateY(0); }
+        .charge-positive { color: #ef4444; }
+        .charge-negative { color: #3b82f6; }
+        .keyboard-hint {
+            animation: pulse 2s infinite;
         }
-        .problem-text {
-            font-size: 2.5rem;
-            line-height: 1.4;
-        }
-        .step-text {
-            font-size: 2rem;
-            line-height: 1.4;
-        }
-        .formula-text {
-            font-size: 3rem;
-        }
-        .answer-text {
-            font-size: 4rem;
-        }
-        .slide {
-            animation: fadeIn 0.8s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-8">
-    <div class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden">
-        
-        <!-- Progress Bar -->
-        <div class="h-3 bg-gray-200">
-            <div class="h-full bg-green-500 transition-all duration-500" style="width: 100%"></div>
-        </div>
-
-        <!-- Slide 1: Problem Statement -->
-        <div id="slide1" class="slide active p-12 min-h-[700px] flex flex-col justify-center">
-            <div class="text-center mb-8">
-                <h1 class="text-6xl font-bold text-gray-800 mb-4">JEE ADVANCED PROBLEM</h1>
-                <div class="text-4xl text-green-600 font-semibold">Newton's Laws of Motion</div>
+<body class="bg-gradient-to-br from-purple-900 via-blue-900 to-gray-900 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Progress Bar -->
+            <div class="h-1 bg-gray-200">
+                <div id="progressBar" class="h-full bg-purple-600 transition-all duration-500" style="width: 11.11%"></div>
             </div>
-
-            <div class="bg-yellow-50 border-l-8 border-yellow-500 p-8 rounded-lg mb-8">
-                <h2 class="text-4xl font-bold text-gray-800 mb-6">PROBLEM STATEMENT</h2>
-                <div class="problem-text text-gray-700 leading-relaxed">
-                    A block of mass <span class="font-bold text-blue-600">m = 5 kg</span> is placed on a rough inclined plane 
-                    with angle <span class="font-bold text-red-600">θ = 37°</span>. The coefficients of friction are 
-                    <span class="font-bold text-purple-600">μₛ = 0.5</span> and <span class="font-bold text-purple-600">μₖ = 0.3</span>. 
-                    Determine if the block will slide down, and if yes, find its acceleration.
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-8 mt-8">
-                <div class="bg-blue-50 p-6 rounded-lg">
-                    <h3 class="text-3xl font-bold text-blue-800 mb-4">Given Data</h3>
-                    <div class="space-y-3 text-2xl text-gray-700">
-                        <div>• Mass: <span class="font-bold">m = 5 kg</span></div>
-                        <div>• Angle: <span class="font-bold">θ = 37°</span></div>
-                        <div>• Static friction: <span class="font-bold">μₛ = 0.5</span></div>
-                        <div>• Kinetic friction: <span class="font-bold">μₖ = 0.3</span></div>
-                        <div>• g = 10 m/s²</div>
-                    </div>
-                </div>
-                <div class="bg-green-50 p-6 rounded-lg">
-                    <h3 class="text-3xl font-bold text-green-800 mb-4">Required</h3>
-                    <div class="space-y-3 text-2xl text-gray-700">
-                        <div>• Will block slide? ✓</div>
-                        <div>• Acceleration if slides ✓</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 2: Step 1 - Check for Sliding -->
-        <div id="slide2" class="slide p-12 min-h-[700px] flex flex-col justify-center" style="display: none">
-            <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">STEP 1: CHECK IF BLOCK WILL SLIDE</h2>
             
-            <div class="grid grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="bg-red-50 p-6 rounded-lg">
-                        <h3 class="text-3xl font-bold text-red-800 mb-4">Maximum Static Friction</h3>
-                        <div class="step-text space-y-4">
-                            <div>f<sub>s,max</sub> = μ<sub>s</sub>N</div>
-                            <div>N = mg cosθ</div>
-                            <div class="formula-text text-blue-600">f<sub>s,max</sub> = μ<sub>s</sub>mg cosθ</div>
+            <!-- Slides Container -->
+            <div class="min-h-[600px] p-8">
+                <!-- Slide 1: Question -->
+                <div id="slide1" class="slide active">
+                    <div class="text-center mb-8">
+                        <h1 class="text-4xl font-bold text-purple-800">Know<span class="text-orange-500">JEE</span></h1>
+                        <p class="text-gray-600">JEE Advanced Electrostatics</p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-600 p-8 rounded-lg mb-6">
+                        <div class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full text-sm font-bold mb-4">
+                            <i class="fas fa-bolt mr-2"></i> JEE ADVANCED LEVEL
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">ELECTROSTATICS PROBLEM</h2>
+                        <p class="text-2xl font-bold text-gray-800 leading-tight text-center">
+                            Three charges +Q, -2Q, and +Q are placed at vertices of an equilateral triangle of side 'a'. 
+                            Find the electric field and potential at the centroid of the triangle.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-3">Given Values</h3>
+                            <p>• Charge 1: +Q</p>
+                            <p>• Charge 2: -2Q</p>
+                            <p>• Charge 3: +Q</p>
+                            <p>• Side length: a</p>
+                            <p>• Equilateral triangle</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Required</h3>
+                            <p>• Electric field at centroid</p>
+                            <p>• Electric potential at centroid</p>
+                            <p>• Direction of net field</p>
                         </div>
                     </div>
 
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <h3 class="text-3xl font-bold text-blue-800 mb-4">Component Down the Plane</h3>
-                        <div class="step-text space-y-4">
-                            <div>F<sub>down</sub> = mg sinθ</div>
-                            <div class="formula-text text-green-600">Compare: mg sinθ vs μ<sub>s</sub>mg cosθ</div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <p class="text-yellow-800 font-semibold text-center">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            This problem tests vector addition of electric fields and scalar addition of potentials
+                        </p>
+                    </div>
+
+                    
+                </div>
+
+                <!-- Slide 2: Understanding the Setup -->
+                <div id="slide2" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Understanding the Geometry</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Triangle Configuration</h3>
+                            <p class="mb-3">We have an equilateral triangle with:</p>
+                            <div class="grid grid-cols-3 gap-4 text-center mb-4">
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-bold charge-positive">Vertex A: +Q</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-bold charge-negative">Vertex B: -2Q</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-bold charge-positive">Vertex C: +Q</p>
+                                </div>
+                            </div>
+                            <p>The centroid is equidistant from all vertices.</p>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Key Distances</h3>
+                            <p>For an equilateral triangle of side 'a':</p>
+                            <div class="bg-white p-4 rounded mt-3">
+                                <p class="text-center font-mono text-lg">Distance from vertex to centroid, r = a/√3</p>
+                            </div>
+                            <p class="mt-3 text-sm text-gray-600">This comes from geometry: centroid divides median in 2:1 ratio</p>
+                        </div>
+
+                        <div class="content-line bg-purple-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-2">Symmetry Analysis</h3>
+                            <p>The system has symmetry about the line through vertex B (-2Q) and centroid.</p>
+                            <p class="mt-2">The two +Q charges are symmetric with respect to this line.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Calculation</h3>
-                    <div class="step-text space-y-6">
-                        <div>sin37° = 0.6, cos37° = 0.8</div>
-                        <div>mg sinθ = 5×10×0.6 = 30 N</div>
-                        <div>f<sub>s,max</sub> = 0.5×5×10×0.8 = 20 N</div>
-                        <div class="text-4xl font-bold text-red-600">30 N > 20 N</div>
-                        <div class="text-4xl font-bold text-green-600">∴ BLOCK WILL SLIDE!</div>
+                <!-- Slide 3: Electric Field Concept -->
+                <div id="slide3" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Electric Field - Vector Quantity</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">Electric Field Formula</h3>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded mb-4">
+                                E = kQ/r² (magnitude)
+                            </p>
+                            <p class="mb-3">Direction: Away from positive charges, toward negative charges</p>
+                            <p>Since electric field is a vector, we need to add them vectorially.</p>
+                        </div>
+
+                        <div class="content-line bg-yellow-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-3">Field Directions at Centroid</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="charge-positive font-bold mr-3">+Q at A:</span>
+                                    <span>Field points AWAY from A</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="charge-negative font-bold mr-3">-2Q at B:</span>
+                                    <span>Field points TOWARD B</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="charge-positive font-bold mr-3">+Q at C:</span>
+                                    <span>Field points AWAY from C</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-2">Symmetry Advantage</h3>
+                            <p>The fields from the two +Q charges (A and C) are symmetric.</p>
+                            <p class="mt-2">Their horizontal components cancel out, leaving only vertical components.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Electric Field Calculation -->
+                <div id="slide4" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 1: Calculate Electric Field</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Distance Calculation</h3>
+                            <p class="mb-3">All charges are at equal distance from centroid:</p>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
+                                r = a/√3
+                            </p>
+                        </div>
+
+                        <div class="content-line bg-purple-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-3">Field Magnitudes</h3>
+                            <div class="space-y-3">
+                                <p class="font-mono">E₁ = kQ/r² (from +Q at A)</p>
+                                <p class="font-mono">E₂ = k(2Q)/r² (from -2Q at B)</p>
+                                <p class="font-mono">E₃ = kQ/r² (from +Q at C)</p>
+                            </div>
+                            <p class="mt-3">Note: E₂ is twice as large as E₁ and E₃</p>
+                        </div>
+
+                        <div class="content-line bg-orange-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-3">Vector Components</h3>
+                            <p>Due to symmetry, fields from A and C cancel horizontally.</p>
+                            <p class="mt-2">Let's consider angles: In equilateral triangle, angle between lines from centroid to vertices is 120°.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Field Vector Addition -->
+                <div id="slide5" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 2: Vector Addition of Fields</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">Coordinate System</h3>
+                            <p>Place centroid at origin, vertex B (-2Q) on positive y-axis.</p>
+                            <p class="mt-2">Then vertices A and C are symmetric about y-axis.</p>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Field from -2Q at B</h3>
+                            <p>Since it's negative charge, field points toward it (negative y-direction):</p>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
+                                E₂ = - (2kQ/r²) ĵ
+                            </p>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Fields from +Q charges</h3>
+                            <p>Due to symmetry, x-components cancel, y-components add:</p>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
+                                E₁ + E₃ = 2 × (kQ/r²) × cos30° ĵ
+                            </p>
+                            <p class="text-center mt-2">= 2 × (kQ/r²) × (√3/2) ĵ = (√3 kQ/r²) ĵ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Net Electric Field -->
+                <div id="slide6" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 3: Net Electric Field</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-purple-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-3">Total Field Calculation</h3>
+                            <p class="mb-3">Net electric field E_net = E₁ + E₂ + E₃</p>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
+                                E_net = [√3 kQ/r² - 2kQ/r²] ĵ
+                            </p>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
+                                = kQ/r² (√3 - 2) ĵ
+                            </p>
+                        </div>
+
+                        <div class="content-line bg-yellow-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-3">Substitute r = a/√3</h3>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
+                                E_net = kQ/(a²/3) × (√3 - 2) ĵ
+                            </p>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
+                                = (3kQ/a²)(√3 - 2) ĵ
+                            </p>
+                        </div>
+
+                        <div class="content-line bg-red-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-2">Direction Analysis</h3>
+                            <p>Since √3 ≈ 1.732, then (√3 - 2) ≈ -0.268 (negative)</p>
+                            <p class="mt-2">Therefore, net field is in negative y-direction (toward the -2Q charge).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Electric Potential -->
+                <div id="slide7" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Step 4: Electric Potential at Centroid</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Potential Formula</h3>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded mb-4">
+                                V = kQ/r (scalar)
+                            </p>
+                            <p>Electric potential is a scalar quantity - we simply add algebraically.</p>
+                        </div>
+
+                        <div class="content-line bg-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Potential from Each Charge</h3>
+                            <div class="space-y-3">
+                                <p class="font-mono">V₁ = k(+Q)/r = kQ/r</p>
+                                <p class="font-mono">V₂ = k(-2Q)/r = -2kQ/r</p>
+                                <p class="font-mono">V₃ = k(+Q)/r = kQ/r</p>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-orange-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-3">Total Potential</h3>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded">
+                                V_total = V₁ + V₂ + V₃
+                            </p>
+                            <p class="text-center text-xl font-mono bg-white p-4 rounded mt-2">
+                                = kQ/r - 2kQ/r + kQ/r = 0
+                            </p>
+                            <p class="text-center text-2xl font-bold text-green-700 mt-3">✓ Potential at centroid is ZERO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Final Answers -->
+                <div id="slide8" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Final Results & Verification</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-gradient-to-r from-purple-500 to-blue-500 text-white p-8 rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-4 text-center">FINAL ANSWERS</h3>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="bg-white/20 p-4 rounded-lg">
+                                    <p class="text-lg font-semibold">Electric Field</p>
+                                    <p class="text-xl font-mono mt-2">E = (3kQ/a²)(√3 - 2) ĵ</p>
+                                    <p class="text-sm mt-2">Direction: Toward -2Q charge</p>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-lg">
+                                    <p class="text-lg font-semibold">Electric Potential</p>
+                                    <p class="text-2xl font-bold mt-2">V = 0</p>
+                                    <p class="text-sm mt-2">Scalar sum cancels out</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-green-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3">Physical Interpretation</h3>
+                            <p>• Electric field is NON-ZERO: There is force on test charge</p>
+                            <p>• Electric potential is ZERO: Work done to bring test charge from infinity is zero</p>
+                            <p class="mt-3">This is a common scenario in electrostatics - zero potential doesn't mean zero field!</p>
+                        </div>
+
+                        <div class="content-line bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800 mb-2">JEE Strategy</h3>
+                            <p>• Remember: E is vector (add vectorially), V is scalar (add algebraically)</p>
+                            <p>• Use symmetry to simplify calculations</p>
+                            <p>• Always check if result makes physical sense</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 9: Summary -->
+                <div id="slide9" class="slide">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Complete Solution Summary</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="content-line bg-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3">Key Steps Recap</h3>
+                            <div class="space-y-3">
+                                <p>1. <span class="font-semibold">Geometry:</span> r = a/√3 from centroid to vertices</p>
+                                <p>2. <span class="font-semibold">Field Magnitudes:</span> E = kQ/r² for each charge</p>
+                                <p>3. <span class="font-semibold">Vector Addition:</span> Use symmetry, cancel x-components</p>
+                                <p>4. <span class="font-semibold">Net Field:</span> E_net = (3kQ/a²)(√3 - 2) ĵ</p>
+                                <p>5. <span class="font-semibold">Potential:</span> V_total = kQ/r - 2kQ/r + kQ/r = 0</p>
+                            </div>
+                        </div>
+
+                        <div class="content-line bg-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-red-800 mb-3">Important Concepts</h3>
+                            <p>• Electric Field: Vector, follows superposition principle vectorially</p>
+                            <p>• Electric Potential: Scalar, follows superposition principle algebraically</p>
+                            <p>• Symmetry: Powerful tool to simplify problems</p>
+                            <p>• Distance: In equilateral triangle, centroid is equidistant from vertices</p>
+                        </div>
+
+                        <div class="text-center mt-8">
+                            <div class="inline-flex items-center bg-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all">
+                                <i class="fab fa-youtube mr-3"></i>
+                                Like, Subscribe, Share, Simple KnowJEE
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Slide 3: Step 2 - Free Body Diagram -->
-        <div id="slide3" class="slide p-12 min-h-[700px] flex flex-col justify-center" style="display: none">
-            <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">STEP 2: FREE BODY DIAGRAM</h2>
             
-            <div class="grid grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-3xl font-bold text-purple-800 mb-4">Forces Acting</h3>
-                        <div class="step-text space-y-4">
-                            <div>• Weight: mg ↓</div>
-                            <div>• Normal: N ⟂</div>
-                            <div>• Kinetic friction: f<sub>k</sub> ↗</div>
-                            <div>• Component: mg sinθ ↘</div>
-                            <div>• Component: mg cosθ ↙</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-yellow-50 p-6 rounded-lg">
-                        <h3 class="text-3xl font-bold text-yellow-800 mb-4">Along the Incline</h3>
-                        <div class="step-text">
-                            <div class="formula-text">ma = mg sinθ - f<sub>k</sub></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg border-4 border-gray-300">
-                    <svg width="100%" height="400" viewBox="0 0 500 400">
-                        <!-- Inclined Plane -->
-                        <line x1="100" y1="300" x2="400" y2="150" stroke="#4B5563" stroke-width="4"/>
-                        
-                        <!-- Block -->
-                        <rect x="200" y="200" width="80" height="60" fill="#3B82F6" stroke="#1D4ED8" stroke-width="2"/>
-                        
-                        <!-- Weight -->
-                        <line x1="240" y1="230" x2="240" y2="330" stroke="#EF4444" stroke-width="4" marker-end="url(#arrow)"/>
-                        <text x="260" y="280" fill="#EF4444" font-size="20" font-weight="bold">mg</text>
-                        
-                        <!-- Normal -->
-                        <line x1="240" y1="230" x2="300" y2="180" stroke="#10B981" stroke-width="4" marker-end="url(#arrow)"/>
-                        <text x="310" y="200" fill="#10B981" font-size="20" font-weight="bold">N</text>
-                        
-                        <!-- Friction -->
-                        <line x1="240" y1="230" x2="180" y2="180" stroke="#F59E0B" stroke-width="4" marker-end="url(#arrow)"/>
-                        <text x="170" y="170" fill="#F59E0B" font-size="20" font-weight="bold">fₖ</text>
-                        
-                        <!-- Components -->
-                        <line x1="240" y1="330" x2="300" y2="280" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5,5"/>
-                        <line x1="240" y1="330" x2="180" y2="280" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5,5"/>
-                        
-                        <defs>
-                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                                <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
-                            </marker>
-                        </defs>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Step 3 - Apply Newton's Second Law -->
-        <div id="slide4" class="slide p-12 min-h-[700px] flex flex-col justify-center" style="display: none">
-            <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">STEP 3: APPLY NEWTON'S SECOND LAW</h2>
-            
-            <div class="space-y-12">
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="bg-green-50 p-8 rounded-lg">
-                        <h3 class="text-4xl font-bold text-green-800 mb-6">Along Incline (x-direction)</h3>
-                        <div class="step-text space-y-6">
-                            <div>ΣF<sub>x</sub> = ma</div>
-                            <div>mg sinθ - f<sub>k</sub> = ma</div>
-                            <div class="formula-text">mg sinθ - μ<sub>k</sub>N = ma</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-blue-50 p-8 rounded-lg">
-                        <h3 class="text-4xl font-bold text-blue-800 mb-6">Perpendicular to Incline (y-direction)</h3>
-                        <div class="step-text space-y-6">
-                            <div>ΣF<sub>y</sub> = 0</div>
-                            <div>N - mg cosθ = 0</div>
-                            <div class="formula-text">N = mg cosθ</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-yellow-50 p-8 rounded-lg">
-                    <h3 class="text-4xl font-bold text-yellow-800 mb-6">Combine Equations</h3>
-                    <div class="step-text space-y-6">
-                        <div>Substitute N = mg cosθ into x-equation:</div>
-                        <div class="formula-text">mg sinθ - μ<sub>k</sub>mg cosθ = ma</div>
-                        <div class="formula-text">a = g(sinθ - μ<sub>k</sub>cosθ)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 5: Step 4 - Final Calculation -->
-        <div id="slide5" class="slide p-12 min-h-[700px] flex flex-col justify-center" style="display: none">
-            <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">STEP 4: FINAL CALCULATION</h2>
-            
-            <div class="space-y-12">
-                <div class="bg-purple-50 p-8 rounded-lg">
-                    <h3 class="text-4xl font-bold text-purple-800 mb-6">Substitute Values</h3>
-                    <div class="step-text space-y-6 text-center">
-                        <div>a = g(sinθ - μ<sub>k</sub>cosθ)</div>
-                        <div>a = 10(0.6 - 0.3×0.8)</div>
-                        <div>a = 10(0.6 - 0.24)</div>
-                        <div>a = 10 × 0.36</div>
-                        <div class="answer-text text-green-600 font-bold">a = 3.6 m/s²</div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="bg-red-50 p-6 rounded-lg">
-                        <h3 class="text-3xl font-bold text-red-800 mb-4">Key Points</h3>
-                        <div class="step-text space-y-3">
-                            <div>✓ Check sliding condition first</div>
-                            <div>✓ Use kinetic friction for motion</div>
-                            <div>✓ Resolve forces properly</div>
-                            <div>✓ Apply Newton's 2nd law</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-green-50 p-6 rounded-lg">
-                        <h3 class="text-3xl font-bold text-green-800 mb-4">JEE Tips</h3>
-                        <div class="step-text space-y-3">
-                            <div>✓ Remember common angles</div>
-                            <div>✓ sin37°=0.6, cos37°=0.8</div>
-                            <div>✓ Always draw FBD</div>
-                            <div>✓ Check units and signs</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 6: Final Answer -->
-        <div id="slide6" class="slide p-12 min-h-[700px] flex flex-col justify-center" style="display: none">
-            <div class="text-center">
-                <h1 class="text-6xl font-bold text-gray-800 mb-8">FINAL ANSWER</h1>
+            <!-- Navigation - Hidden but functional -->
+            <div class="flex justify-between items-center p-6 bg-gray-100 border-t">
+                <!-- Hidden navigation buttons -->
+                <button id="prevBtn" class="hidden" aria-hidden="true"></button>
+                <button id="nextBtn" class="hidden" aria-hidden="true"></button>
                 
-                <div class="bg-gradient-to-r from-green-400 to-blue-500 p-12 rounded-3xl mb-12">
-                    <div class="answer-text text-white font-bold mb-4">ACCELERATION</div>
-                    <div class="answer-text text-yellow-300 font-bold">a = 3.6 m/s²</div>
-                    <div class="text-3xl text-white mt-4">down the incline</div>
+                <!-- Progress dots - still visible for navigation -->
+                <div class="flex space-x-1 mx-auto">
+                    <div class="progress-dot active w-3 h-3 bg-purple-600 rounded-full cursor-pointer" data-slide="0"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="1"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="2"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="3"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="4"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="5"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="6"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="7"></div>
+                    <div class="progress-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="8"></div>
                 </div>
-
-                <div class="grid grid-cols-3 gap-8 mt-12">
-                    <div class="bg-blue-100 p-6 rounded-lg">
-                        <div class="text-4xl font-bold text-blue-800">Step 1</div>
-                        <div class="text-2xl text-gray-700 mt-2">Check Sliding</div>
-                        <div class="text-3xl text-green-600 font-bold mt-2">✓ YES</div>
-                    </div>
-                    <div class="bg-green-100 p-6 rounded-lg">
-                        <div class="text-4xl font-bold text-green-800">Step 2</div>
-                        <div class="text-2xl text-gray-700 mt-2">Draw FBD</div>
-                        <div class="text-3xl text-green-600 font-bold mt-2">✓ DONE</div>
-                    </div>
-                    <div class="bg-purple-100 p-6 rounded-lg">
-                        <div class="text-4xl font-bold text-purple-800">Step 3</div>
-                        <div class="text-2xl text-gray-700 mt-2">Apply F=ma</div>
-                        <div class="text-3xl text-green-600 font-bold mt-2">✓ DONE</div>
-                    </div>
-                </div>
-
-                <div class="mt-12">
-                    <div class="text-4xl text-gray-700 font-semibold">
-                        "Systematic approach guarantees success in JEE Physics!"
-                    </div>
+                
+                <!-- Slide counter -->
+                <div class="text-gray-600 font-semibold">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">9</span>
                 </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="flex justify-between items-center p-6 bg-gray-100 border-t">
-            <button onclick="prevSlide()" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-2xl font-bold hover:bg-blue-700 transition">
-                <i class="fas fa-arrow-left mr-2"></i> Previous
-            </button>
-            
-            <div class="text-2xl text-gray-600">
-                Step <span id="currentStep">1</span> of 6
-            </div>
-            
-            <button onclick="nextSlide()" class="bg-green-600 text-white px-8 py-4 rounded-lg text-2xl font-bold hover:bg-green-700 transition">
-                Next <i class="fas fa-arrow-right ml-2"></i>
-            </button>
         </div>
     </div>
 
     <script>
-        let currentSlide = 1;
-        const totalSlides = 6;
-
-        function showSlide(n) {
-            // Hide all slides
-            document.querySelectorAll('.slide').forEach(slide => {
-                slide.style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentSlideEl = document.getElementById('currentSlide');
+            const totalSlidesEl = document.getElementById('totalSlides');
+            const progressBar = document.getElementById('progressBar');
+            const progressDots = document.querySelectorAll('.progress-dot');
+            
+            let currentSlideIndex = 0;
+            totalSlidesEl.textContent = slides.length;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+                
+                const progress = ((index + 1) / slides.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                
+                currentSlideEl.textContent = index + 1;
+                
+                progressDots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-purple-600', i === index);
+                    dot.classList.toggle('bg-gray-400', i !== index);
+                });
+                
+                animateContentLines(slides[index]);
+            }
+            
+            function animateContentLines(slide) {
+                const contentLines = slide.querySelectorAll('.content-line');
+                contentLines.forEach((line, index) => {
+                    line.classList.remove('visible');
+                    setTimeout(() => line.classList.add('visible'), 3000 * (index + 1));
+                });
+            }
+            
+            function nextSlide() {
+                if (currentSlideIndex < slides.length - 1) {
+                    currentSlideIndex++;
+                    showSlide(currentSlideIndex);
+                }
+            }
+            
+            function prevSlide() {
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    showSlide(currentSlideIndex);
+                }
+            }
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
             });
             
-            // Show current slide
-            document.getElementById(`slide${n}`).style.display = 'flex';
+            // Progress dots navigation
+            progressDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlideIndex = index;
+                    showSlide(currentSlideIndex);
+                });
+            });
             
-            // Update progress
-            document.getElementById('currentStep').textContent = n;
-        }
+            // Initialize
+            showSlide(currentSlideIndex);
 
-        function nextSlide() {
-            if (currentSlide < totalSlides) {
-                currentSlide++;
-                showSlide(currentSlide);
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 1) {
-                currentSlide--;
-                showSlide(currentSlide);
-            }
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight') {
-                nextSlide();
-            } else if (e.key === 'ArrowLeft') {
-                prevSlide();
-            }
+            // Add click event to entire slide area for forward navigation
+            document.querySelector('.min-h-\\[600px\\]').addEventListener('click', function(e) {
+                // Only proceed if not clicking on progress dots or other interactive elements
+                if (!e.target.closest('.progress-dot')) {
+                    nextSlide();
+                }
+            });
         });
-
-        // Initialize first slide
-        showSlide(1);
     </script>
 </body>
 </html>
