@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEE 2026 Blog - Tips, Strategies & Resources | KnowJEE</title>
+  <meta name="description" content="Get expert JEE 2026 preparation tips, study strategies, time management advice, and resources from IIT Roorkee graduates.">
+  <meta name="keywords" content="JEE 2026, JEE blog, JEE preparation tips, JEE study strategies, JEE time management, IIT JEE resources">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE 2026 Blog - Expert Preparation Tips & Strategies">
+  <meta property="og:description" content="Learn JEE 2026 preparation strategies from IIT Roorkee graduates. Tips for Mathematics, Physics, Chemistry and time management.">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE 2026 Blog - Preparation Tips & Strategies">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  
+  <style>
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .category-btn.active {
+      background-color: rgb(253 224 71);
+      font-weight: 600;
+    }
+    .countdown-box {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-50 text-yellow-900">
+
+  <!-- Header (Same as math.html) -->
+  <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
+      <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle mobile menu"
+          aria-expanded="false">
+          <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop navigation -->
+      <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
+        <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0" aria-label="Subject navigation">
+          <!-- Subjects dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              JEE Subjects
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="math.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Mathematics</a>
+                <a href="physics.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Physics</a>
+                <a href="chem.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Chemistry</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
+          <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
+          <a href="blog.html" class="py-2 px-3 bg-yellow-300 rounded font-semibold">Blog</a>
+          
+          <!-- Resources dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              Resources
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="syllabus.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Syllabus</a>
+                <a href="formulas.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Important Formulas</a>
+                <a href="previous-papers.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Previous Papers</a>
+                <a href="study-plan.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Study Plan</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div id="authSection" class="flex space-x-2">
+            <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSection" class="hidden flex space-x-2 items-center">
+            <span id="userEmail" class="font-semibold"></span>
+            <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
+      <nav class="flex flex-col px-6 py-4 space-y-2">
+        <!-- Mobile subjects dropdown -->
+        <div class="py-2">
+          <button id="mobileSubjectsBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>JEE Subjects</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileSubjectsMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="math.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Mathematics</a>
+            <a href="physics.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Physics</a>
+            <a href="chem.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Chemistry</a>
+          </div>
+        </div>
+        
+        <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
+        <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
+        <a href="blog.html" class="py-2 px-3 bg-yellow-300 rounded font-semibold">Blog</a>
+        
+        <!-- Mobile resources dropdown -->
+        <div class="py-2">
+          <button id="mobileResourcesBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>Resources</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileResourcesMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="syllabus.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Syllabus</a>
+            <a href="formulas.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Important Formulas</a>
+            <a href="previous-papers.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Previous Papers</a>
+            <a href="study-plan.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Study Plan</a>
+          </div>
+        </div>
+        
+        <div class="pt-2 border-t border-yellow-300">
+          <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
+            <span id="userEmailMobile" class="font-semibold"></span>
+            <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      const isExpanded = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileBtn.setAttribute("aria-expanded", isExpanded);
+    });
+
+    // Mobile dropdown toggles
+    const mobileSubjectsBtn = document.getElementById("mobileSubjectsBtn");
+    const mobileSubjectsMenu = document.getElementById("mobileSubjectsMenu");
+    mobileSubjectsBtn.addEventListener("click", () => {
+      mobileSubjectsMenu.classList.toggle("hidden");
+    });
+
+    const mobileResourcesBtn = document.getElementById("mobileResourcesBtn");
+    const mobileResourcesMenu = document.getElementById("mobileResourcesMenu");
+    mobileResourcesBtn.addEventListener("click", () => {
+      mobileResourcesMenu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">JEE 2026 Preparation Blog</h1>
+      <p class="text-xl max-w-3xl mx-auto">Expert tips, strategies, and resources from IIT graduates to help you ace the JEE 2026 examination</p>
+      
+      <!-- JEE 2026 Countdown -->
+      <div class="mt-8 max-w-md mx-auto bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-lg font-semibold mb-4 text-gray-800">JEE Main 2026 Countdown</h3>
+        <div class="flex justify-between text-center">
+          <div class="countdown-box text-white rounded-lg p-3 w-16">
+            <div id="days" class="text-2xl font-bold">365</div>
+            <div class="text-xs">Days</div>
+          </div>
+          <div class="countdown-box text-white rounded-lg p-3 w-16">
+            <div id="hours" class="text-2xl font-bold">00</div>
+            <div class="text-xs">Hours</div>
+          </div>
+          <div class="countdown-box text-white rounded-lg p-3 w-16">
+            <div id="minutes" class="text-2xl font-bold">00</div>
+            <div class="text-xs">Minutes</div>
+          </div>
+          <div class="countdown-box text-white rounded-lg p-3 w-16">
+            <div id="seconds" class="text-2xl font-bold">00</div>
+            <div class="text-xs">Seconds</div>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">Estimated time until first JEE Main 2026 attempt</p>
+      </div>
+      
+      <div class="mt-8">
+        <a href="#featured" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Read Latest Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto py-10 px-6">
+    <!-- JEE 2026 Updates -->
+    <section class="mb-16 bg-gradient-to-r from-amber-50 to-yellow-100 rounded-xl p-6 border border-yellow-200">
+      <h2 class="text-3xl font-bold text-center mb-6 text-teal-800">JEE 2026 Important Updates</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-bold text-lg mb-2">Exam Pattern</h3>
+          <p class="text-gray-700">Expected to follow similar pattern as 2025 with focus on application-based questions.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-bold text-lg mb-2">Syllabus Changes</h3>
+          <p class="text-gray-700">No major changes expected. Focus on NCERT curriculum with advanced application.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-bold text-lg mb-2">Registration Timeline</h3>
+          <p class="text-gray-700">Expected to start in December 2025. Stay tuned for official announcements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Posts -->
+    <section id="featured" class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Featured Articles for JEE 2026</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Featured Post 1 -->
+        <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-gradient-to-r from-amber-200 to-yellow-300 flex items-center justify-center">
+            <span class="text-5xl">📚</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Study Plan</span>
+              <span class="text-gray-500 text-sm ml-3">June 10, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">JEE 2026: 18-Month Preparation Strategy</h3>
+            <p class="text-gray-600 mb-4">A comprehensive month-by-month study plan for JEE 2026 aspirants starting preparation now.</p>
+            <a href="jee-2026-18-month-strategy.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+              Read More
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Featured Post 2 -->
+        <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-gradient-to-r from-blue-200 to-cyan-300 flex items-center justify-center">
+            <span class="text-5xl">⏱️</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-blue-200 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Time Management</span>
+              <span class="text-gray-500 text-sm ml-3">May 28, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Balancing Class 11 Studies with JEE 2026 Preparation</h3>
+            <p class="text-gray-600 mb-4">Practical tips for managing school curriculum and JEE preparation simultaneously.</p>
+            <a href="balancing-class11-jee.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+              Read More
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Featured Post 3 -->
+        <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-gradient-to-r from-green-200 to-emerald-300 flex items-center justify-center">
+            <span class="text-5xl">🧠</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-green-200 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Mindset</span>
+              <span class="text-gray-500 text-sm ml-3">May 15, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Building the Right Mindset for JEE 2026</h3>
+            <p class="text-gray-600 mb-4">How to develop resilience, focus, and consistency throughout your JEE journey.</p>
+            <a href="mindset-jee-2026.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+              Read More
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Blog Categories & Posts -->
+    <section class="mb-16">
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Blog Posts -->
+        <div class="md:w-2/3">
+          <h2 class="text-3xl font-bold mb-8 text-teal-800">Latest Articles for JEE 2026</h2>
+          
+          <!-- Blog Post 1 -->
+          <article class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div class="flex items-center space-x-4 mb-3 md:mb-0">
+                <span class="bg-purple-200 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Physics</span>
+                <span class="text-gray-500 text-sm">May 5, 2025</span>
+                <span class="text-gray-500 text-sm">8 min read</span>
+              </div>
+              <div class="flex items-center text-yellow-500">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span class="ml-1 text-gray-700 font-semibold">4.8</span>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">JEE 2026 Physics: How to Tackle Modern Physics</h3>
+            <p class="text-gray-600 mb-4">Modern Physics carries significant weightage in JEE. Learn the key concepts, formulas, and problem-solving approaches for topics like Atoms, Nuclei, and Semiconductors.</p>
+            <div class="flex items-center justify-between">
+              <a href="jee-2026-modern-physics.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Continue Reading
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
+                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Post 2 -->
+          <article class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div class="flex items-center space-x-4 mb-3 md:mb-0">
+                <span class="bg-red-200 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">Chemistry</span>
+                <span class="text-gray-500 text-sm">April 22, 2025</span>
+                <span class="text-gray-500 text-sm">6 min read</span>
+              </div>
+              <div class="flex items-center text-yellow-500">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span class="ml-1 text-gray-700 font-semibold">4.6</span>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">JEE 2026 Chemistry: Mastering Organic Chemistry Reactions</h3>
+            <p class="text-gray-600 mb-4">A comprehensive guide to understanding reaction mechanisms, name reactions, and problem-solving techniques for Organic Chemistry in JEE 2026.</p>
+            <div class="flex items-center justify-between">
+              <a href="jee-2026-organic-chemistry.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Continue Reading
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
+                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Post 3 -->
+          <article class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div class="flex items-center space-x-4 mb-3 md:mb-0">
+                <span class="bg-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">Mathematics</span>
+                <span class="text-gray-500 text-sm">April 10, 2025</span>
+                <span class="text-gray-500 text-sm">10 min read</span>
+              </div>
+              <div class="flex items-center text-yellow-500">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span class="ml-1 text-gray-700 font-semibold">4.9</span>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">JEE 2026 Mathematics: Coordinate Geometry Mastery</h3>
+            <p class="text-gray-600 mb-4">Learn advanced techniques for solving coordinate geometry problems quickly and accurately. This guide covers straight lines, circles, parabolas, and their applications in JEE problems.</p>
+            <div class="flex items-center justify-between">
+              <a href="jee-2026-coordinate-geometry.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Continue Reading
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
+                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Post 4 -->
+          <article class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div class="flex items-center space-x-4 mb-3 md:mb-0">
+                <span class="bg-indigo-200 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full">Strategy</span>
+                <span class="text-gray-500 text-sm">March 28, 2025</span>
+                <span class="text-gray-500 text-sm">7 min read</span>
+              </div>
+              <div class="flex items-center text-yellow-500">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span class="ml-1 text-gray-700 font-semibold">4.7</span>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">JEE 2026: How to Make the Most of Summer Vacations</h3>
+            <p class="text-gray-600 mb-4">A comprehensive plan for utilizing summer breaks effectively for JEE preparation, including revision techniques, mock test analysis, and maintaining motivation.</p>
+            <div class="flex items-center justify-between">
+              <a href="jee-2026-summer-preparation.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Continue Reading
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
+                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Pagination -->
+          <div class="flex justify-center mt-12">
+            <nav class="flex items-center space-x-2">
+              <a href="#" class="px-4 py-2 bg-yellow-300 text-yellow-900 font-semibold rounded-lg">1</a>
+              <a href="#" class="px-4 py-2 bg-white text-yellow-900 font-semibold rounded-lg hover:bg-yellow-100">2</a>
+              <a href="#" class="px-4 py-2 bg-white text-yellow-900 font-semibold rounded-lg hover:bg-yellow-100">3</a>
+              <a href="#" class="px-4 py-2 bg-white text-yellow-900 font-semibold rounded-lg hover:bg-yellow-100">Next</a>
+            </nav>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:w-1/3">
+          <!-- JEE 2026 Resources -->
+          <div class="bg-gradient-to-r from-amber-50 to-yellow-100 rounded-xl shadow-md p-6 mb-8 border border-yellow-200">
+            <h3 class="text-xl font-bold mb-4 text-teal-800">JEE 2026 Resources</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="jee-2026-syllabus.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
+                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  <span class="font-medium">Complete Syllabus</span>
+                </a>
+              </li>
+              <li>
+                <a href="jee-2026-study-plan.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
+                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                  </svg>
+                  <span class="font-medium">Study Plan</span>
+                </a>
+              </li>
+              <li>
+                <a href="jee-2026-books.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
+                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  </svg>
+                  <span class="font-medium">Recommended Books</span>
+                </a>
+              </li>
+              <li>
+                <a href="jee-2026-mock-tests.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
+                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="font-medium">Mock Tests</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Categories -->
+          <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h3 class="text-xl font-bold mb-4 text-teal-800">Categories</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50 active">
+                  <span class="font-medium">Mathematics</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">12</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
+                  <span class="font-medium">Physics</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">9</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
+                  <span class="font-medium">Chemistry</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">8</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
+                  <span class="font-medium">Study Tips</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">15</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
+                  <span class="font-medium">Time Management</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">6</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
+                  <span class="font-medium">Exam Strategy</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">7</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Popular Posts -->
+          <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h3 class="text-xl font-bold mb-4 text-teal-800">Popular Articles</h3>
+            <div class="space-y-4">
+              <a href="jee-2026-analysis.html" class="flex items-start space-x-3 group">
+                <div class="w-16 h-16 bg-gradient-to-r from-amber-200 to-yellow-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-xl">📊</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold group-hover:text-yellow-700">JEE 2025 Analysis & 2026 Predictions</h4>
+                  <p class="text-sm text-gray-500">April 12, 2025</p>
+                </div>
+              </a>
+              <a href="jee-2026-ncert-importance.html" class="flex items-start space-x-3 group">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-xl">📝</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold group-hover:text-yellow-700">Why NCERT is Crucial for JEE 2026</h4>
+                  <p class="text-sm text-gray-500">March 20, 2025</p>
+                </div>
+              </a>
+              <a href="jee-2026-common-mistakes.html" class="flex items-start space-x-3 group">
+                <div class="w-16 h-16 bg-gradient-to-r from-green-200 to-emerald-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-xl">💡</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold group-hover:text-yellow-700">Common Mistakes to Avoid in JEE 2026</h4>
+                  <p class="text-sm text-gray-500">March 5, 2025</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Newsletter -->
+          <div class="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3 text-teal-800">JEE 2026 Newsletter</h3>
+            <p class="text-gray-700 mb-4">Get weekly JEE 2026 preparation tips, resources, and updates directly in your inbox.</p>
+            <form class="space-y-3">
+              <input type="email" placeholder="Your email address" class="w-full px-4 py-3 rounded-lg border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+              <button type="submit" class="w-full bg-yellow-400 text-yellow-900 font-semibold py-3 rounded-lg hover:bg-yellow-500 transition">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auth Modals (Same as math.html) -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="loginPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Login</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="signupPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleSignup()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Sign Up</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Footer (Same as math.html) -->
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+            <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+            <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+            <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // JEE 2026 Countdown Timer
+    function updateCountdown() {
+      // Set the date for JEE Main 2026 (estimated - first attempt)
+      const jee2026Date = new Date('January 20, 2026 09:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = jee2026Date - now;
+      
+      // Calculate days, hours, minutes, seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Display the result
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+    }
+    
+    // Update the countdown every 1 second
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+
+    // Auth modal functions
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+      document.getElementById('loginModal').classList.add('flex');
+    }
+
+    function openSignupModal() {
+      document.getElementById('signupModal').classList.remove('hidden');
+      document.getElementById('signupModal').classList.add('flex');
+    }
+
+    async function handleLogin() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const success = await loginUser(email, password);
+      console.log('Login attempt:', success);
+
+      closeModals();
+    }
+
+    async function handleSignup() {
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+      }
+
+      const success = await registerUser(email, password);
+      closeModals();
+    }
+
+    function closeModals() {
+      console.log('Closing modals');
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('signupModal').classList.add('hidden');
+      document.getElementById('loginModal').classList.remove('flex');
+      document.getElementById('signupModal').classList.remove('flex');
+
+      document.getElementById('loginEmail').value = '';
+      document.getElementById('loginPassword').value = '';
+      document.getElementById('signupEmail').value = '';
+      document.getElementById('signupPassword').value = '';
+    }
+
+    // Category button active state
+    document.querySelectorAll('.category-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.category-btn').forEach(btn => {
+          btn.classList.remove('active', 'bg-yellow-300');
+        });
+        this.classList.add('active', 'bg-yellow-300');
+      });
+    });
+
+    // Auth UI update (same as math.html)
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+    const authSectionMobile = document.getElementById("authSectionMobile");
+    const userSectionMobile = document.getElementById("userSectionMobile");
+    const userEmailMobile = document.getElementById("userEmailMobile");
+
+    window.updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+
+        authSectionMobile.classList.add("hidden");
+        userSectionMobile.classList.remove("hidden");
+        userEmailMobile.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+
+        authSectionMobile.classList.remove("hidden");
+        userSectionMobile.classList.add("hidden");
+        userEmailMobile.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
+</body>
+</html>

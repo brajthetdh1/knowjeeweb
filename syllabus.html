@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEE Syllabus 2026 - Complete Mathematics, Physics, Chemistry | KnowJEE</title>
+  <meta name="description" content="Complete JEE Main & Advanced syllabus 2025 for Mathematics, Physics, and Chemistry. Topic-wise breakdown with weightage analysis.">
+  <meta name="keywords" content="JEE syllabus 2025, JEE Main syllabus, JEE Advanced syllabus, Mathematics syllabus, Physics syllabus, Chemistry syllabus">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE Syllabus 2025 - Complete Subject-wise Breakdown">
+  <meta property="og:description" content="Detailed JEE Main & Advanced syllabus for Mathematics, Physics, and Chemistry with topic weightage and important chapters.">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE Syllabus 2026 - Complete Breakdown">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  
+  <style>
+    .syllabus-card {
+      transition: all 0.3s ease;
+    }
+    .syllabus-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .topic-item {
+      transition: background-color 0.2s ease;
+    }
+    .topic-item:hover {
+      background-color: rgb(254 252 232);
+    }
+    .tab-btn.active {
+      background-color: rgb(253 224 71);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-50 text-yellow-900">
+
+  <!-- Header -->
+  <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
+      <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle mobile menu"
+          aria-expanded="false">
+          <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop navigation -->
+      <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
+        <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0" aria-label="Subject navigation">
+          <!-- Subjects dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              JEE Subjects
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="math.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Mathematics</a>
+                <a href="physics.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Physics</a>
+                <a href="chem.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Chemistry</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
+          <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
+          <a href="blog.html" class="py-2 px-3 hover:text-yellow-900 rounded">Blog</a>
+          
+          <!-- Resources dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              Resources
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="syllabus.html" class="block px-4 py-2 text-sm bg-yellow-100 font-semibold">JEE Syllabus</a>
+                <a href="formulas.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Important Formulas</a>
+                <a href="previous-papers.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Previous Papers</a>
+                <a href="study-plan.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Study Plan</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div id="authSection" class="flex space-x-2">
+            <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSection" class="hidden flex space-x-2 items-center">
+            <span id="userEmail" class="font-semibold"></span>
+            <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
+      <nav class="flex flex-col px-6 py-4 space-y-2">
+        <!-- Mobile subjects dropdown -->
+        <div class="py-2">
+          <button id="mobileSubjectsBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>JEE Subjects</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileSubjectsMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="math.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Mathematics</a>
+            <a href="physics.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Physics</a>
+            <a href="chem.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Chemistry</a>
+          </div>
+        </div>
+        
+        <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
+        <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
+        <a href="blog.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Blog</a>
+        
+        <!-- Mobile resources dropdown -->
+        <div class="py-2">
+          <button id="mobileResourcesBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>Resources</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileResourcesMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="syllabus.html" class="block py-2 px-3 bg-yellow-300 rounded font-semibold">JEE Syllabus</a>
+            <a href="formulas.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Important Formulas</a>
+            <a href="previous-papers.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Previous Papers</a>
+            <a href="study-plan.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Study Plan</a>
+          </div>
+        </div>
+        
+        <div class="pt-2 border-t border-yellow-300">
+          <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
+            <span id="userEmailMobile" class="font-semibold"></span>
+            <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      const isExpanded = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileBtn.setAttribute("aria-expanded", isExpanded);
+    });
+
+    // Mobile dropdown toggles
+    const mobileSubjectsBtn = document.getElementById("mobileSubjectsBtn");
+    const mobileSubjectsMenu = document.getElementById("mobileSubjectsMenu");
+    mobileSubjectsBtn.addEventListener("click", () => {
+      mobileSubjectsMenu.classList.toggle("hidden");
+    });
+
+    const mobileResourcesBtn = document.getElementById("mobileResourcesBtn");
+    const mobileResourcesMenu = document.getElementById("mobileResourcesMenu");
+    mobileResourcesBtn.addEventListener("click", () => {
+      mobileResourcesMenu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">JEE Syllabus 2026</h1>
+      <p class="text-xl max-w-3xl mx-auto">Complete subject-wise syllabus for JEE Main & Advanced with topic weightage and important chapters</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#mathematics" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Mathematics</a>
+        <a href="#physics" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Physics</a>
+        <a href="#chemistry" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Chemistry</a>
+        <a href="#download" class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100">Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto py-10 px-6">
+    <!-- Exam Pattern Overview -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">JEE Exam Pattern 2026</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- JEE Main Pattern -->
+        <div class="bg-white rounded-xl shadow-lg p-6 syllabus-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">📝</span>
+            </div>
+            <h3 class="text-2xl font-bold">JEE Main</h3>
+          </div>
+          <div class="space-y-4">
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Mode of Exam</span>
+              <span>Computer Based Test (CBT)</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Duration</span>
+              <span>3 Hours</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Total Questions</span>
+              <span>90 (30 each subject)</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Total Marks</span>
+              <span>300</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Marking Scheme</span>
+              <span>+4 for correct, -1 for incorrect</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- JEE Advanced Pattern -->
+        <div class="bg-white rounded-xl shadow-lg p-6 syllabus-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-red-400 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">🎯</span>
+            </div>
+            <h3 class="text-2xl font-bold">JEE Advanced</h3>
+          </div>
+          <div class="space-y-4">
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Mode of Exam</span>
+              <span>Computer Based Test (CBT)</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Duration</span>
+              <span>3 Hours per paper (2 papers)</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Question Types</span>
+              <span>MCQ, Numerical, Match</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Total Marks</span>
+              <span>Varies each year</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span class="font-semibold">Marking Scheme</span>
+              <span>Partial marking for some</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Subject Tabs -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="flex flex-wrap border-b">
+          <button class="tab-btn py-4 px-6 font-semibold text-lg active" data-subject="mathematics">Mathematics</button>
+          <button class="tab-btn py-4 px-6 font-semibold text-lg" data-subject="physics">Physics</button>
+          <button class="tab-btn py-4 px-6 font-semibold text-lg" data-subject="chemistry">Chemistry</button>
+        </div>
+        
+        <!-- Mathematics Syllabus -->
+        <div id="mathematics" class="syllabus-content p-6 active">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Mathematics Syllabus</h3>
+            <p class="text-gray-700 mb-6">Mathematics carries equal weightage in both JEE Main and Advanced. Focus on Calculus, Algebra, and Coordinate Geometry as they contribute to about 60% of the paper.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                    Algebra
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Complex Numbers</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Quadratic Equations</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Matrices & Determinants</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Permutations & Combinations</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Binomial Theorem</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Sequence & Series</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                    Calculus
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Limits & Continuity</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Differentiation</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Application of Derivatives</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Indefinite & Definite Integrals</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Differential Equations</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Right Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                    Coordinate Geometry
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Straight Lines</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Circles</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Parabola, Ellipse, Hyperbola</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>3D Geometry</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Vector Algebra</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">4</span>
+                    Other Topics
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Trigonometry</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Probability & Statistics</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Mathematical Reasoning</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Weightage Analysis -->
+          <div class="bg-yellow-50 rounded-lg p-6">
+            <h4 class="text-xl font-semibold mb-4 text-teal-800">Mathematics Weightage Analysis</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-semibold mb-2">JEE Main (Approximate)</h5>
+                <ul class="space-y-2">
+                  <li class="flex justify-between">
+                    <span>Calculus</span>
+                    <span class="font-semibold">12-14 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Algebra</span>
+                    <span class="font-semibold">10-12 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Coordinate Geometry</span>
+                    <span class="font-semibold">8-10 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Other Topics</span>
+                    <span class="font-semibold">6-8 questions</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-semibold mb-2">Important Chapters</h5>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm">Coordinate Geometry</span>
+                  <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm">Calculus</span>
+                  <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm">Vector & 3D Geometry</span>
+                  <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm">Matrices</span>
+                  <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm">Complex Numbers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Physics Syllabus -->
+        <div id="physics" class="syllabus-content p-6 hidden">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Physics Syllabus</h3>
+            <p class="text-gray-700 mb-6">Physics requires strong conceptual understanding and application skills. Mechanics and Electrodynamics are the most important units.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                    Mechanics
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Kinematics</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Laws of Motion</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Work, Energy & Power</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Rotational Motion</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Gravitation</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Properties of Solids & Fluids</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                    Thermodynamics & Waves
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Thermodynamics</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Kinetic Theory of Gases</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Oscillations</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Waves</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Right Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                    Electrodynamics
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Electrostatics</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Current Electricity</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Magnetic Effects</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>EMI & AC</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>EM Waves</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">4</span>
+                    Modern Physics & Optics
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Optics</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Dual Nature of Matter</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Atoms & Nuclei</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Electronic Devices</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Communication Systems</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Weightage Analysis -->
+          <div class="bg-blue-50 rounded-lg p-6">
+            <h4 class="text-xl font-semibold mb-4 text-teal-800">Physics Weightage Analysis</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-semibold mb-2">JEE Main (Approximate)</h5>
+                <ul class="space-y-2">
+                  <li class="flex justify-between">
+                    <span>Mechanics</span>
+                    <span class="font-semibold">10-12 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Electrodynamics</span>
+                    <span class="font-semibold">8-10 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Modern Physics</span>
+                    <span class="font-semibold">6-8 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Other Topics</span>
+                    <span class="font-semibold">4-6 questions</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-semibold mb-2">Important Chapters</h5>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-blue-400 text-white px-3 py-1 rounded-full text-sm">Electrodynamics</span>
+                  <span class="bg-blue-400 text-white px-3 py-1 rounded-full text-sm">Mechanics</span>
+                  <span class="bg-blue-400 text-white px-3 py-1 rounded-full text-sm">Optics</span>
+                  <span class="bg-blue-400 text-white px-3 py-1 rounded-full text-sm">Modern Physics</span>
+                  <span class="bg-blue-400 text-white px-3 py-1 rounded-full text-sm">Thermodynamics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Chemistry Syllabus -->
+        <div id="chemistry" class="syllabus-content p-6 hidden">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Chemistry Syllabus</h3>
+            <p class="text-gray-700 mb-6">Chemistry is divided into Physical, Organic, and Inorganic Chemistry. Physical Chemistry is calculation-based while Organic requires understanding of mechanisms.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                    Physical Chemistry
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Basic Concepts</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>States of Matter</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Atomic Structure</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Chemical Bonding</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Chemical Thermodynamics</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Equilibrium</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Redox Reactions</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Electrochemistry</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Chemical Kinetics</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Surface Chemistry</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Right Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                    Organic Chemistry
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Basic Principles</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Hydrocarbons</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Haloalkanes & Haloarenes</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Alcohols, Phenols & Ethers</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Aldehydes, Ketones & Acids</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Organic Compounds with Nitrogen</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Biomolecules</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Polymers</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Chemistry in Everyday Life</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                    Inorganic Chemistry
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Classification of Elements</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>General Principles</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>s-Block Elements</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>p-Block Elements</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>d- and f-Block Elements</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Coordination Compounds</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Environmental Chemistry</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Weightage Analysis -->
+          <div class="bg-green-50 rounded-lg p-6">
+            <h4 class="text-xl font-semibold mb-4 text-teal-800">Chemistry Weightage Analysis</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-semibold mb-2">JEE Main (Approximate)</h5>
+                <ul class="space-y-2">
+                  <li class="flex justify-between">
+                    <span>Physical Chemistry</span>
+                    <span class="font-semibold">10-12 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Organic Chemistry</span>
+                    <span class="font-semibold">9-11 questions</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Inorganic Chemistry</span>
+                    <span class="font-semibold">9-11 questions</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-semibold mb-2">Important Chapters</h5>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-green-400 text-white px-3 py-1 rounded-full text-sm">Chemical Bonding</span>
+                  <span class="bg-green-400 text-white px-3 py-1 rounded-full text-sm">Coordination Compounds</span>
+                  <span class="bg-green-400 text-white px-3 py-1 rounded-full text-sm">p-Block Elements</span>
+                  <span class="bg-green-400 text-white px-3 py-1 rounded-full text-sm">Organic Reaction Mechanisms</span>
+                  <span class="bg-green-400 text-white px-3 py-1 rounded-full text-sm">Chemical Thermodynamics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Download Section -->
+    <!-- <section id="download" class="mb-16">
+      <div class="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl shadow-lg p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-teal-800">Download Complete Syllabus</h2>
+        <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">Get the complete JEE Main & Advanced 2025 syllabus in PDF format for easy reference and offline study.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Download PDF
+          </button>
+          <button class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Print Syllabus
+          </button>
+        </div>
+      </div>
+    </section> -->
+    
+    <!-- Preparation Tips -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Syllabus Preparation Tips</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📅</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Plan Your Schedule</h3>
+          <p class="text-gray-600">Create a realistic study plan covering all topics with adequate time for revision.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🎯</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Focus on High-Weightage</h3>
+          <p class="text-gray-600">Prioritize chapters with higher weightage but don't ignore any topic completely.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📚</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Conceptual Understanding</h3>
+          <p class="text-gray-600">Focus on understanding concepts rather than rote learning for better application.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🔄</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Regular Revision</h3>
+          <p class="text-gray-600">Schedule regular revisions to retain concepts and formulas for longer periods.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auth Modals -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="loginPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Login</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="signupPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleSignup()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Sign Up</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+            <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+            <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+            <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const syllabusContents = document.querySelectorAll('.syllabus-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const subject = btn.dataset.subject;
+        
+        // Update active tab
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Show corresponding content
+        syllabusContents.forEach(content => {
+          content.classList.add('hidden');
+          content.classList.remove('active');
+        });
+        
+        document.getElementById(subject).classList.remove('hidden');
+        document.getElementById(subject).classList.add('active');
+      });
+    });
+    
+    // Auth modal functions
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+      document.getElementById('loginModal').classList.add('flex');
+    }
+
+    function openSignupModal() {
+      document.getElementById('signupModal').classList.remove('hidden');
+      document.getElementById('signupModal').classList.add('flex');
+    }
+
+    async function handleLogin() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const success = await loginUser(email, password);
+      console.log('Login attempt:', success);
+
+      closeModals();
+    }
+
+    async function handleSignup() {
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+      }
+
+      const success = await registerUser(email, password);
+      closeModals();
+    }
+
+    function closeModals() {
+      console.log('Closing modals');
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('signupModal').classList.add('hidden');
+      document.getElementById('loginModal').classList.remove('flex');
+      document.getElementById('signupModal').classList.remove('flex');
+
+      document.getElementById('loginEmail').value = '';
+      document.getElementById('loginPassword').value = '';
+      document.getElementById('signupEmail').value = '';
+      document.getElementById('signupPassword').value = '';
+    }
+
+    // Auth UI update
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+    const authSectionMobile = document.getElementById("authSectionMobile");
+    const userSectionMobile = document.getElementById("userSectionMobile");
+    const userEmailMobile = document.getElementById("userEmailMobile");
+
+    window.updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+
+        authSectionMobile.classList.add("hidden");
+        userSectionMobile.classList.remove("hidden");
+        userEmailMobile.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+
+        authSectionMobile.classList.remove("hidden");
+        userSectionMobile.classList.add("hidden");
+        userEmailMobile.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
+</body>
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEE Important Formulas - Complete Mathematics, Physics, Chemistry | KnowJEE</title>
+  <meta name="description" content="Complete collection of important formulas for JEE Main & Advanced 2025 - Mathematics, Physics, and Chemistry with examples and applications.">
+  <meta name="keywords" content="JEE formulas 2025, JEE Mathematics formulas, JEE Physics formulas, JEE Chemistry formulas, important formulas for JEE">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE Important Formulas - Complete Subject-wise Collection">
+  <meta property="og:description" content="Essential formulas for JEE Main & Advanced with examples, derivations, and application tips.">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE Important Formulas - Complete Collection">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  
+  <style>
+    .formula-card {
+      transition: all 0.3s ease;
+    }
+    .formula-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .topic-item {
+      transition: background-color 0.2s ease;
+    }
+    .topic-item:hover {
+      background-color: rgb(254 252 232);
+    }
+    .tab-btn.active {
+      background-color: rgb(253 224 71);
+      font-weight: 600;
+    }
+    .formula-box {
+      background-color: #fefce8;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0.5rem;
+    }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-50 text-yellow-900">
+
+  <!-- Header -->
+  <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
+      <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle mobile menu"
+          aria-expanded="false">
+          <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop navigation -->
+      <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
+        <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0" aria-label="Subject navigation">
+          <!-- Subjects dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              JEE Subjects
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="math.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Mathematics</a>
+                <a href="physics.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Physics</a>
+                <a href="chem.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Chemistry</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
+          <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
+          <a href="blog.html" class="py-2 px-3 hover:text-yellow-900 rounded">Blog</a>
+          
+          <!-- Resources dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              Resources
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="syllabus.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Syllabus</a>
+                <a href="formulas.html" class="block px-4 py-2 text-sm bg-yellow-100 font-semibold">Important Formulas</a>
+                <a href="previous-papers.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Previous Papers</a>
+                <a href="study-plan.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Study Plan</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div id="authSection" class="flex space-x-2">
+            <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSection" class="hidden flex space-x-2 items-center">
+            <span id="userEmail" class="font-semibold"></span>
+            <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
+      <nav class="flex flex-col px-6 py-4 space-y-2">
+        <!-- Mobile subjects dropdown -->
+        <div class="py-2">
+          <button id="mobileSubjectsBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>JEE Subjects</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileSubjectsMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="math.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Mathematics</a>
+            <a href="physics.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Physics</a>
+            <a href="chem.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Chemistry</a>
+          </div>
+        </div>
+        
+        <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
+        <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
+        <a href="blog.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Blog</a>
+        
+        <!-- Mobile resources dropdown -->
+        <div class="py-2">
+          <button id="mobileResourcesBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>Resources</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileResourcesMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="syllabus.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Syllabus</a>
+            <a href="formulas.html" class="block py-2 px-3 bg-yellow-300 rounded font-semibold">Important Formulas</a>
+            <a href="previous-papers.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Previous Papers</a>
+            <a href="study-plan.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Study Plan</a>
+          </div>
+        </div>
+        
+        <div class="pt-2 border-t border-yellow-300">
+          <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
+            <span id="userEmailMobile" class="font-semibold"></span>
+            <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      const isExpanded = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileBtn.setAttribute("aria-expanded", isExpanded);
+    });
+
+    // Mobile dropdown toggles
+    const mobileSubjectsBtn = document.getElementById("mobileSubjectsBtn");
+    const mobileSubjectsMenu = document.getElementById("mobileSubjectsMenu");
+    mobileSubjectsBtn.addEventListener("click", () => {
+      mobileSubjectsMenu.classList.toggle("hidden");
+    });
+
+    const mobileResourcesBtn = document.getElementById("mobileResourcesBtn");
+    const mobileResourcesMenu = document.getElementById("mobileResourcesMenu");
+    mobileResourcesBtn.addEventListener("click", () => {
+      mobileResourcesMenu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">JEE Important Formulas 2025</h1>
+      <p class="text-xl max-w-3xl mx-auto">Complete collection of essential formulas for JEE Main & Advanced with examples and applications</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#mathematics" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Mathematics</a>
+        <a href="#physics" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Physics</a>
+        <a href="#chemistry" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Chemistry</a>
+        <a href="#download" class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100">Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto py-10 px-6">
+    <!-- Quick Navigation -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-center mb-8 text-teal-800">Quick Formula Navigation</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="#mathematics" class="bg-white rounded-xl shadow-lg p-6 text-center formula-card">
+          <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">∫</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Mathematics</h3>
+          <p class="text-gray-600">Algebra, Calculus, Coordinate Geometry, Trigonometry</p>
+        </a>
+        
+        <a href="#physics" class="bg-white rounded-xl shadow-lg p-6 text-center formula-card">
+          <div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">F</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Physics</h3>
+          <p class="text-gray-600">Mechanics, Electrodynamics, Thermodynamics, Optics</p>
+        </a>
+        
+        <a href="#chemistry" class="bg-white rounded-xl shadow-lg p-6 text-center formula-card">
+          <div class="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">H</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Chemistry</h3>
+          <p class="text-gray-600">Physical, Organic, Inorganic Chemistry formulas</p>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Subject Tabs -->
+    <section class="mb-16">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="flex flex-wrap border-b">
+          <button class="tab-btn py-4 px-6 font-semibold text-lg active" data-subject="mathematics">Mathematics</button>
+          <button class="tab-btn py-4 px-6 font-semibold text-lg" data-subject="physics">Physics</button>
+          <button class="tab-btn py-4 px-6 font-semibold text-lg" data-subject="chemistry">Chemistry</button>
+        </div>
+        
+        <!-- Mathematics Formulas -->
+        <div id="mathematics" class="formulas-content p-6 active">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Mathematics Formulas</h3>
+            <p class="text-gray-700 mb-6">Essential formulas for Algebra, Calculus, Coordinate Geometry, and Trigonometry with examples and applications.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Left Column -->
+              <div>
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                    Algebra
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Quadratic Formula</h5>
+                    <div class="katex-content">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">For quadratic equation \(ax^2 + bx + c = 0\)</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Binomial Theorem</h5>
+                    <div class="katex-content">\[(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where \(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Arithmetic Progression</h5>
+                    <div class="katex-content">\[S_n = \frac{n}{2}[2a + (n-1)d]\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Sum of first n terms, where a is first term, d is common difference</p>
+                  </div>
+                </div>
+                
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                    Trigonometry
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Pythagorean Identity</h5>
+                    <div class="katex-content">\[\sin^2\theta + \cos^2\theta = 1\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Sine Rule</h5>
+                    <div class="katex-content">\[\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where R is circumradius of triangle ABC</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Cosine Rule</h5>
+                    <div class="katex-content">\[a^2 = b^2 + c^2 - 2bc\cos A\]</div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right Column -->
+              <div>
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                    Calculus
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Derivative Rules</h5>
+                    <div class="katex-content">\[\frac{d}{dx}(x^n) = nx^{n-1}\]</div>
+                    <div class="katex-content">\[\frac{d}{dx}(\sin x) = \cos x\]</div>
+                    <div class="katex-content">\[\frac{d}{dx}(\cos x) = -\sin x\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Integration Formulas</h5>
+                    <div class="katex-content">\[\int x^n dx = \frac{x^{n+1}}{n+1} + C, n \neq -1\]</div>
+                    <div class="katex-content">\[\int \frac{1}{x} dx = \ln|x| + C\]</div>
+                    <div class="katex-content">\[\int e^x dx = e^x + C\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Fundamental Theorem of Calculus</h5>
+                    <div class="katex-content">\[\int_a^b f(x) dx = F(b) - F(a)\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where F'(x) = f(x)</p>
+                  </div>
+                </div>
+                
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">4</span>
+                    Coordinate Geometry
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Distance Formula</h5>
+                    <div class="katex-content">\[d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Section Formula</h5>
+                    <div class="katex-content">\[P(x, y) = \left(\frac{mx_2 + nx_1}{m+n}, \frac{my_2 + ny_1}{m+n}\right)\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Point dividing line segment in ratio m:n</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Area of Triangle</h5>
+                    <div class="katex-content">\[\Delta = \frac{1}{2} \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix}\]</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tips Section -->
+          <div class="bg-yellow-50 rounded-lg p-6">
+            <h4 class="text-xl font-semibold mb-4 text-teal-800">Mathematics Formula Tips</h4>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Memorize derivative and integration formulas for quick application</li>
+              <li>Practice applying trigonometric identities in different forms</li>
+              <li>Understand the geometric interpretation of coordinate geometry formulas</li>
+              <li>Learn to derive formulas rather than just memorizing them</li>
+              <li>Create flashcards for quick revision of important formulas</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Physics Formulas -->
+        <div id="physics" class="formulas-content p-6 hidden">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Physics Formulas</h3>
+            <p class="text-gray-700 mb-6">Essential formulas for Mechanics, Electrodynamics, Thermodynamics, and Modern Physics with applications.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Left Column -->
+              <div>
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                    Mechanics
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Newton's Second Law</h5>
+                    <div class="katex-content">\[F = ma\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Force equals mass times acceleration</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Kinematic Equations</h5>
+                    <div class="katex-content">\[v = u + at\]</div>
+                    <div class="katex-content">\[s = ut + \frac{1}{2}at^2\]</div>
+                    <div class="katex-content">\[v^2 = u^2 + 2as\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Work-Energy Theorem</h5>
+                    <div class="katex-content">\[W = \Delta KE = \frac{1}{2}mv^2 - \frac{1}{2}mu^2\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Gravitational Force</h5>
+                    <div class="katex-content">\[F = G\frac{m_1m_2}{r^2}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where G is gravitational constant</p>
+                  </div>
+                </div>
+                
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                    Thermodynamics
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">First Law of Thermodynamics</h5>
+                    <div class="katex-content">\[\Delta U = Q - W\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Change in internal energy equals heat added minus work done</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Ideal Gas Law</h5>
+                    <div class="katex-content">\[PV = nRT\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where R is universal gas constant</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Efficiency of Heat Engine</h5>
+                    <div class="katex-content">\[\eta = 1 - \frac{Q_C}{Q_H}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where Qc is heat rejected, Qh is heat absorbed</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right Column -->
+              <div>
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                    Electrodynamics
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Coulomb's Law</h5>
+                    <div class="katex-content">\[F = \frac{1}{4\pi\epsilon_0} \frac{q_1q_2}{r^2}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Electrostatic force between two charges</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Ohm's Law</h5>
+                    <div class="katex-content">\[V = IR\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Voltage equals current times resistance</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Magnetic Force on Moving Charge</h5>
+                    <div class="katex-content">\[F = q(\vec{v} \times \vec{B})\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Faraday's Law</h5>
+                    <div class="katex-content">\[\mathcal{E} = -\frac{d\Phi_B}{dt}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Induced EMF equals negative rate of change of magnetic flux</p>
+                  </div>
+                </div>
+                
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center text-sm mr-2">4</span>
+                    Modern Physics
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Photoelectric Effect</h5>
+                    <div class="katex-content">\[E = h\nu = \phi + \frac{1}{2}mv_{max}^2\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where φ is work function, h is Planck's constant</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">de Broglie Wavelength</h5>
+                    <div class="katex-content">\[\lambda = \frac{h}{p}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where p is momentum, h is Planck's constant</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Radioactive Decay</h5>
+                    <div class="katex-content">\[N = N_0 e^{-\lambda t}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where λ is decay constant</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tips Section -->
+          <div class="bg-blue-50 rounded-lg p-6">
+            <h4 class="text-xl font-semibold mb-4 text-teal-800">Physics Formula Tips</h4>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Understand the physical meaning behind each formula</li>
+              <li>Pay attention to units and dimensions in calculations</li>
+              <li>Practice deriving formulas from fundamental principles</li>
+              <li>Learn vector forms of formulas for better application</li>
+              <li>Create formula sheets for each topic for quick revision</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Chemistry Formulas -->
+        <div id="chemistry" class="formulas-content p-6 hidden">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Chemistry Formulas</h3>
+            <p class="text-gray-700 mb-6">Essential formulas for Physical, Organic, and Inorganic Chemistry with applications and examples.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Left Column -->
+              <div>
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                    Physical Chemistry
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Ideal Gas Equation</h5>
+                    <div class="katex-content">\[PV = nRT\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where R = 0.0821 L·atm·mol⁻¹·K⁻¹</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Rate Law</h5>
+                    <div class="katex-content">\[\text{Rate} = k[A]^m[B]^n\]</div>
+                    <p class="text-sm text-gray-600 mt-2">For reaction aA + bB → products</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Nernst Equation</h5>
+                    <div class="katex-content">\[E = E^0 - \frac{RT}{nF} \ln Q\]</div>
+                    <p class="text-sm text-gray-600 mt-2">For electrochemical cells</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Gibbs Free Energy</h5>
+                    <div class="katex-content">\[\Delta G = \Delta H - T\Delta S\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Spontaneous when ΔG < 0</p>
+                  </div>
+                </div>
+                
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                    Organic Chemistry
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Degree of Unsaturation</h5>
+                    <div class="katex-content">\[\text{DU} = \frac{2C + 2 - H - X + N}{2}\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where C, H, X, N are number of carbon, hydrogen, halogen, nitrogen atoms</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Beer-Lambert Law</h5>
+                    <div class="katex-content">\[A = \epsilon c l\]</div>
+                    <p class="text-sm text-gray-600 mt-2">Where A is absorbance, ε is molar absorptivity, c is concentration, l is path length</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right Column -->
+              <div>
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                    Inorganic Chemistry
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Molarity</h5>
+                    <div class="katex-content">\[M = \frac{\text{moles of solute}}{\text{liters of solution}}\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Molality</h5>
+                    <div class="katex-content">\[m = \frac{\text{moles of solute}}{\text{kg of solvent}}\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Henderson-Hasselbalch Equation</h5>
+                    <div class="katex-content">\[\text{pH} = \text{p}K_a + \log\left(\frac{[\text{A}^-]}{[\text{HA}]}\right)\]</div>
+                    <p class="text-sm text-gray-600 mt-2">For buffer solutions</p>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Crystal Field Stabilization Energy</h5>
+                    <div class="katex-content">\[\text{CFSE} = [-0.4n_t + 0.6n_e]\Delta_o\]</div>
+                    <p class="text-sm text-gray-600 mt-2">For octahedral complexes, where n_t and n_e are number of electrons in t₂g and e_g orbitals</p>
+                  </div>
+                </div>
+                
+                <div class="mb-8">
+                  <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <span class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-sm mr-2">4</span>
+                    Important Constants
+                  </h4>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Avogadro's Number</h5>
+                    <div class="katex-content">\[N_A = 6.022 \times 10^{23} \text{ mol}^{-1}\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Gas Constant</h5>
+                    <div class="katex-content">\[R = 8.314 \text{ J·mol}^{-1}\text{·K}^{-1}\]</div>
+                  </div>
+                  
+                  <div class="formula-box">
+                    <h5 class="font-semibold mb-2">Faraday's Constant</h5>
+                    <div class="katex-content">\[F = 96485 \text{ C·mol}^{-1}\]</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tips Section -->
+          <div class="bg-green-50 rounded-lg p-6">
+            <h4 class="text-xl font-semibold mb-4 text-teal-800">Chemistry Formula Tips</h4>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Memorize important constants with their units</li>
+              <li>Understand the conditions under which each formula applies</li>
+              <li>Practice unit conversions for different measurement systems</li>
+              <li>Learn to derive formulas from basic principles</li>
+              <li>Create summary sheets for each branch of chemistry</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="mb-16">
+      <div class="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl shadow-lg p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-teal-800">Download Formula Sheets</h2>
+        <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">Get the complete JEE Main & Advanced 2025 formula sheets in PDF format for easy reference and offline study.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Download All Formulas
+          </button>
+          <button class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Print Formula Sheets
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Memorization Tips -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Formula Memorization Tips</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📝</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Practice Regularly</h3>
+          <p class="text-gray-600">Write formulas multiple times and solve problems using them daily.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🧠</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Understand Concepts</h3>
+          <p class="text-gray-600">Learn the derivation and application rather than rote memorization.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📋</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Create Flashcards</h3>
+          <p class="text-gray-600">Make formula cards for quick revision during spare moments.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🔄</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Group Similar Formulas</h3>
+          <p class="text-gray-600">Organize related formulas together to see patterns and connections.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auth Modals -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="loginPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Login</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="signupPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleSignup()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Sign Up</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+            <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+            <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+            <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const formulasContents = document.querySelectorAll('.formulas-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const subject = btn.dataset.subject;
+        
+        // Update active tab
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Show corresponding content
+        formulasContents.forEach(content => {
+          content.classList.add('hidden');
+          content.classList.remove('active');
+        });
+        
+        document.getElementById(subject).classList.remove('hidden');
+        document.getElementById(subject).classList.add('active');
+      });
+    });
+    
+    // Render KaTeX formulas
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\(", right: "\\)", display: false},
+          {left: "\\[", right: "\\]", display: true}
+        ],
+        throwOnError: false
+      });
+    });
+    
+    // Auth modal functions
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+      document.getElementById('loginModal').classList.add('flex');
+    }
+
+    function openSignupModal() {
+      document.getElementById('signupModal').classList.remove('hidden');
+      document.getElementById('signupModal').classList.add('flex');
+    }
+
+    async function handleLogin() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const success = await loginUser(email, password);
+      console.log('Login attempt:', success);
+
+      closeModals();
+    }
+
+    async function handleSignup() {
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+      }
+
+      const success = await registerUser(email, password);
+      closeModals();
+    }
+
+    function closeModals() {
+      console.log('Closing modals');
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('signupModal').classList.add('hidden');
+      document.getElementById('loginModal').classList.remove('flex');
+      document.getElementById('signupModal').classList.remove('flex');
+
+      document.getElementById('loginEmail').value = '';
+      document.getElementById('loginPassword').value = '';
+      document.getElementById('signupEmail').value = '';
+      document.getElementById('signupPassword').value = '';
+    }
+
+    // Auth UI update
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+    const authSectionMobile = document.getElementById("authSectionMobile");
+    const userSectionMobile = document.getElementById("userSectionMobile");
+    const userEmailMobile = document.getElementById("userEmailMobile");
+
+    window.updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+
+        authSectionMobile.classList.add("hidden");
+        userSectionMobile.classList.remove("hidden");
+        userEmailMobile.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+
+        authSectionMobile.classList.remove("hidden");
+        userSectionMobile.classList.add("hidden");
+        userEmailMobile.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
+</body>
+</html>

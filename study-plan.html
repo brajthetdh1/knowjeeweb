@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEE Study Plan 2025 - Complete Preparation Strategy | KnowJEE</title>
+  <meta name="description" content="Complete JEE Main & Advanced 2025 study plan with daily schedule, topic-wise strategy, and revision timetable for effective preparation.">
+  <meta name="keywords" content="JEE study plan 2025, JEE preparation strategy, JEE daily schedule, JEE revision plan, IIT JEE study plan">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE Study Plan 2025 - Complete Preparation Strategy">
+  <meta property="og:description" content="Daily, weekly and monthly study plan for JEE Main & Advanced with topic-wise strategy and revision timetable.">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE Study Plan 2025 - Complete Strategy">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" src="js/auth.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  
+  <style>
+    .plan-card {
+      transition: all 0.3s ease;
+    }
+    .plan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .topic-item {
+      transition: background-color 0.2s ease;
+    }
+    .topic-item:hover {
+      background-color: rgb(254 252 232);
+    }
+    .tab-btn.active {
+      background-color: rgb(253 224 71);
+      font-weight: 600;
+    }
+    .progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      background-color: #e5e7eb;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgb(253 224 71);
+    }
+    .timeline-item:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 1.5rem;
+      width: 2px;
+      height: calc(100% - 1rem);
+      background-color: rgb(253 224 71);
+    }
+    .timeline-item:last-child:after {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-50 text-yellow-900">
+
+  <!-- Header -->
+  <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
+      <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle mobile menu"
+          aria-expanded="false">
+          <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop navigation -->
+      <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
+        <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0" aria-label="Subject navigation">
+          <!-- Subjects dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              JEE Subjects
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="math.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Mathematics</a>
+                <a href="physics.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Physics</a>
+                <a href="chem.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Chemistry</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
+          <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
+          <a href="blog.html" class="py-2 px-3 hover:text-yellow-900 rounded">Blog</a>
+          
+          <!-- Resources dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              Resources
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="syllabus.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Syllabus</a>
+                <a href="formulas.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Important Formulas</a>
+                <a href="previous-papers.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Previous Papers</a>
+                <a href="study-plan.html" class="block px-4 py-2 text-sm bg-yellow-100 font-semibold">Study Plan</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div id="authSection" class="flex space-x-2">
+            <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSection" class="hidden flex space-x-2 items-center">
+            <span id="userEmail" class="font-semibold"></span>
+            <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
+      <nav class="flex flex-col px-6 py-4 space-y-2">
+        <!-- Mobile subjects dropdown -->
+        <div class="py-2">
+          <button id="mobileSubjectsBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>JEE Subjects</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileSubjectsMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="math.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Mathematics</a>
+            <a href="physics.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Physics</a>
+            <a href="chem.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Chemistry</a>
+          </div>
+        </div>
+        
+        <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
+        <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
+        <a href="blog.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Blog</a>
+        
+        <!-- Mobile resources dropdown -->
+        <div class="py-2">
+          <button id="mobileResourcesBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>Resources</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileResourcesMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="syllabus.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Syllabus</a>
+            <a href="formulas.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Important Formulas</a>
+            <a href="previous-papers.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Previous Papers</a>
+            <a href="study-plan.html" class="block py-2 px-3 bg-yellow-300 rounded font-semibold">Study Plan</a>
+          </div>
+        </div>
+        
+        <div class="pt-2 border-t border-yellow-300">
+          <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
+            <span id="userEmailMobile" class="font-semibold"></span>
+            <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      const isExpanded = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileBtn.setAttribute("aria-expanded", isExpanded);
+    });
+
+    // Mobile dropdown toggles
+    const mobileSubjectsBtn = document.getElementById("mobileSubjectsBtn");
+    const mobileSubjectsMenu = document.getElementById("mobileSubjectsMenu");
+    mobileSubjectsBtn.addEventListener("click", () => {
+      mobileSubjectsMenu.classList.toggle("hidden");
+    });
+
+    const mobileResourcesBtn = document.getElementById("mobileResourcesBtn");
+    const mobileResourcesMenu = document.getElementById("mobileResourcesMenu");
+    mobileResourcesBtn.addEventListener("click", () => {
+      mobileResourcesMenu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">JEE Study Plan 2026</h1>
+      <p class="text-xl max-w-3xl mx-auto">Complete preparation strategy with daily schedule, topic-wise plan, and revision timetable for JEE Main & Advanced</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#daily-plan" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Daily Plan</a>
+        <a href="#subject-strategy" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Subject Strategy</a>
+        <a href="#revision-plan" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Revision Plan</a>
+        <a href="#download" class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100">Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto py-10 px-6">
+    <!-- Overview Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">JEE Preparation Strategy Overview</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Phase 1 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 plan-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">1</span>
+            </div>
+            <h3 class="text-2xl font-bold">Phase 1: Foundation</h3>
+          </div>
+          <p class="text-gray-700 mb-4"><strong>Duration:</strong> 6-8 months</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Complete NCERT syllabus</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Build conceptual understanding</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Practice basic problems</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Regular chapter tests</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Phase 2 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 plan-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-400 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">2</span>
+            </div>
+            <h3 class="text-2xl font-bold">Phase 2: Advanced</h3>
+          </div>
+          <p class="text-gray-700 mb-4"><strong>Duration:</strong> 4-5 months</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Advanced problem solving</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>JEE level practice</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Mock test series</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Time management practice</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Phase 3 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 plan-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-green-400 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">3</span>
+            </div>
+            <h3 class="text-2xl font-bold">Phase 3: Revision</h3>
+          </div>
+          <p class="text-gray-700 mb-4"><strong>Duration:</strong> 2-3 months</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Full syllabus revision</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Previous year papers</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Weak area improvement</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2 mt-1">✓</span>
+              <span>Final mock tests</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Progress Tracker -->
+      <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <h3 class="text-2xl font-bold mb-6 text-teal-800">Your Preparation Progress</h3>
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold">Mathematics</span>
+              <span>65%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill bg-yellow-400" style="width: 65%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold">Physics</span>
+              <span>50%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill bg-blue-400" style="width: 50%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold">Chemistry</span>
+              <span>70%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill bg-green-400" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 text-center">
+          <button class="px-6 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500">
+            Update Progress
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Daily Study Plan -->
+    <section id="daily-plan" class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Daily Study Plan</h2>
+      
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+        <div class="bg-yellow-400 p-4">
+          <h3 class="text-xl font-bold text-yellow-900">Recommended Daily Schedule (8-10 hours)</h3>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Morning Schedule -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4 text-teal-800 flex items-center">
+                <i class="fas fa-sun mr-2 text-yellow-500"></i> Morning Session (5 AM - 12 PM)
+              </h4>
+              <div class="space-y-4">
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">5:00 - 6:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Wake up & Morning Routine</h5>
+                    <p class="text-sm text-gray-600">Exercise, meditation, planning</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">6:00 - 8:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Mathematics</h5>
+                    <p class="text-sm text-gray-600">New concepts & problem solving</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">8:00 - 8:30</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Breakfast</h5>
+                    <p class="text-sm text-gray-600">Healthy meal</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">8:30 - 10:30</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Physics</h5>
+                    <p class="text-sm text-gray-600">Theory & numerical practice</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">10:30 - 12:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Chemistry</h5>
+                    <p class="text-sm text-gray-600">Physical & Inorganic chemistry</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Afternoon & Evening Schedule -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4 text-teal-800 flex items-center">
+                <i class="fas fa-cloud-sun mr-2 text-orange-500"></i> Afternoon & Evening (12 PM - 10 PM)
+              </h4>
+              <div class="space-y-4">
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">12:00 - 1:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Lunch Break</h5>
+                    <p class="text-sm text-gray-600">Rest & relaxation</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">1:00 - 3:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Organic Chemistry</h5>
+                    <p class="text-sm text-gray-600">Reactions & mechanisms</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">3:00 - 4:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Short Break</h5>
+                    <p class="text-sm text-gray-600">Snacks, short walk</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">4:00 - 6:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Practice Session</h5>
+                    <p class="text-sm text-gray-600">Mixed subject problems</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">6:00 - 7:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Revision</h5>
+                    <p class="text-sm text-gray-600">Today's topics</p>
+                  </div>
+                </div>
+                <div class="flex items-start timeline-item">
+                  <div class="flex-shrink-0 w-20 font-semibold">7:00 - 10:00</div>
+                  <div class="ml-4">
+                    <h5 class="font-semibold">Dinner & Free Time</h5>
+                    <p class="text-sm text-gray-600">Family time, hobbies, light reading</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Weekly Plan -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-yellow-400 p-4">
+          <h3 class="text-xl font-bold text-yellow-900">Weekly Study Distribution</h3>
+        </div>
+        <div class="p-6">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-yellow-100">
+                <tr>
+                  <th class="px-4 py-2">Day</th>
+                  <th class="px-4 py-2">Mathematics</th>
+                  <th class="px-4 py-2">Physics</th>
+                  <th class="px-4 py-2">Chemistry</th>
+                  <th class="px-4 py-2">Revision</th>
+                  <th class="px-4 py-2">Mock Test</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="px-4 py-2 font-semibold">Monday</td>
+                  <td class="px-4 py-2">3 hours</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">-</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2 font-semibold">Tuesday</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">3 hours</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">-</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2 font-semibold">Wednesday</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">3 hours</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">-</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2 font-semibold">Thursday</td>
+                  <td class="px-4 py-2">3 hours</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">-</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2 font-semibold">Friday</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">3 hours</td>
+                  <td class="px-4 py-2">2.5 hours</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">-</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2 font-semibold">Saturday</td>
+                  <td class="px-4 py-2">2 hours</td>
+                  <td class="px-4 py-2">2 hours</td>
+                  <td class="px-4 py-2">2 hours</td>
+                  <td class="px-4 py-2">2 hours</td>
+                  <td class="px-4 py-2">3 hours</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-semibold">Sunday</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">1 hour</td>
+                  <td class="px-4 py-2">3 hours</td>
+                  <td class="px-4 py-2">3 hours</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Subject-wise Strategy -->
+    <section id="subject-strategy" class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Subject-wise Preparation Strategy</h2>
+      
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="flex flex-wrap border-b">
+          <button class="tab-btn py-4 px-6 font-semibold text-lg active" data-subject="mathematics">Mathematics</button>
+          <button class="tab-btn py-4 px-6 font-semibold text-lg" data-subject="physics">Physics</button>
+          <button class="tab-btn py-4 px-6 font-semibold text-lg" data-subject="chemistry">Chemistry</button>
+        </div>
+        
+        <!-- Mathematics Strategy -->
+        <div id="mathematics" class="strategy-content p-6 active">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Mathematics Preparation Strategy</h3>
+            <p class="text-gray-700 mb-6">Mathematics requires consistent practice and conceptual clarity. Focus on high-weightage topics and develop problem-solving speed.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                    High Priority Topics
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Calculus (Differential & Integral)</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Coordinate Geometry</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Algebra (Complex Numbers, Matrices)</span>
+                      <span class="ml-auto bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">High</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Vector & 3D Geometry</span>
+                    </li>
+                    <li class="topic-item p-2 rounded-lg flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      <span>Probability & Statistics</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                    Recommended Books
+                  </h4>
+                  <ul class="space-y-2 ml-8">
+                    <li class="topic-item p-2 rounded-lg">
+                      <span class="font-semibold">Class 11 & 12 NCERT</span> - For basic concepts
+                    </li>
+                    <li class="topic-item p-2 rounded-lg">
+                      <span class="font-semibold">Cengage Series</span> - For advanced problems
+                    </li>
+                    <li class="topic-item p-2 rounded-lg">
+                      <span class="font-semibold">Arihant Series</span> - For practice questions
+                    </li>
+                    <li class="topic-item p-2 rounded-lg">
+                      <span class="font-semibold">Previous Year Papers</span> - For exam pattern
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Right Column -->
+              <div>
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                    Preparation Tips
+                  </h4>
+                  <ul class="space-y-3 ml-8">
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                      <span>Practice at least 20-30 problems daily</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                      <span>Focus on conceptual understanding rather than rote learning</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                      <span>Learn shortcut methods for calculations</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                      <span>Maintain formula notebook for quick revision</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                      <span>Solve previous year papers with time limit</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="mb-6">
+                  <h4 class="text-xl font-semibold mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-sm mr-2">4</span>
+                    Time Allocation
+                  </h4>
+                  <div class="ml-8">
+                    <div class="flex justify-between mb-1">
+                      <span>Daily Practice</span>
+                      <span>3-4 hours</span>
+                    </div>
+                    <div class="progress-bar mb-3">
+                      <div class="progress-fill bg-yellow-400" style="width: 80%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between mb-1">
+                      <span>Weekly Revision</span>
+                      <span>2-3 hours</span>
+                    </div>
+                    <div class="progress-bar mb-3">
+                      <div class="progress-fill bg-yellow-400" style="width: 60%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between mb-1">
+                      <span>Mock Tests</span>
+                      <span>3 hours/week</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill bg-yellow-400" style="width: 40%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Physics Strategy -->
+        <div id="physics" class="strategy-content p-6 hidden">
+          <!-- Similar structure as Mathematics but with Physics content -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Physics Preparation Strategy</h3>
+            <p class="text-gray-700 mb-6">Physics requires strong conceptual foundation and application skills. Focus on understanding principles and their applications.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Content would follow similar pattern as Mathematics -->
+              <div class="text-center py-8">
+                <i class="fas fa-atom text-4xl text-blue-400 mb-4"></i>
+                <p class="text-gray-600">Physics strategy content would follow the same structure as Mathematics with topic-specific information.</p>
+              </div>
+              <div class="text-center py-8">
+                <i class="fas fa-rocket text-4xl text-blue-400 mb-4"></i>
+                <p class="text-gray-600">Detailed physics preparation plan with books, tips and time allocation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Chemistry Strategy -->
+        <div id="chemistry" class="strategy-content p-6 hidden">
+          <!-- Similar structure as Mathematics but with Chemistry content -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-teal-800">Chemistry Preparation Strategy</h3>
+            <p class="text-gray-700 mb-6">Chemistry is divided into Physical, Organic and Inorganic branches, each requiring different approach.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Content would follow similar pattern as Mathematics -->
+              <div class="text-center py-8">
+                <i class="fas fa-flask text-4xl text-green-400 mb-4"></i>
+                <p class="text-gray-600">Chemistry strategy content would follow the same structure as Mathematics with topic-specific information.</p>
+              </div>
+              <div class="text-center py-8">
+                <i class="fas fa-vial text-4xl text-green-400 mb-4"></i>
+                <p class="text-gray-600">Detailed chemistry preparation plan with books, tips and time allocation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Revision Plan -->
+    <section id="revision-plan" class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Revision Plan & Mock Tests</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Revision Strategy -->
+        <div class="bg-white rounded-xl shadow-lg p-6 plan-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-purple-400 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl text-white">🔄</span>
+            </div>
+            <h3 class="text-2xl font-bold">Revision Strategy</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-purple-600 font-semibold">1</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Daily Revision</h4>
+                <p class="text-sm text-gray-600">Revise previous day topics for 30-45 minutes</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-purple-600 font-semibold">2</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Weekly Revision</h4>
+                <p class="text-sm text-gray-600">Dedicate 3-4 hours on weekends for weekly topics</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-purple-600 font-semibold">3</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Monthly Revision</h4>
+                <p class="text-sm text-gray-600">Complete revision of all covered topics monthly</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-purple-600 font-semibold">4</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Final Revision</h4>
+                <p class="text-sm text-gray-600">Last 2 months dedicated to full syllabus revision</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mock Test Strategy -->
+        <div class="bg-white rounded-xl shadow-lg p-6 plan-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-red-400 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl text-white">📝</span>
+            </div>
+            <h3 class="text-2xl font-bold">Mock Test Strategy</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-red-600 font-semibold">1</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Weekly Tests</h4>
+                <p class="text-sm text-gray-600">Start with chapter-wise tests, then full syllabus</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-red-600 font-semibold">2</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Analysis</h4>
+                <p class="text-sm text-gray-600">Spend equal time analyzing mistakes as taking test</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-red-600 font-semibold">3</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Time Management</h4>
+                <p class="text-sm text-gray-600">Practice completing tests within time limit</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-red-600 font-semibold">4</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Previous Papers</h4>
+                <p class="text-sm text-gray-600">Solve last 10 years JEE papers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Revision Timeline -->
+      <div class="bg-white rounded-xl shadow-lg p-6 mt-8">
+        <h3 class="text-2xl font-bold mb-6 text-teal-800">6-Month Revision Timeline</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-yellow-100">
+              <tr>
+                <th class="px-4 py-2">Month</th>
+                <th class="px-4 py-2">Mathematics</th>
+                <th class="px-4 py-2">Physics</th>
+                <th class="px-4 py-2">Chemistry</th>
+                <th class="px-4 py-2">Mock Tests</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-4 py-2 font-semibold">Month 1-2</td>
+                <td class="px-4 py-2">Algebra, Trigonometry</td>
+                <td class="px-4 py-2">Mechanics, Properties of Matter</td>
+                <td class="px-4 py-2">Physical Chemistry Basics</td>
+                <td class="px-4 py-2">Chapter-wise Tests</td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-4 py-2 font-semibold">Month 3-4</td>
+                <td class="px-4 py-2">Calculus, Coordinate Geometry</td>
+                <td class="px-4 py-2">Thermodynamics, Waves, Optics</td>
+                <td class="px-4 py-2">Organic Chemistry, Inorganic</td>
+                <td class="px-4 py-2">Subject-wise Tests</td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-4 py-2 font-semibold">Month 5</td>
+                <td class="px-4 py-2">Vectors, 3D Geometry, Probability</td>
+                <td class="px-4 py-2">Electrodynamics, Modern Physics</td>
+                <td class="px-4 py-2">Coordination Compounds, p-Block</td>
+                <td class="px-4 py-2">Full Syllabus Tests</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-semibold">Month 6</td>
+                <td class="px-4 py-2">Full Revision</td>
+                <td class="px-4 py-2">Full Revision</td>
+                <td class="px-4 py-2">Full Revision</td>
+                <td class="px-4 py-2">Previous Year Papers</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Download Section -->
+    <!-- <section id="download" class="mb-16">
+      <div class="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl shadow-lg p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-teal-800">Download Study Plan</h2>
+        <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">Get the complete JEE Main & Advanced 2025 study plan in PDF format for easy reference and offline use.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Download PDF Plan
+          </button>
+          <button class="px-6 py-3 bg-white text-yellow-900 font-bold rounded-lg hover:bg-yellow-100 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Print Study Plan
+          </button>
+        </div>
+      </div>
+    </section> -->
+    
+    <!-- Motivation & Tips -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Success Tips & Motivation</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">⏰</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Consistency is Key</h3>
+          <p class="text-gray-600">Regular study with proper schedule yields better results than last-minute cramming.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🧠</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Conceptual Clarity</h3>
+          <p class="text-gray-600">Focus on understanding concepts rather than memorizing formulas.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📊</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Analyze Performance</h3>
+          <p class="text-gray-600">Regularly assess your preparation and work on weak areas.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+          <div class="w-16 h-16 bg-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">💪</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Stay Motivated</h3>
+          <p class="text-gray-600">Keep your goal in mind and maintain positive attitude throughout preparation.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auth Modals -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="loginPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Login</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="signupPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleSignup()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Sign Up</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+            <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+            <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+            <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const strategyContents = document.querySelectorAll('.strategy-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const subject = btn.dataset.subject;
+        
+        // Update active tab
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Show corresponding content
+        strategyContents.forEach(content => {
+          content.classList.add('hidden');
+          content.classList.remove('active');
+        });
+        
+        document.getElementById(subject).classList.remove('hidden');
+        document.getElementById(subject).classList.add('active');
+      });
+    });
+    
+    // Auth modal functions
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+      document.getElementById('loginModal').classList.add('flex');
+    }
+
+    function openSignupModal() {
+      document.getElementById('signupModal').classList.remove('hidden');
+      document.getElementById('signupModal').classList.add('flex');
+    }
+
+    async function handleLogin() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const success = await loginUser(email, password);
+      console.log('Login attempt:', success);
+
+      closeModals();
+    }
+
+    async function handleSignup() {
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+      }
+
+      const success = await registerUser(email, password);
+      closeModals();
+    }
+
+    function closeModals() {
+      console.log('Closing modals');
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('signupModal').classList.add('hidden');
+      document.getElementById('loginModal').classList.remove('flex');
+      document.getElementById('signupModal').classList.remove('flex');
+
+      document.getElementById('loginEmail').value = '';
+      document.getElementById('loginPassword').value = '';
+      document.getElementById('signupEmail').value = '';
+      document.getElementById('signupPassword').value = '';
+    }
+
+    // Auth UI update
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+    const authSectionMobile = document.getElementById("authSectionMobile");
+    const userSectionMobile = document.getElementById("userSectionMobile");
+    const userEmailMobile = document.getElementById("userEmailMobile");
+
+    window.updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+
+        authSectionMobile.classList.add("hidden");
+        userSectionMobile.classList.remove("hidden");
+        userEmailMobile.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+
+        authSectionMobile.classList.remove("hidden");
+        userSectionMobile.classList.add("hidden");
+        userEmailMobile.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
+</body>
+</html>
