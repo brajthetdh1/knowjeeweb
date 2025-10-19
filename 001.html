@@ -3,706 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>River Swimmer Challenge | JEE Physics | KnowJEE</title>
+    <title>KnowJEE Physics Challenge</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        knowjee: {
+                            primary: '#1e40af',
+                            secondary: '#2563eb',
+                            accent: '#f59e0b',
+                            success: '#10b981',
+                            warning: '#f59e0b',
+                            dark: '#1e293b',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0F172A, #1E293B);
-        }
-        .slide {
-            display: none;
-            animation: fadeIn 0.8s ease-in-out;
-        }
-        .slide.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .content-line {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.5s ease;
-        }
-        .content-line.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .progress-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #374151;
+        .option-btn {
             transition: all 0.3s ease;
-            cursor: pointer;
         }
-        .progress-dot.active {
-            background-color: #FFD700;
-            transform: scale(1.2);
+        .option-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+        .option-selected {
+            background-color: #dbeafe;
+            border-color: #2563eb;
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
-        .formula-box {
-            background: linear-gradient(135deg, #FEF3C7, #F59E0B);
-            border-left: 4px solid #D97706;
+        .knowjee-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
         }
-        .important-note {
-            background: linear-gradient(135deg, #DBEAFE, #3B82F6);
-            border-left: 4px solid #1D4ED8;
+        .knowjee-gradient-light {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
-        .jee-tip {
-            background: linear-gradient(135deg, #DCFCE7, #22C55E);
-            border-left: 4px solid #16A34A;
+        .question-container {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .example-box {
-            background: linear-gradient(135deg, #F3E8FF, #A855F7);
-            border-left: 4px solid #7C3AED;
-        }
-        .youtube-badge {
-            background: linear-gradient(135deg, #FF0000, #CC0000);
+        .timer-pulse {
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .river-flow {
-            animation: riverFlow 2s linear infinite;
-        }
-        @keyframes riverFlow {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        .swimmer-move {
-            animation: swimmerMove 4s linear infinite;
-        }
-        @keyframes swimmerMove {
-            0% { transform: translateX(-100px) translateY(0); }
-            50% { transform: translateX(200px) translateY(20px); }
-            100% { transform: translateX(500px) translateY(0); }
-        }
-        /* Large font sizes */
-        .slide-title {
-            font-size: 3.5rem;
-            line-height: 1.2;
-        }
-        .slide-subtitle {
-            font-size: 2.5rem;
-            line-height: 1.3;
-        }
-        .slide-text {
-            font-size: 2rem;
-            line-height: 1.4;
-        }
-        .formula-text {
-            font-size: 2.5rem;
-            line-height: 1.3;
-        }
-        .example-text {
-            font-size: 1.8rem;
-            line-height: 1.4;
-        }
-        @media (max-width: 768px) {
-            .slide-title {
-                font-size: 2.5rem;
-            }
-            .slide-subtitle {
-                font-size: 2rem;
-            }
-            .slide-text {
-                font-size: 1.5rem;
-            }
-            .formula-text {
-                font-size: 2rem;
-            }
-            .example-text {
-                font-size: 1.4rem;
-            }
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4 text-gray-800">
-    <div class="max-w-6xl w-full">
-        <div class="card rounded-2xl shadow-2xl overflow-hidden">
+<body class="bg-gradient-to-br from-knowjee-primary to-knowjee-dark min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <header class="knowjee-gradient text-white p-6 md:p-8 text-center">
+            <div class="flex justify-between items-center mb-4">
+                <div class="text-left">
+                    <div class="text-sm opacity-80">Question <span id="current-slide">1</span>/30</div>
+                    <div class="text-xs opacity-70" id="topic-area">Mechanics</div>
+                </div>
+                <h1 class="text-2xl md:text-3xl font-bold">KnowJEE Physics Challenge</h1>
+                <div class="text-right">
+                    <div class="text-sm opacity-80 timer-pulse" id="timer">30s</div>
+                    <div class="text-xs opacity-70">Time Left</div>
+                </div>
+            </div>
+            
             <!-- Progress Bar -->
-            <div class="h-2 bg-gray-200">
-                <div id="progressBar" class="h-full bg-yellow-500 transition-all duration-500" style="width: 5%"></div>
+            <div class="w-full bg-white/20 rounded-full h-2 mt-2">
+                <div id="progress-bar" class="bg-knowjee-accent h-2 rounded-full transition-all duration-500" style="width: 3.33%"></div>
             </div>
-            
-            <!-- Slides Container -->
-            <div class="min-h-[600px]">
-                <!-- Slide 1: Title -->
-                <div id="slide1" class="slide active bg-gradient-to-br from-blue-900 to-gray-900 text-white">
-                    <div class="p-8 h-full flex flex-col justify-between">
-                        <div class="flex justify-end">
-                            <div class="youtube-badge text-white px-4 py-2 rounded-lg font-bold flex items-center slide-text">
-                                <i class="fab fa-youtube mr-2"></i>
-                                YouTube
-                            </div>
-                        </div>
-                        
-                        <div class="text-center flex-1 flex flex-col justify-center">
-                            <div class="mb-8">
-                                <div class="flex justify-center items-center mb-6">
-                                    <div class="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                                        <span class="font-bold text-blue-900 text-2xl">K</span>
-                                    </div>
-                                    <h1 class="text-5xl font-black text-white">Know<span class="text-yellow-500">JEE</span></h1>
-                                </div>
-                                <p class="slide-text text-blue-200 mb-2">JEE Preparation</p>
-                            </div>
-                            
-                            <h2 class="slide-title font-black text-white mb-6 leading-tight">
-                                RIVER SWIMMER CHALLENGE
-                            </h2>
-                            
-                            <div class="flex justify-center mb-8">
-                                <div class="relative w-64 h-32">
-                                    <div class="absolute bottom-0 left-0 right-0 h-8 bg-blue-200 river-flow"></div>
-                                    <div class="w-8 h-4 bg-yellow-500 rounded swimmer-move absolute left-8 top-4"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-3 slide-text text-blue-200 max-w-2xl mx-auto">
-                                <p class="content-line">Advanced Relative Motion Problem</p>
-                                <p class="content-line">JEE Main & Advanced Level</p>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center mt-8">
-                            <p class="content-line slide-text text-blue-200">Can You Solve This Challenging River Problem?</p>
-                        </div>
-                    </div>
-                </div>
+        </header>
 
-                <!-- Slide 2: Problem Statement -->
-                <div id="slide2" class="slide p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
-                            <span class="font-bold text-blue-900">K</span>
-                        </div>
-                        <h1 class="slide-subtitle font-bold text-blue-900">Know<span class="text-yellow-500">JEE</span></h1>
-                    </div>
-                    
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Problem Statement</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="example-box p-6 rounded-lg">
-                            <p class="content-line slide-text font-semibold text-purple-700">JEE Advanced Level Problem:</p>
-                            <p class="content-line slide-text mt-4">A swimmer can swim in still water at 5 m/s. He wants to cross a river of width 120 m flowing at 3 m/s. He starts from point A and wants to reach exactly opposite point B on the other bank.</p>
-                            <p class="content-line slide-text mt-4">However, there's a twist: After swimming for 10 seconds, he realizes he's off course and immediately adjusts his swimming direction to reach point B.</p>
-                            <p class="content-line slide-text mt-4 font-semibold">Find the total time taken to cross the river and the angle at which he should swim after adjustment.</p>
-                        </div>
-                        
-                        <div class="flex justify-center mt-4">
-                            <div class="relative w-64 h-32 border-2 border-blue-300 rounded-lg">
-                                <div class="absolute bottom-0 left-0 right-0 h-8 bg-blue-200 river-flow"></div>
-                                <div class="w-8 h-4 bg-yellow-500 rounded swimmer-move absolute left-8 top-4"></div>
-                                <div class="absolute left-0 top-4 w-2 h-2 bg-red-500 rounded-full"></div>
-                                <div class="absolute right-0 top-4 w-2 h-2 bg-green-500 rounded-full"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3: Understanding the Problem -->
-                <div id="slide3" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Understanding the Problem</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="space-y-4 text-gray-700">
-                                <p class="content-line slide-text"><span class="font-semibold text-blue-900">Key Elements:</span></p>
-                                <ul class="list-disc ml-6 space-y-2 slide-text">
-                                    <li class="content-line">River width: 120 m</li>
-                                    <li class="content-line">River speed: 3 m/s</li>
-                                    <li class="content-line">Swimmer speed: 5 m/s</li>
-                                    <li class="content-line">Initial swimming time: 10 s</li>
-                                    <li class="content-line">Target: Point exactly opposite</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="important-note p-4 rounded-lg">
-                                <p class="content-line slide-text font-semibold">Critical Insight:</p>
-                                <p class="content-line slide-text">The swimmer needs to account for river flow both before and after course correction.</p>
-                                <p class="content-line slide-text">We need to find his position after 10 seconds, then calculate the new direction.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line slide-text font-semibold">JEE Strategy: Break complex problems into stages. Solve each stage systematically.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4: Stage 1 - Initial Swimming -->
-                <div id="slide4" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Stage 1: Initial Swimming</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line slide-text font-semibold text-center mb-4">To reach directly opposite point:</p>
-                            <div class="space-y-3 text-center">
-                                <p class="content-line formula-text font-mono">sinθ = v<sub>r</sub>/v<sub>s</sub></p>
-                                <p class="content-line slide-text">θ = sin⁻¹(3/5) = 36.87°</p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line slide-text font-semibold text-blue-700 text-center">But Problem Says:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">He doesn't swim at this angle initially</p>
-                                    <p class="content-line slide-text">We don't know his initial direction</p>
-                                    <p class="content-line slide-text">After 10s, he realizes he's off course</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line slide-text font-semibold text-green-700 text-center">Assumption for Solution:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">Let's assume he swam straight across initially (perpendicular to bank)</p>
-                                    <p class="content-line slide-text">This is a common mistake swimmers make</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5: Position After 10 Seconds -->
-                <div id="slide5" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Position After 10 Seconds</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line slide-text font-semibold text-purple-700 text-center">If swimming straight across:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">Velocity component across river: 5 m/s</p>
-                                    <p class="content-line slide-text">Velocity component downstream: 3 m/s</p>
-                                    <p class="content-line slide-text">Distance across: 5 × 10 = 50 m</p>
-                                    <p class="content-line slide-text">Distance downstream: 3 × 10 = 30 m</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line slide-text font-semibold text-blue-700 text-center">Position Vector:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">r = 50î + 30ĵ</p>
-                                    <p class="content-line slide-text">50 m across, 30 m downstream</p>
-                                    <p class="content-line slide-text">Remaining distance across: 70 m</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-center mt-4">
-                            <div class="relative w-64 h-32 border-2 border-blue-300 rounded-lg">
-                                <div class="absolute bottom-0 left-0 right-0 h-8 bg-blue-200 river-flow"></div>
-                                <div class="w-8 h-4 bg-yellow-500 rounded absolute left-8 top-4"></div>
-                                <div class="absolute left-0 top-4 w-2 h-2 bg-red-500 rounded-full"></div>
-                                <div class="absolute right-0 top-4 w-2 h-2 bg-green-500 rounded-full"></div>
-                                <div class="absolute left-1/4 top-1/3 w-2 h-2 bg-orange-500 rounded-full"></div>
-                                <div class="absolute left-1/4 top-1/3 w-1 h-12 bg-orange-500"></div>
-                                <div class="absolute left-1/4 top-1/3 w-12 h-1 bg-orange-500"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6: Stage 2 - Course Correction -->
-                <div id="slide6" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Stage 2: Course Correction</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line slide-text font-semibold text-center mb-4">New Situation:</p>
-                            <div class="space-y-3 text-center">
-                                <p class="content-line slide-text">Remaining width: 70 m</p>
-                                <p class="content-line slide-text">Current position: 30 m downstream</p>
-                                <p class="content-line slide-text">Need to cancel downstream drift</p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line slide-text font-semibold text-green-700 text-center">Time Analysis:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">Let t be time for second stage</p>
-                                    <p class="content-line slide-text">Across component: v<sub>s</sub>cosα × t = 70</p>
-                                    <p class="content-line slide-text">Downstream component: v<sub>s</sub>sinα × t - v<sub>r</sub>t = -30</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line slide-text font-semibold text-red-700 text-center">Equations:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">5cosα × t = 70</p>
-                                    <p class="content-line formula-text font-mono">5sinα × t - 3t = -30</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 7: Solving the Equations -->
-                <div id="slide7" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Solving the Equations</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line slide-text font-semibold text-blue-700 text-center">From first equation:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">t = 70/(5cosα) = 14/cosα</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line slide-text font-semibold text-green-700 text-center">Substitute in second equation:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">5sinα × (14/cosα) - 3 × (14/cosα) = -30</p>
-                                    <p class="content-line formula-text font-mono">70tanα - 42/cosα = -30</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line slide-text font-semibold">JEE Strategy: When dealing with trigonometric equations, try to express in terms of sin and cos or use substitution.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 8: Trigonometric Solution -->
-                <div id="slide8" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Trigonometric Solution</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line slide-text font-semibold text-center mb-4">Our Equation:</p>
-                            <div class="space-y-3 text-center">
-                                <p class="content-line formula-text font-mono">70tanα - 42/cosα = -30</p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line slide-text font-semibold text-purple-700 text-center">Multiply by cosα:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">70sinα - 42 = -30cosα</p>
-                                    <p class="content-line formula-text font-mono">70sinα + 30cosα = 42</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line slide-text font-semibold text-blue-700 text-center">Divide by 10:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">7sinα + 3cosα = 4.2</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 9: Solving the Trigonometric Equation -->
-                <div id="slide9" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Solving the Trigonometric Equation</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line slide-text font-semibold text-center mb-4">Equation:</p>
-                            <div class="space-y-3 text-center">
-                                <p class="content-line formula-text font-mono">7sinα + 3cosα = 4.2</p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line slide-text font-semibold text-green-700 text-center">Use Rsin(α+β) method:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">R = √(7² + 3²) = √58 ≈ 7.616</p>
-                                    <p class="content-line slide-text">β = tan⁻¹(3/7) ≈ 23.2°</p>
-                                    <p class="content-line formula-text font-mono">7.616 sin(α + 23.2°) = 4.2</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line slide-text font-semibold text-red-700 text-center">Solve for α:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">sin(α + 23.2°) = 4.2/7.616 ≈ 0.551</p>
-                                    <p class="content-line formula-text font-mono">α + 23.2° = sin⁻¹(0.551) ≈ 33.4°</p>
-                                    <p class="content-line formula-text font-mono">α ≈ 33.4° - 23.2° = 10.2°</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 10: Finding Time and Total Time -->
-                <div id="slide10" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Finding Time and Total Time</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line slide-text font-semibold text-blue-700 text-center">Time for Stage 2:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">t = 14/cosα = 14/cos(10.2°)</p>
-                                    <p class="content-line slide-text">cos(10.2°) ≈ 0.984</p>
-                                    <p class="content-line slide-text">t ≈ 14/0.984 ≈ 14.23 s</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line slide-text font-semibold text-green-700 text-center">Total Time:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">Stage 1: 10 s</p>
-                                    <p class="content-line slide-text">Stage 2: 14.23 s</p>
-                                    <p class="content-line slide-text font-semibold">Total: 24.23 s</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="important-note p-4 rounded-lg">
-                            <p class="content-line slide-text font-semibold">Answer:</p>
-                            <p class="content-line slide-text">Total time ≈ 24.23 seconds</p>
-                            <p class="content-line slide-text">Angle for correction ≈ 10.2° upstream</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 11: Alternative Approach -->
-                <div id="slide11" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Alternative Approach</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="formula-box p-6 rounded-lg">
-                            <p class="content-line slide-text font-semibold text-center mb-4">Vector Method:</p>
-                            <div class="space-y-3 text-center">
-                                <p class="content-line slide-text">We can solve using relative velocity vectors</p>
-                                <p class="content-line slide-text">This is often faster for JEE problems</p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-purple-200 rounded-lg bg-purple-50">
-                                <p class="content-line slide-text font-semibold text-purple-700 text-center">Position Vector:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">r = 70î - 30ĵ</p>
-                                    <p class="content-line slide-text">(relative to target point B)</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-blue-200 rounded-lg bg-blue-50">
-                                <p class="content-line slide-text font-semibold text-blue-700 text-center">Relative Velocity:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line formula-text font-mono">v<sub>sb</sub> = v<sub>swimmer</sub> - v<sub>river</sub></p>
-                                    <p class="content-line formula-text font-mono">= 5(cosα î + sinα ĵ) - 3î</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="jee-tip p-4 rounded-lg">
-                            <p class="content-line slide-text font-semibold">JEE Insight: Multiple approaches to solve the same problem demonstrate deep understanding of physics concepts.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 12: Key Learnings -->
-                <div id="slide12" class="slide p-8">
-                    <h2 class="slide-title font-bold mb-6 text-blue-900">Key Learnings</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 border border-green-200 rounded-lg bg-green-50">
-                                <p class="content-line slide-text font-semibold text-green-700 text-center">Conceptual Takeaways:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">• River problems require vector analysis</p>
-                                    <p class="content-line slide-text">• Course correction problems are common in JEE</p>
-                                    <p class="content-line slide-text">• Break complex motion into stages</p>
-                                    <p class="content-line slide-text">• Trigonometric equations often appear</p>
-                                </div>
-                            </div>
-                            
-                            <div class="p-4 border border-red-200 rounded-lg bg-red-50">
-                                <p class="content-line slide-text font-semibold text-red-700 text-center">Problem-Solving Strategy:</p>
-                                <div class="mt-3 space-y-2">
-                                    <p class="content-line slide-text">1. Understand the scenario</p>
-                                    <p class="content-line slide-text">2. Break into stages</p>
-                                    <p class="content-line slide-text">3. Write equations for each stage</p>
-                                    <p class="content-line slide-text">4. Solve systematically</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="important-note p-4 rounded-lg">
-                            <p class="content-line slide-text font-semibold">JEE Success Tip: Practice different types of river problems - they test your understanding of vectors and relative motion thoroughly.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 13: Summary -->
-                <div id="slide13" class="slide p-8">
-                    <div class="text-center">
-                        <div class="flex justify-center items-center mb-6">
-                            <div class="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mr-4">
-                                <span class="font-bold text-blue-900 text-2xl">K</span>
-                            </div>
-                            <h1 class="slide-title font-black text-blue-900">Know<span class="text-yellow-500">JEE</span></h1>
-                        </div>
-                        
-                        <h2 class="slide-title font-bold mb-6 text-blue-900">Problem Solved!</h2>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
-                            <div>
-                                <p class="content-line slide-text font-semibold text-blue-900">Final Answers:</p>
-                                <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line slide-text">Total time: ≈ 24.23 seconds</li>
-                                    <li class="content-line slide-text">Correction angle: ≈ 10.2° upstream</li>
-                                    <li class="content-line slide-text">Initial mistake: Swimming straight across</li>
-                                </ul>
-                            </div>
-                            
-                            <div>
-                                <p class="content-line slide-text font-semibold text-blue-900">Key Formulas Used:</p>
-                                <ul class="list-disc ml-6 mt-2 space-y-2">
-                                    <li class="content-line slide-text">v<sub>AB</sub> = v<sub>A</sub> - v<sub>B</sub></li>
-                                    <li class="content-line slide-text">sinθ = v<sub>r</sub>/v<sub>s</sub></li>
-                                    <li class="content-line slide-text">Rsin(α+β) method</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="jee-tip p-4 rounded-lg mt-6 max-w-2xl mx-auto">
-                            <p class="content-line slide-text font-semibold">JEE Success: Master relative motion problems - they combine vectors, trigonometry, and kinematics in creative ways!</p>
-                        </div>
-
-                        <div class="mt-8 flex justify-center space-x-4">
-                            <button class="flex items-center px-4 py-2 bg-red-500 text-white rounded-lg slide-text">
-                                <i class="fas fa-thumbs-up mr-2"></i> Like
-                            </button>
-                            <button class="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg slide-text">
-                                <i class="fab fa-youtube mr-2"></i> Subscribe
-                            </button>
-                            <button class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg slide-text">
-                                <i class="fas fa-share mr-2"></i> Share
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Navigation -->
-            <div class="flex justify-between items-center p-4 bg-gray-100 border-t">
-                <div class="flex space-x-1 flex-wrap justify-center max-w-md">
-                    <div class="progress-dot active" data-slide="0"></div>
-                    <div class="progress-dot" data-slide="1"></div>
-                    <div class="progress-dot" data-slide="2"></div>
-                    <div class="progress-dot" data-slide="3"></div>
-                    <div class="progress-dot" data-slide="4"></div>
-                    <div class="progress-dot" data-slide="5"></div>
-                    <div class="progress-dot" data-slide="6"></div>
-                    <div class="progress-dot" data-slide="7"></div>
-                    <div class="progress-dot" data-slide="8"></div>
-                    <div class="progress-dot" data-slide="9"></div>
-                    <div class="progress-dot" data-slide="10"></div>
-                    <div class="progress-dot" data-slide="11"></div>
-                    <div class="progress-dot" data-slide="12"></div>
+        <!-- Main Content -->
+        <div class="p-6 md:p-8">
+            <!-- Question Area -->
+            <div class="knowjee-gradient-light p-6 md:p-8 rounded-2xl shadow-md border border-blue-100 mb-6">
+                <div class="question-container mb-8">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 leading-tight text-center" id="question-text">
+                        <!-- Question will be inserted here -->
+                    </h2>
                 </div>
                 
-                <div class="text-gray-600 slide-text">
-                    Slide <span id="currentSlide">1</span> of <span id="totalSlides">13</span>
+                <!-- Timer Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span class="font-medium">Think about the answer...</span>
+                        <span class="font-semibold">Options appear in: <span id="countdown" class="text-knowjee-primary">30</span>s</span>
+                    </div>
+                    <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div id="timer-bar" class="bg-gradient-to-r from-knowjee-success to-knowjee-primary h-3 rounded-full w-full transition-all duration-1000 ease-linear"></div>
+                    </div>
                 </div>
                 
-                <!-- Simple KnowJEE -->
-                <div class="text-blue-900 font-bold slide-text">
-                    KnowJEE
+                <!-- Options Container -->
+                <div id="options-container" class="space-y-4 opacity-0 transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Options will be inserted here -->
                 </div>
+
+                <!-- Navigation Hints -->
+                <!-- <div class="mt-8 text-center text-sm text-gray-600">
+                    <p>Press <kbd class="bg-knowjee-primary text-white px-2 py-1 rounded">1-4</kbd> to select answers • 
+                       <kbd class="bg-gray-200 px-2 py-1 rounded ml-2">←</kbd> Previous • 
+                       <kbd class="bg-gray-200 px-2 py-1 rounded">→</kbd> Next</p>
+                </div> -->
             </div>
         </div>
+        
+        <!-- Footer -->
+        <footer class="bg-knowjee-dark text-white p-4 text-center text-sm">
+            <p>KnowJEE Physics Challenge &copy; 2026 | Use number keys 1-4 to select answers</p>
+        </footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.slide');
-            const currentSlideEl = document.getElementById('currentSlide');
-            const totalSlidesEl = document.getElementById('totalSlides');
-            const progressBar = document.getElementById('progressBar');
-            const progressDots = document.querySelectorAll('.progress-dot');
-            
-            let currentSlideIndex = 0;
-            totalSlidesEl.textContent = slides.length;
-            
-            function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                slides[index].classList.add('active');
-                
-                const progress = ((index + 1) / slides.length) * 100;
-                progressBar.style.width = `${progress}%`;
-                
-                currentSlideEl.textContent = index + 1;
-                
-                progressDots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-                
-                animateContentLines(slides[index]);
+        // JEE Physics Questions Data
+        const questions = [
+            {
+                id: 1,
+                topic: "Mechanics",
+                question: "A particle moves in a straight line with a constant acceleration. If it covers distances s1 and s2 in the first and second seconds respectively, then what is the acceleration?",
+                options: ["2(s2 - s1)", "s2 - s1", "s2 + s1", "2(s2 + s1)"],
+                correct: 0
+            },
+            {
+                id: 2,
+                topic: "Mechanics",
+                question: "A body is projected vertically upwards with a velocity u. If it passes through a point at height h above the ground at time t1 and t2, then what is the value of u?",
+                options: ["g(t1 + t2)", "g(t1 + t2)/2", "2g(t1 + t2)", "g(t1 - t2)"],
+                correct: 1
+            },
+            {
+                id: 3,
+                topic: "Electrodynamics",
+                question: "A charged particle moves in a uniform magnetic field. The velocity of the particle is not perpendicular to the magnetic field. What is the path of the particle?",
+                options: ["Straight line", "Circle", "Helix", "Parabola"],
+                correct: 2
+            },
+            {
+                id: 4,
+                topic: "Thermodynamics",
+                question: "For an ideal gas, the ratio of specific heats (Cp/Cv) is γ. What is the molar heat capacity at constant volume?",
+                options: ["R/(γ-1)", "Rγ/(γ-1)", "R/(γ+1)", "Rγ"],
+                correct: 0
+            },
+            {
+                id: 5,
+                topic: "Optics",
+                question: "In Young's double slit experiment, the separation between the slits is d and the distance between the slits and the screen is D. If the wavelength of light used is λ, what is the fringe width?",
+                options: ["λD/d", "λd/D", "D/(λd)", "d/(λD)"],
+                correct: 0
+            },
+            {
+                id: 6,
+                topic: "Modern Physics",
+                question: "The de Broglie wavelength of an electron accelerated through a potential difference V is given by:",
+                options: ["λ = h/√(2meV)", "λ = h/(2meV)", "λ = h/√(meV)", "λ = h/(meV)"],
+                correct: 0
+            },
+            {
+                id: 7,
+                topic: "Mechanics",
+                question: "A uniform rod of length L and mass M is pivoted at one end. What is the moment of inertia about an axis perpendicular to the rod through its center?",
+                options: ["ML²/12", "ML²/3", "ML²/2", "ML²/6"],
+                correct: 0
+            },
+            {
+                id: 8,
+                topic: "Electrodynamics",
+                question: "In an LCR series circuit, at resonance, the impedance of the circuit is:",
+                options: ["Maximum", "Minimum", "Zero", "Infinity"],
+                correct: 1
+            },
+            {
+                id: 9,
+                topic: "Thermodynamics",
+                question: "The efficiency of a Carnot engine operating between temperatures T1 and T2 (T1 > T2) is:",
+                options: ["1 - T2/T1", "1 - T1/T2", "T1/(T1 - T2)", "T2/(T1 - T2)"],
+                correct: 0
+            },
+            {
+                id: 10,
+                topic: "Waves",
+                question: "The fundamental frequency of an open organ pipe is f. If one end is closed, the fundamental frequency becomes:",
+                options: ["f/2", "f", "2f", "4f"],
+                correct: 0
+            },
+            {
+                id: 11,
+                topic: "Modern Physics",
+                question: "In a hydrogen atom, the transition that gives the shortest wavelength in the Balmer series is:",
+                options: ["n=3 to n=2", "n=4 to n=2", "n=∞ to n=2", "n=5 to n=2"],
+                correct: 2
+            },
+            {
+                id: 12,
+                topic: "Mechanics",
+                question: "A satellite is revolving around the earth in a circular orbit. If its kinetic energy is E, what is its potential energy?",
+                options: ["-2E", "2E", "-E", "E/2"],
+                correct: 0
+            },
+            {
+                id: 13,
+                topic: "Electrodynamics",
+                question: "The magnetic field at the center of a current carrying circular loop of radius R is B. If the radius is doubled, the magnetic field becomes:",
+                options: ["B/2", "B/4", "2B", "4B"],
+                correct: 0
+            },
+            {
+                id: 14,
+                topic: "Optics",
+                question: "A convex lens of focal length f is cut into two equal parts along a plane perpendicular to its principal axis. The focal length of each part is:",
+                options: ["f", "f/2", "2f", "4f"],
+                correct: 2
+            },
+            {
+                id: 15,
+                topic: "Thermodynamics",
+                question: "For an adiabatic process, which of the following is correct?",
+                options: ["PV = constant", "PV^γ = constant", "TV^(γ-1) = constant", "Both B and C"],
+                correct: 3
+            },
+            {
+                id: 16,
+                topic: "Modern Physics",
+                question: "The half-life of a radioactive substance is 10 days. The time taken for 7/8 of the sample to decay is:",
+                options: ["20 days", "30 days", "40 days", "50 days"],
+                correct: 1
+            },
+            {
+                id: 17,
+                topic: "Mechanics",
+                question: "A block of mass m is placed on a rough inclined plane. The angle of inclination is θ. If the block is just about to slide, the coefficient of friction is:",
+                options: ["sinθ", "cosθ", "tanθ", "cotθ"],
+                correct: 2
+            },
+            {
+                id: 18,
+                topic: "Electrodynamics",
+                question: "The equivalent capacitance between points A and B in a circuit with two capacitors C1 and C2 in series is:",
+                options: ["C1 + C2", "1/C1 + 1/C2", "C1C2/(C1+C2)", "(C1+C2)/C1C2"],
+                correct: 2
+            },
+            {
+                id: 19,
+                topic: "Waves",
+                question: "A stationary wave is formed by the superposition of two waves: y1 = a sin(ωt - kx) and y2 = a sin(ωt + kx). The amplitude at a node is:",
+                options: ["0", "a", "2a", "a/2"],
+                correct: 0
+            },
+            {
+                id: 20,
+                topic: "Modern Physics",
+                question: "The photoelectric effect demonstrates the:",
+                options: ["Wave nature of light", "Particle nature of light", "Dual nature of light", "None of these"],
+                correct: 1
+            },
+            {
+                id: 21,
+                topic: "Mechanics",
+                question: "A body of mass m is moving in a circular path of radius r with constant speed v. The work done by the centripetal force in half revolution is:",
+                options: ["Zero", "mvr", "2mvr", "0.5mvr"],
+                correct: 0
+            },
+            {
+                id: 22,
+                topic: "Electrodynamics",
+                question: "The resistance of a wire is R. If its length is doubled and radius is halved, the new resistance is:",
+                options: ["R", "2R", "4R", "8R"],
+                correct: 3
+            },
+            {
+                id: 23,
+                topic: "Optics",
+                question: "In a compound microscope, the final image is:",
+                options: ["Real and inverted", "Virtual and erect", "Virtual and inverted", "Real and erect"],
+                correct: 2
+            },
+            {
+                id: 24,
+                topic: "Thermodynamics",
+                question: "The first law of thermodynamics is a statement of:",
+                options: ["Conservation of energy", "Conservation of mass", "Conservation of momentum", "Conservation of charge"],
+                correct: 0
+            },
+            {
+                id: 25,
+                topic: "Modern Physics",
+                question: "In a p-n junction diode, the width of the depletion region increases when:",
+                options: ["Forward biased", "Reverse biased", "Unbiased", "None of these"],
+                correct: 1
+            },
+            {
+                id: 26,
+                topic: "Mechanics",
+                question: "A body is thrown with a velocity of 20 m/s at an angle of 30° with the horizontal. What is the time of flight? (g = 10 m/s²)",
+                options: ["1 s", "2 s", "3 s", "4 s"],
+                correct: 1
+            },
+            {
+                id: 27,
+                topic: "Electrodynamics",
+                question: "The phase difference between voltage and current in a pure inductive circuit is:",
+                options: ["0", "π/2", "π", "π/4"],
+                correct: 1
+            },
+            {
+                id: 28,
+                topic: "Waves",
+                question: "The phenomenon of beats is due to:",
+                options: ["Diffraction", "Interference", "Refraction", "Polarization"],
+                correct: 1
+            },
+            {
+                id: 29,
+                topic: "Optics",
+                question: "The critical angle for a medium is 30°. Its refractive index is:",
+                options: ["1", "2", "1.5", "0.5"],
+                correct: 1
+            },
+            {
+                id: 30,
+                topic: "Modern Physics",
+                question: "The energy of a photon of wavelength 5000 Å is:",
+                options: ["2.48 eV", "3.54 eV", "4.96 eV", "1.24 eV"],
+                correct: 0
             }
+        ];
+
+        // DOM Elements
+        const questionText = document.getElementById('question-text');
+        const topicArea = document.getElementById('topic-area');
+        const optionsContainer = document.getElementById('options-container');
+        const timerBar = document.getElementById('timer-bar');
+        const timerDisplay = document.getElementById('timer');
+        const countdownDisplay = document.getElementById('countdown');
+        const currentSlide = document.getElementById('current-slide');
+        const progressBar = document.getElementById('progress-bar');
+
+        // Quiz State
+        let currentQuestion = 0;
+        let timerInterval;
+        let countdown = 30;
+        let optionsVisible = false;
+
+        // Initialize the quiz
+        function initQuiz() {
+            displayQuestion();
+            startTimer();
+            setupKeyboardNavigation();
+        }
+
+        // Display current question
+        function displayQuestion() {
+            const question = questions[currentQuestion];
+            questionText.textContent = question.question;
+            topicArea.textContent = question.topic;
+            currentSlide.textContent = question.id;
             
-            function animateContentLines(slide) {
-                const contentLines = slide.querySelectorAll('.content-line');
-                contentLines.forEach((line, index) => {
-                    line.classList.remove('visible');
-                    setTimeout(() => line.classList.add('visible'), 3000 * (index + 1));
-                });
-            }
+            // Update progress bar
+            progressBar.style.width = `${(currentQuestion / questions.length) * 100}%`;
             
-            function nextSlide() {
-                if (currentSlideIndex < slides.length - 1) {
-                    currentSlideIndex++;
-                    showSlide(currentSlideIndex);
+            // Clear options and hide them
+            optionsContainer.innerHTML = '';
+            optionsContainer.classList.add('opacity-0');
+            optionsVisible = false;
+        }
+
+        // Start the timer for options to appear
+        function startTimer() {
+            clearInterval(timerInterval);
+            countdown = 30;
+            timerBar.style.width = '100%';
+            timerDisplay.textContent = `${countdown}s`;
+            countdownDisplay.textContent = countdown;
+            
+            timerInterval = setInterval(() => {
+                countdown--;
+                timerDisplay.textContent = `${countdown}s`;
+                countdownDisplay.textContent = countdown;
+                timerBar.style.width = `${(countdown / 30) * 100}%`;
+                
+                if (countdown <= 0) {
+                    clearInterval(timerInterval);
+                    showOptions();
                 }
-            }
+            }, 1000);
+        }
+
+        // Show options for the current question
+        function showOptions() {
+            const question = questions[currentQuestion];
             
-            function prevSlide() {
-                if (currentSlideIndex > 0) {
-                    currentSlideIndex--;
-                    showSlide(currentSlideIndex);
-                }
-            }
-            
-            progressDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentSlideIndex = index;
-                    showSlide(currentSlideIndex);
+            // Create option buttons
+            question.options.forEach((option, index) => {
+                const optionBtn = document.createElement('button');
+                optionBtn.className = 'option-btn w-full bg-white border-2 border-gray-200 rounded-xl p-4 text-left transition-all duration-300 flex items-start text-lg hover:border-knowjee-primary/30';
+                optionBtn.innerHTML = `
+                    <span class="bg-knowjee-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0 font-bold">${String.fromCharCode(65 + index)}</span>
+                    <span class="flex-grow text-gray-800">${option}</span>
+                `;
+                optionBtn.dataset.optionIndex = index;
+                optionBtn.addEventListener('click', () => {
+                    selectOption(index);
                 });
+                optionsContainer.appendChild(optionBtn);
             });
             
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') nextSlide();
-                else if (e.key === 'ArrowLeft') prevSlide();
-            });
+            // Fade in options
+            setTimeout(() => {
+                optionsContainer.classList.remove('opacity-0');
+                optionsVisible = true;
+            }, 300);
+        }
+
+        // Select an option
+        function selectOption(optionIndex) {
+            if (!optionsVisible) return;
             
-            let touchStartX = 0;
-            document.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
+            // Highlight selected option
+            document.querySelectorAll('#options-container button').forEach(btn => {
+                btn.classList.remove('option-selected');
             });
+            document.querySelector(`button[data-option-index="${optionIndex}"]`).classList.add('option-selected');
             
-            document.addEventListener('touchend', function(e) {
-                const touchEndX = e.changedTouches[0].screenX;
-                const swipeThreshold = 50;
+            // Show correct/incorrect feedback after a delay
+            setTimeout(() => {
+                // For demo purposes, we'll just move to next question
+                // In a real app, you would check the answer and show feedback
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    displayQuestion();
+                    startTimer();
+                } else {
+                    // Quiz completed
+                    questionText.textContent = "Quiz Completed! 🎉";
+                    optionsContainer.innerHTML = '<div class="col-span-2 text-center py-8"><p class="text-xl text-knowjee-primary font-bold">Congratulations! You have completed all questions.</p></div>';
+                }
+            }, 1000);
+        }
+
+        // Setup keyboard navigation
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                // Number keys 1-4 to select options
+                if (optionsVisible && e.key >= '1' && e.key <= '4') {
+                    const optionIndex = parseInt(e.key) - 1;
+                    selectOption(optionIndex);
+                }
                 
-                if (touchEndX < touchStartX - swipeThreshold) nextSlide();
-                else if (touchEndX > touchStartX + swipeThreshold) prevSlide();
+                // Arrow keys for navigation
+                if (e.key === 'ArrowLeft' && currentQuestion > 0) {
+                    currentQuestion--;
+                    displayQuestion();
+                    startTimer();
+                }
+                
+                if (e.key === 'ArrowRight' && currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    displayQuestion();
+                    startTimer();
+                }
+                
+                // Space bar to restart timer
+                if (e.key === ' ') {
+                    startTimer();
+                }
             });
-            
-            showSlide(currentSlideIndex);
-        });
+        }
+
+        // Initialize the quiz when page loads
+        document.addEventListener('DOMContentLoaded', initQuiz);
     </script>
 </body>
 </html>
