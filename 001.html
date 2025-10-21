@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KnowJEE Physics Challenge</title>
+    <title>KnowJEE Chemistry Challenge</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -68,9 +68,9 @@
             <div class="flex justify-between items-center mb-4">
                 <div class="text-left">
                     <div class="text-sm opacity-80">Question <span id="current-slide">1</span>/30</div>
-                    <div class="text-xs opacity-70" id="topic-area">Mechanics</div>
+                    <div class="text-xs opacity-70" id="topic-area">Physical Chemistry</div>
                 </div>
-                <h1 class="text-2xl md:text-3xl font-bold">KnowJEE Physics Challenge</h1>
+                <h1 class="text-2xl md:text-3xl font-bold">KnowJEE Chemistry Challenge</h1>
                 <div class="text-right">
                     <div class="text-sm opacity-80 timer-pulse" id="timer">30s</div>
                     <div class="text-xs opacity-70">Time Left</div>
@@ -120,222 +120,222 @@
         
         <!-- Footer -->
         <footer class="bg-knowjee-dark text-white p-4 text-center text-sm">
-            <p>KnowJEE Physics Challenge &copy; 2026 | Use number keys 1-4 to select answers</p>
+            <p>KnowJEE Chemistry Challenge &copy; 2026 | Use number keys 1-4 to select answers</p>
         </footer>
     </div>
 
     <script>
-        // JEE Physics Questions Data
+        // JEE Chemistry Questions Data
         const questions = [
             {
                 id: 1,
-                topic: "Mechanics",
-                question: "A particle moves in a straight line with a constant acceleration. If it covers distances s1 and s2 in the first and second seconds respectively, then what is the acceleration?",
-                options: ["2(s2 - s1)", "s2 - s1", "s2 + s1", "2(s2 + s1)"],
+                topic: "Physical Chemistry",
+                question: "For a first-order reaction, the time required for 99.9% completion is about:",
+                options: ["10 times the half-life", "20 times the half-life", "30 times the half-life", "40 times the half-life"],
                 correct: 0
             },
             {
                 id: 2,
-                topic: "Mechanics",
-                question: "A body is projected vertically upwards with a velocity u. If it passes through a point at height h above the ground at time t1 and t2, then what is the value of u?",
-                options: ["g(t1 + t2)", "g(t1 + t2)/2", "2g(t1 + t2)", "g(t1 - t2)"],
-                correct: 1
+                topic: "Physical Chemistry",
+                question: "The correct order of bond angles in H₂O, NH₃, CH₄ and CO₂ is:",
+                options: ["H₂O < NH₃ < CH₄ < CO₂", "H₂O < NH₃ < CO₂ < CH₄", "CO₂ < H₂O < NH₃ < CH₄", "H₂O < CO₂ < NH₃ < CH₄"],
+                correct: 0
             },
             {
                 id: 3,
-                topic: "Electrodynamics",
-                question: "A charged particle moves in a uniform magnetic field. The velocity of the particle is not perpendicular to the magnetic field. What is the path of the particle?",
-                options: ["Straight line", "Circle", "Helix", "Parabola"],
-                correct: 2
+                topic: "Inorganic Chemistry",
+                question: "Which of the following lanthanoids shows +4 oxidation state?",
+                options: ["Ce", "Eu", "Yb", "Lu"],
+                correct: 0
             },
             {
                 id: 4,
-                topic: "Thermodynamics",
-                question: "For an ideal gas, the ratio of specific heats (Cp/Cv) is γ. What is the molar heat capacity at constant volume?",
-                options: ["R/(γ-1)", "Rγ/(γ-1)", "R/(γ+1)", "Rγ"],
-                correct: 0
+                topic: "Organic Chemistry",
+                question: "The correct order of reactivity towards electrophilic substitution is:",
+                options: ["Phenol > Aniline > Chlorobenzene > Benzene", "Aniline > Phenol > Benzene > Chlorobenzene", "Phenol > Aniline > Benzene > Chlorobenzene", "Aniline > Phenol > Chlorobenzene > Benzene"],
+                correct: 1
             },
             {
                 id: 5,
-                topic: "Optics",
-                question: "In Young's double slit experiment, the separation between the slits is d and the distance between the slits and the screen is D. If the wavelength of light used is λ, what is the fringe width?",
-                options: ["λD/d", "λd/D", "D/(λd)", "d/(λD)"],
-                correct: 0
+                topic: "Physical Chemistry",
+                question: "The pH of a 0.1 M solution of the following salts increases in the order:",
+                options: ["NaCl < NH₄Cl < NaCN < HCl", "HCl < NH₄Cl < NaCl < NaCN", "NaCN < NH₄Cl < NaCl < HCl", "HCl < NaCl < NaCN < NH₄Cl"],
+                correct: 1
             },
             {
                 id: 6,
-                topic: "Modern Physics",
-                question: "The de Broglie wavelength of an electron accelerated through a potential difference V is given by:",
-                options: ["λ = h/√(2meV)", "λ = h/(2meV)", "λ = h/√(meV)", "λ = h/(meV)"],
+                topic: "Organic Chemistry",
+                question: "The correct order of basic strength in gas phase is:",
+                options: ["NH₃ < CH₃NH₂ < (CH₃)₂NH < (CH₃)₃N", "(CH₃)₃N < (CH₃)₂NH < CH₃NH₂ < NH₃", "NH₃ < CH₃NH₂ < (CH₃)₃N < (CH₃)₂NH", "CH₃NH₂ < (CH₃)₂NH < (CH₃)₃N < NH₃"],
                 correct: 0
             },
             {
                 id: 7,
-                topic: "Mechanics",
-                question: "A uniform rod of length L and mass M is pivoted at one end. What is the moment of inertia about an axis perpendicular to the rod through its center?",
-                options: ["ML²/12", "ML²/3", "ML²/2", "ML²/6"],
+                topic: "Inorganic Chemistry",
+                question: "Which of the following is not isostructural with SiCl₄?",
+                options: ["SCl₄", "NH₄⁺", "SO₄²⁻", "PO₄³⁻"],
                 correct: 0
             },
             {
                 id: 8,
-                topic: "Electrodynamics",
-                question: "In an LCR series circuit, at resonance, the impedance of the circuit is:",
-                options: ["Maximum", "Minimum", "Zero", "Infinity"],
-                correct: 1
-            },
-            {
-                id: 9,
-                topic: "Thermodynamics",
-                question: "The efficiency of a Carnot engine operating between temperatures T1 and T2 (T1 > T2) is:",
-                options: ["1 - T2/T1", "1 - T1/T2", "T1/(T1 - T2)", "T2/(T1 - T2)"],
-                correct: 0
-            },
-            {
-                id: 10,
-                topic: "Waves",
-                question: "The fundamental frequency of an open organ pipe is f. If one end is closed, the fundamental frequency becomes:",
-                options: ["f/2", "f", "2f", "4f"],
-                correct: 0
-            },
-            {
-                id: 11,
-                topic: "Modern Physics",
-                question: "In a hydrogen atom, the transition that gives the shortest wavelength in the Balmer series is:",
-                options: ["n=3 to n=2", "n=4 to n=2", "n=∞ to n=2", "n=5 to n=2"],
-                correct: 2
-            },
-            {
-                id: 12,
-                topic: "Mechanics",
-                question: "A satellite is revolving around the earth in a circular orbit. If its kinetic energy is E, what is its potential energy?",
-                options: ["-2E", "2E", "-E", "E/2"],
-                correct: 0
-            },
-            {
-                id: 13,
-                topic: "Electrodynamics",
-                question: "The magnetic field at the center of a current carrying circular loop of radius R is B. If the radius is doubled, the magnetic field becomes:",
-                options: ["B/2", "B/4", "2B", "4B"],
-                correct: 0
-            },
-            {
-                id: 14,
-                topic: "Optics",
-                question: "A convex lens of focal length f is cut into two equal parts along a plane perpendicular to its principal axis. The focal length of each part is:",
-                options: ["f", "f/2", "2f", "4f"],
-                correct: 2
-            },
-            {
-                id: 15,
-                topic: "Thermodynamics",
-                question: "For an adiabatic process, which of the following is correct?",
-                options: ["PV = constant", "PV^γ = constant", "TV^(γ-1) = constant", "Both B and C"],
+                topic: "Physical Chemistry",
+                question: "For a cell reaction involving a two-electron change, the standard emf of the cell is found to be 0.295 V at 25°C. The equilibrium constant of the reaction at 25°C will be:",
+                options: ["1 × 10¹⁰", "29.5 × 10⁻²", "10", "1 × 10¹⁰"],
                 correct: 3
             },
             {
+                id: 9,
+                topic: "Organic Chemistry",
+                question: "The correct order of C-O bond length among CO, CO₃²⁻ and CO₂ is:",
+                options: ["CO < CO₃²⁻ < CO₂", "CO₂ < CO₃²⁻ < CO", "CO < CO₂ < CO₃²⁻", "CO₃²⁻ < CO₂ < CO"],
+                correct: 2
+            },
+            {
+                id: 10,
+                topic: "Physical Chemistry",
+                question: "The correct order of solubility in water is:",
+                options: ["CaSO₄ < SrSO₄ < BaSO₄", "BaSO₄ < SrSO₄ < CaSO₄", "SrSO₄ < BaSO₄ < CaSO₄", "BaSO₄ < CaSO₄ < SrSO₄"],
+                correct: 1
+            },
+            {
+                id: 11,
+                topic: "Organic Chemistry",
+                question: "The correct order of acidic strength is:",
+                options: ["ClCH₂COOH > BrCH₂COOH > FCH₂COOH > CH₃COOH", "FCH₂COOH > ClCH₂COOH > BrCH₂COOH > CH₃COOH", "CH₃COOH > BrCH₂COOH > ClCH₂COOH > FCH₂COOH", "BrCH₂COOH > ClCH₂COOH > FCH₂COOH > CH₃COOH"],
+                correct: 1
+            },
+            {
+                id: 12,
+                topic: "Inorganic Chemistry",
+                question: "Which of the following is not a characteristic of transition elements?",
+                options: ["Variable oxidation states", "Formation of coloured compounds", "Formation of interstitial compounds", "Natural radioactivity"],
+                correct: 3
+            },
+            {
+                id: 13,
+                topic: "Physical Chemistry",
+                question: "The rate constant of a reaction is 1.5 × 10⁷ s⁻¹ at 50°C and 4.5 × 10⁷ s⁻¹ at 100°C. The activation energy of the reaction is:",
+                options: ["24 kJ/mol", "48 kJ/mol", "52 kJ/mol", "60 kJ/mol"],
+                correct: 2
+            },
+            {
+                id: 14,
+                topic: "Organic Chemistry",
+                question: "The correct order of stability of carbocations is:",
+                options: ["CH₃⁺ < (CH₃)₂CH⁺ < (CH₃)₃C⁺", "(CH₃)₃C⁺ < (CH₃)₂CH⁺ < CH₃⁺", "CH₃⁺ < (CH₃)₃C⁺ < (CH₃)₂CH⁺", "(CH₃)₂CH⁺ < CH₃⁺ < (CH₃)₃C⁺"],
+                correct: 0
+            },
+            {
+                id: 15,
+                topic: "Inorganic Chemistry",
+                question: "Among the following, the species with the highest bond order is:",
+                options: ["O₂⁺", "O₂", "O₂⁻", "O₂²⁻"],
+                correct: 0
+            },
+            {
                 id: 16,
-                topic: "Modern Physics",
-                question: "The half-life of a radioactive substance is 10 days. The time taken for 7/8 of the sample to decay is:",
-                options: ["20 days", "30 days", "40 days", "50 days"],
+                topic: "Physical Chemistry",
+                question: "The van't Hoff factor for 0.1 M Ba(NO₃)₂ solution is 2.74. The degree of dissociation is:",
+                options: ["91.3%", "87%", "100%", "74%"],
                 correct: 1
             },
             {
                 id: 17,
-                topic: "Mechanics",
-                question: "A block of mass m is placed on a rough inclined plane. The angle of inclination is θ. If the block is just about to slide, the coefficient of friction is:",
-                options: ["sinθ", "cosθ", "tanθ", "cotθ"],
-                correct: 2
+                topic: "Organic Chemistry",
+                question: "The correct order of dipole moment is:",
+                options: ["CH₃Cl > CH₃F > CH₃Br > CH₃I", "CH₃F > CH₃Cl > CH₃Br > CH₃I", "CH₃Cl > CH₃Br > CH₃I > CH₃F", "CH₃F > CH₃Cl > CH₃I > CH₃Br"],
+                correct: 1
             },
             {
                 id: 18,
-                topic: "Electrodynamics",
-                question: "The equivalent capacitance between points A and B in a circuit with two capacitors C1 and C2 in series is:",
-                options: ["C1 + C2", "1/C1 + 1/C2", "C1C2/(C1+C2)", "(C1+C2)/C1C2"],
+                topic: "Inorganic Chemistry",
+                question: "Which of the following does not give oxygen on heating?",
+                options: ["KClO₃", "Zn(ClO₃)₂", "K₂Cr₂O₇", "(NH₄)₂Cr₂O₇"],
                 correct: 2
             },
             {
                 id: 19,
-                topic: "Waves",
-                question: "A stationary wave is formed by the superposition of two waves: y1 = a sin(ωt - kx) and y2 = a sin(ωt + kx). The amplitude at a node is:",
-                options: ["0", "a", "2a", "a/2"],
+                topic: "Physical Chemistry",
+                question: "The correct order of ionic radii is:",
+                options: ["Na⁺ > Mg²⁺ > Al³⁺ > Si⁴⁺", "Si⁴⁺ > Al³⁺ > Mg²⁺ > Na⁺", "Na⁺ > Al³⁺ > Mg²⁺ > Si⁴⁺", "Al³⁺ > Na⁺ > Mg²⁺ > Si⁴⁺"],
                 correct: 0
             },
             {
                 id: 20,
-                topic: "Modern Physics",
-                question: "The photoelectric effect demonstrates the:",
-                options: ["Wave nature of light", "Particle nature of light", "Dual nature of light", "None of these"],
-                correct: 1
+                topic: "Organic Chemistry",
+                question: "The correct order of boiling points is:",
+                options: ["n-pentane > isopentane > neopentane", "isopentane > n-pentane > neopentane", "neopentane > isopentane > n-pentane", "n-pentane > neopentane > isopentane"],
+                correct: 0
             },
             {
                 id: 21,
-                topic: "Mechanics",
-                question: "A body of mass m is moving in a circular path of radius r with constant speed v. The work done by the centripetal force in half revolution is:",
-                options: ["Zero", "mvr", "2mvr", "0.5mvr"],
-                correct: 0
-            },
-            {
-                id: 22,
-                topic: "Electrodynamics",
-                question: "The resistance of a wire is R. If its length is doubled and radius is halved, the new resistance is:",
-                options: ["R", "2R", "4R", "8R"],
+                topic: "Inorganic Chemistry",
+                question: "Which of the following is not an example of an interstitial compound?",
+                options: ["TiC", "Fe₃C", "VH₀.₅₆", "CrO₃"],
                 correct: 3
             },
             {
+                id: 22,
+                topic: "Physical Chemistry",
+                question: "The correct order of electron affinity is:",
+                options: ["O > S > Se > Te", "S > O > Se > Te", "Te > Se > S > O", "Se > Te > O > S"],
+                correct: 1
+            },
+            {
                 id: 23,
-                topic: "Optics",
-                question: "In a compound microscope, the final image is:",
-                options: ["Real and inverted", "Virtual and erect", "Virtual and inverted", "Real and erect"],
-                correct: 2
+                topic: "Organic Chemistry",
+                question: "The correct order of nucleophilicity in protic solvents is:",
+                options: ["F⁻ > Cl⁻ > Br⁻ > I⁻", "I⁻ > Br⁻ > Cl⁻ > F⁻", "Cl⁻ > Br⁻ > I⁻ > F⁻", "Br⁻ > Cl⁻ > F⁻ > I⁻"],
+                correct: 1
             },
             {
                 id: 24,
-                topic: "Thermodynamics",
-                question: "The first law of thermodynamics is a statement of:",
-                options: ["Conservation of energy", "Conservation of mass", "Conservation of momentum", "Conservation of charge"],
-                correct: 0
+                topic: "Inorganic Chemistry",
+                question: "Which of the following is not a peroxide?",
+                options: ["BaO₂", "CrO₅", "MnO₂", "Na₂O₂"],
+                correct: 2
             },
             {
                 id: 25,
-                topic: "Modern Physics",
-                question: "In a p-n junction diode, the width of the depletion region increases when:",
-                options: ["Forward biased", "Reverse biased", "Unbiased", "None of these"],
-                correct: 1
+                topic: "Physical Chemistry",
+                question: "The correct order of reducing power of halide ions is:",
+                options: ["Cl⁻ > Br⁻ > I⁻ > F⁻", "Br⁻ > Cl⁻ > F⁻ > I⁻", "I⁻ > Br⁻ > Cl⁻ > F⁻", "F⁻ > Cl⁻ > Br⁻ > I⁻"],
+                correct: 2
             },
             {
                 id: 26,
-                topic: "Mechanics",
-                question: "A body is thrown with a velocity of 20 m/s at an angle of 30° with the horizontal. What is the time of flight? (g = 10 m/s²)",
-                options: ["1 s", "2 s", "3 s", "4 s"],
-                correct: 1
+                topic: "Organic Chemistry",
+                question: "The correct order of stability of free radicals is:",
+                options: ["CH₃• < (CH₃)₂CH• < (CH₃)₃C•", "(CH₃)₃C• < (CH₃)₂CH• < CH₃•", "CH₃• < (CH₃)₃C• < (CH₃)₂CH•", "(CH₃)₂CH• < CH₃• < (CH₃)₃C•"],
+                correct: 0
             },
             {
                 id: 27,
-                topic: "Electrodynamics",
-                question: "The phase difference between voltage and current in a pure inductive circuit is:",
-                options: ["0", "π/2", "π", "π/4"],
-                correct: 1
+                topic: "Inorganic Chemistry",
+                question: "Which of the following is not a correct match?",
+                options: ["Fe(CO)₅ - Tetrahedral", "Ni(CO)₄ - Tetrahedral", "Cr(CO)₆ - Octahedral", "Co₂(CO)₈ - Octahedral"],
+                correct: 3
             },
             {
                 id: 28,
-                topic: "Waves",
-                question: "The phenomenon of beats is due to:",
-                options: ["Diffraction", "Interference", "Refraction", "Polarization"],
-                correct: 1
+                topic: "Physical Chemistry",
+                question: "The correct order of lattice energy is:",
+                options: ["NaF > NaCl > NaBr > NaI", "NaI > NaBr > NaCl > NaF", "NaCl > NaF > NaBr > NaI", "NaBr > NaI > NaCl > NaF"],
+                correct: 0
             },
             {
                 id: 29,
-                topic: "Optics",
-                question: "The critical angle for a medium is 30°. Its refractive index is:",
-                options: ["1", "2", "1.5", "0.5"],
-                correct: 1
+                topic: "Organic Chemistry",
+                question: "The correct order of reactivity in SN2 reaction is:",
+                options: ["CH₃CH₂Br > (CH₃)₂CHBr > (CH₃)₃CBr", "(CH₃)₃CBr > (CH₃)₂CHBr > CH₃CH₂Br", "(CH₃)₂CHBr > CH₃CH₂Br > (CH₃)₃CBr", "(CH₃)₃CBr > CH₃CH₂Br > (CH₃)₂CHBr"],
+                correct: 0
             },
             {
                 id: 30,
-                topic: "Modern Physics",
-                question: "The energy of a photon of wavelength 5000 Å is:",
-                options: ["2.48 eV", "3.54 eV", "4.96 eV", "1.24 eV"],
-                correct: 0
+                topic: "Inorganic Chemistry",
+                question: "Which of the following does not exhibit optical isomerism?",
+                options: ["[Co(en)₃]³⁺", "[Co(en)₂Cl₂]⁺", "[Co(NH₃)₃Cl₃]", "[Co(en)(NH₃)₂Cl₂]⁺"],
+                correct: 2
             }
         ];
 
