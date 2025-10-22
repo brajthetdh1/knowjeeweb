@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KnowJEE Chemistry Challenge</title>
+    <title>KnowJEE Mathematics Challenge</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -59,6 +59,18 @@
             50% { opacity: 0.7; }
             100% { opacity: 1; }
         }
+        .math-symbol {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+        .correct-answer {
+            background-color: #d1fae5 !important;
+            border-color: #10b981 !important;
+        }
+        .incorrect-answer {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-knowjee-primary to-knowjee-dark min-h-screen p-4 md:p-8">
@@ -68,11 +80,11 @@
             <div class="flex justify-between items-center mb-4">
                 <div class="text-left">
                     <div class="text-sm opacity-80">Question <span id="current-slide">1</span>/30</div>
-                    <div class="text-xs opacity-70" id="topic-area">Physical Chemistry</div>
+                    <div class="text-xs opacity-70" id="topic-area">Calculus</div>
                 </div>
-                <h1 class="text-2xl md:text-3xl font-bold">KnowJEE Chemistry Challenge</h1>
+                <h1 class="text-2xl md:text-3xl font-bold">KnowJEE Mathematics Challenge</h1>
                 <div class="text-right">
-                    <div class="text-sm opacity-80 timer-pulse" id="timer">30s</div>
+                    <div class="text-sm opacity-80 timer-pulse" id="timer">60s</div>
                     <div class="text-xs opacity-70">Time Left</div>
                 </div>
             </div>
@@ -96,8 +108,8 @@
                 <!-- Timer Bar -->
                 <div class="mb-8">
                     <div class="flex justify-between text-sm text-gray-600 mb-2">
-                        <span class="font-medium">Think about the answer...</span>
-                        <span class="font-semibold">Options appear in: <span id="countdown" class="text-knowjee-primary">30</span>s</span>
+                        <span class="font-medium" id="timer-status">Options appear in: <span id="countdown" class="text-knowjee-primary">30</span>s</span>
+                        <span class="font-semibold">Next question in: <span id="next-question-timer" class="text-knowjee-primary">60</span>s</span>
                     </div>
                     <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
                         <div id="timer-bar" class="bg-gradient-to-r from-knowjee-success to-knowjee-primary h-3 rounded-full w-full transition-all duration-1000 ease-linear"></div>
@@ -110,232 +122,230 @@
                 </div>
 
                 <!-- Navigation Hints -->
-                <!-- <div class="mt-8 text-center text-sm text-gray-600">
-                    <p>Press <kbd class="bg-knowjee-primary text-white px-2 py-1 rounded">1-4</kbd> to select answers • 
-                       <kbd class="bg-gray-200 px-2 py-1 rounded ml-2">←</kbd> Previous • 
-                       <kbd class="bg-gray-200 px-2 py-1 rounded">→</kbd> Next</p>
-                </div> -->
+                <div class="mt-8 text-center text-sm text-gray-600">
+                    <p>Press <kbd class="bg-knowjee-primary text-white px-2 py-1 rounded">1-4</kbd> to select answers</p>
+                </div>
             </div>
         </div>
         
         <!-- Footer -->
         <footer class="bg-knowjee-dark text-white p-4 text-center text-sm">
-            <p>KnowJEE Chemistry Challenge &copy; 2026 | Use number keys 1-4 to select answers</p>
+            <p>KnowJEE Mathematics Challenge &copy; 2026 | Use number keys 1-4 to select answers</p>
         </footer>
     </div>
 
     <script>
-        // JEE Chemistry Questions Data
+        // JEE Mathematics Questions Data
         const questions = [
             {
                 id: 1,
-                topic: "Physical Chemistry",
-                question: "For a first-order reaction, the time required for 99.9% completion is about:",
-                options: ["10 times the half-life", "20 times the half-life", "30 times the half-life", "40 times the half-life"],
-                correct: 0
+                topic: "Calculus",
+                question: "If f(x) = ∫<sub>0</sub><sup>x</sup> (t<sup>2</sup> + 2t + 1) dt, then f'(1) is equal to:",
+                options: ["1", "2", "3", "4"],
+                correct: 3
             },
             {
                 id: 2,
-                topic: "Physical Chemistry",
-                question: "The correct order of bond angles in H₂O, NH₃, CH₄ and CO₂ is:",
-                options: ["H₂O < NH₃ < CH₄ < CO₂", "H₂O < NH₃ < CO₂ < CH₄", "CO₂ < H₂O < NH₃ < CH₄", "H₂O < CO₂ < NH₃ < CH₄"],
-                correct: 0
+                topic: "Algebra",
+                question: "The number of real roots of the equation x<sup>4</sup> - 4x - 1 = 0 is:",
+                options: ["0", "1", "2", "4"],
+                correct: 2
             },
             {
                 id: 3,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following lanthanoids shows +4 oxidation state?",
-                options: ["Ce", "Eu", "Yb", "Lu"],
+                topic: "Coordinate Geometry",
+                question: "The locus of a point which moves such that the sum of its distances from (3,0) and (-3,0) is 10 is:",
+                options: ["x²/25 + y²/16 = 1", "x²/16 + y²/25 = 1", "x²/25 - y²/16 = 1", "x²/16 - y²/25 = 1"],
                 correct: 0
             },
             {
                 id: 4,
-                topic: "Organic Chemistry",
-                question: "The correct order of reactivity towards electrophilic substitution is:",
-                options: ["Phenol > Aniline > Chlorobenzene > Benzene", "Aniline > Phenol > Benzene > Chlorobenzene", "Phenol > Aniline > Benzene > Chlorobenzene", "Aniline > Phenol > Chlorobenzene > Benzene"],
+                topic: "Trigonometry",
+                question: "If sinθ + cosθ = 1, then the value of sin<sup>3</sup>θ + cos<sup>3</sup>θ is:",
+                options: ["0", "1", "-1", "1/2"],
                 correct: 1
             },
             {
                 id: 5,
-                topic: "Physical Chemistry",
-                question: "The pH of a 0.1 M solution of the following salts increases in the order:",
-                options: ["NaCl < NH₄Cl < NaCN < HCl", "HCl < NH₄Cl < NaCl < NaCN", "NaCN < NH₄Cl < NaCl < HCl", "HCl < NaCl < NaCN < NH₄Cl"],
-                correct: 1
-            },
-            {
-                id: 6,
-                topic: "Organic Chemistry",
-                question: "The correct order of basic strength in gas phase is:",
-                options: ["NH₃ < CH₃NH₂ < (CH₃)₂NH < (CH₃)₃N", "(CH₃)₃N < (CH₃)₂NH < CH₃NH₂ < NH₃", "NH₃ < CH₃NH₂ < (CH₃)₃N < (CH₃)₂NH", "CH₃NH₂ < (CH₃)₂NH < (CH₃)₃N < NH₃"],
+                topic: "Calculus",
+                question: "The maximum value of f(x) = x<sup>3</sup> - 3x<sup>2</sup> + 2 on the interval [-1,2] is:",
+                options: ["2", "0", "-2", "4"],
                 correct: 0
             },
             {
+                id: 6,
+                topic: "Vectors",
+                question: "If |a| = 3, |b| = 4 and |a + b| = 5, then |a - b| is equal to:",
+                options: ["3", "4", "5", "6"],
+                correct: 2
+            },
+            {
                 id: 7,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following is not isostructural with SiCl₄?",
-                options: ["SCl₄", "NH₄⁺", "SO₄²⁻", "PO₄³⁻"],
+                topic: "Probability",
+                question: "Three dice are thrown simultaneously. The probability of getting a sum of 15 is:",
+                options: ["5/108", "1/18", "5/72", "7/72"],
                 correct: 0
             },
             {
                 id: 8,
-                topic: "Physical Chemistry",
-                question: "For a cell reaction involving a two-electron change, the standard emf of the cell is found to be 0.295 V at 25°C. The equilibrium constant of the reaction at 25°C will be:",
-                options: ["1 × 10¹⁰", "29.5 × 10⁻²", "10", "1 × 10¹⁰"],
-                correct: 3
+                topic: "Complex Numbers",
+                question: "If z is a complex number such that |z| = 1, then the value of (1 + z)/(1 + z̄) is:",
+                options: ["z", "z̄", "1/z", "1"],
+                correct: 0
             },
             {
                 id: 9,
-                topic: "Organic Chemistry",
-                question: "The correct order of C-O bond length among CO, CO₃²⁻ and CO₂ is:",
-                options: ["CO < CO₃²⁻ < CO₂", "CO₂ < CO₃²⁻ < CO", "CO < CO₂ < CO₃²⁻", "CO₃²⁻ < CO₂ < CO"],
-                correct: 2
+                topic: "Matrices",
+                question: "If A is a 3×3 matrix and |A| = 4, then |adj(adj A)| is equal to:",
+                options: ["4", "16", "64", "256"],
+                correct: 1
             },
             {
                 id: 10,
-                topic: "Physical Chemistry",
-                question: "The correct order of solubility in water is:",
-                options: ["CaSO₄ < SrSO₄ < BaSO₄", "BaSO₄ < SrSO₄ < CaSO₄", "SrSO₄ < BaSO₄ < CaSO₄", "BaSO₄ < CaSO₄ < SrSO₄"],
-                correct: 1
+                topic: "Differential Equations",
+                question: "The solution of the differential equation dy/dx = y/x + tan(y/x) is:",
+                options: ["sin(y/x) = cx", "cos(y/x) = cx", "sin(y/x) = c/x", "cos(y/x) = c/x"],
+                correct: 0
             },
             {
                 id: 11,
-                topic: "Organic Chemistry",
-                question: "The correct order of acidic strength is:",
-                options: ["ClCH₂COOH > BrCH₂COOH > FCH₂COOH > CH₃COOH", "FCH₂COOH > ClCH₂COOH > BrCH₂COOH > CH₃COOH", "CH₃COOH > BrCH₂COOH > ClCH₂COOH > FCH₂COOH", "BrCH₂COOH > ClCH₂COOH > FCH₂COOH > CH₃COOH"],
-                correct: 1
+                topic: "Permutations & Combinations",
+                question: "The number of ways in which 5 boys and 3 girls can be seated in a row so that no two girls are together is:",
+                options: ["14400", "2880", "4800", "2400"],
+                correct: 0
             },
             {
                 id: 12,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following is not a characteristic of transition elements?",
-                options: ["Variable oxidation states", "Formation of coloured compounds", "Formation of interstitial compounds", "Natural radioactivity"],
-                correct: 3
+                topic: "Statistics",
+                question: "The mean deviation about the median for the data 3, 9, 5, 3, 12, 10, 18, 4, 7, 19, 21 is:",
+                options: ["4.27", "5.27", "6.27", "7.27"],
+                correct: 1
             },
             {
                 id: 13,
-                topic: "Physical Chemistry",
-                question: "The rate constant of a reaction is 1.5 × 10⁷ s⁻¹ at 50°C and 4.5 × 10⁷ s⁻¹ at 100°C. The activation energy of the reaction is:",
-                options: ["24 kJ/mol", "48 kJ/mol", "52 kJ/mol", "60 kJ/mol"],
-                correct: 2
+                topic: "Calculus",
+                question: "The value of ∫<sub>0</sub><sup>π/2</sup> log(sin x) dx is:",
+                options: ["-π/2 log 2", "-π log 2", "π/2 log 2", "π log 2"],
+                correct: 0
             },
             {
                 id: 14,
-                topic: "Organic Chemistry",
-                question: "The correct order of stability of carbocations is:",
-                options: ["CH₃⁺ < (CH₃)₂CH⁺ < (CH₃)₃C⁺", "(CH₃)₃C⁺ < (CH₃)₂CH⁺ < CH₃⁺", "CH₃⁺ < (CH₃)₃C⁺ < (CH₃)₂CH⁺", "(CH₃)₂CH⁺ < CH₃⁺ < (CH₃)₃C⁺"],
+                topic: "3D Geometry",
+                question: "The angle between the lines (x-2)/3 = (y+1)/(-2) = (z-2)/1 and (x-1)/1 = (y+2)/3 = (z+3)/(-2) is:",
+                options: ["π/2", "π/3", "π/4", "π/6"],
                 correct: 0
             },
             {
                 id: 15,
-                topic: "Inorganic Chemistry",
-                question: "Among the following, the species with the highest bond order is:",
-                options: ["O₂⁺", "O₂", "O₂⁻", "O₂²⁻"],
-                correct: 0
-            },
-            {
-                id: 16,
-                topic: "Physical Chemistry",
-                question: "The van't Hoff factor for 0.1 M Ba(NO₃)₂ solution is 2.74. The degree of dissociation is:",
-                options: ["91.3%", "87%", "100%", "74%"],
+                topic: "Sets & Relations",
+                question: "Let R be a relation on the set of natural numbers defined by R = {(x,y): x+2y = 10, x,y ∈ N}. The number of elements in R is:",
+                options: ["3", "4", "5", "6"],
                 correct: 1
             },
             {
+                id: 16,
+                topic: "Binomial Theorem",
+                question: "The coefficient of x<sup>5</sup> in the expansion of (1+x)<sup>21</sup> + (1+x)<sup>22</sup> + ... + (1+x)<sup>30</sup> is:",
+                options: ["⁵¹C₅", "⁵¹C₆", "⁵¹C₅ - ²¹C₅", "³¹C₆ - ²¹C₆"],
+                correct: 3
+            },
+            {
                 id: 17,
-                topic: "Organic Chemistry",
-                question: "The correct order of dipole moment is:",
-                options: ["CH₃Cl > CH₃F > CH₃Br > CH₃I", "CH₃F > CH₃Cl > CH₃Br > CH₃I", "CH₃Cl > CH₃Br > CH₃I > CH₃F", "CH₃F > CH₃Cl > CH₃I > CH₃Br"],
+                topic: "Limits",
+                question: "lim<sub>x→0</sub> (tan x - sin x)/x<sup>3</sup> is equal to:",
+                options: ["0", "1/2", "1", "∞"],
                 correct: 1
             },
             {
                 id: 18,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following does not give oxygen on heating?",
-                options: ["KClO₃", "Zn(ClO₃)₂", "K₂Cr₂O₇", "(NH₄)₂Cr₂O₇"],
-                correct: 2
+                topic: "Quadratic Equations",
+                question: "If α and β are the roots of x² - 2x + 3 = 0, then the equation whose roots are α³ - 3α² + 5α - 2 and β³ - β² + β + 5 is:",
+                options: ["x² - 3x + 2 = 0", "x² + 3x + 2 = 0", "x² - 4x + 3 = 0", "x² + 4x + 3 = 0"],
+                correct: 0
             },
             {
                 id: 19,
-                topic: "Physical Chemistry",
-                question: "The correct order of ionic radii is:",
-                options: ["Na⁺ > Mg²⁺ > Al³⁺ > Si⁴⁺", "Si⁴⁺ > Al³⁺ > Mg²⁺ > Na⁺", "Na⁺ > Al³⁺ > Mg²⁺ > Si⁴⁺", "Al³⁺ > Na⁺ > Mg²⁺ > Si⁴⁺"],
+                topic: "Sequences & Series",
+                question: "The sum of the series 1/2 + 3/4 + 7/8 + 15/16 + ... to n terms is:",
+                options: ["n - 1 + 2<sup>-n</sup>", "n - 1 - 2<sup>-n</sup>", "n + 1 + 2<sup>-n</sup>", "n + 1 - 2<sup>-n</sup>"],
                 correct: 0
             },
             {
                 id: 20,
-                topic: "Organic Chemistry",
-                question: "The correct order of boiling points is:",
-                options: ["n-pentane > isopentane > neopentane", "isopentane > n-pentane > neopentane", "neopentane > isopentane > n-pentane", "n-pentane > neopentane > isopentane"],
+                topic: "Determinants",
+                question: "If ω is a cube root of unity, then the value of |(1, ω, ω²), (ω, ω², 1), (ω², 1, ω)| is:",
+                options: ["0", "1", "ω", "ω²"],
                 correct: 0
             },
             {
                 id: 21,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following is not an example of an interstitial compound?",
-                options: ["TiC", "Fe₃C", "VH₀.₅₆", "CrO₃"],
-                correct: 3
-            },
-            {
-                id: 22,
-                topic: "Physical Chemistry",
-                question: "The correct order of electron affinity is:",
-                options: ["O > S > Se > Te", "S > O > Se > Te", "Te > Se > S > O", "Se > Te > O > S"],
-                correct: 1
-            },
-            {
-                id: 23,
-                topic: "Organic Chemistry",
-                question: "The correct order of nucleophilicity in protic solvents is:",
-                options: ["F⁻ > Cl⁻ > Br⁻ > I⁻", "I⁻ > Br⁻ > Cl⁻ > F⁻", "Cl⁻ > Br⁻ > I⁻ > F⁻", "Br⁻ > Cl⁻ > F⁻ > I⁻"],
-                correct: 1
-            },
-            {
-                id: 24,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following is not a peroxide?",
-                options: ["BaO₂", "CrO₅", "MnO₂", "Na₂O₂"],
-                correct: 2
-            },
-            {
-                id: 25,
-                topic: "Physical Chemistry",
-                question: "The correct order of reducing power of halide ions is:",
-                options: ["Cl⁻ > Br⁻ > I⁻ > F⁻", "Br⁻ > Cl⁻ > F⁻ > I⁻", "I⁻ > Br⁻ > Cl⁻ > F⁻", "F⁻ > Cl⁻ > Br⁻ > I⁻"],
-                correct: 2
-            },
-            {
-                id: 26,
-                topic: "Organic Chemistry",
-                question: "The correct order of stability of free radicals is:",
-                options: ["CH₃• < (CH₃)₂CH• < (CH₃)₃C•", "(CH₃)₃C• < (CH₃)₂CH• < CH₃•", "CH₃• < (CH₃)₃C• < (CH₃)₂CH•", "(CH₃)₂CH• < CH₃• < (CH₃)₃C•"],
+                topic: "Functions",
+                question: "The domain of the function f(x) = √(log<sub>0.5</sub>(x² - 5x + 6)) is:",
+                options: ["(2,3)", "[2,3]", "(-∞,2)∪(3,∞)", "(-∞,2]∪[3,∞)"],
                 correct: 0
             },
             {
+                id: 22,
+                topic: "Integration",
+                question: "∫ dx/(x(x<sup>n</sup>+1)) is equal to:",
+                options: ["1/n log(x<sup>n</sup>/(x<sup>n</sup>+1)) + C", "1/n log((x<sup>n</sup>+1)/x<sup>n</sup>) + C", "log(x<sup>n</sup>/(x<sup>n</sup>+1)) + C", "log((x<sup>n</sup>+1)/x<sup>n</sup>) + C"],
+                correct: 0
+            },
+            {
+                id: 23,
+                topic: "Probability",
+                question: "A man is known to speak truth 3 out of 4 times. He throws a die and reports that it is a six. The probability that it is actually a six is:",
+                options: ["3/8", "1/5", "3/4", "1/3"],
+                correct: 0
+            },
+            {
+                id: 24,
+                topic: "Mathematical Reasoning",
+                question: "The negation of the statement 'If it rains, then I will go to school' is:",
+                options: ["It rains and I will not go to school", "If it does not rain, then I will not go to school", "It rains or I will not go to school", "If I do not go to school, then it does not rain"],
+                correct: 0
+            },
+            {
+                id: 25,
+                topic: "Statistics",
+                question: "The variance of first n natural numbers is:",
+                options: ["(n²-1)/12", "(n²+1)/12", "(n²-1)/6", "(n²+1)/6"],
+                correct: 0
+            },
+            {
+                id: 26,
+                topic: "Complex Numbers",
+                question: "If |z₁| = |z₂| and arg(z₁) + arg(z₂) = 0, then:",
+                options: ["z₁ = z₂", "z₁ = z̄₂", "z₁z₂ = 1", "z₁ + z₂ = 0"],
+                correct: 1
+            },
+            {
                 id: 27,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following is not a correct match?",
-                options: ["Fe(CO)₅ - Tetrahedral", "Ni(CO)₄ - Tetrahedral", "Cr(CO)₆ - Octahedral", "Co₂(CO)₈ - Octahedral"],
-                correct: 3
+                topic: "Vectors",
+                question: "If a, b, c are unit vectors such that a + b + c = 0, then a·b + b·c + c·a is equal to:",
+                options: ["1", "3", "-3/2", "3/2"],
+                correct: 2
             },
             {
                 id: 28,
-                topic: "Physical Chemistry",
-                question: "The correct order of lattice energy is:",
-                options: ["NaF > NaCl > NaBr > NaI", "NaI > NaBr > NaCl > NaF", "NaCl > NaF > NaBr > NaI", "NaBr > NaI > NaCl > NaF"],
+                topic: "3D Geometry",
+                question: "The distance between the parallel planes 2x - y + 2z + 3 = 0 and 4x - 2y + 4z + 5 = 0 is:",
+                options: ["1/6", "1/3", "1/2", "2/3"],
                 correct: 0
             },
             {
                 id: 29,
-                topic: "Organic Chemistry",
-                question: "The correct order of reactivity in SN2 reaction is:",
-                options: ["CH₃CH₂Br > (CH₃)₂CHBr > (CH₃)₃CBr", "(CH₃)₃CBr > (CH₃)₂CHBr > CH₃CH₂Br", "(CH₃)₂CHBr > CH₃CH₂Br > (CH₃)₃CBr", "(CH₃)₃CBr > CH₃CH₂Br > (CH₃)₂CHBr"],
+                topic: "Differential Equations",
+                question: "The solution of (x+y)dy = (x-y)dx is:",
+                options: ["x² + y² = 2tan⁻¹(y/x) + C", "x² + y² = 2tan⁻¹(x/y) + C", "x² - y² = 2tan⁻¹(y/x) + C", "x² - y² = 2tan⁻¹(x/y) + C"],
                 correct: 0
             },
             {
                 id: 30,
-                topic: "Inorganic Chemistry",
-                question: "Which of the following does not exhibit optical isomerism?",
-                options: ["[Co(en)₃]³⁺", "[Co(en)₂Cl₂]⁺", "[Co(NH₃)₃Cl₃]", "[Co(en)(NH₃)₂Cl₂]⁺"],
-                correct: 2
+                topic: "Calculus",
+                question: "The area bounded by the curves y = |x-1| and y = 1 is:",
+                options: ["1", "2", "3", "4"],
+                correct: 0
             }
         ];
 
@@ -346,26 +356,31 @@
         const timerBar = document.getElementById('timer-bar');
         const timerDisplay = document.getElementById('timer');
         const countdownDisplay = document.getElementById('countdown');
+        const nextQuestionTimerDisplay = document.getElementById('next-question-timer');
+        const timerStatus = document.getElementById('timer-status');
         const currentSlide = document.getElementById('current-slide');
         const progressBar = document.getElementById('progress-bar');
 
         // Quiz State
         let currentQuestion = 0;
         let timerInterval;
+        let nextQuestionInterval;
         let countdown = 30;
+        let nextQuestionCountdown = 60;
         let optionsVisible = false;
+        let answerSelected = false;
 
         // Initialize the quiz
         function initQuiz() {
             displayQuestion();
-            startTimer();
+            startTimers();
             setupKeyboardNavigation();
         }
 
         // Display current question
         function displayQuestion() {
             const question = questions[currentQuestion];
-            questionText.textContent = question.question;
+            questionText.innerHTML = question.question;
             topicArea.textContent = question.topic;
             currentSlide.textContent = question.id;
             
@@ -376,25 +391,47 @@
             optionsContainer.innerHTML = '';
             optionsContainer.classList.add('opacity-0');
             optionsVisible = false;
+            answerSelected = false;
+            
+            // Reset timer status
+            timerStatus.innerHTML = 'Options appear in: <span id="countdown" class="text-knowjee-primary">30</span>s';
         }
 
-        // Start the timer for options to appear
-        function startTimer() {
+        // Start the timers
+        function startTimers() {
             clearInterval(timerInterval);
-            countdown = 30;
-            timerBar.style.width = '100%';
-            timerDisplay.textContent = `${countdown}s`;
-            countdownDisplay.textContent = countdown;
+            clearInterval(nextQuestionInterval);
             
+            countdown = 30;
+            nextQuestionCountdown = 60;
+            
+            timerBar.style.width = '100%';
+            timerDisplay.textContent = `${nextQuestionCountdown}s`;
+            countdownDisplay.textContent = countdown;
+            nextQuestionTimerDisplay.textContent = nextQuestionCountdown;
+            
+            // Timer for options to appear
             timerInterval = setInterval(() => {
                 countdown--;
-                timerDisplay.textContent = `${countdown}s`;
                 countdownDisplay.textContent = countdown;
-                timerBar.style.width = `${(countdown / 30) * 100}%`;
                 
                 if (countdown <= 0) {
                     clearInterval(timerInterval);
                     showOptions();
+                    timerStatus.textContent = 'Select your answer:';
+                }
+            }, 1000);
+            
+            // Timer for next question
+            nextQuestionInterval = setInterval(() => {
+                nextQuestionCountdown--;
+                timerDisplay.textContent = `${nextQuestionCountdown}s`;
+                nextQuestionTimerDisplay.textContent = nextQuestionCountdown;
+                timerBar.style.width = `${(nextQuestionCountdown / 60) * 100}%`;
+                
+                if (nextQuestionCountdown <= 0) {
+                    clearInterval(nextQuestionInterval);
+                    moveToNextQuestion();
                 }
             }, 1000);
         }
@@ -427,28 +464,48 @@
 
         // Select an option
         function selectOption(optionIndex) {
-            if (!optionsVisible) return;
+            if (!optionsVisible || answerSelected) return;
+            
+            answerSelected = true;
+            
+            const question = questions[currentQuestion];
+            const isCorrect = optionIndex === question.correct;
             
             // Highlight selected option
             document.querySelectorAll('#options-container button').forEach(btn => {
                 btn.classList.remove('option-selected');
             });
-            document.querySelector(`button[data-option-index="${optionIndex}"]`).classList.add('option-selected');
             
-            // Show correct/incorrect feedback after a delay
-            setTimeout(() => {
-                // For demo purposes, we'll just move to next question
-                // In a real app, you would check the answer and show feedback
-                if (currentQuestion < questions.length - 1) {
-                    currentQuestion++;
-                    displayQuestion();
-                    startTimer();
-                } else {
-                    // Quiz completed
-                    questionText.textContent = "Quiz Completed! 🎉";
-                    optionsContainer.innerHTML = '<div class="col-span-2 text-center py-8"><p class="text-xl text-knowjee-primary font-bold">Congratulations! You have completed all questions.</p></div>';
-                }
-            }, 1000);
+            const selectedBtn = document.querySelector(`button[data-option-index="${optionIndex}"]`);
+            selectedBtn.classList.add('option-selected');
+            
+            // Show correct/incorrect feedback
+            if (isCorrect) {
+                selectedBtn.classList.add('correct-answer');
+            } else {
+                selectedBtn.classList.add('incorrect-answer');
+                // Also highlight the correct answer
+                const correctBtn = document.querySelector(`button[data-option-index="${question.correct}"]`);
+                correctBtn.classList.add('correct-answer');
+            }
+        }
+
+        // Move to next question
+        function moveToNextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+                startTimers();
+            } else {
+                // Quiz completed
+                questionText.textContent = "Quiz Completed! 🎉";
+                optionsContainer.innerHTML = '<div class="col-span-2 text-center py-8"><p class="text-xl text-knowjee-primary font-bold">Congratulations! You have completed all questions.</p></div>';
+                clearInterval(timerInterval);
+                clearInterval(nextQuestionInterval);
+                timerDisplay.textContent = "0s";
+                nextQuestionTimerDisplay.textContent = "0s";
+                timerBar.style.width = '0%';
+            }
         }
 
         // Setup keyboard navigation
@@ -458,24 +515,6 @@
                 if (optionsVisible && e.key >= '1' && e.key <= '4') {
                     const optionIndex = parseInt(e.key) - 1;
                     selectOption(optionIndex);
-                }
-                
-                // Arrow keys for navigation
-                if (e.key === 'ArrowLeft' && currentQuestion > 0) {
-                    currentQuestion--;
-                    displayQuestion();
-                    startTimer();
-                }
-                
-                if (e.key === 'ArrowRight' && currentQuestion < questions.length - 1) {
-                    currentQuestion++;
-                    displayQuestion();
-                    startTimer();
-                }
-                
-                // Space bar to restart timer
-                if (e.key === ' ') {
-                    startTimer();
                 }
             });
         }
