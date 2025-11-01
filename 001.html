@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KnowJEE Mathematics Challenge</title>
+    <title>KnowJEE Math Challenge</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -59,17 +59,17 @@
             50% { opacity: 0.7; }
             100% { opacity: 1; }
         }
-        .math-symbol {
+        .math-formula {
             font-family: 'Times New Roman', serif;
             font-style: italic;
         }
-        .correct-answer {
-            background-color: #d1fae5 !important;
-            border-color: #10b981 !important;
+        .timer-warning {
+            animation: warning-pulse 1s infinite;
         }
-        .incorrect-answer {
-            background-color: #fee2e2 !important;
-            border-color: #ef4444 !important;
+        @keyframes warning-pulse {
+            0% { color: #ef4444; }
+            50% { color: #f87171; }
+            100% { color: #ef4444; }
         }
     </style>
 </head>
@@ -79,19 +79,19 @@
         <header class="knowjee-gradient text-white p-6 md:p-8 text-center">
             <div class="flex justify-between items-center mb-4">
                 <div class="text-left">
-                    <div class="text-sm opacity-80">Question <span id="current-slide">1</span>/30</div>
-                    <div class="text-xs opacity-70" id="topic-area">Calculus</div>
+                    <div class="text-sm opacity-80">Question <span id="current-slide">1</span>/10</div>
+                    <div class="text-xs opacity-70" id="topic-area">Algebra</div>
                 </div>
-                <h1 class="text-2xl md:text-3xl font-bold">KnowJEE Mathematics Challenge</h1>
+                <h1 class="text-2xl md:text-3xl font-bold">KnowJEE Math Challenge</h1>
                 <div class="text-right">
-                    <div class="text-sm opacity-80 timer-pulse" id="timer">60s</div>
-                    <div class="text-xs opacity-70">Time Left</div>
+                    <div class="text-sm opacity-80 timer-pulse" id="timer">15s</div>
+                    <div class="text-xs opacity-70" id="timer-label">Think Time</div>
                 </div>
             </div>
             
             <!-- Progress Bar -->
             <div class="w-full bg-white/20 rounded-full h-2 mt-2">
-                <div id="progress-bar" class="bg-knowjee-accent h-2 rounded-full transition-all duration-500" style="width: 3.33%"></div>
+                <div id="progress-bar" class="bg-knowjee-accent h-2 rounded-full transition-all duration-500" style="width: 10%"></div>
             </div>
         </header>
 
@@ -108,8 +108,8 @@
                 <!-- Timer Bar -->
                 <div class="mb-8">
                     <div class="flex justify-between text-sm text-gray-600 mb-2">
-                        <span class="font-medium" id="timer-status">Options appear in: <span id="countdown" class="text-knowjee-primary">30</span>s</span>
-                        <span class="font-semibold">Next question in: <span id="next-question-timer" class="text-knowjee-primary">60</span>s</span>
+                        <span class="font-medium" id="timer-message">Think about the answer...</span>
+                        <span class="font-semibold" id="countdown-display">Options appear in: <span id="countdown" class="text-knowjee-primary">15</span>s</span>
                     </div>
                     <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
                         <div id="timer-bar" class="bg-gradient-to-r from-knowjee-success to-knowjee-primary h-3 rounded-full w-full transition-all duration-1000 ease-linear"></div>
@@ -123,231 +123,378 @@
 
                 <!-- Navigation Hints -->
                 <div class="mt-8 text-center text-sm text-gray-600">
-                    <p>Press <kbd class="bg-knowjee-primary text-white px-2 py-1 rounded">1-4</kbd> to select answers</p>
+                    <p>Press <kbd class="bg-knowjee-primary text-white px-2 py-1 rounded">1-4</kbd> to select answers • 
+                       <kbd class="bg-gray-200 px-2 py-1 rounded ml-2">←</kbd> Previous • 
+                       <kbd class="bg-gray-200 px-2 py-1 rounded">→</kbd> Next</p>
                 </div>
             </div>
         </div>
         
         <!-- Footer -->
         <footer class="bg-knowjee-dark text-white p-4 text-center text-sm">
-            <p>KnowJEE Mathematics Challenge &copy; 2026 | Use number keys 1-4 to select answers</p>
+            <p>KnowJEE Math Challenge &copy; 2026 | Use number keys 1-4 to select answers</p>
         </footer>
     </div>
 
     <script>
-        // JEE Mathematics Questions Data
-        const questions = [
-            {
-                id: 1,
-                topic: "Calculus",
-                question: "If f(x) = ∫<sub>0</sub><sup>x</sup> (t<sup>2</sup> + 2t + 1) dt, then f'(1) is equal to:",
-                options: ["1", "2", "3", "4"],
-                correct: 3
-            },
-            {
-                id: 2,
-                topic: "Algebra",
-                question: "The number of real roots of the equation x<sup>4</sup> - 4x - 1 = 0 is:",
-                options: ["0", "1", "2", "4"],
-                correct: 2
-            },
-            {
-                id: 3,
-                topic: "Coordinate Geometry",
-                question: "The locus of a point which moves such that the sum of its distances from (3,0) and (-3,0) is 10 is:",
-                options: ["x²/25 + y²/16 = 1", "x²/16 + y²/25 = 1", "x²/25 - y²/16 = 1", "x²/16 - y²/25 = 1"],
-                correct: 0
-            },
-            {
-                id: 4,
-                topic: "Trigonometry",
-                question: "If sinθ + cosθ = 1, then the value of sin<sup>3</sup>θ + cos<sup>3</sup>θ is:",
-                options: ["0", "1", "-1", "1/2"],
-                correct: 1
-            },
-            {
-                id: 5,
-                topic: "Calculus",
-                question: "The maximum value of f(x) = x<sup>3</sup> - 3x<sup>2</sup> + 2 on the interval [-1,2] is:",
-                options: ["2", "0", "-2", "4"],
-                correct: 0
-            },
-            {
-                id: 6,
-                topic: "Vectors",
-                question: "If |a| = 3, |b| = 4 and |a + b| = 5, then |a - b| is equal to:",
-                options: ["3", "4", "5", "6"],
-                correct: 2
-            },
-            {
-                id: 7,
-                topic: "Probability",
-                question: "Three dice are thrown simultaneously. The probability of getting a sum of 15 is:",
-                options: ["5/108", "1/18", "5/72", "7/72"],
-                correct: 0
-            },
-            {
-                id: 8,
-                topic: "Complex Numbers",
-                question: "If z is a complex number such that |z| = 1, then the value of (1 + z)/(1 + z̄) is:",
-                options: ["z", "z̄", "1/z", "1"],
-                correct: 0
-            },
-            {
-                id: 9,
-                topic: "Matrices",
-                question: "If A is a 3×3 matrix and |A| = 4, then |adj(adj A)| is equal to:",
-                options: ["4", "16", "64", "256"],
-                correct: 1
-            },
-            {
-                id: 10,
-                topic: "Differential Equations",
-                question: "The solution of the differential equation dy/dx = y/x + tan(y/x) is:",
-                options: ["sin(y/x) = cx", "cos(y/x) = cx", "sin(y/x) = c/x", "cos(y/x) = c/x"],
-                correct: 0
-            },
-            {
-                id: 11,
-                topic: "Permutations & Combinations",
-                question: "The number of ways in which 5 boys and 3 girls can be seated in a row so that no two girls are together is:",
-                options: ["14400", "2880", "4800", "2400"],
-                correct: 0
-            },
-            {
-                id: 12,
-                topic: "Statistics",
-                question: "The mean deviation about the median for the data 3, 9, 5, 3, 12, 10, 18, 4, 7, 19, 21 is:",
-                options: ["4.27", "5.27", "6.27", "7.27"],
-                correct: 1
-            },
-            {
-                id: 13,
-                topic: "Calculus",
-                question: "The value of ∫<sub>0</sub><sup>π/2</sup> log(sin x) dx is:",
-                options: ["-π/2 log 2", "-π log 2", "π/2 log 2", "π log 2"],
-                correct: 0
-            },
-            {
-                id: 14,
-                topic: "3D Geometry",
-                question: "The angle between the lines (x-2)/3 = (y+1)/(-2) = (z-2)/1 and (x-1)/1 = (y+2)/3 = (z+3)/(-2) is:",
-                options: ["π/2", "π/3", "π/4", "π/6"],
-                correct: 0
-            },
-            {
-                id: 15,
-                topic: "Sets & Relations",
-                question: "Let R be a relation on the set of natural numbers defined by R = {(x,y): x+2y = 10, x,y ∈ N}. The number of elements in R is:",
-                options: ["3", "4", "5", "6"],
-                correct: 1
-            },
-            {
-                id: 16,
-                topic: "Binomial Theorem",
-                question: "The coefficient of x<sup>5</sup> in the expansion of (1+x)<sup>21</sup> + (1+x)<sup>22</sup> + ... + (1+x)<sup>30</sup> is:",
-                options: ["⁵¹C₅", "⁵¹C₆", "⁵¹C₅ - ²¹C₅", "³¹C₆ - ²¹C₆"],
-                correct: 3
-            },
-            {
-                id: 17,
-                topic: "Limits",
-                question: "lim<sub>x→0</sub> (tan x - sin x)/x<sup>3</sup> is equal to:",
-                options: ["0", "1/2", "1", "∞"],
-                correct: 1
-            },
-            {
-                id: 18,
-                topic: "Quadratic Equations",
-                question: "If α and β are the roots of x² - 2x + 3 = 0, then the equation whose roots are α³ - 3α² + 5α - 2 and β³ - β² + β + 5 is:",
-                options: ["x² - 3x + 2 = 0", "x² + 3x + 2 = 0", "x² - 4x + 3 = 0", "x² + 4x + 3 = 0"],
-                correct: 0
-            },
-            {
-                id: 19,
-                topic: "Sequences & Series",
-                question: "The sum of the series 1/2 + 3/4 + 7/8 + 15/16 + ... to n terms is:",
-                options: ["n - 1 + 2<sup>-n</sup>", "n - 1 - 2<sup>-n</sup>", "n + 1 + 2<sup>-n</sup>", "n + 1 - 2<sup>-n</sup>"],
-                correct: 0
-            },
-            {
-                id: 20,
-                topic: "Determinants",
-                question: "If ω is a cube root of unity, then the value of |(1, ω, ω²), (ω, ω², 1), (ω², 1, ω)| is:",
-                options: ["0", "1", "ω", "ω²"],
-                correct: 0
-            },
-            {
-                id: 21,
-                topic: "Functions",
-                question: "The domain of the function f(x) = √(log<sub>0.5</sub>(x² - 5x + 6)) is:",
-                options: ["(2,3)", "[2,3]", "(-∞,2)∪(3,∞)", "(-∞,2]∪[3,∞)"],
-                correct: 0
-            },
-            {
-                id: 22,
-                topic: "Integration",
-                question: "∫ dx/(x(x<sup>n</sup>+1)) is equal to:",
-                options: ["1/n log(x<sup>n</sup>/(x<sup>n</sup>+1)) + C", "1/n log((x<sup>n</sup>+1)/x<sup>n</sup>) + C", "log(x<sup>n</sup>/(x<sup>n</sup>+1)) + C", "log((x<sup>n</sup>+1)/x<sup>n</sup>) + C"],
-                correct: 0
-            },
-            {
-                id: 23,
-                topic: "Probability",
-                question: "A man is known to speak truth 3 out of 4 times. He throws a die and reports that it is a six. The probability that it is actually a six is:",
-                options: ["3/8", "1/5", "3/4", "1/3"],
-                correct: 0
-            },
-            {
-                id: 24,
-                topic: "Mathematical Reasoning",
-                question: "The negation of the statement 'If it rains, then I will go to school' is:",
-                options: ["It rains and I will not go to school", "If it does not rain, then I will not go to school", "It rains or I will not go to school", "If I do not go to school, then it does not rain"],
-                correct: 0
-            },
-            {
-                id: 25,
-                topic: "Statistics",
-                question: "The variance of first n natural numbers is:",
-                options: ["(n²-1)/12", "(n²+1)/12", "(n²-1)/6", "(n²+1)/6"],
-                correct: 0
-            },
-            {
-                id: 26,
-                topic: "Complex Numbers",
-                question: "If |z₁| = |z₂| and arg(z₁) + arg(z₂) = 0, then:",
-                options: ["z₁ = z₂", "z₁ = z̄₂", "z₁z₂ = 1", "z₁ + z₂ = 0"],
-                correct: 1
-            },
-            {
-                id: 27,
-                topic: "Vectors",
-                question: "If a, b, c are unit vectors such that a + b + c = 0, then a·b + b·c + c·a is equal to:",
-                options: ["1", "3", "-3/2", "3/2"],
-                correct: 2
-            },
-            {
-                id: 28,
-                topic: "3D Geometry",
-                question: "The distance between the parallel planes 2x - y + 2z + 3 = 0 and 4x - 2y + 4z + 5 = 0 is:",
-                options: ["1/6", "1/3", "1/2", "2/3"],
-                correct: 0
-            },
-            {
-                id: 29,
-                topic: "Differential Equations",
-                question: "The solution of (x+y)dy = (x-y)dx is:",
-                options: ["x² + y² = 2tan⁻¹(y/x) + C", "x² + y² = 2tan⁻¹(x/y) + C", "x² - y² = 2tan⁻¹(y/x) + C", "x² - y² = 2tan⁻¹(x/y) + C"],
-                correct: 0
-            },
-            {
-                id: 30,
-                topic: "Calculus",
-                question: "The area bounded by the curves y = |x-1| and y = 1 is:",
-                options: ["1", "2", "3", "4"],
-                correct: 0
-            }
-        ];
+        // JEE Math Questions Data
+        const questions = 
+        
+        [
+  {
+    "id": 1,
+    "topic": "Algebra",
+    "question": "If the equation x³ - 3x² + 5x - 17 = 0 has roots α, β, γ, then the value of (α² + β² + γ²)(α³ + β³ + γ³) is:",
+    "options": ["153", "289", "324", "361"],
+    "correct": 1
+  },
+  {
+    "id": 2,
+    "topic": "Calculus",
+    "question": "The number of points of non-differentiability of f(x) = |x³ - 6x² + 11x - 6| in the interval [0,4] is:",
+    "options": ["1", "2", "3", "4"],
+    "correct": 2
+  },
+  {
+    "id": 3,
+    "topic": "Coordinate Geometry",
+    "question": "The area of the quadrilateral formed by the tangents at the ends of the latus rectum of the ellipse x²/9 + y²/5 = 1 is:",
+    "options": ["27", "36", "54", "72"],
+    "correct": 0
+  },
+  {
+    "id": 4,
+    "topic": "Trigonometry",
+    "question": "If tanA + tanB + tanC = tanA.tanB.tanC, then the value of sin²A + sin²B + sin²C is:",
+    "options": ["1", "2", "3", "4"],
+    "correct": 1
+  },
+  {
+    "id": 5,
+    "topic": "Probability",
+    "question": "Five different marbles are placed in 5 different boxes randomly. The probability that exactly two boxes remain empty is:",
+    "options": ["12/25", "24/125", "36/125", "48/125"],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "topic": "Matrices",
+    "question": "If A is a square matrix of order 3 such that |A| = 2 and |adj(adj(2A))| = 2ⁿ, then n equals:",
+    "options": ["12", "15", "18", "21"],
+    "correct": 2
+  },
+  {
+    "id": 7,
+    "topic": "Complex Numbers",
+    "question": "If z is a complex number satisfying |z - 3 - 4i| ≤ 4, then the difference between maximum and minimum values of |z| is:",
+    "options": ["4", "6", "8", "10"],
+    "correct": 2
+  },
+  {
+    "id": 8,
+    "topic": "Vectors",
+    "question": "If a, b, c are three non-coplanar vectors and p, q, r are reciprocal vectors, then (a×p + b×q + c×r).(aα + bβ + cγ) equals:",
+    "options": ["0", "α + β + γ", "αβγ", "1"],
+    "correct": 1
+  },
+  {
+    "id": 9,
+    "topic": "Integration",
+    "question": "The value of ∫(x²/(x⁴ + x² + 1))dx from 0 to ∞ is:",
+    "options": ["π/2√3", "π/√3", "π/3√3", "π/6√3"],
+    "correct": 0
+  },
+  {
+    "id": 10,
+    "topic": "Permutations & Combinations",
+    "question": "The number of ways in which 5 identical balls can be distributed in 10 different boxes, if not more than one ball can go into a box is:",
+    "options": ["¹⁰C₅", "⁹C₅", "¹⁰P₅", "⁹P₅"],
+    "correct": 0
+  },
+  {
+    "id": 11,
+    "topic": "Differential Equations",
+    "question": "The solution of (x² + y²)dx - 2xydy = 0, satisfying y(1) = 1 is:",
+    "options": ["x² - y² = 2xy", "x² + y² = 2x", "x² - y² = x", "x² + y² = 2y"],
+    "correct": 2
+  },
+  {
+    "id": 12,
+    "topic": "3D Geometry",
+    "question": "The distance between the lines (x-1)/2 = (y-2)/3 = (z-3)/4 and (x-2)/3 = (y-3)/4 = (z-4)/5 is:",
+    "options": ["1/√6", "√6", "1/3", "√3"],
+    "correct": 0
+  },
+  {
+    "id": 13,
+    "topic": "Binomial Theorem",
+    "question": "If the coefficient of x⁷ in (ax² + 1/bx)¹¹ equals coefficient of x⁻⁷ in (ax - 1/bx²)¹¹, then ab equals:",
+    "options": ["1", "2", "3", "4"],
+    "correct": 0
+  },
+  {
+    "id": 14,
+    "topic": "Sequence & Series",
+    "question": "The sum of the series 1² + (1² + 2²) + (1² + 2² + 3²) + ... to n terms is:",
+    "options": ["n(n+1)²(n+2)/12", "n(n+1)(n+2)(n+3)/12", "n(n+1)(2n+1)/6", "n²(n+1)²/4"],
+    "correct": 0
+  },
+  {
+    "id": 15,
+    "topic": "Quadratic Equations",
+    "question": "If α, β are roots of x² - px + q = 0 and α⁴, β⁴ are roots of x² - rx + s = 0, then the roots of x² - 4qx + 2q² - r = 0 are:",
+    "options": ["α², β²", "α³, β³", "α + β, αβ", "α² + β², αβ"],
+    "correct": 0
+  },
+  {
+    "id": 16,
+    "topic": "Determinants",
+    "question": "If a, b, c are in GP and a, b, c > 0, then the value of |log a, log b, log c; log 2a, log 2b, log 2c; log 3a, log 3b, log 3c| is:",
+    "options": ["0", "1", "log 6", "log 2"],
+    "correct": 0
+  },
+  {
+    "id": 17,
+    "topic": "Functions",
+    "question": "The domain of f(x) = √(log₁/₂(log₂([x²]/4 + 2))) where [.] denotes greatest integer function is:",
+    "options": ["(-2,-1]", "[1,2)", "(-2,-1] ∪ [1,2)", "(-∞,-2) ∪ (2,∞)"],
+    "correct": 2
+  },
+  {
+    "id": 18,
+    "topic": "Limits",
+    "question": "lim(x→0) (tan(x/2)(1 + sinx + sin²x + sin³x + ... ∞)^(1/3) - sin(x/2))/x³ equals:",
+    "options": ["1/12", "1/24", "1/36", "1/48"],
+    "correct": 1
+  },
+  {
+    "id": 19,
+    "topic": "Continuity",
+    "question": "The number of points where f(x) = |x - 1| + |x - 2| + sinx is not differentiable in (0,3) is:",
+    "options": ["1", "2", "3", "4"],
+    "correct": 2
+  },
+  {
+    "id": 20,
+    "topic": "Application of Derivatives",
+    "question": "The minimum value of (x² + 4)/(2x) for x > 0 is:",
+    "options": ["1", "2", "√2", "2√2"],
+    "correct": 1
+  },
+  {
+    "id": 21,
+    "topic": "Definite Integration",
+    "question": "∫(0 to π/2) (√tanx + √cotx) dx equals:",
+    "options": ["π", "π/2", "√2π", "π/√2"],
+    "correct": 2
+  },
+  {
+    "id": 22,
+    "topic": "Area Under Curves",
+    "question": "The area bounded by y = xe^x, y = xe^(-x) and x = 1 is:",
+    "options": ["(e + 1/e - 2)", "(e - 1/e)", "(e + 1/e)", "(e - 1/e - 2)"],
+    "correct": 0
+  },
+  {
+    "id": 23,
+    "topic": "Differential Equations",
+    "question": "The solution of ydx - xdy + 3x²y²e^(x³)dx = 0 is:",
+    "options": ["x/y + e^(x³) = C", "y/x + e^(x³) = C", "xy + e^(x³) = C", "x²y² + e^(x³) = C"],
+    "correct": 1
+  },
+  {
+    "id": 24,
+    "topic": "Probability Distribution",
+    "question": "If a random variable X follows Poisson distribution such that P(X=1) = P(X=2), then P(X=4) is:",
+    "options": ["2e⁻²/3", "e⁻²/3", "4e⁻²/3", "2e⁻²"],
+    "correct": 0
+  },
+  {
+    "id": 25,
+    "topic": "Statistics",
+    "question": "The mean deviation from mean of the data 6,7,10,12,13,4,8,12 is:",
+    "options": ["2.25", "2.75", "3.25", "3.75"],
+    "correct": 1
+  },
+  {
+    "id": 26,
+    "topic": "Mathematical Reasoning",
+    "question": "The negation of the statement 'If it rains, then I will not go' is:",
+    "options": ["It rains and I will go", "It does not rain and I will not go", "If it does not rain, then I will go", "It rains or I will not go"],
+    "correct": 0
+  },
+  {
+    "id": 27,
+    "topic": "Sets & Relations",
+    "question": "The number of equivalence relations on set A = {1,2,3} containing (1,2) is:",
+    "options": ["1", "2", "3", "4"],
+    "correct": 1
+  },
+  {
+    "id": 28,
+    "topic": "Complex Numbers",
+    "question": "If |z - 4| < |z - 2|, then the solution set of z is:",
+    "options": ["Re(z) > 3", "Re(z) < 3", "Re(z) > 2", "Re(z) < 2"],
+    "correct": 0
+  },
+  {
+    "id": 29,
+    "topic": "Quadratic Equations",
+    "question": "If α, β are roots of x² + px + q = 0 and γ, δ are roots of x² + rx + s = 0, then (α - γ)(α - δ)(β - γ)(β - δ) equals:",
+    "options": ["(p - r)² + (q - s)²", "(p - r)² - 4(q - s)", "(q - s)² + p² - r²", "(p² - r²) + 4(q - s)"],
+    "correct": 1
+  },
+  {
+    "id": 30,
+    "topic": "Permutations",
+    "question": "The number of 5-digit numbers divisible by 3 that can be formed using 0,1,2,3,4,5 without repetition is:",
+    "options": ["216", "120", "96", "108"],
+    "correct": 0
+  },
+  {
+    "id": 31,
+    "topic": "Binomial Theorem",
+    "question": "The coefficient of x⁹ in (1+x)(1+x²)(1+x³)...(1+x¹⁰⁰) is:",
+    "options": ["6", "7", "8", "9"],
+    "correct": 2
+  },
+  {
+    "id": 32,
+    "topic": "Sequence & Series",
+    "question": "If a₁, a₂, a₃,... are in AP and a₁ + a₄ + a₇ + ... + a₁₆ = 147, then a₁ + a₆ + a₁₁ + a₁₆ equals:",
+    "options": ["96", "98", "100", "102"],
+    "correct": 1
+  },
+  {
+    "id": 33,
+    "topic": "Straight Lines",
+    "question": "The locus of a point which moves such that the sum of squares of its distances from the lines x+y=0 and x-y=0 is 4 is:",
+    "options": ["x² + y² = 2", "x² + y² = 4", "x² - y² = 2", "x² - y² = 4"],
+    "correct": 1
+  },
+  {
+    "id": 34,
+    "topic": "Circle",
+    "question": "The equation of circle passing through (1,1) and touching the lines |x| + |y| = 2 is:",
+    "options": ["x² + y² = 2", "x² + y² - 2x - 2y = 0", "x² + y² - 4x - 4y + 6 = 0", "x² + y² - 2x - 2y + 2 = 0"],
+    "correct": 0
+  },
+  {
+    "id": 35,
+    "topic": "Parabola",
+    "question": "The length of latus rectum of parabola 4y² + 12x - 20y + 67 = 0 is:",
+    "options": ["3", "4", "6", "8"],
+    "correct": 0
+  },
+  {
+    "id": 36,
+    "topic": "Ellipse",
+    "question": "If the normal at point P(θ) on ellipse x²/25 + y²/16 = 1 meets the coordinate axes at A and B, then locus of midpoint of AB is:",
+    "options": ["25/x² + 16/y² = 4", "16/x² + 25/y² = 4", "25/x² + 16/y² = 2", "16/x² + 25/y² = 2"],
+    "correct": 0
+  },
+  {
+    "id": 37,
+    "topic": "Hyperbola",
+    "question": "The equation of hyperbola whose asymptotes are 3x - 4y + 7 = 0 and 4x + 3y + 1 = 0 and which passes through origin is:",
+    "options": ["12x² - 7xy - 12y² + 31x + 17y = 0", "12x² + 7xy - 12y² + 31x + 17y = 0", "12x² - 7xy + 12y² + 31x + 17y = 0", "12x² + 7xy + 12y² + 31x + 17y = 0"],
+    "correct": 0
+  },
+  {
+    "id": 38,
+    "topic": "3D Geometry",
+    "question": "The distance of point (1,0,2) from the line through (1,2,3) having direction ratios (2,3,6) is:",
+    "options": ["√5", "2√5", "3√5", "4√5"],
+    "correct": 1
+  },
+  {
+    "id": 39,
+    "topic": "Plane",
+    "question": "The equation of plane containing line (x-1)/2 = (y-2)/3 = (z-3)/4 and parallel to line (x)/1 = (y)/1 = (z)/1 is:",
+    "options": ["x - 2y + z = 0", "x + 2y - 3z = 0", "2x - y + z = 0", "x - y + z = 0"],
+    "correct": 0
+  },
+  {
+    "id": 40,
+    "topic": "Sphere",
+    "question": "The radius of sphere passing through (0,0,0), (a,0,0), (0,b,0), (0,0,c) is:",
+    "options": ["√(a²+b²+c²)/2", "√(a²+b²+c²)/4", "√(a²b²+b²c²+c²a²)/2", "√(a²b²+b²c²+c²a²)/4"],
+    "correct": 0
+  },
+  {
+    "id": 41,
+    "topic": "Vectors",
+    "question": "If |a| = 3, |b| = 4, |c| = 5 and a + b + c = 0, then the value of a.b + b.c + c.a is:",
+    "options": ["-25", "-20", "-15", "-10"],
+    "correct": 0
+  },
+  {
+    "id": 42,
+    "topic": "Probability",
+    "question": "Three numbers are chosen at random from 1 to 20. The probability that they are consecutive is:",
+    "options": ["1/190", "1/1140", "3/1140", "1/380"],
+    "correct": 1
+  },
+  {
+    "id": 43,
+    "topic": "Statistics",
+    "question": "The variance of first n natural numbers is:",
+    "options": ["(n²-1)/12", "(n²+1)/12", "(n²-1)/6", "(n²+1)/6"],
+    "correct": 0
+  },
+  {
+    "id": 44,
+    "topic": "Mathematical Induction",
+    "question": "For all n ∈ N, 7²ⁿ + 16n - 1 is divisible by:",
+    "options": ["64", "128", "256", "512"],
+    "correct": 0
+  },
+  {
+    "id": 45,
+    "topic": "Limits",
+    "question": "lim(x→0) (cos(sinx) - cosx)/x⁴ equals:",
+    "options": ["1/6", "1/4", "1/3", "1/2"],
+    "correct": 0
+  },
+  {
+    "id": 46,
+    "topic": "Continuity",
+    "question": "The number of points of discontinuity of f(x) = [x²] - [x]² in [0,2] is:",
+    "options": ["1", "2", "3", "4"],
+    "correct": 2
+  },
+  {
+    "id": 47,
+    "topic": "Differentiation",
+    "question": "If y = (sinx)^(sinx)^(sinx)...∞, then dy/dx at x = π/2 is:",
+    "options": ["0", "1", "-1", "2"],
+    "correct": 0
+  },
+  {
+    "id": 48,
+    "topic": "Application of Derivatives",
+    "question": "The minimum value of expression √(x² + 4) + √((x-2)² + 9) is:",
+    "options": ["5", "√13", "√29", "7"],
+    "correct": 2
+  },
+  {
+    "id": 49,
+    "topic": "Integration",
+    "question": "∫(0 to π/2) log(sinx) dx equals:",
+    "options": ["-π/2 log2", "-π log2", "π/2 log2", "π log2"],
+    "correct": 0
+  },
+  {
+    "id": 50,
+    "topic": "Definite Integration",
+    "question": "∫(0 to ∞) x²e^(-x²) dx equals:",
+    "options": ["√π/4", "√π/2", "√π", "2√π"],
+    "correct": 0
+  }
+]
+        
+        
+        ;
 
         // DOM Elements
         const questionText = document.getElementById('question-text');
@@ -355,32 +502,32 @@
         const optionsContainer = document.getElementById('options-container');
         const timerBar = document.getElementById('timer-bar');
         const timerDisplay = document.getElementById('timer');
+        const timerLabel = document.getElementById('timer-label');
         const countdownDisplay = document.getElementById('countdown');
-        const nextQuestionTimerDisplay = document.getElementById('next-question-timer');
-        const timerStatus = document.getElementById('timer-status');
+        const countdownContainer = document.getElementById('countdown-display');
+        const timerMessage = document.getElementById('timer-message');
         const currentSlide = document.getElementById('current-slide');
         const progressBar = document.getElementById('progress-bar');
 
         // Quiz State
         let currentQuestion = 0;
         let timerInterval;
-        let nextQuestionInterval;
-        let countdown = 30;
-        let nextQuestionCountdown = 60;
+        let countdown = 15; // Initial thinking time
         let optionsVisible = false;
-        let answerSelected = false;
+        let answerTime = 20; // Answering time after options appear
+        let isThinkingPhase = true;
 
         // Initialize the quiz
         function initQuiz() {
             displayQuestion();
-            startTimers();
+            startTimer();
             setupKeyboardNavigation();
         }
 
         // Display current question
         function displayQuestion() {
             const question = questions[currentQuestion];
-            questionText.innerHTML = question.question;
+            questionText.textContent = question.question;
             topicArea.textContent = question.topic;
             currentSlide.textContent = question.id;
             
@@ -391,47 +538,84 @@
             optionsContainer.innerHTML = '';
             optionsContainer.classList.add('opacity-0');
             optionsVisible = false;
-            answerSelected = false;
-            
-            // Reset timer status
-            timerStatus.innerHTML = 'Options appear in: <span id="countdown" class="text-knowjee-primary">30</span>s';
+            isThinkingPhase = true;
         }
 
-        // Start the timers
-        function startTimers() {
+        // Start the timer for options to appear
+        function startTimer() {
             clearInterval(timerInterval);
-            clearInterval(nextQuestionInterval);
             
-            countdown = 30;
-            nextQuestionCountdown = 60;
-            
+            // Reset based on phase
+            if (isThinkingPhase) {
+                countdown = 15;
+                timerBar.style.width = '100%';
+                timerBar.className = 'bg-gradient-to-r from-knowjee-success to-knowjee-primary h-3 rounded-full transition-all duration-1000 ease-linear';
+                timerDisplay.textContent = `${countdown}s`;
+                timerLabel.textContent = 'Think Time';
+                countdownDisplay.textContent = countdown;
+                timerMessage.textContent = 'Think about the answer...';
+                countdownContainer.innerHTML = `Options appear in: <span id="countdown" class="text-knowjee-primary">${countdown}</span>s`;
+                
+                timerInterval = setInterval(() => {
+                    countdown--;
+                    timerDisplay.textContent = `${countdown}s`;
+                    document.getElementById('countdown').textContent = countdown;
+                    timerBar.style.width = `${(countdown / 15) * 100}%`;
+                    
+                    // Change color when time is running out
+                    if (countdown <= 5) {
+                        timerBar.className = 'bg-gradient-to-r from-knowjee-warning to-knowjee-accent h-3 rounded-full transition-all duration-1000 ease-linear';
+                        timerDisplay.classList.add('timer-warning');
+                    }
+                    
+                    if (countdown <= 0) {
+                        clearInterval(timerInterval);
+                        showOptions();
+                        startAnswerTimer();
+                    }
+                }, 1000);
+            }
+        }
+
+        // Start answer timer after options appear
+        function startAnswerTimer() {
+            isThinkingPhase = false;
+            countdown = answerTime;
             timerBar.style.width = '100%';
-            timerDisplay.textContent = `${nextQuestionCountdown}s`;
-            countdownDisplay.textContent = countdown;
-            nextQuestionTimerDisplay.textContent = nextQuestionCountdown;
+            timerBar.className = 'bg-gradient-to-r from-knowjee-accent to-knowjee-warning h-3 rounded-full transition-all duration-1000 ease-linear';
+            timerDisplay.textContent = `${countdown}s`;
+            timerLabel.textContent = 'Answer Time';
+            timerMessage.textContent = 'Select your answer quickly!';
+            countdownContainer.innerHTML = `Time left: <span id="countdown" class="text-knowjee-warning">${countdown}</span>s`;
             
-            // Timer for options to appear
             timerInterval = setInterval(() => {
                 countdown--;
-                countdownDisplay.textContent = countdown;
+                timerDisplay.textContent = `${countdown}s`;
+                document.getElementById('countdown').textContent = countdown;
+                timerBar.style.width = `${(countdown / answerTime) * 100}%`;
+                
+                // Change color when time is running out
+                if (countdown <= 5) {
+                    timerBar.className = 'bg-gradient-to-r from-red-500 to-red-600 h-3 rounded-full transition-all duration-1000 ease-linear';
+                    timerDisplay.classList.add('timer-warning');
+                }
                 
                 if (countdown <= 0) {
                     clearInterval(timerInterval);
-                    showOptions();
-                    timerStatus.textContent = 'Select your answer:';
-                }
-            }, 1000);
-            
-            // Timer for next question
-            nextQuestionInterval = setInterval(() => {
-                nextQuestionCountdown--;
-                timerDisplay.textContent = `${nextQuestionCountdown}s`;
-                nextQuestionTimerDisplay.textContent = nextQuestionCountdown;
-                timerBar.style.width = `${(nextQuestionCountdown / 60) * 100}%`;
-                
-                if (nextQuestionCountdown <= 0) {
-                    clearInterval(nextQuestionInterval);
-                    moveToNextQuestion();
+                    // Auto move to next question if time runs out
+                    if (currentQuestion < questions.length - 1) {
+                        currentQuestion++;
+                        displayQuestion();
+                        startTimer();
+                    } else {
+                        // Quiz completed
+                        questionText.textContent = "Quiz Completed! 🎉";
+                        optionsContainer.innerHTML = '<div class="col-span-2 text-center py-8"><p class="text-xl text-knowjee-primary font-bold">Congratulations! You have completed all questions.</p></div>';
+                        timerDisplay.textContent = "Done!";
+                        timerLabel.textContent = "Quiz Complete";
+                        timerMessage.textContent = "You've finished the challenge!";
+                        countdownContainer.innerHTML = "";
+                    }
                 }
             }, 1000);
         }
@@ -464,48 +648,35 @@
 
         // Select an option
         function selectOption(optionIndex) {
-            if (!optionsVisible || answerSelected) return;
-            
-            answerSelected = true;
-            
-            const question = questions[currentQuestion];
-            const isCorrect = optionIndex === question.correct;
+            if (!optionsVisible) return;
             
             // Highlight selected option
             document.querySelectorAll('#options-container button').forEach(btn => {
                 btn.classList.remove('option-selected');
             });
+            document.querySelector(`button[data-option-index="${optionIndex}"]`).classList.add('option-selected');
             
-            const selectedBtn = document.querySelector(`button[data-option-index="${optionIndex}"]`);
-            selectedBtn.classList.add('option-selected');
+            // Stop the timer
+            clearInterval(timerInterval);
             
-            // Show correct/incorrect feedback
-            if (isCorrect) {
-                selectedBtn.classList.add('correct-answer');
-            } else {
-                selectedBtn.classList.add('incorrect-answer');
-                // Also highlight the correct answer
-                const correctBtn = document.querySelector(`button[data-option-index="${question.correct}"]`);
-                correctBtn.classList.add('correct-answer');
-            }
-        }
-
-        // Move to next question
-        function moveToNextQuestion() {
-            if (currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                displayQuestion();
-                startTimers();
-            } else {
-                // Quiz completed
-                questionText.textContent = "Quiz Completed! 🎉";
-                optionsContainer.innerHTML = '<div class="col-span-2 text-center py-8"><p class="text-xl text-knowjee-primary font-bold">Congratulations! You have completed all questions.</p></div>';
-                clearInterval(timerInterval);
-                clearInterval(nextQuestionInterval);
-                timerDisplay.textContent = "0s";
-                nextQuestionTimerDisplay.textContent = "0s";
-                timerBar.style.width = '0%';
-            }
+            // Show correct/incorrect feedback after a delay
+            setTimeout(() => {
+                // For demo purposes, we'll just move to next question
+                // In a real app, you would check the answer and show feedback
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    displayQuestion();
+                    startTimer();
+                } else {
+                    // Quiz completed
+                    questionText.textContent = "Quiz Completed! 🎉";
+                    optionsContainer.innerHTML = '<div class="col-span-2 text-center py-8"><p class="text-xl text-knowjee-primary font-bold">Congratulations! You have completed all questions.</p></div>';
+                    timerDisplay.textContent = "Done!";
+                    timerLabel.textContent = "Quiz Complete";
+                    timerMessage.textContent = "You've finished the challenge!";
+                    countdownContainer.innerHTML = "";
+                }
+            }, 1000);
         }
 
         // Setup keyboard navigation
@@ -515,6 +686,28 @@
                 if (optionsVisible && e.key >= '1' && e.key <= '4') {
                     const optionIndex = parseInt(e.key) - 1;
                     selectOption(optionIndex);
+                }
+                
+                // Arrow keys for navigation
+                if (e.key === 'ArrowLeft' && currentQuestion > 0) {
+                    currentQuestion--;
+                    displayQuestion();
+                    startTimer();
+                }
+                
+                if (e.key === 'ArrowRight' && currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    displayQuestion();
+                    startTimer();
+                }
+                
+                // Space bar to restart timer
+                if (e.key === ' ') {
+                    if (isThinkingPhase) {
+                        startTimer();
+                    } else {
+                        startAnswerTimer();
+                    }
                 }
             });
         }
