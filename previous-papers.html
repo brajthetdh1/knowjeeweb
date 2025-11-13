@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEE Previous Year Papers | KnowJEE</title>
+  <meta name="description" content="Access JEE Main and Advanced previous year question papers with solutions, organized by year and difficulty level.">
+  <meta name="keywords" content="JEE previous papers, JEE question papers, JEE past papers, JEE Main papers, JEE Advanced papers">
+  <meta name="author" content="Braj Bhushan Kumar - IIT Roorkee">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JEE Previous Year Papers | KnowJEE">
+  <meta property="og:description" content="Access JEE Main and Advanced previous year question papers with solutions, organized by year and difficulty level.">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JEE Previous Year Papers | KnowJEE">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  
+  <style>
+    .paper-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .filter-btn.active {
+      background-color: rgb(253 224 71);
+      font-weight: 600;
+    }
+    .difficulty-easy {
+      border-left: 4px solid rgb(34 197 94);
+    }
+    .difficulty-medium {
+      border-left: 4px solid rgb(249 115 22);
+    }
+    .difficulty-hard {
+      border-left: 4px solid rgb(239 68 68);
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-50 text-yellow-900">
+
+  <!-- Header (Same as blog.html) -->
+  <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
+      <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle mobile menu"
+          aria-expanded="false">
+          <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop navigation -->
+      <div id="navbar" class="hidden md:flex md:items-center md:space-x-6 w-full md:w-auto">
+        <nav class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0" aria-label="Subject navigation">
+          <!-- Subjects dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              JEE Subjects
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="math.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Mathematics</a>
+                <a href="physics.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Physics</a>
+                <a href="chem.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Chemistry</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
+          <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
+          <a href="blog.html" class="py-2 px-3 hover:text-yellow-900 rounded">Blog</a>
+          
+          <!-- Resources dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
+              Resources
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-1">
+                <a href="syllabus.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Syllabus</a>
+                <a href="formulas.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Important Formulas</a>
+                <a href="previous-papers.html" class="block px-4 py-2 text-sm hover:bg-yellow-100 bg-yellow-300">Previous Papers</a>
+                <a href="study-plan.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Study Plan</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div id="authSection" class="flex space-x-2">
+            <button id="loginBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button id="registerBtn" class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSection" class="hidden flex space-x-2 items-center">
+            <span id="userEmail" class="font-semibold"></span>
+            <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-yellow-100 shadow-md">
+      <nav class="flex flex-col px-6 py-4 space-y-2">
+        <!-- Mobile subjects dropdown -->
+        <div class="py-2">
+          <button id="mobileSubjectsBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>JEE Subjects</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileSubjectsMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="math.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Mathematics</a>
+            <a href="physics.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Physics</a>
+            <a href="chem.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Chemistry</a>
+          </div>
+        </div>
+        
+        <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
+        <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
+        <a href="blog.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Blog</a>
+        
+        <!-- Mobile resources dropdown -->
+        <div class="py-2">
+          <button id="mobileResourcesBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
+            <span>Resources</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileResourcesMenu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="syllabus.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Syllabus</a>
+            <a href="formulas.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Important Formulas</a>
+            <a href="previous-papers.html" class="block py-2 px-3 hover:bg-yellow-200 rounded bg-yellow-300">Previous Papers</a>
+            <a href="study-plan.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Study Plan</a>
+          </div>
+        </div>
+        
+        <div class="pt-2 border-t border-yellow-300">
+          <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openLoginModal()">Login</button>
+            <button class="px-4 py-2 bg-yellow-300 rounded hover:bg-yellow-400"
+              onclick="openSignupModal()">Register</button>
+          </div>
+          <div id="userSectionMobile" class="hidden flex flex-col space-y-2 mt-2">
+            <span id="userEmailMobile" class="font-semibold"></span>
+            <button class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+              onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      const isExpanded = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileBtn.setAttribute("aria-expanded", isExpanded);
+    });
+
+    // Mobile dropdown toggles
+    const mobileSubjectsBtn = document.getElementById("mobileSubjectsBtn");
+    const mobileSubjectsMenu = document.getElementById("mobileSubjectsMenu");
+    mobileSubjectsBtn.addEventListener("click", () => {
+      mobileSubjectsMenu.classList.toggle("hidden");
+    });
+
+    const mobileResourcesBtn = document.getElementById("mobileResourcesBtn");
+    const mobileResourcesMenu = document.getElementById("mobileResourcesMenu");
+    mobileResourcesBtn.addEventListener("click", () => {
+      mobileResourcesMenu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-r from-yellow-100 via-orange-50 to-amber-100 text-yellow-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">JEE Previous Year Papers</h1>
+      <p class="text-xl max-w-3xl mx-auto">Access JEE Main and Advanced previous year question papers with detailed solutions and analysis</p>
+      <div class="mt-8">
+        <a href="#papers" class="px-6 py-3 bg-yellow-400 text-yellow-900 font-bold rounded-lg hover:bg-yellow-500">Browse Papers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto py-10 px-6">
+    <!-- Filter Section -->
+    <section class="mb-12">
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-2xl font-bold mb-6 text-teal-800">Filter Papers</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Exam Type Filter -->
+          <div>
+            <h3 class="font-semibold mb-3">Exam Type</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200 active">All</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">JEE Main</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">JEE Advanced</button>
+            </div>
+          </div>
+          
+          <!-- Year Filter -->
+          <div>
+            <h3 class="font-semibold mb-3">Year</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200 active">All Years</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">2025</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">2024</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">2023</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">2022</button>
+            </div>
+          </div>
+          
+          <!-- Subject Filter -->
+          <div>
+            <h3 class="font-semibold mb-3">Subject</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200 active">All Subjects</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">Mathematics</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">Physics</button>
+              <button class="filter-btn px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-200">Chemistry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Papers Section -->
+    <section id="papers" class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Previous Year Papers</h2>
+      
+      <!-- JEE Main Papers -->
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-2xl font-bold text-amber-700">JEE Main Papers</h3>
+          <div class="flex items-center">
+            <span class="text-sm text-gray-500 mr-3">Sort by:</span>
+            <select class="bg-white border border-yellow-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+              <option>Newest First</option>
+              <option>Oldest First</option>
+              <option>Difficulty</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Paper 1 -->
+          <div class="paper-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 difficulty-medium">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="bg-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">JEE Main</span>
+                <span class="text-sm text-gray-500">April 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE Main 2025 Paper 1</h3>
+              <div class="flex items-center mb-4">
+                <span class="text-sm text-gray-600 mr-4">Mathematics, Physics, Chemistry</span>
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <span class="text-sm text-gray-700">4.5</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+              </div>
+              <div class="flex justify-between">
+                <a href="prev/jeemain_2025_paper1.html" class="px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 text-sm">View Paper</a>
+                <a href="#" class="px-4 py-2 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50 text-sm">Solutions</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Paper 2 -->
+          <div class="paper-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 difficulty-hard">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="bg-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">JEE Main</span>
+                <span class="text-sm text-gray-500">January 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE Main 2025 Paper 2</h3>
+              <div class="flex items-center mb-4">
+                <span class="text-sm text-gray-600 mr-4">Mathematics, Physics, Chemistry</span>
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <span class="text-sm text-gray-700">4.2</span>
+                </div>
+                <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+              </div>
+              <div class="flex justify-between">
+                <a href="#" class="px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 text-sm">View Paper</a>
+                <a href="#" class="px-4 py-2 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50 text-sm">Solutions</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Paper 3 -->
+          <div class="paper-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 difficulty-easy">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="bg-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">JEE Main</span>
+                <span class="text-sm text-gray-500">April 2024</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE Main 2024 Paper 1</h3>
+              <div class="flex items-center mb-4">
+                <span class="text-sm text-gray-600 mr-4">Mathematics, Physics, Chemistry</span>
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <span class="text-sm text-gray-700">4.7</span>
+                </div>
+                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+              </div>
+              <div class="flex justify-between">
+                <a href="#" class="px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 text-sm">View Paper</a>
+                <a href="#" class="px-4 py-2 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50 text-sm">Solutions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="#" class="px-6 py-3 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50">Load More JEE Main Papers</a>
+        </div>
+      </div>
+      
+      <!-- JEE Advanced Papers -->
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-2xl font-bold text-amber-700">JEE Advanced Papers</h3>
+          <div class="flex items-center">
+            <span class="text-sm text-gray-500 mr-3">Sort by:</span>
+            <select class="bg-white border border-yellow-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+              <option>Newest First</option>
+              <option>Oldest First</option>
+              <option>Difficulty</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Paper 1 -->
+          <div class="paper-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 difficulty-hard">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="bg-purple-200 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">JEE Advanced</span>
+                <span class="text-sm text-gray-500">June 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE Advanced 2025 Paper 1</h3>
+              <div class="flex items-center mb-4">
+                <span class="text-sm text-gray-600 mr-4">Mathematics, Physics, Chemistry</span>
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <span class="text-sm text-gray-700">4.3</span>
+                </div>
+                <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+              </div>
+              <div class="flex justify-between">
+                <a href="#" class="px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 text-sm">View Paper</a>
+                <a href="#" class="px-4 py-2 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50 text-sm">Solutions</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Paper 2 -->
+          <div class="paper-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 difficulty-hard">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="bg-purple-200 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">JEE Advanced</span>
+                <span class="text-sm text-gray-500">June 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE Advanced 2025 Paper 2</h3>
+              <div class="flex items-center mb-4">
+                <span class="text-sm text-gray-600 mr-4">Mathematics, Physics, Chemistry</span>
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <span class="text-sm text-gray-700">4.1</span>
+                </div>
+                <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+              </div>
+              <div class="flex justify-between">
+                <a href="#" class="px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 text-sm">View Paper</a>
+                <a href="#" class="px-4 py-2 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50 text-sm">Solutions</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Paper 3 -->
+          <div class="paper-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 difficulty-medium">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="bg-purple-200 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">JEE Advanced</span>
+                <span class="text-sm text-gray-500">June 2024</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE Advanced 2024 Paper 1</h3>
+              <div class="flex items-center mb-4">
+                <span class="text-sm text-gray-600 mr-4">Mathematics, Physics, Chemistry</span>
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <span class="text-sm text-gray-700">4.6</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+              </div>
+              <div class="flex justify-between">
+                <a href="#" class="px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500 text-sm">View Paper</a>
+                <a href="#" class="px-4 py-2 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50 text-sm">Solutions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="#" class="px-6 py-3 bg-white border border-yellow-400 text-yellow-700 font-semibold rounded-lg hover:bg-yellow-50">Load More JEE Advanced Papers</a>
+        </div>
+      </div>
+      
+      <!-- Subject-wise Papers -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 text-teal-800">Subject-wise Papers</h3>
+        
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-yellow-200">
+            <!-- Mathematics -->
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                  <span class="text-xl">∫</span>
+                </div>
+                <h4 class="text-xl font-bold">Mathematics</h4>
+              </div>
+              <p class="text-gray-600 mb-4">Practice with previous year Mathematics papers organized by topics and difficulty levels.</p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Algebra</span>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Calculus</span>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Coordinate Geometry</span>
+                </li>
+              </ul>
+              <a href="#" class="block text-center px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500">Browse Math Papers</a>
+            </div>
+            
+            <!-- Physics -->
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                  <span class="text-xl">⚡</span>
+                </div>
+                <h4 class="text-xl font-bold">Physics</h4>
+              </div>
+              <p class="text-gray-600 mb-4">Master Physics concepts with topic-wise previous year questions and detailed solutions.</p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Mechanics</span>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Electromagnetism</span>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Modern Physics</span>
+                </li>
+              </ul>
+              <a href="#" class="block text-center px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500">Browse Physics Papers</a>
+            </div>
+            
+            <!-- Chemistry -->
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <span class="text-xl">🧪</span>
+                </div>
+                <h4 class="text-xl font-bold">Chemistry</h4>
+              </div>
+              <p class="text-gray-600 mb-4">Practice Chemistry questions from previous years with detailed explanations and concepts.</p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Organic Chemistry</span>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Inorganic Chemistry</span>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Physical Chemistry</span>
+                </li>
+              </ul>
+              <a href="#" class="block text-center px-4 py-2 bg-yellow-400 text-yellow-900 font-semibold rounded-lg hover:bg-yellow-500">Browse Chemistry Papers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tips Section -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl shadow-md p-8">
+        <h2 class="text-2xl font-bold mb-6 text-teal-800">How to Use Previous Year Papers Effectively</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-lg font-semibold mb-3">1. Understand the Exam Pattern</h3>
+            <p class="text-gray-700 mb-4">Analyze previous papers to understand the distribution of questions, marking scheme, and frequently asked topics.</p>
+            
+            <h3 class="text-lg font-semibold mb-3">2. Identify Important Topics</h3>
+            <p class="text-gray-700 mb-4">Note which topics appear frequently and focus your preparation on high-weightage areas.</p>
+            
+            <h3 class="text-lg font-semibold mb-3">3. Practice Time Management</h3>
+            <p class="text-gray-700">Solve papers within the time limit to improve your speed and accuracy during the actual exam.</p>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold mb-3">4. Analyze Your Performance</h3>
+            <p class="text-gray-700 mb-4">After solving each paper, identify your weak areas and work on improving them.</p>
+            
+            <h3 class="text-lg font-semibold mb-3">5. Revise with Solutions</h3>
+            <p class="text-gray-700 mb-4">Use detailed solutions to understand the correct approach for solving different types of questions.</p>
+            
+            <h3 class="text-lg font-semibold mb-3">6. Build Exam Confidence</h3>
+            <p class="text-gray-700">Regular practice with previous papers will help reduce anxiety and build confidence for the actual exam.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auth Modals (Same as blog.html) -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="loginPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Login</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Email" class="w-full p-3 border rounded mb-4">
+      <input type="password" id="signupPassword" placeholder="Password" class="w-full p-3 border rounded mb-4">
+      <button onclick="handleSignup()" class="w-full bg-blue-600 text-white p-3 rounded mb-2">Sign Up</button>
+      <button onclick="closeModals()" class="w-full bg-gray-300 p-3 rounded">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Footer (Same as blog.html) -->
+  <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+            <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+            <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+            <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+            <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+            <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+            <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+          <div class="space-y-2 text-sm">
+            <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">YouTube</a>
+            <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank" rel="noopener noreferrer"
+              class="block hover:text-yellow-300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+        <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Auth modal functions
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+      document.getElementById('loginModal').classList.add('flex');
+    }
+
+    function openSignupModal() {
+      document.getElementById('signupModal').classList.remove('hidden');
+      document.getElementById('signupModal').classList.add('flex');
+    }
+
+    async function handleLogin() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const success = await loginUser(email, password);
+      console.log('Login attempt:', success);
+
+      closeModals();
+    }
+
+    async function handleSignup() {
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+      }
+
+      const success = await registerUser(email, password);
+      closeModals();
+    }
+
+    function closeModals() {
+      console.log('Closing modals');
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('signupModal').classList.add('hidden');
+      document.getElementById('loginModal').classList.remove('flex');
+      document.getElementById('signupModal').classList.remove('flex');
+
+      document.getElementById('loginEmail').value = '';
+      document.getElementById('loginPassword').value = '';
+      document.getElementById('signupEmail').value = '';
+      document.getElementById('signupPassword').value = '';
+    }
+
+    // Filter button active state
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (this.textContent === 'All' || this.textContent === 'All Years' || this.textContent === 'All Subjects') {
+          // Don't remove active state from "All" buttons when clicked
+          document.querySelectorAll('.filter-btn').forEach(btn => {
+            if (btn.textContent === 'All' || btn.textContent === 'All Years' || btn.textContent === 'All Subjects') {
+              btn.classList.add('active', 'bg-yellow-300');
+            } else {
+              btn.classList.remove('active', 'bg-yellow-300');
+            }
+          });
+        } else {
+          // Remove active state from "All" buttons when specific filters are selected
+          document.querySelectorAll('.filter-btn').forEach(btn => {
+            if (btn.textContent === 'All' || btn.textContent === 'All Years' || btn.textContent === 'All Subjects') {
+              btn.classList.remove('active', 'bg-yellow-300');
+            }
+          });
+          this.classList.add('active', 'bg-yellow-300');
+        }
+      });
+    });
+
+    // Auth UI update (same as blog.html)
+    const authSection = document.getElementById("authSection");
+    const userSection = document.getElementById("userSection");
+    const userEmail = document.getElementById("userEmail");
+    const authSectionMobile = document.getElementById("authSectionMobile");
+    const userSectionMobile = document.getElementById("userSectionMobile");
+    const userEmailMobile = document.getElementById("userEmailMobile");
+
+    window.updateUI = () => {
+      if (window.currentUser) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = window.currentUser.email;
+
+        authSectionMobile.classList.add("hidden");
+        userSectionMobile.classList.remove("hidden");
+        userEmailMobile.textContent = window.currentUser.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+
+        authSectionMobile.classList.remove("hidden");
+        userSectionMobile.classList.add("hidden");
+        userEmailMobile.textContent = "";
+      }
+    };
+
+    document.addEventListener('firebaseAuthUpdated', updateUI);
+    updateUI();
+  </script>
+</body>
+</html>

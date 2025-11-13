@@ -59,7 +59,8 @@
 
 <body class="bg-yellow-50 text-yellow-900">
 
-    <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
+    <!-- Header -->
+  <header id="quizheader" class="bg-yellow-100 shadow-md fixed w-full z-50">
     <nav class="container mx-auto flex justify-between items-center py-4 px-6" aria-label="Main navigation">
         <a href="index.html" class="text-2xl font-bold text-yellow-900" aria-label="KnowJEE Home">KnowJEE</a>
 
@@ -94,27 +95,10 @@
                     </div>
                 </div>
                 
+                <a href="course.html" class="py-2 px-3 hover:text-yellow-900 rounded font-bold bg-yellow-300">Online Classes</a>
                 <a href="quiz.html" class="py-2 px-3 hover:text-yellow-900 rounded">Mock Tests</a>
                 <a href="hot.html" class="py-2 px-3 hover:text-yellow-900 rounded">Practice Questions</a>
                 <a href="blog.html" class="py-2 px-3 hover:text-yellow-900 rounded">Blog</a>
-                
-                <!-- Resources dropdown -->
-                <div class="relative group py-2">
-                    <button class="flex items-center px-3 hover:text-yellow-900 rounded focus:outline-none">
-                        Resources
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <div class="py-1">
-                            <a href="syllabus.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">JEE Syllabus</a>
-                            <a href="formulas.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Important Formulas</a>
-                            <a href="previous-papers.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Previous Papers</a>
-                            <a href="study-plan.html" class="block px-4 py-2 text-sm hover:bg-yellow-100">Study Plan</a>
-                        </div>
-                    </div>
-                </div>
             </nav>
 
             <div class="mt-4 md:mt-0 md:ml-auto flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
@@ -151,25 +135,11 @@
                 </div>
             </div>
             
+            <a href="math-classes.html" class="py-2 px-3 bg-yellow-300 rounded font-bold">Math Classes</a>
+            <a href="course.html" class="py-2 px-3 hover:bg-yellow-200 rounded">JEE Courses</a>
             <a href="quiz.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Mock Tests</a>
             <a href="hot.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Practice Questions</a>
             <a href="blog.html" class="py-2 px-3 hover:bg-yellow-200 rounded">Blog</a>
-            
-            <!-- Mobile resources dropdown -->
-            <div class="py-2">
-                <button id="mobileResourcesBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-yellow-200 rounded">
-                    <span>Resources</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div id="mobileResourcesMenu" class="hidden pl-4 mt-1 space-y-1">
-                    <a href="syllabus.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">JEE Syllabus</a>
-                    <a href="formulas.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Important Formulas</a>
-                    <a href="previous-papers.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Previous Papers</a>
-                    <a href="study-plan.html" class="block py-2 px-3 hover:bg-yellow-200 rounded">Study Plan</a>
-                </div>
-            </div>
             
             <div class="pt-2 border-t border-yellow-300">
                 <div id="authSectionMobile" class="flex flex-col space-y-2 mt-2">
@@ -204,13 +174,8 @@
     mobileSubjectsBtn.addEventListener("click", () => {
         mobileSubjectsMenu.classList.toggle("hidden");
     });
-
-    const mobileResourcesBtn = document.getElementById("mobileResourcesBtn");
-    const mobileResourcesMenu = document.getElementById("mobileResourcesMenu");
-    mobileResourcesBtn.addEventListener("click", () => {
-        mobileResourcesMenu.classList.toggle("hidden");
-    });
 </script>
+
 
   <!-- Hero -->
   <section
