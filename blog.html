@@ -36,6 +36,16 @@
     .countdown-box {
       background: linear-gradient(135deg, #f59e0b, #d97706);
     }
+    .tab-button.active {
+      background-color: rgb(253 224 71);
+      font-weight: 600;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
   </style>
 </head>
 
@@ -216,348 +226,366 @@
       </div>
     </section>
 
-    <!-- Featured Posts -->
-    <section id="featured" class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Featured Articles for JEE 2026</h2>
+    <!-- Tab Navigation -->
+    <section class="mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button px-4 py-2 rounded-lg bg-yellow-200 hover:bg-yellow-300 active" data-tab="math">Mathematics</button>
+        <button class="tab-button px-4 py-2 rounded-lg bg-yellow-200 hover:bg-yellow-300" data-tab="physics">Physics</button>
+        <button class="tab-button px-4 py-2 rounded-lg bg-yellow-200 hover:bg-yellow-300" data-tab="chemistry">Chemistry</button>
+        <button class="tab-button px-4 py-2 rounded-lg bg-yellow-200 hover:bg-yellow-300" data-tab="exam">Exam Strategy</button>
+        <button class="tab-button px-4 py-2 rounded-lg bg-yellow-200 hover:bg-yellow-300" data-tab="more">More Topics</button>
+      </div>
+    </section>
+
+    <!-- Tab Content -->
+    <section class="mb-16">
+      <!-- Math Tab -->
+      <div id="math-tab" class="tab-content active">
+        <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Mathematics Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Math Card 1 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-amber-200 to-yellow-300 flex items-center justify-center">
+              <span class="text-5xl">📐</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Mathematics</span>
+                <span class="text-gray-500 text-sm ml-3">June 15, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE 2026 Mathematics: Coordinate Geometry Mastery</h3>
+              <p class="text-gray-600 mb-4">Learn advanced techniques for solving coordinate geometry problems quickly and accurately.</p>
+              <a href="jee-2026-coordinate-geometry.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Math Card 2 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-blue-200 to-cyan-300 flex items-center justify-center">
+              <span class="text-5xl">∫</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Mathematics</span>
+                <span class="text-gray-500 text-sm ml-3">June 5, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Calculus for JEE 2026: Key Concepts & Problem Solving</h3>
+              <p class="text-gray-600 mb-4">Master differentiation, integration, and their applications in JEE problems.</p>
+              <a href="jee-2026-calculus.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Math Card 3 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-green-200 to-emerald-300 flex items-center justify-center">
+              <span class="text-5xl">π</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Mathematics</span>
+                <span class="text-gray-500 text-sm ml-3">May 25, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Trigonometry Shortcuts for JEE 2026</h3>
+              <p class="text-gray-600 mb-4">Learn time-saving techniques for solving trigonometry problems in JEE.</p>
+              <a href="jee-2026-trigonometry.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Featured Post 1 -->
-        <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-gradient-to-r from-amber-200 to-yellow-300 flex items-center justify-center">
-            <span class="text-5xl">📚</span>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center mb-3">
-              <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Study Plan</span>
-              <span class="text-gray-500 text-sm ml-3">June 10, 2025</span>
+      <!-- Physics Tab -->
+      <div id="physics-tab" class="tab-content">
+        <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Physics Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Physics Card 1 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-amber-200 to-yellow-300 flex items-center justify-center">
+              <span class="text-5xl">⚛️</span>
             </div>
-            <h3 class="text-xl font-bold mb-3">JEE 2026: 18-Month Preparation Strategy</h3>
-            <p class="text-gray-600 mb-4">A comprehensive month-by-month study plan for JEE 2026 aspirants starting preparation now.</p>
-            <a href="jee-2026-18-month-strategy.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
-              Read More
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Physics</span>
+                <span class="text-gray-500 text-sm ml-3">June 12, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE 2026 Physics: Modern Physics Concepts</h3>
+              <p class="text-gray-600 mb-4">Master key concepts in modern physics including atoms, nuclei, and semiconductors.</p>
+              <a href="jee-2026-modern-physics.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Physics Card 2 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-blue-200 to-cyan-300 flex items-center justify-center">
+              <span class="text-5xl">⚡</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Physics</span>
+                <span class="text-gray-500 text-sm ml-3">June 2, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Electromagnetism for JEE 2026</h3>
+              <p class="text-gray-600 mb-4">Comprehensive guide to mastering electromagnetism concepts and problem-solving.</p>
+              <a href="jee-2026-electromagnetism.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Physics Card 3 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-green-200 to-emerald-300 flex items-center justify-center">
+              <span class="text-5xl">🌊</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Physics</span>
+                <span class="text-gray-500 text-sm ml-3">May 22, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Waves & Optics for JEE 2026</h3>
+              <p class="text-gray-600 mb-4">Essential concepts and problem-solving techniques for waves and optics.</p>
+              <a href="jee-2026-waves-optics.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        
-        <!-- Featured Post 2 -->
-        <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-gradient-to-r from-blue-200 to-cyan-300 flex items-center justify-center">
-            <span class="text-5xl">⏱️</span>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center mb-3">
-              <span class="bg-blue-200 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Time Management</span>
-              <span class="text-gray-500 text-sm ml-3">May 28, 2025</span>
+      </div>
+      
+      <!-- Chemistry Tab -->
+      <div id="chemistry-tab" class="tab-content">
+        <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Chemistry Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Chemistry Card 1 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-amber-200 to-yellow-300 flex items-center justify-center">
+              <span class="text-5xl">🧪</span>
             </div>
-            <h3 class="text-xl font-bold mb-3">Balancing Class 11 Studies with JEE 2026 Preparation</h3>
-            <p class="text-gray-600 mb-4">Practical tips for managing school curriculum and JEE preparation simultaneously.</p>
-            <a href="balancing-class11-jee.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
-              Read More
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Chemistry</span>
+                <span class="text-gray-500 text-sm ml-3">June 8, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE 2026 Chemistry: Organic Reaction Mechanisms</h3>
+              <p class="text-gray-600 mb-4">Master key organic chemistry reactions and their mechanisms for JEE 2026.</p>
+              <a href="jee-2026-organic-chemistry.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Chemistry Card 2 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-blue-200 to-cyan-300 flex items-center justify-center">
+              <span class="text-5xl">⚗️</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Chemistry</span>
+                <span class="text-gray-500 text-sm ml-3">May 28, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Physical Chemistry: Thermodynamics for JEE 2026</h3>
+              <p class="text-gray-600 mb-4">Comprehensive guide to thermodynamics concepts and numerical problem-solving.</p>
+              <a href="jee-2026-thermodynamics.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Chemistry Card 3 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-green-200 to-emerald-300 flex items-center justify-center">
+              <span class="text-5xl">🔬</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Chemistry</span>
+                <span class="text-gray-500 text-sm ml-3">May 18, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Inorganic Chemistry: Coordination Compounds</h3>
+              <p class="text-gray-600 mb-4">Master coordination compounds with effective memory techniques for JEE 2026.</p>
+              <a href="jee-2026-coordination-compounds.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        
-        <!-- Featured Post 3 -->
-        <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-gradient-to-r from-green-200 to-emerald-300 flex items-center justify-center">
-            <span class="text-5xl">🧠</span>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center mb-3">
-              <span class="bg-green-200 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Mindset</span>
-              <span class="text-gray-500 text-sm ml-3">May 15, 2025</span>
+      </div>
+      
+      <!-- Exam Strategy Tab -->
+      <div id="exam-tab" class="tab-content">
+        <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">Exam Strategy Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Exam Card 1 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-amber-200 to-yellow-300 flex items-center justify-center">
+              <span class="text-5xl">📚</span>
             </div>
-            <h3 class="text-xl font-bold mb-3">Building the Right Mindset for JEE 2026</h3>
-            <p class="text-gray-600 mb-4">How to develop resilience, focus, and consistency throughout your JEE journey.</p>
-            <a href="mindset-jee-2026.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
-              Read More
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Strategy</span>
+                <span class="text-gray-500 text-sm ml-3">June 10, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE 2026: 18-Month Preparation Strategy</h3>
+              <p class="text-gray-600 mb-4">A comprehensive month-by-month study plan for JEE 2026 aspirants.</p>
+              <a href="jee-2026-18-month-strategy.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Exam Card 2 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-blue-200 to-cyan-300 flex items-center justify-center">
+              <span class="text-5xl">⏱️</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Time Management</span>
+                <span class="text-gray-500 text-sm ml-3">May 28, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Balancing Class 11 with JEE 2026 Preparation</h3>
+              <p class="text-gray-600 mb-4">Practical tips for managing school curriculum and JEE preparation simultaneously.</p>
+              <a href="balancing-class11-jee.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Exam Card 3 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-green-200 to-emerald-300 flex items-center justify-center">
+              <span class="text-5xl">🧠</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Mindset</span>
+                <span class="text-gray-500 text-sm ml-3">May 15, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Building the Right Mindset for JEE 2026</h3>
+              <p class="text-gray-600 mb-4">How to develop resilience, focus, and consistency throughout your JEE journey.</p>
+              <a href="mindset-jee-2026.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- More Topics Tab -->
+      <div id="more-tab" class="tab-content">
+        <h2 class="text-3xl font-bold text-center mb-10 text-teal-800">More JEE Topics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- More Card 1 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-amber-200 to-yellow-300 flex items-center justify-center">
+              <span class="text-5xl">📊</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Analysis</span>
+                <span class="text-gray-500 text-sm ml-3">June 5, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">JEE 2025 Analysis & 2026 Predictions</h3>
+              <p class="text-gray-600 mb-4">Detailed analysis of JEE 2025 and what to expect for JEE 2026.</p>
+              <a href="jee-2026-analysis.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- More Card 2 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-blue-200 to-cyan-300 flex items-center justify-center">
+              <span class="text-5xl">📝</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Resources</span>
+                <span class="text-gray-500 text-sm ml-3">May 22, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Why NCERT is Crucial for JEE 2026</h3>
+              <p class="text-gray-600 mb-4">Understanding the importance of NCERT books in JEE preparation.</p>
+              <a href="jee-2026-ncert-importance.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- More Card 3 -->
+          <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="h-48 bg-gradient-to-r from-green-200 to-emerald-300 flex items-center justify-center">
+              <span class="text-5xl">💡</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Tips</span>
+                <span class="text-gray-500 text-sm ml-3">May 10, 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Common Mistakes to Avoid in JEE 2026</h3>
+              <p class="text-gray-600 mb-4">Learn from common mistakes made by previous JEE aspirants.</p>
+              <a href="jee-2026-common-mistakes.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- Blog Categories & Posts -->
-    <section class="mb-16">
-      <div class="flex flex-col md:flex-row gap-8">
-        <!-- Blog Posts -->
-        <div class="md:w-2/3">
-          <h2 class="text-3xl font-bold mb-8 text-teal-800">Latest Articles for JEE 2026</h2>
-          
-          <!-- Blog Post 1 -->
-          <article class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-              <div class="flex items-center space-x-4 mb-3 md:mb-0">
-                <span class="bg-purple-200 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Physics</span>
-                <span class="text-gray-500 text-sm">May 5, 2025</span>
-                <span class="text-gray-500 text-sm">8 min read</span>
-              </div>
-              <div class="flex items-center text-yellow-500">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="ml-1 text-gray-700 font-semibold">4.8</span>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">JEE 2026 Physics: How to Tackle Modern Physics</h3>
-            <p class="text-gray-600 mb-4">Modern Physics carries significant weightage in JEE. Learn the key concepts, formulas, and problem-solving approaches for topics like Atoms, Nuclei, and Semiconductors.</p>
-            <div class="flex items-center justify-between">
-              <a href="jee-2026-modern-physics.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
-                Continue Reading
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <div class="flex items-center">
-                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
-                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Blog Post 2 -->
-          <article class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-              <div class="flex items-center space-x-4 mb-3 md:mb-0">
-                <span class="bg-red-200 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">Chemistry</span>
-                <span class="text-gray-500 text-sm">April 22, 2025</span>
-                <span class="text-gray-500 text-sm">6 min read</span>
-              </div>
-              <div class="flex items-center text-yellow-500">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="ml-1 text-gray-700 font-semibold">4.6</span>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">JEE 2026 Chemistry: Mastering Organic Chemistry Reactions</h3>
-            <p class="text-gray-600 mb-4">A comprehensive guide to understanding reaction mechanisms, name reactions, and problem-solving techniques for Organic Chemistry in JEE 2026.</p>
-            <div class="flex items-center justify-between">
-              <a href="jee-2026-organic-chemistry.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
-                Continue Reading
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <div class="flex items-center">
-                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
-                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Blog Post 3 -->
-          <article class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-              <div class="flex items-center space-x-4 mb-3 md:mb-0">
-                <span class="bg-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">Mathematics</span>
-                <span class="text-gray-500 text-sm">April 10, 2025</span>
-                <span class="text-gray-500 text-sm">10 min read</span>
-              </div>
-              <div class="flex items-center text-yellow-500">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="ml-1 text-gray-700 font-semibold">4.9</span>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">JEE 2026 Mathematics: Coordinate Geometry Mastery</h3>
-            <p class="text-gray-600 mb-4">Learn advanced techniques for solving coordinate geometry problems quickly and accurately. This guide covers straight lines, circles, parabolas, and their applications in JEE problems.</p>
-            <div class="flex items-center justify-between">
-              <a href="jee-2026-coordinate-geometry.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
-                Continue Reading
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <div class="flex items-center">
-                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
-                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Blog Post 4 -->
-          <article class="bg-white rounded-xl shadow-md p-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-              <div class="flex items-center space-x-4 mb-3 md:mb-0">
-                <span class="bg-indigo-200 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full">Strategy</span>
-                <span class="text-gray-500 text-sm">March 28, 2025</span>
-                <span class="text-gray-500 text-sm">7 min read</span>
-              </div>
-              <div class="flex items-center text-yellow-500">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="ml-1 text-gray-700 font-semibold">4.7</span>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">JEE 2026: How to Make the Most of Summer Vacations</h3>
-            <p class="text-gray-600 mb-4">A comprehensive plan for utilizing summer breaks effectively for JEE preparation, including revision techniques, mock test analysis, and maintaining motivation.</p>
-            <div class="flex items-center justify-between">
-              <a href="jee-2026-summer-preparation.html" class="text-yellow-700 font-semibold hover:text-yellow-900 inline-flex items-center">
-                Continue Reading
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <div class="flex items-center">
-                <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">BB</div>
-                <span class="ml-2 text-sm text-gray-600">Braj Bhushan</span>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Pagination -->
-          <div class="flex justify-center mt-12">
-            <nav class="flex items-center space-x-2">
-              <a href="#" class="px-4 py-2 bg-yellow-300 text-yellow-900 font-semibold rounded-lg">1</a>
-              <a href="#" class="px-4 py-2 bg-white text-yellow-900 font-semibold rounded-lg hover:bg-yellow-100">2</a>
-              <a href="#" class="px-4 py-2 bg-white text-yellow-900 font-semibold rounded-lg hover:bg-yellow-100">3</a>
-              <a href="#" class="px-4 py-2 bg-white text-yellow-900 font-semibold rounded-lg hover:bg-yellow-100">Next</a>
-            </nav>
-          </div>
-        </div>
-        
-        <!-- Sidebar -->
-        <div class="md:w-1/3">
-          <!-- JEE 2026 Resources -->
-          <div class="bg-gradient-to-r from-amber-50 to-yellow-100 rounded-xl shadow-md p-6 mb-8 border border-yellow-200">
-            <h3 class="text-xl font-bold mb-4 text-teal-800">JEE 2026 Resources</h3>
-            <ul class="space-y-3">
-              <li>
-                <a href="jee-2026-syllabus.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
-                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                  </svg>
-                  <span class="font-medium">Complete Syllabus</span>
-                </a>
-              </li>
-              <li>
-                <a href="jee-2026-study-plan.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
-                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-                  </svg>
-                  <span class="font-medium">Study Plan</span>
-                </a>
-              </li>
-              <li>
-                <a href="jee-2026-books.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
-                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                  </svg>
-                  <span class="font-medium">Recommended Books</span>
-                </a>
-              </li>
-              <li>
-                <a href="jee-2026-mock-tests.html" class="flex items-center p-3 rounded-lg hover:bg-yellow-200 transition">
-                  <svg class="w-5 h-5 mr-3 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  <span class="font-medium">Mock Tests</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- Categories -->
-          <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h3 class="text-xl font-bold mb-4 text-teal-800">Categories</h3>
-            <ul class="space-y-3">
-              <li>
-                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50 active">
-                  <span class="font-medium">Mathematics</span>
-                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">12</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
-                  <span class="font-medium">Physics</span>
-                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">9</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
-                  <span class="font-medium">Chemistry</span>
-                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">8</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
-                  <span class="font-medium">Study Tips</span>
-                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">15</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
-                  <span class="font-medium">Time Management</span>
-                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">6</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="category-btn flex items-center justify-between p-3 rounded-lg hover:bg-yellow-50">
-                  <span class="font-medium">Exam Strategy</span>
-                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">7</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- Popular Posts -->
-          <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h3 class="text-xl font-bold mb-4 text-teal-800">Popular Articles</h3>
-            <div class="space-y-4">
-              <a href="jee-2026-analysis.html" class="flex items-start space-x-3 group">
-                <div class="w-16 h-16 bg-gradient-to-r from-amber-200 to-yellow-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span class="text-xl">📊</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold group-hover:text-yellow-700">JEE 2025 Analysis & 2026 Predictions</h4>
-                  <p class="text-sm text-gray-500">April 12, 2025</p>
-                </div>
-              </a>
-              <a href="jee-2026-ncert-importance.html" class="flex items-start space-x-3 group">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span class="text-xl">📝</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold group-hover:text-yellow-700">Why NCERT is Crucial for JEE 2026</h4>
-                  <p class="text-sm text-gray-500">March 20, 2025</p>
-                </div>
-              </a>
-              <a href="jee-2026-common-mistakes.html" class="flex items-start space-x-3 group">
-                <div class="w-16 h-16 bg-gradient-to-r from-green-200 to-emerald-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span class="text-xl">💡</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold group-hover:text-yellow-700">Common Mistakes to Avoid in JEE 2026</h4>
-                  <p class="text-sm text-gray-500">March 5, 2025</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Newsletter -->
-          <div class="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl shadow-md p-6">
-            <h3 class="text-xl font-bold mb-3 text-teal-800">JEE 2026 Newsletter</h3>
-            <p class="text-gray-700 mb-4">Get weekly JEE 2026 preparation tips, resources, and updates directly in your inbox.</p>
-            <form class="space-y-3">
-              <input type="email" placeholder="Your email address" class="w-full px-4 py-3 rounded-lg border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-              <button type="submit" class="w-full bg-yellow-400 text-yellow-900 font-semibold py-3 rounded-lg hover:bg-yellow-500 transition">Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+   
   </main>
 
   <!-- Auth Modals (Same as math.html) -->
@@ -645,6 +673,26 @@
     // Update the countdown every 1 second
     setInterval(updateCountdown, 1000);
     updateCountdown(); // Initial call
+
+    // Tab functionality
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons and content
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Show corresponding content
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(`${tabId}-tab`).classList.add('active');
+      });
+    });
 
     // Auth modal functions
     function openLoginModal() {
