@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 4 Golden Rules for Finding Domain of Any Function | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master the 4 golden rules for finding domain of any function in JEE Calculus. Learn denominator restrictions, square root conditions, logarithmic rules and inverse trig function domains.">
+    <meta name="keywords" content="JEE domain rules, golden rules for domain, JEE calculus domain, function domain rules, JEE math preparation">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .math-block {
+            background: #f8f9fa;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .rule-box {
+            background: #fffbeb;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        .rule-number {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #f59e0b;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+        .example-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">Golden Rules</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 10 min</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The 4 Golden Rules for Finding Domain of Any Function</h1>
+                <p class="text-xl text-gray-600 mb-4">Master these non-negotiable rules to solve any domain problem in JEE Main & Advanced with confidence.</p>
+                
+                <!-- Quick Nav -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+                    <h3 class="font-semibold text-yellow-900 mb-2">In this guide:</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                            <a href="#rule1" class="text-yellow-700 hover:text-yellow-900">Rule 1: Denominator ≠ 0</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                            <a href="#rule2" class="text-yellow-700 hover:text-yellow-900">Rule 2: Square Root ≥ 0</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                            <a href="#rule3" class="text-yellow-700 hover:text-yellow-900">Rule 3: Logarithm > 0</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                            <a href="#rule4" class="text-yellow-700 hover:text-yellow-900">Rule 4: Inverse Trig Restrictions</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                            <a href="#combined-rules" class="text-yellow-700 hover:text-yellow-900">Combined Rules Practice</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why These Rules Are Golden</h2>
+                <p class="mb-4">These 4 rules form the foundation of domain finding in calculus. Master them, and you can tackle <strong>any</strong> domain problem that appears in JEE. Remember: Violating any of these rules makes a function undefined at that point.</p>
+                
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h3 class="font-semibold text-blue-800 mb-2">JEE Importance:</h3>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Direct questions appear every year in both JEE Main and Advanced</li>
+                        <li>Essential for solving limits, continuity, and differentiability problems</li>
+                        <li>Forms the basis for understanding function behavior</li>
+                        <li>Common source of errors if not applied correctly</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Rule 1 -->
+            <section id="rule1" class="mb-8">
+                <div class="rule-box">
+                    <div class="rule-number">1</div>
+                    <h2 class="text-2xl font-bold text-yellow-900 mb-4">Denominator Cannot Be Zero</h2>
+                    
+                    <div class="math-block">
+                        <p class="text-center text-lg font-semibold mb-2">For $f(x) = \frac{g(x)}{h(x)}$</p>
+                        <p class="text-center">We require $h(x) \neq 0$</p>
+                    </div>
+
+                    <p class="mb-4">This is the most fundamental rule. Division by zero is undefined in mathematics, so we must exclude any x-values that make the denominator zero.</p>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-3">Example 1: Simple Rational Function</h4>
+                        <p class="mb-2">Find domain of $f(x) = \frac{1}{x-2}$</p>
+                        <div class="space-y-2">
+                            <p><strong>Step 1:</strong> Identify denominator: $x - 2$</p>
+                            <p><strong>Step 2:</strong> Set denominator ≠ 0: $x - 2 \neq 0$</p>
+                            <p><strong>Step 3:</strong> Solve: $x \neq 2$</p>
+                            <p><strong>Solution:</strong> Domain = $\mathbb{R} - \{2\}$ or $(-\infty, 2) \cup (2, \infty)$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-3">Example 2: Complex Denominator</h4>
+                        <p class="mb-2">Find domain of $f(x) = \frac{x+1}{x^2 - 4}$</p>
+                        <div class="space-y-2">
+                            <p><strong>Step 1:</strong> Identify denominator: $x^2 - 4$</p>
+                            <p><strong>Step 2:</strong> Set denominator ≠ 0: $x^2 - 4 \neq 0$</p>
+                            <p><strong>Step 3:</strong> Solve: $x^2 \neq 4 \Rightarrow x \neq \pm 2$</p>
+                            <p><strong>Solution:</strong> Domain = $\mathbb{R} - \{-2, 2\}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rule 2 -->
+            <section id="rule2" class="mb-8">
+                <div class="rule-box">
+                    <div class="rule-number">2</div>
+                    <h2 class="text-2xl font-bold text-yellow-900 mb-4">Expression Inside Square Root (Even Root) Must Be ≥ 0</h2>
+                    
+                    <div class="math-block">
+                        <p class="text-center text-lg font-semibold mb-2">For $f(x) = \sqrt{g(x)}$ or $\sqrt[n]{g(x)}$ where n is even</p>
+                        <p class="text-center">We require $g(x) \geq 0$</p>
+                    </div>
+
+                    <p class="mb-4">Square roots (and other even roots) of negative numbers are not real numbers. Therefore, the expression inside must be non-negative.</p>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-3">Example 1: Simple Square Root</h4>
+                        <p class="mb-2">Find domain of $f(x) = \sqrt{x-3}$</p>
+                        <div class="space-y-2">
+                            <p><strong>Step 1:</strong> Identify expression under root: $x - 3$</p>
+                            <p><strong>Step 2:</strong> Set expression ≥ 0: $x - 3 \geq 0$</p>
+                            <p><strong>Step 3:</strong> Solve: $x \geq 3$</p>
+                            <p><strong>Solution:</strong> Domain = $[3, \infty)$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-3">Example 2: Quadratic Under Root</h4>
+                        <p class="mb-2">Find domain of $f(x) = \sqrt{x^2 - 4}$</p>
+                        <div class="space-y-2">
+                            <p><strong>Step 1:</strong> Identify expression: $x^2 - 4$</p>
+                            <p><strong>Step 2:</strong> Set ≥ 0: $x^2 - 4 \geq 0$</p>
+                            <p><strong>Step 3:</strong> Solve inequality: $(x-2)(x+2) \geq 0$</p>
+                            <p><strong>Step 4:</strong> Critical points: $x = -2, 2$</p>
+                            <p><strong>Solution:</strong> Domain = $(-\infty, -2] \cup [2, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rule 3 -->
+            <section id="rule3" class="mb-8">
+                <div class="rule-box">
+                    <div class="rule-number">3</div>
+                    <h2 class="text-2xl font-bold text-yellow-900 mb-4">Expression Inside Logarithm Must Be > 0</h2>
+                    
+                    <div class="math-block">
+                        <p class="text-center text-lg font-semibold mb-2">For $f(x) = \log(g(x))$ or $\ln(g(x))$</p>
+                        <p class="text-center">We require $g(x) > 0$</p>
+                    </div>
+
+                    <p class="mb-4">Logarithms are only defined for positive real numbers. The argument must be strictly greater than zero.</p>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-3">Example 1: Simple Logarithm</h4>
+                        <p class="mb-2">Find domain of $f(x) = \ln(x+4)$</p>
+                        <div class="space-y-2">
+                            <p><strong>Step 1:</strong> Identify argument: $x + 4$</p>
+                            <p><strong>Step 2:</strong> Set argument > 0: $x + 4 > 0$</p>
+                            <p><strong>Step 3:</strong> Solve: $x > -4$</p>
+                            <p><strong>Solution:</strong> Domain = $(-4, \infty)$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-3">Example 2: Logarithm with Quadratic</h4>
+                        <p class="mb-2">Find domain of $f(x) = \log(x^2 - 1)$</p>
+                        <div class="space-y-2">
+                            <p><strong>Step 1:</strong> Identify argument: $x^2 - 1$</p>
+                            <p><strong>Step 2:</strong> Set > 0: $x^2 - 1 > 0$</p>
+                            <p><strong>Step 3:</strong> Solve inequality: $(x-1)(x+1) > 0$</p>
+                            <p><strong>Step 4:</strong> Critical points: $x = -1, 1$</p>
+                            <p><strong>Solution:</strong> Domain = $(-\infty, -1) \cup (1, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rule 4 -->
+            <section id="rule4" class="mb-8">
+                <div class="rule-box">
+                    <div class="rule-number">4</div>
+                    <h2 class="text-2xl font-bold text-yellow-900 mb-4">Special Restrictions for Inverse Trigonometric Functions</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="math-block">
+                            <p class="font-semibold mb-2">$\sin^{-1}x, \cos^{-1}x$</p>
+                            <p>Domain: $[-1, 1]$</p>
+                            <p class="text-sm text-gray-600 mt-1">Input must be between -1 and 1 inclusive</p>
+                        </div>
+                        <div class="math-block">
+                            <p class="font-semibold mb-2">$\tan^{-1}x, \cot^{-1}x$</p>
+                            <p>Domain: $\mathbb{R}$</p>
+                            <p class="text-sm text-gray-600 mt-1">All real numbers are allowed</p>
+                        </div>
+                        <div class="math-block">
+                            <p class="font-semibold mb-2">$\sec^{-1}x, \cosec^{-1}x$</p>
+                            <p>Domain: $(-\infty, -1] \cup [1, \infty)$</p>
+                            <p class="text-sm text-gray-600 mt-1">Input must satisfy $|x| \geq 1$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-3">Example: Inverse Trigonometric Function</h4>
+                        <p class="mb-2">Find domain of $f(x) = \sin^{-1}(2x-1)$</p>
+                        <div class="space-y-2">
+                            <p><strong>Step 1:</strong> For $\sin^{-1}$, argument must be in $[-1, 1]$</p>
+                            <p><strong>Step 2:</strong> Set up inequality: $-1 \leq 2x-1 \leq 1$</p>
+                            <p><strong>Step 3:</strong> Solve: $0 \leq 2x \leq 2$</p>
+                            <p><strong>Step 4:</strong> Final: $0 \leq x \leq 1$</p>
+                            <p><strong>Solution:</strong> Domain = $[0, 1]$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Combined Rules Practice -->
+            <section id="combined-rules" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Applying Multiple Rules Together</h2>
+                <p class="mb-6">In JEE problems, you'll often need to apply multiple rules simultaneously. The final domain is the intersection of all individual restrictions.</p>
+
+                <div class="practice-box">
+                    <h3 class="font-semibold text-green-800 mb-3">JEE Main 2022 Problem</h3>
+                    <p class="mb-3">Find the domain of $f(x) = \frac{\sqrt{x-2}}{\log(x^2-1)}$</p>
+                    <div class="space-y-3 text-sm">
+                        <p class="font-medium">Solution Approach:</p>
+                        
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-semibold text-blue-700">Rule 2: Square Root Condition</p>
+                            <p>$x - 2 \geq 0 \Rightarrow x \geq 2$</p>
+                        </div>
+                        
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-semibold text-blue-700">Rule 3: Logarithm Condition</p>
+                            <p>$x^2 - 1 > 0 \Rightarrow (x-1)(x+1) > 0$</p>
+                            <p>This gives $x < -1$ or $x > 1$</p>
+                        </div>
+                        
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-semibold text-blue-700">Rule 1: Denominator Condition</p>
+                            <p>$\log(x^2-1) \neq 0 \Rightarrow x^2-1 \neq 1$</p>
+                            <p>$x^2 \neq 2 \Rightarrow x \neq \pm\sqrt{2}$</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-3 rounded border border-yellow-200">
+                            <p class="font-semibold text-yellow-700">Combine All Conditions:</p>
+                            <p>From above: $x \geq 2$ AND $(x < -1$ or $x > 1)$ AND $x \neq \pm\sqrt{2}$</p>
+                            <p class="font-semibold mt-2">Final Domain: $(2, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Golden Rules Quick Reference</h2>
+                
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-3">The 4 Golden Rules</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <span class="bg-yellow-200 text-yellow-800 text-xs font-bold px-2 py-1 rounded mr-2 mt-1">1</span>
+                                    <span><strong>Denominator ≠ 0</strong><br>For $\frac{g(x)}{h(x)}$, exclude roots of $h(x)$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-yellow-200 text-yellow-800 text-xs font-bold px-2 py-1 rounded mr-2 mt-1">2</span>
+                                    <span><strong>Even Root ≥ 0</strong><br>For $\sqrt{g(x)}$, solve $g(x) \geq 0$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-yellow-200 text-yellow-800 text-xs font-bold px-2 py-1 rounded mr-2 mt-1">3</span>
+                                    <span><strong>Logarithm > 0</strong><br>For $\log(g(x))$, solve $g(x) > 0$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-yellow-200 text-yellow-800 text-xs font-bold px-2 py-1 rounded mr-2 mt-1">4</span>
+                                    <span><strong>Inverse Trig Restrictions</strong><br>Remember specific domain ranges</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-3">Problem Solving Strategy</h3>
+                            <ol class="list-decimal list-inside space-y-2 text-sm">
+                                <li>Identify all rules that apply to the function</li>
+                                <li>Solve each condition separately</li>
+                                <li>Take intersection of all solutions</li>
+                                <li>Express final domain in interval notation</li>
+                                <li>Always check edge cases and boundaries</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Ready to Apply These Rules?</h3>
+                    <p class="text-blue-800 mb-4">Test your understanding with domain finding practice problems:</p>
+                    <a href="jee-domain-practice.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Practice Problems →
+                    </a>
+                </div>
+            </section>
+        </article>
+
+       
+    </div>
+
+     <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain & Range: Complete Guide for JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master Domain and Range concepts for JEE Main & Advanced. Learn step-by-step methods to find domain and range of all function types with solved examples and practice problems.">
+    <meta name="keywords" content="JEE domain range, JEE calculus, functions domain range, JEE math preparation, JEE main mathematics, JEE advanced calculus">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileSubjectsBtn = document.getElementById('mobileSubjectsBtn');
+            const mobileSubjectsMenu = document.getElementById('mobileSubjectsMenu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                    mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+                });
+            }
+            
+            if (mobileSubjectsBtn) {
+                mobileSubjectsBtn.addEventListener('click', function() {
+                    mobileSubjectsMenu.classList.toggle('hidden');
+                });
+            }
+        });
+        
+        // Mock authentication functions
+        function openLoginModal() {
+            alert('Login functionality would open here');
+        }
+        
+        function openSignupModal() {
+            alert('Signup functionality would open here');
+        }
+        
+        function logoutUser() {
+            alert('User would be logged out');
+        }
+    </script>
+    
+    <style>
+        .math-block {
+            background: #f8f9fa;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-20">
+   
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Calculus Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Domain & Range: The Foundation of JEE Calculus</h1>
+                <p class="text-xl text-gray-600 mb-4">Complete guide to mastering domain and range concepts for JEE Main & Advanced with step-by-step methods and solved examples.</p>
+                
+                <!-- Quick Nav -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <h3 class="font-semibold text-blue-900 mb-2">In this guide:</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#what-is-domain-range" class="text-blue-700 hover:text-blue-900">What are Domain & Range?</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#golden-rules" class="text-blue-700 hover:text-blue-900">4 Golden Rules</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#algebraic-functions" class="text-blue-700 hover:text-blue-900">Algebraic Functions</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#trigonometric-functions" class="text-blue-700 hover:text-blue-900">Trigonometric Functions</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#practice-problems" class="text-blue-700 hover:text-blue-900">JEE Practice Problems</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Domain & Range Matter for JEE</h2>
+                <p class="mb-4">Domain and Range form the bedrock of calculus and are among the most frequently tested concepts in JEE Main and Advanced. Understanding these concepts is crucial because:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li>They appear directly in 2-3 questions every year</li>
+                    <li>They're essential for understanding limits, continuity, and differentiability</li>
+                    <li>Mistakes in domain/range lead to errors in integration and differentiation</li>
+                    <li>They help visualize function behavior graphically</li>
+                </ul>
+            </section>
+
+            <!-- What are Domain & Range -->
+            <section id="what-is-domain-range" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What are Domain and Range?</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="math-block">
+                        <h3 class="font-semibold text-blue-800 mb-2">Domain</h3>
+                        <p class="mb-2">The set of all possible <strong>input values</strong> (x-values) for which the function is defined.</p>
+                        <div class="text-center">
+                            $$ \text{Domain} = \{x \in \mathbb{R} : f(x) \text{ is defined}\} $$
+                        </div>
+                    </div>
+                    
+                    <div class="math-block">
+                        <h3 class="font-semibold text-blue-800 mb-2">Range</h3>
+                        <p class="mb-2">The set of all possible <strong>output values</strong> (y-values) that the function can produce.</p>
+                        <div class="text-center">
+                            $$ \text{Range} = \{y \in \mathbb{R} : y = f(x) \text{ for some } x \in \text{Domain}\} $$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-blue-800 mb-3">Example 1: Basic Understanding</h4>
+                    <p class="mb-2">For $f(x) = x^2$:</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>Domain:</strong> All real numbers $\mathbb{R}$ (we can square any real number)</li>
+                        <li><strong>Range:</strong> $[0, \infty)$ (squares are always non-negative)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 4 Golden Rules -->
+            <section id="golden-rules" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The 4 Golden Rules for Finding Domain</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-l-4 border-red-500 bg-red-50 p-4 rounded">
+                        <h3 class="font-semibold text-red-800 mb-2">1. Denominator Cannot Be Zero</h3>
+                        <p>For $f(x) = \frac{g(x)}{h(x)}$, we require $h(x) \neq 0$</p>
+                        <div class="example-box mt-3">
+                            <p class="mb-2"><strong>Example:</strong> $f(x) = \frac{1}{x-2}$</p>
+                            <p>Domain: $x - 2 \neq 0 \Rightarrow x \neq 2$</p>
+                            <p>$\therefore$ Domain = $\mathbb{R} - \{2\}$</p>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-green-500 bg-green-50 p-4 rounded">
+                        <h3 class="font-semibold text-green-800 mb-2">2. Expression Inside Square Root (Even Root) Must Be ≥ 0</h3>
+                        <p>For $f(x) = \sqrt{g(x)}$, we require $g(x) \geq 0$</p>
+                        <div class="example-box mt-3">
+                            <p class="mb-2"><strong>Example:</strong> $f(x) = \sqrt{x-3}$</p>
+                            <p>Domain: $x - 3 \geq 0 \Rightarrow x \geq 3$</p>
+                            <p>$\therefore$ Domain = $[3, \infty)$</p>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 bg-purple-50 p-4 rounded">
+                        <h3 class="font-semibold text-purple-800 mb-2">3. Expression Inside Logarithm Must Be > 0</h3>
+                        <p>For $f(x) = \log(g(x))$, we require $g(x) > 0$</p>
+                        <div class="example-box mt-3">
+                            <p class="mb-2"><strong>Example:</strong> $f(x) = \ln(x+4)$</p>
+                            <p>Domain: $x + 4 > 0 \Rightarrow x > -4$</p>
+                            <p>$\therefore$ Domain = $(-4, \infty)$</p>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-orange-500 bg-orange-50 p-4 rounded">
+                        <h3 class="font-semibold text-orange-800 mb-2">4. Special Restrictions for Inverse Trigonometric Functions</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>$\sin^{-1}x, \cos^{-1}x$: Domain = $[-1, 1]$</li>
+                            <li>$\tan^{-1}x, \cot^{-1}x$: Domain = $\mathbb{R}$</li>
+                            <li>$\sec^{-1}x, \cosec^{-1}x$: Domain = $(-\infty, -1] \cup [1, \infty)$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Algebraic Functions -->
+            <section id="algebraic-functions" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Domain & Range of Algebraic Functions</h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="py-3 px-4 border-b text-left font-semibold">Function Type</th>
+                                <th class="py-3 px-4 border-b text-left font-semibold">Domain</th>
+                                <th class="py-3 px-4 border-b text-left font-semibold">Range</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-3 px-4 border-b">Polynomial $ax^n + ...$</td>
+                                <td class="py-3 px-4 border-b">$\mathbb{R}$</td>
+                                <td class="py-3 px-4 border-b">$\mathbb{R}$ (if odd degree)<br>$[k, \infty)$ or $(-\infty, k]$ (if even degree)</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-3 px-4 border-b">Rational $\frac{p(x)}{q(x)}$</td>
+                                <td class="py-3 px-4 border-b">$\mathbb{R} - \{\text{roots of } q(x)\}$</td>
+                                <td class="py-3 px-4 border-b">Depends on function</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-3 px-4 border-b">Square Root $\sqrt{ax+b}$</td>
+                                <td class="py-3 px-4 border-b">$[-\frac{b}{a}, \infty)$ if $a>0$</td>
+                                <td class="py-3 px-4 border-b">$[0, \infty)$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-box mt-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">Example 2: Complex Algebraic Function</h4>
+                    <p class="mb-3">Find domain of $f(x) = \frac{\sqrt{x-2}}{x^2-9}$</p>
+                    <div class="space-y-2">
+                        <p><strong>Step 1:</strong> Square root condition: $x - 2 \geq 0 \Rightarrow x \geq 2$</p>
+                        <p><strong>Step 2:</strong> Denominator condition: $x^2 - 9 \neq 0 \Rightarrow x \neq \pm 3$</p>
+                        <p><strong>Step 3:</strong> Combine: $x \geq 2$ AND $x \neq 3$</p>
+                        <p><strong>Solution:</strong> Domain = $[2, 3) \cup (3, \infty)$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trigonometric Functions -->
+            <section id="trigonometric-functions" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Trigonometric Functions Domain & Range</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-3">Standard Trigonometric Functions</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="py-2 px-3 border-b text-left font-semibold text-sm">Function</th>
+                                        <th class="py-2 px-3 border-b text-left font-semibold text-sm">Domain</th>
+                                        <th class="py-2 px-3 border-b text-left font-semibold text-sm">Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-2 px-3 border-b">$\sin x$</td>
+                                        <td class="py-2 px-3 border-b">$\mathbb{R}$</td>
+                                        <td class="py-2 px-3 border-b">$[-1, 1]$</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-2 px-3 border-b">$\cos x$</td>
+                                        <td class="py-2 px-3 border-b">$\mathbb{R}$</td>
+                                        <td class="py-2 px-3 border-b">$[-1, 1]$</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-2 px-3 border-b">$\tan x$</td>
+                                        <td class="py-2 px-3 border-b">$\mathbb{R} - \{\frac{\pi}{2} + n\pi\}$</td>
+                                        <td class="py-2 px-3 border-b">$\mathbb{R}$</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold text-lg mb-3">Inverse Trigonometric Functions</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="py-2 px-3 border-b text-left font-semibold text-sm">Function</th>
+                                        <th class="py-2 px-3 border-b text-left font-semibold text-sm">Domain</th>
+                                        <th class="py-2 px-3 border-b text-left font-semibold text-sm">Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-2 px-3 border-b">$\sin^{-1} x$</td>
+                                        <td class="py-2 px-3 border-b">$[-1, 1]$</td>
+                                        <td class="py-2 px-3 border-b">$[-\frac{\pi}{2}, \frac{\pi}{2}]$</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-2 px-3 border-b">$\cos^{-1} x$</td>
+                                        <td class="py-2 px-3 border-b">$[-1, 1]$</td>
+                                        <td class="py-2 px-3 border-b">$[0, \pi]$</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-2 px-3 border-b">$\tan^{-1} x$</td>
+                                        <td class="py-2 px-3 border-b">$\mathbb{R}$</td>
+                                        <td class="py-2 px-3 border-b">$(-\frac{\pi}{2}, \frac{\pi}{2})$</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section id="practice-problems" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">JEE Practice Problems</h2>
+                
+                <div class="practice-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Problem 1: JEE Main 2023</h3>
+                    <p class="mb-3">The domain of the function $f(x) = \frac{1}{\sqrt{|x| - x}}$ is:</p>
+                    <div class="space-y-2 text-sm">
+                        <p class="font-medium">Solution Approach:</p>
+                        <p>1. Denominator condition: $\sqrt{|x| - x} \neq 0 \Rightarrow |x| - x > 0$</p>
+                        <p>2. Analyze $|x| - x > 0$:</p>
+                        <p class="ml-4">• For $x \geq 0$: $|x| - x = x - x = 0$ ✗</p>
+                        <p class="ml-4">• For $x < 0$: $|x| - x = -x - x = -2x > 0$ ✓</p>
+                        <p>3. Domain: $x < 0$ or $(-\infty, 0)$</p>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Problem 2: JEE Advanced 2022</h3>
+                    <p class="mb-3">Find the range of $f(x) = \frac{x^2 - 3x + 2}{x^2 + x - 6}$</p>
+                    <div class="space-y-2 text-sm">
+                        <p class="font-medium">Solution Approach:</p>
+                        <p>1. Factor: $f(x) = \frac{(x-1)(x-2)}{(x-2)(x+3)} = \frac{x-1}{x+3}$ for $x \neq 2$</p>
+                        <p>2. Let $y = \frac{x-1}{x+3}$ and solve for $x$: $x = \frac{1+3y}{1-y}$</p>
+                        <p>3. Domain of this relation: $y \neq 1$</p>
+                        <p>4. Also exclude $x=2$ case: when $x=2$, original function undefined</p>
+                        <p>5. Range: $\mathbb{R} - \{1, \frac{1}{5}\}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Quick Revision Checklist</h2>
+                
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-2">Always Check For:</h3>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Denominator ≠ 0</li>
+                                <li>Expression under even root ≥ 0</li>
+                                <li>Expression inside log > 0</li>
+                                <li>Special trig function restrictions</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-2">Common Mistakes:</h3>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Forgetting to exclude points where function undefined</li>
+                                <li>Not considering all restrictions in composite functions</li>
+                                <li>Confusing domain of f(x) with f(g(x))</li>
+                                <li>Missing edge cases in piecewise functions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Ready for the Next Topic?</h3>
+                    <p class="text-blue-800 mb-4">Mastered Domain & Range? Continue your JEE Calculus journey with:</p>
+                    <a href="jee-limits-continuity.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Limits & Continuity →
+                    </a>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

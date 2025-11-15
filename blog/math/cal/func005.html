@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Advanced: Tough Domain & Range Problems Solved | KnowJEE</title>
+    <meta name="description" content="Master JEE Advanced level domain and range problems with step-by-step solutions. Complex functions, trigonometry, and multi-concept problems solved.">
+    <meta name="keywords" content="JEE Advanced domain range, complex functions, trigonometric functions, JEE tough problems, domain range solutions">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileSubjectsBtn = document.getElementById('mobileSubjectsBtn');
+            const mobileSubjectsMenu = document.getElementById('mobileSubjectsMenu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                    mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+                });
+            }
+            
+            if (mobileSubjectsBtn) {
+                mobileSubjectsBtn.addEventListener('click', function() {
+                    mobileSubjectsMenu.classList.toggle('hidden');
+                });
+            }
+        });
+        
+        // Mock authentication functions
+        function openLoginModal() {
+            alert('Login functionality would open here');
+        }
+        
+        function openSignupModal() {
+            alert('Signup functionality would open here');
+        }
+        
+        function logoutUser() {
+            alert('User would be logged out');
+        }
+    </script>
+    
+    <style>
+        .math-block {
+            background: #f8f9fa;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .analogy-box {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .solution-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .advanced-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-20">
+    <!-- Header would go here -->
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">Advanced Level</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">JEE Advanced: The Toughest Domain & Range Problems Solved</h1>
+                <p class="text-xl text-gray-600 mb-4">Master complex multi-concept problems that combine domain/range with trigonometry, functions, and inequalities.</p>
+                
+                <!-- Quick Nav -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <h3 class="font-semibold text-red-900 mb-2">In this advanced guide:</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            <a href="#complex-functions" class="text-red-700 hover:text-red-900">Complex Nested Functions</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            <a href="#trigonometric" class="text-red-700 hover:text-red-900">Trigonometric Functions</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            <a href="#inverse-trig" class="text-red-700 hover:text-red-900">Inverse Trigonometric Functions</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            <a href="#modulus" class="text-red-700 hover:text-red-900">Modulus & Piecewise Functions</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            <a href="#multi-concept" class="text-red-700 hover:text-red-900">Multi-Concept Problems</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Advanced Domain & Range Problems Are Challenging</h2>
+                <p class="mb-4">JEE Advanced domain and range problems require more than just basic understanding. They test your ability to:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li>Combine multiple mathematical concepts</li>
+                    <li>Handle nested and composite functions</li>
+                    <li>Apply trigonometric identities and inequalities</li>
+                    <li>Work with inverse trigonometric functions</li>
+                    <li>Solve complex inequalities systematically</li>
+                </ul>
+                
+                <div class="advanced-box">
+                    <h3 class="font-semibold text-orange-800 mb-3">🎯 JEE Advanced Strategy</h3>
+                    <p>These problems often appear in JEE Advanced because they test <strong>conceptual depth</strong> and <strong>problem-solving versatility</strong>. Mastery requires:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Systematic approach to complex constraints</li>
+                        <li>Understanding function composition deeply</li>
+                        <li>Recognizing patterns in trigonometric expressions</li>
+                        <li>Applying inequality properties correctly</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Complex Functions -->
+            <section id="complex-functions" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Complex Nested Functions</h2>
+                
+                <div class="solution-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Problem 1: Nested Square Roots</h3>
+                    <p class="mb-4">Find the domain of $f(x) = \sqrt{\frac{1 - \sqrt{1 - x^2}}{2}}$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Innermost constraint</h4>
+                        <p>For $\sqrt{1 - x^2}$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $1 - x^2 \geq 0 \Rightarrow x^2 \leq 1 \Rightarrow -1 \leq x \leq 1$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Outer square root constraint</h4>
+                        <p>For the main square root to be defined:</p>
+                        <div class="text-center my-2">
+                            $\frac{1 - \sqrt{1 - x^2}}{2} \geq 0$
+                        </div>
+                        <p>Multiply both sides by 2 (positive):</p>
+                        <div class="text-center my-2">
+                            $1 - \sqrt{1 - x^2} \geq 0 \Rightarrow \sqrt{1 - x^2} \leq 1$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Analyze the inequality</h4>
+                        <p>Since $\sqrt{1 - x^2}$ is always non-negative and for $x \in [-1, 1]$, we have $0 \leq \sqrt{1 - x^2} \leq 1$.</p>
+                        <p>The inequality $\sqrt{1 - x^2} \leq 1$ is always true for $x \in [-1, 1]$.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Check for equality edge case</h4>
+                        <p>When $\sqrt{1 - x^2} = 1$, we get $x = 0$, and the function becomes:</p>
+                        <div class="text-center my-2">
+                            $f(0) = \sqrt{\frac{1 - 1}{2}} = \sqrt{0} = 0$ ✓
+                        </div>
+                        <p>So $x = 0$ is included in the domain.</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                        <p class="font-semibold">Domain = $[-1, 1]$</p>
+                    </div>
+                </div>
+
+                <div class="solution-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Problem 2: Composite Logarithmic Function</h3>
+                    <p class="mb-4">Find the domain of $f(x) = \log_2(\log_3(\log_{1/2}(x^2 - 5x + 6)))$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Innermost log constraint</h4>
+                        <p>For $\log_{1/2}(x^2 - 5x + 6)$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $x^2 - 5x + 6 > 0$
+                        </div>
+                        <p>Factor: $(x - 2)(x - 3) > 0$</p>
+                        <p>Solution: $x < 2$ or $x > 3$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Middle log constraint</h4>
+                        <p>For $\log_3(\log_{1/2}(x^2 - 5x + 6))$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $\log_{1/2}(x^2 - 5x + 6) > 0$
+                        </div>
+                        <p>Since base $1/2 < 1$, the inequality reverses:</p>
+                        <div class="text-center my-2">
+                            $x^2 - 5x + 6 < (1/2)^0 = 1$
+                        </div>
+                        <p>So: $x^2 - 5x + 6 < 1 \Rightarrow x^2 - 5x + 5 < 0$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Solve quadratic inequality</h4>
+                        <p>Roots of $x^2 - 5x + 5 = 0$:</p>
+                        <div class="text-center my-2">
+                            $x = \frac{5 \pm \sqrt{25 - 20}}{2} = \frac{5 \pm \sqrt{5}}{2}$
+                        </div>
+                        <p>So $x^2 - 5x + 5 < 0$ when:</p>
+                        <div class="text-center my-2">
+                            $\frac{5 - \sqrt{5}}{2} < x < \frac{5 + \sqrt{5}}{2}$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Combine all constraints</h4>
+                        <p>We need:</p>
+                        <ol class="list-decimal list-inside space-y-1">
+                            <li>$x < 2$ or $x > 3$ (from Step 1)</li>
+                            <li>$\frac{5 - \sqrt{5}}{2} < x < \frac{5 + \sqrt{5}}{2}$ (from Step 3)</li>
+                        </ol>
+                        <p class="mt-2">Numerically: $\frac{5 - \sqrt{5}}{2} \approx 1.38$, $\frac{5 + \sqrt{5}}{2} \approx 3.62$</p>
+                        <p>Intersection: $(1.38, 2) \cup (3, 3.62)$</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                        <p class="font-semibold">Domain = $\left(\frac{5 - \sqrt{5}}{2}, 2\right) \cup \left(3, \frac{5 + \sqrt{5}}{2}\right)$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trigonometric Functions -->
+            <section id="trigonometric" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Trigonometric Functions with Domain Constraints</h2>
+                
+                <div class="solution-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Problem 3: Trigonometric Square Root</h3>
+                    <p class="mb-4">Find the domain of $f(x) = \sqrt{\sin x - \cos x} + \sqrt{\frac{1}{\tan x} - 1}$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: First square root constraint</h4>
+                        <p>For $\sqrt{\sin x - \cos x}$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $\sin x - \cos x \geq 0$
+                        </div>
+                        <p>Divide by $\sqrt{2}$:</p>
+                        <div class="text-center my-2">
+                            $\frac{1}{\sqrt{2}}\sin x - \frac{1}{\sqrt{2}}\cos x \geq 0$
+                        </div>
+                        <p>This is: $\sin\left(x - \frac{\pi}{4}\right) \geq 0$</p>
+                        <p>Solution: $2n\pi \leq x - \frac{\pi}{4} \leq (2n+1)\pi$</p>
+                        <p>So: $2n\pi + \frac{\pi}{4} \leq x \leq (2n+1)\pi + \frac{\pi}{4}$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Second square root constraint</h4>
+                        <p>For $\sqrt{\frac{1}{\tan x} - 1}$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $\frac{1}{\tan x} - 1 \geq 0$ and $\tan x \neq 0$
+                        </div>
+                        <p>Simplify: $\frac{1 - \tan x}{\tan x} \geq 0$</p>
+                        <p>This is a rational inequality. Critical points: $\tan x = 0$ and $\tan x = 1$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Solve the rational inequality</h4>
+                        <p>Sign chart for $\frac{1 - \tan x}{\tan x}$:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>When $0 < \tan x < 1$: numerator positive, denominator positive → positive</li>
+                            <li>When $\tan x > 1$: numerator negative, denominator positive → negative</li>
+                            <li>When $\tan x < 0$: numerator positive, denominator negative → negative</li>
+                        </ul>
+                        <p class="mt-2">So $\frac{1 - \tan x}{\tan x} \geq 0$ when $0 < \tan x \leq 1$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Combine both constraints</h4>
+                        <p>We need both:</p>
+                        <ol class="list-decimal list-inside space-y-1">
+                            <li>$2n\pi + \frac{\pi}{4} \leq x \leq (2n+1)\pi + \frac{\pi}{4}$</li>
+                            <li>$0 < \tan x \leq 1$</li>
+                        </ol>
+                        <p class="mt-2">The intersection occurs in intervals where both conditions are satisfied simultaneously.</p>
+                        <p>Final domain: $x \in \left[2n\pi + \frac{\pi}{4}, 2n\pi + \frac{\pi}{2}\right) \cup \left(2n\pi + \frac{\pi}{2}, 2n\pi + \frac{5\pi}{4}\right]$</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                        <p class="font-semibold">Domain = $\bigcup_{n \in \mathbb{Z}} \left(\left[2n\pi + \frac{\pi}{4}, 2n\pi + \frac{\pi}{2}\right) \cup \left(2n\pi + \frac{\pi}{2}, 2n\pi + \frac{5\pi}{4}\right]\right)$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inverse Trigonometric Functions -->
+            <section id="inverse-trig" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Inverse Trigonometric Functions</h2>
+                
+                <div class="solution-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Problem 4: Composite Inverse Trig Function</h3>
+                    <p class="mb-4">Find the domain of $f(x) = \sin^{-1}\left(\frac{1 + x^2}{2x}\right)$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Domain of inverse sine</h4>
+                        <p>For $\sin^{-1}(y)$ to be defined, we need $-1 \leq y \leq 1$</p>
+                        <p>So: $-1 \leq \frac{1 + x^2}{2x} \leq 1$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Solve the inequality</h4>
+                        <p>We need to solve two inequalities:</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>$\frac{1 + x^2}{2x} \geq -1$</li>
+                            <li>$\frac{1 + x^2}{2x} \leq 1$</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: First inequality</h4>
+                        <p>$\frac{1 + x^2}{2x} \geq -1$</p>
+                        <p>Multiply by $2x$ (but sign matters):</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>If $x > 0$: $1 + x^2 \geq -2x \Rightarrow x^2 + 2x + 1 \geq 0 \Rightarrow (x+1)^2 \geq 0$ (always true)</li>
+                            <li>If $x < 0$: $1 + x^2 \leq -2x \Rightarrow x^2 + 2x + 1 \leq 0 \Rightarrow (x+1)^2 \leq 0 \Rightarrow x = -1$</li>
+                        </ul>
+                        <p>So from first inequality: $x > 0$ or $x = -1$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Second inequality</h4>
+                        <p>$\frac{1 + x^2}{2x} \leq 1$</p>
+                        <p>Multiply by $2x$ (sign matters):</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>If $x > 0$: $1 + x^2 \leq 2x \Rightarrow x^2 - 2x + 1 \leq 0 \Rightarrow (x-1)^2 \leq 0 \Rightarrow x = 1$</li>
+                            <li>If $x < 0$: $1 + x^2 \geq 2x \Rightarrow x^2 - 2x + 1 \geq 0 \Rightarrow (x-1)^2 \geq 0$ (always true)</li>
+                        </ul>
+                        <p>So from second inequality: $x = 1$ or $x < 0$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 5: Combine results</h4>
+                        <p>From Step 3: $x > 0$ or $x = -1$</p>
+                        <p>From Step 4: $x = 1$ or $x < 0$</p>
+                        <p>Intersection: $x = 1$ or $x = -1$</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                        <p class="font-semibold">Domain = $\{-1, 1\}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modulus & Piecewise Functions -->
+            <section id="modulus" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Modulus & Piecewise Functions</h2>
+                
+                <div class="solution-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Problem 5: Modulus in Denominator</h3>
+                    <p class="mb-4">Find the domain of $f(x) = \frac{1}{\sqrt{|x| - x}}$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Square root constraint</h4>
+                        <p>For $\sqrt{|x| - x}$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $|x| - x \geq 0$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Denominator constraint</h4>
+                        <p>Since it's in denominator:</p>
+                        <div class="text-center my-2">
+                            $\sqrt{|x| - x} \neq 0 \Rightarrow |x| - x \neq 0$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Analyze by cases</h4>
+                        <p><strong>Case 1:</strong> $x \geq 0$</p>
+                        <p>Then $|x| = x$, so $|x| - x = 0$</p>
+                        <p>But this violates denominator constraint. So no $x \geq 0$.</p>
+                        
+                        <p class="mt-2"><strong>Case 2:</strong> $x < 0$</p>
+                        <p>Then $|x| = -x$, so $|x| - x = -x - x = -2x$</p>
+                        <p>Since $x < 0$, $-2x > 0$, so $\sqrt{|x| - x}$ is defined and non-zero.</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                        <p class="font-semibold">Domain = $(-\infty, 0)$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Multi-Concept Problems -->
+            <section id="multi-concept" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Multi-Concept Challenge Problems</h2>
+                
+                <div class="solution-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Problem 6: The Ultimate Challenge</h3>
+                    <p class="mb-4">Find the domain and range of $f(x) = \log_2\left(\sin^{-1}\left(\frac{x^2 - 1}{x^2 + 1}\right)\right)$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Innermost function constraint</h4>
+                        <p>For $\sin^{-1}\left(\frac{x^2 - 1}{x^2 + 1}\right)$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $-1 \leq \frac{x^2 - 1}{x^2 + 1} \leq 1$
+                        </div>
+                        <p>Since denominator $x^2 + 1 > 0$ for all $x$, we can analyze directly.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Analyze the bounds</h4>
+                        <p>Note that $\frac{x^2 - 1}{x^2 + 1} = 1 - \frac{2}{x^2 + 1}$</p>
+                        <p>Since $x^2 + 1 \geq 1$, we have $\frac{2}{x^2 + 1} \leq 2$</p>
+                        <p>So: $1 - \frac{2}{x^2 + 1} \geq 1 - 2 = -1$</p>
+                        <p>Also: $1 - \frac{2}{x^2 + 1} \leq 1 - 0 = 1$</p>
+                        <p>So automatically: $-1 \leq \frac{x^2 - 1}{x^2 + 1} \leq 1$ for all real $x$.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Logarithm constraint</h4>
+                        <p>For $\log_2\left(\sin^{-1}\left(\frac{x^2 - 1}{x^2 + 1}\right)\right)$ to be defined:</p>
+                        <div class="text-center my-2">
+                            $\sin^{-1}\left(\frac{x^2 - 1}{x^2 + 1}\right) > 0$
+                        </div>
+                        <p>Since $\sin^{-1}(y) > 0$ when $y > 0$:</p>
+                        <div class="text-center my-2">
+                            $\frac{x^2 - 1}{x^2 + 1} > 0$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Solve the inequality</h4>
+                        <p>$\frac{x^2 - 1}{x^2 + 1} > 0$</p>
+                        <p>Since denominator $x^2 + 1 > 0$ always, this simplifies to:</p>
+                        <div class="text-center my-2">
+                            $x^2 - 1 > 0 \Rightarrow x^2 > 1 \Rightarrow x < -1$ or $x > 1$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 5: Find the range</h4>
+                        <p>Let $y = \frac{x^2 - 1}{x^2 + 1}$</p>
+                        <p>When $x \to \pm\infty$, $y \to 1^-$</p>
+                        <p>When $x \to 1^+$ or $x \to -1^-$, $y \to 0^+$</p>
+                        <p>So $y \in (0, 1)$ for $x \in (-\infty, -1) \cup (1, \infty)$</p>
+                        <p>Then $\sin^{-1}(y) \in (0, \frac{\pi}{2})$</p>
+                        <p>Finally, $\log_2(\sin^{-1}(y)) \in (-\infty, \log_2(\frac{\pi}{2}))$</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                        <p class="font-semibold">Domain = $(-\infty, -1) \cup (1, \infty)$</p>
+                        <p class="font-semibold">Range = $\left(-\infty, \log_2\left(\frac{\pi}{2}\right)\right)$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Problem Solving Strategies -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Advanced Problem Solving Strategies</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="advanced-box">
+                        <h3 class="font-semibold text-orange-800 mb-3">🔍 Systematic Approach</h3>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>Start from the innermost function and work outward</li>
+                            <li>Handle each constraint separately before combining</li>
+                            <li>Pay attention to inequality directions when multiplying/dividing</li>
+                            <li>Check edge cases where denominators are zero</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advanced-box">
+                        <h3 class="font-semibold text-orange-800 mb-3">🎯 Common Pitfalls to Avoid</h3>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>Forgetting to reverse inequality signs when multiplying by negative numbers</li>
+                            <li>Missing edge cases in trigonometric functions</li>
+                            <li>Not considering all branches in inverse trigonometric functions</li>
+                            <li>Overlooking denominator constraints in rational functions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="advanced-box mt-6">
+                    <h3 class="font-semibold text-orange-800 mb-3">📝 JEE Advanced Exam Tips</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>These problems often appear as single correct or multiple correct choice questions</li>
+                        <li>Time management is crucial - if stuck, move on and return later</li>
+                        <li>Practice recognizing patterns to solve faster</li>
+                        <li>Always verify your answer by testing boundary values</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Try These Advanced Problems</h2>
+                
+                <div class="practice-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Challenge Yourself</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-semibold mb-2">Problem A:</p>
+                            <p>Find domain of $f(x) = \sqrt{\frac{\sin^{-1}(2x)}{\cos^{-1}(2x)}}$</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-semibold mb-2">Problem B:</p>
+                            <p>Find domain and range of $f(x) = \log_{\frac{1}{2}}\left(\log_2\left(\frac{x^2 + 4x + 3}{x - 1}\right)\right)$</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-semibold mb-2">Problem C:</p>
+                            <p>Find domain of $f(x) = \sqrt{\sin(\log_2 x)} + \sqrt{16 - x^2}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-gray-600">
+                        <p>Hint: These require combining multiple concepts we've covered. Work systematically!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-2">Ready for Even More Advanced Concepts?</h3>
+                    <p class="text-red-800 mb-4">Master domain and range in functions of multiple variables and learn advanced graphing techniques!</p>
+                    <a href="blog/math/cal/func003.html" class="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Master Multi-Variable Functions →
+                    </a>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

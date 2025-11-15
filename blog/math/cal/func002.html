@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, Domain & Range: Ultimate Starter Guide for JEE | KnowJEE</title>
+    <meta name="description" content="Master the fundamental concepts of functions, domain and range for JEE Main & Advanced. Build intuition with clear examples and step-by-step explanations.">
+    <meta name="keywords" content="JEE functions, domain range, JEE math foundation, functions basics, JEE starter guide, mathematical functions">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileSubjectsBtn = document.getElementById('mobileSubjectsBtn');
+            const mobileSubjectsMenu = document.getElementById('mobileSubjectsMenu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                    mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+                });
+            }
+            
+            if (mobileSubjectsBtn) {
+                mobileSubjectsBtn.addEventListener('click', function() {
+                    mobileSubjectsMenu.classList.toggle('hidden');
+                });
+            }
+        });
+        
+        // Mock authentication functions
+        function openLoginModal() {
+            alert('Login functionality would open here');
+        }
+        
+        function openSignupModal() {
+            alert('Signup functionality would open here');
+        }
+        
+        function logoutUser() {
+            alert('User would be logged out');
+        }
+    </script>
+    
+    <style>
+        .math-block {
+            background: #f8f9fa;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .analogy-box {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-20">
+    
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 8 min</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Functions, Domain & Range: The Ultimate Starter Guide</h1>
+                <p class="text-xl text-gray-600 mb-4">Build intuition - Domain as "all possible inputs", Range as "all possible outputs". Sets the stage for everything in calculus.</p>
+                
+                <!-- Quick Nav -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <h3 class="font-semibold text-blue-900 mb-2">In this starter guide:</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#what-is-function" class="text-blue-700 hover:text-blue-900">What is a Function?</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#domain-intuition" class="text-blue-700 hover:text-blue-900">Domain: All Possible Inputs</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#range-intuition" class="text-blue-700 hover:text-blue-900">Range: All Possible Outputs</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#real-life-analogies" class="text-blue-700 hover:text-blue-900">Real-life Analogies</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <a href="#basic-examples" class="text-blue-700 hover:text-blue-900">Basic Examples</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Start with Functions?</h2>
+                <p class="mb-4">Functions are the <strong>building blocks</strong> of calculus and higher mathematics. Before we can dive into limits, derivatives, and integrals, we need to understand what functions are and how they work.</p>
+                <p class="mb-4">Think of functions as <strong>machines</strong> that take inputs and produce outputs according to specific rules. Understanding this basic concept will make everything else in calculus much easier!</p>
+                
+                <div class="analogy-box">
+                    <h3 class="font-semibold text-green-800 mb-3">💡 Pro Tip for JEE Aspirants</h3>
+                    <p>Functions appear in <strong>every single topic</strong> of JEE Mathematics. Mastering this foundation will help you in:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Calculus (Limits, Derivatives, Integration)</li>
+                        <li>Algebra (Equations, Inequalities)</li>
+                        <li>Coordinate Geometry</li>
+                        <li>Trigonometry</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- What is a Function -->
+            <section id="what-is-function" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What Exactly is a Function?</h2>
+                
+                <div class="definition-box">
+                    <h3 class="font-semibold text-purple-800 mb-3">Mathematical Definition</h3>
+                    <p>A <strong>function</strong> is a relation between a set of inputs and a set of possible outputs where each input is related to exactly one output.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="math-block">
+                        <h4 class="font-semibold text-blue-800 mb-2">Function Notation</h4>
+                        <p>We write functions as:</p>
+                        <div class="text-center my-3">
+                            $$ f(x) = \text{expression} $$
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$f$ is the function name</li>
+                            <li>$x$ is the input variable</li>
+                            <li>$f(x)$ is the output value</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="math-block">
+                        <h4 class="font-semibold text-blue-800 mb-2">Simple Example</h4>
+                        <p>Consider: $f(x) = 2x + 3$</p>
+                        <div class="mt-3 space-y-1 text-sm">
+                            <p>When $x = 1$: $f(1) = 2(1) + 3 = 5$</p>
+                            <p>When $x = 2$: $f(2) = 2(2) + 3 = 7$</p>
+                            <p>When $x = -1$: $f(-1) = 2(-1) + 3 = 1$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-blue-800 mb-3">Key Property: One Input → One Output</h4>
+                    <p class="mb-3"><strong>For every input, there is exactly one output.</strong> This is what makes a relation a function.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-green-50 p-3 rounded">
+                            <p class="font-semibold text-green-800">✓ Function (Valid)</p>
+                            <p>Input: 1 → Output: 5</p>
+                            <p>Input: 2 → Output: 7</p>
+                            <p>Input: 3 → Output: 9</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded">
+                            <p class="font-semibold text-red-800">✗ Not a Function (Invalid)</p>
+                            <p>Input: 1 → Output: 5</p>
+                            <p>Input: 1 → Output: 6 ❌</p>
+                            <p>(Same input can't have two outputs)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Domain Intuition -->
+            <section id="domain-intuition" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Domain: All Possible Inputs</h2>
+                
+                <div class="analogy-box">
+                    <h3 class="font-semibold text-green-800 mb-3">🎯 Simple Analogy</h3>
+                    <p>Think of a <strong>vending machine</strong>:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li><strong>Domain</strong> = All the buttons you can press (A1, A2, B1, B2, etc.)</li>
+                        <li>You can't press button "Z9" if it doesn't exist</li>
+                        <li>Some buttons might be out of service</li>
+                    </ul>
+                    <p class="mt-3 font-semibold">Domain = All valid inputs that work with the function</p>
+                </div>
+
+                <div class="math-block">
+                    <h3 class="font-semibold text-blue-800 mb-2">Mathematical Definition</h3>
+                    <p>The <strong>domain</strong> of a function is the set of all possible input values (x-values) for which the function is defined.</p>
+                    <div class="text-center my-3">
+                        $$ \text{Domain} = \{x \in \mathbb{R} : f(x) \text{ exists}\} $$
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-blue-800 mb-3">Example 1: Simple Domain</h4>
+                    <p class="mb-2">For $f(x) = x^2$:</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Can we input $x = 2$? Yes → $f(2) = 4$ ✓</li>
+                        <li>Can we input $x = -5$? Yes → $f(-5) = 25$ ✓</li>
+                        <li>Can we input $x = 0$? Yes → $f(0) = 0$ ✓</li>
+                        <li>Can we input $x = \pi$? Yes → $f(\pi) = \pi^2$ ✓</li>
+                    </ul>
+                    <p class="mt-3 font-semibold">Domain = All real numbers $\mathbb{R}$</p>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-blue-800 mb-3">Example 2: Restricted Domain</h4>
+                    <p class="mb-2">For $f(x) = \frac{1}{x}$:</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Can we input $x = 2$? Yes → $f(2) = \frac{1}{2}$ ✓</li>
+                        <li>Can we input $x = -1$? Yes → $f(-1) = -1$ ✓</li>
+                        <li>Can we input $x = 0$? No → Division by zero! ❌</li>
+                    </ul>
+                    <p class="mt-3 font-semibold">Domain = All real numbers except 0, or $\mathbb{R} - \{0\}$</p>
+                </div>
+            </section>
+
+            <!-- Range Intuition -->
+            <section id="range-intuition" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Range: All Possible Outputs</h2>
+                
+                <div class="analogy-box">
+                    <h3 class="font-semibold text-green-800 mb-3">🎯 Simple Analogy</h3>
+                    <p>Back to our <strong>vending machine</strong>:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li><strong>Range</strong> = All the snacks/drinks that can come out</li>
+                        <li>Chips, soda, chocolate bars, etc.</li>
+                        <li>You'll never get a pizza from a snack vending machine!</li>
+                    </ul>
+                    <p class="mt-3 font-semibold">Range = All possible outputs the function can produce</p>
+                </div>
+
+                <div class="math-block">
+                    <h3 class="font-semibold text-blue-800 mb-2">Mathematical Definition</h3>
+                    <p>The <strong>range</strong> of a function is the set of all possible output values (y-values) that the function can produce.</p>
+                    <div class="text-center my-3">
+                        $$ \text{Range} = \{y \in \mathbb{R} : y = f(x) \text{ for some } x \in \text{Domain}\} $$
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-blue-800 mb-3">Example 1: Simple Range</h4>
+                    <p class="mb-2">For $f(x) = x^2$:</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>When $x = 0$, output is $0$</li>
+                        <li>When $x = 1$, output is $1$</li>
+                        <li>When $x = 2$, output is $4$</li>
+                        <li>When $x = -3$, output is $9$</li>
+                    </ul>
+                    <p class="mt-3">Notice: Outputs are always <strong>non-negative</strong> (0 or positive)</p>
+                    <p class="font-semibold">Range = $[0, \infty)$ (All numbers ≥ 0)</p>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-blue-800 mb-3">Example 2: Restricted Range</h4>
+                    <p class="mb-2">For $f(x) = x^2 + 1$:</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Smallest output: When $x = 0$, $f(0) = 1$</li>
+                        <li>As $x$ gets larger, output gets larger</li>
+                        <li>No upper limit to outputs</li>
+                    </ul>
+                    <p class="mt-3 font-semibold">Range = $[1, \infty)$ (All numbers ≥ 1)</p>
+                </div>
+            </section>
+
+            <!-- Real-life Analogies -->
+            <section id="real-life-analogies" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Real-life Analogies to Build Intuition</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="analogy-box">
+                        <h3 class="font-semibold text-green-800 mb-3">🍕 Pizza Oven Function</h3>
+                        <p><strong>Function:</strong> Cook pizza for certain time</p>
+                        <p><strong>Domain:</strong> Cooking times from 8 to 15 minutes</p>
+                        <p><strong>Range:</strong> Pizza states from "undercooked" to "perfect" to "burnt"</p>
+                        <p class="mt-2 text-sm text-gray-600">Input time → Output pizza quality</p>
+                    </div>
+                    
+                    <div class="analogy-box">
+                        <h3 class="font-semibold text-green-800 mb-3">🎸 Guitar String Function</h3>
+                        <p><strong>Function:</strong> Pluck guitar string</p>
+                        <p><strong>Domain:</strong> Different fret positions</p>
+                        <p><strong>Range:</strong> Different musical notes produced</p>
+                        <p class="mt-2 text-sm text-gray-600">Input fret position → Output musical note</p>
+                    </div>
+                </div>
+
+                <div class="analogy-box mt-6">
+                    <h3 class="font-semibold text-green-800 mb-3">📱 Smartphone Calculator Function</h3>
+                    <p><strong>Function:</strong> Square root calculation</p>
+                    <p><strong>Domain:</strong> Numbers ≥ 0 (can't take square root of negative numbers)</p>
+                    <p><strong>Range:</strong> Numbers ≥ 0 (square roots are always non-negative)</p>
+                    <p class="mt-2 text-sm text-gray-600">Input number → Output square root</p>
+                </div>
+            </section>
+
+            <!-- Basic Examples -->
+            <section id="basic-examples" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Let's Practice Together</h2>
+                
+                <div class="practice-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Practice 1: Linear Function</h3>
+                    <p class="mb-3">Find domain and range of $f(x) = 2x + 1$</p>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-3 rounded">
+                            <p class="font-semibold">Step 1: Find Domain</p>
+                            <p>Can we input any real number? Yes! No restrictions.</p>
+                            <p class="font-semibold mt-1">Domain = $\mathbb{R}$ (All real numbers)</p>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded">
+                            <p class="font-semibold">Step 2: Find Range</p>
+                            <p>As $x$ varies over all real numbers:</p>
+                            <ul class="list-disc list-inside mt-1">
+                                <li>When $x$ is very negative, $f(x)$ is very negative</li>
+                                <li>When $x$ is very positive, $f(x)$ is very positive</li>
+                                <li>We can get any real number as output</li>
+                            </ul>
+                            <p class="font-semibold mt-1">Range = $\mathbb{R}$ (All real numbers)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Practice 2: Quadratic Function</h3>
+                    <p class="mb-3">Find domain and range of $f(x) = (x-2)^2 + 3$</p>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-3 rounded">
+                            <p class="font-semibold">Step 1: Find Domain</p>
+                            <p>Can we input any real number? Yes! No restrictions.</p>
+                            <p class="font-semibold mt-1">Domain = $\mathbb{R}$</p>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded">
+                            <p class="font-semibold">Step 2: Find Range</p>
+                            <p>$(x-2)^2$ is always ≥ 0 (squares are non-negative)</p>
+                            <p>So $(x-2)^2 + 3$ is always ≥ 3</p>
+                            <p>Smallest value: 3 (when $x = 2$)</p>
+                            <p class="font-semibold mt-1">Range = $[3, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Summary -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Quick Summary</h2>
+                
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-3">Function = Machine</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">⚡</span>
+                                    <span>Takes input → Produces output</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">🎯</span>
+                                    <span>One input → Exactly one output</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">📝</span>
+                                    <span>Written as $f(x)$ = expression</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-3">Domain & Range</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">📥</span>
+                                    <span><strong>Domain:</strong> All possible inputs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">📤</span>
+                                    <span><strong>Range:</strong> All possible outputs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">💡</span>
+                                    <span>Think: Vending machine analogy!</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Ready for the Next Level?</h3>
+                    <p class="text-blue-800 mb-4">Now that you understand the basics, let's dive deeper into domain and range rules!</p>
+                    <a href="blog/math/cal/func001.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Master Domain & Range Rules →
+                    </a>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

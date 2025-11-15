@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain & Range Revision Checklist | Last-Minute JEE Guide | KnowJEE</title>
+    <meta name="description" content="Quick scannable checklist of all domain and range formulas, rules, and common function outputs for JEE final revision.">
+    <meta name="keywords" content="JEE domain range checklist, last minute revision, JEE formulas, domain range rules, JEE quick revision">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+
+        // Checklist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // Load saved state from localStorage
+            checkboxes.forEach(checkbox => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                // Save state when changed
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.checked);
+                });
+            });
+
+            // Reset all checkboxes
+            document.getElementById('resetChecklist')?.addEventListener('click', function() {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    localStorage.setItem(checkbox.id, false);
+                });
+            });
+        });
+    </script>
+    
+    <style>
+        .checklist-item {
+            transition: all 0.3s ease;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .quick-tip {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-16">
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">Revision Checklist</span>
+                <span class="text-gray-500 text-sm ml-3">Last-Minute JEE Prep</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Domain & Range Revision Checklist</h1>
+            <p class="text-xl text-gray-600 mb-6">Everything you need to remember for JEE Main & Advanced</p>
+            
+            <!-- Progress Bar -->
+            <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-gray-700">Revision Progress</span>
+                    <span id="progressPercent" class="text-sm font-bold text-blue-600">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <button id="resetChecklist" class="text-sm text-red-600 hover:text-red-800 font-medium">Reset Checklist</button>
+                    <span class="text-sm text-gray-500">Tick items as you revise</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Navigation -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+            <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                <a href="#basic-rules" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Rules</a>
+                <a href="#algebraic" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Algebraic Functions</a>
+                <a href="#trigonometric" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Trigonometric</a>
+                <a href="#inverse-trig" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Inverse Trig</a>
+                <a href="#exponential" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Exponential</a>
+                <a href="#logarithmic" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Logarithmic</a>
+                <a href="#special-functions" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Special Functions</a>
+                <a href="#jee-tips" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Tips</a>
+            </div>
+        </div>
+
+        <!-- Basic Rules Section -->
+        <section id="basic-rules" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">1. Fundamental Rules & Definitions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="basic1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Domain Definition</span>
+                            <p class="text-sm text-gray-600 mt-1">Set of all possible input values (x-values) for which the function is defined.</p>
+                            <div class="formula-box text-sm">
+                                $$ \text{Domain} = \{x \in \mathbb{R} : f(x) \text{ exists}\} $$
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="basic2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Range Definition</span>
+                            <p class="text-sm text-gray-600 mt-1">Set of all possible output values (y-values) that the function can produce.</p>
+                            <div class="formula-box text-sm">
+                                $$ \text{Range} = \{y \in \mathbb{R} : y = f(x) \text{ for some } x \in \text{Domain}\} $$
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="basic3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Function Property</span>
+                            <p class="text-sm text-gray-600 mt-1">Each input maps to exactly one output. One input → One output.</p>
+                            <div class="quick-tip text-sm">
+                                <strong>💡 Quick Check:</strong> If same input gives different outputs, it's not a function.
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algebraic Functions Section -->
+        <section id="algebraic" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">2. Algebraic Functions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="alg1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Polynomial Functions</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$ (All real numbers)
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> Depends on degree and leading coefficient
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="alg2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Square Root Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \sqrt{g(x)}$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $g(x) \geq 0$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $[0, \infty)$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="alg3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Rational Functions</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \frac{P(x)}{Q(x)}$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R} - \{x : Q(x) = 0\}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> Solve $y = f(x)$ for x
+                                </div>
+                            </div>
+                            <div class="warning-box text-sm mt-2">
+                                <strong>⚠️ Remember:</strong> Denominator cannot be zero!
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="alg4" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Quadratic Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = ax^2 + bx + c$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> 
+                                    $a > 0: [\frac{4ac - b^2}{4a}, \infty)$<br>
+                                    $a < 0: (-\infty, \frac{4ac - b^2}{4a}]$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trigonometric Functions Section -->
+        <section id="trigonometric" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">3. Trigonometric Functions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="trig1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Sine Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \sin x$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $[-1, 1]$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="trig2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Cosine Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \cos x$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $[-1, 1]$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="trig3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Tangent Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \tan x$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R} - \{(2n+1)\frac{\pi}{2}, n \in \mathbb{Z}\}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $\mathbb{R}$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="trig4" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Secant, Cosecant, Cotangent</span>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <strong>Sec x:</strong><br>
+                                    Domain: $\mathbb{R} - \{(2n+1)\frac{\pi}{2}\}$<br>
+                                    Range: $(-\infty, -1] \cup [1, \infty)$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <strong>Cosec x:</strong><br>
+                                    Domain: $\mathbb{R} - \{n\pi\}$<br>
+                                    Range: $(-\infty, -1] \cup [1, \infty)$
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded">
+                                    <strong>Cot x:</strong><br>
+                                    Domain: $\mathbb{R} - \{n\pi\}$<br>
+                                    Range: $\mathbb{R}$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inverse Trigonometric Functions Section -->
+        <section id="inverse-trig" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">4. Inverse Trigonometric Functions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="inv1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Inverse Sine</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \sin^{-1} x$ or $\arcsin x$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $[-1, 1]$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $[-\frac{\pi}{2}, \frac{\pi}{2}]$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="inv2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Inverse Cosine</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \cos^{-1} x$ or $\arccos x$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $[-1, 1]$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $[0, \pi]$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="inv3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Inverse Tangent</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \tan^{-1} x$ or $\arctan x$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $(-\frac{\pi}{2}, \frac{\pi}{2})$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exponential & Logarithmic Section -->
+        <section id="exponential" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">5. Exponential & Logarithmic Functions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="exp1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Exponential Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = a^x$ where $a > 0, a \neq 1$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $(0, \infty)$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="exp2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Logarithmic Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \log_a x$ where $a > 0, a \neq 1$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $(0, \infty)$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $\mathbb{R}$
+                                </div>
+                            </div>
+                            <div class="warning-box text-sm mt-2">
+                                <strong>⚠️ Remember:</strong> Argument of log must be positive!
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Functions Section -->
+        <section id="special-functions" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">6. Special Functions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Modulus Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = |x|$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $[0, \infty)$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Greatest Integer Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = [x]$ or $\lfloor x \rfloor$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $\mathbb{Z}$ (All integers)
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Fractional Part Function</span>
+                            <p class="text-sm text-gray-600 mt-1">$f(x) = \{x\} = x - [x]$</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Domain:</span> $\mathbb{R}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Range:</span> $[0, 1)$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- JEE Tips Section -->
+        <section id="jee-tips" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">7. JEE Problem Solving Tips</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Systematic Approach</span>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Start from innermost function and work outward</li>
+                                <li>Handle each constraint separately</li>
+                                <li>Combine constraints using intersection</li>
+                                <li>Check edge cases and boundary values</li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Common Pitfalls to Avoid</span>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Forgetting to reverse inequality when multiplying by negative</li>
+                                <li>Missing denominator constraints in rational functions</li>
+                                <li>Overlooking square root constraints</li>
+                                <li>Confusing domain and range of inverse trig functions</li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Quick Verification Methods</span>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Test boundary values in the original function</li>
+                                <li>Check if domain makes all operations valid</li>
+                                <li>Verify range by considering function behavior at extremes</li>
+                                <li>Use graphical intuition when possible</li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip4" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Time-Saving Techniques</span>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Memorize common function domains and ranges</li>
+                                <li>Recognize patterns in composite functions</li>
+                                <li>Use symmetry properties when applicable</li>
+                                <li>Practice mental calculation of simple cases</li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Revision Notes -->
+        <section class="mb-8">
+            <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Final Revision Notes</h2>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <h3 class="font-semibold mb-2">🎯 Key Concepts to Remember</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Domain restrictions come from: division by zero, square roots of negatives, logs of non-positive numbers</li>
+                            <li>Range is determined by possible output values</li>
+                            <li>Composite functions: domain of outer function is range of inner function</li>
+                            <li>Always verify your answer with test values</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">🚀 Exam Day Strategy</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Read questions carefully - identify all functions involved</li>
+                            <li>Solve systematically from inside out</li>
+                            <li>Double-check boundary conditions</li>
+                            <li>If stuck, move on and return later</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download & Share -->
+        <section class="text-center mb-12">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Save This Checklist</h3>
+                <p class="text-gray-600 mb-4">Your progress is automatically saved. Return anytime to continue your revision!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        📄 Print Checklist
+                    </button>
+                    <button id="resetChecklistBottom" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        🔄 Reset Progress
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update progress bar
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            const progress = (checked.length / checkboxes.length) * 100;
+            
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progress) + '%';
+            
+            // Update checklist item styles
+            checkboxes.forEach(checkbox => {
+                const item = checkbox.closest('.checklist-item');
+                if (checkbox.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        }
+        
+        // Add event listeners to all checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateProgress);
+        });
+        
+        // Reset functionality
+        document.getElementById('resetChecklistBottom')?.addEventListener('click', function() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+                localStorage.setItem(checkbox.id, false);
+            });
+            updateProgress();
+        });
+        
+        // Initialize progress on load
+        document.addEventListener('DOMContentLoaded', updateProgress);
+    </script>
+</body>
+</html>
