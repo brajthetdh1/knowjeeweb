@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Modulus Function |x|: How it Transforms Domain & Range in JEE Problems | KnowJEE</title>
+    <meta name="description" content="Master how |f(x)| affects domain and range in JEE problems. Learn transformation patterns, solved examples, and key strategies for modulus function problems.">
+    <meta name="keywords" content="modulus function JEE, absolute value function, domain and range JEE, |f(x)| transformation, JEE mathematics, JEE calculus">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .key-point {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Mains & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Key Patterns</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Modulus Function |x|: How it Transforms Domain & Range in JEE Problems</h1>
+                <p class="text-xl text-gray-600 mb-4">Master how |f(x)| affects domain and range - the most frequently tested modulus concept in JEE Main & Advanced.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">85%</div>
+                            <div class="text-sm text-red-600">JEE Papers</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">6</div>
+                            <div class="text-sm text-red-600">Key Patterns</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">3</div>
+                            <div class="text-sm text-red-600">Difficulty Levels</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">15min</div>
+                            <div class="text-sm text-red-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Modulus Function is Crucial for JEE</h2>
+                <p class="mb-4">The modulus function $|x|$ appears in <strong>85% of JEE papers</strong> and transforms range in predictable ways. Understanding these patterns can help you solve complex problems in seconds.</p>
+                
+                <div class="key-point">
+                    <h4 class="font-semibold text-blue-800 mb-2">🎯 Key Insight:</h4>
+                    <p><strong>$|f(x)|$ always makes the range non-negative</strong>. If original range was $[a, b]$, then range of $|f(x)|$ becomes $[0, \max(|a|, |b|)]$ when the range spans both positive and negative values.</p>
+                </div>
+            </section>
+
+            <!-- Pattern 1 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Pattern 1</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Basic Modulus Transformation</h3>
+                    <p class="text-lg mb-4">If $f(x)$ has range $R$, what is the range of $|f(x)|$?</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Transformation Rule:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Case 1:</strong> If $R \subseteq [0, \infty)$ → Range remains same: $R$</p>
+                            <p><strong>Case 2:</strong> If $R \subseteq (-\infty, 0]$ → Range becomes $[0, \max(|x|)]$ where $x \in R$</p>
+                            <p><strong>Case 3:</strong> If $R$ spans both positive and negative → Range becomes $[0, M]$ where $M = \max(|min(R)|, |max(R)|)$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-4 bg-yellow-50 rounded-lg">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Example:</h4>
+                        <p>If $f(x) = \sin x$ has range $[-1, 1]$, then $|f(x)| = |\sin x|$ has range $[0, 1]$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pattern 2 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Pattern 2</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Modulus Inside Square Root</h3>
+                    <p class="text-lg mb-4">Find domain and range of $f(x) = \sqrt{|x| - 2}$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Domain condition: $|x| - 2 \geq 0$ ⇒ $|x| \geq 2$</p>
+                            <p><strong>Step 2:</strong> Domain: $x \leq -2$ or $x \geq 2$</p>
+                            <p><strong>Step 3:</strong> For range: $|x| - 2 \geq 0$, so $\sqrt{|x| - 2} \geq 0$</p>
+                            <p><strong>Step 4:</strong> As $|x| \to \infty$, $f(x) \to \infty$</p>
+                            <p><strong>Step 5:</strong> Minimum at $|x| = 2$: $f(x) = 0$</p>
+                            <p><strong>Step 6:</strong> Range: $[0, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pattern 3 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Pattern 3</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Composite Modulus Function</h3>
+                    <p class="text-lg mb-4">Find range of $f(x) = ||x - 2| - 3|$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Let $g(x) = |x - 2| - 3$</p>
+                            <p><strong>Step 2:</strong> Range of $|x - 2|$ is $[0, \infty)$</p>
+                            <p><strong>Step 3:</strong> Range of $g(x)$ is $[-3, \infty)$</p>
+                            <p><strong>Step 4:</strong> Apply outer modulus: $|g(x)|$ has range $[0, \infty)$</p>
+                            <p><strong>Alternative Graphical Method:</strong></p>
+                            <p class="ml-4">• Graph shifts right by 2 units: $|x-2|$</p>
+                            <p class="ml-4">• Shifts down by 3 units: $|x-2|-3$</p>
+                            <p class="ml-4">• Reflect negative part upward: $||x-2|-3|$</p>
+                            <p><strong>Final Range:</strong> $[0, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Modulus Function Quick Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Domain Transformations:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>$|f(x)|$ has same domain as $f(x)$</li>
+                                <li>$\sqrt{|f(x)|}$ requires $|f(x)| \geq 0$ (always true)</li>
+                                <li>$\frac{1}{|f(x)|}$ requires $f(x) \neq 0$</li>
+                                <li>$\log|f(x)|$ requires $|f(x)| > 0$ ⇒ $f(x) \neq 0$</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Range Transformations:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>$|f(x)| ≥ 0$ always</li>
+                                <li>If $f(x)$ range is $[a,b]$, then $|f(x)|$ range is $[0, \max(|a|,|b|)]$</li>
+                                <li>$|f(x)|$ creates V-shaped graphs</li>
+                                <li>Piecewise definition helps in complex cases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pattern 4 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Pattern 4</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Modulus in Rational Functions</h3>
+                    <p class="text-lg mb-4">Find domain and range of $f(x) = \frac{1}{|x| - 1}$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Domain: Denominator ≠ 0 ⇒ $|x| - 1 \neq 0$ ⇒ $|x| \neq 1$ ⇒ $x \neq \pm1$</p>
+                            <p><strong>Step 2:</strong> Domain: $\mathbb{R} - \{-1, 1\}$</p>
+                            <p><strong>Step 3:</strong> For range, analyze cases:</p>
+                            <p class="ml-4">• When $|x| > 1$: $|x|-1 > 0$, so $f(x) > 0$</p>
+                            <p class="ml-4">• When $0 \leq |x| < 1$: $|x|-1 < 0$, so $f(x) < 0$</p>
+                            <p><strong>Step 4:</strong> As $|x| \to 1^+$, $f(x) \to +\infty$</p>
+                            <p><strong>Step 5:</strong> As $|x| \to 1^-$, $f(x) \to -\infty$</p>
+                            <p><strong>Step 6:</strong> As $|x| \to \infty$, $f(x) \to 0$</p>
+                            <p><strong>Step 7:</strong> Range: $(-\infty, 0) \cup (0, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patterns 5-6 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Patterns 5-6 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes Modulus in Trigonometric Functions and Modulus in Inverse Trigonometric Functions with JEE Advanced level problems</p>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these modulus function problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Find range of $f(x) = |x^2 - 4x + 3|$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find domain of $f(x) = \sqrt{4 - |x|}$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Find range of $f(x) = \frac{|x|}{x^2 + 1}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Formulas -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📚 Essential Modulus Formulas</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Basic Properties:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$|x| = \begin{cases} x & \text{if } x \geq 0 \\ -x & \text{if } x < 0 \end{cases}$</li>
+                                <li>$|x| \geq 0$ for all real $x$</li>
+                                <li>$|x| = |-x|$</li>
+                                <li>$\sqrt{x^2} = |x|$</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Inequality Rules:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$|x| < a ⇔ -a < x < a$</li>
+                                <li>$|x| > a ⇔ x < -a$ or $x > a$</li>
+                                <li>$|x ± y| ≤ |x| + |y|$ (Triangle Inequality)</li>
+                                <li>$|x ± y| ≥ ||x| - |y||$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master All 6 Modulus Patterns?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all patterns with step-by-step video solutions and JEE-level practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-red-900 text-red-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-red-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-red-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-red-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-red-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-red-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-red-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-red-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-red-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-red-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-red-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-red-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-red-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

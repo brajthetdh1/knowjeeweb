@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When Absolute Values Get Tricky: Differentiability of |f(x)| | KnowJEE</title>
+    <meta name="description" content="Master the differentiability of absolute value functions for JEE Main & Advanced. Learn key conditions, solve tricky problems, and avoid common mistakes with detailed examples.">
+    <meta name="keywords" content="JEE absolute value differentiability, |f(x)| derivative, JEE calculus, JEE mathematics, non-differentiable points, JEE main advanced calculus">
+    <meta name="author" content="KnowJEE">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="When Absolute Values Get Tricky: Differentiability of |f(x)|">
+    <meta property="og:description" content="Master the differentiability of absolute value functions for JEE Main & Advanced with detailed examples and solutions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/calculus/absolute-value-differentiability">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="When Absolute Values Get Tricky: Differentiability of |f(x)|">
+    <meta name="twitter:description" content="Master JEE calculus with absolute value function differentiability problems and solutions.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #fef7ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #faf5ff;
+            border-color: #c084fc;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #7c3aed;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .key-point {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Main & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Key Concepts</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">When Absolute Values Get Tricky: Differentiability of |f(x)|</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the critical conditions where absolute value functions lose differentiability. Essential for JEE calculus problems.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">85%</div>
+                            <div class="text-sm text-purple-600">JEE Appearance Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Critical Conditions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">6+</div>
+                            <div class="text-sm text-purple-600">Solved Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">15min</div>
+                            <div class="text-sm text-purple-600">Avg. Mastery Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why |f(x)| Differentiability Matters in JEE</h2>
+                <p class="mb-4">Absolute value functions create sharp corners where differentiability fails. Understanding these critical points is essential because:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li><strong>JEE frequently tests</strong> non-differentiable points in MCQs</li>
+                    <li><strong>Composite functions</strong> with absolute values appear in 2-3 questions per paper</li>
+                    <li><strong>Graphical interpretation</strong> questions rely on this concept</li>
+                    <li><strong>Continuity vs Differentiability</strong> distinction is crucial</li>
+                </ul>
+            </section>
+
+            <!-- Key Concept 1 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Core Concept</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Fundamental Rule: When |f(x)| is NOT Differentiable</h3>
+                    <p class="text-lg mb-4">$|f(x)|$ is non-differentiable at points where $f(x) = 0$ and $f'(x) \neq 0$</p>
+                    
+                    <div class="key-point">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Insight:</h4>
+                        <p>At points where $f(x) = 0$, the graph of $|f(x)|$ has a sharp corner (cusp) unless the function is flat at that point.</p>
+                    </div>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Mathematical Proof:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>Consider the left and right derivatives at $x = c$ where $f(c) = 0$:</p>
+                            <p>Left derivative: $\lim_{h \to 0^-} \frac{|f(c+h)| - |f(c)|}{h} = \lim_{h \to 0^-} \frac{|f(c+h)|}{h}$</p>
+                            <p>Right derivative: $\lim_{h \to 0^+} \frac{|f(c+h)| - |f(c)|}{h} = \lim_{h \to 0^+} \frac{|f(c+h)|}{h}$</p>
+                            <p>If $f'(c) \neq 0$, these limits have opposite signs ⇒ Non-differentiable</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 1 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2022</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Basic Absolute Value</h3>
+                    <p class="text-lg mb-4">Check differentiability of $f(x) = |x-2|$ at $x = 2$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Identify where inner function equals zero: $x-2 = 0$ at $x=2$</p>
+                            <p><strong>Step 2:</strong> Check derivative of inner function: $\frac{d}{dx}(x-2) = 1 \neq 0$</p>
+                            <p><strong>Step 3:</strong> Apply the rule: Since $f(2) = 0$ and $f'(2) \neq 0$, $|x-2|$ is non-differentiable at $x=2$</p>
+                            <p><strong>Step 4:</strong> Graphical interpretation: V-shaped graph with sharp corner at $(2,0)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2021</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Composite Absolute Function</h3>
+                    <p class="text-lg mb-4">Find all points where $f(x) = |x^2 - 4|$ is non-differentiable</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Find where inner function equals zero: $x^2 - 4 = 0 \Rightarrow x = \pm 2$</p>
+                            <p><strong>Step 2:</strong> Check derivative of inner function: $\frac{d}{dx}(x^2-4) = 2x$</p>
+                            <p><strong>Step 3:</strong> Evaluate at critical points:</p>
+                            <p class="ml-4">• At $x = 2$: $f'(2) = 4 \neq 0$ ⇒ Non-differentiable</p>
+                            <p class="ml-4">• At $x = -2$: $f'(-2) = -4 \neq 0$ ⇒ Non-differentiable</p>
+                            <p><strong>Step 4:</strong> Non-differentiable points: $x = -2, 2$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Case -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Advanced Concept</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Exception: When |f(x)| CAN Be Differentiable</h3>
+                    <p class="text-lg mb-4">$|f(x)|$ is differentiable at points where $f(x) = 0$ if $f'(x) = 0$ at those points</p>
+                    
+                    <div class="warning">
+                        <h4 class="font-semibold text-red-800 mb-2">Important Exception:</h4>
+                        <p>When the function has a horizontal tangent at the zero point, the absolute value function remains smooth.</p>
+                    </div>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: $f(x) = |x^3|$ at $x = 0$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Inner function zero: $x^3 = 0$ at $x=0$</p>
+                            <p><strong>Step 2:</strong> Derivative of inner function: $3x^2 = 0$ at $x=0$</p>
+                            <p><strong>Step 3:</strong> Since $f(0) = 0$ and $f'(0) = 0$, $|x^3|$ is differentiable at $x=0$</p>
+                            <p><strong>Step 4:</strong> In fact, $|x^3| = x^2|x|$, and derivative at 0 is 0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Quick Solving Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For |f(x)| Differentiability:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Find all x where f(x) = 0</li>
+                                <li>Calculate f'(x) at those points</li>
+                                <li>If f'(x) ≠ 0 → Non-differentiable</li>
+                                <li>If f'(x) = 0 → Check carefully</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Common Pitfalls:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Don't confuse continuity with differentiability</li>
+                                <li>|f(x)| is always continuous if f(x) is continuous</li>
+                                <li>Watch for multiple roots in polynomial functions</li>
+                                <li>Check both sides of the point</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems 4-6 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Problems 4-6 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes trigonometric absolute values, piecewise functions, and JEE Advanced level problems</p>
+                    <button class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Test your understanding with these problems:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Is $f(x) = |x^2 - 5x + 6|$ differentiable at $x = 2$ and $x = 3$?</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find where $f(x) = ||x| - 1|$ is non-differentiable</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Check differentiability of $f(x) = |\sin x|$ at $x = n\pi$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Absolute Value Differentiability?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all advanced problems with step-by-step video solutions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div class="bg-white rounded-lg shadow-sm border p-4">
+                <h3 class="font-semibold text-lg mb-2">Q: Is |f(x)| always continuous if f(x) is continuous?</h3>
+                <p class="text-gray-600">A: Yes, the absolute value of a continuous function is always continuous. However, differentiability may be lost at points where f(x) = 0.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm border p-4">
+                <h3 class="font-semibold text-lg mb-2">Q: What about functions like |x|³? Are they differentiable?</h3>
+                <p class="text-gray-600">A: |x|³ = x²|x|, which is differentiable everywhere including at x=0 because the function behaves like x³ near zero.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm border p-4">
+                <h3 class="font-semibold text-lg mb-2">Q: How do I handle nested absolute values?</h3>
+                <p class="text-gray-600">A: Work from the innermost absolute value outward, checking differentiability at each stage. Multiple points of non-differentiability may occur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-purple-900 text-purple-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-purple-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-purple-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-purple-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-purple-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-purple-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-purple-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-purple-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-purple-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-purple-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

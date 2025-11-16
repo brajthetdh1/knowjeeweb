@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Integer Function [x] | Domain & Range for JEE | Step Function Guide</title>
+    <meta name="description" content="Master the Greatest Integer Function [x] for JEE Main & Advanced. Complete guide to domain, range, discontinuities, and step-function properties with solved examples.">
+    <meta name="keywords" content="greatest integer function, floor function, JEE step function, domain range [x], JEE calculus, discontinuous functions, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .discontinuity-highlight {
+            background: #fef7ed;
+            border: 2px dashed #fdba74;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .step-visual {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Special Functions</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Focus</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Greatest Integer Function [x]: Tackling Its Tricky Domain & Range for JEE</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the step-function that appears in 80% of JEE papers. Understand discontinuities, range limitations, and problem-solving strategies.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">80%</div>
+                            <div class="text-sm text-purple-600">JEE Papers</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-8</div>
+                            <div class="text-sm text-purple-600">Marks/Paper</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">∞</div>
+                            <div class="text-sm text-purple-600">Discontinuities</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Masterable</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why the Greatest Integer Function is Crucial for JEE</h2>
+                <p class="mb-4">The Greatest Integer Function (also called Floor Function) appears in <strong>JEE Main and Advanced every year</strong>. Its unique step-like behavior and infinite discontinuities make it a favorite for testing conceptual understanding.</p>
+                
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">🎯 Definition</h3>
+                    <p>The Greatest Integer Function, denoted by $[x]$ or $\lfloor x \rfloor$, gives the <strong>largest integer less than or equal to x</strong>.</p>
+                    <div class="text-center my-3">
+                        $$ [x] = n \quad \text{where} \quad n \leq x < n+1, \quad n \in \mathbb{Z} $$
+                    </div>
+                    <p><strong>Examples:</strong></p>
+                    <ul class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2 text-sm">
+                        <li class="text-center">$[2.8] = 2$</li>
+                        <li class="text-center">$[5] = 5$</li>
+                        <li class="text-center">$[-1.3] = -2$</li>
+                        <li class="text-center">$[\pi] = 3$</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-purple-900 mb-3">📚 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#definition" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Definition</a>
+                    <a href="#domain-range" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Domain & Range</a>
+                    <a href="#discontinuities" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Discontinuities</a>
+                    <a href="#jee-problems" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">JEE Problems</a>
+                </div>
+            </div>
+
+            <!-- Domain & Range Section -->
+            <section id="domain-range" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Domain & Range Analysis</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="example-box">
+                        <h3 class="font-semibold text-blue-800 mb-3">📥 Domain</h3>
+                        <p>The domain of $[x]$ is <strong>all real numbers</strong> because we can find the greatest integer for any real number.</p>
+                        <div class="text-center my-3">
+                            $$ \text{Domain} = \mathbb{R} = (-\infty, \infty) $$
+                        </div>
+                        <p class="text-sm text-gray-600">No restrictions - works for positive, negative, integers, and decimals alike.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h3 class="font-semibold text-blue-800 mb-3">📤 Range</h3>
+                        <p>The range consists of <strong>all integer values</strong> because the output is always an integer.</p>
+                        <div class="text-center my-3">
+                            $$ \text{Range} = \mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\} $$
+                        </div>
+                        <p class="text-sm text-gray-600">Every integer appears infinitely many times in steps of length 1.</p>
+                    </div>
+                </div>
+
+                <div class="step-visual">
+                    <h3 class="font-semibold text-white mb-3">📈 Visualizing the Step Function</h3>
+                    <p class="mb-3">The function creates a "step" at every integer value:</p>
+                    <div class="bg-white bg-opacity-20 p-3 rounded text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>For $x \in [0,1)$: $[x] = 0$</span>
+                            <span>At $x=1$: jump to $[x] = 1$</span>
+                        </div>
+                        <div class="flex justify-between mb-1">
+                            <span>For $x \in [1,2)$: $[x] = 1$</span>
+                            <span>At $x=2$: jump to $[x] = 2$</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>For $x \in [-1,0)$: $[x] = -1$</span>
+                            <span>At $x=0$: jump to $[x] = 0$</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discontinuities Section -->
+            <section id="discontinuities" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Understanding the Discontinuities</h2>
+                
+                <div class="warning-box">
+                    <h3 class="font-semibold text-red-800 mb-3">⚠️ Key Property: Discontinuous at All Integers</h3>
+                    <p>The Greatest Integer Function is <strong>discontinuous at every integer point</strong>. This creates infinite jump discontinuities.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="discontinuity-highlight">
+                        <h4 class="font-semibold text-orange-800 mb-2">Left-Hand Limit</h4>
+                        <p>As we approach an integer from the left:</p>
+                        <div class="text-center my-2">
+                            $$ \lim_{x \to n^-} [x] = n-1 $$
+                        </div>
+                        <p class="text-sm">Example: $\lim_{x \to 2^-} [x] = 1$</p>
+                    </div>
+                    
+                    <div class="discontinuity-highlight">
+                        <h4 class="font-semibold text-orange-800 mb-2">Right-Hand Limit</h4>
+                        <p>As we approach an integer from the right:</p>
+                        <div class="text-center my-2">
+                            $$ \lim_{x \to n^+} [x] = n $$
+                        </div>
+                        <p class="text-sm">Example: $\lim_{x \to 2^+} [x] = 2$</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">🎯 Jump Discontinuity Magnitude</h3>
+                    <p>At each integer $x = n$, the function jumps by exactly 1 unit:</p>
+                    <div class="text-center my-3">
+                        $$ \lim_{x \to n^+} [x] - \lim_{x \to n^-} [x] = n - (n-1) = 1 $$
+                    </div>
+                    <p class="text-sm text-gray-600">This consistent jump size is why it's called a "step" function.</p>
+                </div>
+            </section>
+
+            <!-- Important Properties -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Essential Properties for JEE</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="tip-box">
+                        <h3 class="font-semibold text-green-800 mb-3">✓ Algebraic Properties</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>$[x] \leq x < [x] + 1$ (Definition)</li>
+                            <li>$[x + n] = [x] + n$ for $n \in \mathbb{Z}$</li>
+                            <li>$[x] + [-x] = \begin{cases} 0 & \text{if } x \in \mathbb{Z} \\ -1 & \text{if } x \notin \mathbb{Z} \end{cases}$</li>
+                            <li>$[x] + [y] \leq [x + y] \leq [x] + [y] + 1$</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h3 class="font-semibold text-green-800 mb-3">✓ Inequality Properties</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>If $[x] = n$, then $n \leq x < n+1$</li>
+                            <li>$[x] \geq n \Rightarrow x \geq n$</li>
+                            <li>$[x] \leq n \Rightarrow x < n+1$</li>
+                            <li>$[x] > n \Rightarrow x \geq n+1$</li>
+                            <li>$[x] < n \Rightarrow x < n$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Problems Section -->
+            <section id="jee-problems" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">JEE-Level Solved Problems</h2>
+
+                <!-- Problem 1 -->
+                <div class="practice-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded">JEE Main 2023</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Finding Specific Values</h3>
+                    <p class="text-lg mb-4">Evaluate: $[3.7] + [-2.4] + [\pi] + [-\sqrt{2}]$</p>
+                    
+                    <div class="concept-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>$[3.7] = 3$ (largest integer ≤ 3.7)</p>
+                            <p>$[-2.4] = -3$ (largest integer ≤ -2.4)</p>
+                            <p>$[\pi] = 3$ (largest integer ≤ π)</p>
+                            <p>$[-\sqrt{2}] = [-1.414...] = -2$</p>
+                            <p class="font-semibold mt-2">Sum = $3 + (-3) + 3 + (-2) = 1$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="practice-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded">JEE Advanced 2022</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Solving Equations</h3>
+                    <p class="text-lg mb-4">Solve for $x$: $[x]^2 - 3[x] + 2 = 0$</p>
+                    
+                    <div class="concept-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>Let $[x] = t$, where $t \in \mathbb{Z}$</p>
+                            <p>Equation becomes: $t^2 - 3t + 2 = 0$</p>
+                            <p>Factor: $(t-1)(t-2) = 0 \Rightarrow t = 1$ or $t = 2$</p>
+                            <p><strong>Case 1:</strong> $[x] = 1 \Rightarrow 1 \leq x < 2$</p>
+                            <p><strong>Case 2:</strong> $[x] = 2 \Rightarrow 2 \leq x < 3$</p>
+                            <p class="font-semibold mt-2">Solution: $x \in [1, 2) \cup [2, 3) = [1, 3)$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="practice-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded">JEE Main 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Domain with Composition</h3>
+                    <p class="text-lg mb-4">Find domain of $f(x) = \sqrt{[x]^2 - 4[x] + 3}$</p>
+                    
+                    <div class="concept-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>For square root: $[x]^2 - 4[x] + 3 \geq 0$</p>
+                            <p>Factor: $([x]-1)([x]-3) \geq 0$</p>
+                            <p>Solution: $[x] \leq 1$ or $[x] \geq 3$</p>
+                            <p><strong>Case 1:</strong> $[x] \leq 1 \Rightarrow x < 2$</p>
+                            <p><strong>Case 2:</strong> $[x] \geq 3 \Rightarrow x \geq 3$</p>
+                            <p class="font-semibold mt-2">Domain: $(-\infty, 2) \cup [3, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Common JEE Mistakes to Avoid</h2>
+                
+                <div class="warning-box">
+                    <h3 class="font-semibold text-red-800 mb-3">❌ Mistake 1: Confusing with Rounding</h3>
+                    <p><strong>Wrong:</strong> Thinking $[x]$ rounds to nearest integer</p>
+                    <p><strong>Correct:</strong> $[x]$ always rounds <strong>down</strong> (toward -∞)</p>
+                    <p class="text-sm mt-2"><strong>Example:</strong> $[-1.5] = -2$ (not -1)</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3 class="font-semibold text-red-800 mb-3">❌ Mistake 2: Domain Misunderstanding</h3>
+                    <p><strong>Wrong:</strong> Thinking domain is limited due to discontinuities</p>
+                    <p><strong>Correct:</strong> Domain is <strong>all real numbers</strong> $\mathbb{R}$</p>
+                    <p class="text-sm mt-2">Discontinuities don't affect domain, only continuity</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3 class="font-semibold text-red-800 mb-3">❌ Mistake 3: Inequality Errors</h3>
+                    <p><strong>Wrong:</strong> $[x] = n \Rightarrow n \leq x \leq n+1$</p>
+                    <p><strong>Correct:</strong> $[x] = n \Rightarrow n \leq x < n+1$</p>
+                    <p class="text-sm mt-2">The upper bound is <strong>strictly less than</strong> n+1</p>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">📋 Quick Revision Checklist</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Must Remember:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm opacity-90">
+                                <li>Domain: $\mathbb{R}$ (All real numbers)</li>
+                                <li>Range: $\mathbb{Z}$ (All integers)</li>
+                                <li>Discontinuous at all integers</li>
+                                <li>Jump size = 1 at each discontinuity</li>
+                                <li>$[x+n] = [x] + n$ for integer n</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Problem Solving:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm opacity-90">
+                                <li>Use substitution $t = [x]$</li>
+                                <li>Remember $t \in \mathbb{Z}$</li>
+                                <li>Convert back: $t \leq x < t+1$</li>
+                                <li>Check boundary conditions</li>
+                                <li>Watch for negative values</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 Test Your Understanding</h3>
+                    <p class="mb-4">Try these JEE-style problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Find range of $f(x) = [x] + \sqrt{x - [x]}$</p>
+                            <div class="text-sm text-gray-600">Hint: Consider fractional part function</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Solve: $[x]^2 = 4[x] - 3$</p>
+                            <div class="text-sm text-gray-600">Hint: Substitute and solve quadratic</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find domain of $f(x) = \frac{1}{\sqrt{[x]^2 - 5[x] + 6}}$</p>
+                            <div class="text-sm text-gray-600">Hint: Denominator constraints</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8 text-center">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-2">🚀 Pro Tip for JEE Success</h3>
+                    <p class="text-yellow-800 mb-4">The Greatest Integer Function always appears in JEE. Master it thoroughly - it's often combined with limits, continuity, and other functions.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                            Practice More Functions
+                        </a>
+                        <button class="bg-white text-purple-600 border border-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

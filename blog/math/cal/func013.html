@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain & Range of Piecewise Functions: Your Strategy Guide for JEE | KnowJEE</title>
+    <meta name="description" content="Master piecewise functions for JEE: Learn systematic approach to find domain and range of functions defined by different rules on different intervals.">
+    <meta name="keywords" content="JEE piecewise functions, domain range piecewise, JEE mathematics, JEE calculus, step functions JEE">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .strategy-box {
+            background: #e0f2fe;
+            border: 2px solid #7dd3fc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .piecewise-function {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-number {
+            background: #dc2626;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Mains & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Domain & Range of Piecewise Functions: Your Strategy Guide for JEE</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the systematic approach to analyze functions defined by different rules on different intervals and combine results effectively.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">85%</div>
+                            <div class="text-sm text-red-600">JEE Appearance Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4-Step</div>
+                            <div class="text-sm text-red-600">Systematic Method</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">6</div>
+                            <div class="text-sm text-red-600">Practice Problems</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">35min</div>
+                            <div class="text-sm text-red-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Piecewise Functions Matter in JEE</h2>
+                <p class="mb-4">Piecewise functions appear in <strong>3 out of every 4 JEE papers</strong>, testing your ability to handle complex, real-world mathematical modeling. Mastering these will give you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-red-50 p-4 rounded-lg">
+                    <li><strong>Systematic problem-solving</strong> approach for complex functions</li>
+                    <li><strong>Confidence</strong> in handling absolute value, signum, and greatest integer functions</li>
+                    <li><strong>Time management</strong> during exam by recognizing patterns quickly</li>
+                    <li><strong>4-8 marks secured</strong> across different sections</li>
+                </ul>
+            </section>
+
+            <!-- Systematic Approach -->
+            <section class="mb-8">
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 The 4-Step Systematic Approach</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="step-number">1</span>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Identify Pieces & Their Domains</h4>
+                                <p class="text-sm text-gray-700">Clearly mark the intervals where each sub-function applies</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="step-number">2</span>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Find Domain of Each Piece</h4>
+                                <p class="text-sm text-gray-700">Apply standard domain restrictions to each sub-function</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="step-number">3</span>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Find Range of Each Piece</h4>
+                                <p class="text-sm text-gray-700">Calculate range for each sub-function on its restricted domain</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="step-number">4</span>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Combine Results</h4>
+                                <p class="text-sm text-gray-700">Take union of all ranges and check continuity at boundaries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 1 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2023</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Basic Piecewise Function</h3>
+                    <div class="piecewise-function">
+                        $$f(x) = \begin{cases}
+                        x^2 & \text{if } x < 0 \\
+                        x + 1 & \text{if } 0 \leq x \leq 2 \\
+                        5 - x & \text{if } x > 2
+                        \end{cases}$$
+                    </div>
+                    <p class="text-lg mb-4">Find the domain and range of $f(x)$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <p class="font-semibold">Step 1: Domain Analysis</p>
+                                <p>• All pieces are defined for all real numbers in their intervals</p>
+                                <p>• Domain: $(-\infty, \infty)$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Step 2: Range of Each Piece</p>
+                                <p>• For $x < 0$: $f(x) = x^2$, range: $(0, \infty)$</p>
+                                <p>• For $0 \leq x \leq 2$: $f(x) = x + 1$, range: $[1, 3]$</p>
+                                <p>• For $x > 2$: $f(x) = 5 - x$, range: $(-\infty, 3)$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Step 3: Combine Ranges</p>
+                                <p>• Union: $(0, \infty) \cup [1, 3] \cup (-\infty, 3) = (-\infty, \infty)$</p>
+                                <p>• But check boundaries: At $x=0$, $f(0)=1$ from second piece</p>
+                                <p>• Range: $(-\infty, \infty)$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2022</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Absolute Value as Piecewise</h3>
+                    <div class="piecewise-function">
+                        $$f(x) = |x - 1| + |x - 2|$$
+                    </div>
+                    <p class="text-lg mb-4">Find the domain and range of $f(x)$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <p class="font-semibold">Step 1: Convert to Piecewise</p>
+                                <p>Critical points at $x=1$ and $x=2$</p>
+                                <p>$$f(x) = \begin{cases}
+                                -(x-1)-(x-2) = -2x+3 & \text{if } x < 1 \\
+                                (x-1)-(x-2) = 1 & \text{if } 1 \leq x < 2 \\
+                                (x-1)+(x-2) = 2x-3 & \text{if } x \geq 2
+                                \end{cases}$$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Step 2: Domain and Range Analysis</p>
+                                <p>• Domain: $(-\infty, \infty)$</p>
+                                <p>• For $x < 1$: $f(x) = -2x+3$, range: $(1, \infty)$</p>
+                                <p>• For $1 \leq x < 2$: $f(x) = 1$, range: $\{1\}$</p>
+                                <p>• For $x \geq 2$: $f(x) = 2x-3$, range: $[1, \infty)$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Step 3: Combine Results</p>
+                                <p>• Union: $(1, \infty) \cup \{1\} \cup [1, \infty) = [1, \infty)$</p>
+                                <p>• Range: $[1, \infty)$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Greatest Integer Function</h3>
+                    <div class="piecewise-function">
+                        $$f(x) = [x] + \sqrt{x - [x]}$$
+                        <p class="text-sm mt-2">where $[x]$ denotes the greatest integer less than or equal to $x$</p>
+                    </div>
+                    <p class="text-lg mb-4">Find the domain and range of $f(x)$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <p class="font-semibold">Step 1: Understand the Function</p>
+                                <p>Let $x = n + r$ where $n = [x]$ and $0 \leq r < 1$</p>
+                                <p>Then $f(x) = n + \sqrt{r}$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Step 2: Domain Analysis</p>
+                                <p>• $\sqrt{x - [x]}$ requires $x - [x] \geq 0$ which is always true</p>
+                                <p>• Domain: $(-\infty, \infty)$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Step 3: Range Analysis</p>
+                                <p>For each integer $n$, when $x \in [n, n+1)$:</p>
+                                <p>• $f(x) = n + \sqrt{r}$ where $r \in [0, 1)$</p>
+                                <p>• Range for this interval: $[n, n+1)$</p>
+                                <p>• Union over all integers: $\bigcup_{n=-\infty}^{\infty} [n, n+1) = (-\infty, \infty)$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Step 4: Final Answer</p>
+                                <p>• Domain: $(-\infty, \infty)$</p>
+                                <p>• Range: $(-\infty, \infty)$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Advanced Piecewise Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Common Piecewise Patterns:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Absolute Value</strong>: $|x-a|$ creates piecewise at $x=a$</li>
+                                <li><strong>Signum Function</strong>: $\text{sgn}(x)$ has 3 pieces</li>
+                                <li><strong>Greatest Integer</strong>: $[x]$ changes at every integer</li>
+                                <li><strong>Fractional Part</strong>: $\{x\} = x - [x]$</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Boundary Checks:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always check function values at interval endpoints</li>
+                                <li>Verify if boundary values are included/excluded</li>
+                                <li>Check continuity/discontinuity at boundaries</li>
+                                <li>Look for gaps in the range</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems 4-6 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Problems 4-6 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes 3 more challenging JEE problems with signum function, composite piecewise, and trigonometric piecewise functions</p>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these piecewise function problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Find domain and range of $f(x) = \begin{cases} x & \text{if } x \leq 1 \\ x^2 & \text{if } x > 1 \end{cases}$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find range of $f(x) = |x| + |x-1|$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Find domain of $f(x) = \begin{cases} \frac{1}{x} & \text{if } x \neq 0 \\ 0 & \text{if } x = 0 \end{cases}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master All 6 Problems?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all problems with step-by-step video solutions and advanced strategies</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

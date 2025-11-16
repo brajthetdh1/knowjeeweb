@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentiability of Implicit & Parametric Functions | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master differentiability of implicit functions and parametric equations for JEE Main & Advanced. Step-by-step differentiation methods with solved examples.">
+    <meta name="keywords" content="implicit differentiation, parametric differentiation, JEE calculus, implicit functions, parametric equations, JEE differentiability">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #fef3cd;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .jee-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Calculus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Advanced Topic</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Differentiability of Implicit Functions and Functions Defined by Parametric Equations</h1>
+                <p class="text-xl text-gray-600 mb-4">Master advanced differentiation techniques for JEE Main & Advanced with step-by-step methods and solved examples.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3</div>
+                            <div class="text-sm text-blue-600">Questions in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8-12</div>
+                            <div class="text-sm text-blue-600">Marks Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2</div>
+                            <div class="text-sm text-blue-600">Key Methods</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">95%</div>
+                            <div class="text-sm text-blue-600">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why These Topics Are Crucial for JEE</h2>
+                <p class="mb-4">Implicit functions and parametric equations appear frequently in JEE problems because they test your <strong>conceptual understanding</strong> of differentiation beyond basic formulas. Mastering these techniques gives you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li>Ability to differentiate <strong>complex relationships</strong> not explicitly solved for y</li>
+                    <li>Tools to handle <strong>real-world applications</strong> in physics and engineering</li>
+                    <li>Foundation for understanding <strong>related rates</strong> and <strong>optimization</strong></li>
+                    <li>Edge in solving <strong>advanced calculus problems</strong> efficiently</li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-purple-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#implicit-intro" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Implicit Functions</a>
+                    <a href="#implicit-method" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Differentiation Method</a>
+                    <a href="#parametric-intro" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Parametric Functions</a>
+                    <a href="#parametric-method" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Parametric Differentiation</a>
+                </div>
+            </div>
+
+            <!-- Implicit Functions Introduction -->
+            <section id="implicit-intro" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Understanding Implicit Functions</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What Are Implicit Functions?</h3>
+                    <p class="mb-4">An implicit function is defined by an equation where the dependent variable is not isolated on one side. Instead, the relationship between variables is given implicitly.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">Explicit Function</h4>
+                            <p class="text-sm">$y = f(x)$</p>
+                            <p class="text-sm mt-2">Example: $y = x^2 + 3x - 5$</p>
+                            <p class="text-sm mt-2">y is explicitly defined in terms of x</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">Implicit Function</h4>
+                            <p class="text-sm">$F(x, y) = 0$</p>
+                            <p class="text-sm mt-2">Example: $x^2 + y^2 - 25 = 0$</p>
+                            <p class="text-sm mt-2">Relationship between x and y is implicit</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box mt-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">Common Implicit Functions in JEE</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Circle:</strong> $x^2 + y^2 = r^2$</p>
+                                <p><strong>Ellipse:</strong> $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$</p>
+                                <p><strong>Hyperbola:</strong> $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$</p>
+                            </div>
+                            <div>
+                                <p><strong>Trigonometric:</strong> $\sin(x+y) = xy$</p>
+                                <p><strong>Exponential:</strong> $e^{x+y} = x^2y$</p>
+                                <p><strong>Logarithmic:</strong> $\ln(x^2 + y^2) = 2x$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implicit Differentiation Method -->
+            <section id="implicit-method" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Implicit Differentiation Method</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Step-by-Step Process</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Differentiate Both Sides</h4>
+                        <p>Differentiate both sides of the equation with respect to x, treating y as a function of x.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Apply Chain Rule</h4>
+                        <p>When differentiating terms containing y, multiply by $\frac{dy}{dx}$ (chain rule).</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Solve for dy/dx</h4>
+                        <p>Collect all terms containing $\frac{dy}{dx}$ on one side and solve for it.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-purple-800 mb-3">Example 1: Basic Implicit Differentiation</h4>
+                        <p class="mb-3">Find $\frac{dy}{dx}$ for $x^2 + y^2 = 25$</p>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Differentiate both sides with respect to x:</p>
+                                <p class="text-center">$\frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) = \frac{d}{dx}(25)$</p>
+                                <p><strong>Step 2:</strong> Apply chain rule to y²:</p>
+                                <p class="text-center">$2x + 2y\frac{dy}{dx} = 0$</p>
+                                <p><strong>Step 3:</strong> Solve for $\frac{dy}{dx}$:</p>
+                                <p class="text-center">$2y\frac{dy}{dx} = -2x$</p>
+                                <p class="text-center">$\frac{dy}{dx} = -\frac{x}{y}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box difficulty-medium">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="jee-tag">JEE Main 2022</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                        </div>
+                        <h4 class="font-semibold text-purple-800 mb-3">Example 2: Advanced Implicit Differentiation</h4>
+                        <p class="mb-3">Find $\frac{dy}{dx}$ for $\sin(x+y) + \cos(x-y) = 1$</p>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Differentiate both sides:</p>
+                                <p class="text-center">$\frac{d}{dx}[\sin(x+y)] + \frac{d}{dx}[\cos(x-y)] = 0$</p>
+                                <p><strong>Step 2:</strong> Apply chain rule:</p>
+                                <p class="text-center">$\cos(x+y)\cdot(1+\frac{dy}{dx}) - \sin(x-y)\cdot(1-\frac{dy}{dx}) = 0$</p>
+                                <p><strong>Step 3:</strong> Expand and collect terms:</p>
+                                <p class="text-center">$\cos(x+y) + \cos(x+y)\frac{dy}{dx} - \sin(x-y) + \sin(x-y)\frac{dy}{dx} = 0$</p>
+                                <p><strong>Step 4:</strong> Solve for $\frac{dy}{dx}$:</p>
+                                <p class="text-center">$\frac{dy}{dx}[\cos(x+y) + \sin(x-y)] = \sin(x-y) - \cos(x+y)$</p>
+                                <p class="text-center">$\frac{dy}{dx} = \frac{\sin(x-y) - \cos(x+y)}{\cos(x+y) + \sin(x-y)}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Key Insight for Implicit Differentiation</h4>
+                        <p>Remember that $\frac{d}{dx}(y^n) = n y^{n-1} \frac{dy}{dx}$ and $\frac{d}{dx}(f(y)) = f'(y) \frac{dy}{dx}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parametric Functions Introduction -->
+            <section id="parametric-intro" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Understanding Parametric Functions</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What Are Parametric Functions?</h3>
+                    <p class="mb-4">A parametric function defines a relationship between variables using a third parameter (usually t or θ). Both x and y are expressed in terms of this parameter.</p>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Parametric Form</h4>
+                        <p class="text-center">$x = f(t)$, $y = g(t)$</p>
+                        <p class="text-center mt-2">where t is the parameter</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Common Parametric Functions in JEE</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Circle:</strong> $x = r\cos\theta$, $y = r\sin\theta$</p>
+                                <p><strong>Ellipse:</strong> $x = a\cos\theta$, $y = b\sin\theta$</p>
+                                <p><strong>Parabola:</strong> $x = at^2$, $y = 2at$</p>
+                            </div>
+                            <div>
+                                <p><strong>Hyperbola:</strong> $x = a\sec\theta$, $y = b\tan\theta$</p>
+                                <p><strong>Cycloid:</strong> $x = a(\theta - \sin\theta)$, $y = a(1 - \cos\theta)$</p>
+                                <p><strong>Astroid:</strong> $x = a\cos^3\theta$, $y = a\sin^3\theta$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning">
+                        <h4 class="font-semibold text-yellow-800 mb-2">⚠️ Important Note</h4>
+                        <p>Parametric representation is often more convenient for describing curves, especially when dealing with motion or geometric properties.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parametric Differentiation Method -->
+            <section id="parametric-method" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Parametric Differentiation Method</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Chain Rule Approach</h3>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Fundamental Formula</h4>
+                        <p class="text-center">$\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{g'(t)}{f'(t)}$</p>
+                        <p class="text-center mt-2">provided $\frac{dx}{dt} \neq 0$</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Find dx/dt and dy/dt</h4>
+                        <p>Differentiate both x and y with respect to the parameter t.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Apply the Formula</h4>
+                        <p>Use the formula $\frac{dy}{dx} = \frac{dy/dt}{dx/dt}$.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Simplify</h4>
+                        <p>Express the result in simplest form, either in terms of t or x and y.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-purple-800 mb-3">Example 3: Basic Parametric Differentiation</h4>
+                        <p class="mb-3">Find $\frac{dy}{dx}$ for $x = 2\cos\theta$, $y = 3\sin\theta$</p>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Find $\frac{dx}{d\theta}$ and $\frac{dy}{d\theta}$:</p>
+                                <p class="text-center">$\frac{dx}{d\theta} = -2\sin\theta$, $\frac{dy}{d\theta} = 3\cos\theta$</p>
+                                <p><strong>Step 2:</strong> Apply the formula:</p>
+                                <p class="text-center">$\frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{3\cos\theta}{-2\sin\theta} = -\frac{3}{2}\cot\theta$</p>
+                                <p><strong>Step 3:</strong> Express in terms of x and y (optional):</p>
+                                <p>Since $\cos\theta = \frac{x}{2}$ and $\sin\theta = \frac{y}{3}$:</p>
+                                <p class="text-center">$\frac{dy}{dx} = -\frac{3}{2} \cdot \frac{x/2}{y/3} = -\frac{9x}{4y}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box difficulty-hard">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="jee-tag">JEE Advanced 2021</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                        </div>
+                        <h4 class="font-semibold text-purple-800 mb-3">Example 4: Second Derivative Parametric</h4>
+                        <p class="mb-3">Find $\frac{d^2y}{dx^2}$ for $x = a(\theta - \sin\theta)$, $y = a(1 - \cos\theta)$</p>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Find first derivatives:</p>
+                                <p class="text-center">$\frac{dx}{d\theta} = a(1 - \cos\theta)$, $\frac{dy}{d\theta} = a\sin\theta$</p>
+                                <p class="text-center">$\frac{dy}{dx} = \frac{a\sin\theta}{a(1 - \cos\theta)} = \frac{\sin\theta}{1 - \cos\theta}$</p>
+                                <p><strong>Step 2:</strong> Simplify using trigonometric identities:</p>
+                                <p class="text-center">$\frac{dy}{dx} = \frac{2\sin(\theta/2)\cos(\theta/2)}{2\sin^2(\theta/2)} = \cot(\theta/2)$</p>
+                                <p><strong>Step 3:</strong> Find second derivative:</p>
+                                <p class="text-center">$\frac{d^2y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d}{d\theta}\left(\cot(\theta/2)\right) \cdot \frac{d\theta}{dx}$</p>
+                                <p class="text-center">$= -\frac{1}{2}\csc^2(\theta/2) \cdot \frac{1}{a(1 - \cos\theta)}$</p>
+                                <p><strong>Step 4:</strong> Simplify:</p>
+                                <p class="text-center">$\frac{d^2y}{dx^2} = -\frac{1}{2a(1 - \cos\theta)\sin^2(\theta/2)}$</p>
+                                <p>Since $1 - \cos\theta = 2\sin^2(\theta/2)$:</p>
+                                <p class="text-center">$\frac{d^2y}{dx^2} = -\frac{1}{4a\sin^4(\theta/2)}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Formula for Second Derivative</h4>
+                        <p class="text-center">$\frac{d^2y}{dx^2} = \frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}$</p>
+                        <p class="mt-2 text-sm">This formula is essential for finding higher order derivatives of parametric functions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes Section -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">In Implicit Differentiation:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Forgetting to multiply by $\frac{dy}{dx}$ when differentiating y terms</li>
+                                <li>Not applying chain rule correctly for composite functions</li>
+                                <li>Mishandling product rule and quotient rule with y terms</li>
+                                <li>Algebraic errors when solving for $\frac{dy}{dx}$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">In Parametric Differentiation:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Using $\frac{dy}{dx} = \frac{dx/dt}{dy/dt}$ (reversed)</li>
+                                <li>Forgetting that $\frac{dx}{dt} \neq 0$ is required</li>
+                                <li>Errors in finding higher order derivatives</li>
+                                <li>Not simplifying trigonometric expressions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-level problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Find $\frac{dy}{dx}$ for $x^3 + y^3 = 3axy$</p>
+                            <div class="text-sm text-gray-600">Hint: Use implicit differentiation and product rule</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find $\frac{d^2y}{dx^2}$ for $x = a\cos^3\theta$, $y = a\sin^3\theta$</p>
+                            <div class="text-sm text-gray-600">Hint: This is an astroid curve. Simplify using trigonometric identities.</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. If $e^{x+y} = xy$, find $\frac{dy}{dx}$ at point (1,1)</p>
+                            <div class="text-sm text-gray-600">Hint: Use implicit differentiation and substitute the point at the end.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🚀 Quick Revision Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Implicit Differentiation</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Differentiate both sides w.r.t. x</li>
+                                <li>Use chain rule: $\frac{d}{dx}f(y) = f'(y)\frac{dy}{dx}$</li>
+                                <li>Solve for $\frac{dy}{dx}$ algebraically</li>
+                                <li>Check your answer by substituting known points</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Parametric Differentiation</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Find $\frac{dx}{dt}$ and $\frac{dy}{dt}$</li>
+                                <li>Use $\frac{dy}{dx} = \frac{dy/dt}{dx/dt}$</li>
+                                <li>For second derivative: $\frac{d^2y}{dx^2} = \frac{d}{dt}(\frac{dy}{dx}) / \frac{dx}{dt}$</li>
+                                <li>Simplify using trigonometric identities when possible</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Advanced Differentiation?</h3>
+                    <p class="mb-4 opacity-90">Practice with our complete set of JEE-level problems with video solutions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Practice Set
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentiability of [x] & {x} Functions | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master the differentiability of Greatest Integer Function [x] and Fractional Part Function {x}. Complete JEE calculus guide with graphs, properties, and solved problems.">
+    <meta name="keywords" content="greatest integer function differentiability, fractional part function calculus, JEE calculus, step function differentiability, [x] function JEE, {x} function properties">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .property-box {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .graph-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .important-note {
+            background: #fef3cd;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .jee-tip {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Calculus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Advanced Topic</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Differentiability of the Greatest Integer Function [x] & Fractional Part Function {x}</h1>
+                <p class="text-xl text-gray-600 mb-4">Complete analysis of step functions' differentiability with graphical interpretations and JEE-focused problem solving.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2</div>
+                            <div class="text-sm text-purple-600">Special Functions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5+</div>
+                            <div class="text-sm text-purple-600">JEE Problems</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Concept Clarity</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2024</div>
+                            <div class="text-sm text-purple-600">Latest Patterns</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why These Functions Matter in JEE</h2>
+                <p class="mb-4">The Greatest Integer Function (GIF) and Fractional Part Function (FPF) are among the <strong>most frequently tested non-differentiable functions</strong> in JEE Main and Advanced. Understanding their differentiability is crucial because:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li>They appear in <strong>limits, continuity, and differentiability</strong> questions</li>
+                    <li>They help test <strong>conceptual understanding</strong> of piecewise functions</li>
+                    <li>They're used in <strong>composite functions</strong> with other elementary functions</li>
+                    <li>They frequently appear in <strong>integer-type questions</strong> in JEE Advanced</li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#gif-definition" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">GIF Definition</a>
+                    <a href="#fpf-definition" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">FPF Definition</a>
+                    <a href="#differentiability-analysis" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Differentiability</a>
+                    <a href="#jee-problems" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Problems</a>
+                </div>
+            </div>
+
+            <!-- Greatest Integer Function Definition -->
+            <section id="gif-definition" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Greatest Integer Function [x]</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Mathematical Definition</h3>
+                    <p>The Greatest Integer Function (also called floor function) is defined as:</p>
+                    <div class="text-center my-4">
+                        $$ [x] = \text{the greatest integer less than or equal to } x $$
+                    </div>
+                    <p>Alternative notation: $\lfloor x \rfloor$</p>
+                </div>
+
+                <div class="property-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Key Properties</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>$[x] \leq x < [x] + 1$ for all real $x$</li>
+                        <li>$[n] = n$ for all integers $n$</li>
+                        <li>$[x + n] = [x] + n$ for any integer $n$</li>
+                        <li>$[x] + [-x] = \begin{cases} 0 & \text{if } x \in \mathbb{Z} \\ -1 & \text{if } x \notin \mathbb{Z} \end{cases}$</li>
+                    </ul>
+                </div>
+
+                <div class="graph-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Graphical Representation</h3>
+                    <div class="bg-white p-4 rounded border text-center">
+                        <div class="text-gray-600 mb-4">[Visual: Step function with jumps at integers]</div>
+                        <div class="flex justify-center items-end h-32 space-x-1">
+                            <div class="w-8 h-8 bg-blue-500"></div>
+                            <div class="w-8 h-16 bg-blue-500"></div>
+                            <div class="w-8 h-24 bg-blue-500"></div>
+                            <div class="w-8 h-32 bg-blue-500"></div>
+                            <div class="w-8 h-24 bg-blue-500"></div>
+                            <div class="w-8 h-16 bg-blue-500"></div>
+                            <div class="w-8 h-8 bg-blue-500"></div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">The graph consists of horizontal line segments with <strong>jump discontinuities</strong> at all integer points.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fractional Part Function Definition -->
+            <section id="fpf-definition" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Fractional Part Function {x}</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Mathematical Definition</h3>
+                    <p>The Fractional Part Function is defined as:</p>
+                    <div class="text-center my-4">
+                        $$ \{x\} = x - [x] $$
+                    </div>
+                    <p>This represents the decimal or fractional part of $x$.</p>
+                </div>
+
+                <div class="property-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Key Properties</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>$0 \leq \{x\} < 1$ for all real $x$</li>
+                        <li>$\{n\} = 0$ for all integers $n$</li>
+                        <li>$\{x + n\} = \{x\}$ for any integer $n$ (Periodic with period 1)</li>
+                        <li>$\{x\} + \{-x\} = \begin{cases} 0 & \text{if } x \in \mathbb{Z} \\ 1 & \text{if } x \notin \mathbb{Z} \end{cases}$</li>
+                    </ul>
+                </div>
+
+                <div class="graph-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Graphical Representation</h3>
+                    <div class="bg-white p-4 rounded border text-center">
+                        <div class="text-gray-600 mb-4">[Visual: Sawtooth pattern repeating every unit interval]</div>
+                        <div class="flex justify-center items-end h-32 space-x-1">
+                            <div class="w-16 h-4 bg-green-500"></div>
+                            <div class="w-16 h-12 bg-green-500"></div>
+                            <div class="w-16 h-20 bg-green-500"></div>
+                            <div class="w-16 h-28 bg-green-500"></div>
+                            <div class="w-16 h-4 bg-green-500"></div>
+                            <div class="w-16 h-12 bg-green-500"></div>
+                            <div class="w-16 h-20 bg-green-500"></div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">The graph shows a <strong>sawtooth pattern</strong> with discontinuities at integer points.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Differentiability Analysis -->
+            <section id="differentiability-analysis" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Differentiability Analysis</h2>
+                </div>
+
+                <div class="important-note">
+                    <h3 class="font-semibold text-yellow-800 mb-2">🎯 Fundamental Differentiability Rule</h3>
+                    <p>A function is differentiable at a point if:</p>
+                    <ol class="list-decimal list-inside mt-2 space-y-1">
+                        <li>It is <strong>continuous</strong> at that point</li>
+                        <li>Left-hand derivative = Right-hand derivative at that point</li>
+                    </ol>
+                </div>
+
+                <!-- GIF Differentiability -->
+                <div class="problem-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Differentiability of [x]</h3>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Analysis:</h4>
+                        <div class="space-y-3">
+                            <p><strong>At non-integer points:</strong></p>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Function is <strong>constant</strong> in small neighborhoods</li>
+                                <li>Derivative exists and equals <strong>0</strong></li>
+                                <li>$f'(x) = 0$ for $x \notin \mathbb{Z}$</li>
+                            </ul>
+                            
+                            <p><strong>At integer points:</strong></p>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Function has <strong>jump discontinuities</strong></li>
+                                <li>Left-hand derivative = 0</li>
+                                <li>Right-hand derivative = 0</li>
+                                <li>But function is <strong>not continuous</strong></li>
+                            </ul>
+                            
+                            <div class="bg-yellow-50 p-3 rounded border border-yellow-200">
+                                <p class="font-semibold text-yellow-800">Conclusion:</p>
+                                <p>$[x]$ is <strong>differentiable for all $x \notin \mathbb{Z}$</strong> and <strong>non-differentiable at all integer points</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FPF Differentiability -->
+                <div class="problem-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Differentiability of {x}</h3>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Analysis:</h4>
+                        <div class="space-y-3">
+                            <p><strong>At non-integer points:</strong></p>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Function behaves like $f(x) = x - c$ where $c$ is constant</li>
+                                <li>Derivative exists and equals <strong>1</strong></li>
+                                <li>$f'(x) = 1$ for $x \notin \mathbb{Z}$</li>
+                            </ul>
+                            
+                            <p><strong>At integer points:</strong></p>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Left-hand limit: $\lim_{h \to 0^-} \frac{\{n+h\} - \{n\}}{h} = \lim_{h \to 0^-} \frac{(n+h - (n-1)) - 0}{h} = 1$</li>
+                                <li>Right-hand limit: $\lim_{h \to 0^+} \frac{\{n+h\} - \{n\}}{h} = \lim_{h \to 0^+} \frac{h - 0}{h} = 1$</li>
+                                <li>But function is <strong>not continuous</strong> at integers</li>
+                            </ul>
+                            
+                            <div class="bg-yellow-50 p-3 rounded border border-yellow-200">
+                                <p class="font-semibold text-yellow-800">Conclusion:</p>
+                                <p>$\{x\}$ is <strong>differentiable for all $x \notin \mathbb{Z}$</strong> with derivative 1, and <strong>non-differentiable at all integer points</strong> due to discontinuity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jee-tip">
+                    <h4 class="font-semibold text-blue-800 mb-2">💡 JEE Shortcut</h4>
+                    <p><strong>Remember this pattern:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>[x]</strong>: Differentiable except at integers → Derivative = 0 where it exists</li>
+                        <li><strong>{x}</strong>: Differentiable except at integers → Derivative = 1 where it exists</li>
+                        <li>Both are <strong>never differentiable at integers</strong> due to discontinuity</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- JEE Problems -->
+            <section id="jee-problems" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. JEE Problems & Solutions</h2>
+                </div>
+
+                <!-- Problem 1 -->
+                <div class="problem-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">JEE Main 2023</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Composite Function</h3>
+                    <p class="text-lg mb-4">Discuss the differentiability of $f(x) = [x] + \sqrt{\{x\}}$ at $x = 1$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Analyze continuity at $x = 1$</p>
+                            <p class="ml-4">LHL: $\lim_{x \to 1^-} f(x) = [1^-] + \sqrt{\{1^-\}} = 0 + \sqrt{1} = 1$</p>
+                            <p class="ml-4">RHL: $\lim_{x \to 1^+} f(x) = [1^+] + \sqrt{\{1^+\}} = 1 + \sqrt{0} = 1$</p>
+                            <p class="ml-4">$f(1) = [1] + \sqrt{\{1\}} = 1 + 0 = 1$</p>
+                            <p>✓ Function is continuous at $x = 1$</p>
+                            
+                            <p><strong>Step 2:</strong> Check differentiability</p>
+                            <p class="ml-4">LHD: $\lim_{h \to 0^-} \frac{f(1+h) - f(1)}{h} = \lim_{h \to 0^-} \frac{(0 + \sqrt{1+h}) - 1}{h}$</p>
+                            <p class="ml-4">Using binomial expansion: $\frac{(1 + \frac{h}{2} + \cdots) - 1}{h} = \frac{1}{2}$</p>
+                            
+                            <p class="ml-4">RHD: $\lim_{h \to 0^+} \frac{f(1+h) - f(1)}{h} = \lim_{h \to 0^+} \frac{(1 + \sqrt{h}) - 1}{h} = \lim_{h \to 0^+} \frac{\sqrt{h}}{h} = \infty$</p>
+                            
+                            <p><strong>Step 3:</strong> Conclusion</p>
+                            <p>LHD = $\frac{1}{2}$, RHD = $\infty$ → Not equal</p>
+                            <p class="font-semibold mt-2">$f(x)$ is continuous but not differentiable at $x = 1$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="problem-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">JEE Advanced 2022</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Absolute Value with GIF</h3>
+                    <p class="text-lg mb-4">Find all points where $f(x) = |[x] - x|$ is not differentiable</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Simplify the function</p>
+                            <p class="ml-4">$|[x] - x| = | -\{x\} | = \{x\}$ (since $\{x\} \geq 0$)</p>
+                            <p class="ml-4">So $f(x) = \{x\}$</p>
+                            
+                            <p><strong>Step 2:</strong> Differentiability of $\{x\}$</p>
+                            <p class="ml-4">As established earlier, $\{x\}$ is differentiable for all $x \notin \mathbb{Z}$</p>
+                            <p class="ml-4">At integer points, function is discontinuous</p>
+                            
+                            <p><strong>Step 3:</strong> Conclusion</p>
+                            <p class="font-semibold">$f(x)$ is not differentiable at all integer points $x \in \mathbb{Z}$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="problem-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">JEE Main 2021</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Trigonometric with FPF</h3>
+                    <p class="text-lg mb-4">Check differentiability of $f(x) = \sin(\pi\{x\})$ at $x = \frac{3}{2}$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Analyze the function around $x = \frac{3}{2}$</p>
+                            <p class="ml-4">For $x$ near $\frac{3}{2}$, $\{x\} = x - 1$</p>
+                            <p class="ml-4">So $f(x) = \sin(\pi(x - 1)) = \sin(\pi x - \pi) = -\sin(\pi x)$</p>
+                            
+                            <p><strong>Step 2:</strong> Check continuity</p>
+                            <p class="ml-4">LHL: $\lim_{x \to \frac{3}{2}^-} -\sin(\pi x) = -\sin(\frac{3\pi}{2}) = 1$</p>
+                            <p class="ml-4">RHL: $\lim_{x \to \frac{3}{2}^+} -\sin(\pi x) = -\sin(\frac{3\pi}{2}) = 1$</p>
+                            <p class="ml-4">$f(\frac{3}{2}) = -\sin(\frac{3\pi}{2}) = 1$</p>
+                            <p>✓ Continuous at $x = \frac{3}{2}$</p>
+                            
+                            <p><strong>Step 3:</strong> Check differentiability</p>
+                            <p class="ml-4">$f(x) = -\sin(\pi x)$ in neighborhood of $\frac{3}{2}$</p>
+                            <p class="ml-4">$f'(x) = -\pi\cos(\pi x)$</p>
+                            <p class="ml-4">$f'(\frac{3}{2}) = -\pi\cos(\frac{3\pi}{2}) = 0$</p>
+                            
+                            <p class="font-semibold mt-2">$f(x)$ is differentiable at $x = \frac{3}{2}$ with derivative 0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary Table -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📊 Quick Comparison Summary</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm bg-white rounded-lg overflow-hidden">
+                            <thead class="bg-purple-100">
+                                <tr>
+                                    <th class="p-3 text-left">Property</th>
+                                    <th class="p-3 text-center">[x]</th>
+                                    <th class="p-3 text-center">{x}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3 font-medium">Domain</td>
+                                    <td class="p-3 text-center">$\mathbb{R}$</td>
+                                    <td class="p-3 text-center">$\mathbb{R}$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-medium">Range</td>
+                                    <td class="p-3 text-center">$\mathbb{Z}$</td>
+                                    <td class="p-3 text-center">$[0, 1)$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-medium">Continuity</td>
+                                    <td class="p-3 text-center">Discontinuous at $\mathbb{Z}$</td>
+                                    <td class="p-3 text-center">Discontinuous at $\mathbb{Z}$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-medium">Differentiability Points</td>
+                                    <td class="p-3 text-center">$\mathbb{R} - \mathbb{Z}$</td>
+                                    <td class="p-3 text-center">$\mathbb{R} - \mathbb{Z}$</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Derivative where exists</td>
+                                    <td class="p-3 text-center">0</td>
+                                    <td class="p-3 text-center">1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems to reinforce your learning:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Is $f(x) = [x^2]$ differentiable at $x = 1$? Explain.</p>
+                            <div class="text-sm text-gray-600">Hint: Check continuity and left/right derivatives</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find all points where $f(x) = \{x\} + \{ -x \}$ is not differentiable.</p>
+                            <div class="text-sm text-gray-600">Hint: Simplify using properties of fractional part function</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Discuss differentiability of $f(x) = [\sin x]$ at $x = \frac{\pi}{2}$.</p>
+                            <div class="text-sm text-gray-600">Hint: Analyze the behavior of sine function around π/2</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Takeaways -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">💡 Key Takeaways for JEE</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For [x]:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Always check integer points first</li>
+                                <li>Discontinuous ⇒ Non-differentiable at integers</li>
+                                <li>Derivative = 0 where it exists</li>
+                                <li>Watch for composite functions like $[g(x)]$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For {x}:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Periodic with period 1</li>
+                                <li>Discontinuous at all integers</li>
+                                <li>Derivative = 1 where it exists</li>
+                                <li>Often appears with trigonometric functions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-4 bg-yellow-50 rounded border border-yellow-200">
+                        <p class="font-semibold text-yellow-800">🎯 Exam Strategy:</p>
+                        <p class="text-sm mt-1">When you see [x] or {x} in a differentiability question, immediately check:</p>
+                        <ol class="list-decimal list-inside mt-2 text-sm space-y-1">
+                            <li>Continuity at the point</li>
+                            <li>Left-hand and right-hand derivatives</li>
+                            <li>Special behavior at integer points</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered GIF & FPF Differentiability?</h3>
+                    <p class="mb-4 opacity-90">Continue your calculus journey with more advanced topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Worksheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

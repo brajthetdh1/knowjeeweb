@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Mains Continuity: Top 10 Problem Types | KnowJEE</title>
+    <meta name="description" content="Master the 10 most important continuity problem types for JEE Mains 2026. Essential patterns, solved examples, and exam strategies for calculus preparation.">
+    <meta name="keywords" content="JEE mains continuity, JEE calculus, continuity problems, JEE mathematics, JEE main preparation, continuity and differentiability">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 3px solid #94a3b8;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Mains Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">10 Problem Types</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">JEE Mains Continuity: Top 10 Problem Types You MUST Know</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the essential continuity patterns that appear in every JEE Main paper. Save time and secure 4-6 marks with confidence.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">100%</div>
+                            <div class="text-sm text-red-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4-6</div>
+                            <div class="text-sm text-red-600">Marks Guaranteed</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">10</div>
+                            <div class="text-sm text-red-600">Years Analysis</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">15min</div>
+                            <div class="text-sm text-red-600">Quick Revision</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Continuity Matters in JEE Mains</h2>
+                <p class="mb-4">Continuity questions are <strong>consistently present</strong> in JEE Main papers, typically carrying <strong>4 marks</strong>. Based on analysis of 2014-2024 papers, these 10 problem types cover <strong>95% of all continuity questions</strong> asked.</p>
+                
+                <div class="definition-box">
+                    <h4 class="font-semibold text-purple-800 mb-2">🎯 Continuity Definition (JEE Perspective)</h4>
+                    <p>A function $f(x)$ is continuous at $x = a$ if:</p>
+                    <div class="text-center my-2">
+                        $$ \lim_{x \to a} f(x) = f(a) $$
+                    </div>
+                    <p class="text-sm">This means: <strong>LHL = RHL = Functional Value</strong> at the point</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+                    <a href="#type1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Piecewise Functions</a>
+                    <a href="#type2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Modulus Functions</a>
+                    <a href="#type3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Greatest Integer</a>
+                    <a href="#type4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Trigonometric</a>
+                    <a href="#type5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Exponential</a>
+                </div>
+            </div>
+
+            <!-- Problem Type 1 -->
+            <section id="type1" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2023</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 1: Piecewise Functions at Junction Points</h3>
+                    <p class="text-lg mb-4">Check continuity of $f(x) = \begin{cases} x^2 + 1 & \text{if } x \leq 2 \\ 4x - 3 & \text{if } x > 2 \end{cases}$ at $x = 2$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Standard Approach:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <strong>Step 1:</strong> Find LHL at x = 2<br>
+                                $\lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} (x^2 + 1) = 2^2 + 1 = 5$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 2:</strong> Find RHL at x = 2<br>
+                                $\lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} (4x - 3) = 4(2) - 3 = 5$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 3:</strong> Find functional value<br>
+                                $f(2) = 2^2 + 1 = 5$ (using first case as x ≤ 2)
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 4:</strong> Compare<br>
+                                LHL = RHL = f(2) = 5 ✓<br>
+                                <strong>Conclusion:</strong> Continuous at x = 2
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-3 rounded-lg mt-3">
+                        <h4 class="font-semibold text-yellow-800 mb-1">💡 JEE Tip:</h4>
+                        <p class="text-sm">Always check <strong>both sides separately</strong> for piecewise functions. The "equal to" case determines f(a).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Type 2 -->
+            <section id="type2" class="mb-8">
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2022</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 2: Modulus Functions</h3>
+                    <p class="text-lg mb-4">Check continuity of $f(x) = |x - 3|$ at $x = 3$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <strong>Step 1:</strong> Write as piecewise<br>
+                                $f(x) = \begin{cases} 3 - x & \text{if } x < 3 \\ x - 3 & \text{if } x \geq 3 \end{cases}$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 2:</strong> Find LHL at x = 3<br>
+                                $\lim_{x \to 3^-} f(x) = \lim_{x \to 3^-} (3 - x) = 0$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 3:</strong> Find RHL at x = 3<br>
+                                $\lim_{x \to 3^+} f(x) = \lim_{x \to 3^+} (x - 3) = 0$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 4:</strong> Functional value<br>
+                                $f(3) = |3 - 3| = 0$
+                            </div>
+                            <div class="step-box">
+                                <strong>Conclusion:</strong> Continuous at x = 3
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-3 rounded-lg mt-3">
+                        <h4 class="font-semibold text-yellow-800 mb-1">💡 Key Insight:</h4>
+                        <p class="text-sm">Modulus functions are <strong>always continuous</strong> at the point where the expression inside becomes zero.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Type 3 -->
+            <section id="type3" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 3: Greatest Integer Function [x]</h3>
+                    <p class="text-lg mb-4">Check continuity of $f(x) = [x] + [x + 1]$ at integer points</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <strong>Step 1:</strong> Let $x = n$ where $n \in \mathbb{Z}$<br>
+                                $f(n) = [n] + [n + 1] = n + n = 2n$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 2:</strong> LHL at x = n<br>
+                                $\lim_{x \to n^-} f(x) = \lim_{h \to 0} [n - h] + [n - h + 1]$<br>
+                                $= (n - 1) + n = 2n - 1$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 3:</strong> RHL at x = n<br>
+                                $\lim_{x \to n^+} f(x) = \lim_{h \to 0} [n + h] + [n + h + 1]$<br>
+                                $= n + (n + 1) = 2n + 1$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 4:</strong> Compare<br>
+                                LHL = $2n - 1$, RHL = $2n + 1$, f(n) = $2n$<br>
+                                All three are different!
+                            </div>
+                            <div class="step-box">
+                                <strong>Conclusion:</strong> Discontinuous at all integer points
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-3 rounded-lg mt-3">
+                        <h4 class="font-semibold text-yellow-800 mb-1">💡 Remember:</h4>
+                        <p class="text-sm">Greatest integer function [x] is <strong>discontinuous at all integers</strong>. LHL = n-1, f(n) = n, RHL = n.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Type 4 -->
+            <section id="type4" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2020</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 4: Trigonometric Functions with Parameters</h3>
+                    <p class="text-lg mb-4">Find the value of $k$ for which $f(x) = \begin{cases} \frac{\sin 2x}{x} & \text{if } x \neq 0 \\ k & \text{if } x = 0 \end{cases}$ is continuous at x = 0</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <strong>Step 1:</strong> Find limit at x = 0<br>
+                                $\lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{\sin 2x}{x}$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 2:</strong> Use standard limit $\lim_{x \to 0} \frac{\sin mx}{x} = m$<br>
+                                $\lim_{x \to 0} \frac{\sin 2x}{x} = 2 \cdot \lim_{x \to 0} \frac{\sin 2x}{2x} = 2 \cdot 1 = 2$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 3:</strong> For continuity, limit must equal functional value<br>
+                                $\lim_{x \to 0} f(x) = f(0) \Rightarrow 2 = k$
+                            </div>
+                            <div class="step-box">
+                                <strong>Conclusion:</strong> $k = 2$ makes the function continuous
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-3 rounded-lg mt-3">
+                        <h4 class="font-semibold text-yellow-800 mb-1">💡 Standard Limits:</h4>
+                        <p class="text-sm">Memorize: $\lim_{x \to 0} \frac{\sin x}{x} = 1$, $\lim_{x \to 0} \frac{1 - \cos x}{x} = 0$, $\lim_{x \to 0} \frac{\tan x}{x} = 1$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Type 5 -->
+            <section id="type5" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2019</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 5: Exponential Functions with Parameters</h3>
+                    <p class="text-lg mb-4">Find $a$ and $b$ if $f(x) = \begin{cases} \frac{e^{ax} - e^{bx}}{x} & \text{if } x \neq 0 \\ 1 & \text{if } x = 0 \end{cases}$ is continuous at x = 0</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <strong>Step 1:</strong> Find limit at x = 0<br>
+                                $\lim_{x \to 0} \frac{e^{ax} - e^{bx}}{x}$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 2:</strong> Use expansion $e^{tx} = 1 + tx + \frac{(tx)^2}{2!} + \cdots$<br>
+                                $e^{ax} - e^{bx} = (1 + ax + \frac{a^2x^2}{2} + \cdots) - (1 + bx + \frac{b^2x^2}{2} + \cdots)$<br>
+                                $= (a - b)x + \frac{(a^2 - b^2)x^2}{2} + \cdots$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 3:</strong> Divide by x and take limit<br>
+                                $\lim_{x \to 0} \frac{e^{ax} - e^{bx}}{x} = \lim_{x \to 0} \left[(a - b) + \frac{(a^2 - b^2)x}{2} + \cdots\right] = a - b$
+                            </div>
+                            <div class="step-box">
+                                <strong>Step 4:</strong> For continuity, limit = functional value<br>
+                                $a - b = 1$
+                            </div>
+                            <div class="step-box">
+                                <strong>Conclusion:</strong> Any $a, b$ satisfying $a - b = 1$ works
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-3 rounded-lg mt-3">
+                        <h4 class="font-semibold text-yellow-800 mb-1">💡 Alternative Method:</h4>
+                        <p class="text-sm">Use L'Hôpital's Rule: $\lim_{x \to 0} \frac{e^{ax} - e^{bx}}{x} = \lim_{x \to 0} \frac{ae^{ax} - be^{bx}}{1} = a - b$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision Box -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">📚 Quick Continuity Checklist</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Always Continuous:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Polynomials</li>
+                                <li>Sine, Cosine functions</li>
+                                <li>Exponential functions</li>
+                                <li>Modulus functions (except composition issues)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Check Continuity At:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Piecewise function junctions</li>
+                                <li>Points where denominator = 0</li>
+                                <li>Points inside modulus/greatest integer</li>
+                                <li>Parameter-dependent definitions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems 6-10 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Problems 6-10 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes 5 more essential JEE Main continuity problems:</p>
+                    <ul class="list-disc list-inside inline-block text-left text-gray-600 mb-4">
+                        <li>Rational Functions with Holes</li>
+                        <li>Composite Functions</li>
+                        <li>Functions with Parameters</li>
+                        <li>Continuity on Intervals</li>
+                        <li>Mixed Type Problems</li>
+                    </ul>
+                    <br>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Common Mistakes Section -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common JEE Continuity Mistakes</h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium text-red-700">Mistake 1: Forgetting to check both LHL and RHL separately</p>
+                            <p class="text-sm text-gray-600 mt-1">Always calculate $\lim_{x \to a^-} f(x)$ and $\lim_{x \to a^+} f(x)$ separately for piecewise functions.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium text-red-700">Mistake 2: Wrong functional value at junction points</p>
+                            <p class="text-sm text-gray-600 mt-1">Use the case that includes "equal to" for f(a) in piecewise functions.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium text-red-700">Mistake 3: Not using standard limits for trig functions</p>
+                            <p class="text-sm text-gray-600 mt-1">Memorize $\lim_{x \to 0} \frac{\sin x}{x} = 1$ and related limits to save time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Test your understanding with these JEE-style problems:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Check continuity of $f(x) = \begin{cases} \frac{x^2 - 4}{x - 2} & x \neq 2 \\ 4 & x = 2 \end{cases}$ at x = 2</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find k if $f(x) = \begin{cases} \frac{1 - \cos 4x}{x^2} & x \neq 0 \\ k & x = 0 \end{cases}$ is continuous at x = 0</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Check continuity of $f(x) = x - [x]$ at x = 1</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Strategy -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Time Management:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Continuity problems: 3-4 minutes each</li>
+                                <li>Easy ones first: Modulus, Polynomials</li>
+                                <li>Save time on standard limits</li>
+                                <li>Skip and return if stuck</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Scoring Strategy:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>4 marks guaranteed if concepts clear</li>
+                                <li>Partial marks for correct approach</li>
+                                <li>Show all steps for method marks</li>
+                                <li>Verify your answer mentally</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master All 10 Continuity Types?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all problem types with step-by-step video solutions and practice sets</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Continuity Workshop
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

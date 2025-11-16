@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composite Functions: Domain & Range of f(g(x)) | Step-by-Step Guide | KnowJEE</title>
+    <meta name="description" content="Master the step-by-step process for finding domain and range of composite functions f(g(x)). Essential for JEE Main & Advanced preparation.">
+    <meta name="keywords" content="composite functions, domain range f(g(x)), fog functions, JEE composite functions, function composition">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .step-box:hover {
+            background: #f0f9ff;
+            transform: translateX(5px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border: 2px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box {
+            background: #fef3cd;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #dbeafe;
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #fffbeb;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .flow-box {
+            background: #faf5ff;
+            border: 2px solid #8b5cf6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-number {
+            background: #3b82f6;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Step-by-Step Guide</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">4 Essential Steps</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Handling Composite Functions: A Step-by-Step Guide to Domain & Range (f ∘ g)</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the systematic approach to finding domain and range of composite functions - the most tested concept in JEE functions.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">95%</div>
+                            <div class="text-sm text-blue-600">JEE Papers Include</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4</div>
+                            <div class="text-sm text-blue-600">Key Steps</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-5</div>
+                            <div class="text-sm text-blue-600">Marks per Question</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Systematic Approach</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Composite Functions Trouble Students</h2>
+                <p class="mb-4">Composite functions like $f(g(x))$ appear in <strong>95% of JEE mathematics papers</strong>, yet students consistently lose marks here due to:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>Confusing individual domains</strong> with composite domain</li>
+                    <li><strong>Forgetting to work from inside out</strong></li>
+                    <li><strong>Missing the intersection step</strong> between constraints</li>
+                    <li><strong>Overlooking range compatibility</strong> between functions</li>
+                </ul>
+                
+                <div class="flow-box">
+                    <h3 class="font-semibold text-purple-800 mb-3">🎯 The Golden Rule of Composite Functions</h3>
+                    <div class="text-center text-lg font-semibold text-purple-700 mb-3">
+                        Domain of $f(g(x))$ = Domain of $g(x)$ ∩ $\{x: g(x) \in$ Domain of $f\}$
+                    </div>
+                    <p class="text-sm text-gray-600">In simple terms: <strong>Input must work for g, AND output of g must work as input for f</strong></p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Step Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#step1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 1: Understand g(x)</a>
+                    <a href="#step2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 2: Find Domain of g(x)</a>
+                    <a href="#step3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 3: Apply f to g(x)</a>
+                    <a href="#step4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 4: Take Intersection</a>
+                </div>
+            </div>
+
+            <!-- Step 1 -->
+            <section id="step1" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-start mb-4">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Understand the Composition: f(g(x))</h3>
+                            <p class="text-gray-600 mt-1">First, clearly identify what f(g(x)) actually means.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded-lg border">
+                            <h4 class="font-semibold text-blue-800 mb-2">What is f(g(x))?</h4>
+                            <p class="text-sm">The output of g(x) becomes the input for f(x)</p>
+                            <div class="text-center my-3">
+                                $$x \xrightarrow{g} g(x) \xrightarrow{f} f(g(x))$$
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Visual Representation</h4>
+                            <div class="text-center text-sm bg-gray-100 p-3 rounded">
+                                Input → <strong>g-machine</strong> → Output₁ → <strong>f-machine</strong> → Final Output
+                            </div>
+                            <p class="text-xs text-gray-600 mt-2">Both machines must work for the process to succeed</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-3">📚 Example Setup</h4>
+                        <p>Let's use this example throughout our steps:</p>
+                        <div class="text-center my-3">
+                            $f(x) = \sqrt{x}$ and $g(x) = \log(1-x)$
+                        </div>
+                        <p>Then $f(g(x)) = \sqrt{\log(1-x)}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section id="step2" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-start mb-4">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Find Domain of g(x)</h3>
+                            <p class="text-gray-600 mt-1">Determine all x-values that work for the inner function.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-3">🔍 Applying to Our Example</h4>
+                        <p><strong>Given:</strong> $g(x) = \log(1-x)$</p>
+                        <div class="space-y-2 mt-3">
+                            <p><strong>Step 2.1:</strong> Logarithm condition: argument > 0</p>
+                            <div class="text-center">
+                                $1 - x > 0$
+                            </div>
+                            <p><strong>Step 2.2:</strong> Solve the inequality</p>
+                            <div class="text-center">
+                                $x < 1$
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded mt-3">
+                            <p class="font-semibold text-green-800">Domain of g(x): $(-\infty, 1)$</p>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">⚠️ Common Mistakes in Step 2</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Forgetting that log arguments must be <strong>strictly positive</strong></li>
+                            <li>Missing denominator constraints in rational functions</li>
+                            <li>Overlooking square root constraints for inner function</li>
+                            <li>Not considering periodicity in trigonometric functions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section id="step3" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-start mb-4">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Apply f to g(x) - The Range Compatibility Check</h3>
+                            <p class="text-gray-600 mt-1">Ensure g(x) produces outputs that are valid inputs for f.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-3">🔍 Applying to Our Example</h4>
+                        <p><strong>Given:</strong> $f(x) = \sqrt{x}$ and we know $g(x) = \log(1-x)$</p>
+                        <div class="space-y-3 mt-3">
+                            <p><strong>Step 3.1:</strong> Domain of f(x): For $\sqrt{x}$, we need $x \geq 0$</p>
+                            <p><strong>Step 3.2:</strong> Therefore, for $f(g(x))$, we need $g(x) \geq 0$</p>
+                            <div class="text-center">
+                                $\log(1-x) \geq 0$
+                            </div>
+                            <p><strong>Step 3.3:</strong> Solve the inequality (base 10 > 1, so inequality direction stays)</p>
+                            <div class="text-center">
+                                $1-x \geq 10^0 = 1$
+                            </div>
+                            <div class="text-center">
+                                $-x \geq 0 \Rightarrow x \leq 0$
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded mt-3">
+                            <p class="font-semibold text-green-800">Constraint from f: $x \leq 0$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Critical Insight</h4>
+                        <p class="text-sm">This step answers: <strong>"What outputs from g are acceptable inputs for f?"</strong></p>
+                        <p class="text-sm mt-2">We're essentially finding: $\{x : g(x) \in \text{Domain of } f\}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4 -->
+            <section id="step4" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-start mb-4">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Take the Intersection - The Final Domain</h3>
+                            <p class="text-gray-600 mt-1">Combine both constraints to find the actual domain of f(g(x)).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-3">🔍 Applying to Our Example</h4>
+                        <div class="space-y-3">
+                            <p><strong>From Step 2:</strong> Domain of g(x): $x < 1$</p>
+                            <p><strong>From Step 3:</strong> Constraint from f: $x \leq 0$</p>
+                            <p><strong>Step 4.1:</strong> Take intersection of both conditions</p>
+                            <div class="text-center text-lg font-semibold">
+                                $\{x < 1\} \cap \{x \leq 0\} = \{x \leq 0\}$
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded mt-4">
+                            <h4 class="font-semibold text-green-800 mb-2">🎉 Final Answer</h4>
+                            <p class="font-semibold text-lg">Domain of $f(g(x)) = (-\infty, 0]$</p>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">⚠️ The Intersection Trap</h4>
+                        <p class="text-sm">Students often make these mistakes in Step 4:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm mt-2">
+                            <li>Taking <strong>union</strong> instead of intersection</li>
+                            <li>Forgetting that <strong>both conditions must be satisfied simultaneously</strong></li>
+                            <li>Missing edge cases where one constraint is stricter than the other</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Range of Composite Functions -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">Finding Range of f(g(x))</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Step-by-Step Process</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-sm">
+                                <li><strong>Find range of g(x)</strong> over its domain</li>
+                                <li><strong>Take intersection</strong> with domain of f(x)</li>
+                                <li><strong>Apply f</strong> to this restricted set</li>
+                                <li>The result is the <strong>range of f(g(x))</strong></li>
+                            </ol>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Mathematical Form</h4>
+                            <div class="text-center my-3">
+                                $$ \text{Range of } f(g(x)) = f(\text{Range of } g(x) \cap \text{Domain of } f(x)) $$
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-3">📚 Range Example</h4>
+                        <p><strong>Given:</strong> $f(x) = \sqrt{x}$, $g(x) = \log(1-x)$, Domain: $x \leq 0$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Range of g(x) for $x \leq 0$:</p>
+                            <p class="ml-4">When $x \leq 0$, $1-x \geq 1$, so $\log(1-x) \geq 0$</p>
+                            <p class="ml-4">As $x \to -\infty$, $g(x) \to +\infty$</p>
+                            <p class="ml-4">Range of g: $[0, \infty)$</p>
+                            
+                            <p><strong>Step 2:</strong> Intersection with domain of f ($x \geq 0$): $[0, \infty)$</p>
+                            
+                            <p><strong>Step 3:</strong> Apply f: $f([0, \infty)) = [0, \infty)$</p>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded mt-3">
+                            <p class="font-semibold text-green-800">Range of f(g(x)): $[0, \infty)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Examples -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Advanced Composite Function Examples</h2>
+                
+                <div class="practice-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Example 1: Triple Composition</h3>
+                    <p class="mb-3">Find domain of $h(g(f(x)))$ where:</p>
+                    <div class="text-center mb-4">
+                        $f(x) = \sqrt{x}, \quad g(x) = \frac{1}{x-1}, \quad h(x) = \log(x)$
+                    </div>
+                    
+                    <div class="solution bg-green-50 p-4 rounded">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> $f(x) = \sqrt{x}$ → Domain: $x \geq 0$</p>
+                            <p><strong>Step 2:</strong> $g(f(x)) = \frac{1}{\sqrt{x}-1}$ → Need $\sqrt{x} \neq 1$ → $x \neq 1$</p>
+                            <p><strong>Step 3:</strong> $h(g(f(x))) = \log\left(\frac{1}{\sqrt{x}-1}\right)$ → Need $\frac{1}{\sqrt{x}-1} > 0$</p>
+                            <p><strong>Step 4:</strong> Solve $\frac{1}{\sqrt{x}-1} > 0$ → $\sqrt{x}-1 > 0$ → $x > 1$</p>
+                            <p><strong>Step 5:</strong> Intersection: $x \geq 0$ and $x \neq 1$ and $x > 1$ → $x > 1$</p>
+                        </div>
+                        <p class="font-semibold mt-3">Domain: $(1, \infty)$</p>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Example 2: Trigonometric Composite</h3>
+                    <p class="mb-3">Find domain of $f(g(x))$ where:</p>
+                    <div class="text-center mb-4">
+                        $f(x) = \sqrt{\sin^{-1}x}, \quad g(x) = \frac{x-1}{x+1}$
+                    </div>
+                    
+                    <div class="solution bg-green-50 p-4 rounded">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Domain of g(x): $x \neq -1$</p>
+                            <p><strong>Step 2:</strong> Domain of f(x): For $\sqrt{\sin^{-1}x}$, need $\sin^{-1}x \geq 0$ and $-1 \leq x \leq 1$</p>
+                            <p><strong>Step 3:</strong> $\sin^{-1}x \geq 0$ when $0 \leq x \leq 1$</p>
+                            <p><strong>Step 4:</strong> So for f(g(x)), need $0 \leq g(x) \leq 1$</p>
+                            <p><strong>Step 5:</strong> Solve $0 \leq \frac{x-1}{x+1} \leq 1$ with $x \neq -1$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Domain Rules</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Work inside out</strong> - start with innermost function</li>
+                                <li><strong>Take intersections</strong> - not unions</li>
+                                <li><strong>Check range compatibility</strong> between functions</li>
+                                <li><strong>Remember edge cases</strong> and boundary values</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Common Patterns</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>$\sqrt{g(x)}$ → $g(x) \geq 0$</li>
+                                <li>$\log(g(x))$ → $g(x) > 0$</li>
+                                <li>$\frac{1}{g(x)}$ → $g(x) \neq 0$</li>
+                                <li>$\sin^{-1}(g(x))$ → $-1 \leq g(x) \leq 1$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 Practice Problems</h3>
+                    <p class="mb-4">Apply the 4-step method to these problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Find domain of $f(g(x))$ where $f(x) = \sqrt{x-2}$, $g(x) = \log(x+1)$</p>
+                            <div class="text-sm text-gray-600">Hint: Apply both logarithm and square root constraints</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find domain and range of $f(g(x))$ where $f(x) = \frac{1}{x}$, $g(x) = x^2-4$</p>
+                            <div class="text-sm text-gray-600">Hint: Watch for denominator becoming zero</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find domain of $g(f(x))$ where $f(x) = \sqrt{9-x^2}$, $g(x) = \log(x-1)$</p>
+                            <div class="text-sm text-gray-600">Hint: Note the order changed to g(f(x))</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Composite Functions?</h3>
+                    <p class="mb-4 opacity-90">You now have a systematic approach to tackle any composite function problem in JEE</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Function Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Step-by-Step PDF
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

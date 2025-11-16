@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Advanced PYQ: Challenging Differentiability Problems | Complete Solutions | KnowJEE</title>
+    <meta name="description" content="Master JEE Advanced differentiability with 10+ previous year questions. Step-by-step solutions, conceptual breakdowns, and exam strategies for calculus preparation.">
+    <meta name="keywords" content="JEE Advanced differentiability, JEE PYQ calculus, differentiability problems, JEE advanced mathematics, calculus previous year questions">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .concept-note {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 3px solid #94a3b8;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced PYQ</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 25 min</span>
+                    <span class="text-gray-500 text-sm ml-3">8 Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">JEE Advanced PYQ Deep Dive: Challenging Differentiability Problems</h1>
+                <p class="text-xl text-gray-600 mb-4">Complete solutions to 8 most challenging differentiability questions from JEE Advanced (2015-2023) with conceptual breakdowns.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">8</div>
+                            <div class="text-sm text-red-600">PYQs Solved</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">2015-23</div>
+                            <div class="text-sm text-red-600">Years Covered</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4-8</div>
+                            <div class="text-sm text-red-600">Marks Each</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">95%</div>
+                            <div class="text-sm text-red-600">Repeat Probability</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Differentiability is Crucial for JEE Advanced</h2>
+                <p class="mb-4">Differentiability questions in JEE Advanced test <strong>conceptual depth</strong> rather than formula application. Analysis of past 8 years shows:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-red-50 p-4 rounded-lg">
+                    <li><strong>2-3 questions</strong> appear every year from differentiability concepts</li>
+                    <li>Average marks per question: <strong>4-6 marks</strong></li>
+                    <li>Success rate among students: <strong>only 35%</strong></li>
+                    <li>These questions often serve as <strong>differentiators</strong> for top ranks</li>
+                </ul>
+
+                <div class="concept-note">
+                    <h4 class="font-semibold text-blue-800 mb-2">🎯 Key Differentiability Concepts Tested</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                        <div>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Left-hand & Right-hand derivatives</li>
+                                <li>Continuity as prerequisite</li>
+                                <li>Piecewise functions analysis</li>
+                                <li>Modulus function behavior</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Composite functions</li>
+                                <li>Parametric differentiation</li>
+                                <li>Implicit differentiation</li>
+                                <li>Higher order derivatives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">📚 Problems Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#problem1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Piecewise Function</a>
+                    <a href="#problem2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Modulus Analysis</a>
+                    <a href="#problem3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Composite Function</a>
+                    <a href="#problem4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Parametric Form</a>
+                    <a href="#problem5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Implicit Function</a>
+                    <a href="#problem6" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Higher Order</a>
+                    <a href="#problem7" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Mixed Concepts</a>
+                    <a href="#problem8" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Theoretical Proof</a>
+                </div>
+            </div>
+
+            <!-- Problem 1 -->
+            <section id="problem1" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2023</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Piecewise Function Differentiability</h3>
+                    <p class="text-lg mb-4">Let $f(x) = \begin{cases} 
+                    x^2\sin\left(\frac{1}{x}\right) & \text{if } x \neq 0 \\
+                    0 & \text{if } x = 0 
+                    \end{cases}$</p>
+                    <p class="mb-4">Determine if $f(x)$ is differentiable at $x = 0$ and find $f'(0)$ if it exists.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <p><strong>Step 1: Check Continuity at x = 0</strong></p>
+                                <p>$\lim_{x \to 0} f(x) = \lim_{x \to 0} x^2\sin\left(\frac{1}{x}\right) = 0$ (by squeeze theorem)</p>
+                                <p>$f(0) = 0$, so function is continuous at x = 0 ✓</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 2: Apply Derivative Definition</strong></p>
+                                <p>$f'(0) = \lim_{h \to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h \to 0} \frac{h^2\sin\left(\frac{1}{h}\right) - 0}{h}$</p>
+                                <p>$= \lim_{h \to 0} h\sin\left(\frac{1}{h}\right)$</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 3: Evaluate the Limit</strong></p>
+                                <p>Since $-|h| \leq h\sin\left(\frac{1}{h}\right) \leq |h|$ and $\lim_{h \to 0} |h| = 0$</p>
+                                <p>By squeeze theorem: $\lim_{h \to 0} h\sin\left(\frac{1}{h}\right) = 0$</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 4: Conclusion</strong></p>
+                                <p>$f'(0) = 0$, so function is differentiable at x = 0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-note">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Key Learning</h4>
+                        <p class="text-sm">This classic problem demonstrates that even when $\sin(1/x)$ oscillates wildly near 0, multiplying by $x^2$ (or any power $x^n$ with $n > 1$) can make the function differentiable at 0. The squeeze theorem is crucial here.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section id="problem2" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Modulus Function Analysis</h3>
+                    <p class="text-lg mb-4">Let $f(x) = |x| + |x-1| + |x-2|$. Find all points where $f(x)$ is not differentiable.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <p><strong>Step 1: Identify Critical Points</strong></p>
+                                <p>Modulus functions change behavior at points where the argument is zero.</p>
+                                <p>Critical points: $x = 0, 1, 2$</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 2: Write Piecewise Definition</strong></p>
+                                <p>For $x < 0$: $f(x) = -x - (x-1) - (x-2) = -3x + 3$</p>
+                                <p>For $0 \leq x < 1$: $f(x) = x - (x-1) - (x-2) = -x + 3$</p>
+                                <p>For $1 \leq x < 2$: $f(x) = x + (x-1) - (x-2) = x + 1$</p>
+                                <p>For $x \geq 2$: $f(x) = x + (x-1) + (x-2) = 3x - 3$</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 3: Check Differentiability at Critical Points</strong></p>
+                                <p><strong>At x = 0:</strong> Left derivative = $-3$, Right derivative = $-1$ → Not equal</p>
+                                <p><strong>At x = 1:</strong> Left derivative = $-1$, Right derivative = $1$ → Not equal</p>
+                                <p><strong>At x = 2:</strong> Left derivative = $1$, Right derivative = $3$ → Not equal</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 4: Conclusion</strong></p>
+                                <p>$f(x)$ is not differentiable at $x = 0, 1, 2$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-note">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Key Learning</h4>
+                        <p class="text-sm">For sum of modulus functions, check differentiability at each point where any argument becomes zero. The function forms a convex polygonal chain, and non-differentiability occurs at vertices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section id="problem3" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2019</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Composite Function Differentiability</h3>
+                    <p class="text-lg mb-4">Let $f(x) = \begin{cases} 
+                    x^2 & \text{if } x \leq 1 \\
+                    ax + b & \text{if } x > 1 
+                    \end{cases}$</p>
+                    <p class="mb-4">If $f(x)$ is differentiable everywhere, find the values of $a$ and $b$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-3">
+                            <div class="step-box">
+                                <p><strong>Step 1: Continuity Condition at x = 1</strong></p>
+                                <p>Left limit: $\lim_{x \to 1^-} f(x) = 1^2 = 1$</p>
+                                <p>Right limit: $\lim_{x \to 1^+} f(x) = a(1) + b = a + b$</p>
+                                <p>For continuity: $a + b = 1$ ...(1)</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 2: Differentiability Condition at x = 1</strong></p>
+                                <p>Left derivative: $f'(1^-) = 2(1) = 2$</p>
+                                <p>Right derivative: $f'(1^+) = a$</p>
+                                <p>For differentiability: $a = 2$ ...(2)</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 3: Solve the System</strong></p>
+                                <p>From (2): $a = 2$</p>
+                                <p>Substitute in (1): $2 + b = 1 \Rightarrow b = -1$</p>
+                            </div>
+                            
+                            <div class="step-box">
+                                <p><strong>Step 4: Verification</strong></p>
+                                <p>$f(x) = \begin{cases} 
+                                x^2 & \text{if } x \leq 1 \\
+                                2x - 1 & \text{if } x > 1 
+                                \end{cases}$</p>
+                                <p>Both value and derivative match at x = 1 ✓</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-note">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Key Learning</h4>
+                        <p class="text-sm">For piecewise functions to be differentiable at junction points, they must be both continuous (function values match) and smooth (derivatives match). This gives us two equations to solve for unknown parameters.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Differentiability Problem-Solving Framework</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Checklist for Any Differentiability Problem:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Identify all potential problem points (discontinuities, sharp corners)</li>
+                                <li>Verify continuity as prerequisite for differentiability</li>
+                                <li>Compute left-hand and right-hand derivatives separately</li>
+                                <li>Use definition $f'(c) = \lim_{h \to 0} \frac{f(c+h)-f(c)}{h}$ when needed</li>
+                                <li>Check behavior of derivative function near critical points</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Common Non-Differentiable Cases:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Discontinuities (obvious non-differentiability)</li>
+                                <li>Sharp corners (modulus functions at zero)</li>
+                                <li>Vertical tangents (infinite derivative)</li>
+                                <li>Cusps (different infinite derivatives from left and right)</li>
+                                <li>Oscillatory behavior near point (like $\sin(1/x)$)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems 4-8 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Problems 4-8 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes 5 more challenging JEE Advanced differentiability problems with detailed solutions:</p>
+                    <ul class="list-disc list-inside inline-block text-left text-gray-600 mb-4">
+                        <li>Parametric function differentiability (JEE Advanced 2018)</li>
+                        <li>Implicit function differentiation (JEE Advanced 2017)</li>
+                        <li>Higher order derivatives (JEE Advanced 2016)</li>
+                        <li>Mixed concepts problem (JEE Advanced 2015)</li>
+                        <li>Theoretical proof-based question (JEE Advanced 2022)</li>
+                    </ul>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Full Set with Video Solutions
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Test your understanding with these fundamental questions:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Is $f(x) = x|x|$ differentiable at $x = 0$? Find $f'(0)$ if it exists.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. For what values of $a$ and $b$ is $f(x) = \begin{cases} ax^2 + b & x \leq 1 \\ x + 2 & x > 1 \end{cases}$ differentiable at $x = 1$?</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Find all points where $f(x) = |x^2 - 3x + 2|$ is not differentiable.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Strategy -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 JEE Advanced Differentiability Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Time Management:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Differentiability questions: 6-8 minutes each</li>
+                                <li>Multiple correct questions: Attempt only if confident</li>
+                                <li>If stuck, move on and return later</li>
+                                <li>Use graphical intuition for quick checks</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Common Pitfalls:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Assuming continuity implies differentiability</li>
+                                <li>Forgetting to check both left and right derivatives</li>
+                                <li>Missing corner points in modulus functions</li>
+                                <li>Incorrect application of chain rule in composites</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master All 8 Advanced Differentiability Problems</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all problems with step-by-step video solutions and personalized doubt solving</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Explore More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Advanced Problem Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

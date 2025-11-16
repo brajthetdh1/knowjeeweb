@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Hôpital's Rule: The Ultimate Guide for JEE Main & Advanced | KnowJEE</title>
+    <meta name="description" content="Master L'Hôpital's Rule for JEE Main & Advanced. Learn when to apply, conditions, multiple applications with solved examples and practice problems for JEE 2026 preparation.">
+    <meta name="keywords" content="L'Hôpital's Rule JEE, limits calculus JEE, JEE main mathematics, JEE advanced calculus, indeterminate forms, JEE limits problems">
+    <meta name="author" content="KnowJEE">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/calculus/lhopitals-rule-guide">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="L'Hôpital's Rule: The Ultimate Guide for JEE Main & Advanced">
+    <meta property="og:description" content="Master L'Hôpital's Rule for JEE with detailed examples, conditions, and multiple applications. Essential for JEE 2026 preparation.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/calculus/lhopitals-rule-guide">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="L'Hôpital's Rule: Ultimate JEE Guide">
+    <meta name="twitter:description" content="Complete guide to L'Hôpital's Rule for JEE Main & Advanced with solved examples and practice problems.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #fef7f7;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #0369a1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .indeterminate-form {
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Main & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">8 Concepts</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">L'Hôpital's Rule: The Ultimate Guide for JEE Main & Advanced</h1>
+                <p class="text-xl text-gray-600 mb-4">Master when to apply L'Hôpital's Rule, understand all conditions, and learn multiple applications with JEE-level solved examples.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">7</div>
+                            <div class="text-sm text-blue-600">Indeterminate Forms</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">15+</div>
+                            <div class="text-sm text-blue-600">Solved Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">35min</div>
+                            <div class="text-sm text-blue-600">Practice Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why L'Hôpital's Rule is Crucial for JEE</h2>
+                <p class="mb-4">L'Hôpital's Rule appears in <strong>2-3 questions every JEE Main paper</strong> and is essential for solving complex limit problems in JEE Advanced. This powerful tool helps evaluate limits that yield indeterminate forms.</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>Saves time</strong> in solving complex limit problems</li>
+                    <li><strong>Essential</strong> for $0/0$ and $\infty/\infty$ forms</li>
+                    <li><strong>Multiple applications</strong> possible for stubborn limits</li>
+                    <li><strong>4-6 marks secured</strong> in every JEE mathematics paper</li>
+                </ul>
+            </section>
+
+            <!-- Concept 1 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Fundamental Concept</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What is L'Hôpital's Rule?</h3>
+                    <p class="text-lg mb-4">If $\lim_{x \to c} f(x) = \lim_{x \to c} g(x) = 0$ or $\pm\infty$, and $\lim_{x \to c} \frac{f'(x)}{g'(x)}$ exists, then:</p>
+                    <div class="text-center text-xl font-bold my-4 p-4 bg-white rounded-lg shadow-sm">
+                        $$\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}$$
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Conditions:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>Must get $0/0$ or $\infty/\infty$ form initially</li>
+                            <li>$f(x)$ and $g(x)$ must be differentiable near $c$</li>
+                            <li>$g'(x) \neq 0$ near $c$ (except possibly at $c$)</li>
+                            <li>The limit of $f'(x)/g'(x)$ must exist or be $\pm\infty$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 2 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2023</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">7 Indeterminate Forms</h3>
+                    <p class="text-lg mb-4">L'Hôpital's Rule directly applies to $0/0$ and $\infty/\infty$, but other forms can be converted:</p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                        <div class="indeterminate-form text-center">
+                            <div class="font-bold">$0/0$</div>
+                            <div class="text-xs">Direct Apply</div>
+                        </div>
+                        <div class="indeterminate-form text-center">
+                            <div class="font-bold">$\infty/\infty$</div>
+                            <div class="text-xs">Direct Apply</div>
+                        </div>
+                        <div class="indeterminate-form text-center">
+                            <div class="font-bold">$0 \cdot \infty$</div>
+                            <div class="text-xs">Rewrite</div>
+                        </div>
+                        <div class="indeterminate-form text-center">
+                            <div class="font-bold">$\infty - \infty$</div>
+                            <div class="text-xs">Combine</div>
+                        </div>
+                        <div class="indeterminate-form text-center">
+                            <div class="font-bold">$0^0$</div>
+                            <div class="text-xs">Log Method</div>
+                        </div>
+                        <div class="indeterminate-form text-center">
+                            <div class="font-bold">$1^\infty$</div>
+                            <div class="text-xs">Log Method</div>
+                        </div>
+                        <div class="indeterminate-form text-center">
+                            <div class="font-bold">$\infty^0$</div>
+                            <div class="text-xs">Log Method</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: $0 \cdot \infty$ Form</h4>
+                        <p class="text-sm mb-2">Evaluate $\lim_{x \to 0^+} x \ln x$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Identify form: $0 \cdot (-\infty)$</p>
+                            <p><strong>Step 2:</strong> Rewrite: $\lim_{x \to 0^+} \frac{\ln x}{1/x}$</p>
+                            <p><strong>Step 3:</strong> Now we have $\infty/\infty$ form</p>
+                            <p><strong>Step 4:</strong> Apply L'Hôpital's Rule: $\lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} (-x) = 0$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 3 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2022</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Multiple Applications of L'Hôpital's Rule</h3>
+                    <p class="text-lg mb-4">Sometimes one application isn't enough. We may need to apply the rule multiple times until we get a determinate form.</p>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Multiple Applications</h4>
+                        <p class="text-sm mb-2">Evaluate $\lim_{x \to 0} \frac{e^x - x - 1}{x^2}$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Check form: $\frac{0}{0}$ ✓</p>
+                            <p><strong>Step 2:</strong> First application: $\lim_{x \to 0} \frac{e^x - 1}{2x}$</p>
+                            <p><strong>Step 3:</strong> Still $\frac{0}{0}$ form</p>
+                            <p><strong>Step 4:</strong> Second application: $\lim_{x \to 0} \frac{e^x}{2} = \frac{1}{2}$</p>
+                            <p><strong>Step 5:</strong> Final answer: $\frac{1}{2}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="warning">
+                        <h4 class="font-semibold text-red-800 mb-2">⚠️ Common Mistake:</h4>
+                        <p class="text-sm">Applying L'Hôpital's Rule when the form is not indeterminate. Always verify the form is $0/0$ or $\infty/\infty$ before applying.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🚀 L'Hôpital's Rule: Quick Decision Guide</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">When to USE L'Hôpital's Rule:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Direct substitution gives $0/0$ or $\infty/\infty$</li>
+                                <li>Algebraic simplification seems difficult</li>
+                                <li>Trigonometric limits with $0/0$ form</li>
+                                <li>Exponential and logarithmic limits</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">When to AVOID L'Hôpital's Rule:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Form is not indeterminate</li>
+                                <li>Simple algebraic factorization possible</li>
+                                <li>Standard limits can be applied directly</li>
+                                <li>Derivatives become too complicated</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concepts 4-8 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Concepts Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes 5 more essential L'Hôpital's Rule concepts with JEE Advanced level problems:</p>
+                    <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                        <li>• L'Hôpital's Rule for $\infty - \infty$ forms</li>
+                        <li>• Exponential indeterminate forms ($1^\infty$, $0^0$, $\infty^0$)</li>
+                        <li>• Sequential applications with tricky derivatives</li>
+                        <li>• When L'Hôpital's Rule fails to give an answer</li>
+                        <li>• Comparison with other limit evaluation methods</li>
+                    </ul>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Access Full Guide
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your L'Hôpital's Rule skills:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. $\lim_{x \to 0} \frac{\sin x - x}{x^3}$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. $\lim_{x \to \infty} \frac{\ln x}{x}$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. $\lim_{x \to 0} \frac{e^x - e^{-x} - 2x}{x - \sin x}$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">4. $\lim_{x \to 0^+} x^x$ (Hint: Use logarithmic transformation)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">📋 L'Hôpital's Rule: Quick Reference</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                            <thead class="bg-yellow-100">
+                                <tr>
+                                    <th class="py-2 px-4 text-left">Indeterminate Form</th>
+                                    <th class="py-2 px-4 text-left">Transformation</th>
+                                    <th class="py-2 px-4 text-left">Then Apply L'Hôpital</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-yellow-200">
+                                <tr>
+                                    <td class="py-2 px-4">$0 \cdot \infty$</td>
+                                    <td class="py-2 px-4">Rewrite as $\frac{0}{1/\infty}$ or $\frac{\infty}{1/0}$</td>
+                                    <td class="py-2 px-4">Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">$\infty - \infty$</td>
+                                    <td class="py-2 px-4">Combine using common denominator</td>
+                                    <td class="py-2 px-4">Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">$0^0$, $1^\infty$, $\infty^0$</td>
+                                    <td class="py-2 px-4">Take natural log: $y = f(x)^{g(x)} \Rightarrow \ln y = g(x)\ln f(x)$</td>
+                                    <td class="py-2 px-4">Yes, to find $\lim \ln y$</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master L'Hôpital's Rule?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all concepts with step-by-step video solutions and JEE-level practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "L'Hôpital's Rule: The Ultimate Guide for JEE Main & Advanced",
+        "description": "Master L'Hôpital's Rule for JEE Main & Advanced. Learn when to apply, conditions, multiple applications with solved examples and practice problems.",
+        "author": {
+            "@type": "Organization",
+            "name": "KnowJEE"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2024-01-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://knowjee.com/calculus/lhopitals-rule-guide"
+        }
+    }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-blue-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-blue-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-blue-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-blue-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-blue-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-blue-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-blue-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-blue-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

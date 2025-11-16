@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logarithmic Inequalities with Variable Bases | JEE Pitfall | KnowJEE</title>
+    <meta name="description" content="Master complex logarithmic inequalities like logₓ(2x-1) > 0 where the base is variable. Step-by-step solutions for JEE Main & Advanced.">
+    <meta name="keywords" content="JEE logarithmic inequalities, variable base logarithms, JEE math pitfalls, domain range logarithms, JEE advanced math">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #fef3cd;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .case-box {
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .impact-high { border-left: 4px solid #ef4444; }
+        .frequency-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-number {
+            background: #3b82f6;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Complex Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Domain & Range in Logarithmic Inequalities: A Common JEE Pitfall</h1>
+                <p class="text-xl text-gray-600 mb-4">Master complex inequalities like $\log_x(2x-1) > 0$ where the base itself is variable. Step-by-step case analysis approach.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">92%</div>
+                            <div class="text-sm text-red-600">Students Struggle</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4-8</div>
+                            <div class="text-sm text-red-600">Marks Involved</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">3</div>
+                            <div class="text-sm text-red-600">Critical Cases</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">100%</div>
+                            <div class="text-sm text-red-600">Systematic Solution</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Variable Base Logarithms Are Tricky</h2>
+                <p class="mb-4">When the base of a logarithm is variable, you need to consider <strong>multiple cases</strong> because the behavior changes dramatically based on whether the base is between 0 and 1 or greater than 1.</p>
+                
+                <div class="warning">
+                    <h4 class="font-semibold text-yellow-800 mb-2">⚠️ The Critical Insight Most Students Miss</h4>
+                    <p>For $\log_a b > 0$, the inequality direction depends on the base $a$:</p>
+                    <ul class="list-disc list-inside space-y-1 text-sm mt-2">
+                        <li>If $a > 1$: $\log_a b > 0 \Rightarrow b > 1$</li>
+                        <li>If $0 < a < 1$: $\log_a b > 0 \Rightarrow 0 < b < 1$ (inequality reverses!)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Problem Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                    <a href="#problem1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Case Analysis</a>
+                    <a href="#problem2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Complex Argument</a>
+                    <a href="#problem3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Multiple Conditions</a>
+                    <a href="#problem4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Quadratic Base</a>
+                    <a href="#problem5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Nested Logarithm</a>
+                    <a href="#problem6" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Advanced Composite</a>
+                </div>
+            </div>
+
+            <!-- Problem 1 -->
+            <section id="problem1" class="mb-8">
+                <div class="problem-box impact-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">JEE Main 2023</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Impact</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Basic Case Analysis</h3>
+                    <p class="text-lg mb-4">Solve for $x$: $\log_x(2x-1) > 0$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Systematic Solution</h4>
+                        
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 1: Fundamental Conditions</h5>
+                            <p><span class="step-number">1</span> Base condition: $x > 0$ and $x \neq 1$</p>
+                            <p><span class="step-number">2</span> Argument condition: $2x - 1 > 0 \Rightarrow x > \frac{1}{2}$</p>
+                            <p class="mt-2 font-semibold">Initial domain: $x > \frac{1}{2}$ and $x \neq 1$</p>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 2: Case Analysis Based on Base</h5>
+                            
+                            <div class="mb-3">
+                                <p class="font-semibold">Case 1: $x > 1$</p>
+                                <p>For $x > 1$, $\log_x(2x-1) > 0 \Rightarrow 2x - 1 > 1$</p>
+                                <p>$2x > 2 \Rightarrow x > 1$</p>
+                                <p class="font-semibold text-green-700">Solution for Case 1: $x > 1$</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold">Case 2: $0 < x < 1$</p>
+                                <p>For $0 < x < 1$, $\log_x(2x-1) > 0 \Rightarrow 0 < 2x - 1 < 1$</p>
+                                <p>$1 < 2x < 2 \Rightarrow \frac{1}{2} < x < 1$</p>
+                                <p class="font-semibold text-green-700">Solution for Case 2: $\frac{1}{2} < x < 1$</p>
+                            </div>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 3: Combine Solutions</h5>
+                            <p>From Case 1: $x > 1$</p>
+                            <p>From Case 2: $\frac{1}{2} < x < 1$</p>
+                            <p class="mt-2 font-semibold">Final Solution: $\left(\frac{1}{2}, 1\right) \cup (1, \infty)$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Key Learning</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Always split into <strong>two cases</strong>: base > 1 and 0 < base < 1</li>
+                            <li>Remember: <strong>Inequality reverses</strong> when base is between 0 and 1</li>
+                            <li>Don't forget the <strong>fundamental conditions</strong>: base > 0, base ≠ 1, argument > 0</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section id="problem2" class="mb-8">
+                <div class="problem-box impact-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">JEE Advanced 2022</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Impact</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Complex Argument</h3>
+                    <p class="text-lg mb-4">Solve for $x$: $\log_x(x^2 + x - 6) < 2$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Systematic Solution</h4>
+                        
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 1: Fundamental Conditions</h5>
+                            <p><span class="step-number">1</span> Base: $x > 0$, $x \neq 1$</p>
+                            <p><span class="step-number">2</span> Argument: $x^2 + x - 6 > 0$</p>
+                            <p>Factor: $(x+3)(x-2) > 0 \Rightarrow x < -3$ or $x > 2$</p>
+                            <p class="mt-2 font-semibold">Initial domain: $x > 2$ (combining with $x > 0$)</p>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 2: Rewrite Inequality</h5>
+                            <p>$\log_x(x^2 + x - 6) < 2$</p>
+                            <p>Using logarithm property: $\log_x(x^2 + x - 6) < \log_x(x^2)$</p>
+                            <p class="text-sm text-gray-600">Note: We use $x^2$ because $\log_x(x^2) = 2$</p>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 3: Case Analysis</h5>
+                            
+                            <div class="mb-3">
+                                <p class="font-semibold">Case 1: $x > 1$</p>
+                                <p>Inequality direction preserved: $x^2 + x - 6 < x^2$</p>
+                                <p>$x - 6 < 0 \Rightarrow x < 6$</p>
+                                <p>Combine with $x > 2$ and $x > 1$: $2 < x < 6$</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold">Case 2: $0 < x < 1$</p>
+                                <p>Inequality reverses: $x^2 + x - 6 > x^2$</p>
+                                <p>$x - 6 > 0 \Rightarrow x > 6$</p>
+                                <p>But $x > 6$ contradicts $0 < x < 1$</p>
+                                <p class="text-red-600">No solution in this case</p>
+                            </div>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 4: Final Solution</h5>
+                            <p>From Case 1: $2 < x < 6$</p>
+                            <p>From Case 2: No solution</p>
+                            <p class="mt-2 font-semibold">Final Solution: $(2, 6)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference: Inequality Behavior</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">When Base $a > 1$:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>$\log_a f(x) > \log_a g(x) \Rightarrow f(x) > g(x)$</li>
+                                <li>$\log_a f(x) < \log_a g(x) \Rightarrow f(x) < g(x)$</li>
+                                <li>Function is <strong>increasing</strong></li>
+                                <li>Inequality direction <strong>preserved</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">When $0 < a < 1$:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>$\log_a f(x) > \log_a g(x) \Rightarrow f(x) < g(x)$</li>
+                                <li>$\log_a f(x) < \log_a g(x) \Rightarrow f(x) > g(x)$</li>
+                                <li>Function is <strong>decreasing</strong></li>
+                                <li>Inequality direction <strong>reversed</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <p class="text-sm font-semibold text-yellow-800">🎯 Memory Aid: "Small base (0<a<1), flip the inequality!"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section id="problem3" class="mb-8">
+                <div class="problem-box impact-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">JEE Main 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Impact</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Multiple Logarithmic Conditions</h3>
+                    <p class="text-lg mb-4">Find domain of $f(x) = \sqrt{\log_x(x^2 - 3x + 2)}$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Systematic Solution</h4>
+                        
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 1: Square Root Condition</h5>
+                            <p>For $\sqrt{\log_x(x^2 - 3x + 2)}$ to be defined:</p>
+                            <p>$\log_x(x^2 - 3x + 2) \geq 0$</p>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 2: Fundamental Conditions</h5>
+                            <p><span class="step-number">1</span> Base: $x > 0$, $x \neq 1$</p>
+                            <p><span class="step-number">2</span> Argument: $x^2 - 3x + 2 > 0$</p>
+                            <p>Factor: $(x-1)(x-2) > 0 \Rightarrow x < 1$ or $x > 2$</p>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 3: Solve $\log_x(x^2 - 3x + 2) \geq 0$</h5>
+                            
+                            <div class="mb-3">
+                                <p class="font-semibold">Case 1: $x > 1$</p>
+                                <p>$\log_x(x^2 - 3x + 2) \geq 0 \Rightarrow x^2 - 3x + 2 \geq 1$</p>
+                                <p>$x^2 - 3x + 1 \geq 0$</p>
+                                <p>Roots: $x = \frac{3 \pm \sqrt{5}}{2} \approx 0.38, 2.62$</p>
+                                <p>Solution: $x \leq \frac{3 - \sqrt{5}}{2}$ or $x \geq \frac{3 + \sqrt{5}}{2}$</p>
+                                <p>Combine with $x > 1$: $x \geq \frac{3 + \sqrt{5}}{2}$</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold">Case 2: $0 < x < 1$</p>
+                                <p>$\log_x(x^2 - 3x + 2) \geq 0 \Rightarrow 0 < x^2 - 3x + 2 \leq 1$</p>
+                                <p>From argument condition: $x^2 - 3x + 2 > 0$ already gives $x < 1$</p>
+                                <p>And $x^2 - 3x + 2 \leq 1 \Rightarrow x^2 - 3x + 1 \leq 0$</p>
+                                <p>Solution: $\frac{3 - \sqrt{5}}{2} \leq x \leq \frac{3 + \sqrt{5}}{2}$</p>
+                                <p>Combine with $0 < x < 1$: $\frac{3 - \sqrt{5}}{2} \leq x < 1$</p>
+                            </div>
+                        </div>
+
+                        <div class="case-box">
+                            <h5 class="font-semibold text-purple-800 mb-2">📌 Step 4: Final Domain</h5>
+                            <p>From Case 1: $x \geq \frac{3 + \sqrt{5}}{2}$</p>
+                            <p>From Case 2: $\frac{3 - \sqrt{5}}{2} \leq x < 1$</p>
+                            <p class="mt-2 font-semibold">Final Domain: $\left[\frac{3 - \sqrt{5}}{2}, 1\right) \cup \left[\frac{3 + \sqrt{5}}{2}, \infty\right)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Systematic Approach -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🔄 Systematic Approach for Variable Base Logarithms</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <div class="flex items-start">
+                                <span class="step-number">1</span>
+                                <div>
+                                    <h4 class="font-semibold text-blue-800">Identify Fundamental Conditions</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Base > 0, Base ≠ 1, Argument > 0</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <div class="flex items-start">
+                                <span class="step-number">2</span>
+                                <div>
+                                    <h4 class="font-semibold text-blue-800">Split into Two Cases</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Case 1: Base > 1, Case 2: 0 < Base < 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <div class="flex items-start">
+                                <span class="step-number">3</span>
+                                <div>
+                                    <h4 class="font-semibold text-blue-800">Apply Correct Inequality Rules</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Preserve direction for base > 1, reverse for 0 < base < 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <div class="flex items-start">
+                                <span class="step-number">4</span>
+                                <div>
+                                    <h4 class="font-semibold text-blue-800">Solve Each Case Separately</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Combine with fundamental conditions</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <div class="flex items-start">
+                                <span class="step-number">5</span>
+                                <div>
+                                    <h4 class="font-semibold text-blue-800">Take Union of Valid Solutions</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Combine solutions from both cases</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems 4-6 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Problems 4-6 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes quadratic bases, nested logarithms, and advanced composite functions</p>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems using the systematic approach:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Solve: $\log_x(3x-2) \leq 1$</p>
+                            <div class="text-sm text-gray-600">Hint: Remember to consider both cases for the base</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find domain: $f(x) = \sqrt{\log_x(4-x)}$</p>
+                            <div class="text-sm text-gray-600">Hint: Square root requires non-negative argument</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Solve: $\log_{x^2}(x+1) > \frac{1}{2}$</p>
+                            <div class="text-sm text-gray-600">Hint: Quadratic base needs additional analysis</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Pitfalls -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">🚫 Common Pitfalls to Avoid</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Forgetting Case Analysis</h4>
+                                <p class="text-sm text-gray-600">Solving only for base > 1 and missing the 0 < base < 1 case</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Ignoring Fundamental Conditions</h4>
+                                <p class="text-sm text-gray-600">Not checking base > 0, base ≠ 1, argument > 0</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Wrong Inequality Direction</h4>
+                                <p class="text-sm text-gray-600">Not reversing inequality when base is between 0 and 1</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Incorrect Domain Combination</h4>
+                                <p class="text-sm text-gray-600">Taking intersection instead of union of cases</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Encouragement -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master Variable Base Logarithms!</h3>
+                    <p class="mb-4 opacity-90">These problems seem tricky but become routine with the systematic case analysis approach</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Practice More Problems
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Cheat Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

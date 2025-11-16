@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor & Maclaurin Series: Expansion Method for Complex Limits | KnowJEE</title>
+    <meta name="description" content="Master Taylor and Maclaurin series expansions for sin x, cos x, e^x, ln(1+x) to solve complex JEE limits. Step-by-step methods with examples.">
+    <meta name="keywords" content="Taylor series, Maclaurin series, JEE limits, series expansion, sin x expansion, cos x expansion, e^x expansion, ln(1+x) expansion, JEE calculus">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .expansion-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .expansion-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .series-type-tag {
+            background: #7c3aed;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .convergence-good { border-left: 4px solid #22c55e; }
+        .convergence-caution { border-left: 4px solid #eab308; }
+        .convergence-limited { border-left: 4px solid #ef4444; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Advanced Calculus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">4 Key Expansions</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Expansion Series Method: Using Taylor & Maclaurin Series</h1>
+                <p class="text-xl text-gray-600 mb-4">Master sin x, cos x, e^x, ln(1+x) expansions to solve complex limits that stump most JEE students.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">4</div>
+                            <div class="text-sm text-purple-600">Key Series</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">90%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-5</div>
+                            <div class="text-sm text-purple-600">Terms Needed</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5min</div>
+                            <div class="text-sm text-purple-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Series Expansion is a Game-Changer for JEE Limits</h2>
+                <p class="mb-4">When direct substitution gives $\frac{0}{0}$ or other indeterminate forms, series expansion provides the most powerful method to evaluate limits. This technique appears in <strong>2-3 questions per JEE paper</strong> and can save you 5-10 minutes on complex problems.</p>
+                
+                <div class="definition-box">
+                    <h3 class="font-semibold text-purple-800 mb-2">Taylor & Maclaurin Series Definition</h3>
+                    <p><strong>Taylor Series</strong> about $x = a$:</p>
+                    <div class="text-center my-3">
+                        $$ f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \cdots $$
+                    </div>
+                    <p><strong>Maclaurin Series</strong> (special case when $a = 0$):</p>
+                    <div class="text-center my-3">
+                        $$ f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \cdots $$
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Series Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#sine" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">sin x</a>
+                    <a href="#cosine" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">cos x</a>
+                    <a href="#exponential" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">e^x</a>
+                    <a href="#logarithm" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">ln(1+x)</a>
+                </div>
+            </div>
+
+            <!-- Sine Expansion -->
+            <section id="sine" class="mb-8">
+                <div class="expansion-box convergence-good">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="series-type-tag">Maclaurin Series</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Converges for all x</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sine Function: $\sin x$</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Series Expansion:</h4>
+                        <div class="text-center text-lg font-mono bg-white p-4 rounded border">
+                            $$ \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} - \cdots $$
+                        </div>
+                        <p class="text-center text-sm text-gray-600 mt-2">General term: $(-1)^n \frac{x^{2n+1}}{(2n+1)!}$ for $n = 0, 1, 2, \ldots$</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">📝 JEE Application Example</h4>
+                        <p class="mb-3"><strong>Problem:</strong> Evaluate $\lim_{x \to 0} \frac{\sin x - x}{x^3}$</p>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Expand sin x</h5>
+                            <p>Using Maclaurin series:</p>
+                            <div class="text-center my-2">
+                                $$ \sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Substitute in limit</h5>
+                            <div class="text-center my-2">
+                                $$ \frac{\sin x - x}{x^3} = \frac{(x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots) - x}{x^3} = \frac{-\frac{x^3}{6} + \frac{x^5}{120} - \cdots}{x^3} $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Simplify and take limit</h5>
+                            <div class="text-center my-2">
+                                $$ = -\frac{1}{6} + \frac{x^2}{120} - \cdots \xrightarrow[x \to 0]{} -\frac{1}{6} $$
+                            </div>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">Final Answer: $-\frac{1}{6}$</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 JEE Strategy for sin x</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For limits as $x \to 0$, use first 2-3 terms: $\sin x \approx x - \frac{x^3}{6}$</li>
+                            <li>Remember: $\sin x \approx x$ for very small x (first approximation)</li>
+                            <li>For $\sin(ax)$ expansion, replace x with ax in the series</li>
+                            <li>Watch for cancellation with other series expansions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cosine Expansion -->
+            <section id="cosine" class="mb-8">
+                <div class="expansion-box convergence-good">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="series-type-tag">Maclaurin Series</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Converges for all x</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cosine Function: $\cos x$</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Series Expansion:</h4>
+                        <div class="text-center text-lg font-mono bg-white p-4 rounded border">
+                            $$ \cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \frac{x^8}{8!} - \cdots $$
+                        </div>
+                        <p class="text-center text-sm text-gray-600 mt-2">General term: $(-1)^n \frac{x^{2n}}{(2n)!}$ for $n = 0, 1, 2, \ldots$</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">📝 JEE Application Example</h4>
+                        <p class="mb-3"><strong>Problem:</strong> Evaluate $\lim_{x \to 0} \frac{1 - \cos x}{x^2}$</p>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Expand cos x</h5>
+                            <p>Using Maclaurin series:</p>
+                            <div class="text-center my-2">
+                                $$ \cos x = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720} + \cdots $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Substitute in limit</h5>
+                            <div class="text-center my-2">
+                                $$ \frac{1 - \cos x}{x^2} = \frac{1 - (1 - \frac{x^2}{2} + \frac{x^4}{24} - \cdots)}{x^2} = \frac{\frac{x^2}{2} - \frac{x^4}{24} + \cdots}{x^2} $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Simplify and take limit</h5>
+                            <div class="text-center my-2">
+                                $$ = \frac{1}{2} - \frac{x^2}{24} + \cdots \xrightarrow[x \to 0]{} \frac{1}{2} $$
+                            </div>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">Final Answer: $\frac{1}{2}$</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 JEE Strategy for cos x</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For limits as $x \to 0$, use: $\cos x \approx 1 - \frac{x^2}{2}$</li>
+                            <li>Remember: $\cos x \approx 1$ for very small x (crude approximation)</li>
+                            <li>For $\cos(ax)$ expansion, replace x with ax in the series</li>
+                            <li>Often used with sin x expansion in the same problem</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exponential Expansion -->
+            <section id="exponential" class="mb-8">
+                <div class="expansion-box convergence-good">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="series-type-tag">Maclaurin Series</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Converges for all x</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Exponential Function: $e^x$</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Series Expansion:</h4>
+                        <div class="text-center text-lg font-mono bg-white p-4 rounded border">
+                            $$ e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \cdots $$
+                        </div>
+                        <p class="text-center text-sm text-gray-600 mt-2">General term: $\frac{x^n}{n!}$ for $n = 0, 1, 2, \ldots$</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">📝 JEE Application Example</h4>
+                        <p class="mb-3"><strong>Problem:</strong> Evaluate $\lim_{x \to 0} \frac{e^x - 1 - x}{x^2}$</p>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Expand e^x</h5>
+                            <p>Using Maclaurin series:</p>
+                            <div class="text-center my-2">
+                                $$ e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \cdots $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Substitute in limit</h5>
+                            <div class="text-center my-2">
+                                $$ \frac{e^x - 1 - x}{x^2} = \frac{(1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots) - 1 - x}{x^2} = \frac{\frac{x^2}{2} + \frac{x^3}{6} + \cdots}{x^2} $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Simplify and take limit</h5>
+                            <div class="text-center my-2">
+                                $$ = \frac{1}{2} + \frac{x}{6} + \cdots \xrightarrow[x \to 0]{} \frac{1}{2} $$
+                            </div>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">Final Answer: $\frac{1}{2}$</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 JEE Strategy for e^x</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For limits as $x \to 0$, use: $e^x \approx 1 + x + \frac{x^2}{2}$</li>
+                            <li>Remember: $e^x \approx 1 + x$ for very small x (linear approximation)</li>
+                            <li>For $e^{ax}$ expansion, replace x with ax in the series</li>
+                            <li>Very useful in limits involving growth and decay functions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logarithm Expansion -->
+            <section id="logarithm" class="mb-8">
+                <div class="expansion-box convergence-caution">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="series-type-tag">Maclaurin Series</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Converges for |x| < 1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Logarithm Function: $\ln(1+x)$</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Series Expansion:</h4>
+                        <div class="text-center text-lg font-mono bg-white p-4 rounded border">
+                            $$ \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \cdots $$
+                        </div>
+                        <p class="text-center text-sm text-gray-600 mt-2">General term: $(-1)^{n+1} \frac{x^n}{n}$ for $n = 1, 2, 3, \ldots$</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4 class="font-semibold text-red-800 mb-2">⚠️ Convergence Warning</h4>
+                        <p class="text-sm">This series converges only for $-1 < x \leq 1$. For limits as $x \to 0$, this is always satisfied.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">📝 JEE Application Example</h4>
+                        <p class="mb-3"><strong>Problem:</strong> Evaluate $\lim_{x \to 0} \frac{\ln(1+x) - x}{x^2}$</p>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Expand ln(1+x)</h5>
+                            <p>Using Maclaurin series:</p>
+                            <div class="text-center my-2">
+                                $$ \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Substitute in limit</h5>
+                            <div class="text-center my-2">
+                                $$ \frac{\ln(1+x) - x}{x^2} = \frac{(x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots) - x}{x^2} = \frac{-\frac{x^2}{2} + \frac{x^3}{3} - \cdots}{x^2} $$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Simplify and take limit</h5>
+                            <div class="text-center my-2">
+                                $$ = -\frac{1}{2} + \frac{x}{3} - \cdots \xrightarrow[x \to 0]{} -\frac{1}{2} $$
+                            </div>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">Final Answer: $-\frac{1}{2}$</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 JEE Strategy for ln(1+x)</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For limits as $x \to 0$, use: $\ln(1+x) \approx x - \frac{x^2}{2}$</li>
+                            <li>Remember: $\ln(1+x) \approx x$ for very small x (first approximation)</li>
+                            <li>Watch for domain restrictions in non-limit problems</li>
+                            <li>Often appears in limits with other transcendental functions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Applications -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🚀 Advanced JEE Applications</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Combining Multiple Expansions</h4>
+                            <p class="text-sm mb-3">Many JEE problems require using 2+ expansions simultaneously:</p>
+                            <div class="bg-white p-3 rounded border text-sm">
+                                <p><strong>Example:</strong> $\lim_{x \to 0} \frac{e^x \sin x - x(1+x)}{x^3}$</p>
+                                <p class="mt-2 text-xs text-gray-600">Solution: Expand both $e^x$ and $\sin x$, multiply series, then simplify</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Taylor Series at Non-zero Points</h4>
+                            <p class="text-sm mb-3">For limits as $x \to a$ where $a \neq 0$:</p>
+                            <div class="bg-white p-3 rounded border text-sm">
+                                <p><strong>Example:</strong> $\lim_{x \to 1} \frac{\ln x - (x-1)}{(x-1)^2}$</p>
+                                <p class="mt-2 text-xs text-gray-600">Solution: Use Taylor series of ln x about x=1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference Table -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">📋 Quick Reference: Essential Expansions</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm bg-white rounded-lg overflow-hidden">
+                            <thead class="bg-blue-100">
+                                <tr>
+                                    <th class="p-3 text-left">Function</th>
+                                    <th class="p-3 text-left">Expansion (up to x³)</th>
+                                    <th class="p-3 text-left">Convergence</th>
+                                    <th class="p-3 text-left">JEE Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3 font-mono">sin x</td>
+                                    <td class="p-3">$x - \frac{x^3}{6}$</td>
+                                    <td class="p-3">All x</td>
+                                    <td class="p-3">Very High</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-mono">cos x</td>
+                                    <td class="p-3">$1 - \frac{x^2}{2}$</td>
+                                    <td class="p-3">All x</td>
+                                    <td class="p-3">Very High</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-mono">e^x</td>
+                                    <td class="p-3">$1 + x + \frac{x^2}{2} + \frac{x^3}{6}$</td>
+                                    <td class="p-3">All x</td>
+                                    <td class="p-3">High</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-mono">ln(1+x)</td>
+                                    <td class="p-3">$x - \frac{x^2}{2} + \frac{x^3}{3}$</td>
+                                    <td class="p-3">|x| < 1</td>
+                                    <td class="p-3">Medium</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-style problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. $\lim_{x \to 0} \frac{e^x \cos x - 1 - x}{x^2}$</p>
+                            <div class="text-sm text-gray-600">Hint: Expand both e^x and cos x, then multiply series</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. $\lim_{x \to 0} \frac{\sin x - x \cos x}{x^3}$</p>
+                            <div class="text-sm text-gray-600">Hint: Use sin x and cos x expansions, watch for cancellation</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. $\lim_{x \to 0} \frac{\ln(1 + \sin x)}{x}$</p>
+                            <div class="text-sm text-gray-600">Hint: Expand sin x first, then use ln(1+u) expansion</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">💡 Mastery Tips for JEE</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Exam Strategy</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Memorize the first 3 terms of each expansion</li>
+                                <li>Practice identifying when to use series expansion vs other methods</li>
+                                <li>Always check if direct substitution gives indeterminate form</li>
+                                <li>Use expansion when L'Hôpital's rule becomes too messy</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Common Pitfalls</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Using too few terms (missing the answer)</li>
+                                <li>Using ln(1+x) expansion outside its convergence radius</li>
+                                <li>Forgetting to distribute negative signs</li>
+                                <li>Mishandling factorial calculations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Series Expansions?</h3>
+                    <p class="mb-4 opacity-90">Practice with 20+ solved examples and video explanations</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Expansion Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

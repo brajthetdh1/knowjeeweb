@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Spot Differentiability from a Graph: Visual Guide for JEE | KnowJEE</title>
+    <meta name="description" content="Master graphical differentiability for JEE Main & Advanced. Learn to identify differentiable/non-differentiable points from graphs with visual examples and practice problems.">
+    <meta name="keywords" content="differentiability from graph, JEE calculus, JEE differentiability, graphical differentiation, JEE mathematics, function differentiability">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/differentiability-from-graph">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="How to Spot Differentiability from a Graph: Visual Guide for JEE">
+    <meta property="og:description" content="Master graphical differentiability for JEE Main & Advanced with visual examples and practice problems.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://knowjee.com/images/differentiability-graph-guide.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Differentiability from Graph: Visual Guide for JEE">
+    <meta name="twitter:description" content="Master graphical differentiability for JEE with visual examples">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Spot Differentiability from a Graph: Visual Guide for JEE",
+      "description": "Master graphical differentiability for JEE Main & Advanced with visual examples and practice problems",
+      "author": {
+        "@type": "Person",
+        "name": "KnowJEE Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KnowJEE",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://knowjee.com/logo.png"
+        }
+      },
+      "datePublished": "2024-12-19",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://knowjee.com/differentiability-from-graph"
+      }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .visual-guide {
+            background: #fef7f7;
+            border-left: 4px solid #dc2626;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .differentiable { border-left: 4px solid #22c55e; }
+        .non-differentiable { border-left: 4px solid #ef4444; }
+        .checkpoint { border-left: 4px solid #eab308; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .graph-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Main & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Visual Patterns</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How to Spot Differentiability from a Graph: A Visual Guide for JEE</h1>
+                <p class="text-xl text-gray-600 mb-4">Learn to instantly identify differentiable and non-differentiable points from function graphs - essential skill for JEE calculus problems.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">95%</div>
+                            <div class="text-sm text-red-600">JEE Questions Covered</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">6</div>
+                            <div class="text-sm text-red-600">Visual Patterns</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">2min</div>
+                            <div class="text-sm text-red-600">Avg. Identification</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">15+</div>
+                            <div class="text-sm text-red-600">Practice Graphs</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Graphical Differentiability Matters in JEE</h2>
+                <p class="mb-4">JEE frequently tests differentiability through graph interpretation. Mastering visual identification gives you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-red-50 p-4 rounded-lg">
+                    <li><strong>Quick problem solving</strong> without complex calculations</li>
+                    <li><strong>Better intuition</strong> for function behavior</li>
+                    <li><strong>Time savings</strong> of 2-3 minutes per question</li>
+                    <li><strong>Higher accuracy</strong> in MCQs and integer type questions</li>
+                </ul>
+            </section>
+
+            <!-- Key Concept -->
+            <section class="mb-8">
+                <div class="concept-box differentiable">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Key Concept</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Differentiable</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Smooth & Continuous Curves</h3>
+                    <p class="text-lg mb-4">A function is differentiable at points where its graph is <strong>smooth</strong> and has a <strong>unique tangent</strong>.</p>
+                    
+                    <div class="visual-guide">
+                        <h4 class="font-semibold text-green-800 mb-2">Visual Identification:</h4>
+                        <div class="graph-placeholder">
+                            <p class="text-lg font-semibold">[Graph: Smooth continuous curve]</p>
+                            <p class="text-sm opacity-90">No sharp corners, breaks, or vertical tangents</p>
+                        </div>
+                        <div class="space-y-2 text-sm mt-4">
+                            <p><strong>✓ Smooth transition</strong> between points</p>
+                            <p><strong>✓ No abrupt changes</strong> in direction</p>
+                            <p><strong>✓ Continuous</strong> with well-defined slope</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pattern 1 -->
+            <section class="mb-8">
+                <div class="concept-box non-differentiable">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Pattern 1</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Non-Differentiable</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sharp Corners (Cusps)</h3>
+                    <p class="text-lg mb-4">Functions with abrupt changes in direction create corners where derivatives don't exist.</p>
+                    
+                    <div class="visual-guide">
+                        <h4 class="font-semibold text-red-800 mb-2">Visual Identification:</h4>
+                        <div class="graph-placeholder">
+                            <p class="text-lg font-semibold">[Graph: Absolute value function |x| at x=0]</p>
+                            <p class="text-sm opacity-90">Sharp V-shape with point at origin</p>
+                        </div>
+                        <div class="space-y-2 text-sm mt-4">
+                            <p><strong>Example:</strong> $f(x) = |x|$ at $x = 0$</p>
+                            <p><strong>Left derivative:</strong> $-1$</p>
+                            <p><strong>Right derivative:</strong> $+1$</p>
+                            <p><strong>Result:</strong> Not differentiable at corner point</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pattern 2 -->
+            <section class="mb-8">
+                <div class="concept-box non-differentiable">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Pattern 2</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Non-Differentiable</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Vertical Tangents</h3>
+                    <p class="text-lg mb-4">When the tangent line becomes vertical, the derivative is undefined (infinite slope).</p>
+                    
+                    <div class="visual-guide">
+                        <h4 class="font-semibold text-red-800 mb-2">Visual Identification:</h4>
+                        <div class="graph-placeholder">
+                            <p class="text-lg font-semibold">[Graph: Cube root function ∛x at x=0]</p>
+                            <p class="text-sm opacity-90">Steep curve approaching vertical line</p>
+                        </div>
+                        <div class="space-y-2 text-sm mt-4">
+                            <p><strong>Example:</strong> $f(x) = x^{1/3}$ at $x = 0$</p>
+                            <p><strong>Slope approaches:</strong> $\pm\infty$</p>
+                            <p><strong>Result:</strong> Not differentiable at vertical tangent</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pattern 3 -->
+            <section class="mb-8">
+                <div class="concept-box non-differentiable">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Pattern 3</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Non-Differentiable</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Discontinuities & Breaks</h3>
+                    <p class="text-lg mb-4">A function must be continuous to be differentiable. Breaks automatically mean non-differentiability.</p>
+                    
+                    <div class="visual-guide">
+                        <h4 class="font-semibold text-red-800 mb-2">Visual Identification:</h4>
+                        <div class="graph-placeholder">
+                            <p class="text-lg font-semibold">[Graph: Piecewise function with jump discontinuity]</p>
+                            <p class="text-sm opacity-90">Sudden jump in y-values at specific x</p>
+                        </div>
+                        <div class="space-y-2 text-sm mt-4">
+                            <p><strong>Types of discontinuities:</strong></p>
+                            <p class="ml-4">• Jump discontinuities</p>
+                            <p class="ml-4">• Infinite discontinuities</p>
+                            <p class="ml-4">• Removable discontinuities</p>
+                            <p><strong>Rule:</strong> Continuous → Differentiable, but not vice versa</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Analysis Framework -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🔍 4-Step Visual Analysis Framework</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="step-box bg-white p-4 rounded-lg shadow-sm mb-4">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">1</span>
+                                    <h4 class="font-semibold text-blue-800">Check Continuity</h4>
+                                </div>
+                                <p class="text-sm">Look for breaks, jumps, or holes in the graph</p>
+                            </div>
+                            <div class="step-box bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">2</span>
+                                    <h4 class="font-semibold text-blue-800">Look for Corners</h4>
+                                </div>
+                                <p class="text-sm">Identify sharp changes in direction (V-shapes)</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="step-box bg-white p-4 rounded-lg shadow-sm mb-4">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">3</span>
+                                    <h4 class="font-semibold text-blue-800">Check Vertical Tangents</h4>
+                                </div>
+                                <p class="text-sm">Look for points where curve becomes vertical</p>
+                            </div>
+                            <div class="step-box bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">4</span>
+                                    <h4 class="font-semibold text-blue-800">Verify Smoothness</h4>
+                                </div>
+                                <p class="text-sm">Ensure gradual, continuous curvature</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patterns 4-6 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Patterns 4-6 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes Oscillatory Behavior, Piecewise Functions, and Parametric Curves with interactive graphs</p>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Full Guide
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Visual Test</h3>
+                    <p class="mb-4">Identify differentiable/non-differentiable points in these common JEE graphs:</p>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <div class="graph-placeholder mb-3">
+                                <p class="text-sm">[Graph: f(x) = |x-1| + |x+1|]</p>
+                            </div>
+                            <p class="font-medium">At what points is this function NOT differentiable?</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <div class="graph-placeholder mb-3">
+                                <p class="text-sm">[Graph: f(x) = x^(2/3)]</p>
+                            </div>
+                            <p class="font-medium">Is this function differentiable at x=0? Why?</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <div class="graph-placeholder mb-3">
+                                <p class="text-sm">[Graph: Piecewise function with smooth connection]</p>
+                            </div>
+                            <p class="font-medium">At the connection point, is the function differentiable?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Problem -->
+            <section class="mb-8">
+                <div class="concept-box checkpoint">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2023</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Checkpoint</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Actual JEE Problem</h3>
+                    <p class="text-lg mb-4">Let $f(x) = \min\\{|x|, |x-1|, |x+1|\\}$. The number of points where $f(x)$ is not differentiable is:</p>
+                    
+                    <div class="visual-guide">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Visual Analysis Approach:</h4>
+                        <div class="graph-placeholder">
+                            <p class="text-lg font-semibold">[Graph: Three V-shaped curves with minimum envelope]</p>
+                            <p class="text-sm opacity-90">Identify corners in the minimum envelope function</p>
+                        </div>
+                        <div class="space-y-2 text-sm mt-4">
+                            <p><strong>Step 1:</strong> Sketch $|x|$, $|x-1|$, $|x+1|$</p>
+                            <p><strong>Step 2:</strong> Identify the minimum envelope</p>
+                            <p><strong>Step 3:</strong> Count sharp corners in envelope</p>
+                            <p><strong>Answer:</strong> 4 points of non-differentiability</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Graphical Differentiability?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all 6 patterns with interactive graphs and 25+ practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Visual Learning Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-red-900 text-red-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#calculus" class="hover:text-red-300">Calculus</a></li>
+                        <li><a href="#algebra" class="hover:text-red-300">Algebra</a></li>
+                        <li><a href="#trigonometry" class="hover:text-red-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-red-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-red-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-red-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-red-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-red-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-red-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-red-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-red-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-red-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

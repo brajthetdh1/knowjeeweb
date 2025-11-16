@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentiability Toolkit: Conditions, Theorems & Pitfalls | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Complete differentiability toolkit for JEE Main & Advanced. Master all conditions, theorems, common pitfalls with solved examples and practice problems.">
+    <meta name="keywords" content="differentiability JEE, calculus conditions, continuity theorems, JEE calculus, differentiability pitfalls, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .toolkit-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .toolkit-box:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .theorem-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .condition-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .pitfall-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #fffbeb;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .checklist-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Complete Toolkit</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Master Guide</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Your Differentiability Toolkit: All Conditions, Theorems & Pitfalls</h1>
+                <p class="text-xl text-gray-600 mb-4">Everything you need to master differentiability for JEE Main & Advanced in one comprehensive guide.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">7</div>
+                            <div class="text-sm text-blue-600">Key Theorems</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Essential Conditions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8</div>
+                            <div class="text-sm text-blue-600">Common Pitfalls</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Coverage</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Differentiability Matters in JEE</h2>
+                <p class="mb-4">Differentiability is the <strong>foundation of calculus</strong> and appears in <strong>every JEE mathematics paper</strong>. Understanding the precise conditions and common pitfalls can help you secure <strong>4-8 marks consistently</strong>.</p>
+                
+                <div class="theorem-box">
+                    <h4 class="font-semibold text-green-800 mb-2">🎯 JEE Exam Pattern Insight</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>1-2 questions</strong> directly test differentiability conditions</li>
+                        <li><strong>3-4 questions</strong> use differentiability as a stepping stone</li>
+                        <li>Questions often combine <strong>continuity + differentiability</strong></li>
+                        <li>Common formats: MCQs, numerical value, and comprehension</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🔧 Toolkit Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-conditions" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Conditions</a>
+                    <a href="#key-theorems" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Theorems</a>
+                    <a href="#common-pitfalls" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Common Pitfalls</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice</a>
+                </div>
+            </div>
+
+            <!-- Basic Conditions Section -->
+            <section id="basic-conditions" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Fundamental Conditions for Differentiability</h2>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Condition 1: Continuity is Necessary</h3>
+                    
+                    <div class="condition-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Theorem Statement</h4>
+                        <p>If a function $f(x)$ is differentiable at $x = a$, then it must be continuous at $x = a$.</p>
+                        <div class="text-center my-3">
+                            $$ \text{Differentiable} \Rightarrow \text{Continuous} $$
+                        </div>
+                        <p class="text-sm text-gray-600">But the converse is not necessarily true!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">📚 Example: $f(x) = |x|$ at $x = 0$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Check continuity:</strong> $\lim_{x \to 0} |x| = 0 = f(0)$ ✓ Continuous</p>
+                            <p><strong>Check differentiability:</strong></p>
+                            <p>Left derivative: $\lim_{h \to 0^-} \frac{|h|}{h} = -1$</p>
+                            <p>Right derivative: $\lim_{h \to 0^+} \frac{|h|}{h} = 1$</p>
+                            <p><strong>Result:</strong> LHD ≠ RHD ⇒ Not differentiable at x = 0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Condition 2: Left & Right Derivatives Must Equal</h3>
+                    
+                    <div class="condition-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Mathematical Definition</h4>
+                        <p>A function $f(x)$ is differentiable at $x = a$ if:</p>
+                        <div class="text-center my-3">
+                            $$ \lim_{h \to 0^-} \frac{f(a+h) - f(a)}{h} = \lim_{h \to 0^+} \frac{f(a+h) - f(a)}{h} $$
+                        </div>
+                        <p>And this common value is finite.</p>
+                    </div>
+
+                    <div class="pitfall-box">
+                        <h4 class="font-semibold text-red-800 mb-2">⚠️ Common Mistake</h4>
+                        <p>Students check only one-sided limit or forget to verify both limits exist and are equal.</p>
+                    </div>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Condition 3: Smoothness Requirement</h3>
+                    
+                    <div class="condition-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Geometric Interpretation</h4>
+                        <p>A function is differentiable at a point if its graph has a <strong>unique tangent</strong> at that point with finite slope.</p>
+                        <p class="mt-2">No sharp corners, vertical tangents, or discontinuities.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">📚 Non-Differentiable Cases</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-red-50 p-3 rounded">
+                                <strong>Sharp Corner:</strong><br>
+                                $f(x) = |x|$ at x = 0
+                            </div>
+                            <div class="bg-red-50 p-3 rounded">
+                                <strong>Vertical Tangent:</strong><br>
+                                $f(x) = x^{1/3}$ at x = 0
+                            </div>
+                            <div class="bg-red-50 p-3 rounded">
+                                <strong>Cusp:</strong><br>
+                                $f(x) = x^{2/3}$ at x = 0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Theorems Section -->
+            <section id="key-theorems" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Essential Theorems for JEE</h2>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Theorem 1: Chain Rule</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Statement</h4>
+                        <p>If $y = f(u)$ and $u = g(x)$ are both differentiable, then:</p>
+                        <div class="text-center my-3">
+                            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">📚 JEE Application</h4>
+                        <p>Find derivative of $y = \sin(x^2 + 1)$</p>
+                        <div class="space-y-1 text-sm">
+                            <p>Let $u = x^2 + 1$, then $y = \sin u$</p>
+                            <p>$\frac{dy}{du} = \cos u$, $\frac{du}{dx} = 2x$</p>
+                            <p>$\frac{dy}{dx} = \cos(x^2 + 1) \cdot 2x$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Theorem 2: Product Rule</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Statement</h4>
+                        <p>If $u(x)$ and $v(x)$ are differentiable, then:</p>
+                        <div class="text-center my-3">
+                            $$ \frac{d}{dx}[u(x)v(x)] = u'(x)v(x) + u(x)v'(x) $$
+                        </div>
+                    </div>
+
+                    <div class="pitfall-box">
+                        <h4 class="font-semibold text-red-800 mb-2">⚠️ Common Error</h4>
+                        <p>Students often write $(uv)' = u'v'$ which is completely wrong!</p>
+                    </div>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Theorem 3: Rolle's Theorem</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Conditions & Conclusion</h4>
+                        <p>If $f(x)$ is:</p>
+                        <ol class="list-decimal list-inside space-y-1">
+                            <li>Continuous on $[a, b]$</li>
+                            <li>Differentiable on $(a, b)$</li>
+                            <li>$f(a) = f(b)$</li>
+                        </ol>
+                        <p class="mt-2">Then ∃ at least one $c \in (a, b)$ such that $f'(c) = 0$.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">📚 Application Example</h4>
+                        <p>Verify Rolle's theorem for $f(x) = x^2 - 4x + 3$ on $[1, 3]$</p>
+                        <div class="space-y-1 text-sm">
+                            <p>$f(1) = 0$, $f(3) = 0$ ✓ Condition 3 satisfied</p>
+                            <p>$f'(x) = 2x - 4 = 0 \Rightarrow x = 2$</p>
+                            <p>$c = 2 \in (1, 3)$ where $f'(2) = 0$ ✓</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Theorem 4: Mean Value Theorem</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Statement</h4>
+                        <p>If $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then ∃ $c \in (a, b)$ such that:</p>
+                        <div class="text-center my-3">
+                            $$ f'(c) = \frac{f(b) - f(a)}{b - a} $$
+                        </div>
+                    </div>
+
+                    <div class="pitfall-box">
+                        <h4 class="font-semibold text-red-800 mb-2">⚠️ Common Confusion</h4>
+                        <p>Students think MVT guarantees exactly one 'c', but it only guarantees at least one.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Pitfalls Section -->
+            <section id="common-pitfalls" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Common Pitfalls & How to Avoid Them</h2>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Pitfall 1: Assuming Continuity Implies Differentiability</h3>
+                    
+                    <div class="pitfall-box">
+                        <h4 class="font-semibold text-red-800 mb-2">The Error</h4>
+                        <p>Thinking: "Function is continuous, so it must be differentiable."</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">📚 Counterexample</h4>
+                        <p>$f(x) = |x - 1|$ is continuous everywhere but not differentiable at $x = 1$.</p>
+                    </div>
+
+                    <div class="condition-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">✅ Prevention Strategy</h4>
+                        <p>Always check both:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Continuity at the point</li>
+                            <li>Equality of left and right derivatives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Pitfall 2: Misapplying Chain Rule</h3>
+                    
+                    <div class="pitfall-box">
+                        <h4 class="font-semibold text-red-800 mb-2">The Error</h4>
+                        <p>Forgetting to multiply by the derivative of the inner function.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">📚 Wrong vs Right</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                            <div class="bg-red-50 p-3 rounded">
+                                <strong>Wrong:</strong><br>
+                                $\frac{d}{dx}[\sin(x^2)] = \cos(x^2)$
+                            </div>
+                            <div class="bg-green-50 p-3 rounded">
+                                <strong>Correct:</strong><br>
+                                $\frac{d}{dx}[\sin(x^2)] = \cos(x^2) \cdot 2x$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Pitfall 3: Forgetting Domain Restrictions</h3>
+                    
+                    <div class="pitfall-box">
+                        <h4 class="font-semibold text-red-800 mb-2">The Error</h4>
+                        <p>Differentiating functions at points where they're not defined or not differentiable.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">📚 Critical Points</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$f(x) = \sqrt{x}$ at $x = 0$ (vertical tangent)</li>
+                            <li>$f(x) = \frac{1}{x}$ at $x = 0$ (not defined)</li>
+                            <li>$f(x) = |x-2|$ at $x = 2$ (corner)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference Checklist -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Differentiability Checklist</h3>
+                    <p class="mb-4">Use this checklist when solving differentiability problems:</p>
+                    
+                    <div class="space-y-3">
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>Check if function is defined at the point</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>Verify continuity using limits</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>Calculate left-hand derivative</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>Calculate right-hand derivative</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>Compare LHD and RHD for equality</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>Check for sharp corners or cusps</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Practice Problems</h2>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Piecewise Function</h3>
+                    <p class="mb-4">Check differentiability of $f(x) = \begin{cases} x^2 & \text{if } x \leq 1 \\ 2x-1 & \text{if } x > 1 \end{cases}$ at $x = 1$</p>
+                    
+                    <div class="solution hidden" id="solution1">
+                        <div class="condition-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step-by-Step Solution</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Check continuity</p>
+                                <p>Left limit: $\lim_{x \to 1^-} x^2 = 1$</p>
+                                <p>Right limit: $\lim_{x \to 1^+} (2x-1) = 1$</p>
+                                <p>$f(1) = 1$ ⇒ Continuous ✓</p>
+                                
+                                <p><strong>Step 2:</strong> Check differentiability</p>
+                                <p>LHD: $\lim_{h \to 0^-} \frac{(1+h)^2 - 1}{h} = \lim_{h \to 0^-} \frac{2h + h^2}{h} = 2$</p>
+                                <p>RHD: $\lim_{h \to 0^+} \frac{[2(1+h)-1] - 1}{h} = \lim_{h \to 0^+} \frac{2h}{h} = 2$</p>
+                                <p>LHD = RHD = 2 ⇒ Differentiable ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="toggleSolution('solution1')" class="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
+                        Show Solution
+                    </button>
+                </div>
+
+                <div class="toolkit-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Absolute Value Function</h3>
+                    <p class="mb-4">Find all points where $f(x) = |x^2 - 4|$ is not differentiable.</p>
+                    
+                    <div class="solution hidden" id="solution2">
+                        <div class="condition-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step-by-Step Solution</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Find where expression inside absolute value is zero</p>
+                                <p>$x^2 - 4 = 0 \Rightarrow x = \pm 2$</p>
+                                
+                                <p><strong>Step 2:</strong> Check these points</p>
+                                <p>At $x = 2$ and $x = -2$, function has sharp corners</p>
+                                
+                                <p><strong>Step 3:</strong> Verify using derivatives</p>
+                                <p>For $x < -2$ or $x > 2$: $f(x) = x^2 - 4$, $f'(x) = 2x$</p>
+                                <p>For $-2 < x < 2$: $f(x) = 4 - x^2$, $f'(x) = -2x$</p>
+                                <p>At $x = \pm 2$, left and right derivatives don't match</p>
+                                
+                                <p><strong>Final Answer:</strong> Not differentiable at $x = -2, 2$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="toggleSolution('solution2')" class="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
+                        Show Solution
+                    </button>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h2 class="text-2xl font-bold mb-4">Key Takeaways</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-semibold mb-2">🎯 Must Remember</h3>
+                            <ul class="list-disc list-inside space-y-1 text-sm opacity-90">
+                                <li>Differentiable ⇒ Continuous (but not vice versa)</li>
+                                <li>Always check both left and right derivatives</li>
+                                <li>Sharp corners, cusps, vertical tangents break differentiability</li>
+                                <li>Chain rule: don't forget the inner derivative</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">🚀 Exam Strategy</h3>
+                            <ul class="list-disc list-inside space-y-1 text-sm opacity-90">
+                                <li>Use the 6-step checklist systematically</li>
+                                <li>Practice piecewise functions thoroughly</li>
+                                <li>Memorize common non-differentiable cases</li>
+                                <li>Time yourself on differentiability problems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Ready to Master Differentiability?</h3>
+                    <p class="text-blue-800 mb-4">Continue your calculus journey with more advanced topics and practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="continuity-complete-guide.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Master Continuity Next
+                        </a>
+                        <button class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                            Download PDF Toolkit
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle solution visibility
+        function toggleSolution(id) {
+            const solution = document.getElementById(id);
+            const button = solution.previousElementSibling;
+            
+            if (solution.classList.contains('hidden')) {
+                solution.classList.remove('hidden');
+                button.textContent = 'Hide Solution';
+            } else {
+                solution.classList.add('hidden');
+                button.textContent = 'Show Solution';
+            }
+        }
+
+        // Checklist functionality
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const item = this.closest('.checklist-item');
+                if (this.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limits Revision Checklist: Last Minute JEE Guide | KnowJEE</title>
+    <meta name="description" content="Complete limits revision checklist for JEE Main & Advanced. All formulas, techniques, and common results in one place for last-minute preparation.">
+    <meta name="keywords" content="JEE limits revision, limits formulas, JEE calculus, limits techniques, JEE last minute revision, limits checklist">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+
+        // Checklist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // Load saved state from localStorage
+            checkboxes.forEach(checkbox => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                // Save state when changed
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.checked);
+                    updateProgress();
+                });
+            });
+
+            // Reset all checkboxes
+            document.getElementById('resetChecklist')?.addEventListener('click', function() {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    localStorage.setItem(checkbox.id, false);
+                });
+                updateProgress();
+            });
+
+            // Initialize progress
+            updateProgress();
+        });
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            const progress = (checked.length / checkboxes.length) * 100;
+            
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progress) + '%';
+            
+            // Update checklist item styles
+            checkboxes.forEach(checkbox => {
+                const item = checkbox.closest('.checklist-item');
+                if (checkbox.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        }
+    </script>
+    
+    <style>
+        .checklist-item {
+            transition: all 0.3s ease;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .quick-tip {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .technique-box {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-16">
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Revision Checklist</span>
+                <span class="text-gray-500 text-sm ml-3">Last-Minute JEE Prep</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Limits Revision Checklist: Last Minute Guide for JEE</h1>
+            <p class="text-xl text-gray-600 mb-6">All formulas, techniques, and common results in one place for JEE Main & Advanced</p>
+            
+            <!-- Progress Bar -->
+            <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-gray-700">Revision Progress</span>
+                    <span id="progressPercent" class="text-sm font-bold text-blue-600">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <button id="resetChecklist" class="text-sm text-red-600 hover:text-red-800 font-medium">Reset Checklist</button>
+                    <span class="text-sm text-gray-500">Tick items as you revise</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Navigation -->
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-8">
+            <h3 class="font-semibold text-purple-900 mb-3">🎯 Quick Navigation</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                <a href="#basic-formulas" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Basic Formulas</a>
+                <a href="#standard-limits" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Standard Limits</a>
+                <a href="#techniques" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Techniques</a>
+                <a href="#indeterminate" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Indeterminate Forms</a>
+                <a href="#special" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Special Limits</a>
+                <a href="#jee-tips" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">JEE Tips</a>
+                <a href="#common-errors" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Common Errors</a>
+                <a href="#practice" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Practice</a>
+            </div>
+        </div>
+
+        <!-- Basic Formulas Section -->
+        <section id="basic-formulas" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">1. Basic Limit Formulas & Properties</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="basic1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Limit Definition</span>
+                            <p class="text-sm text-gray-600 mt-1">$\lim_{x \to a} f(x) = L$ means as $x$ approaches $a$, $f(x)$ approaches $L$</p>
+                            <div class="formula-box text-sm">
+                                $$ \forall \epsilon > 0, \exists \delta > 0 \text{ such that } 0 < |x-a| < \delta \Rightarrow |f(x)-L| < \epsilon $$
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="basic2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Basic Properties</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <span class="font-medium">Sum/Difference:</span><br>
+                                    $\lim[f(x) \pm g(x)] = \lim f(x) \pm \lim g(x)$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <span class="font-medium">Product:</span><br>
+                                    $\lim[f(x) \cdot g(x)] = \lim f(x) \cdot \lim g(x)$
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded">
+                                    <span class="font-medium">Quotient:</span><br>
+                                    $\lim\left[\frac{f(x)}{g(x)}\right] = \frac{\lim f(x)}{\lim g(x)}$ if $\lim g(x) \neq 0$
+                                </div>
+                                <div class="bg-yellow-50 p-2 rounded">
+                                    <span class="font-medium">Constant Multiple:</span><br>
+                                    $\lim[c \cdot f(x)] = c \cdot \lim f(x)$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="basic3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Important Theorems</span>
+                            <div class="space-y-2 text-sm mt-2">
+                                <p><strong>Sandwich Theorem:</strong> If $g(x) \leq f(x) \leq h(x)$ near $a$ and $\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L$, then $\lim_{x \to a} f(x) = L$</p>
+                                <p><strong>Limit Existence:</strong> $\lim_{x \to a} f(x)$ exists iff both left-hand and right-hand limits exist and are equal</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standard Limits Section -->
+        <section id="standard-limits" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">2. Standard Limits (Must Memorize)</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="std1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Trigonometric Limits</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{\sin x}{x} = 1$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{\tan x}{x} = 1$
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{1 - \cos x}{x} = 0$
+                                </div>
+                                <div class="bg-yellow-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2}$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="std2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Exponential & Logarithmic Limits</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{e^x - 1}{x} = 1$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{a^x - 1}{x} = \ln a$
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1$
+                                </div>
+                                <div class="bg-yellow-50 p-2 rounded">
+                                    $\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="std3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Important Algebraic Limits</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    $\lim_{x \to a} \frac{x^n - a^n}{x - a} = na^{n-1}$
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    $\lim_{x \to \infty} \frac{1}{x^n} = 0$ (n > 0)
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded">
+                                    $\lim_{x \to 0} \frac{(1 + x)^n - 1}{x} = n$
+                                </div>
+                                <div class="bg-yellow-50 p-2 rounded">
+                                    $\lim_{x \to \infty} \frac{\sin x}{x} = 0$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Techniques Section -->
+        <section id="techniques" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">3. Limit Evaluation Techniques</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tech1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Direct Substitution</span>
+                            <p class="text-sm text-gray-600 mt-1">Always try direct substitution first. If it works, you're done!</p>
+                            <div class="technique-box text-sm">
+                                <strong>Example:</strong> $\lim_{x \to 2} (3x^2 - 2x + 1) = 3(4) - 2(2) + 1 = 9$
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tech2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Factorization</span>
+                            <p class="text-sm text-gray-600 mt-1">Use when you get 0/0 form. Factor and cancel common terms.</p>
+                            <div class="technique-box text-sm">
+                                <strong>Example:</strong> $\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = \lim_{x \to 2} \frac{(x-2)(x+2)}{x-2} = \lim_{x \to 2} (x+2) = 4$
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tech3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Rationalization</span>
+                            <p class="text-sm text-gray-600 mt-1">Use for expressions with square roots in 0/0 form.</p>
+                            <div class="technique-box text-sm">
+                                <strong>Example:</strong> $\lim_{x \to 0} \frac{\sqrt{1+x} - 1}{x} = \lim_{x \to 0} \frac{(\sqrt{1+x}-1)(\sqrt{1+x}+1)}{x(\sqrt{1+x}+1)} = \lim_{x \to 0} \frac{1}{\sqrt{1+x}+1} = \frac{1}{2}$
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tech4" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">L'Hôpital's Rule</span>
+                            <p class="text-sm text-gray-600 mt-1">For 0/0 or ∞/∞ forms: $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$</p>
+                            <div class="warning-box text-sm">
+                                <strong>⚠️ Remember:</strong> Only for 0/0 or ∞/∞ forms! Check conditions before applying.
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indeterminate Forms Section -->
+        <section id="indeterminate" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">4. Indeterminate Forms & Their Solutions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="indet1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">0/0 Form</span>
+                            <div class="space-y-2 text-sm mt-2">
+                                <p><strong>Techniques:</strong></p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>Factorization</li>
+                                    <li>Rationalization</li>
+                                    <li>Standard limits</li>
+                                    <li>L'Hôpital's Rule</li>
+                                    <li>Series expansion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="indet2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">∞/∞ Form</span>
+                            <div class="space-y-2 text-sm mt-2">
+                                <p><strong>Techniques:</strong></p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>Divide numerator and denominator by highest power</li>
+                                    <li>L'Hôpital's Rule</li>
+                                    <li>Comparison of growth rates</li>
+                                </ul>
+                                <div class="technique-box">
+                                    <strong>Example:</strong> $\lim_{x \to \infty} \frac{3x^2 + 2x}{2x^2 - 1} = \lim_{x \to \infty} \frac{3 + \frac{2}{x}}{2 - \frac{1}{x^2}} = \frac{3}{2}$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="indet3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">∞ - ∞ Form</span>
+                            <div class="space-y-2 text-sm mt-2">
+                                <p><strong>Techniques:</strong></p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>Rationalization</li>
+                                    <li>Take LCM and combine</li>
+                                    <li>Factor out common terms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="indet4" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">1^∞ Form</span>
+                            <div class="space-y-2 text-sm mt-2">
+                                <p><strong>Standard Approach:</strong> Use $\lim_{x \to a} [f(x)]^{g(x)} = e^{\lim_{x \to a} [f(x)-1]g(x)}$</p>
+                                <div class="technique-box">
+                                    <strong>Example:</strong> $\lim_{x \to 0} (1 + x)^{1/x} = e^{\lim_{x \to 0} \frac{1}{x} \cdot x} = e^1 = e$
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Limits Section -->
+        <section id="special" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">5. Special Limits for JEE Advanced</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Limits with Parameters</span>
+                            <p class="text-sm text-gray-600 mt-1">$\lim_{x \to 0} \frac{\sin ax}{bx} = \frac{a}{b}$</p>
+                            <p class="text-sm text-gray-600">$\lim_{x \to 0} \frac{\tan mx}{nx} = \frac{m}{n}$</p>
+                            <p class="text-sm text-gray-600">$\lim_{x \to 0} \frac{e^{ax} - 1}{bx} = \frac{a}{b}$</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Piecewise Limits</span>
+                            <p class="text-sm text-gray-600 mt-1">Always check left-hand and right-hand limits separately at break points.</p>
+                            <div class="warning-box text-sm">
+                                <strong>Example:</strong> For $f(x) = \begin{cases} x^2 & \text{if } x < 1 \\ 2x & \text{if } x \geq 1 \end{cases}$<br>
+                                $\lim_{x \to 1^-} f(x) = 1$, $\lim_{x \to 1^+} f(x) = 2$ ∴ Limit doesn't exist at x=1
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Limits at Infinity</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    $\lim_{x \to \infty} \frac{\text{Polynomial}}{\text{Polynomial}}$ = Compare degrees
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    $\lim_{x \to \infty} \frac{\ln x}{x^p} = 0$ (p > 0)
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded">
+                                    $\lim_{x \to \infty} \frac{e^x}{x^n} = \infty$
+                                </div>
+                                <div class="bg-yellow-50 p-2 rounded">
+                                    $\lim_{x \to \infty} \frac{a^x}{x^n} = \infty$ (a > 1)
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- JEE Tips Section -->
+        <section id="jee-tips" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">6. JEE Problem Solving Tips</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Systematic Approach</span>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Always try <strong>direct substitution</strong> first</li>
+                                <li>Identify the <strong>form</strong> (0/0, ∞/∞, etc.)</li>
+                                <li>Choose appropriate <strong>technique</strong> based on form</li>
+                                <li>Verify your answer makes sense</li>
+                                <li>For piecewise functions, check <strong>both sides</strong></li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Time-Saving Techniques</span>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Memorize <strong>standard limits</strong> for quick recognition</li>
+                                <li>Use <strong>symmetry</strong> when possible</li>
+                                <li>For trigonometric limits, know <strong>small angle approximations</strong></li>
+                                <li>Practice <strong>mental calculation</strong> of simple limits</li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Errors Section -->
+        <section id="common-errors" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">7. Common Errors to Avoid</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="error1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Algebraic Mistakes</span>
+                            <div class="warning-box text-sm mt-2">
+                                <strong>❌ Wrong:</strong> $\lim_{x \to 0} \frac{\sin x}{x} = 0$ (Cancelling incorrectly)<br>
+                                <strong>✅ Correct:</strong> $\lim_{x \to 0} \frac{\sin x}{x} = 1$ (Standard limit)
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="error2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">L'Hôpital Misuse</span>
+                            <div class="warning-box text-sm mt-2">
+                                <strong>❌ Wrong:</strong> Applying L'Hôpital to forms other than 0/0 or ∞/∞<br>
+                                <strong>✅ Correct:</strong> Only use for 0/0 or ∞/∞ forms after verification
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="error3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Piecewise Function Errors</span>
+                            <div class="warning-box text-sm mt-2">
+                                <strong>❌ Wrong:</strong> Not checking both sides for piecewise functions<br>
+                                <strong>✅ Correct:</strong> Always compute $\lim_{x \to a^-} f(x)$ and $\lim_{x \to a^+} f(x)$ separately
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="practice" class="mb-8">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Practice Test</h3>
+                <p class="mb-4">Evaluate these limits to test your understanding:</p>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded border">
+                        <p class="font-medium mb-2">1. $\lim_{x \to 0} \frac{\sin 3x}{\tan 2x}$</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border">
+                        <p class="font-medium mb-2">2. $\lim_{x \to 1} \frac{x^2 - 3x + 2}{x^2 - 1}$</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border">
+                        <p class="font-medium mb-2">3. $\lim_{x \to \infty} \left(1 + \frac{2}{x}\right)^{3x}$</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border">
+                        <p class="font-medium mb-2">4. $\lim_{x \to 0} \frac{e^{2x} - 1}{\sin x}$</p>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-sm text-green-700">
+                    <p><strong>Answers:</strong> 1. $\frac{3}{2}$, 2. $-\frac{1}{2}$, 3. $e^6$, 4. $2$</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Revision Notes -->
+        <section class="mb-8">
+            <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Final Revision Notes</h2>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <h3 class="font-semibold mb-2">🎯 Key Concepts to Remember</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Always try <strong>direct substitution</strong> first</li>
+                            <li>Know your <strong>standard limits</strong> by heart</li>
+                            <li>Identify the <strong>form</strong> before choosing technique</li>
+                            <li>For piecewise functions, check <strong>both sides</strong></li>
+                            <li>Practice <strong>multiple techniques</strong> for each form</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">🚀 Exam Day Strategy</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Solve limits in this order: Direct → Factor → Rationalize → L'Hôpital</li>
+                            <li>Double-check <strong>algebraic manipulations</strong></li>
+                            <li>Verify <strong>L'Hôpital conditions</strong> before applying</li>
+                            <li>If stuck, try <strong>graphical interpretation</strong></li>
+                            <li>Manage time - move on if taking too long</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download & Share -->
+        <section class="text-center mb-12">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Save This Checklist</h3>
+                <p class="text-gray-600 mb-4">Your progress is automatically saved. Return anytime to continue your revision!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        📄 Print Checklist
+                    </button>
+                    <a href="jee-calculus-cards.html" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        More Calculus Topics
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+        </div>
+    </footer>
+</body>
+</html>

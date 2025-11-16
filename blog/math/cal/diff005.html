@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding f(x), f'(x), f''(x) Relationships | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master the geometric relationships between functions and their derivatives. Learn how f(x), f'(x), and f''(x) connect for JEE Main & Advanced success.">
+    <meta name="keywords" content="JEE calculus, function derivatives, f(x) f'(x) relationship, second derivative test, JEE differentiability, calculus graphs">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .derivative-positive { border-left: 4px solid #22c55e; }
+        .derivative-negative { border-left: 4px solid #ef4444; }
+        .derivative-zero { border-left: 4px solid #eab308; }
+        .geometric-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .example-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .graph-placeholder {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Core Calculus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential for JEE</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Relationship Between f(x), f'(x), and f''(x) for Differentiability</h1>
+                <p class="text-xl text-gray-600 mb-4">Understand how functions and their derivatives connect geometrically and analytically for JEE success.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-4</div>
+                            <div class="text-sm text-blue-600">Questions/JEE Paper</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Conceptual Understanding</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Key Relationships</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12min</div>
+                            <div class="text-sm text-blue-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Relationship Matters for JEE</h2>
+                <p class="mb-4">Understanding how <strong>f(x)</strong>, <strong>f'(x)</strong>, and <strong>f''(x)</strong> relate is crucial for solving <strong>3-4 questions in every JEE paper</strong>. These relationships help you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li>Analyze function behavior <strong>without graphing</strong></li>
+                    <li>Solve <strong>maxima/minima problems</strong> efficiently</li>
+                    <li>Understand <strong>curve sketching</strong> concepts deeply</li>
+                    <li>Tackle <strong>differentiability questions</strong> confidently</li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+                    <a href="#first-derivative" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">f'(x) Meaning</a>
+                    <a href="#second-derivative" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">f''(x) Meaning</a>
+                    <a href="#geometric" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Geometric View</a>
+                    <a href="#differentiability" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Differentiability</a>
+                    <a href="#jee-applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Applications</a>
+                </div>
+            </div>
+
+            <!-- First Derivative Section -->
+            <section id="first-derivative" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. f'(x) - The First Derivative: What It Tells Us</h2>
+                </div>
+
+                <div class="concept-box derivative-positive">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When f'(x) > 0</h3>
+                    <div class="geometric-box">
+                        <h4 class="font-semibold text-green-800 mb-2">📈 Geometric Interpretation</h4>
+                        <p>The function is <strong>increasing</strong> at that point. The tangent line has <strong>positive slope</strong>.</p>
+                    </div>
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Example</h4>
+                        <p>For $f(x) = x^2$, $f'(x) = 2x$. When $x > 0$, $f'(x) > 0$, so the function is increasing.</p>
+                        <div class="graph-placeholder">
+                            Graph: Parabola opening upward, increasing for x > 0
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box derivative-negative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When f'(x) < 0</h3>
+                    <div class="geometric-box">
+                        <h4 class="font-semibold text-green-800 mb-2">📉 Geometric Interpretation</h4>
+                        <p>The function is <strong>decreasing</strong> at that point. The tangent line has <strong>negative slope</strong>.</p>
+                    </div>
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Example</h4>
+                        <p>For $f(x) = x^2$, $f'(x) = 2x$. When $x < 0$, $f'(x) < 0$, so the function is decreasing.</p>
+                        <div class="graph-placeholder">
+                            Graph: Parabola opening upward, decreasing for x < 0
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box derivative-zero">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When f'(x) = 0</h3>
+                    <div class="geometric-box">
+                        <h4 class="font-semibold text-green-800 mb-2">⚖️ Geometric Interpretation</h4>
+                        <p>The function has a <strong>critical point</strong> (could be local max, local min, or point of inflection).</p>
+                    </div>
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Example</h4>
+                        <p>For $f(x) = x^2$, $f'(x) = 2x = 0$ when $x = 0$. This is a <strong>local minimum</strong>.</p>
+                        <div class="graph-placeholder">
+                            Graph: Parabola with minimum at (0,0)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Second Derivative Section -->
+            <section id="second-derivative" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. f''(x) - The Second Derivative: Curvature Analysis</h2>
+                </div>
+
+                <div class="concept-box derivative-positive">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When f''(x) > 0</h3>
+                    <div class="geometric-box">
+                        <h4 class="font-semibold text-green-800 mb-2">⎰ Geometric Interpretation</h4>
+                        <p>The function is <strong>concave up</strong> (convex). The curve lies <strong>above</strong> its tangent lines.</p>
+                    </div>
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Example</h4>
+                        <p>For $f(x) = x^2$, $f''(x) = 2 > 0$ for all x. The parabola is always concave up.</p>
+                        <div class="graph-placeholder">
+                            Graph: Concave up parabola
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box derivative-negative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When f''(x) < 0</h3>
+                    <div class="geometric-box">
+                        <h4 class="font-semibold text-green-800 mb-2">⎱ Geometric Interpretation</h4>
+                        <p>The function is <strong>concave down</strong> (concave). The curve lies <strong>below</strong> its tangent lines.</p>
+                    </div>
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Example</h4>
+                        <p>For $f(x) = -x^2$, $f''(x) = -2 < 0$ for all x. The parabola is always concave down.</p>
+                        <div class="graph-placeholder">
+                            Graph: Concave down parabola
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box derivative-zero">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When f''(x) = 0</h3>
+                    <div class="geometric-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🔄 Geometric Interpretation</h4>
+                        <p>Possible <strong>point of inflection</strong> - where concavity changes.</p>
+                    </div>
+                    <div class="example-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Example</h4>
+                        <p>For $f(x) = x^3$, $f''(x) = 6x = 0$ when $x = 0$. This is a <strong>point of inflection</strong>.</p>
+                        <div class="graph-placeholder">
+                            Graph: Cubic curve with inflection at (0,0)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Geometric Relationships Section -->
+            <section id="geometric" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Geometric Relationships: Putting It All Together</h2>
+                </div>
+
+                <div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">The Complete Picture</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="p-3 border">f'(x)</th>
+                                    <th class="p-3 border">f''(x)</th>
+                                    <th class="p-3 border">Function Behavior</th>
+                                    <th class="p-3 border">JEE Significance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t">
+                                    <td class="p-3 border text-green-600 font-semibold">Positive</td>
+                                    <td class="p-3 border text-green-600 font-semibold">Positive</td>
+                                    <td class="p-3 border">Increasing, Concave Up</td>
+                                    <td class="p-3 border">Rapid growth, exponential-like behavior</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border text-green-600 font-semibold">Positive</td>
+                                    <td class="p-3 border text-red-600 font-semibold">Negative</td>
+                                    <td class="p-3 border">Increasing, Concave Down</td>
+                                    <td class="p-3 border">Slowing growth, approaching horizontal asymptote</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border text-red-600 font-semibold">Negative</td>
+                                    <td class="p-3 border text-green-600 font-semibold">Positive</td>
+                                    <td class="p-3 border">Decreasing, Concave Up</td>
+                                    <td class="p-3 border">Slowing decrease, approaching minimum</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border text-red-600 font-semibold">Negative</td>
+                                    <td class="p-3 border text-red-600 font-semibold">Negative</td>
+                                    <td class="p-3 border">Decreasing, Concave Down</td>
+                                    <td class="p-3 border">Rapid decrease, exponential decay</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Memory Aid</h4>
+                    <p><strong>"Positive f'(x) means going up, Positive f''(x) means smiling up"</strong></p>
+                    <p class="mt-2 text-sm">Think of f''(x) > 0 as a smile (concave up) and f''(x) < 0 as a frown (concave down).</p>
+                </div>
+            </section>
+
+            <!-- Differentiability Section -->
+            <section id="differentiability" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Differentiability: Key Conditions and Common Pitfalls</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When is a Function Differentiable?</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">✅ Differentiable at x = a if:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>f(x) is continuous at x = a</li>
+                                <li>Left-hand derivative = Right-hand derivative</li>
+                                <li>No sharp corners or cusps</li>
+                                <li>No vertical tangents</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">❌ NOT Differentiable at x = a if:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Discontinuity at x = a</li>
+                                <li>Sharp corner (like |x| at x = 0)</li>
+                                <li>Vertical tangent (like $x^{1/3}$ at x = 0)</li>
+                                <li>Cusp point</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-2">⚠️ Common JEE Trap</h4>
+                    <p><strong>Continuity ≠ Differentiability!</strong> A function can be continuous but not differentiable.</p>
+                    <p class="mt-2 text-sm"><strong>Example:</strong> $f(x) = |x|$ is continuous at x = 0 but not differentiable there (sharp corner).</p>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Differentiability Problem</h4>
+                    <p class="mb-3"><strong>Question:</strong> Check differentiability of $f(x) = \begin{cases} x^2 & \text{if } x \leq 1 \\ 2x-1 & \text{if } x > 1 \end{cases}$ at x = 1</p>
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Step 1:</strong> Check continuity at x = 1</p>
+                        <p class="ml-4">Left limit: $\lim_{x \to 1^-} x^2 = 1$</p>
+                        <p class="ml-4">Right limit: $\lim_{x \to 1^+} (2x-1) = 1$</p>
+                        <p class="ml-4">f(1) = 1. Continuous ✓</p>
+                        
+                        <p><strong>Step 2:</strong> Check differentiability</p>
+                        <p class="ml-4">Left derivative: $f'(x) = 2x \Rightarrow f'(1^-) = 2$</p>
+                        <p class="ml-4">Right derivative: $f'(x) = 2 \Rightarrow f'(1^+) = 2$</p>
+                        <p class="ml-4">Equal derivatives ✓</p>
+                        
+                        <p><strong>Conclusion:</strong> Differentiable at x = 1</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Applications Section -->
+            <section id="jee-applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. JEE Applications and Problem Solving Strategies</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Maxima/Minima Problems</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Second Derivative Test</h4>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm">
+                            <div class="text-center">
+                                <div class="font-semibold">If f'(c) = 0 and</div>
+                                <div class="text-green-600 font-bold">f''(c) > 0</div>
+                                <div>Local Minimum at x = c</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">If f'(c) = 0 and</div>
+                                <div class="text-red-600 font-bold">f''(c) < 0</div>
+                                <div>Local Maximum at x = c</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">If f'(c) = 0 and</div>
+                                <div class="text-yellow-600 font-bold">f''(c) = 0</div>
+                                <div>Test inconclusive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Curve Sketching Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
+                            <div>
+                                <p class="font-semibold">Find critical points (f'(x) = 0)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
+                            <div>
+                                <p class="font-semibold">Determine increasing/decreasing intervals</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
+                            <div>
+                                <p class="font-semibold">Find inflection points (f''(x) = 0)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
+                            <div>
+                                <p class="font-semibold">Determine concavity intervals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🚀 Time-Saving JEE Strategy</h4>
+                    <p><strong>For multiple choice questions:</strong> Often you can eliminate options by checking just the signs of f'(x) and f''(x) without full calculations.</p>
+                    <p class="mt-2 text-sm"><strong>Example:</strong> If asked about local maxima/minima, immediately check if f''(x) is positive or negative at critical points.</p>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📋 Quick Reference Table</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead class="bg-purple-100">
+                                <tr>
+                                    <th class="p-3 border">Function Property</th>
+                                    <th class="p-3 border">f'(x) Condition</th>
+                                    <th class="p-3 border">f''(x) Condition</th>
+                                    <th class="p-3 border">Geometric Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t">
+                                    <td class="p-3 border">Increasing</td>
+                                    <td class="p-3 border text-green-600 font-semibold">f'(x) > 0</td>
+                                    <td class="p-3 border">-</td>
+                                    <td class="p-3 border">Slope positive</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border">Decreasing</td>
+                                    <td class="p-3 border text-red-600 font-semibold">f'(x) < 0</td>
+                                    <td class="p-3 border">-</td>
+                                    <td class="p-3 border">Slope negative</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border">Local Maximum</td>
+                                    <td class="p-3 border">f'(x) = 0</td>
+                                    <td class="p-3 border text-red-600 font-semibold">f''(x) < 0</td>
+                                    <td class="p-3 border">Peak point</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border">Local Minimum</td>
+                                    <td class="p-3 border">f'(x) = 0</td>
+                                    <td class="p-3 border text-green-600 font-semibold">f''(x) > 0</td>
+                                    <td class="p-3 border">Valley point</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border">Concave Up</td>
+                                    <td class="p-3 border">-</td>
+                                    <td class="p-3 border text-green-600 font-semibold">f''(x) > 0</td>
+                                    <td class="p-3 border">Smile shape</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 border">Concave Down</td>
+                                    <td class="p-3 border">-</td>
+                                    <td class="p-3 border text-red-600 font-semibold">f''(x) < 0</td>
+                                    <td class="p-3 border">Frown shape</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Test Your Understanding</h3>
+                    <p class="mb-4">Try these JEE-style problems to apply what you've learned:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. For $f(x) = x^3 - 3x^2 + 2$, find intervals where:</p>
+                            <p class="text-sm text-gray-600 ml-4">a) f(x) is increasing</p>
+                            <p class="text-sm text-gray-600 ml-4">b) f(x) is concave up</p>
+                            <p class="text-sm text-gray-600 ml-4">c) Local maxima and minima</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Determine if $f(x) = |x-2| + |x+1|$ is differentiable at x = 2</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. A function has f'(1) = 0 and f''(1) = -3. What can you conclude about f(x) at x = 1?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered the Relationships?</h3>
+                    <p class="mb-4 opacity-90">You're now ready to tackle any JEE question involving f(x), f'(x), and f''(x) relationships!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Quick Reference
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

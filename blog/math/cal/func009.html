@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Square Root Trick for Range | JEE Secret Weapon | KnowJEE</title>
+    <meta name="description" content="Master the discriminant technique for finding range of functions. Set y=f(x), form quadratic in x, and use D≥0 to find range quickly for JEE.">
+    <meta name="keywords" content="JEE range finding, discriminant method, square root trick, JEE math tricks, range of functions">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .trick-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .example-box {
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background: #fef3cd;
+            border: 2px solid #eab308;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fffbeb;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .formula-box {
+            background: #f1f5f9;
+            border: 2px dashed #64748b;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Secret Technique</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 10 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Time-Saver</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The "Square Root" Trick: A Secret Weapon for Finding Range in JEE Math</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how the discriminant method can solve complex range problems in seconds. The trick JEE toppers don't want you to know!</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">70%</div>
+                            <div class="text-sm text-purple-600">Faster Solving</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5</div>
+                            <div class="text-sm text-purple-600">Step Process</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Accuracy</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3min</div>
+                            <div class="text-sm text-purple-600">Learn Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Trick is a Game-Changer</h2>
+                <p class="mb-4">Traditional range-finding methods can be time-consuming and messy. The discriminant method gives you a <strong>systematic, foolproof approach</strong> that works for a wide variety of functions commonly asked in JEE.</p>
+                
+                <div class="trick-box">
+                    <h3 class="text-xl font-bold mb-3">🎯 The Core Idea</h3>
+                    <p class="mb-3">For a function $y = f(x)$, if we can rearrange it into a <strong>quadratic in x</strong>, then:</p>
+                    <div class="text-center text-lg font-bold">
+                        Real x exists ⇔ Discriminant $D \geq 0$
+                    </div>
+                    <p class="mt-3">Solving $D \geq 0$ gives us the range of y-values!</p>
+                </div>
+            </section>
+
+            <!-- The 5-Step Process -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The 5-Step Discriminant Method</h2>
+                
+                <div class="space-y-4">
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Step 1: Set y = f(x)</h4>
+                        <p>Start with the equation $y = f(x)$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Step 2: Rearrange to Quadratic Form</h4>
+                        <p>Express the equation as $Ax^2 + Bx + C = 0$, where A, B, C may contain y</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Step 3: Apply Discriminant Condition</h4>
+                        <p>For real x to exist: $D = B^2 - 4AC \geq 0$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Step 4: Solve the Inequality</h4>
+                        <p>Solve $B^2 - 4AC \geq 0$ to find possible y-values</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Step 5: Verify Boundary Values</h4>
+                        <p>Check if the boundary y-values are actually attainable</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 1 -->
+            <section class="mb-8">
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-green-900 mb-3">Example 1: Classic Rational Function</h3>
+                    <p class="text-lg mb-4">Find the range of $f(x) = \frac{x}{x^2 + 1}$</p>
+                    
+                    <div class="space-y-3">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 1: Set y = f(x)</h4>
+                            <p>$y = \frac{x}{x^2 + 1}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 2: Rearrange to Quadratic</h4>
+                            <p>$y(x^2 + 1) = x$</p>
+                            <p>$yx^2 + y - x = 0$</p>
+                            <p>$yx^2 - x + y = 0$</p>
+                            <p class="mt-2"><strong>This is quadratic in x with:</strong></p>
+                            <p>$A = y$, $B = -1$, $C = y$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 3: Apply Discriminant Condition</h4>
+                            <p>$D = B^2 - 4AC \geq 0$</p>
+                            <p>$(-1)^2 - 4(y)(y) \geq 0$</p>
+                            <p>$1 - 4y^2 \geq 0$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 4: Solve the Inequality</h4>
+                            <p>$1 - 4y^2 \geq 0$</p>
+                            <p>$4y^2 \leq 1$</p>
+                            <p>$y^2 \leq \frac{1}{4}$</p>
+                            <p>$-\frac{1}{2} \leq y \leq \frac{1}{2}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 5: Verify Boundary Values</h4>
+                            <p>When $y = \frac{1}{2}$: $\frac{1}{2} = \frac{x}{x^2 + 1}$ gives $x = 1$ ✓</p>
+                            <p>When $y = -\frac{1}{2}$: $-\frac{1}{2} = \frac{x}{x^2 + 1}$ gives $x = -1$ ✓</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Final Answer</h4>
+                        <p class="font-semibold text-lg">Range = $\left[-\frac{1}{2}, \frac{1}{2}\right]$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- When to Use This Method -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 When to Use the Discriminant Method</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Perfect Candidates:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Rational functions: $\frac{P(x)}{Q(x)}$</li>
+                                <li>Functions with $x$ and $x^2$ terms</li>
+                                <li>Expressions where you can isolate $x$</li>
+                                <li>Square root functions (after squaring)</li>
+                                <li>Trigonometric functions (using identities)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Not Suitable For:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Functions that don't form quadratics</li>
+                                <li>When domain is severely restricted</li>
+                                <li>Piecewise defined functions</li>
+                                <li>Functions with vertical asymptotes only</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 2 -->
+            <section class="mb-8">
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-green-900 mb-3">Example 2: Square Root Function</h3>
+                    <p class="text-lg mb-4">Find the range of $f(x) = \sqrt{x^2 + x + 1}$</p>
+                    
+                    <div class="space-y-3">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 1: Set y = f(x)</h4>
+                            <p>$y = \sqrt{x^2 + x + 1}$, where $y \geq 0$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 2: Rearrange to Quadratic</h4>
+                            <p>$y^2 = x^2 + x + 1$ (squaring both sides)</p>
+                            <p>$x^2 + x + 1 - y^2 = 0$</p>
+                            <p class="mt-2"><strong>Quadratic in x with:</strong></p>
+                            <p>$A = 1$, $B = 1$, $C = 1 - y^2$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 3: Apply Discriminant Condition</h4>
+                            <p>$D = B^2 - 4AC \geq 0$</p>
+                            <p>$1^2 - 4(1)(1 - y^2) \geq 0$</p>
+                            <p>$1 - 4 + 4y^2 \geq 0$</p>
+                            <p>$4y^2 - 3 \geq 0$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 4: Solve the Inequality</h4>
+                            <p>$4y^2 - 3 \geq 0$</p>
+                            <p>$y^2 \geq \frac{3}{4}$</p>
+                            <p>$y \leq -\frac{\sqrt{3}}{2}$ or $y \geq \frac{\sqrt{3}}{2}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 5: Combine with Initial Condition</h4>
+                            <p>From Step 1: $y \geq 0$</p>
+                            <p>From Step 4: $y \geq \frac{\sqrt{3}}{2}$ (since $y \geq 0$)</p>
+                            <p>Check $y = \frac{\sqrt{3}}{2}$: $x^2 + x + 1 = \frac{3}{4}$ gives real x ✓</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Final Answer</h4>
+                        <p class="font-semibold text-lg">Range = $\left[\frac{\sqrt{3}}{2}, \infty\right)$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Important Caveats -->
+            <section class="mb-8">
+                <div class="warning-box">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">⚠️ Important Caveats & Precautions</h3>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">1. Domain Restrictions Still Apply</h4>
+                            <p class="text-sm">The discriminant method finds <strong>possible</strong> y-values. You must still consider the original domain of the function.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">2. Watch for Extraneous Solutions</h4>
+                            <p class="text-sm">When squaring (like in Example 2), verify that solutions satisfy the original equation.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">3. A ≠ 0 Condition</h4>
+                            <p class="text-sm">If A = 0, the equation becomes linear. Check this case separately!</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">4. Boundary Value Verification</h4>
+                            <p class="text-sm">Always check if the boundary y-values are actually attained by some x in the domain.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The A = 0 Special Case -->
+            <section class="mb-8">
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-green-900 mb-3">Special Case: When A = 0</h3>
+                    <p class="text-lg mb-4">Find the range of $f(x) = \frac{x+1}{x^2 + x + 1}$</p>
+                    
+                    <div class="space-y-3">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 1: Set y = f(x)</h4>
+                            <p>$y = \frac{x+1}{x^2 + x + 1}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 2: Rearrange</h4>
+                            <p>$y(x^2 + x + 1) = x + 1$</p>
+                            <p>$yx^2 + yx + y - x - 1 = 0$</p>
+                            <p>$yx^2 + (y-1)x + (y-1) = 0$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 3: Check A = 0 Case</h4>
+                            <p>When $y = 0$: Equation becomes $-x - 1 = 0$ ⇒ $x = -1$ ✓</p>
+                            <p>So $y = 0$ is in range</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 4: Apply Discriminant for y ≠ 0</h4>
+                            <p>$D = (y-1)^2 - 4y(y-1) \geq 0$</p>
+                            <p>$(y-1)[(y-1) - 4y] \geq 0$</p>
+                            <p>$(y-1)(-3y-1) \geq 0$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 5: Solve Inequality</h4>
+                            <p>Critical points: $y = 1$, $y = -\frac{1}{3}$</p>
+                            <p>Solution: $-\frac{1}{3} \leq y \leq 1$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 6: Combine Both Cases</h4>
+                            <p>From A = 0 case: $y = 0$</p>
+                            <p>From discriminant: $-\frac{1}{3} \leq y \leq 1$</p>
+                            <p>Since $0 \in [-\frac{1}{3}, 1]$, range is $[-\frac{1}{3}, 1]$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Final Answer</h4>
+                        <p class="font-semibold text-lg">Range = $\left[-\frac{1}{3}, 1\right]$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formula Summary -->
+            <section class="mb-8">
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">📐 The Discriminant Method Formula</h3>
+                    <div class="text-2xl font-bold text-purple-700 mb-2">
+                        For $y = f(x)$ rearranged as $Ax^2 + Bx + C = 0$
+                    </div>
+                    <div class="text-3xl font-bold text-blue-700">
+                        Range = $\{y \in \mathbb{R} : B^2 - 4AC \geq 0\}$
+                    </div>
+                    <p class="mt-3 text-gray-600">(Plus any additional constraints from the original function)</p>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">🔥 Practice These JEE-Level Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Find range of $f(x) = \frac{x^2 + 1}{x^2 + x + 1}$</p>
+                            <div class="text-sm text-gray-600">Hint: Multiply both sides and form quadratic in x</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find range of $f(x) = \frac{x}{x^2 + 4}$</p>
+                            <div class="text-sm text-gray-600">Hint: Watch for the A = 0 case</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find range of $f(x) = \sqrt{\frac{x-1}{x+2}}$</p>
+                            <div class="text-sm text-gray-600">Hint: Square and rearrange carefully</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. Find range of $f(x) = \frac{2x}{x^2 + 3}$</p>
+                            <div class="text-sm text-gray-600">Hint: Classic discriminant application</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-orange-50 rounded border border-orange-200">
+                        <p class="text-sm text-orange-800"><strong>Time Yourself:</strong> Try to solve each problem in under 2 minutes using the discriminant method!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pro Tips -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">💡 Pro Tips for JEE Success</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Speed Optimization:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Practice mental rearrangement to quadratic form</li>
+                                <li>Memorize common discriminant patterns</li>
+                                <li>Use quick inequality solving techniques</li>
+                                <li>Verify only suspicious boundary values</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Common Pitfalls:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Forgetting the A = 0 special case</li>
+                                <li>Missing domain restrictions</li>
+                                <li>Not verifying boundary values</li>
+                                <li>Algebra errors in rearrangement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master This Time-Saving Technique!</h3>
+                    <p class="mb-4 opacity-90">The discriminant method can save you 3-5 minutes on range problems in JEE</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Tricks
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Practice Set
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

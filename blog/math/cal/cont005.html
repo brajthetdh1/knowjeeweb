@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuity & Differentiability: Critical JEE Relationship | KnowJEE</title>
+    <meta name="description" content="Master the crucial relationship between continuity and differentiability for JEE. Learn why differentiability implies continuity but not vice-versa with proofs, examples, and JEE strategies.">
+    <meta name="keywords" content="continuity differentiability JEE, calculus JEE, differentiability implies continuity, JEE mathematics, JEE calculus relationship">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .proof-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #fef7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tip-box {
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .relationship-flow {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Core Concept</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Essential</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Continuity and Differentiability: The Critical Relationship for JEE</h1>
+                <p class="text-xl text-gray-600 mb-4">Understanding why differentiability implies continuity, but continuity doesn't guarantee differentiability - with proofs, examples, and JEE strategies.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3</div>
+                            <div class="text-sm text-blue-600">Questions/Paper</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">★ ★ ★</div>
+                            <div class="text-sm text-blue-600">High Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5min</div>
+                            <div class="text-sm text-blue-600">Concept Mastery</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Relationship Matters in JEE</h2>
+                <p class="mb-4">The relationship between continuity and differentiability is one of the <strong>most frequently tested concepts</strong> in JEE Mathematics. Understanding this relationship helps you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li>Solve <strong>2-3 questions</strong> in every JEE paper</li>
+                    <li>Avoid <strong>common traps</strong> in calculus problems</li>
+                    <li>Build <strong>strong foundation</strong> for advanced topics</li>
+                    <li>Save <strong>precious time</strong> during examination</li>
+                </ul>
+                
+                <div class="relationship-flow">
+                    <h3 class="text-xl font-bold text-center mb-4">The Fundamental Relationship</h3>
+                    <div class="text-center text-lg font-semibold">
+                        Differentiable at a point → Continuous at that point
+                    </div>
+                    <div class="text-center mt-2 opacity-90">
+                        But Continuous at a point ↛ Differentiable at that point
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#definitions" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Definitions</a>
+                    <a href="#proof" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Mathematical Proof</a>
+                    <a href="#counterexamples" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Counterexamples</a>
+                    <a href="#jee-application" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Application</a>
+                </div>
+            </div>
+
+            <!-- Definitions Section -->
+            <section id="definitions" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Understanding the Definitions</h2>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Continuity at a Point</h3>
+                    <p class="mb-3">A function $f(x)$ is continuous at $x = a$ if:</p>
+                    <div class="proof-box">
+                        <p><strong>Three conditions must be satisfied:</strong></p>
+                        <ol class="list-decimal list-inside space-y-2 mt-2">
+                            <li>$f(a)$ exists (function is defined at $x = a$)</li>
+                           li>$\lim_{x \to a} f(x)$ exists</li>
+                            <li>$\lim_{x \to a} f(x) = f(a)$</li>
+                        </ol>
+                    </div>
+                    <p class="mt-3"><strong>In simple terms:</strong> No breaks, jumps, or holes at $x = a$</p>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Differentiability at a Point</h3>
+                    <p class="mb-3">A function $f(x)$ is differentiable at $x = a$ if:</p>
+                    <div class="proof-box">
+                        <p><strong>The derivative exists:</strong></p>
+                        <div class="text-center my-3">
+                            $$ f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} \quad \text{exists} $$
+                        </div>
+                        <p><strong>Left-hand and right-hand derivatives must be equal:</strong></p>
+                        <div class="text-center my-3">
+                            $$ Lf'(a) = Rf'(a) $$
+                        </div>
+                    </div>
+                    <p class="mt-3"><strong>In simple terms:</strong> Smooth curve with a well-defined tangent at $x = a$</p>
+                </div>
+            </section>
+
+            <!-- The Critical Proof -->
+            <section id="proof" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">2. The Mathematical Proof: Differentiability → Continuity</h2>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Theorem Statement</h3>
+                    <div class="proof-box">
+                        <p class="text-lg font-semibold text-center">
+                            If a function is differentiable at a point, then it is continuous at that point.
+                        </p>
+                        <div class="text-center my-3">
+                            $$ \text{Differentiable at } x = a \Rightarrow \text{Continuous at } x = a $$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Step-by-Step Proof</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Assume differentiability</h4>
+                        <p>Assume $f(x)$ is differentiable at $x = a$, so:</p>
+                        <div class="text-center my-2">
+                            $$ f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} \quad \text{exists} $$
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Express f(a+h) - f(a)</h4>
+                        <p>We can write:</p>
+                        <div class="text-center my-2">
+                            $$ f(a+h) - f(a) = \frac{f(a+h) - f(a)}{h} \cdot h $$
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Take limit as h → 0</h4>
+                        <div class="text-center my-2">
+                            $$ \lim_{h \to 0} [f(a+h) - f(a)] = \lim_{h \to 0} \left[ \frac{f(a+h) - f(a)}{h} \cdot h \right] $$
+                        </div>
+                        <p>Using limit properties:</p>
+                        <div class="text-center my-2">
+                            $$ = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} \cdot \lim_{h \to 0} h $$
+                        </div>
+                        <p>$$ = f'(a) \cdot 0 = 0 $$</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Conclude continuity</h4>
+                        <p>Since $\lim_{h \to 0} [f(a+h) - f(a)] = 0$, we have:</p>
+                        <div class="text-center my-2">
+                            $$ \lim_{h \to 0} f(a+h) = f(a) $$
+                        </div>
+                        <p>Which means $f(x)$ is continuous at $x = a$.</p>
+                    </div>
+
+                    <div class="proof-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">✓ Proof Complete</h4>
+                        <p>We have shown that differentiability at a point implies continuity at that point.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Counterexamples Section -->
+            <section id="counterexamples" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Counterexamples: Continuous but Not Differentiable</h2>
+
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-2">⚠️ Important Note</h4>
+                    <p>The converse is <strong>not true</strong>. A function can be continuous at a point but not differentiable there.</p>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Example 1: Absolute Value Function</h3>
+                    <p class="mb-3">Consider $f(x) = |x|$ at $x = 0$</p>
+                    
+                    <div class="example-box">
+                        <p><strong>Continuity check:</strong></p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>$f(0) = 0$ ✓</li>
+                            <li>$\lim_{x \to 0} |x| = 0$ ✓</li>
+                            <li>$\lim_{x \to 0} f(x) = f(0)$ ✓</li>
+                        </ul>
+                        <p class="mt-2"><strong>Conclusion:</strong> Continuous at $x = 0$</p>
+                    </div>
+
+                    <div class="example-box">
+                        <p><strong>Differentiability check:</strong></p>
+                        <p>Left-hand derivative:</p>
+                        <div class="text-center my-2">
+                            $$ Lf'(0) = \lim_{h \to 0^-} \frac{|0+h| - |0|}{h} = \lim_{h \to 0^-} \frac{-h}{h} = -1 $$
+                        </div>
+                        <p>Right-hand derivative:</p>
+                        <div class="text-center my-2">
+                            $$ Rf'(0) = \lim_{h \to 0^+} \frac{|0+h| - |0|}{h} = \lim_{h \to 0^+} \frac{h}{h} = 1 $$
+                        </div>
+                        <p class="mt-2"><strong>Conclusion:</strong> $Lf'(0) \neq Rf'(0)$, so not differentiable at $x = 0$</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Example 2: Cube Root Function</h3>
+                    <p class="mb-3">Consider $f(x) = \sqrt[3]{x}$ at $x = 0$</p>
+                    
+                    <div class="example-box">
+                        <p><strong>Continuity check:</strong></p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>$f(0) = 0$ ✓</li>
+                            <li>$\lim_{x \to 0} \sqrt[3]{x} = 0$ ✓</li>
+                            <li>$\lim_{x \to 0} f(x) = f(0)$ ✓</li>
+                        </ul>
+                        <p class="mt-2"><strong>Conclusion:</strong> Continuous at $x = 0$</p>
+                    </div>
+
+                    <div class="example-box">
+                        <p><strong>Differentiability check:</strong></p>
+                        <div class="text-center my-2">
+                            $$ f'(0) = \lim_{h \to 0} \frac{\sqrt[3]{h} - 0}{h} = \lim_{h \to 0} \frac{1}{\sqrt[3]{h^2}} = \infty $$
+                        </div>
+                        <p class="mt-2"><strong>Conclusion:</strong> Derivative is infinite, so not differentiable at $x = 0$</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Common Cases Where Continuous ≠ Differentiable</h3>
+                    <div class="grid md:grid-cols-2 gap-4 mt-3">
+                        <div class="bg-red-50 p-3 rounded">
+                            <p class="font-semibold text-red-800">Sharp Corners</p>
+                            <p class="text-sm">$f(x) = |x|$, $f(x) = |x-1| + |x+1|$</p>
+                            <p class="text-xs mt-1">Left and right derivatives differ</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded">
+                            <p class="font-semibold text-red-800">Vertical Tangents</p>
+                            <p class="text-sm">$f(x) = \sqrt[3]{x}$, $f(x) = \sqrt{x}$ at $x=0$</p>
+                            <p class="text-xs mt-1">Derivative becomes infinite</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded">
+                            <p class="font-semibold text-red-800">Cusps</p>
+                            <p class="text-sm">$f(x) = x^{2/3}$</p>
+                            <p class="text-xs mt-1">Sharp point with infinite derivatives from both sides</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded">
+                            <p class="font-semibold text-red-800">Discontinuity in Derivative</p>
+                            <p class="text-sm">Piecewise functions with different formulas</p>
+                            <p class="text-xs mt-1">Function continuous but derivative jumps</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Application -->
+            <section id="jee-application" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">4. JEE Application & Problem Solving</h2>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">JEE Problem Solving Strategy</h3>
+                    
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🎯 Quick Decision Framework</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>When asked "Is f(x) differentiable at x=a?":</strong></p>
+                            <ol class="list-decimal list-inside space-y-1">
+                                <li>First check if f(x) is continuous at x=a</li>
+                                <li>If NOT continuous → Automatically NOT differentiable</li>
+                                <li>If continuous → Check left-hand and right-hand derivatives</li>
+                                <li>If LHD = RHD → Differentiable</li>
+                                <li>If LHD ≠ RHD → Not differentiable</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">JEE Main 2023 Type Question</h4>
+                        <p class="mb-3">Let $f(x) = \begin{cases} x^2 & \text{if } x \leq 1 \\ ax + b & \text{if } x > 1 \end{cases}$</p>
+                        <p>Find values of a and b such that f(x) is differentiable at x = 1.</p>
+                        
+                        <div class="step-box mt-3">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 1: Continuity Condition</h4>
+                            <p>For differentiability, first ensure continuity:</p>
+                            <div class="text-center my-2">
+                                $$ \lim_{x \to 1^-} f(x) = \lim_{x \to 1^+} f(x) = f(1) $$
+                            </div>
+                            <p>$$ 1^2 = a(1) + b = 1 $$</p>
+                            <p>So: $a + b = 1$</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 2: Differentiability Condition</h4>
+                            <p>Left-hand derivative:</p>
+                            <div class="text-center my-2">
+                                $$ Lf'(1) = \lim_{h \to 0^-} \frac{f(1+h)-f(1)}{h} = \lim_{h \to 0^-} \frac{(1+h)^2 - 1}{h} = 2 $$
+                            </div>
+                            <p>Right-hand derivative:</p>
+                            <div class="text-center my-2">
+                                $$ Rf'(1) = \lim_{h \to 0^+} \frac{f(1+h)-f(1)}{h} = \lim_{h \to 0^+} \frac{a(1+h)+b - 1}{h} = a $$
+                            </div>
+                            <p>For differentiability: $Lf'(1) = Rf'(1) \Rightarrow a = 2$</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 3: Solve System</h4>
+                            <p>From continuity: $a + b = 1$</p>
+                            <p>From differentiability: $a = 2$</p>
+                            <p>So: $2 + b = 1 \Rightarrow b = -1$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Common JEE Question Types</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded">
+                            <h4 class="font-semibold text-green-800 mb-2">Type 1: Direct Application</h4>
+                            <p class="text-sm">"If f(x) is differentiable at x=a, which of the following must be true?"</p>
+                            <p class="text-xs mt-2 text-green-700">Answer: f(x) is continuous at x=a</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <h4 class="font-semibold text-green-800 mb-2">Type 2: Counterexample Identification</h4>
+                            <p class="text-sm">"Which function is continuous but not differentiable?"</p>
+                            <p class="text-xs mt-2 text-green-700">Answer: Functions with corners/cusps</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <h4 class="font-semibold text-green-800 mb-2">Type 3: Parameter Finding</h4>
+                            <p class="text-sm">"Find parameters for differentiability"</p>
+                            <p class="text-xs mt-2 text-green-700">Use both continuity and LHD=RHD conditions</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <h4 class="font-semibold text-green-800 mb-2">Type 4: Graphical Analysis</h4>
+                            <p class="text-sm">"Identify points of non-differentiability from graph"</p>
+                            <p class="text-xs mt-2 text-green-700">Look for corners, cusps, discontinuities</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Memory Aids -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Memory Aids & Quick Recall</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Relationship Summary</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center bg-white p-3 rounded border">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    <span>Differentiable → Continuous</span>
+                                </div>
+                                <div class="flex items-center bg-white p-3 rounded border">
+                                    <span class="text-red-600 mr-2">✗</span>
+                                    <span>Continuous → Differentiable</span>
+                                </div>
+                                <div class="flex items-center bg-white p-3 rounded border">
+                                    <span class="text-red-600 mr-2">✗</span>
+                                    <span>Not Continuous → Not Differentiable</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Quick Checks</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Corner:</strong> |x| type functions</li>
+                                <li><strong>Cusp:</strong> $x^{2/3}$ type functions</li>
+                                <li><strong>Vertical tangent:</strong> $\sqrt[3]{x}$ type functions</li>
+                                <li><strong>Discontinuity:</strong> Jump/removable/infinite</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">📝 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-style problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Prove that if f(x) is differentiable at x=2, then it must be continuous at x=2.</p>
+                            <div class="text-sm text-gray-600">Hint: Use the definition of derivative</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Show that f(x) = |x-3| is continuous but not differentiable at x=3.</p>
+                            <div class="text-sm text-gray-600">Hint: Calculate left-hand and right-hand derivatives</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find a and b if $f(x) = \begin{cases} ax^2+b & x<2 \\ 3x-1 & x\geq2 \end{cases}$ is differentiable at x=2.</p>
+                            <div class="text-sm text-gray-600">Hint: Use both continuity and differentiability conditions</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Key Takeaway for JEE Success</h3>
+                    <p class="mb-4 opacity-90">Remember: Differentiability is a stronger condition than continuity. Every differentiable function is continuous, but not every continuous function is differentiable.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Differentiability Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwich Theorem (Squeeze Theorem): Mastering the Technique | KnowJEE</title>
+    <meta name="description" content="Master the Sandwich Theorem for JEE Main & Advanced. Learn bounding functions, proving limits exist, and solving complex limit problems with step-by-step examples.">
+    <meta name="keywords" content="sandwich theorem, squeeze theorem, JEE limits, JEE calculus, bounding functions, limit proofs, JEE mathematics">
+    <meta name="author" content="KnowJEE">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sandwich Theorem (Squeeze Theorem): Mastering the Technique">
+    <meta property="og:description" content="Master the Sandwich Theorem for JEE Main & Advanced with detailed examples and practice problems.">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sandwich Theorem (Squeeze Theorem): Mastering the Technique">
+    <meta name="twitter:description" content="Master the Sandwich Theorem for JEE Main & Advanced with detailed examples and practice problems.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .theorem-box {
+            background: #fef7ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .theorem-box:hover {
+            background: #faf5ff;
+            border-color: #d8b4fe;
+            transform: translateY(-2px);
+        }
+        .proof {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .application {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #7e22ce;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Main & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Key Applications</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Sandwich Theorem (Squeeze Theorem): Mastering the Technique</h1>
+                <p class="text-xl text-gray-600 mb-4">Learn to bound functions, prove limits exist, and solve complex limit problems with this powerful JEE tool.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">85%</div>
+                            <div class="text-sm text-purple-600">JEE Appearance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">4</div>
+                            <div class="text-sm text-purple-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Difficulty Levels</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">15min</div>
+                            <div class="text-sm text-purple-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What is the Sandwich Theorem?</h2>
+                <p class="mb-4">The <strong>Sandwich Theorem</strong> (also called <strong>Squeeze Theorem</strong>) is a fundamental tool in calculus used to evaluate limits of functions that are difficult to compute directly. It states that if a function $f(x)$ is "squeezed" between two other functions $g(x)$ and $h(x)$ that approach the same limit $L$ as $x$ approaches $c$, then $f(x)$ must also approach $L$.</p>
+                
+                <div class="theorem-box difficulty-medium">
+                    <h3 class="text-xl font-bold text-purple-900 mb-3">Formal Statement</h3>
+                    <p class="text-lg mb-4">If $g(x) \leq f(x) \leq h(x)$ for all $x$ in some interval around $c$ (except possibly at $c$ itself), and</p>
+                    <p class="text-center text-lg mb-4">$\lim_{x \to c} g(x) = \lim_{x \to c} h(x) = L$</p>
+                    <p class="text-lg">Then $\lim_{x \to c} f(x) = L$</p>
+                </div>
+            </section>
+
+            <!-- Key Concept 1 -->
+            <section class="mb-8">
+                <div class="theorem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Fundamental Concept</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bounding Trigonometric Functions</h3>
+                    <p class="text-lg mb-4">The most common application: using $-1 \leq \sin x \leq 1$ and $-1 \leq \cos x \leq 1$</p>
+                    
+                    <div class="application">
+                        <h4 class="font-semibold text-blue-800 mb-2">Example: Find $\lim_{x \to 0} x^2 \sin\left(\frac{1}{x}\right)$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> We know $-1 \leq \sin\left(\frac{1}{x}\right) \leq 1$ for all $x \neq 0$</p>
+                            <p><strong>Step 2:</strong> Multiply by $x^2$ (positive for $x \neq 0$): $-x^2 \leq x^2 \sin\left(\frac{1}{x}\right) \leq x^2$</p>
+                            <p><strong>Step 3:</strong> Find limits of bounding functions:</p>
+                            <p class="ml-4">• $\lim_{x \to 0} (-x^2) = 0$</p>
+                            <p class="ml-4">• $\lim_{x \to 0} x^2 = 0$</p>
+                            <p><strong>Step 4:</strong> By Sandwich Theorem: $\lim_{x \to 0} x^2 \sin\left(\frac{1}{x}\right) = 0$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Concept 2 -->
+            <section class="mb-8">
+                <div class="theorem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2022</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Proving Limits Exist</h3>
+                    <p class="text-lg mb-4">When direct substitution fails, Sandwich Theorem can prove a limit exists.</p>
+                    
+                    <div class="application">
+                        <h4 class="font-semibold text-blue-800 mb-2">Example: Prove $\lim_{x \to 0} \frac{\sin x}{x} = 1$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> For small $x > 0$, geometric argument shows:</p>
+                            <p class="ml-4">$\sin x \leq x \leq \tan x$</p>
+                            <p><strong>Step 2:</strong> Divide by $\sin x$: $1 \leq \frac{x}{\sin x} \leq \frac{1}{\cos x}$</p>
+                            <p><strong>Step 3:</strong> Take reciprocals: $\cos x \leq \frac{\sin x}{x} \leq 1$</p>
+                            <p><strong>Step 4:</strong> As $x \to 0$, $\cos x \to 1$ and $1 \to 1$</p>
+                            <p><strong>Step 5:</strong> By Sandwich Theorem: $\lim_{x \to 0} \frac{\sin x}{x} = 1$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Concept 3 -->
+            <section class="mb-8">
+                <div class="theorem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Complex Oscillatory Functions</h3>
+                    <p class="text-lg mb-4">Handling functions that oscillate infinitely near a point.</p>
+                    
+                    <div class="application">
+                        <h4 class="font-semibold text-blue-800 mb-2">Example: Find $\lim_{x \to 0} x^3 \cos\left(\frac{1}{x^2}\right)$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Bound the cosine: $-1 \leq \cos\left(\frac{1}{x^2}\right) \leq 1$</p>
+                            <p><strong>Step 2:</strong> Multiply by $x^3$: $-x^3 \leq x^3 \cos\left(\frac{1}{x^2}\right) \leq x^3$</p>
+                            <p><strong>Step 3:</strong> Evaluate limits:</p>
+                            <p class="ml-4">• $\lim_{x \to 0} (-x^3) = 0$</p>
+                            <p class="ml-4">• $\lim_{x \to 0} x^3 = 0$</p>
+                            <p><strong>Step 4:</strong> By Sandwich Theorem: $\lim_{x \to 0} x^3 \cos\left(\frac{1}{x^2}\right) = 0$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Problem-Solving Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">When to Use Sandwich Theorem:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Function oscillates (sine, cosine of $\frac{1}{x}$ etc.)</li>
+                                <li>Direct substitution gives indeterminate form</li>
+                                <li>Function is bounded between simpler functions</li>
+                                <li>Proving limit exists without finding exact value</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Key Steps:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Identify the oscillating/bounded part</li>
+                                <li>Find upper and lower bounds</li>
+                                <li>Multiply/divide to isolate the function</li>
+                                <li>Check if bounding functions have same limit</li>
+                                <li>Apply the theorem</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Concepts Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Applications Available</h3>
+                    <p class="text-gray-600 mb-4">Includes 3 more complex applications with step-by-step proofs and JEE Advanced level problems</p>
+                    <button class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Access Full Content
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems using Sandwich Theorem:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Find $\lim_{x \to 0} x^4 \sin\left(\frac{1}{\sqrt[3]{x}}\right)$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Evaluate $\lim_{x \to \infty} \frac{\sin x}{x}$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Find $\lim_{x \to 0} \frac{1 - \cos x}{x^2}$ using bounding</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common JEE Mistakes to Avoid</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 text-red-800 rounded-full p-1 mr-3 mt-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Forgetting to check bounds</h4>
+                                <p class="text-sm text-red-700">Always verify $g(x) \leq f(x) \leq h(x)$ in the interval</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-red-100 text-red-800 rounded-full p-1 mr-3 mt-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Using wrong inequality direction</h4>
+                                <p class="text-sm text-red-700">When multiplying by negative numbers, reverse inequalities</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-red-100 text-red-800 rounded-full p-1 mr-3 mt-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Not verifying bounding limits match</h4>
+                                <p class="text-sm text-red-700">Both bounding functions must approach the same limit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Sandwich Theorem?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all applications with step-by-step video solutions and JEE practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-purple-900 text-purple-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-purple-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-purple-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-purple-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-purple-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-purple-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-purple-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-purple-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-purple-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-purple-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
