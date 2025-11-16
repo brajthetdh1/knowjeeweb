@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Derivatives to Approximations: Understanding Differentials | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master the concept of differentials in calculus - from derivatives to practical approximations. Essential for JEE Main & Advanced preparation with real-world applications.">
+    <meta name="keywords" content="differentials calculus, derivatives approximations, JEE calculus, differentials JEE, linear approximations, calculus concepts">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .derivative-section {
+            background: #fef7ed;
+            border-left: 4px solid #fed7aa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .differential-section {
+            background: #f0fdf4;
+            border-left: 4px solid #bbf7d0;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .application-section {
+            background: #faf5ff;
+            border-left: 4px solid #e9d5ff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .visual-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .interactive-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .interactive-element:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Calculus Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential Concept</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">From Derivatives to Approximations: Understanding the Concept of Differentials</h1>
+                <p class="text-xl text-gray-600 mb-4">Bridge the gap between abstract derivatives and practical applications through the powerful concept of differentials.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5+</div>
+                            <div class="text-sm text-blue-600">JEE Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Concept Clarity</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Real-world Uses</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12min</div>
+                            <div class="text-sm text-blue-600">Mastery Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Differentials Matter in Calculus</h2>
+                <p class="mb-4">Differentials serve as the crucial link between the abstract world of derivatives and practical applications in approximation and error analysis. While derivatives tell us about rates of change, differentials help us <strong>quantify</strong> and <strong>utilize</strong> these changes.</p>
+                
+                <div class="visual-box">
+                    <h3 class="text-xl font-bold mb-3">🎯 The Big Picture</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm">
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="font-semibold">Derivative</div>
+                            <div>Instantaneous Rate of Change</div>
+                            <div class="text-xs mt-1">$f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}$</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="font-semibold">Differential</div>
+                            <div>Actual Change Approximation</div>
+                            <div class="text-xs mt-1">$dy = f'(x)dx$</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="font-semibold">Application</div>
+                            <div>Real-world Approximations</div>
+                            <div class="text-xs mt-1">Error Analysis, Optimization</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Navigation Guide</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#derivatives-review" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Derivatives Review</a>
+                    <a href="#differential-concept" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Differential Concept</a>
+                    <a href="#approximations" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Approximations</a>
+                    <a href="#jee-applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Applications</a>
+                </div>
+            </div>
+
+            <!-- Derivatives Review -->
+            <section id="derivatives-review" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Derivatives: The Starting Point</h2>
+                    
+                    <div class="derivative-section">
+                        <h3 class="font-semibold text-orange-800 mb-2">What is a Derivative?</h3>
+                        <p>The derivative of a function $f(x)$ at point $x$ represents the <strong>instantaneous rate of change</strong> of the function at that point.</p>
+                        <div class="text-center my-3">
+                            $$ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$
+                        </div>
+                        <p>Geometrically, it's the <strong>slope of the tangent line</strong> to the curve at point $(x, f(x))$.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example: Understanding Slope</h4>
+                        <p>For $f(x) = x^2$, the derivative is $f'(x) = 2x$.</p>
+                        <p>At $x = 3$, $f'(3) = 6$, meaning the function is increasing at a rate of 6 units vertically for each 1 unit horizontally.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 text-sm">
+                            <div class="bg-green-50 p-3 rounded">
+                                <strong>At x = 3:</strong><br>
+                                • Actual point: (3, 9)<br>
+                                • Slope of tangent: 6<br>
+                                • Tangent line: $y - 9 = 6(x - 3)$
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded">
+                                <strong>Interpretation:</strong><br>
+                                • For small Δx, Δy ≈ 6·Δx<br>
+                                • This is the key insight for differentials!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Differential Concept -->
+            <section id="differential-concept" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Introducing Differentials: The Bridge to Applications</h2>
+                    
+                    <div class="differential-section">
+                        <h3 class="font-semibold text-green-800 mb-2">What are Differentials?</h3>
+                        <p>Differentials are <strong>infinitesimal changes</strong> in variables. For a function $y = f(x)$:</p>
+                        <div class="text-center my-3">
+                            $$ dy = f'(x) \, dx $$
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>$dx$ is the differential of $x$ (small change in $x$)</li>
+                            <li>$dy$ is the differential of $y$ (corresponding change in $y$ along tangent)</li>
+                            <li>$f'(x)$ is the derivative (relates the changes)</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Visualizing Differentials</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded border text-center">
+                                <div class="font-semibold mb-2">Actual Change</div>
+                                <div>Δy = f(x+Δx) - f(x)</div>
+                                <div class="text-sm text-gray-600 mt-1">Exact change along curve</div>
+                            </div>
+                            <div class="bg-white p-4 rounded border text-center">
+                                <div class="font-semibold mb-2">Differential Change</div>
+                                <div>dy = f'(x)Δx</div>
+                                <div class="text-sm text-gray-600 mt-1">Approximate change along tangent</div>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-sm text-gray-600">For small Δx, Δy ≈ dy. This is the foundation of linear approximations!</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Key Insight</h4>
+                        <p>While the derivative $f'(x)$ is a <strong>number</strong> (the slope), the differential $dy$ is a <strong>quantity</strong> (an actual change). This makes differentials practical for calculations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Approximations -->
+            <section id="approximations" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Practical Approximations Using Differentials</h2>
+                    
+                    <div class="application-section">
+                        <h3 class="font-semibold text-purple-800 mb-2">Linear Approximation Formula</h3>
+                        <p>For a function $y = f(x)$, near point $x = a$:</p>
+                        <div class="text-center my-3">
+                            $$ f(x) \approx f(a) + f'(a)(x - a) $$
+                        </div>
+                        <p>Or equivalently:</p>
+                        <div class="text-center my-3">
+                            $$ Δy \approx f'(a) Δx $$
+                        </div>
+                        <p>Where $Δx = x - a$ and $Δy = f(x) - f(a)$.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example: Approximating Square Roots</h4>
+                        <p><strong>Problem:</strong> Approximate $\sqrt{16.1}$ using differentials.</p>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 1: Choose function and point</h4>
+                            <p>Let $f(x) = \sqrt{x}$, $a = 16$ (perfect square near 16.1)</p>
+                            <p>$f(a) = \sqrt{16} = 4$</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 2: Find derivative</h4>
+                            <p>$f'(x) = \frac{1}{2\sqrt{x}}$</p>
+                            <p>$f'(16) = \frac{1}{2\sqrt{16}} = \frac{1}{8} = 0.125$</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 3: Apply approximation formula</h4>
+                            <p>$Δx = 16.1 - 16 = 0.1$</p>
+                            <p>$Δy ≈ f'(16) · Δx = 0.125 × 0.1 = 0.0125$</p>
+                            <p>$\sqrt{16.1} ≈ f(16) + Δy = 4 + 0.0125 = 4.0125$</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 4: Verify accuracy</h4>
+                            <p>Actual value: $\sqrt{16.1} ≈ 4.01248$</p>
+                            <p>Our approximation: $4.01250$</p>
+                            <p class="font-semibold text-green-700">Error: Only 0.00002! (Extremely accurate)</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
+                        <h4 class="font-semibold text-red-800 mb-2">⚠️ When Does This Work Best?</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>When $Δx$ is small (the smaller, the better)</li>
+                            <li>When function is smooth (differentiable)</li>
+                            <li>When you know exact value at a nearby point</li>
+                            <li>For quick estimates without calculators</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Applications -->
+            <section id="jee-applications" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Differential Applications in JEE</h2>
+                    
+                    <div class="application-section">
+                        <h3 class="font-semibold text-purple-800 mb-2">Common JEE Problem Types</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-blue-800 mb-2">1. Error Estimation</h4>
+                                <p class="text-sm">Given error in measurement of $x$, find approximate error in $y = f(x)$</p>
+                                <div class="text-center mt-2">
+                                    $Δy ≈ |f'(x)| · Δx$
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-blue-800 mb-2">2. Percentage Change</h4>
+                                <p class="text-sm">Find percentage change in $y$ when $x$ changes by a small percentage</p>
+                                <div class="text-center mt-2">
+                                    $\frac{Δy}{y} ≈ \frac{f'(x)}{f(x)} · Δx$
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">JEE-Style Problem: Error Analysis</h4>
+                        <p><strong>Problem:</strong> The radius of a sphere is measured as 5 cm with possible error of 0.02 cm. Find approximate error in volume calculation.</p>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 1: Volume function</h4>
+                            <p>$V = \frac{4}{3}πr^3$</p>
+                            <p>At $r = 5$ cm: $V = \frac{4}{3}π(125) = \frac{500}{3}π$ cm³</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 2: Find derivative</h4>
+                            <p>$\frac{dV}{dr} = 4πr^2$</p>
+                            <p>At $r = 5$: $\frac{dV}{dr} = 4π(25) = 100π$</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 3: Apply differential approximation</h4>
+                            <p>$Δr = 0.02$ cm</p>
+                            <p>$ΔV ≈ \frac{dV}{dr} · Δr = 100π × 0.02 = 2π$ cm³</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 4: Interpret result</h4>
+                            <p>Approximate error in volume: $2π ≈ 6.283$ cm³</p>
+                            <p>Percentage error: $\frac{ΔV}{V} ≈ \frac{2π}{500π/3} = \frac{6}{500} = 1.2\%$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">⚠️ Common Differential Mistakes in JEE</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Conceptual Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Confusing Δy and dy:</strong> Δy is actual change, dy is approximate change</li>
+                                <li><strong>Using large Δx:</strong> Approximation worsens as Δx increases</li>
+                                <li><strong>Forgetting absolute value:</strong> In error analysis, error is always positive</li>
+                                <li><strong>Mixing up variables:</strong> Ensure consistent use of dx, Δx, dy, Δy</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Calculation Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Derivative mistakes:</strong> Double-check your f'(x) calculation</li>
+                                <li><strong>Unit inconsistencies:</strong> Maintain consistent units throughout</li>
+                                <li><strong>Sign errors:</strong> Be careful with positive/negative changes</li>
+                                <li><strong>Rounding too early:</strong> Keep extra precision during calculation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Practice -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Use differentials to approximate $\sqrt[3]{28}$</p>
+                            <div class="text-sm text-gray-600">Hint: Start with $f(x) = \sqrt[3]{x}$ and $a = 27$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. The side of a cube is measured as 10 cm with possible error 0.1 cm. Find approximate error in surface area.</p>
+                            <div class="text-sm text-gray-600">Hint: Surface area $A = 6s^2$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. If $y = x^3 + 2x$ and $x$ changes from 2 to 2.01, find approximate change in $y$.</p>
+                            <div class="text-sm text-gray-600">Hint: Calculate both Δy and dy to compare</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary & Next Steps -->
+            <section class="mb-8">
+                <div class="visual-box">
+                    <h3 class="text-xl font-bold mb-4">🎯 Differential Mastery Summary</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-white bg-opacity-20 p-4 rounded">
+                            <h4 class="font-semibold mb-2">Key Formulas</h4>
+                            <ul class="space-y-1">
+                                <li>$dy = f'(x)dx$</li>
+                                <li>$f(x) ≈ f(a) + f'(a)(x-a)$</li>
+                                <li>$Δy ≈ f'(x)Δx$</li>
+                                <li>Error: $Δy ≈ |f'(x)|·Δx$</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-4 rounded">
+                            <h4 class="font-semibold mb-2">When to Use</h4>
+                            <ul class="space-y-1">
+                                <li>Quick approximations</li>
+                                <li>Error analysis</li>
+                                <li>Percentage changes</li>
+                                <li>Small changes in variables</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Calculus Concepts?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through essential JEE calculus topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Explore More Calculus
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Differential Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monotonicity Trick: Proving Inequalities with Derivatives | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master the powerful monotonicity technique for proving inequalities using derivatives. Essential JEE Advanced strategy with step-by-step examples and applications.">
+    <meta name="keywords" content="JEE monotonicity, proving inequalities, derivative applications, JEE calculus, monotonic functions, inequality proofs, JEE advanced techniques">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .technique-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .technique-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .proof-box {
+            background: #fef7ed;
+            border-left: 4px solid #ea580c;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .difficulty-advanced { border-left: 4px solid #dc2626; }
+        .difficulty-medium { border-left: 4px solid #ea580c; }
+        .difficulty-easy { border-left: 4px solid #16a34a; }
+        .application-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .checklist-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Strategy</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Advanced Technique</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Ultimate Monotonicity Trick: Proving Inequalities using Derivatives</h1>
+                <p class="text-xl text-gray-600 mb-4">Master this powerful technique that solves 80% of JEE inequality problems. Transform complex inequality proofs into simple derivative checks.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">80%</div>
+                            <div class="text-sm text-red-600">Inequality Problems</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">3-5</div>
+                            <div class="text-sm text-red-600">Steps Only</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4</div>
+                            <div class="text-sm text-red-600">Key Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">100%</div>
+                            <div class="text-sm text-red-600">Guaranteed Method</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Technique is a Game-Changer</h2>
+                <p class="mb-4">Traditional inequality proofs often involve clever algebraic manipulations that are hard to spot. The monotonicity approach provides a <strong>systematic, guaranteed method</strong> that works for a wide range of problems.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Advantage</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Solves problems that seem to require "magical" algebraic tricks</li>
+                        <li>Provides a <strong>step-by-step mechanical approach</strong></li>
+                        <li>Works for both <strong>strict and non-strict inequalities</strong></li>
+                        <li>Can prove <strong>multiple inequalities simultaneously</strong></li>
+                        <li>Especially powerful for <strong>trigonometric and exponential inequalities</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Technique Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#core-concept" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Core Concept</a>
+                    <a href="#step-by-step" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step-by-Step</a>
+                    <a href="#examples" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Examples</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                </div>
+            </div>
+
+            <!-- Core Concept -->
+            <section id="core-concept" class="mb-8">
+                <div class="technique-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="application-tag">Fundamental Theorem</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Core Concept</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Monotonicity Principle</h3>
+                    
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">📚 Mathematical Foundation</h4>
+                        <p><strong>Theorem:</strong> If $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then:</p>
+                        <div class="text-center my-3">
+                            <p>• $f'(x) > 0$ on $(a,b) \Rightarrow f$ is strictly increasing on $[a,b]$</p>
+                            <p>• $f'(x) < 0$ on $(a,b) \Rightarrow f$ is strictly decreasing on $[a,b]$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 How This Proves Inequalities</h4>
+                        <p>To prove $f(x) \geq g(x)$ for $x \in [a,b]$:</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Step 1:</strong> Define $h(x) = f(x) - g(x)$</p>
+                            <p><strong>Step 2:</strong> Show $h'(x) \geq 0$ (or $\leq 0$) on $(a,b)$</p>
+                            <p><strong>Step 3:</strong> Check $h(a) \geq 0$ (or $h(b) \geq 0$)</p>
+                            <p><strong>Step 4:</strong> Conclude $h(x) \geq 0$ for all $x \in [a,b]$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 Key Insight</h4>
+                        <p>Instead of directly comparing $f(x)$ and $g(x)$, we study the <strong>monotonic behavior</strong> of their difference. If the difference starts non-negative and only increases, it must remain non-negative!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step-by-Step Method -->
+            <section id="step-by-step" class="mb-8">
+                <div class="technique-box difficulty-medium">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">The 4-Step Monotonicity Method</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Reformulate the Inequality</h4>
+                        <p>Express the inequality as $h(x) \geq 0$ or $h(x) \leq 0$</p>
+                        <div class="bg-gray-50 p-3 rounded mt-2">
+                            <p class="text-sm"><strong>Example:</strong> To prove $\sin x \geq x - \frac{x^3}{6}$ for $x \geq 0$</p>
+                            <p class="text-sm">Define $h(x) = \sin x - x + \frac{x^3}{6}$</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Compute the Derivative</h4>
+                        <p>Find $h'(x)$ and simplify as much as possible</p>
+                        <div class="bg-gray-50 p-3 rounded mt-2">
+                            <p class="text-sm"><strong>Example:</strong> $h'(x) = \cos x - 1 + \frac{x^2}{2}$</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Analyze the Derivative</h4>
+                        <p>Determine the sign of $h'(x)$ on the interval</p>
+                        <div class="bg-gray-50 p-3 rounded mt-2">
+                            <p class="text-sm"><strong>Example:</strong> $h''(x) = -\sin x + x \geq 0$ for $x \geq 0$</p>
+                            <p class="text-sm">So $h'(x)$ is increasing, and $h'(0) = 0$, thus $h'(x) \geq 0$</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Use Initial/Boundary Values</h4>
+                        <p>Check $h(x)$ at the starting point and conclude</p>
+                        <div class="bg-gray-50 p-3 rounded mt-2">
+                            <p class="text-sm"><strong>Example:</strong> $h(0) = 0$ and $h'(x) \geq 0$, so $h(x) \geq 0$ for $x \geq 0$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 1 -->
+            <section id="examples" class="mb-8">
+                <div class="technique-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="application-tag">Classic Example</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 1: Exponential Inequality</h3>
+                    <p class="text-lg mb-4">Prove that $e^x \geq 1 + x$ for all $x \in \mathbb{R}$</p>
+                    
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Proof using Monotonicity</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Define $f(x) = e^x - 1 - x$</p>
+                            <p>We need to show $f(x) \geq 0$ for all $x \in \mathbb{R}$</p>
+                            
+                            <p><strong>Step 2:</strong> Compute derivative: $f'(x) = e^x - 1$</p>
+                            
+                            <p><strong>Step 3:</strong> Analyze $f'(x)$:</p>
+                            <div class="ml-4">
+                                <p>• $f'(x) = 0$ when $x = 0$</p>
+                                <p>• $f'(x) < 0$ for $x < 0$</p>
+                                <p>• $f'(x) > 0$ for $x > 0$</p>
+                            </div>
+                            
+                            <p><strong>Step 4:</strong> Find minimum:</p>
+                            <div class="ml-4">
+                                <p>$f'(x)$ changes from negative to positive at $x = 0$</p>
+                                <p>So $x = 0$ is a minimum point</p>
+                                <p>$f(0) = e^0 - 1 - 0 = 0$</p>
+                            </div>
+                            
+                            <p><strong>Step 5:</strong> Conclusion:</p>
+                            <p>Since $f(0) = 0$ is the minimum value, $f(x) \geq 0$ for all $x$</p>
+                            <p class="font-semibold">Therefore, $e^x \geq 1 + x$ for all $x \in \mathbb{R}$ ✓</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 2 -->
+            <section class="mb-8">
+                <div class="technique-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="application-tag">JEE Advanced</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 2: Trigonometric Inequality</h3>
+                    <p class="text-lg mb-4">Prove that $\frac{2x}{\pi} \leq \sin x \leq x$ for $0 \leq x \leq \frac{\pi}{2}$</p>
+                    
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Proof using Monotonicity</h4>
+                        
+                        <div class="mb-4">
+                            <p class="font-semibold">Part 1: Prove $\sin x \leq x$</p>
+                            <div class="space-y-2 text-sm mt-2 ml-4">
+                                <p><strong>Step 1:</strong> Define $f(x) = x - \sin x$</p>
+                                <p><strong>Step 2:</strong> $f'(x) = 1 - \cos x \geq 0$ for all $x$</p>
+                                <p><strong>Step 3:</strong> $f(0) = 0$, and $f$ is increasing</p>
+                                <p><strong>Step 4:</strong> So $f(x) \geq 0 \Rightarrow x \geq \sin x$ ✓</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="font-semibold">Part 2: Prove $\frac{2x}{\pi} \leq \sin x$</p>
+                            <div class="space-y-2 text-sm mt-2 ml-4">
+                                <p><strong>Step 1:</strong> Define $g(x) = \sin x - \frac{2x}{\pi}$</p>
+                                <p><strong>Step 2:</strong> $g'(x) = \cos x - \frac{2}{\pi}$</p>
+                                <p><strong>Step 3:</strong> $g'(x) = 0$ when $\cos x = \frac{2}{\pi} \Rightarrow x = \cos^{-1}(\frac{2}{\pi})$</p>
+                                <p><strong>Step 4:</strong> Check endpoints:</p>
+                                <div class="ml-4">
+                                    <p>$g(0) = 0$, $g(\frac{\pi}{2}) = 1 - 1 = 0$</p>
+                                </div>
+                                <p><strong>Step 5:</strong> Since $g(x)$ is concave down, minimum at endpoints</p>
+                                <p><strong>Step 6:</strong> So $g(x) \geq 0 \Rightarrow \sin x \geq \frac{2x}{\pi}$ ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 3 -->
+            <section class="mb-8">
+                <div class="technique-box difficulty-advanced">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="application-tag">JEE Advanced</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 3: Logarithmic Inequality</h3>
+                    <p class="text-lg mb-4">Prove that $\frac{x}{1+x} \leq \ln(1+x) \leq x$ for $x > -1, x \neq 0$</p>
+                    
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Proof using Monotonicity</h4>
+                        
+                        <div class="mb-4">
+                            <p class="font-semibold">Part 1: Prove $\ln(1+x) \leq x$</p>
+                            <div class="space-y-2 text-sm mt-2 ml-4">
+                                <p><strong>Step 1:</strong> Define $f(x) = x - \ln(1+x)$</p>
+                                <p><strong>Step 2:</strong> $f'(x) = 1 - \frac{1}{1+x} = \frac{x}{1+x}$</p>
+                                <p><strong>Step 3:</strong> Sign analysis:</p>
+                                <div class="ml-4">
+                                    <p>For $x > 0$: $f'(x) > 0 \Rightarrow f$ increasing</p>
+                                    <p>For $-1 < x < 0$: $f'(x) < 0 \Rightarrow f$ decreasing</p>
+                                </div>
+                                <p><strong>Step 4:</strong> $f(0) = 0$, so $f(x) \geq 0$ for all $x > -1$</p>
+                                <p><strong>Step 5:</strong> Thus $\ln(1+x) \leq x$ ✓</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="font-semibold">Part 2: Prove $\frac{x}{1+x} \leq \ln(1+x)$</p>
+                            <div class="space-y-2 text-sm mt-2 ml-4">
+                                <p><strong>Step 1:</strong> Define $g(x) = \ln(1+x) - \frac{x}{1+x}$</p>
+                                <p><strong>Step 2:</strong> $g'(x) = \frac{1}{1+x} - \frac{1}{(1+x)^2} = \frac{x}{(1+x)^2}$</p>
+                                <p><strong>Step 3:</strong> Sign analysis:</p>
+                                <div class="ml-4">
+                                    <p>For $x > 0$: $g'(x) > 0 \Rightarrow g$ increasing</p>
+                                    <p>For $-1 < x < 0$: $g'(x) < 0 \Rightarrow g$ decreasing</p>
+                                </div>
+                                <p><strong>Step 4:</strong> $g(0) = 0$, so $g(x) \geq 0$ for all $x > -1$</p>
+                                <p><strong>Step 5:</strong> Thus $\frac{x}{1+x} \leq \ln(1+x)$ ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications Section -->
+            <section id="applications" class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Key JEE Applications</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Direct Applications:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Inequality proofs</strong> in function theory</li>
+                                <li><strong>Range determination</strong> for complex functions</li>
+                                <li><strong>Limit evaluation</strong> using squeeze theorem</li>
+                                <li><strong>Series convergence</strong> tests</li>
+                                <li><strong>Optimization problems</strong> with constraints</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Indirect Applications:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Functional equations</strong> analysis</li>
+                                <li><strong>Differential equations</strong> behavior study</li>
+                                <li><strong>Curve sketching</strong> and analysis</li>
+                                <li><strong>Approximation theory</strong> error bounds</li>
+                                <li><strong>Physics applications</strong> in motion analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Self-Assessment -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Technique Mastery Checklist</h3>
+                    <p class="mb-4">Check which aspects you've mastered:</p>
+                    
+                    <div class="space-y-3">
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can identify when monotonicity method is applicable</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can properly define the difference function h(x)</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can correctly analyze the sign of derivatives</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I understand how to use boundary/initial conditions</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can apply this to trigonometric inequalities</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can apply this to exponential/logarithmic inequalities</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-green-700">
+                        <p><strong>Note:</strong> If you checked all 6, you've mastered this powerful technique!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Tips -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Advanced Tips & Tricks</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">When First Derivative Fails:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Try <strong>second derivative test</strong> for concavity</li>
+                                <li>Use <strong>higher order derivatives</strong> if needed</li>
+                                <li>Consider <strong>Taylor series expansions</strong></li>
+                                <li>Look for <strong>symmetry or periodicity</strong></li>
+                                <li>Try <strong>substitution techniques</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Time-Saving Strategies:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Memorize <strong>common inequalities</strong> and their proofs</li>
+                                <li>Practice <strong>mental derivative calculation</strong></li>
+                                <li>Develop <strong>pattern recognition</strong> for function types</li>
+                                <li>Use <strong>graphical intuition</strong> to guide algebraic work</li>
+                                <li>Learn <strong>quick sign analysis</strong> methods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">🎯 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems using the monotonicity technique:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Prove that $\tan x \geq x$ for $0 \leq x < \frac{\pi}{2}$</p>
+                            <div class="text-sm text-gray-600">Hint: Consider $f(x) = \tan x - x$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Prove that $x - \frac{x^2}{2} \leq \ln(1+x) \leq x$ for $x \geq 0$</p>
+                            <div class="text-sm text-gray-600">Hint: You'll need to prove two separate inequalities</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Show that $\frac{\sin x}{x}$ is decreasing on $(0, \pi)$</p>
+                            <div class="text-sm text-gray-600">Hint: Consider the derivative of $\frac{\sin x}{x}$</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master This Power Technique!</h3>
+                    <p class="mb-4 opacity-90">The monotonicity method is your secret weapon for inequality problems in JEE Advanced</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Techniques
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Practice Set
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add checklist functionality
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const item = this.closest('.checklist-item');
+                if (this.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

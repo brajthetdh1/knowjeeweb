@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monotonicity & Maxima/Minima Revision Checklist | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Complete revision checklist for JEE Calculus - Monotonicity, Increasing/Decreasing functions, Maxima/Minima formulas, theorems with proofs and applications.">
+    <meta name="keywords" content="JEE monotonicity, maxima minima, calculus formulas, JEE revision checklist, increasing decreasing functions, first derivative test, second derivative test">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+
+            // Checklist functionality
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // Load saved state from localStorage
+            checkboxes.forEach(checkbox => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                // Save state when changed
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.checked);
+                    updateProgress();
+                });
+            });
+
+            // Reset all checkboxes
+            document.getElementById('resetChecklist')?.addEventListener('click', function() {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    localStorage.setItem(checkbox.id, false);
+                });
+                updateProgress();
+            });
+
+            // Update progress bar
+            function updateProgress() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+                const progress = (checked.length / checkboxes.length) * 100;
+                
+                document.getElementById('progressBar').style.width = progress + '%';
+                document.getElementById('progressPercent').textContent = Math.round(progress) + '%';
+                
+                // Update checklist item styles
+                checkboxes.forEach(checkbox => {
+                    const item = checkbox.closest('.checklist-item');
+                    if (checkbox.checked) {
+                        item.classList.add('checked');
+                    } else {
+                        item.classList.remove('checked');
+                    }
+                });
+            }
+
+            // Initialize progress
+            updateProgress();
+        });
+    </script>
+    
+    <style>
+        .checklist-item {
+            transition: all 0.3s ease;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem-box {
+            background: #faf5ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .quick-tip {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .proof-box {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-16">
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Revision Checklist</span>
+                <span class="text-gray-500 text-sm ml-3">JEE Calculus</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Monotonicity & Maxima/Minima: Complete Formula Sheet</h1>
+            <p class="text-xl text-gray-600 mb-6">All essential theorems, formulas, and concepts for JEE Main & Advanced</p>
+            
+            <!-- Progress Bar -->
+            <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-gray-700">Revision Progress</span>
+                    <span id="progressPercent" class="text-sm font-bold text-blue-600">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <button id="resetChecklist" class="text-sm text-red-600 hover:text-red-800 font-medium">Reset Checklist</button>
+                    <span class="text-sm text-gray-500">Tick items as you revise</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Navigation -->
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-8">
+            <h3 class="font-semibold text-purple-900 mb-3">🎯 Quick Navigation</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                <a href="#definitions" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Basic Definitions</a>
+                <a href="#monotonicity" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Monotonicity Tests</a>
+                <a href="#first-derivative" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">First Derivative Test</a>
+                <a href="#second-derivative" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Second Derivative Test</a>
+                <a href="#absolute-extrema" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Absolute Extrema</a>
+                <a href="#applications" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                <a href="#special-cases" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Special Cases</a>
+                <a href="#jee-tips" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">JEE Tips</a>
+            </div>
+        </div>
+
+        <!-- Basic Definitions Section -->
+        <section id="definitions" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">1. Basic Definitions & Concepts</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="def1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Monotonic Increasing Function</span>
+                            <div class="definition-box text-sm">
+                                <p>A function $f(x)$ is <strong>monotonically increasing</strong> on an interval I if for any $x_1, x_2 \in I$ with $x_1 < x_2$, we have:</p>
+                                <div class="text-center my-2">
+                                    $f(x_1) \leq f(x_2)$
+                                </div>
+                                <p><strong>Strictly increasing</strong> if $f(x_1) < f(x_2)$</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="def2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Monotonic Decreasing Function</span>
+                            <div class="definition-box text-sm">
+                                <p>A function $f(x)$ is <strong>monotonically decreasing</strong> on an interval I if for any $x_1, x_2 \in I$ with $x_1 < x_2$, we have:</p>
+                                <div class="text-center my-2">
+                                    $f(x_1) \geq f(x_2)$
+                                </div>
+                                <p><strong>Strictly decreasing</strong> if $f(x_1) > f(x_2)$</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="def3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Local Maximum & Minimum</span>
+                            <div class="definition-box text-sm">
+                                <p><strong>Local Maximum:</strong> $f(c)$ is a local maximum if $f(c) \geq f(x)$ for all $x$ in some open interval containing $c$</p>
+                                <p><strong>Local Minimum:</strong> $f(c)$ is a local minimum if $f(c) \leq f(x)$ for all $x$ in some open interval containing $c$</p>
+                                <p class="mt-2"><strong>Critical Point:</strong> A point $c$ where $f'(c) = 0$ or $f'(c)$ does not exist</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="def4" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Absolute Maximum & Minimum</span>
+                            <div class="definition-box text-sm">
+                                <p><strong>Absolute Maximum:</strong> $f(c)$ is the absolute maximum on interval I if $f(c) \geq f(x)$ for all $x \in I$</p>
+                                <p><strong>Absolute Minimum:</strong> $f(c)$ is the absolute minimum on interval I if $f(c) \leq f(x)$ for all $x \in I$</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monotonicity Tests Section -->
+        <section id="monotonicity" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">2. Monotonicity Tests & Theorems</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="mono1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">First Derivative Test for Monotonicity</span>
+                            <div class="theorem-box text-sm">
+                                <p>Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>If $f'(x) > 0$ for all $x \in (a,b)$, then $f$ is strictly increasing on $[a,b]$</li>
+                                    <li>If $f'(x) < 0$ for all $x \in (a,b)$, then $f$ is strictly decreasing on $[a,b]$</li>
+                                    <li>If $f'(x) = 0$ for all $x \in (a,b)$, then $f$ is constant on $[a,b]$</li>
+                                </ul>
+                            </div>
+                            <div class="proof-box">
+                                <strong>Proof Insight:</strong> By Mean Value Theorem, for any $x_1 < x_2$, there exists $c \in (x_1, x_2)$ such that $f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="mono2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Critical Points Identification</span>
+                            <div class="formula-box text-sm">
+                                <p>To find intervals of monotonicity:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-1">
+                                    <li>Find $f'(x)$</li>
+                                    <li>Solve $f'(x) = 0$ to find critical points</li>
+                                    <li>Also identify points where $f'(x)$ does not exist</li>
+                                    <li>Test sign of $f'(x)$ in each interval between critical points</li>
+                                </ol>
+                            </div>
+                            <div class="quick-tip">
+                                <strong>💡 Quick Tip:</strong> Create a sign chart for $f'(x)$ to visualize increasing/decreasing intervals
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- First Derivative Test Section -->
+        <section id="first-derivative" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">3. First Derivative Test for Local Extrema</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="first1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">First Derivative Test Statement</span>
+                            <div class="theorem-box text-sm">
+                                <p>Let $c$ be a critical point of a continuous function $f$, and $f$ be differentiable near $c$ (except possibly at $c$):</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>If $f'(x)$ changes from <strong>positive to negative</strong> at $c$, then $f$ has a <strong>local maximum</strong> at $c$</li>
+                                    <li>If $f'(x)$ changes from <strong>negative to positive</strong> at $c$, then $f$ has a <strong>local minimum</strong> at $c$</li>
+                                    <li>If $f'(x)$ <strong>does not change sign</strong> at $c$, then $f$ has <strong>no local extremum</strong> at $c$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="first2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Step-by-Step Procedure</span>
+                            <div class="formula-box text-sm">
+                                <ol class="list-decimal list-inside space-y-2">
+                                    <li>Find all critical points by solving $f'(x) = 0$</li>
+                                    <li>For each critical point $c$, examine sign of $f'(x)$ in intervals:
+                                        <ul class="list-disc list-inside ml-4 mt-1">
+                                            <li>Immediately to the left of $c$: $(c-\delta, c)$</li>
+                                            <li>Immediately to the right of $c$: $(c, c+\delta)$</li>
+                                        </ul>
+                                    </li>
+                                    <li>Apply the sign change rule to classify each critical point</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Second Derivative Test Section -->
+        <section id="second-derivative" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">4. Second Derivative Test</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="second1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Second Derivative Test Statement</span>
+                            <div class="theorem-box text-sm">
+                                <p>Suppose $f''(x)$ is continuous near $c$ and $f'(c) = 0$:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>If $f''(c) > 0$, then $f$ has a <strong>local minimum</strong> at $c$</li>
+                                    <li>If $f''(c) < 0$, then $f$ has a <strong>local maximum</strong> at $c$</li>
+                                    <li>If $f''(c) = 0$, the test is <strong>inconclusive</strong> - use first derivative test</li>
+                                </ul>
+                            </div>
+                            <div class="proof-box">
+                                <strong>Geometric Insight:</strong> $f''(c) > 0$ means the function is concave up (shaped like ∪), so critical point is minimum. $f''(c) < 0$ means concave down (shaped like ∩), so critical point is maximum.
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="second2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Concavity & Points of Inflection</span>
+                            <div class="definition-box text-sm">
+                                <p><strong>Concave Up:</strong> $f''(x) > 0$ - Graph lies above its tangent lines</p>
+                                <p><strong>Concave Down:</strong> $f''(x) < 0$ - Graph lies below its tangent lines</p>
+                                <p><strong>Point of Inflection:</strong> A point where concavity changes</p>
+                                <div class="formula-box mt-2">
+                                    <p>To find inflection points:</p>
+                                    <ol class="list-decimal list-inside">
+                                        <li>Find $f''(x)$</li>
+                                        <li>Solve $f''(x) = 0$</li>
+                                        <li>Verify sign change of $f''(x)$ around these points</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Absolute Extrema Section -->
+        <section id="absolute-extrema" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">5. Absolute Extrema on Closed Intervals</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="abs1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Extreme Value Theorem</span>
+                            <div class="theorem-box text-sm">
+                                <p>If $f$ is continuous on a closed interval $[a,b]$, then:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>$f$ attains an <strong>absolute maximum</strong> value $f(c)$ for some $c \in [a,b]$</li>
+                                    <li>$f$ attains an <strong>absolute minimum</strong> value $f(d)$ for some $d \in [a,b]$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="abs2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Procedure for Finding Absolute Extrema</span>
+                            <div class="formula-box text-sm">
+                                <p>To find absolute maximum and minimum of $f$ on $[a,b]$:</p>
+                                <ol class="list-decimal list-inside space-y-2">
+                                    <li>Find all critical points of $f$ in $(a,b)$</li>
+                                    <li>Evaluate $f$ at all critical points</li>
+                                    <li>Evaluate $f$ at endpoints $a$ and $b$</li>
+                                    <li>The largest value is absolute maximum, smallest is absolute minimum</li>
+                                </ol>
+                            </div>
+                            <div class="warning-box">
+                                <strong>⚠️ Important:</strong> This method works ONLY for continuous functions on closed intervals
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">6. Applications & Problem Solving</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="app1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Optimization Problems Framework</span>
+                            <div class="formula-box text-sm">
+                                <ol class="list-decimal list-inside space-y-2">
+                                    <li><strong>Understand the problem:</strong> Identify what to maximize/minimize</li>
+                                    <li><strong>Draw diagram:</strong> Visualize the situation</li>
+                                    <li><strong>Define variables:</strong> Introduce notation</li>
+                                    <li><strong>Write objective function:</strong> Express quantity to optimize in terms of variables</li>
+                                    <li><strong>Identify constraints:</strong> Write equations for given conditions</li>
+                                    <li><strong>Reduce variables:</strong> Use constraints to express objective in one variable</li>
+                                    <li><strong>Find critical points:</strong> Differentiate and solve $f'(x) = 0$</li>
+                                    <li><strong>Verify:</strong> Use first or second derivative test</li>
+                                    <li><strong>Answer the question:</strong> State complete solution in context</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="app2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Common JEE Problem Types</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 text-sm">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <strong>Geometry Problems:</strong>
+                                    <ul class="list-disc list-inside mt-1 space-y-1">
+                                        <li>Maximum area with fixed perimeter</li>
+                                        <li>Minimum surface area with fixed volume</li>
+                                        <li>Optimal dimensions for containers</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <strong>Physics Applications:</strong>
+                                    <ul class="list-disc list-inside mt-1 space-y-1">
+                                        <li>Maximum range of projectile</li>
+                                        <li>Minimum time problems</li>
+                                        <li>Optimal angles</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Cases Section -->
+        <section id="special-cases" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">7. Special Cases & Important Functions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Quadratic Functions</span>
+                            <div class="formula-box text-sm">
+                                <p>For $f(x) = ax^2 + bx + c$:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>Vertex at $x = -\frac{b}{2a}$</li>
+                                    <li>If $a > 0$: Minimum at vertex, range $[f(-\frac{b}{2a}), \infty)$</li>
+                                    <li>If $a < 0$: Maximum at vertex, range $(-\infty, f(-\frac{b}{2a})]$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Trigonometric Functions</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                <div class="bg-purple-50 p-3 rounded">
+                                    <strong>$\sin x$ on $[0, 2\pi]$:</strong>
+                                    <p>Max: 1 at $x = \frac{\pi}{2}$</p>
+                                    <p>Min: -1 at $x = \frac{3\pi}{2}$</p>
+                                </div>
+                                <div class="bg-pink-50 p-3 rounded">
+                                    <strong>$\cos x$ on $[0, 2\pi]$:</strong>
+                                    <p>Max: 1 at $x = 0, 2\pi$</p>
+                                    <p>Min: -1 at $x = \pi$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="spec3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">When Second Derivative Test Fails</span>
+                            <div class="warning-box text-sm">
+                                <p><strong>Cases where $f''(c) = 0$:</strong></p>
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>$f(x) = x^4$ has minimum at $x = 0$ but $f''(0) = 0$</li>
+                                    <li>$f(x) = x^3$ has inflection point at $x = 0$, $f''(0) = 0$</li>
+                                    <li><strong>Solution:</strong> Always use first derivative test when $f''(c) = 0$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- JEE Tips Section -->
+        <section id="jee-tips" class="mb-8">
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">8. JEE Problem Solving Strategies</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Time-Saving Techniques</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                <div class="bg-green-50 p-3 rounded">
+                                    <strong>For Monotonicity:</strong>
+                                    <ul class="list-disc list-inside mt-1 space-y-1">
+                                        <li>Use sign chart method</li>
+                                        <li>Test one point in each interval</li>
+                                        <li>Remember standard function behaviors</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <strong>For Maxima/Minima:</strong>
+                                    <ul class="list-disc list-inside mt-1 space-y-1">
+                                        <li>Try second derivative test first</li>
+                                        <li>If inconclusive, use first derivative test</li>
+                                        <li>Check endpoints for absolute extrema</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Common Pitfalls to Avoid</span>
+                            <div class="warning-box text-sm">
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li><strong>Forgetting to check endpoints</strong> for absolute extrema on closed intervals</li>
+                                    <li><strong>Assuming all critical points are extrema</strong> - some are inflection points</li>
+                                    <li><strong>Misapplying second derivative test</strong> when $f''(c) = 0$</li>
+                                    <li><strong>Not verifying</strong> if critical points lie in the domain</li>
+                                    <li><strong>Overlooking points</strong> where derivative doesn't exist</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-item bg-white rounded-lg border border-gray-200 p-4">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" id="tip3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-semibold text-gray-900">Must-Know Formulas</span>
+                            <div class="formula-box text-sm">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <strong>Critical Points:</strong>
+                                        <p>Solve $f'(x) = 0$ or $f'(x)$ DNE</p>
+                                    </div>
+                                    <div>
+                                        <strong>Inflection Points:</strong>
+                                        <p>Solve $f''(x) = 0$ with sign change</p>
+                                    </div>
+                                    <div>
+                                        <strong>Quadratic Vertex:</strong>
+                                        <p>$x = -\frac{b}{2a}$</p>
+                                    </div>
+                                    <div>
+                                        <strong>Closed Interval Method:</strong>
+                                        <p>Check critical points + endpoints</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Revision Notes -->
+        <section class="mb-8">
+            <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Final Revision Notes</h2>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <h3 class="font-semibold mb-2">🎯 Key Concepts to Remember</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Monotonicity determined by sign of $f'(x)$</li>
+                            <li>Local extrema occur at critical points with sign change of $f'(x)$</li>
+                            <li>Second derivative test faster but sometimes inconclusive</li>
+                            <li>Absolute extrema on closed intervals need endpoint check</li>
+                            <li>Optimization problems follow systematic framework</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">🚀 Exam Day Strategy</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Read optimization problems carefully - identify what to maximize/minimize</li>
+                            <li>For monotonicity, create quick sign chart</li>
+                            <li>Verify your answers with quick reasoning</li>
+                            <li>Practice common JEE problem patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download & Share -->
+        <section class="text-center mb-12">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Save This Checklist</h3>
+                <p class="text-gray-600 mb-4">Your progress is automatically saved. Return anytime to continue your revision!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        📄 Print Checklist
+                    </button>
+                    <button id="resetChecklistBottom" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        🔄 Reset Progress
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reset functionality for bottom button
+        document.getElementById('resetChecklistBottom')?.addEventListener('click', function() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+                localStorage.setItem(checkbox.id, false);
+            });
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
