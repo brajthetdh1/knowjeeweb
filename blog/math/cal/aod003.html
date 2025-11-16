@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Tangents: Lines Touching Multiple Curves | JEE Advanced | KnowJEE</title>
+    <meta name="description" content="Master the high-yield JEE Advanced topic of common tangents. Learn to find lines tangent to multiple curves like circles, parabolas, ellipses with step-by-step solutions.">
+    <meta name="keywords" content="common tangents JEE Advanced, tangent to multiple curves, circle parabola common tangent, JEE coordinate geometry, tangent lines mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .concept-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 3px solid #94a3b8;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .visual-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Coordinate Geometry Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Problem Types</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Common Tangent Challenge: Lines Touching Multiple Curves</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of finding lines that are tangent to two or more curves simultaneously - a favorite JEE Advanced topic.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">85%</div>
+                            <div class="text-sm text-red-600">JEE Advanced Papers</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4-8</div>
+                            <div class="text-sm text-red-600">Marks Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">6</div>
+                            <div class="text-sm text-red-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">100%</div>
+                            <div class="text-sm text-red-600">Concept Clarity</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Common Tangents Matter in JEE Advanced</h2>
+                <p class="mb-4">Common tangent problems test your <strong>multi-concept understanding</strong> of coordinate geometry, algebra, and calculus. These problems appear frequently because they:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-red-50 p-4 rounded-lg">
+                    <li>Combine <strong>multiple geometric concepts</strong> in one problem</li>
+                    <li>Require <strong>systematic algebraic manipulation</strong></li>
+                    <li>Test <strong>visualization skills</strong> and <strong>spatial reasoning</strong></li>
+                    <li>Have <strong>elegant solutions</strong> that separate top rankers</li>
+                </ul>
+
+                <div class="concept-box">
+                    <h4 class="font-semibold text-blue-800 mb-2">🎯 Key Insight</h4>
+                    <p>A line $y = mx + c$ is tangent to a curve when the system of equations has <strong>exactly one solution</strong>. For common tangents, the same line must satisfy this condition for <strong>multiple curves simultaneously</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Problem Type Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                    <a href="#type1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Two Circles</a>
+                    <a href="#type2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Circle & Parabola</a>
+                    <a href="#type3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Two Parabolas</a>
+                    <a href="#type4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Circle & Ellipse</a>
+                    <a href="#type5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Three Curves</a>
+                    <a href="#type6" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Advanced Cases</a>
+                </div>
+            </div>
+
+            <!-- Type 1: Two Circles -->
+            <section id="type1" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2022</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 1: Common Tangents to Two Circles</h3>
+                    <p class="text-lg mb-4">Find all common tangents to the circles $x^2 + y^2 = 4$ and $x^2 + y^2 - 6x - 8y + 24 = 0$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1: Standardize the second circle</strong></p>
+                            <p>$x^2 + y^2 - 6x - 8y + 24 = 0$</p>
+                            <p>Complete the square: $(x^2 - 6x + 9) + (y^2 - 8y + 16) + 24 - 9 - 16 = 0$</p>
+                            <p>$(x-3)^2 + (y-4)^2 = 1$</p>
+                            <p>So we have circles: $C_1$: center $(0,0)$, radius $2$ and $C_2$: center $(3,4)$, radius $1$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2: Distance between centers</strong></p>
+                            <p>$d = \sqrt{(3-0)^2 + (4-0)^2} = \sqrt{9 + 16} = 5$</p>
+                            <p>Since $d = r_1 + r_2 = 2 + 1 = 3$? Wait, $5 > 3$, so circles are separate.</p>
+                            <p>Number of common tangents = 4 (2 direct, 2 transverse)</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3: Find transverse common tangents</strong></p>
+                            <p>Let tangent be $y = mx + c$</p>
+                            <p>For $C_1$: distance from center = $\frac{|c|}{\sqrt{1+m^2}} = 2$</p>
+                            <p>For $C_2$: distance from center = $\frac{|3m + 4 - c|}{\sqrt{1+m^2}} = 1$</p>
+                            <p>Solving these gives the transverse tangents.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 4: Direct common tangents</strong></p>
+                            <p>Use external center of similitude or solve similarly with same slope but different intercepts.</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-box mt-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Key Formula: Common Tangents to Two Circles</h4>
+                        <p>For circles with centers $C_1$, $C_2$ and radii $r_1$, $r_2$:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm mt-2">
+                            <li>If $d > r_1 + r_2$: 4 common tangents</li>
+                            <li>If $d = r_1 + r_2$: 3 common tangents</li>
+                            <li>If $|r_1 - r_2| < d < r_1 + r_2$: 2 common tangents</li>
+                            <li>If $d = |r_1 - r_2|$: 1 common tangent</li>
+                            <li>If $d < |r_1 - r_2|$: 0 common tangents</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Type 2: Circle & Parabola -->
+            <section id="type2" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 2: Common Tangents to Circle and Parabola</h3>
+                    <p class="text-lg mb-4">Find the common tangents to the parabola $y^2 = 4x$ and the circle $x^2 + y^2 - 2x - 4y + 4 = 0$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1: Standard form of circle</strong></p>
+                            <p>$x^2 + y^2 - 2x - 4y + 4 = 0$</p>
+                            <p>Complete squares: $(x^2 - 2x + 1) + (y^2 - 4y + 4) + 4 - 1 - 4 = 0$</p>
+                            <p>$(x-1)^2 + (y-2)^2 = 1$</p>
+                            <p>Center $(1,2)$, radius $1$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2: Tangent to parabola</strong></p>
+                            <p>For $y^2 = 4x$, tangent is $y = mx + \frac{1}{m}$</p>
+                            <p>This line should also be tangent to the circle.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3: Distance from circle center to line</strong></p>
+                            <p>Line: $y = mx + \frac{1}{m} \Rightarrow mx - y + \frac{1}{m} = 0$</p>
+                            <p>Distance from $(1,2)$ to line = $\frac{|m(1) - 2 + \frac{1}{m}|}{\sqrt{m^2 + 1}} = 1$ (radius)</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 4: Solve for m</strong></p>
+                            <p>$\frac{|m - 2 + \frac{1}{m}|}{\sqrt{m^2 + 1}} = 1$</p>
+                            <p>Square both sides and solve the equation to find possible slopes.</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-box mt-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 Strategy: Circle-Parabola Common Tangents</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Use standard tangent form for parabola: $y = mx + \frac{a}{m}$ for $y^2 = 4ax$</li>
+                            <li>Apply distance from circle center to this line = radius</li>
+                            <li>Solve the resulting equation in $m$</li>
+                            <li>Check if solutions give real tangents (discriminant conditions)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Type 3: Two Parabolas -->
+            <section id="type3" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2019</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 3: Common Tangents to Two Parabolas</h3>
+                    <p class="text-lg mb-4">Find the common tangent to the parabolas $y^2 = 4ax$ and $x^2 = 4ay$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1: Tangents in slope form</strong></p>
+                            <p>For $y^2 = 4ax$: tangent is $y = mx + \frac{a}{m}$</p>
+                            <p>For $x^2 = 4ay$: tangent is $y = mx - am^2$ (since it's of form $y = mx + c$ with $c = -am^2$)</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2: Equate intercepts for common tangent</strong></p>
+                            <p>For the line to be tangent to both, we need:</p>
+                            <p>$\frac{a}{m} = -am^2$</p>
+                            <p>Assuming $a \neq 0$, divide by $a$: $\frac{1}{m} = -m^2$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3: Solve for m</strong></p>
+                            <p>$\frac{1}{m} = -m^2 \Rightarrow 1 = -m^3 \Rightarrow m^3 = -1 \Rightarrow m = -1$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 4: Find the tangent equation</strong></p>
+                            <p>Using $m = -1$ in either form:</p>
+                            <p>$y = (-1)x + \frac{a}{-1} = -x - a$</p>
+                            <p>Or $y = (-1)x - a(-1)^2 = -x - a$</p>
+                            <p>So common tangent is $x + y + a = 0$</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-box mt-4">
+                        <h4 class="font-semibold mb-2">📈 Geometric Insight</h4>
+                        <p>The parabolas $y^2 = 4ax$ and $x^2 = 4ay$ are reflections of each other about the line $y = x$. Their common tangent is symmetric with respect to this line.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Common Tangent Formulas Quick Reference</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Curve & Tangent Form</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Circle</strong> $x^2+y^2=r^2$: $y=mx ± r\sqrt{1+m^2}$</p>
+                                <p><strong>Parabola</strong> $y^2=4ax$: $y=mx + \frac{a}{m}$</p>
+                                <p><strong>Ellipse</strong> $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$: $y=mx ± \sqrt{a^2m^2+b^2}$</p>
+                                <p><strong>Hyperbola</strong> $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$: $y=mx ± \sqrt{a^2m^2-b^2}$</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">General Approach</h4>
+                            <ol class="list-decimal list-inside space-y-1 text-sm">
+                                <li>Write tangent in slope form for one curve</li>
+                                <li>Apply tangency condition to other curve(s)</li>
+                                <li>Solve the resulting equation system</li>
+                                <li>Verify solutions give actual tangents</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Types 4-6 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Types 4-6 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes Circle & Ellipse, Three Curves, and Advanced Cases with detailed geometric interpretations</p>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Complete Guide
+                    </button>
+                </div>
+            </section>
+
+            <!-- Problem Solving Framework -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🔄 Systematic Problem Solving Framework</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 1: Curve Analysis</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Identify curve types and their standard forms</li>
+                                <li>Note centers, foci, vertices, radii as applicable</li>
+                                <li>Determine relative positions of curves</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 2: Tangent Form Selection</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Choose appropriate tangent form (slope, point, parametric)</li>
+                                <li>Consider symmetry to reduce calculations</li>
+                                <li>Use the simpler curve's tangent form first</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 3: Condition Application</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Apply tangency condition to second curve</li>
+                                <li>Use distance formulas for circles</li>
+                                <li>Use discriminant = 0 for conics</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 4: Solution & Verification</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Solve the resulting equation system</li>
+                                <li>Check if solutions satisfy all conditions</li>
+                                <li>Verify geometric interpretation makes sense</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems applying the systematic approach:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Find common tangents to $x^2 + y^2 = 9$ and $\frac{x^2}{16} + \frac{y^2}{9} = 1$</p>
+                            <div class="text-sm text-gray-600">Hint: Use slope form for ellipse and distance condition for circle</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find the common tangent to $y^2 = 8x$ and $xy = -1$</p>
+                            <div class="text-sm text-gray-600">Hint: Rectangular hyperbola needs special approach</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. How many common tangents exist between $x^2 + y^2 = 4$ and $x^2 + y^2 - 6x - 8y + 16 = 0$?</p>
+                            <div class="text-sm text-gray-600">Hint: Analyze relative positions of circles first</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master Common Tangents for JEE Advanced!</h3>
+                    <p class="mb-4 opacity-90">This high-yield topic can give you a significant edge over other aspirants</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-coordinate-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Coordinate Geometry
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

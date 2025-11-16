@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taming the Infinite: Differentiating Infinite Series | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master differentiation of infinite series for JEE Advanced. Learn term-by-term differentiation, uniform convergence, and power series techniques with solved examples.">
+    <meta name="keywords" content="JEE infinite series differentiation, power series calculus, JEE advanced calculus, term-by-term differentiation, uniform convergence JEE">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .theorem-box {
+            background: #faf5ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .difficulty-advanced { border-left: 4px solid #ef4444; }
+        .difficulty-intermediate { border-left: 4px solid #eab308; }
+        .difficulty-fundamental { border-left: 4px solid #22c55e; }
+        .frequency-tag {
+            background: #7c3aed;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Advanced Calculus</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Taming the Infinite: Differentiating Infinite Series</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of differentiating infinite sums - from power series to Fourier expansions. Essential for JEE Advanced calculus.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-8</div>
+                            <div class="text-sm text-purple-600">Marks in JEE Adv</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5</div>
+                            <div class="text-sm text-purple-600">Key Theorems</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">7+</div>
+                            <div class="text-sm text-purple-600">Solved Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Concept Clarity</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Challenge of Infinite Differentiation</h2>
+                <p class="mb-4">Differentiating infinite series is one of the most elegant yet challenging topics in calculus. While finite sums follow simple rules, infinite sums require careful consideration of <strong>convergence</strong> and <strong>uniform behavior</strong>.</p>
+                
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-2">⚠️ Common Misconception</h4>
+                    <p class="text-sm">"You can always differentiate an infinite series term-by-term" - This is FALSE and has led to many incorrect solutions in JEE Advanced.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Advanced Significance</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Appears in <strong>3-8 mark problems</strong> in JEE Advanced</li>
+                        <li>Essential for solving <strong>differential equations with series solutions</strong></li>
+                        <li>Used in <strong>Fourier analysis</strong> and <strong>power series methods</strong></li>
+                        <li>Tests <strong>conceptual depth</strong> rather than rote learning</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Navigation Guide</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#fundamentals" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Fundamentals</a>
+                    <a href="#theorems" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Theorems</a>
+                    <a href="#power-series" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Power Series</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Applications</a>
+                </div>
+            </div>
+
+            <!-- Fundamentals Section -->
+            <section id="fundamentals" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Fundamental Concepts</h2>
+                </div>
+
+                <div class="concept-box difficulty-fundamental">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What Makes Infinite Series Different?</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Finite vs Infinite Sums</h4>
+                        <p>For finite sums: $\frac{d}{dx} \sum_{k=1}^n f_k(x) = \sum_{k=1}^n f_k'(x)$</p>
+                        <p class="mt-2">For infinite sums: $\frac{d}{dx} \sum_{k=1}^\infty f_k(x) \neq \sum_{k=1}^\infty f_k'(x)$ in general</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Counterexample</h4>
+                        <p>Consider $f(x) = \sum_{n=1}^\infty \frac{\sin(n^3x)}{n^2}$</p>
+                        <p class="mt-2">The series converges for all $x$, but term-by-term differentiation gives:</p>
+                        <p>$\sum_{n=1}^\infty n\cos(n^3x)$ which diverges for most $x$!</p>
+                    </div>
+                </div>
+
+                <div class="concept-box difficulty-fundamental">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Pointwise vs Uniform Convergence</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-green-50 p-3 rounded">
+                            <h4 class="font-semibold text-green-800 mb-2">Pointwise Convergence</h4>
+                            <p class="text-sm">For each fixed $x$, the partial sums approach the limit.</p>
+                            <p class="text-xs mt-2">$\forall x \forall \epsilon > 0 \exists N$ such that $|S_n(x) - S(x)| < \epsilon$ for $n > N$</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-3 rounded">
+                            <h4 class="font-semibold text-blue-800 mb-2">Uniform Convergence</h4>
+                            <p class="text-sm">The convergence rate is independent of $x$.</p>
+                            <p class="text-xs mt-2">$\forall \epsilon > 0 \exists N$ such that $|S_n(x) - S(x)| < \epsilon$ for all $x$ and $n > N$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box mt-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Insight</h4>
+                        <p class="text-sm"><strong>Uniform convergence</strong> is the key that unlocks term-by-term differentiation for infinite series.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Theorems Section -->
+            <section id="theorems" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Essential Theorems for Differentiation</h2>
+                </div>
+
+                <div class="concept-box difficulty-intermediate">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">JEE Advanced 2022</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Must Know</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Theorem 1: Term-by-Term Differentiation</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Formal Statement</h4>
+                        <p>If $f_n(x)$ are differentiable on $[a,b]$ and:</p>
+                        <ol class="list-decimal list-inside mt-2 space-y-1">
+                            <li>$\sum f_n(x_0)$ converges for some $x_0 \in [a,b]$</li>
+                            <li>$\sum f_n'(x)$ converges uniformly on $[a,b]$</li>
+                        </ol>
+                        <p class="mt-2">Then $\sum f_n(x)$ converges uniformly to $f(x)$ and:</p>
+                        <div class="text-center my-3">
+                            $$f'(x) = \sum_{n=1}^\infty f_n'(x)$$
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Application Example</h4>
+                        <p>For $f(x) = \sum_{n=1}^\infty \frac{x^n}{n^2}$ on $|x| \leq 1$:</p>
+                        <div class="step-box text-sm">
+                            <p><strong>Step 1:</strong> Check convergence at $x=1$: $\sum \frac{1}{n^2}$ converges</p>
+                            <p><strong>Step 2:</strong> Check derivative series: $\sum \frac{x^{n-1}}{n}$</p>
+                            <p><strong>Step 3:</strong> For $|x| \leq r < 1$, $\left|\frac{x^{n-1}}{n}\right| \leq \frac{r^{n-1}}{n}$</p>
+                            <p><strong>Step 4:</strong> By M-test, uniform convergence on $|x| \leq r$</p>
+                            <p><strong>Step 5:</strong> Therefore, $f'(x) = \sum_{n=1}^\infty \frac{x^{n-1}}{n}$ for $|x| < 1$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box difficulty-advanced">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Theorem 2: Weierstrass M-Test</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">The Ultimate Convergence Tool</h4>
+                        <p>If $|f_n(x)| \leq M_n$ for all $x$ in domain, and $\sum M_n < \infty$, then $\sum f_n(x)$ converges absolutely and uniformly.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">JEE Advanced Problem</h4>
+                        <p>Show that $f(x) = \sum_{n=1}^\infty \frac{\cos(nx)}{n^3}$ is differentiable for all $x$.</p>
+                        
+                        <div class="step-box text-sm">
+                            <p><strong>Step 1:</strong> Original series: $\left|\frac{\cos(nx)}{n^3}\right| \leq \frac{1}{n^3}$</p>
+                            <p><strong>Step 2:</strong> $\sum \frac{1}{n^3}$ converges ⇒ original series converges uniformly</p>
+                            <p><strong>Step 3:</strong> Derivative series: $\sum -\frac{\sin(nx)}{n^2}$</p>
+                            <p><strong>Step 4:</strong> $\left|\frac{\sin(nx)}{n^2}\right| \leq \frac{1}{n^2}$</p>
+                            <p><strong>Step 5:</strong> $\sum \frac{1}{n^2}$ converges ⇒ derivative series converges uniformly</p>
+                            <p><strong>Step 6:</strong> Therefore, term-by-term differentiation is valid</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Power Series Section -->
+            <section id="power-series" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Power Series - The Special Case</h2>
+                </div>
+
+                <div class="concept-box difficulty-intermediate">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Radius of Convergence Magic</h3>
+                    
+                    <div class="theorem-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Power Series Theorem</h4>
+                        <p>For a power series $f(x) = \sum_{n=0}^\infty a_n x^n$ with radius of convergence $R > 0$:</p>
+                        <ol class="list-decimal list-inside mt-2 space-y-1">
+                            <li>$f(x)$ is differentiable on $(-R, R)$</li>
+                            <li>$f'(x) = \sum_{n=1}^\infty n a_n x^{n-1}$ with the same radius $R$</li>
+                            <li>This can be repeated infinitely many times!</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Classic Example: Exponential Series</h4>
+                        <p>Consider $e^x = \sum_{n=0}^\infty \frac{x^n}{n!}$ with $R = \infty$</p>
+                        
+                        <div class="step-box text-sm">
+                            <p><strong>Differentiation:</strong> $\frac{d}{dx}e^x = \sum_{n=1}^\infty \frac{n x^{n-1}}{n!} = \sum_{n=1}^\infty \frac{x^{n-1}}{(n-1)!}$</p>
+                            <p><strong>Index shift:</strong> Let $m = n-1$: $\sum_{m=0}^\infty \frac{x^m}{m!} = e^x$</p>
+                            <p><strong>Result:</strong> $\frac{d}{dx}e^x = e^x$ ✓</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box difficulty-advanced">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Advanced Power Series Techniques</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">JEE Advanced 2021 Problem</h4>
+                        <p>Find the sum of $\sum_{n=1}^\infty \frac{n^2 x^{n-1}}{2^n}$ for $|x| < 2$</p>
+                        
+                        <div class="step-box text-sm">
+                            <p><strong>Step 1:</strong> Recognize this as a derivative of a known series</p>
+                            <p><strong>Step 2:</strong> Start with $\sum_{n=0}^\infty x^n = \frac{1}{1-x}$ for $|x| < 1$</p>
+                            <p><strong>Step 3:</strong> Replace $x$ with $\frac{x}{2}$: $\sum_{n=0}^\infty \frac{x^n}{2^n} = \frac{1}{1-\frac{x}{2}} = \frac{2}{2-x}$</p>
+                            <p><strong>Step 4:</strong> Differentiate once: $\sum_{n=1}^\infty \frac{n x^{n-1}}{2^n} = \frac{2}{(2-x)^2}$</p>
+                            <p><strong>Step 5:</strong> Differentiate again: $\sum_{n=1}^\infty \frac{n(n-1) x^{n-2}}{2^n} = \frac{4}{(2-x)^3}$</p>
+                            <p><strong>Step 6:</strong> Multiply by $x$ and manipulate to get $n^2$ term</p>
+                            <p><strong>Final Answer:</strong> $\frac{2x+4}{(2-x)^3}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Applications Section -->
+            <section id="applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. JEE Advanced Applications</h2>
+                </div>
+
+                <div class="concept-box difficulty-advanced">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">JEE Advanced 2023</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Difficulty</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem: Differential Equations with Series Solutions</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Solve $y'' + xy = 0$ using power series</h4>
+                        
+                        <div class="step-box text-sm">
+                            <p><strong>Step 1:</strong> Assume $y = \sum_{n=0}^\infty a_n x^n$</p>
+                            <p><strong>Step 2:</strong> Differentiate: $y' = \sum_{n=1}^\infty n a_n x^{n-1}$, $y'' = \sum_{n=2}^\infty n(n-1) a_n x^{n-2}$</p>
+                            <p><strong>Step 3:</strong> Substitute into DE:</p>
+                            <p>$\sum_{n=2}^\infty n(n-1) a_n x^{n-2} + x \sum_{n=0}^\infty a_n x^n = 0$</p>
+                            <p><strong>Step 4:</strong> Adjust indices to match powers:</p>
+                            <p>$\sum_{n=0}^\infty (n+2)(n+1) a_{n+2} x^n + \sum_{n=1}^\infty a_{n-1} x^n = 0$</p>
+                            <p><strong>Step 5:</strong> Solve recurrence relation</p>
+                            <p><strong>Step 6:</strong> Find general solution in series form</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box difficulty-intermediate">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fourier Series Differentiation</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Differentiating Fourier Series</h4>
+                        <p>For $f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty [a_n \cos(nx) + b_n \sin(nx)]$</p>
+                        
+                        <div class="warning-box text-sm mt-3">
+                            <p><strong>⚠️ Warning:</strong> Fourier series can be differentiated term-by-term only if $f(x)$ is continuous and $f'(x)$ is piecewise smooth.</p>
+                        </div>
+
+                        <div class="step-box text-sm">
+                            <p><strong>Valid case:</strong> $f'(x) = \sum_{n=1}^\infty [-n a_n \sin(nx) + n b_n \cos(nx)]$</p>
+                            <p><strong>When valid:</strong> When the differentiated series converges uniformly</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Pitfalls -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">🚨 Common Mistakes to Avoid</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Conceptual Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Assuming term-by-term differentiation always works</li>
+                                <li>Ignoring uniform convergence requirements</li>
+                                <li>Differentiating at boundary points without checking</li>
+                                <li>Confusing pointwise and uniform convergence</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Calculation Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Incorrect index shifting in power series</li>
+                                <li>Mishandling factorial expressions</li>
+                                <li>Forgetting the radius of convergence changes</li>
+                                <li>Errors in recurrence relation solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📚 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">When You CAN Differentiate Term-by-Term</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Power series within radius of convergence</li>
+                                <li>Series with uniform convergence of derivatives</li>
+                                <li>Fourier series of smooth functions</li>
+                                <li>Series satisfying Weierstrass M-test conditions</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Essential Tests to Remember</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Weierstrass M-test:</strong> For uniform convergence</li>
+                                <li><strong>Ratio Test:</strong> For power series radius</li>
+                                <li><strong>Abel's Test:</strong> For uniform convergence</li>
+                                <li><strong>Dirichlet's Test:</strong> For conditional convergence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-level problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Differentiate $f(x) = \sum_{n=1}^\infty \frac{x^n}{n(n+1)}$ and find its closed form.</p>
+                            <div class="text-sm text-gray-600">Hint: Differentiate twice and recognize geometric series</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Show that $\frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}$</p>
+                            <div class="text-sm text-gray-600">Hint: Recognize these as sine and cosine series</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find the interval where term-by-term differentiation is valid for $\sum_{n=1}^\infty \frac{\cos(nx)}{n^2}$</p>
+                            <div class="text-sm text-gray-600">Hint: Use Weierstrass M-test on the derivative series</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastering Infinite Series Differentiation</h3>
+                    <p class="mb-4 opacity-90">You've learned the key concepts that separate JEE Advanced aspirants from the rest</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

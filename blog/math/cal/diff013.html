@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher-Order Derivatives: Mastering the nth Derivative | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master higher-order derivatives and nth derivative formulas for JEE Main & Advanced. Complete guide with patterns, shortcuts, and practice problems.">
+    <meta name="keywords" content="higher order derivatives, nth derivative, JEE calculus, JEE differentiation, Leibniz rule, successive differentiation, JEE math">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .pattern-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Calculus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Advanced Topic</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Higher-Order Derivatives: Mastering the nth Derivative</h1>
+                <p class="text-xl text-gray-600 mb-4">From basic patterns to Leibniz rule - complete guide to finding nth derivatives for JEE success.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5+</div>
+                            <div class="text-sm text-blue-600">Key Patterns</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-6</div>
+                            <div class="text-sm text-blue-600">Marks Guaranteed</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">25min</div>
+                            <div class="text-sm text-blue-600">Mastery Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Higher-Order Derivatives Matter in JEE</h2>
+                <p class="mb-4">Higher-order derivatives appear in <strong>every JEE paper</strong> - from simple pattern recognition to complex Leibniz rule applications. Mastering this topic gives you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>Quick 2-3 marks</strong> in MCQs through pattern recognition</li>
+                    <li><strong>Foundation for Taylor/Maclaurin series</strong> and expansion problems</li>
+                    <li><strong>Edge in integer/numerical answer type questions</strong></li>
+                    <li><strong>Better understanding</strong> of curve behavior and optimization</li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-patterns" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Patterns</a>
+                    <a href="#trigonometric" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Trigonometric</a>
+                    <a href="#exponential" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Exponential</a>
+                    <a href="#leibniz-rule" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Leibniz Rule</a>
+                </div>
+            </div>
+
+            <!-- Basic Patterns -->
+            <section id="basic-patterns" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Fundamental Patterns & Formulas</h2>
+                </div>
+
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="pattern-tag">Power Rule</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Essential</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Polynomial Functions</h3>
+                    
+                    <div class="formula-box">
+                        <p class="font-semibold mb-2">General Formula:</p>
+                        <p>If $f(x) = x^m$, then:</p>
+                        <div class="text-center my-3">
+                            $$ f^{(n)}(x) = \begin{cases}
+                            m(m-1)\cdots(m-n+1)x^{m-n} & \text{if } n \leq m \\
+                            0 & \text{if } n > m
+                            \end{cases} $$
+                        </div>
+                        <p>Using factorial notation:</p>
+                        <div class="text-center my-3">
+                            $$ f^{(n)}(x) = \frac{m!}{(m-n)!}x^{m-n} \quad \text{for } n \leq m $$
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 1:</h4>
+                        <p>Find the 4th derivative of $f(x) = x^5$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> $f^{(4)}(x) = \frac{5!}{(5-4)!}x^{5-4} = \frac{120}{1}x^1 = 120x$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 2:</h4>
+                        <p>Find the 7th derivative of $f(x) = x^3$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> Since $n = 7 > 3 = m$, $f^{(7)}(x) = 0$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="pattern-tag">Exponential Pattern</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Essential</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Exponential Functions</h3>
+                    
+                    <div class="formula-box">
+                        <p class="font-semibold mb-2">Key Formulas:</p>
+                        <div class="space-y-2">
+                            <p>• $f(x) = e^{ax} \Rightarrow f^{(n)}(x) = a^n e^{ax}$</p>
+                            <p>• $f(x) = a^x \Rightarrow f^{(n)}(x) = a^x (\ln a)^n$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example:</h4>
+                        <p>Find the nth derivative of $f(x) = e^{3x}$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> $f^{(n)}(x) = 3^n e^{3x}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trigonometric Functions -->
+            <section id="trigonometric" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Trigonometric Functions Patterns</h2>
+                </div>
+
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="pattern-tag">Sine Pattern</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Must Know</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sine and Cosine Functions</h3>
+                    
+                    <div class="formula-box">
+                        <p class="font-semibold mb-2">General Formulas:</p>
+                        <div class="space-y-2">
+                            <p>• $f(x) = \sin(ax + b) \Rightarrow f^{(n)}(x) = a^n \sin\left(ax + b + \frac{n\pi}{2}\right)$</p>
+                            <p>• $f(x) = \cos(ax + b) \Rightarrow f^{(n)}(x) = a^n \cos\left(ax + b + \frac{n\pi}{2}\right)$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Memory Aid</h4>
+                        <p>Every derivative of sin/cos adds $\frac{\pi}{2}$ to the angle. The pattern cycles every 4 derivatives:</p>
+                        <div class="grid grid-cols-4 gap-2 text-sm mt-2">
+                            <div class="text-center p-2 bg-gray-100 rounded">
+                                <p>$f(x)$</p>
+                                <p>$\sin x$</p>
+                            </div>
+                            <div class="text-center p-2 bg-gray-100 rounded">
+                                <p>$f'(x)$</p>
+                                <p>$\cos x$</p>
+                            </div>
+                            <div class="text-center p-2 bg-gray-100 rounded">
+                                <p>$f''(x)$</p>
+                                <p>$-\sin x$</p>
+                            </div>
+                            <div class="text-center p-2 bg-gray-100 rounded">
+                                <p>$f'''(x)$</p>
+                                <p>$-\cos x$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example:</h4>
+                        <p>Find the 5th derivative of $f(x) = \sin(2x)$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> $f^{(5)}(x) = 2^5 \sin\left(2x + \frac{5\pi}{2}\right) = 32 \sin\left(2x + \frac{\pi}{2}\right) = 32 \cos(2x)$</p>
+                            <p class="text-xs text-gray-600">Note: $\frac{5\pi}{2} = 2\pi + \frac{\pi}{2}$, and $\sin(\theta + 2\pi) = \sin\theta$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exponential and Logarithmic -->
+            <section id="exponential" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Exponential & Logarithmic Patterns</h2>
+                </div>
+
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="pattern-tag">Logarithm Pattern</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Important</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Logarithmic Functions</h3>
+                    
+                    <div class="formula-box">
+                        <p class="font-semibold mb-2">General Formula:</p>
+                        <p>For $f(x) = \ln(ax + b)$:</p>
+                        <div class="text-center my-3">
+                            $$ f^{(n)}(x) = \frac{(-1)^{n-1} a^n (n-1)!}{(ax + b)^n} $$
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example:</h4>
+                        <p>Find the 4th derivative of $f(x) = \ln(2x + 1)$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> $f^{(4)}(x) = \frac{(-1)^{3} \cdot 2^4 \cdot 3!}{(2x + 1)^4} = \frac{-16 \cdot 6}{(2x + 1)^4} = \frac{-96}{(2x + 1)^4}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leibniz Rule -->
+            <section id="leibniz-rule" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Leibniz Rule for Product of Functions</h2>
+                </div>
+
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="pattern-tag">Leibniz Rule</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Product of Two Functions</h3>
+                    
+                    <div class="formula-box">
+                        <p class="font-semibold mb-2">Leibniz Theorem:</p>
+                        <p>If $y = u(x)v(x)$, then:</p>
+                        <div class="text-center my-3">
+                            $$ (uv)^{(n)} = \sum_{r=0}^{n} \binom{n}{r} u^{(r)} v^{(n-r)} $$
+                        </div>
+                        <p>Where $\binom{n}{r} = \frac{n!}{r!(n-r)!}$ is the binomial coefficient.</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Application Strategy</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Choose $u(x)$ as the function whose derivatives become simpler or zero</li>
+                            <li>Choose $v(x)$ as the function whose derivatives follow a known pattern</li>
+                            <li>Look for points where higher derivatives become zero to simplify calculations</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 1:</h4>
+                        <p>Find the 3rd derivative of $f(x) = x^2 e^{3x}$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> Let $u(x) = x^2$, $v(x) = e^{3x}$</p>
+                            <p>Using Leibniz rule:</p>
+                            <p>$(uv)^{(3)} = \binom{3}{0}u^{(0)}v^{(3)} + \binom{3}{1}u^{(1)}v^{(2)} + \binom{3}{2}u^{(2)}v^{(1)} + \binom{3}{3}u^{(3)}v^{(0)}$</p>
+                            <p>Since $u^{(3)}(x) = 0$, we get:</p>
+                            <p>$f^{(3)}(x) = 1 \cdot x^2 \cdot 27e^{3x} + 3 \cdot 2x \cdot 9e^{3x} + 3 \cdot 2 \cdot 3e^{3x}$</p>
+                            <p>$= 27x^2 e^{3x} + 54x e^{3x} + 18 e^{3x}$</p>
+                            <p>$= e^{3x}(27x^2 + 54x + 18)$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 2 (JEE Main):</h4>
+                        <p>If $y = x^3 \sin x$, find $y^{(4)}$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> Let $u(x) = x^3$, $v(x) = \sin x$</p>
+                            <p>Using Leibniz rule for n=4:</p>
+                            <p>Since $u^{(4)}(x) = u^{(5)}(x) = \cdots = 0$, only first 4 terms matter:</p>
+                            <p>$y^{(4)} = \binom{4}{0}u^{(0)}v^{(4)} + \binom{4}{1}u^{(1)}v^{(3)} + \binom{4}{2}u^{(2)}v^{(2)} + \binom{4}{3}u^{(3)}v^{(1)}$</p>
+                            <p>$= 1 \cdot x^3 \cdot \sin(x + 2\pi) + 4 \cdot 3x^2 \cdot \sin(x + \frac{3\pi}{2}) + 6 \cdot 6x \cdot \sin(x + \pi) + 4 \cdot 6 \cdot \sin(x + \frac{\pi}{2})$</p>
+                            <p>$= x^3 \sin x + 12x^2 (-\cos x) + 36x (-\sin x) + 24 \cos x$</p>
+                            <p>$= x^3 \sin x - 12x^2 \cos x - 36x \sin x + 24 \cos x$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Patterns -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Special Patterns & Shortcuts</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reciprocal Functions Pattern</h3>
+                    
+                    <div class="formula-box">
+                        <p class="font-semibold mb-2">Key Formula:</p>
+                        <p>For $f(x) = \frac{1}{ax + b}$:</p>
+                        <div class="text-center my-3">
+                            $$ f^{(n)}(x) = \frac{(-1)^n a^n n!}{(ax + b)^{n+1}} $$
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example:</h4>
+                        <p>Find the 5th derivative of $f(x) = \frac{1}{2x - 1}$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Solution:</strong> $f^{(5)}(x) = \frac{(-1)^5 \cdot 2^5 \cdot 5!}{(2x - 1)^{6}} = \frac{-32 \cdot 120}{(2x - 1)^6} = \frac{-3840}{(2x - 1)^6}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📚 Quick Reference Table</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm bg-white rounded-lg overflow-hidden">
+                            <thead class="bg-green-100">
+                                <tr>
+                                    <th class="p-3 text-left">Function</th>
+                                    <th class="p-3 text-left">nth Derivative Formula</th>
+                                    <th class="p-3 text-left">Key Pattern</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3">$x^m$</td>
+                                    <td class="p-3">$\frac{m!}{(m-n)!}x^{m-n}$</td>
+                                    <td class="p-3">Zero when $n > m$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3">$e^{ax}$</td>
+                                    <td class="p-3">$a^n e^{ax}$</td>
+                                    <td class="p-3">Exponential remains</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3">$\sin(ax+b)$</td>
+                                    <td class="p-3">$a^n \sin(ax+b+\frac{n\pi}{2})$</td>
+                                    <td class="p-3">Phase shift by $\frac{\pi}{2}$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3">$\cos(ax+b)$</td>
+                                    <td class="p-3">$a^n \cos(ax+b+\frac{n\pi}{2})$</td>
+                                    <td class="p-3">Phase shift by $\frac{\pi}{2}$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3">$\ln(ax+b)$</td>
+                                    <td class="p-3">$\frac{(-1)^{n-1}a^n(n-1)!}{(ax+b)^n}$</td>
+                                    <td class="p-3">Alternating sign</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3">$\frac{1}{ax+b}$</td>
+                                    <td class="p-3">$\frac{(-1)^n a^n n!}{(ax+b)^{n+1}}$</td>
+                                    <td class="p-3">Alternating sign</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-level problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border difficulty-easy">
+                            <p class="font-medium mb-2">1. Find the 6th derivative of $f(x) = \sin(3x)$</p>
+                            <div class="text-sm text-gray-600">Difficulty: Easy | Pattern: Trigonometric</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border difficulty-medium">
+                            <p class="font-medium mb-2">2. Using Leibniz rule, find the 4th derivative of $f(x) = x^4 e^{2x}$</p>
+                            <div class="text-sm text-gray-600">Difficulty: Medium | Concept: Leibniz Rule</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border difficulty-hard">
+                            <p class="font-medium mb-2">3. If $y = x^2 \ln(1+x)$, find $y^{(3)}$ at $x=0$</p>
+                            <div class="text-sm text-gray-600">Difficulty: Hard | Concept: Mixed Functions</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Tips -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">💡 JEE Exam Tips</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Time-Saving Strategies:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Memorize the basic patterns for quick recognition</li>
+                                <li>For trigonometric functions, use the phase shift method</li>
+                                <li>In Leibniz rule, identify when higher derivatives become zero</li>
+                                <li>Practice mental calculation for small values of n</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Common Pitfalls:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Forgetting the alternating sign in logarithmic derivatives</li>
+                                <li>Mishandling factorial expressions in power functions</li>
+                                <li>Confusing the phase shift in trigonometric derivatives</li>
+                                <li>Missing the binomial coefficients in Leibniz rule</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Higher-Order Derivatives?</h3>
+                    <p class="mb-4 opacity-90">Practice with 50+ solved examples and mock test questions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems Set
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

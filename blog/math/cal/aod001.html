@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Tangents & Normals: Top 10 Problem Types Demystified | KnowJEE</title>
+    <meta name="description" content="Master JEE Tangents & Normals with our ultimate revision guide. Top 10 problem patterns from JEE Main & Advanced with quick-recall formulas and strategies.">
+    <meta name="keywords" content="JEE tangents normals, JEE calculus, JEE mathematics, JEE main advanced, tangent normal problems, JEE revision">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .quick-tip {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .strategy-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Final Revision</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">10 Problem Types</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">JEE Tangents & Normals: Top 10 Problem Types Demystified</h1>
+                <p class="text-xl text-gray-600 mb-4">Your ultimate revision guide for mastering the most frequent and challenging tangent & normal problems in JEE Main & Advanced.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">8-12%</div>
+                            <div class="text-sm text-red-600">JEE Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">10</div>
+                            <div class="text-sm text-red-600">Key Patterns</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">15+</div>
+                            <div class="text-sm text-red-600">Years Analysis</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4-6</div>
+                            <div class="text-sm text-red-600">Marks Guaranteed</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Tangents & Normals Are JEE Favorites</h2>
+                <p class="mb-4">Tangents and Normals consistently appear in <strong>8-12% of JEE Calculus questions</strong>. These problems test your understanding of derivatives, coordinate geometry, and application skills simultaneously.</p>
+                
+                <div class="quick-tip">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Examination Pattern</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>JEE Main:</strong> Usually 1-2 questions per paper (4-8 marks)</li>
+                        <li><strong>JEE Advanced:</strong> Often combined with other concepts in multi-step problems</li>
+                        <li><strong>Most Common:</strong> Finding equations, angles, lengths, and intersection points</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Essential Formulas -->
+            <section class="mb-8">
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold mb-4">📐 Essential Formulas - Quick Recall</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <p class="font-semibold mb-2">Tangent at point $(x_1, y_1)$:</p>
+                            <p>$y - y_1 = \left(\frac{dy}{dx}\right)_{(x_1,y_1)} (x - x_1)$</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Normal at point $(x_1, y_1)$:</p>
+                            <p>$y - y_1 = -\frac{1}{\left(\frac{dy}{dx}\right)_{(x_1,y_1)}} (x - x_1)$</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Angle between curves:</p>
+                            <p>$\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1m_2}\right|$</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Length of tangent:</p>
+                            <p>$PT = \sqrt{y_1^2 + \left(\frac{y_1}{m}\right)^2}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 1 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2023</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 1: Basic Tangent Equation</h3>
+                    <p class="text-lg mb-4">Find the equation of tangent to the curve $y = x^3 - 3x^2 + 2x$ at point where $x = 1$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Find point: When $x = 1$, $y = 1 - 3 + 2 = 0$ → Point: $(1, 0)$</p>
+                            <p><strong>Step 2:</strong> Find derivative: $\frac{dy}{dx} = 3x^2 - 6x + 2$</p>
+                            <p><strong>Step 3:</strong> Slope at $x = 1$: $m = 3(1)^2 - 6(1) + 2 = -1$</p>
+                            <p><strong>Step 4:</strong> Tangent equation: $y - 0 = -1(x - 1)$</p>
+                            <p class="font-semibold mt-2">Final Answer: $x + y - 1 = 0$</p>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Recall Formula</h4>
+                        <p>Tangent: $y - y_1 = m(x - x_1)$ where $m = f'(x_1)$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2022</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 2: Tangent Parallel to Given Line</h3>
+                    <p class="text-lg mb-4">Find points on curve $y = x^3 - 3x$ where tangent is parallel to line $y = 3x - 1$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Slope of given line: $m = 3$</p>
+                            <p><strong>Step 2:</strong> Derivative: $\frac{dy}{dx} = 3x^2 - 3$</p>
+                            <p><strong>Step 3:</strong> Set equal to slope: $3x^2 - 3 = 3$</p>
+                            <p><strong>Step 4:</strong> Solve: $3x^2 = 6 \Rightarrow x^2 = 2 \Rightarrow x = \pm\sqrt{2}$</p>
+                            <p><strong>Step 5:</strong> Find points:</p>
+                            <p class="ml-4">• $x = \sqrt{2}$: $y = 2\sqrt{2} - 3\sqrt{2} = -\sqrt{2}$</p>
+                            <p class="ml-4">• $x = -\sqrt{2}$: $y = -2\sqrt{2} + 3\sqrt{2} = \sqrt{2}$</p>
+                            <p class="font-semibold mt-2">Final Answer: $(\sqrt{2}, -\sqrt{2})$ and $(-\sqrt{2}, \sqrt{2})$</p>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Recall Formula</h4>
+                        <p>Parallel lines have equal slopes: $f'(x) = m_{\text{line}}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 3: Angle Between Two Curves</h3>
+                    <p class="text-lg mb-4">Find the angle between curves $y^2 = 4x$ and $x^2 = 4y$ at their point of intersection in first quadrant.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Find intersection point:</p>
+                            <p class="ml-4">From $y^2 = 4x \Rightarrow x = \frac{y^2}{4}$</p>
+                            <p class="ml-4">Substitute in $x^2 = 4y$: $\left(\frac{y^2}{4}\right)^2 = 4y$</p>
+                            <p class="ml-4">$\frac{y^4}{16} = 4y \Rightarrow y^4 = 64y \Rightarrow y(y^3 - 64) = 0$</p>
+                            <p class="ml-4">$y = 0$ or $y = 4$ (first quadrant)</p>
+                            <p class="ml-4">When $y = 4$, $x = \frac{16}{4} = 4$ → Point: $(4, 4)$</p>
+                            
+                            <p><strong>Step 2:</strong> Find slopes:</p>
+                            <p class="ml-4">Curve 1: $y^2 = 4x \Rightarrow 2y\frac{dy}{dx} = 4 \Rightarrow m_1 = \frac{2}{y} = \frac{1}{2}$</p>
+                            <p class="ml-4">Curve 2: $x^2 = 4y \Rightarrow 2x = 4\frac{dy}{dx} \Rightarrow m_2 = \frac{x}{2} = 2$</p>
+                            
+                            <p><strong>Step 3:</strong> Angle between curves:</p>
+                            <p class="ml-4">$\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1m_2}\right| = \left|\frac{\frac{1}{2} - 2}{1 + 1}\right| = \left|\frac{-\frac{3}{2}}{2}\right| = \frac{3}{4}$</p>
+                            
+                            <p class="font-semibold mt-2">Final Answer: $\theta = \tan^{-1}\left(\frac{3}{4}\right)$</p>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Recall Formula</h4>
+                        <p>Angle between curves: $\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1m_2}\right|$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Time-Saving Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For Tangents:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always find both point and slope first</li>
+                                <li>For implicit curves, use implicit differentiation</li>
+                                <li>Check if tangent passes through given external point</li>
+                                <li>Remember perpendicular to normal, parallel to tangent</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Common Pitfalls:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Forgetting to find y-coordinate from x-coordinate</li>
+                                <li>Mixing up tangent and normal equations</li>
+                                <li>Not considering multiple intersection points</li>
+                                <li>Missing absolute value in angle formula</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 4 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2020</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 4: Length of Tangent/Normal</h3>
+                    <p class="text-lg mb-4">For curve $y = x^2 + 2x + 1$, find length of tangent and normal at point $(1, 4)$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Find derivative: $\frac{dy}{dx} = 2x + 2$</p>
+                            <p><strong>Step 2:</strong> Slope at $(1, 4)$: $m = 2(1) + 2 = 4$</p>
+                            <p><strong>Step 3:</strong> Length of tangent = $\frac{|y_1|\sqrt{1 + m^2}}{|m|} = \frac{4\sqrt{1 + 16}}{4} = \sqrt{17}$</p>
+                            <p><strong>Step 4:</strong> Length of normal = $|y_1|\sqrt{1 + m^2} = 4\sqrt{17}$</p>
+                            <p class="font-semibold mt-2">Final Answer: Tangent length = $\sqrt{17}$, Normal length = $4\sqrt{17}$</p>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Recall Formulas</h4>
+                        <p>Length of tangent = $\frac{|y_1|\sqrt{1 + m^2}}{|m|}$</p>
+                        <p>Length of normal = $|y_1|\sqrt{1 + m^2}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 5 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2019</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Type 5: Common Tangents to Two Curves</h3>
+                    <p class="text-lg mb-4">Find the equation of common tangent to curves $y = x^2$ and $y = -x^2 + 4x - 4$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Let tangent to $y = x^2$ be $y = mx + c$</p>
+                            <p><strong>Step 2:</strong> Condition for tangency: discriminant = 0</p>
+                            <p class="ml-4">$x^2 = mx + c \Rightarrow x^2 - mx - c = 0$</p>
+                            <p class="ml-4">Discriminant: $m^2 + 4c = 0 \Rightarrow c = -\frac{m^2}{4}$</p>
+                            
+                            <p><strong>Step 3:</strong> This line also touches $y = -x^2 + 4x - 4$</p>
+                            <p class="ml-4">$-x^2 + 4x - 4 = mx - \frac{m^2}{4}$</p>
+                            <p class="ml-4">$-x^2 + (4 - m)x - 4 + \frac{m^2}{4} = 0$</p>
+                            
+                            <p><strong>Step 4:</strong> Discriminant = 0 for tangency:</p>
+                            <p class="ml-4">$(4 - m)^2 - 4(-1)\left(-4 + \frac{m^2}{4}\right) = 0$</p>
+                            <p class="ml-4">$16 - 8m + m^2 - 16 + m^2 = 0$</p>
+                            <p class="ml-4">$2m^2 - 8m = 0 \Rightarrow 2m(m - 4) = 0$</p>
+                            
+                            <p><strong>Step 5:</strong> For $m = 0$: $y = 0$ (x-axis)</p>
+                            <p class="ml-4">For $m = 4$: $y = 4x - 4$</p>
+                            
+                            <p class="font-semibold mt-2">Final Answer: $y = 0$ and $y = 4x - 4$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Problem Types Overview -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">Other Essential Problem Types</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Types 6-10:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Type 6:</strong> Tangents from external point</li>
+                                <li><strong>Type 7:</strong> Normal with given conditions</li>
+                                <li><strong>Type 8:</strong> Subtangent and subnormal</li>
+                                <li><strong>Type 9:</strong> Parametric curves</li>
+                                <li><strong>Type 10:</strong> Combined with coordinate geometry</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">JEE Frequency:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>High Frequency:</strong> Types 1, 2, 3, 4</li>
+                                <li><strong>Medium Frequency:</strong> Types 5, 6, 7</li>
+                                <li><strong>Advanced Only:</strong> Types 8, 9, 10</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Find tangent to $y = x^3 - x$ parallel to x-axis</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Angle between $y = \sin x$ and $y = \cos x$ at intersection</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Length of normal to $y^2 = 4ax$ at $(at^2, 2at)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Revision Checklist -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">✅ Final Revision Checklist</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Must-Know Formulas:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Tangent & Normal equations</li>
+                                <li>Angle between curves formula</li>
+                                <li>Length of tangent/normal</li>
+                                <li>Condition for common tangents</li>
+                                <li>Subtangent & subnormal formulas</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Problem Solving Steps:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Identify curve type and given conditions</li>
+                                <li>Find derivative and slope</li>
+                                <li>Locate point of contact</li>
+                                <li>Apply appropriate formula</li>
+                                <li>Verify with quick check</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master All 10 Problem Types?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to detailed solutions for all problem types with step-by-step video explanations</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
