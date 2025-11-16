@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle in Curve: Classic JEE Geometry Problem | KnowJEE</title>
+    <meta name="description" content="Master the classic 'Rectangle in a Curve' JEE problem and its variants. Learn coordinate geometry optimization techniques with step-by-step solutions.">
+    <meta name="keywords" content="JEE rectangle in curve, JEE coordinate geometry, JEE optimization problems, maximum area rectangle, JEE advanced geometry">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .variant-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .visual-box {
+            background: #eff6ff;
+            border: 2px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Coordinate Geometry Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Coordinate Geometry</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">5 Variants</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Rectangle in a Curve: A Classic JEE Problem (and its many variants)</h1>
+                <p class="text-xl text-gray-600 mb-4">Master optimization in coordinate geometry with this fundamental problem type that appears in various forms across JEE Main and Advanced.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8+</div>
+                            <div class="text-sm text-blue-600">Years in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">6-8</div>
+                            <div class="text-sm text-blue-600">Marks Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Key Variants</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">95%</div>
+                            <div class="text-sm text-blue-600">Concept Reuse</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Problem is a JEE Favorite</h2>
+                <p class="mb-4">The "rectangle in a curve" problem beautifully combines <strong>coordinate geometry, calculus optimization, and algebraic manipulation</strong> - making it perfect for testing multiple mathematical skills in a single question.</p>
+                
+                <div class="visual-box">
+                    <h4 class="font-semibold text-blue-800 mb-3">📐 Visualizing the Classic Problem</h4>
+                    <div class="bg-white p-4 rounded-lg inline-block border">
+                        <div class="text-sm text-gray-600 mb-2">Rectangle inscribed in parabola y = ax² + bx + c</div>
+                        <div class="w-64 h-32 bg-gradient-to-b from-blue-100 to-blue-200 rounded-t-lg border border-blue-300 mx-auto relative">
+                            <div class="absolute bottom-0 left-1/4 w-32 h-16 bg-yellow-200 border border-yellow-400 rounded-sm"></div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">Find rectangle with maximum area that fits under the curve</p>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Significance</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Appears in <strong>JEE Main 2016, 2018, 2021</strong> and <strong>JEE Advanced 2015, 2019</strong></li>
+                        <li>Tests <strong>application of derivatives</strong> in geometric contexts</li>
+                        <li>Perfect for <strong>multi-concept questions</strong> worth 4-8 marks</li>
+                        <li>Foundation for more complex <strong>optimization problems</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Problem Variants Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+                    <a href="#classic" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Classic Parabola</a>
+                    <a href="#ellipse" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Ellipse Variant</a>
+                    <a href="#triangle" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Triangle Base</a>
+                    <a href="#exponential" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Exponential Curve</a>
+                    <a href="#trigonometric" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Trigonometric</a>
+                </div>
+            </div>
+
+            <!-- Classic Problem -->
+            <section id="classic" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2021</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Variant 1: The Classic Parabola Problem</h3>
+                    <p class="text-lg mb-4">Find the area of the largest rectangle that can be inscribed in the parabola $y = 12 - x^2$ with its base on the x-axis.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Define Variables</h5>
+                            <p>Let the rectangle have vertices at $(x, 0)$, $(-x, 0)$, $(x, 12-x^2)$, $(-x, 12-x^2)$</p>
+                            <p>Width = $2x$, Height = $12 - x^2$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Area Function</h5>
+                            <p>Area $A(x) = \text{width} \times \text{height} = 2x(12 - x^2) = 24x - 2x^3$</p>
+                            <p>Domain: $0 \leq x \leq \sqrt{12}$ (since height must be non-negative)</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Find Critical Points</h5>
+                            <p>$A'(x) = 24 - 6x^2 = 0$</p>
+                            <p>$6x^2 = 24 \Rightarrow x^2 = 4 \Rightarrow x = 2$ (positive root)</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Verify Maximum</h5>
+                            <p>$A''(x) = -12x$</p>
+                            <p>$A''(2) = -24 < 0$ ⇒ Maximum at $x = 2$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 5: Calculate Maximum Area</h5>
+                            <p>$A(2) = 24(2) - 2(2)^3 = 48 - 16 = 32$</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mt-4">
+                            <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                            <p class="font-semibold">Maximum Area = $32$ square units</p>
+                            <p class="text-sm text-green-700 mt-1">Dimensions: Width = 4 units, Height = 8 units</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Key Insight</h4>
+                        <p class="text-sm">For symmetric curves like parabolas centered on y-axis, the maximum area rectangle is always symmetric about the y-axis. This reduces the problem to a single-variable optimization.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ellipse Variant -->
+            <section id="ellipse" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2019</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Variant 2: Rectangle in an Ellipse</h3>
+                    <p class="text-lg mb-4">Find the maximum area of a rectangle inscribed in the ellipse $\frac{x^2}{16} + \frac{y^2}{9} = 1$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Parameterize the Ellipse</h5>
+                            <p>Let vertex of rectangle in first quadrant be $(4\cos\theta, 3\sin\theta)$</p>
+                            <p>Due to symmetry, rectangle vertices: $(\pm4\cos\theta, \pm3\sin\theta)$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Area Function</h5>
+                            <p>Width = $8\cos\theta$, Height = $6\sin\theta$</p>
+                            <p>Area $A(\theta) = 48\cos\theta\sin\theta = 24\sin(2\theta)$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Optimization</h5>
+                            <p>$A(\theta) = 24\sin(2\theta)$ is maximum when $\sin(2\theta) = 1$</p>
+                            <p>$\Rightarrow 2\theta = \frac{\pi}{2} \Rightarrow \theta = \frac{\pi}{4}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Maximum Area</h5>
+                            <p>$A_{\text{max}} = 24\sin\left(2\cdot\frac{\pi}{4}\right) = 24\sin\left(\frac{\pi}{2}\right) = 24$</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mt-4">
+                            <h4 class="font-semibold text-green-800 mb-2">Final Answer</h4>
+                            <p class="font-semibold">Maximum Area = $24$ square units</p>
+                            <p class="text-sm text-green-700 mt-1">Dimensions: Width = $4\sqrt{2}$, Height = $3\sqrt{2}$</p>
+                        </div>
+                    </div>
+
+                    <div class="variant-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">🔄 Related Variant</h4>
+                        <p class="text-sm mb-2"><strong>Rectangle with sides parallel to axes:</strong> Let vertices be $(x, y)$ in first quadrant, then area $A = 4xy$ with constraint $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$.</p>
+                        <p class="text-sm">Using AM-GM: $\frac{x^2}{a^2} + \frac{y^2}{b^2} \geq 2\frac{xy}{ab} \Rightarrow xy \leq \frac{ab}{2} \Rightarrow A_{\text{max}} = 2ab$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Triangle Base Variant -->
+            <section id="triangle" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2018</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Variant 3: Rectangle in Right Triangle</h3>
+                    <p class="text-lg mb-4">Find the maximum area of a rectangle inscribed in a right triangle with legs of lengths 6 and 8 units, with one side of rectangle along the hypotenuse.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Set Up Coordinate System</h5>
+                            <p>Place right angle at origin: vertices at (0,0), (6,0), (0,8)</p>
+                            <p>Hypotenuse equation: $\frac{x}{6} + \frac{y}{8} = 1$ or $4x + 3y = 24$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Define Rectangle Position</h5>
+                            <p>Let rectangle have vertices at (x,0), (6,0), (x,y), (6,y) with (x,y) on hypotenuse</p>
+                            <p>From hypotenuse: $4x + 3y = 24 \Rightarrow y = 8 - \frac{4}{3}x$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Area Function</h5>
+                            <p>Width = $6 - x$, Height = $y = 8 - \frac{4}{3}x$</p>
+                            <p>Area $A(x) = (6-x)\left(8 - \frac{4}{3}x\right)$</p>
+                            <p>$A(x) = 48 - 8x - 8x + \frac{4}{3}x^2 = 48 - 16x + \frac{4}{3}x^2$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Find Critical Point</h5>
+                            <p>$A'(x) = -16 + \frac{8}{3}x = 0$</p>
+                            <p>$\frac{8}{3}x = 16 \Rightarrow x = 6$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 5: Check Endpoints</h5>
+                            <p>$A(0) = 48$, $A(6) = 0$</p>
+                            <p>Maximum at $x = 0$? But this gives degenerate rectangle.</p>
+                            <p>Actually, need to check if vertex lies within triangle boundaries.</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mt-4">
+                            <h4 class="font-semibold text-yellow-800 mb-2">Important Note</h4>
+                            <p class="text-sm">This variant requires careful boundary analysis. The maximum occurs when the rectangle touches all three sides of the triangle.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Solving Framework -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🔧 Universal Problem-Solving Framework</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Step-by-Step Approach</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-sm">
+                                <li><strong>Visualize & Set Coordinates:</strong> Place the curve in convenient position</li>
+                                <li><strong>Define Variables:</strong> Choose parameters for rectangle position/size</li>
+                                <li><strong>Area Function:</strong> Express area in terms of your variables</li>
+                                <li><strong>Constraints:</strong> Incorporate curve equation as constraint</li>
+                                <li><strong>Optimize:</strong> Use calculus or AM-GM inequality</li>
+                                <li><strong>Verify:</strong> Check boundaries and second derivative</li>
+                            </ol>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Common Optimization Techniques</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Calculus:</strong> Derivatives for critical points</li>
+                                <li><strong>AM-GM Inequality:</strong> For product maximization</li>
+                                <li><strong>Trigonometric Substitution:</strong> For ellipses and circles</li>
+                                <li><strong>Symmetry Arguments:</strong> Reduce variables</li>
+                                <li><strong>Boundary Analysis:</strong> Check edge cases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Practice -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">⚡ Quick Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these variations:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Maximum area rectangle in semicircle $y = \sqrt{4 - x^2}$</p>
+                            <div class="text-sm text-gray-600">Hint: Use symmetry and trigonometric substitution</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Rectangle under curve $y = e^{-x}$ with one vertex at origin</p>
+                            <div class="text-sm text-gray-600">Hint: One side on x-axis, other on y-axis</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Maximum perimeter rectangle in ellipse $\frac{x^2}{25} + \frac{y^2}{16} = 1$</p>
+                            <div class="text-sm text-gray-600">Hint: Perimeter = 2(width + height), use parameterization</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Tips -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Time Management</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>5-7 minutes</strong> for standard variants</li>
+                                <li>Recognize symmetry to reduce variables quickly</li>
+                                <li>Use AM-GM when possible (faster than calculus)</li>
+                                <li>If stuck, try specific positions (corners, center)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Common Pitfalls</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Forgetting to check boundary conditions</li>
+                                <li>Missing symmetry that simplifies the problem</li>
+                                <li>Incorrect constraint equations</li>
+                                <li>Not verifying maximum vs minimum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Rectangle in Curve Problems?</h3>
+                    <p class="mb-4 opacity-90">You've learned one of the most reusable problem-solving frameworks in JEE mathematics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-coordinate-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Coordinate Geometry
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Problem Set
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

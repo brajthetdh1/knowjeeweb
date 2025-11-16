@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Edition: Maximizing Areas & Minimizing Perimeters | JEE Optimization | KnowJEE</title>
+    <meta name="description" content="Master JEE geometry optimization problems - maximize areas and minimize perimeters with calculus and AM-GM inequality. Complete guide with solved examples.">
+    <meta name="keywords" content="JEE geometry optimization, maximize area minimize perimeter, calculus optimization, AM-GM inequality, JEE geometry problems">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #f0f9ff;
+            border: 2px solid #7dd3fc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #e0f2fe;
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .method-calculus { border-left: 4px solid #3b82f6; }
+        .method-amgm { border-left: 4px solid #8b5cf6; }
+        .method-geometry { border-left: 4px solid #f59e0b; }
+        .year-tag {
+            background: #0369a1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .key-concept {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Geometry Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Geometry Optimization</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">5 Core Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Geometry Edition: Maximizing Areas and Minimizing Perimeters</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of geometric optimization using calculus and AM-GM inequality for JEE success.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Methods Covered</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">25min</div>
+                            <div class="text-sm text-blue-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Geometric Optimization Matters in JEE</h2>
+                <p class="mb-4">Geometric optimization problems appear in <strong>every JEE Main and Advanced paper</strong>. These problems test your ability to apply calculus and inequalities to real geometric situations. Mastering this topic can earn you <strong>4-8 guaranteed marks</strong>.</p>
+                
+                <div class="key-concept">
+                    <h4 class="font-semibold text-orange-800 mb-2">🎯 Key Insight</h4>
+                    <p>For a given perimeter, the <strong>circle has maximum area</strong>. For a given area, the <strong>circle has minimum perimeter</strong>. Among all quadrilaterals with given perimeter, the <strong>square has maximum area</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Problem Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+                    <a href="#problem1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Rectangle Area</a>
+                    <a href="#problem2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Triangle Perimeter</a>
+                    <a href="#problem3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Cylinder Volume</a>
+                    <a href="#problem4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Window Design</a>
+                    <a href="#problem5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Fencing Problem</a>
+                </div>
+            </div>
+
+            <!-- Method Overview -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Three Powerful Optimization Methods</h2>
+                
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg border border-blue-200">
+                        <h4 class="font-semibold text-blue-800 mb-2">📐 Calculus Method</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Formulate function to optimize</li>
+                            <li>Find derivative</li>
+                            <li>Set derivative = 0</li>
+                            <li>Verify maximum/minimum</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg border border-purple-200">
+                        <h4 class="font-semibold text-purple-800 mb-2">⚖️ AM-GM Inequality</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For positive numbers</li>
+                            <li>AM ≥ GM always</li>
+                            <li>Equality when all equal</li>
+                            <li>Perfect for fixed sums</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg border border-orange-200">
+                        <h4 class="font-semibold text-orange-800 mb-2">📏 Geometric Insight</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Circle for max area/min perimeter</li>
+                            <li>Square among quadrilaterals</li>
+                            <li>Equilateral triangle among triangles</li>
+                            <li>Symmetry principles</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 1 -->
+            <section id="problem1" class="mb-8">
+                <div class="problem-box method-calculus">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2023</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Calculus Method</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Maximum Area Rectangle with Fixed Perimeter</h3>
+                    <p class="text-lg mb-4">Find the rectangle of maximum area that has a fixed perimeter P.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Using Calculus:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Define Variables</h5>
+                            <p>Let length = $x$, width = $y$</p>
+                            <p>Perimeter: $2x + 2y = P \Rightarrow y = \frac{P}{2} - x$</p>
+                            <p>Area: $A = xy = x\left(\frac{P}{2} - x\right)$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Formulate Function</h5>
+                            <p>$$A(x) = \frac{P}{2}x - x^2$$</p>
+                            <p>Domain: $0 < x < \frac{P}{2}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Find Critical Points</h5>
+                            <p>$$\frac{dA}{dx} = \frac{P}{2} - 2x$$</p>
+                            <p>Set derivative = 0: $\frac{P}{2} - 2x = 0 \Rightarrow x = \frac{P}{4}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Verify Maximum</h5>
+                            <p>$$\frac{d^2A}{dx^2} = -2 < 0$$</p>
+                            <p>Negative second derivative confirms maximum</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 5: Find Dimensions</h5>
+                            <p>$$x = \frac{P}{4}, \quad y = \frac{P}{2} - \frac{P}{4} = \frac{P}{4}$$</p>
+                            <p>Maximum area occurs when length = width = $\frac{P}{4}$</p>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">✅ Maximum Area Rectangle is a SQUARE with side $\frac{P}{4}$</p>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Alternative: AM-GM Method</h4>
+                        <p>For fixed sum $x + y = \frac{P}{2}$ (constant), product $xy$ is maximum when $x = y$</p>
+                        <p>By AM-GM: $\frac{x + y}{2} \geq \sqrt{xy} \Rightarrow xy \leq \left(\frac{x + y}{2}\right)^2$</p>
+                        <p>Equality when $x = y = \frac{P}{4}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section id="problem2" class="mb-8">
+                <div class="problem-box method-amgm">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2022</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">AM-GM Method</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Minimum Perimeter Triangle with Fixed Area</h3>
+                    <p class="text-lg mb-4">Among all triangles with fixed area A, which one has minimum perimeter?</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Using AM-GM Inequality:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Heron's Formula</h5>
+                            <p>Area $A = \sqrt{s(s-a)(s-b)(s-c)}$ where $s = \frac{a+b+c}{2}$</p>
+                            <p>Perimeter $P = 2s$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Apply AM-GM</h5>
+                            <p>For positive numbers $(s-a), (s-b), (s-c)$:</p>
+                            <p>$$\frac{(s-a)+(s-b)+(s-c)}{3} \geq \sqrt[3]{(s-a)(s-b)(s-c)}$$</p>
+                            <p>But $(s-a)+(s-b)+(s-c) = 3s - (a+b+c) = 3s - 2s = s$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Simplify Inequality</h5>
+                            <p>$$\frac{s}{3} \geq \sqrt[3]{(s-a)(s-b)(s-c)}$$</p>
+                            <p>Cube both sides: $\frac{s^3}{27} \geq (s-a)(s-b)(s-c)$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Relate to Area</h5>
+                            <p>From Heron: $A^2 = s(s-a)(s-b)(s-c)$</p>
+                            <p>So $(s-a)(s-b)(s-c) = \frac{A^2}{s}$</p>
+                            <p>Substitute: $\frac{s^3}{27} \geq \frac{A^2}{s}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 5: Find Minimum Perimeter</h5>
+                            <p>$$\frac{s^4}{27} \geq A^2 \Rightarrow s^4 \geq 27A^2$$</p>
+                            <p>$$s \geq \sqrt{3\sqrt{3}A}$$</p>
+                            <p>Minimum perimeter $P = 2s = 2\sqrt{3\sqrt{3}A}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 6: Equality Condition</h5>
+                            <p>Equality in AM-GM occurs when $s-a = s-b = s-c$</p>
+                            <p>This implies $a = b = c$</p>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">✅ Minimum Perimeter Triangle is EQUILATERAL with side $\frac{2}{\sqrt{3}}\sqrt{A\sqrt{3}}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section id="problem3" class="mb-8">
+                <div class="problem-box method-calculus">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Calculus Method</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Maximum Volume Cylinder in a Sphere</h3>
+                    <p class="text-lg mb-4">Find the right circular cylinder of maximum volume that can be inscribed in a sphere of radius R.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Using Calculus:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Define Variables</h5>
+                            <p>Let cylinder radius = $r$, height = $h$</p>
+                            <p>From sphere geometry: $r^2 + \left(\frac{h}{2}\right)^2 = R^2$</p>
+                            <p>So $r^2 = R^2 - \frac{h^2}{4}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Volume Function</h5>
+                            <p>Cylinder volume: $V = \pi r^2 h = \pi\left(R^2 - \frac{h^2}{4}\right)h$</p>
+                            <p>$$V(h) = \pi R^2 h - \frac{\pi}{4}h^3$$</p>
+                            <p>Domain: $0 < h < 2R$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Find Critical Points</h5>
+                            <p>$$\frac{dV}{dh} = \pi R^2 - \frac{3\pi}{4}h^2$$</p>
+                            <p>Set derivative = 0: $\pi R^2 - \frac{3\pi}{4}h^2 = 0$</p>
+                            <p>$$h^2 = \frac{4R^2}{3} \Rightarrow h = \frac{2R}{\sqrt{3}}$$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Find Radius</h5>
+                            <p>$$r^2 = R^2 - \frac{h^2}{4} = R^2 - \frac{R^2}{3} = \frac{2R^2}{3}$$</p>
+                            <p>$$r = R\sqrt{\frac{2}{3}}$$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 5: Maximum Volume</h5>
+                            <p>$$V_{max} = \pi r^2 h = \pi\left(\frac{2R^2}{3}\right)\left(\frac{2R}{\sqrt{3}}\right) = \frac{4\pi R^3}{3\sqrt{3}}$$</p>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">✅ Maximum Volume Cylinder has height $\frac{2R}{\sqrt{3}}$ and radius $R\sqrt{\frac{2}{3}}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Optimization Formulas</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Maximum Area Problems</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Fixed Perimeter:</strong> Circle > Square > Rectangle</li>
+                                <li><strong>Rectangle:</strong> Square with side $P/4$</li>
+                                <li><strong>Triangle:</strong> Equilateral triangle</li>
+                                <li><strong>n-gon:</strong> Regular n-gon</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Minimum Perimeter Problems</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Fixed Area:</strong> Circle < Square < Rectangle</li>
+                                <li><strong>Rectangle:</strong> Square with side $\sqrt{A}$</li>
+                                <li><strong>Triangle:</strong> Equilateral triangle</li>
+                                <li><strong>General:</strong> Most symmetric shape</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded border">
+                        <p class="text-sm font-semibold">🎯 Golden Rule: For fixed perimeter, the most symmetrical shape has maximum area. For fixed area, the most symmetrical shape has minimum perimeter.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 4 -->
+            <section id="problem4" class="mb-8">
+                <div class="problem-box method-calculus">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2020</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Calculus Method</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 4: Optimal Window Design</h3>
+                    <p class="text-lg mb-4">A window is in the shape of a rectangle surmounted by a semicircle. If the perimeter is fixed as P, find the dimensions for maximum area.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Using Calculus:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Define Variables</h5>
+                            <p>Let rectangle width = $2r$ (also diameter of semicircle)</p>
+                            <p>Let rectangle height = $h$</p>
+                            <p>Semicircle radius = $r$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Perimeter Constraint</h5>
+                            <p>Perimeter = Rectangle sides + Semicircle arc</p>
+                            <p>$P = 2h + 2r + \pi r$ (two vertical sides + bottom + semicircle)</p>
+                            <p>So $h = \frac{P - 2r - \pi r}{2} = \frac{P - r(2 + \pi)}{2}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Area Function</h5>
+                            <p>Area = Rectangle area + Semicircle area</p>
+                            <p>$A = 2rh + \frac{1}{2}\pi r^2$</p>
+                            <p>Substitute h: $A(r) = 2r\left[\frac{P - r(2 + \pi)}{2}\right] + \frac{1}{2}\pi r^2$</p>
+                            <p>$A(r) = Pr - (2 + \pi)r^2 + \frac{\pi}{2}r^2 = Pr - \left(2 + \frac{\pi}{2}\right)r^2$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Optimize</h5>
+                            <p>$\frac{dA}{dr} = P - 2\left(2 + \frac{\pi}{2}\right)r = P - (4 + \pi)r$</p>
+                            <p>Set derivative = 0: $P - (4 + \pi)r = 0 \Rightarrow r = \frac{P}{4 + \pi}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 5: Find Height</h5>
+                            <p>$h = \frac{P - \frac{P}{4 + \pi}(2 + \pi)}{2} = \frac{P\left(1 - \frac{2 + \pi}{4 + \pi}\right)}{2}$</p>
+                            <p>$h = \frac{P}{2}\left(\frac{4 + \pi - 2 - \pi}{4 + \pi}\right) = \frac{P}{2}\left(\frac{2}{4 + \pi}\right) = \frac{P}{4 + \pi}$</p>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">✅ Optimal dimensions: $h = r = \frac{P}{4 + \pi}$, width = $2r = \frac{2P}{4 + \pi}$</p>
+                        <p class="text-sm mt-2">Interesting: The rectangle becomes a square when the semicircle is added!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 5 -->
+            <section id="problem5" class="mb-8">
+                <div class="problem-box method-amgm">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2019</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">AM-GM Method</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 5: Minimum Fencing Cost</h3>
+                    <p class="text-lg mb-4">A rectangular field is to be fenced along a straight river (no fencing needed). If fencing costs ₹10/m and the area must be 1800 m², find dimensions for minimum cost.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Using AM-GM:</h4>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 1: Define Variables</h5>
+                            <p>Let length parallel to river = $x$</p>
+                            <p>Let width perpendicular to river = $y$</p>
+                            <p>Area: $xy = 1800 \Rightarrow y = \frac{1800}{x}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 2: Fencing Cost</h5>
+                            <p>Fencing needed: $x + 2y$ (one length + two widths)</p>
+                            <p>Cost $C = 10(x + 2y) = 10x + 20y$</p>
+                            <p>Substitute y: $C(x) = 10x + 20\left(\frac{1800}{x}\right) = 10x + \frac{36000}{x}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 3: Apply AM-GM</h5>
+                            <p>We need to minimize $10x + \frac{36000}{x}$ for $x > 0$</p>
+                            <p>By AM-GM: $\frac{10x + \frac{36000}{x}}{2} \geq \sqrt{10x \cdot \frac{36000}{x}}$</p>
+                            <p>$\frac{C}{2} \geq \sqrt{360000} = 600$</p>
+                            <p>So $C \geq 1200$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 4: Equality Condition</h5>
+                            <p>Equality in AM-GM when $10x = \frac{36000}{x}$</p>
+                            <p>$10x^2 = 36000 \Rightarrow x^2 = 3600 \Rightarrow x = 60$</p>
+                            <p>Then $y = \frac{1800}{60} = 30$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h5 class="font-semibold text-gray-700 mb-2">Step 5: Verify</h5>
+                            <p>Dimensions: $x = 60$ m, $y = 30$ m</p>
+                            <p>Fencing: $60 + 2(30) = 120$ m</p>
+                            <p>Minimum cost: $120 \times 10 = ₹1200$</p>
+                        </div>
+                        
+                        <p class="mt-3 font-semibold">✅ Minimum cost dimensions: 60 m parallel to river, 30 m perpendicular</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy Section -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 JEE Problem Solving Strategy</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">When to Use Calculus</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Complex geometric constraints</li>
+                                <li>Multiple variables involved</li>
+                                <li>When AM-GM doesn't apply directly</li>
+                                <li>When you need exact numerical values</li>
+                                <li>For verification of results</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">When to Use AM-GM</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Sum of variables is constant</li>
+                                <li>Product needs to be maximized</li>
+                                <li>All variables are positive</li>
+                                <li>Quick mental calculations needed</li>
+                                <li>For elegant, conceptual solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded border">
+                        <p class="text-sm"><strong>Pro Tip:</strong> In JEE, always try AM-GM first - it's faster and more elegant. Use calculus when AM-GM doesn't work or for verification.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">📝 Test Your Understanding</h3>
+                    <p class="mb-4">Try these optimization problems using the methods you've learned:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Find the maximum area of a right triangle with hypotenuse 10 cm.</p>
+                            <div class="text-sm text-gray-600">Hint: Use both calculus and AM-GM methods</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. A closed cylindrical can must contain 1 liter. Find dimensions for minimum surface area.</p>
+                            <div class="text-sm text-gray-600">Hint: Volume fixed, minimize surface area</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find the rectangle of maximum area that can be inscribed in a circle of radius R.</p>
+                            <div class="text-sm text-gray-600">Hint: What special rectangle gives maximum area?</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Geometric Optimization?</h3>
+                    <p class="mb-4 opacity-90">You're now equipped to tackle any JEE optimization problem with confidence!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-geometry-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Geometry Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
