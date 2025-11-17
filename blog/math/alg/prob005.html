@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Distribution: Success/Failure Model | Probability Theory | KnowJEE</title>
+    <meta name="description" content="Master the Binomial Distribution - the fundamental probability model for success/failure experiments. Essential for JEE probability questions and real-world applications.">
+    <meta name="keywords" content="binomial distribution, probability theory, JEE probability, success failure model, Bernoulli trials, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .jee-tip {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .real-world {
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .interactive-demo {
+            background: #fff7ed;
+            border: 2px solid #fdba74;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Probability Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Probability Theory</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential for JEE</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Binomial Distribution: A Model for Success/Failure</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the fundamental probability distribution that models yes/no, success/failure, and pass/fail scenarios - crucial for JEE probability questions.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5-8%</div>
+                            <div class="text-sm text-blue-600">JEE Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Key Parameters</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Real Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4</div>
+                            <div class="text-sm text-blue-600">Must-Know Formulas</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What is Binomial Distribution?</h2>
+                <p class="mb-4">The <strong>Binomial Distribution</strong> is one of the most important probability distributions in statistics and mathematics. It models experiments with exactly two possible outcomes - commonly called <strong>"success"</strong> and <strong>"failure"</strong>.</p>
+                
+                <div class="real-world">
+                    <h4 class="font-semibold text-purple-800 mb-3">🌍 Real-World Binomial Scenarios</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <strong>Coin Tosses:</strong><br>
+                            Heads vs Tails
+                        </div>
+                        <div>
+                            <strong>Exam Questions:</strong><br>
+                            Correct vs Incorrect
+                        </div>
+                        <div>
+                            <strong>Quality Control:</strong><br>
+                            Defective vs Non-defective
+                        </div>
+                        <div>
+                            <strong>Medical Tests:</strong><br>
+                            Positive vs Negative
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jee-tip">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Relevance</h4>
+                    <p>Binomial distribution appears in <strong>2-3 questions per JEE paper</strong>. Understanding it helps in:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Probability word problems</li>
+                        <li>Statistics and data interpretation</li>
+                        <li>Combinatorics applications</li>
+                        <li>Real-world modeling questions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Bernoulli Trials -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Bernoulli Trials - The Foundation</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bernoulli Trial Definition</h3>
+                    <p class="mb-4">A <strong>Bernoulli Trial</strong> is a random experiment with exactly two possible outcomes. For a sequence of trials to be binomial, they must satisfy:</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-4">
+                        <div class="bg-green-50 p-3 rounded text-center">
+                            <div class="text-2xl mb-2">①</div>
+                            <strong>Fixed Trials</strong><br>
+                            <span class="text-sm">Number of trials (n) is fixed</span>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded text-center">
+                            <div class="text-2xl mb-2">②</div>
+                            <strong>Independent</strong><br>
+                            <span class="text-sm">Trials don't affect each other</span>
+                        </div>
+                        <div class="bg-purple-50 p-3 rounded text-center">
+                            <div class="text-2xl mb-2">③</div>
+                            <strong>Constant Probability</strong><br>
+                            <span class="text-sm">Same success probability (p) each trial</span>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Coin Toss Experiment</h4>
+                        <p><strong>Situation:</strong> Toss a fair coin 10 times</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li><strong>Fixed trials:</strong> n = 10 tosses</li>
+                            <li><strong>Independent:</strong> One toss doesn't affect another</li>
+                            <li><strong>Constant probability:</strong> p = 0.5 for heads each time</li>
+                        </ul>
+                        <p class="mt-2 font-semibold">✓ This is a binomial experiment!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Binomial Formula -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Binomial Probability Formula</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Core Formula</h3>
+                    
+                    <div class="formula-box text-center">
+                        <h4 class="font-semibold text-blue-800 mb-2">Binomial Probability Mass Function</h4>
+                        <div class="text-2xl my-4">
+                            $$ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} $$
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-4 mt-4 text-sm">
+                        <div class="text-center">
+                            <div class="font-semibold">P(X = k)</div>
+                            <div>Probability of exactly k successes</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-semibold">$\binom{n}{k}$</div>
+                            <div>Combinations: $\frac{n!}{k!(n-k)!}$</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-semibold">$p^k$</div>
+                            <div>Probability of k successes</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-semibold">$(1-p)^{n-k}$</div>
+                            <div>Probability of (n-k) failures</div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example Calculation</h4>
+                        <p><strong>Problem:</strong> What's the probability of getting exactly 7 heads in 10 coin tosses?</p>
+                        <div class="space-y-2 mt-2">
+                            <p><strong>Given:</strong> n = 10, k = 7, p = 0.5</p>
+                            <p><strong>Calculation:</strong></p>
+                            <div class="ml-4">
+                                <p>$P(X = 7) = \binom{10}{7} (0.5)^7 (0.5)^{3}$</p>
+                                <p>$= 120 \times (0.5)^{10}$</p>
+                                <p>$= 120 \times 0.0009765625$</p>
+                                <p>$= 0.1171875$</p>
+                            </div>
+                            <p class="font-semibold">Answer: Approximately 11.72%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parameters and Properties -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Key Parameters and Properties</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Three Pillars of Binomial Distribution</h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-red-50 p-4 rounded text-center">
+                            <h4 class="font-semibold text-red-800 mb-2">n</h4>
+                            <p><strong>Number of Trials</strong></p>
+                            <p class="text-sm mt-2">Fixed positive integer<br>Determines distribution width</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded text-center">
+                            <h4 class="font-semibold text-green-800 mb-2">p</h4>
+                            <p><strong>Success Probability</strong></p>
+                            <p class="text-sm mt-2">0 ≤ p ≤ 1<br>Determines distribution skew</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded text-center">
+                            <h4 class="font-semibold text-blue-800 mb-2">q = 1-p</h4>
+                            <p><strong>Failure Probability</strong></p>
+                            <p class="text-sm mt-2">Complement of p<br>q = 1 - p</p>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Properties</h4>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Mean (Expected Value):</strong></p>
+                                <div class="text-center my-2">$$ \mu = E[X] = np $$</div>
+                            </div>
+                            <div>
+                                <p><strong>Variance:</strong></p>
+                                <div class="text-center my-2">$$ \sigma^2 = np(1-p) $$</div>
+                            </div>
+                            <div>
+                                <p><strong>Standard Deviation:</strong></p>
+                                <div class="text-center my-2">$$ \sigma = \sqrt{np(1-p)} $$</div>
+                            </div>
+                            <div>
+                                <p><strong>Mode:</strong></p>
+                                <div class="text-center my-2">$$ \lfloor (n+1)p \rfloor $$</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jee-tip">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Memory Aid</h4>
+                        <p><strong>"Mean = n×p, Variance = n×p×q"</strong> - This appears frequently in JEE questions!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Demo -->
+            <section class="mb-8">
+                <div class="interactive-demo">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">🎮 Binomial Distribution Explorer</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Number of Trials (n)</label>
+                                <input type="range" min="5" max="20" value="10" class="w-full" id="nSlider">
+                                <div class="text-center text-sm" id="nValue">n = 10</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Success Probability (p)</label>
+                                <input type="range" min="0" max="100" value="50" class="w-full" id="pSlider">
+                                <div class="text-center text-sm" id="pValue">p = 0.50</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Number of Successes (k)</label>
+                                <input type="range" min="0" max="10" value="5" class="w-full" id="kSlider">
+                                <div class="text-center text-sm" id="kValue">k = 5</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold mb-3">Calculation Results</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span>Probability P(X = k):</span>
+                                    <span id="probResult" class="font-semibold">0.2461</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Mean (np):</span>
+                                    <span id="meanResult" class="font-semibold">5.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Variance (npq):</span>
+                                    <span id="varianceResult" class="font-semibold">2.50</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Standard Deviation:</span>
+                                    <span id="stdResult" class="font-semibold">1.58</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-3 bg-blue-50 rounded">
+                                <p class="text-sm"><strong>Formula Used:</strong></p>
+                                <p class="text-xs font-mono" id="formulaDisplay">C(10,5) × 0.5⁵ × 0.5⁵</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cumulative Probability -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Cumulative Probabilities</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Beyond Single Probabilities</h3>
+                    
+                    <p class="mb-4">In real problems, we often need probabilities for ranges of values, not just single points.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div class="example-box">
+                            <h4 class="font-semibold text-green-800 mb-2">At Most k Successes</h4>
+                            <p>$P(X \leq k) = \sum_{i=0}^{k} \binom{n}{i} p^i (1-p)^{n-i}$</p>
+                            <p class="text-sm mt-2"><strong>Example:</strong> Probability of at most 3 heads in 5 tosses</p>
+                        </div>
+                        <div class="example-box">
+                            <h4 class="font-semibold text-green-800 mb-2">At Least k Successes</h4>
+                            <p>$P(X \geq k) = \sum_{i=k}^{n} \binom{n}{i} p^i (1-p)^{n-i}$</p>
+                            <p class="text-sm mt-2"><strong>Example:</strong> Probability of at least 7 correct in 10 questions</p>
+                        </div>
+                    </div>
+
+                    <div class="jee-tip">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Problem Strategy</h4>
+                        <p><strong>Remember:</strong> $P(X \geq k) = 1 - P(X \leq k-1)$</p>
+                        <p class="text-sm mt-1">This conversion often simplifies calculations in JEE problems!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Practice Problems -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. JEE Practice Problems</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Problem 1: Basic Calculation</h4>
+                            <p class="mb-3">A fair die is rolled 8 times. What is the probability of getting exactly 3 sixes?</p>
+                            <div class="solution hidden bg-green-50 p-3 rounded mt-2">
+                                <p><strong>Solution:</strong> n=8, k=3, p=1/6</p>
+                                <p>$P(X=3) = \binom{8}{3} (\frac{1}{6})^3 (\frac{5}{6})^5 = 56 \times 0.00463 \times 0.40188 ≈ 0.1042$</p>
+                            </div>
+                            <button class="mt-2 bg-blue-600 text-white px-4 py-1 rounded text-sm show-solution">Show Solution</button>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Problem 2: Multiple Choice</h4>
+                            <p class="mb-3">In a binomial distribution with n=10 and p=0.4, what is the variance?</p>
+                            <div class="solution hidden bg-green-50 p-3 rounded mt-2">
+                                <p><strong>Solution:</strong> Variance = np(1-p) = 10 × 0.4 × 0.6 = 2.4</p>
+                            </div>
+                            <button class="mt-2 bg-blue-600 text-white px-4 py-1 rounded text-sm show-solution">Show Solution</button>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Problem 3: Real Application</h4>
+                            <p class="mb-3">A student guesses on a 20-question multiple choice test (4 options each). What's the probability they get at least 10 correct?</p>
+                            <div class="solution hidden bg-green-50 p-3 rounded mt-2">
+                                <p><strong>Solution:</strong> n=20, p=0.25, P(X≥10) = 1 - P(X≤9)</p>
+                                <p>This requires summing probabilities from k=0 to 9, or using normal approximation.</p>
+                            </div>
+                            <button class="mt-2 bg-blue-600 text-white px-4 py-1 rounded text-sm show-solution">Show Solution</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">6. Common Mistakes to Avoid</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">JEE Pitfalls in Binomial Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <strong>Confusing with other distributions</strong>
+                                <p class="text-sm text-gray-600">Binomial is for fixed n, independent trials. Don't use it for problems without fixed trials!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <strong>Forgetting the combination term</strong>
+                                <p class="text-sm text-gray-600">$\binom{n}{k}$ accounts for different arrangements of successes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <strong>Mishandling "at least" and "at most"</strong>
+                                <p class="text-sm text-gray-600">Remember: P(X≥k) = 1 - P(X≤k-1)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-xl mr-3">❌</span>
+                            <div>
+                                <strong>Using wrong probability values</strong>
+                                <p class="text-sm text-gray-600">Ensure p represents success probability, not failure probability</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📚 Binomial Distribution Cheat Sheet</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Key Formulas</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</li>
+                                <li>Mean: $\mu = np$</li>
+                                <li>Variance: $\sigma^2 = np(1-p)$</li>
+                                <li>$P(X \geq k) = 1 - P(X \leq k-1)$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">When to Use</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>Fixed number of trials</li>
+                                <li>Independent trials</li>
+                                <li>Two possible outcomes</li>
+                                <li>Constant probability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Binomial Distribution?</h3>
+                    <p class="mb-4 opacity-90">Continue your probability journey with these related topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="poisson-distribution.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Poisson Distribution →
+                        </a>
+                        <a href="normal-distribution.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Normal Distribution →
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#probability" class="hover:text-yellow-300">Probability & Statistics</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Demo Functionality
+        const nSlider = document.getElementById('nSlider');
+        const pSlider = document.getElementById('pSlider');
+        const kSlider = document.getElementById('kSlider');
+        const nValue = document.getElementById('nValue');
+        const pValue = document.getElementById('pValue');
+        const kValue = document.getElementById('kValue');
+        const probResult = document.getElementById('probResult');
+        const meanResult = document.getElementById('meanResult');
+        const varianceResult = document.getElementById('varianceResult');
+        const stdResult = document.getElementById('stdResult');
+        const formulaDisplay = document.getElementById('formulaDisplay');
+
+        function updateDemo() {
+            const n = parseInt(nSlider.value);
+            const p = parseFloat(pSlider.value) / 100;
+            const k = parseInt(kSlider.value);
+            
+            // Update displayed values
+            nValue.textContent = `n = ${n}`;
+            pValue.textContent = `p = ${p.toFixed(2)}`;
+            kValue.textContent = `k = ${k}`;
+            
+            // Update k slider max
+            kSlider.max = n;
+            if (k > n) {
+                kSlider.value = n;
+                kValue.textContent = `k = ${n}`;
+            }
+            
+            // Calculate results
+            const combination = combinationFormula(n, k);
+            const probability = combination * Math.pow(p, k) * Math.pow(1-p, n-k);
+            const mean = n * p;
+            const variance = n * p * (1-p);
+            const std = Math.sqrt(variance);
+            
+            // Update results
+            probResult.textContent = probability.toFixed(4);
+            meanResult.textContent = mean.toFixed(2);
+            varianceResult.textContent = variance.toFixed(2);
+            stdResult.textContent = std.toFixed(2);
+            
+            // Update formula display
+            formulaDisplay.textContent = `C(${n},${k}) × ${p.toFixed(2)}^${k} × ${(1-p).toFixed(2)}^${n-k}`;
+        }
+
+        function combinationFormula(n, k) {
+            if (k < 0 || k > n) return 0;
+            if (k === 0 || k === n) return 1;
+            
+            let result = 1;
+            for (let i = 1; i <= k; i++) {
+                result = result * (n - i + 1) / i;
+            }
+            return result;
+        }
+
+        // Initialize and add event listeners
+        updateDemo();
+        nSlider.addEventListener('input', updateDemo);
+        pSlider.addEventListener('input', updateDemo);
+        kSlider.addEventListener('input', updateDemo);
+
+        // Solution toggle functionality
+        document.querySelectorAll('.show-solution').forEach(button => {
+            button.addEventListener('click', function() {
+                const solution = this.previousElementSibling;
+                solution.classList.toggle('hidden');
+                this.textContent = solution.classList.contains('hidden') ? 'Show Solution' : 'Hide Solution';
+            });
+        });
+    </script>
+</body>
+</html>

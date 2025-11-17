@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Events: Are They Related? | Probability Guide | KnowJEE</title>
+    <meta name="description" content="Master the concept of independent events in probability. Understand when events are truly independent and how to distinguish them from dependent events for JEE preparation.">
+    <meta name="keywords" content="independent events probability, JEE probability, independent vs dependent events, probability concepts, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background: #fef3cd;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .comparison-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .interactive-box {
+            background: #f8fafc;
+            border: 2px dashed #94a3b8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .interactive-box:hover {
+            background: #f1f5f9;
+            border-color: #64748b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Probability Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Probability Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 10 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential Concept</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Independent Events: Are They Really Related?</h1>
+                <p class="text-xl text-gray-600 mb-4">Understanding when events influence each other and when they don't - the key to mastering probability.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">95%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-5</div>
+                            <div class="text-sm text-blue-600">Questions/Paper</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2</div>
+                            <div class="text-sm text-blue-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">15min</div>
+                            <div class="text-sm text-blue-600">Mastery Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Independent Events Matter in JEE</h2>
+                <p class="mb-4">Independent events form the foundation of probability theory. Understanding this concept is crucial because:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>3-5 questions</strong> in every JEE paper test this concept directly or indirectly</li>
+                    <li>It's the basis for more advanced topics like <strong>Bayes' Theorem</strong> and <strong>Random Variables</strong></li>
+                    <li>Mistaking dependent events as independent is a <strong>common error</strong> costing valuable marks</li>
+                    <li>Real-world applications range from <strong>quality control</strong> to <strong>risk assessment</strong></li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#definition" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Definition</a>
+                    <a href="#formulas" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Formulas</a>
+                    <a href="#vs-dependent" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Vs Dependent</a>
+                    <a href="#examples" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Examples</a>
+                </div>
+            </div>
+
+            <!-- Definition Section -->
+            <section id="definition" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">What Are Independent Events?</h2>
+                    
+                    <div class="definition-box">
+                        <h3 class="font-semibold text-purple-800 mb-3">Mathematical Definition</h3>
+                        <p>Two events A and B are independent if the occurrence of one does not affect the probability of the other.</p>
+                        <div class="text-center my-4">
+                            $$ P(A \cap B) = P(A) \cdot P(B) $$
+                        </div>
+                        <p>This means: <strong>Probability of both happening = Product of individual probabilities</strong></p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-3">🎯 Simple Analogy</h4>
+                        <p>Think of tossing two different coins:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Coin 1 showing Heads</li>
+                            <li>Coin 2 showing Tails</li>
+                        </ul>
+                        <p class="mt-3">What happens with Coin 1 <strong>doesn't affect</strong> what happens with Coin 2. They're independent!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Formulas -->
+            <section id="formulas" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">The Mathematics Behind Independence</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-semibold text-blue-800 mb-3">Definition Formula</h4>
+                            <div class="text-center my-3">
+                                $$ P(A \cap B) = P(A) \cdot P(B) $$
+                            </div>
+                            <p class="text-sm text-gray-600">If this equation holds true, A and B are independent.</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-semibold text-blue-800 mb-3">Conditional Probability Check</h4>
+                            <div class="text-center my-3">
+                                $$ P(A|B) = P(A) $$
+                            </div>
+                            <p class="text-sm text-gray-600">Knowing B occurred doesn't change A's probability.</p>
+                        </div>
+                    </div>
+
+                    <div class="warning-box mt-6">
+                        <h4 class="font-semibold text-yellow-800 mb-2">⚠️ Common Misconception</h4>
+                        <p><strong>Independent ≠ Mutually Exclusive</strong></p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
+                            <li><strong>Independent:</strong> No effect on each other's probabilities</li>
+                            <li><strong>Mutually Exclusive:</strong> Cannot happen together ($P(A \cap B) = 0$)</li>
+                            <li>If $P(A) > 0$ and $P(B) > 0$, independent events CAN happen together!</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Independent vs Dependent -->
+            <section id="vs-dependent" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Independent vs Dependent Events</h2>
+                    
+                    <div class="comparison-box">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-green-800 mb-3">✅ Independent Events</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm">
+                                    <li>No connection between events</li>
+                                    <li>$P(A \cap B) = P(A) \cdot P(B)$</li>
+                                    <li>$P(A|B) = P(A)$</li>
+                                    <li><strong>Examples:</strong>
+                                        <ul class="list-circle list-inside ml-4 mt-1">
+                                            <li>Tossing two coins</li>
+                                            <li>Rolling two dice</li>
+                                            <li>Rain today & stock prices</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-red-800 mb-3">❌ Dependent Events</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm">
+                                    <li>Events influence each other</li>
+                                    <li>$P(A \cap B) \neq P(A) \cdot P(B)$</li>
+                                    <li>$P(A|B) \neq P(A)$</li>
+                                    <li><strong>Examples:</strong>
+                                        <ul class="list-circle list-inside ml-4 mt-1">
+                                            <li>Drawing cards without replacement</li>
+                                            <li>Weather today & tomorrow</li>
+                                            <li>Test scores & study hours</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interactive-box" onclick="this.classList.toggle('bg-green-50')">
+                        <h4 class="font-semibold text-blue-800 mb-3">💡 Quick Test: Click to Reveal</h4>
+                        <p class="mb-3">Are these independent or dependent?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="bg-white p-3 rounded border">
+                                <p><strong>Drawing two aces from a deck:</strong></p>
+                                <p class="text-sm text-gray-600 mt-1">With replacement → <span class="font-semibold text-green-600">Independent</span></p>
+                                <p class="text-sm text-gray-600">Without replacement → <span class="font-semibold text-red-600">Dependent</span></p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <p><strong>Your alarm working & bus arriving on time:</strong></p>
+                                <p class="text-sm text-gray-600 mt-1 font-semibold text-green-600">Independent</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real Examples Section -->
+            <section id="examples" class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Real Examples & JEE Applications</h2>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-3">Example 1: Coin Tosses (Classic Independent)</h4>
+                        <p class="mb-3">Probability of getting Heads on both coins when tossing two fair coins:</p>
+                        <div class="space-y-2 text-sm">
+                            <p>$P(\text{Heads on Coin 1}) = \frac{1}{2}$</p>
+                            <p>$P(\text{Heads on Coin 2}) = \frac{1}{2}$</p>
+                            <p>Since independent: $P(\text{Both Heads}) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-3">Example 2: Drawing Cards (Dependent Scenario)</h4>
+                        <p class="mb-3">Probability of drawing two Aces from a deck:</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>With replacement (Independent):</strong></p>
+                            <p>$P(\text{Two Aces}) = \frac{4}{52} \times \frac{4}{52} = \frac{1}{169}$</p>
+                            
+                            <p class="mt-2"><strong>Without replacement (Dependent):</strong></p>
+                            <p>$P(\text{Two Aces}) = \frac{4}{52} \times \frac{3}{51} = \frac{1}{221}$</p>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Problem Pattern</h4>
+                        <p>JEE often tests your ability to <strong>identify when events become dependent</strong>:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
+                            <li>Cards drawn without replacement</li>
+                            <li>Balls taken from urn without replacement</li>
+                            <li>Sequential events where first outcome affects second</li>
+                            <li>Real-world scenarios with hidden dependencies</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="concept-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Common Mistakes & How to Avoid Them</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-red-800 mb-3">❌ Mistake 1: Assuming Independence</h4>
+                            <p class="text-sm">Students often assume events are independent without checking.</p>
+                            <p class="text-xs mt-2 text-red-600"><strong>Fix:</strong> Always ask "Does one event affect the other's probability?"</p>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-red-800 mb-3">❌ Mistake 2: Confusing with Mutually Exclusive</h4>
+                            <p class="text-sm">Thinking independent events can't happen together.</p>
+                            <p class="text-xs mt-2 text-red-600"><strong>Fix:</strong> Remember independent events CAN occur together!</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 mt-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Pro Tip: The Replacement Test</h4>
+                        <p class="text-sm">If the scenario involves "without replacement," events are usually <strong>dependent</strong>. With "replacement," they're usually <strong>independent</strong>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="practice-box">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Practice Problems</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: A fair die is rolled twice. What's the probability of getting a 6 on both rolls?</p>
+                            <div class="solution mt-2">
+                                <p class="text-sm"><strong>Solution:</strong> Independent events → $\frac{1}{6} \times \frac{1}{6} = \frac{1}{36}$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: Two cards are drawn from a deck without replacement. Are the events "first card is Ace" and "second card is King" independent?</p>
+                            <div class="solution mt-2">
+                                <p class="text-sm"><strong>Solution:</strong> Dependent! Drawing the first card affects probabilities for the second card.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: The probability that it rains today is 0.3. The probability that your flight is delayed is 0.1. If these are independent, what's the probability of both happening?</p>
+                            <div class="solution mt-2">
+                                <p class="text-sm"><strong>Solution:</strong> $0.3 \times 0.1 = 0.03$ or 3%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Checklist -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">✅ Independence Checklist</h3>
+                    <p class="mb-4">Ask these questions to determine if events are independent:</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center bg-white p-3 rounded border">
+                            <span class="w-6 h-6 bg-green-100 text-green-800 rounded-full flex items-center justify-center mr-3">1</span>
+                            <span>Does one event affect the other's probability?</span>
+                        </div>
+                        <div class="flex items-center bg-white p-3 rounded border">
+                            <span class="w-6 h-6 bg-green-100 text-green-800 rounded-full flex items-center justify-center mr-3">2</span>
+                            <span>Is there "replacement" in the scenario?</span>
+                        </div>
+                        <div class="flex items-center bg-white p-3 rounded border">
+                            <span class="w-6 h-6 bg-green-100 text-green-800 rounded-full flex items-center justify-center mr-3">3</span>
+                            <span>Does $P(A|B) = P(A)$ hold true?</span>
+                        </div>
+                        <div class="flex items-center bg-white p-3 rounded border">
+                            <span class="w-6 h-6 bg-green-100 text-green-800 rounded-full flex items-center justify-center mr-3">4</span>
+                            <span>Are the events from different, unrelated processes?</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready for More Probability Concepts?</h3>
+                    <p class="mb-4 opacity-90">Master independent events first, then move to conditional probability and Bayes' Theorem</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-probability-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Probability Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Quiz
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#probability" class="hover:text-yellow-300">Probability</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add interactive functionality
+        document.querySelectorAll('.interactive-box').forEach(box => {
+            box.addEventListener('click', function() {
+                this.classList.toggle('bg-green-50');
+                this.classList.toggle('border-green-300');
+            });
+        });
+    </script>
+</body>
+</html>

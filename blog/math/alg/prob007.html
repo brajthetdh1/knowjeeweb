@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law of Total Probability & Bayes' Theorem - Part 1 | Probability Foundations | KnowJEE</title>
+    <meta name="description" content="Master the foundational concepts of Law of Total Probability and Bayes' Theorem. Step-by-step guide with intuitive examples for JEE probability preparation.">
+    <meta name="keywords" content="law of total probability, bayes theorem, JEE probability, conditional probability, probability theorems, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .intuition-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Probability Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Probability Series</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Part 1 of 3</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Law of Total Probability & Bayes' Theorem - Part 1 (The Setup)</h1>
+                <p class="text-xl text-gray-600 mb-4">Build strong foundations in probability theory with intuitive explanations and real-world examples. Essential for JEE probability problems.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">95%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-8</div>
+                            <div class="text-sm text-purple-600">Marks Guaranteed</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5</div>
+                            <div class="text-sm text-purple-600">Key Concepts</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Concept Clarity</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Foundation Matters</h2>
+                <p class="mb-4">The Law of Total Probability and Bayes' Theorem are among the <strong>most powerful tools</strong> in probability theory. They appear in <strong>every JEE paper</strong> and form the basis for solving complex real-world probability problems.</p>
+                
+                <div class="intuition-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Strategic Importance</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Direct questions worth <strong>3-4 marks</strong> in every paper</li>
+                        <li>Essential for solving <strong>conditional probability problems</strong></li>
+                        <li>Foundation for <strong>probability distributions</strong> in advanced topics</li>
+                        <li>Used in <strong>real-world applications</strong> from medicine to machine learning</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Navigation Guide</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#prerequisites" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Prerequisites</a>
+                    <a href="#partition" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Partition Concept</a>
+                    <a href="#law-total" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Total Probability Law</a>
+                    <a href="#bayes-intro" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Bayes' Theorem</a>
+                </div>
+            </div>
+
+            <!-- Prerequisites -->
+            <section id="prerequisites" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Essential Prerequisites</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Conditional Probability Refresher</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Definition</h4>
+                        <p>The probability of event A given that event B has occurred is:</p>
+                        <div class="text-center my-3">
+                            $$ P(A|B) = \frac{P(A \cap B)}{P(B)} $$
+                        </div>
+                        <p class="text-sm text-gray-600">Provided $P(B) > 0$</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">📚 Example: Card Drawing</h4>
+                        <p>From a standard deck of 52 cards, if we know a card is red, what's the probability it's a heart?</p>
+                        <div class="step-box">
+                            <p><strong>Given:</strong> Total red cards = 26, Hearts (red) = 13</p>
+                            <p><strong>Conditional Probability:</strong> $P(\text{Heart}|\text{Red}) = \frac{13}{26} = \frac{1}{2}$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Multiplication Rule</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Formula</h4>
+                        <p>From conditional probability, we get:</p>
+                        <div class="text-center my-3">
+                            $$ P(A \cap B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A) $$
+                        </div>
+                    </div>
+
+                    <div class="intuition-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Intuitive Understanding</h4>
+                        <p>Think of probability as "fraction of possibilities":</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$P(B)$ = Fraction of cases where B happens</li>
+                            <li>$P(A|B)$ = Fraction of B-cases where A also happens</li>
+                            <li>$P(A \cap B)$ = Fraction of total cases where both happen</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partition Concept -->
+            <section id="partition" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Concept of Partition</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What is a Partition?</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Mathematical Definition</h4>
+                        <p>Events $B_1, B_2, \ldots, B_n$ form a partition of sample space S if:</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-2">
+                            <li>$B_i \cap B_j = \emptyset$ for $i \neq j$ (Mutually Exclusive)</li>
+                            <li>$B_1 \cup B_2 \cup \cdots \cup B_n = S$ (Collectively Exhaustive)</li>
+                            <li>$P(B_i) > 0$ for all $i$ (Non-zero Probability)</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 Real-world Example: Weather Partition</h4>
+                        <p>Consider weather conditions for a day:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2 text-sm">
+                            <div class="bg-blue-50 p-2 rounded text-center">
+                                <strong>B₁</strong><br>Sunny
+                            </div>
+                            <div class="bg-gray-50 p-2 rounded text-center">
+                                <strong>B₂</strong><br>Cloudy
+                            </div>
+                            <div class="bg-green-50 p-2 rounded text-center">
+                                <strong>B₃</strong><br>Rainy
+                            </div>
+                        </div>
+                        <p class="mt-2 text-sm">These form a partition because:</p>
+                        <ul class="list-disc list-inside text-sm space-y-1">
+                            <li>A day can't be both sunny and rainy (mutually exclusive)</li>
+                            <li>Every day must be one of these (collectively exhaustive)</li>
+                            <li>Each has non-zero probability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Visualizing Partitions</h3>
+                    
+                    <div class="bg-white p-4 rounded-lg border text-center">
+                        <div class="text-sm text-gray-600 mb-2">Sample Space S partitioned into B₁, B₂, B₃</div>
+                        <div class="grid grid-cols-3 gap-1 mx-auto max-w-md">
+                            <div class="h-16 bg-red-200 rounded-l flex items-center justify-center">B₁</div>
+                            <div class="h-16 bg-green-200 flex items-center justify-center">B₂</div>
+                            <div class="h-16 bg-blue-200 rounded-r flex items-center justify-center">B₃</div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Mutually Exclusive + Collectively Exhaustive</p>
+                    </div>
+
+                    <div class="intuition-box mt-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Why Partitions Matter</h4>
+                        <p>Partitions allow us to break complex probability problems into simpler pieces. Instead of calculating probability directly, we calculate it through different "pathways" provided by the partition.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Law of Total Probability -->
+            <section id="law-total" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Law of Total Probability</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Fundamental Idea</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Theorem Statement</h4>
+                        <p>If $B_1, B_2, \ldots, B_n$ form a partition of sample space S, then for any event A:</p>
+                        <div class="text-center my-3">
+                            $$ P(A) = \sum_{i=1}^{n} P(A|B_i) \cdot P(B_i) $$
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step-by-step Derivation</h4>
+                        <p><strong>Step 1:</strong> Since $B_i$'s cover entire sample space:</p>
+                        <div class="text-center my-2">
+                            $$ A = A \cap S = A \cap (B_1 \cup B_2 \cup \cdots \cup B_n) $$
+                        </div>
+                        <p><strong>Step 2:</strong> Using distributive property:</p>
+                        <div class="text-center my-2">
+                            $$ A = (A \cap B_1) \cup (A \cap B_2) \cup \cdots \cup (A \cap B_n) $$
+                        </div>
+                        <p><strong>Step 3:</strong> Since $B_i$'s are mutually exclusive, so are $A \cap B_i$'s:</p>
+                        <div class="text-center my-2">
+                            $$ P(A) = \sum_{i=1}^{n} P(A \cap B_i) $$
+                        </div>
+                        <p><strong>Step 4:</strong> Using multiplication rule:</p>
+                        <div class="text-center my-2">
+                            $$ P(A) = \sum_{i=1}^{n} P(A|B_i) \cdot P(B_i) $$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Real-world Application</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🏥 Medical Testing Example</h4>
+                        <p>A disease affects 2% of population. Test is 95% accurate for sick people and 90% accurate for healthy people. What's the probability of testing positive?</p>
+                        
+                        <div class="step-box">
+                            <p><strong>Define Partition:</strong></p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>$B_1$: Person has disease → $P(B_1) = 0.02$</li>
+                                <li>$B_2$: Person is healthy → $P(B_2) = 0.98$</li>
+                            </ul>
+                        </div>
+
+                        <div class="step-box">
+                            <p><strong>Define Conditional Probabilities:</strong></p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>$P(\text{Positive}|B_1) = 0.95$ (True Positive)</li>
+                                <li>$P(\text{Positive}|B_2) = 0.10$ (False Positive)</li>
+                            </ul>
+                        </div>
+
+                        <div class="step-box">
+                            <p><strong>Apply Law of Total Probability:</strong></p>
+                            <div class="text-center my-2">
+                                $$ P(\text{Positive}) = 0.95 \times 0.02 + 0.10 \times 0.98 = 0.117 $$
+                            </div>
+                            <p>About 11.7% of people will test positive, even though only 2% are actually sick!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bayes' Theorem Introduction -->
+            <section id="bayes-intro" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Introduction to Bayes' Theorem</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The "Reverse" Probability</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Bayes' Theorem Formula</h4>
+                        <p>For events A and B with $P(A) > 0$, $P(B) > 0$:</p>
+                        <div class="text-center my-3">
+                            $$ P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)} $$
+                        </div>
+                    </div>
+
+                    <div class="intuition-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🔄 What Makes Bayes' Theorem Special?</h4>
+                        <p>Bayes' Theorem allows us to <strong>update our beliefs</strong> when we get new evidence:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li><strong>Prior Probability</strong> $P(B)$: What we believe before evidence</li>
+                            <li><strong>Likelihood</strong> $P(A|B)$: How likely evidence is if our belief is true</li>
+                            <li><strong>Posterior Probability</strong> $P(B|A)$: Updated belief after seeing evidence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bayes' Theorem with Partitions</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Extended Form</h4>
+                        <p>When we have a partition $B_1, B_2, \ldots, B_n$:</p>
+                        <div class="text-center my-3">
+                            $$ P(B_i|A) = \frac{P(A|B_i) \cdot P(B_i)}{\sum_{j=1}^{n} P(A|B_j) \cdot P(B_j)} $$
+                        </div>
+                        <p class="text-sm text-gray-600">Notice the denominator is exactly $P(A)$ from Law of Total Probability!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🔍 Continuing Medical Example</h4>
+                        <p>If someone tests positive, what's the probability they actually have the disease?</p>
+                        
+                        <div class="step-box">
+                            <p><strong>We want:</strong> $P(\text{Disease}|\text{Positive})$</p>
+                            <p><strong>Using Bayes' Theorem:</strong></p>
+                            <div class="text-center my-2">
+                                $$ P(\text{Disease}|\text{Positive}) = \frac{0.95 \times 0.02}{0.117} \approx 0.162 $$
+                            </div>
+                            <p>Only about 16.2% chance of actually having disease despite positive test!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Practice -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Practice Problems</h3>
+                    <p class="mb-4">Test your understanding of the foundational concepts:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. A factory has 3 machines producing items. Machine A makes 50% with 2% defect rate, Machine B makes 30% with 3% defect rate, Machine C makes 20% with 5% defect rate. What's the probability a randomly chosen item is defective?</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. In the factory above, if an item is defective, what's the probability it came from Machine C?</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Do these events form a partition: {Hearts, Diamonds, Clubs, Spades} in a card deck? Why or why not?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">💎 Key Takeaways - Part 1</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Conceptual Foundations</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Partitions</strong> break sample space into mutually exclusive, collectively exhaustive pieces</li>
+                                <li><strong>Law of Total Probability</strong> calculates probabilities through different pathways</li>
+                                <li><strong>Bayes' Theorem</strong> reverses conditional probabilities using evidence</li>
+                                <li>These tools work together to solve complex probability problems</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Problem-Solving Strategy</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Identify if you have a natural partition in the problem</li>
+                                <li>Use Law of Total Probability when you need $P(A)$ but have conditional information</li>
+                                <li>Use Bayes' Theorem when you want to "reverse" conditional probabilities</li>
+                                <li>Always verify your partition meets all three conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Part Preview -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready for Part 2?</h3>
+                    <p class="mb-4 opacity-90">In the next part, we'll dive into advanced applications and JEE-level problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="probability-bayes-part2.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Continue to Part 2 →
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Practice Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEO Optimized Content -->
+            <section class="mb-8">
+                <div class="bg-gray-100 border border-gray-300 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">🔍 Related JEE Probability Topics</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-center bg-white py-2 px-3 rounded border">Conditional Probability</a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-center bg-white py-2 px-3 rounded border">Independent Events</a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-center bg-white py-2 px-3 rounded border">Probability Distributions</a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-center bg-white py-2 px-3 rounded border">Random Variables</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#probability" class="hover:text-yellow-300">Probability</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
