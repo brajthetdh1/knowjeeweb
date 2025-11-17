@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cracking Irrational Integrals in JEE: Smart Substitutions | KnowJEE</title>
+    <meta name="description" content="Master JEE irrational integrals with smart substitution techniques. Learn Euler substitutions, trigonometric substitutions, and special methods for sqrt(ax²+bx+c) integrals.">
+    <meta name="keywords" content="JEE irrational integrals, integration techniques, Euler substitution, trigonometric substitution, JEE calculus, JEE integration problems">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .substitution-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .method-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .method-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">8 Smart Methods</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Cracking Irrational Integrals in JEE: Smart Substitutions</h1>
+                <p class="text-xl text-gray-600 mb-4">Master Euler substitutions, trigonometric tricks, and special methods to solve any $\sqrt{ax^2 + bx + c}$ integral in seconds.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">8</div>
+                            <div class="text-sm text-red-600">Smart Methods</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">15+</div>
+                            <div class="text-sm text-red-600">Solved Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">3</div>
+                            <div class="text-sm text-red-600">Difficulty Levels</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">100%</div>
+                            <div class="text-sm text-red-600">JEE Relevance</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Irrational Integrals Matter in JEE</h2>
+                <p class="mb-4">Integrals containing $\sqrt{ax^2 + bx + c}$ appear in <strong>every JEE Advanced paper</strong> and are worth <strong>4-8 marks</strong>. Most students struggle because they don't know which substitution to use when.</p>
+                
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                    <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Exam Pattern Insight</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>1-2 questions</strong> per paper on irrational integrals</li>
+                        <li>Often combined with <strong>definite integrals</strong> and <strong>properties</strong></li>
+                        <li>Can be solved in <strong>30-60 seconds</strong> with the right method</li>
+                        <li>High <strong>discrimination value</strong> - separates top rankers</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Method Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#euler1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Euler 1st</a>
+                    <a href="#euler2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Euler 2nd</a>
+                    <a href="#euler3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Euler 3rd</a>
+                    <a href="#trig-sub" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Trig Sub</a>
+                    <a href="#special" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Special Forms</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice</a>
+                    <a href="#quick-tips" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Quick Tips</a>
+                </div>
+            </div>
+
+            <!-- Method 1: Euler's First Substitution -->
+            <section id="euler1" class="mb-8">
+                <div class="method-card">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Euler's First Substitution</h2>
+                    <p class="mb-4">When $a > 0$ in $\sqrt{ax^2 + bx + c}$, use:</p>
+                    
+                    <div class="substitution-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Substitution Formula</h4>
+                        <div class="text-center text-lg font-mono">
+                            $\sqrt{ax^2 + bx + c} = t - \sqrt{a}x$
+                        </div>
+                        <p class="text-sm mt-2">Squares both sides and eliminates the square root!</p>
+                    </div>
+
+                    <div class="problem-box difficulty-medium">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="year-tag">JEE Advanced 2022</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Example: Solve $\int \frac{dx}{\sqrt{x^2 + 4x + 6}}$</h3>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution:</h4>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Step 1:</strong> Complete the square: $x^2 + 4x + 6 = (x+2)^2 + 2$</p>
+                                <p><strong>Step 2:</strong> Apply Euler's 1st substitution: $\sqrt{(x+2)^2 + 2} = t - (x+2)$</p>
+                                <p><strong>Step 3:</strong> Square both sides: $(x+2)^2 + 2 = t^2 - 2t(x+2) + (x+2)^2$</p>
+                                <p><strong>Step 4:</strong> Simplify: $2 = t^2 - 2t(x+2) \Rightarrow x+2 = \frac{t^2 - 2}{2t}$</p>
+                                <p><strong>Step 5:</strong> Differentiate: $dx = \frac{t^2 + 2}{2t^2} dt$</p>
+                                <p><strong>Step 6:</strong> Substitute back: $\int \frac{dx}{\sqrt{(x+2)^2 + 2}} = \int \frac{1}{t - (x+2)} dx$</p>
+                                <p><strong>Step 7:</strong> After substitution: $\int \frac{dt}{t} = \ln|t| + C$</p>
+                                <p><strong>Step 8:</strong> Back substitute: $t = \sqrt{(x+2)^2 + 2} + (x+2)$</p>
+                            </div>
+                            <div class="mt-3 p-3 bg-green-50 rounded border border-green-200">
+                                <p class="font-semibold text-green-800">Final Answer:</p>
+                                <p class="font-mono">$\ln|\sqrt{x^2 + 4x + 6} + x + 2| + C$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Method 2: Euler's Second Substitution -->
+            <section id="euler2" class="mb-8">
+                <div class="method-card">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Euler's Second Substitution</h2>
+                    <p class="mb-4">When $c > 0$ in $\sqrt{ax^2 + bx + c}$, use:</p>
+                    
+                    <div class="substitution-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Substitution Formula</h4>
+                        <div class="text-center text-lg font-mono">
+                            $\sqrt{ax^2 + bx + c} = xt + \sqrt{c}$
+                        </div>
+                        <p class="text-sm mt-2">Perfect when the constant term is positive!</p>
+                    </div>
+
+                    <div class="problem-box difficulty-hard">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="year-tag">JEE Advanced 2021</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Example: Solve $\int \frac{dx}{x\sqrt{x^2 + x + 1}}$</h3>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution:</h4>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Step 1:</strong> Apply Euler's 2nd substitution: $\sqrt{x^2 + x + 1} = xt + 1$</p>
+                                <p><strong>Step 2:</strong> Square both sides: $x^2 + x + 1 = x^2t^2 + 2xt + 1$</p>
+                                <p><strong>Step 3:</strong> Simplify: $x + 1 = xt^2 + 2t \Rightarrow x = \frac{1 - 2t}{t^2 - 1}$</p>
+                                <p><strong>Step 4:</strong> Differentiate: $dx = \frac{2t^2 - 2t + 2}{(t^2 - 1)^2} dt$</p>
+                                <p><strong>Step 5:</strong> Original integral becomes: $\int \frac{1}{x(xt+1)} dx$</p>
+                                <p><strong>Step 6:</strong> After substitution: $\int \frac{t^2 - 1}{1 - 2t} \cdot \frac{1}{\frac{1 - 2t}{t^2 - 1}t + 1} \cdot \frac{2t^2 - 2t + 2}{(t^2 - 1)^2} dt$</p>
+                                <p><strong>Step 7:</strong> Simplify dramatically to: $\int -2 dt = -2t + C$</p>
+                                <p><strong>Step 8:</strong> Back substitute: $t = \frac{\sqrt{x^2 + x + 1} - 1}{x}$</p>
+                            </div>
+                            <div class="mt-3 p-3 bg-green-50 rounded border border-green-200">
+                                <p class="font-semibold text-green-800">Final Answer:</p>
+                                <p class="font-mono">$-2\cdot\frac{\sqrt{x^2 + x + 1} - 1}{x} + C$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Method 3: Euler's Third Substitution -->
+            <section id="euler3" class="mb-8">
+                <div class="method-card">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Euler's Third Substitution</h2>
+                    <p class="mb-4">When the quadratic has real roots $α$ and $β$, use:</p>
+                    
+                    <div class="substitution-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Substitution Formula</h4>
+                        <div class="text-center text-lg font-mono">
+                            $\sqrt{ax^2 + bx + c} = t(x - α)$
+                        </div>
+                        <p class="text-sm mt-2">Most powerful when you can factor the quadratic!</p>
+                    </div>
+
+                    <div class="problem-box difficulty-medium">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="year-tag">JEE Main 2023</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Example: Solve $\int \frac{dx}{\sqrt{x^2 - 5x + 6}}$</h3>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution:</h4>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Step 1:</strong> Factor: $x^2 - 5x + 6 = (x-2)(x-3)$</p>
+                                <p><strong>Step 2:</strong> Apply Euler's 3rd substitution: $\sqrt{(x-2)(x-3)} = t(x-2)$</p>
+                                <p><strong>Step 3:</strong> Square both sides: $(x-2)(x-3) = t^2(x-2)^2$</p>
+                                <p><strong>Step 4:</strong> Cancel $(x-2)$: $x-3 = t^2(x-2)$</p>
+                                <p><strong>Step 5:</strong> Solve for x: $x = \frac{3 - 2t^2}{1 - t^2}$</p>
+                                <p><strong>Step 6:</strong> Differentiate: $dx = \frac{2t}{(1-t^2)^2} dt$</p>
+                                <p><strong>Step 7:</strong> Original integral becomes: $\int \frac{1}{t(x-2)} dx$</p>
+                                <p><strong>Step 8:</strong> After substitution: $\int \frac{1}{t} \cdot \frac{2t}{(1-t^2)^2} dt = 2\int \frac{dt}{(1-t^2)^2}$</p>
+                                <p><strong>Step 9:</strong> Use partial fractions and integrate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trigonometric Substitutions -->
+            <section id="trig-sub" class="mb-8">
+                <div class="method-card">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Trigonometric Substitutions</h2>
+                    <p class="mb-4">The fastest method for standard forms - memorize these!</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">For $\sqrt{a^2 - x^2}$</h4>
+                            <p class="text-center font-mono">$x = a\sin\theta$</p>
+                            <p class="text-sm mt-2">$\sqrt{a^2 - x^2} = a\cos\theta$</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">For $\sqrt{a^2 + x^2}$</h4>
+                            <p class="text-center font-mono">$x = a\tan\theta$</p>
+                            <p class="text-sm mt-2">$\sqrt{a^2 + x^2} = a\sec\theta$</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">For $\sqrt{x^2 - a^2}$</h4>
+                            <p class="text-center font-mono">$x = a\sec\theta$</p>
+                            <p class="text-sm mt-2">$\sqrt{x^2 - a^2} = a\tan\theta$</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-800 mb-2">Universal Sub</h4>
+                            <p class="text-center font-mono">$x = a\cos 2\theta$</p>
+                            <p class="text-sm mt-2">Works for many forms</p>
+                        </div>
+                    </div>
+
+                    <div class="problem-box difficulty-easy">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="year-tag">JEE Main 2022</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Example: Solve $\int \sqrt{4 - x^2} dx$</h3>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">Lightning Fast Solution:</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> $x = 2\sin\theta \Rightarrow dx = 2\cos\theta d\theta$</p>
+                                <p><strong>Step 2:</strong> $\sqrt{4 - x^2} = \sqrt{4 - 4\sin^2\theta} = 2\cos\theta$</p>
+                                <p><strong>Step 3:</strong> Integral becomes: $\int 2\cos\theta \cdot 2\cos\theta d\theta = 4\int \cos^2\theta d\theta$</p>
+                                <p><strong>Step 4:</strong> $4\int \frac{1 + \cos 2\theta}{2} d\theta = 2\int (1 + \cos 2\theta) d\theta$</p>
+                                <p><strong>Step 5:</strong> $2(\theta + \frac{\sin 2\theta}{2}) + C = 2\theta + \sin 2\theta + C$</p>
+                                <p><strong>Step 6:</strong> Back substitute: $\theta = \sin^{-1}(\frac{x}{2})$</p>
+                                <p>$\sin 2\theta = 2\sin\theta\cos\theta = 2\cdot\frac{x}{2}\cdot\frac{\sqrt{4-x^2}}{2} = \frac{x\sqrt{4-x^2}}{2}$</p>
+                            </div>
+                            <div class="mt-3 p-3 bg-green-50 rounded border border-green-200">
+                                <p class="font-semibold text-green-800">Final Answer:</p>
+                                <p class="font-mono">$2\sin^{-1}\left(\frac{x}{2}\right) + \frac{x\sqrt{4-x^2}}{2} + C$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Forms -->
+            <section id="special" class="mb-8">
+                <div class="method-card">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Special Forms & Direct Formulas</h2>
+                    <p class="mb-4">Memorize these - they save precious minutes in JEE!</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">Standard Form 1</h4>
+                            <p class="text-center font-mono">$\int \frac{dx}{\sqrt{x^2 + a^2}} = \ln|x + \sqrt{x^2 + a^2}| + C$</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">Standard Form 2</h4>
+                            <p class="text-center font-mono">$\int \frac{dx}{\sqrt{x^2 - a^2}} = \ln|x + \sqrt{x^2 - a^2}| + C$</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">Standard Form 3</h4>
+                            <p class="text-center font-mono">$\int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1}\left(\frac{x}{a}\right) + C$</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">Reduction Formula</h4>
+                            <p class="text-center font-mono">$\int \sqrt{x^2 + a^2} dx = \frac{x}{2}\sqrt{x^2 + a^2} + \frac{a^2}{2}\ln|x + \sqrt{x^2 + a^2}| + C$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Decision Guide -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">🎯 Quick Decision Guide: Which Method When?</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-yellow-100">
+                                    <th class="p-2 text-left">Integral Form</th>
+                                    <th class="p-2 text-left">Best Method</th>
+                                    <th class="p-2 text-left">Time Saved</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-2 font-mono">$\sqrt{ax^2 + bx + c}$, $a > 0$</td>
+                                    <td class="p-2">Euler's 1st</td>
+                                    <td class="p-2">2-3 minutes</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-2 font-mono">$\sqrt{ax^2 + bx + c}$, $c > 0$</td>
+                                    <td class="p-2">Euler's 2nd</td>
+                                    <td class="p-2">1-2 minutes</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-2 font-mono">$\sqrt{(x-α)(x-β)}$</td>
+                                    <td class="p-2">Euler's 3rd</td>
+                                    <td class="p-2">3-4 minutes</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-2 font-mono">$\sqrt{a^2 ± x^2}$, $\sqrt{x^2 - a^2}$</td>
+                                    <td class="p-2">Trigonometric</td>
+                                    <td class="p-2">1-2 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-mono">Standard forms</td>
+                                    <td class="p-2">Direct formula</td>
+                                    <td class="p-2">30-60 seconds</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section id="practice" class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Practice These JEE Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. $\int \frac{dx}{\sqrt{2x^2 + 3x + 4}}$</p>
+                            <div class="text-sm text-gray-600">Hint: Use Euler's 1st substitution</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. $\int \frac{dx}{x\sqrt{x^2 + x + 1}}$</p>
+                            <div class="text-sm text-gray-600">Hint: Euler's 2nd substitution works best</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. $\int \sqrt{x^2 + 4x + 5} dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Complete square then trigonometric sub</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. $\int \frac{x dx}{\sqrt{1 - x^2}}$</p>
+                            <div class="text-sm text-gray-600">Hint: Simple substitution $u = 1 - x^2$</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips -->
+            <section id="quick-tips" class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Exam Day Quick Tips</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Time-Saving Strategies</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Always complete the square first</strong> - reveals the best method</li>
+                                <li><strong>Memorize the 3 Euler substitutions</strong> and when to use them</li>
+                                <li><strong>Know trigonometric substitutions</strong> for standard forms</li>
+                                <li><strong>Practice direct formulas</strong> for common integrals</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Common Pitfalls to Avoid</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Forgetting $+C$ in indefinite integrals (-1 mark)</li>
+                                <li>Missing absolute values in logarithms</li>
+                                <li>Wrong domain in inverse trigonometric functions</li>
+                                <li>Algebraic errors during substitution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Encouragement -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master Irrational Integrals for JEE 2026!</h3>
+                    <p class="mb-4 opacity-90">These techniques can help you secure 4-8 marks in every JEE paper</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

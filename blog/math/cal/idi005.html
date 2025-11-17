@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euler's Substitutions: Master Tough Irrational Integrals | JEE Advanced Calculus | KnowJEE</title>
+    <meta name="description" content="Discover Euler's magical substitutions for solving impossible-looking irrational integrals. Step-by-step guide with JEE Advanced examples and practice problems.">
+    <meta name="keywords" content="Euler substitutions, irrational integrals, JEE advanced calculus, integration tricks, radical integrals, JEE integration methods">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #f3e8ff;
+            border-color: #d8b4fe;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .magic-trick {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        .substitution-type {
+            background: #fffbeb;
+            border: 2px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #ecfdf5;
+            border: 2px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .advanced-tip {
+            background: #fef7ed;
+            border-left: 4px solid #fed7aa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .euler-tag {
+            background: #7c3aed;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Advanced Calculus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">3 Magical Methods</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Magician's Trick: Euler's Substitutions for Tough Irrational Integrals</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how Euler's three substitutions can transform impossible-looking integrals into solvable rational forms. Your secret weapon for JEE Advanced.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Euler Substitutions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">95%</div>
+                            <div class="text-sm text-purple-600">Success Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5-8</div>
+                            <div class="text-sm text-purple-600">JEE Marks</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">∞</div>
+                            <div class="text-sm text-purple-600">Impressiveness</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Euler's Substitutions Feel Like Magic</h2>
+                <p class="mb-4">When you encounter integrals like $\int \sqrt{ax^2 + bx + c}  dx$ or $\int \frac{dx}{\sqrt{x^2 + 4x + 3}}$, traditional methods often fail. Euler's substitutions provide a systematic way to eliminate radicals and convert these integrals into rational forms.</p>
+                
+                <div class="magic-trick">
+                    <h3 class="text-xl font-bold mb-3">🎩 The Magic Revealed</h3>
+                    <p class="mb-3">Euler discovered that by making clever substitutions, you can transform:</p>
+                    <div class="text-center text-lg font-semibold my-4">
+                        Irrational Expressions → Rational Expressions
+                    </div>
+                    <p>This transformation makes integration possible using standard techniques you already know!</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Navigation Guide</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
+                    <a href="#euler1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">First Substitution</a>
+                    <a href="#euler2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Second Substitution</a>
+                    <a href="#euler3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Third Substitution</a>
+                </div>
+            </div>
+
+            <!-- Euler's First Substitution -->
+            <section id="euler1" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="euler-tag">Euler's First</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Most Common</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When $a > 0$ in $\sqrt{ax^2 + bx + c}$</h3>
+                    
+                    <div class="substitution-type">
+                        <h4 class="font-semibold text-yellow-800 mb-2">The Substitution:</h4>
+                        <div class="text-center text-lg font-mono bg-white p-3 rounded border">
+                            $\sqrt{ax^2 + bx + c} = t - \sqrt{a}x$
+                        </div>
+                        <p class="mt-3 text-sm text-gray-600">This works best when the quadratic has real roots and $a > 0$.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: $\int \frac{dx}{\sqrt{x^2 + 4x + 3}}$</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Complete the square: $x^2 + 4x + 3 = (x+2)^2 - 1$</p>
+                            <p><strong>Step 2:</strong> Apply Euler's first substitution: $\sqrt{(x+2)^2 - 1} = t - (x+2)$</p>
+                            <p><strong>Step 3:</strong> Square both sides: $(x+2)^2 - 1 = t^2 - 2t(x+2) + (x+2)^2$</p>
+                            <p><strong>Step 4:</strong> Simplify: $-1 = t^2 - 2t(x+2) \Rightarrow x+2 = \frac{t^2 + 1}{2t}$</p>
+                            <p><strong>Step 5:</strong> Differentiate: $dx = \frac{t^2 - 1}{2t^2} dt$</p>
+                            <p><strong>Step 6:</strong> Substitute back: The integral becomes $\int \frac{1}{t} \cdot \frac{t^2 - 1}{2t^2} dt = \frac{1}{2} \int \frac{t^2 - 1}{t^3} dt$</p>
+                            <p><strong>Step 7:</strong> Integrate: $\frac{1}{2} \int (t^{-1} - t^{-3}) dt = \frac{1}{2} (\ln|t| + \frac{1}{2t^2}) + C$</p>
+                            <p><strong>Step 8:</strong> Back-substitute $t = \sqrt{(x+2)^2 - 1} + (x+2)$</p>
+                        </div>
+                    </div>
+
+                    <div class="advanced-tip">
+                        <h4 class="font-semibold text-orange-800 mb-2">💡 When to Use This</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>When $a > 0$ in $\sqrt{ax^2 + bx + c}$</li>
+                            <li>When the quadratic has real roots</li>
+                            <li>Particularly effective for integrals of the form $\int \frac{dx}{\sqrt{ax^2 + bx + c}}$</li>
+                            <li>Also works for $\int \sqrt{ax^2 + bx + c}  dx$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Euler's Second Substitution -->
+            <section id="euler2" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="euler-tag">Euler's Second</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">For c > 0</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When $c > 0$ in $\sqrt{ax^2 + bx + c}$</h3>
+                    
+                    <div class="substitution-type">
+                        <h4 class="font-semibold text-yellow-800 mb-2">The Substitution:</h4>
+                        <div class="text-center text-lg font-mono bg-white p-3 rounded border">
+                            $\sqrt{ax^2 + bx + c} = xt + \sqrt{c}$
+                        </div>
+                        <p class="mt-3 text-sm text-gray-600">This is particularly useful when the constant term $c$ is positive.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: $\int \frac{dx}{\sqrt{x^2 + 1}}$</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Apply Euler's second substitution: $\sqrt{x^2 + 1} = xt + 1$</p>
+                            <p><strong>Step 2:</strong> Square both sides: $x^2 + 1 = x^2t^2 + 2xt + 1$</p>
+                            <p><strong>Step 3:</strong> Simplify: $x^2 = x^2t^2 + 2xt \Rightarrow x^2(1 - t^2) = 2xt$</p>
+                            <p><strong>Step 4:</strong> Solve for $x$: $x(1 - t^2) = 2t \Rightarrow x = \frac{2t}{1 - t^2}$</p>
+                            <p><strong>Step 5:</strong> Differentiate: $dx = \frac{2(1 - t^2) + 4t^2}{(1 - t^2)^2} dt = \frac{2(1 + t^2)}{(1 - t^2)^2} dt$</p>
+                            <p><strong>Step 6:</strong> Also, $\sqrt{x^2 + 1} = x t + 1 = \frac{2t}{1 - t^2} \cdot t + 1 = \frac{1 + t^2}{1 - t^2}$</p>
+                            <p><strong>Step 7:</strong> Substitute: $\int \frac{dx}{\sqrt{x^2 + 1}} = \int \frac{1 - t^2}{1 + t^2} \cdot \frac{2(1 + t^2)}{(1 - t^2)^2} dt = \int \frac{2}{1 - t^2} dt$</p>
+                            <p><strong>Step 8:</strong> Integrate: $\int \frac{2}{1 - t^2} dt = \ln\left|\frac{1 + t}{1 - t}\right| + C$</p>
+                            <p><strong>Step 9:</strong> Back-substitute $t = \frac{\sqrt{x^2 + 1} - 1}{x}$</p>
+                        </div>
+                    </div>
+
+                    <div class="advanced-tip">
+                        <h4 class="font-semibold text-orange-800 mb-2">💡 When to Use This</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>When $c > 0$ in $\sqrt{ax^2 + bx + c}$</li>
+                            <li>Particularly good for integrals involving $\sqrt{x^2 + a^2}$</li>
+                            <li>Also effective for $\sqrt{a^2 - x^2}$ type integrals</li>
+                            <li>Use when the first substitution gives messy algebra</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Euler's Third Substitution -->
+            <section id="euler3" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="euler-tag">Euler's Third</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">For Real Roots</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When $ax^2 + bx + c$ has Real Roots</h3>
+                    
+                    <div class="substitution-type">
+                        <h4 class="font-semibold text-yellow-800 mb-2">The Substitution:</h4>
+                        <div class="text-center text-lg font-mono bg-white p-3 rounded border">
+                            $\sqrt{ax^2 + bx + c} = t(x - \alpha)$
+                        </div>
+                        <p class="mt-3 text-sm text-gray-600">where $\alpha$ is one of the real roots of $ax^2 + bx + c = 0$.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: $\int \frac{dx}{\sqrt{x^2 - 1}}$</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Find roots: $x^2 - 1 = 0 \Rightarrow x = \pm 1$</p>
+                            <p><strong>Step 2:</strong> Apply Euler's third substitution with $\alpha = 1$: $\sqrt{x^2 - 1} = t(x - 1)$</p>
+                            <p><strong>Step 3:</strong> Square both sides: $x^2 - 1 = t^2(x - 1)^2$</p>
+                            <p><strong>Step 4:</strong> Factor: $(x - 1)(x + 1) = t^2(x - 1)^2$</p>
+                            <p><strong>Step 5:</strong> Cancel $(x - 1)$: $x + 1 = t^2(x - 1)$</p>
+                            <p><strong>Step 6:</strong> Solve for $x$: $x + 1 = t^2x - t^2 \Rightarrow x(1 - t^2) = -t^2 - 1 \Rightarrow x = \frac{t^2 + 1}{t^2 - 1}$</p>
+                            <p><strong>Step 7:</strong> Differentiate: $dx = \frac{(t^2 - 1)(2t) - (t^2 + 1)(2t)}{(t^2 - 1)^2} dt = \frac{-4t}{(t^2 - 1)^2} dt$</p>
+                            <p><strong>Step 8:</strong> Also, $\sqrt{x^2 - 1} = t(x - 1) = t\left(\frac{t^2 + 1}{t^2 - 1} - 1\right) = \frac{2t}{t^2 - 1}$</p>
+                            <p><strong>Step 9:</strong> Substitute: $\int \frac{dx}{\sqrt{x^2 - 1}} = \int \frac{t^2 - 1}{2t} \cdot \frac{-4t}{(t^2 - 1)^2} dt = \int \frac{-2}{t^2 - 1} dt$</p>
+                            <p><strong>Step 10:</strong> Integrate: $\int \frac{-2}{t^2 - 1} dt = \ln\left|\frac{t - 1}{t + 1}\right| + C$</p>
+                            <p><strong>Step 11:</strong> Back-substitute $t = \frac{\sqrt{x^2 - 1}}{x - 1}$</p>
+                        </div>
+                    </div>
+
+                    <div class="advanced-tip">
+                        <h4 class="font-semibold text-orange-800 mb-2">💡 When to Use This</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>When $ax^2 + bx + c$ has real distinct roots</li>
+                            <li>Particularly effective for $\sqrt{x^2 - a^2}$ type integrals</li>
+                            <li>Use when you can easily identify the roots</li>
+                            <li>Often gives cleaner results than other methods for these cases</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Decision Framework -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 Which Euler Substitution to Use When?</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm bg-white rounded-lg overflow-hidden">
+                            <thead class="bg-green-100">
+                                <tr>
+                                    <th class="p-3 text-left">Condition</th>
+                                    <th class="p-3 text-left">Use Substitution</th>
+                                    <th class="p-3 text-left">Example Form</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3">$a > 0$</td>
+                                    <td class="p-3 font-semibold">First: $\sqrt{ax^2 + bx + c} = t - \sqrt{a}x$</td>
+                                    <td class="p-3">$\int \frac{dx}{\sqrt{x^2 + 4x + 3}}$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3">$c > 0$</td>
+                                    <td class="p-3 font-semibold">Second: $\sqrt{ax^2 + bx + c} = xt + \sqrt{c}$</td>
+                                    <td class="p-3">$\int \frac{dx}{\sqrt{x^2 + 1}}$</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3">Real roots exist</td>
+                                    <td class="p-3 font-semibold">Third: $\sqrt{ax^2 + bx + c} = t(x - \alpha)$</td>
+                                    <td class="p-3">$\int \frac{dx}{\sqrt{x^2 - 1}}$</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-green-700">
+                        <p><strong>Pro Tip:</strong> If one substitution gives messy algebra, try another! Euler designed these to cover all cases.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Advanced Application -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 JEE Advanced Application Strategy</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Problem Identification</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Look for integrals with $\sqrt{ax^2 + bx + c}$</li>
+                                <li>Check if trigonometric substitution seems messy</li>
+                                <li>Identify if the quadratic has real roots</li>
+                                <li>Notice when standard formulas don't apply directly</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Time Management</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Euler substitutions take 3-5 minutes once mastered</li>
+                                <li>Practice recognizing which substitution to use quickly</li>
+                                <li>Have the three forms memorized for instant recall</li>
+                                <li>Use this as your secret weapon for 5-8 mark questions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🔢 Practice Your Magical Skills</h3>
+                    <p class="mb-4">Try these JEE-level problems using Euler's substitutions:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. $\int \frac{dx}{\sqrt{x^2 + 6x + 8}}$</p>
+                            <div class="text-sm text-gray-600">Hint: Complete the square first, then use Euler's first substitution</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. $\int \sqrt{x^2 + 9}  dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Try Euler's second substitution since c = 9 > 0</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. $\int \frac{x dx}{\sqrt{x^2 - 4}}$</p>
+                            <div class="text-sm text-gray-600">Hint: Real roots at x = ±2, use Euler's third substitution</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. $\int \frac{dx}{x\sqrt{x^2 + x + 1}}$</p>
+                            <div class="text-sm text-gray-600">Challenge: This requires creative application of Euler's method</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Pitfalls -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Algebra Errors</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Forgetting to square both sides completely</li>
+                                <li>Making sign errors when solving for x</li>
+                                <li>Mishandling the differentiation step</li>
+                                <li>Losing track of the original variable during substitution</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Strategic Errors</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Using the wrong Euler substitution for the case</li>
+                                <li>Not checking if a simpler method exists first</li>
+                                <li>Giving up too early when algebra gets messy</li>
+                                <li>Forgetting to back-substitute at the end</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Encouragement -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master This Magical Technique!</h3>
+                    <p class="mb-4 opacity-90">Euler's substitutions can solve integrals that seem impossible at first glance. With practice, you'll spot these opportunities instantly.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Integration Methods
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Euler's Cheat Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Historical Context -->
+            <section class="mb-8">
+                <div class="bg-gray-100 border border-gray-300 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">📚 The Genius of Leonhard Euler</h3>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mr-4">
+                            <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center">
+                                <span class="text-purple-800 font-bold">E</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-700">
+                                Leonhard Euler (1707-1783) was one of the greatest mathematicians of all time. Despite going blind in his later years, 
+                                he produced nearly half of his groundbreaking work during this period. His substitutions for irrational integrals 
+                                demonstrate his incredible ability to find elegant solutions to seemingly intractable problems.
+                            </p>
+                            <p class="text-sm text-gray-700 mt-2">
+                                Euler's contributions span every area of mathematics, and his work forms the foundation of much of modern calculus 
+                                and analysis that you study today for JEE.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

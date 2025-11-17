@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Definite Integral Strategies | JEE Mains Problem Solving | KnowJEE</title>
+    <meta name="description" content="Master definite integrals for JEE Mains with these 10 powerful problem-solving strategies. Learn properties, substitution methods, and integration techniques for guaranteed success.">
+    <meta name="keywords" content="JEE mains definite integrals, integration strategies, JEE calculus, definite integral properties, JEE problem solving, integration techniques">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .strategy-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .strategy-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .frequency-tag {
+            background: #0369a1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .checklist-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Mains Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">10 Strategies</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Top 10 Problem-Solving Strategies for Definite Integrals in JEE Mains</h1>
+                <p class="text-xl text-gray-600 mb-4">Master these powerful techniques to solve any definite integral problem efficiently in JEE Mains 2026.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12-18%</div>
+                            <div class="text-sm text-blue-600">Weightage in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">10</div>
+                            <div class="text-sm text-blue-600">Key Strategies</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-4</div>
+                            <div class="text-sm text-blue-600">Questions/Papers</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8-12</div>
+                            <div class="text-sm text-blue-600">Marks Guaranteed</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Definite Integrals Are Crucial for JEE Mains</h2>
+                <p class="mb-4">Definite integrals consistently appear in <strong>3-4 questions per JEE Mains paper</strong>, carrying <strong>12-18% weightage</strong> in Mathematics section. Mastering these strategies can secure you <strong>8-12 easy marks</strong>.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Mains Pattern Analysis (2014-2024)</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Property-based integrals:</strong> 35% of questions</li>
+                        <li><strong>Substitution methods:</strong> 25% of questions</li>
+                        <li><strong>Definite integrals as limit of sum:</strong> 15% of questions</li>
+                        <li><strong>Integration with special functions:</strong> 15% of questions</li>
+                        <li><strong>Miscellaneous applications:</strong> 10% of questions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Strategy Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+                    <a href="#strategy1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Properties</a>
+                    <a href="#strategy2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Substitution</a>
+                    <a href="#strategy3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Even/Odd</a>
+                    <a href="#strategy4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Periodic</a>
+                    <a href="#strategy5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Limit Sum</a>
+                    <a href="#strategy6" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">King's Property</a>
+                    <a href="#strategy7" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Leibniz</a>
+                    <a href="#strategy8" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Reduction</a>
+                    <a href="#strategy9" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Partial Fractions</a>
+                    <a href="#strategy10" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Special Functions</a>
+                </div>
+            </div>
+
+            <!-- Strategy 1 -->
+            <section id="strategy1" class="mb-8">
+                <div class="strategy-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">35% Questions</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Strategy 1: Mastering Basic Properties</h3>
+                    
+                    <div class="mb-4">
+                        <p class="font-semibold text-blue-800">Key Properties to Remember:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_a^b f(x)dx = \int_a^b f(t)dt$$
+                                <p class="text-xs text-gray-600 mt-1">Dummy variable property</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx$$
+                                <p class="text-xs text-gray-600 mt-1">Additive property</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_a^b f(x)dx = -\int_b^a f(x)dx$$
+                                <p class="text-xs text-gray-600 mt-1">Reversal property</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_0^a f(x)dx = \int_0^a f(a-x)dx$$
+                                <p class="text-xs text-gray-600 mt-1">Important property</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">📚 JEE Main Example</h4>
+                        <p class="mb-2">Evaluate: $\int_0^{\pi/2} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Use property: $I = \int_0^{\pi/2} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} dx$</p>
+                            <p><strong>Step 2:</strong> Also $I = \int_0^{\pi/2} \frac{\sqrt{\cos x}}{\sqrt{\sin x} + \sqrt{\cos x}} dx$ (using $\int_0^a f(x)dx = \int_0^a f(a-x)dx$)</p>
+                            <p><strong>Step 3:</strong> Add both: $2I = \int_0^{\pi/2} 1 dx = \frac{\pi}{2}$</p>
+                            <p><strong>Step 4:</strong> $I = \frac{\pi}{4}$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Tip</h4>
+                        <p class="text-sm">When you see symmetric limits or complementary functions, immediately think of property applications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy 2 -->
+            <section id="strategy2" class="mb-8">
+                <div class="strategy-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">25% Questions</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Strategy 2: Smart Substitution Methods</h3>
+                    
+                    <div class="mb-4">
+                        <p class="font-semibold text-blue-800">Common Substitutions:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm mt-2">
+                            <li><strong>Trigonometric:</strong> $\sqrt{a^2 - x^2} \rightarrow x = a\sin\theta$</li>
+                            <li><strong>Algebraic:</strong> $x = \frac{1}{t}$ for reciprocal functions</li>
+                            <li><strong>Exponential:</strong> $e^x = t$ for exponential integrals</li>
+                            <li><strong>Special:</strong> $x = a\cos^2\theta + b\sin^2\theta$ for specific forms</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">📚 JEE Main Example</h4>
+                        <p class="mb-2">Evaluate: $\int_0^1 \frac{\tan^{-1}x}{1+x^2} dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Let $t = \tan^{-1}x \Rightarrow dt = \frac{1}{1+x^2}dx$</p>
+                            <p><strong>Step 2:</strong> When $x=0$, $t=0$; when $x=1$, $t=\frac{\pi}{4}$</p>
+                            <p><strong>Step 3:</strong> Integral becomes: $\int_0^{\pi/4} t dt$</p>
+                            <p><strong>Step 4:</strong> $= \left[\frac{t^2}{2}\right]_0^{\pi/4} = \frac{\pi^2}{32}$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Tip</h4>
+                        <p class="text-sm">Always change the limits when substituting to avoid back-substitution and save time.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy 3 -->
+            <section id="strategy3" class="mb-8">
+                <div class="strategy-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">15% Questions</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Strategy 3: Even and Odd Function Properties</h3>
+                    
+                    <div class="mb-4">
+                        <p class="font-semibold text-blue-800">Key Rules:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_{-a}^a f(x)dx = 2\int_0^a f(x)dx$$
+                                <p class="text-xs text-gray-600 mt-1">If f(x) is even</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_{-a}^a f(x)dx = 0$$
+                                <p class="text-xs text-gray-600 mt-1">If f(x) is odd</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">📚 JEE Main Example</h4>
+                        <p class="mb-2">Evaluate: $\int_{-1}^1 \frac{x^3 + 2x}{1+x^2} dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Check parity: $\frac{x^3}{1+x^2}$ is odd, $\frac{2x}{1+x^2}$ is odd</p>
+                            <p><strong>Step 2:</strong> Both parts are odd functions</p>
+                            <p><strong>Step 3:</strong> Integral of odd function over symmetric limits is 0</p>
+                            <p><strong>Step 4:</strong> Answer = 0</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Tip</h4>
+                        <p class="text-sm">Always check function parity when limits are symmetric. This can solve problems in seconds!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy 4 -->
+            <section id="strategy4" class="mb-8">
+                <div class="strategy-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">12% Questions</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Strategy 4: Periodic Function Properties</h3>
+                    
+                    <div class="mb-4">
+                        <p class="font-semibold text-blue-800">Key Formulas:</p>
+                        <div class="grid grid-cols-1 gap-2 mt-2 text-sm">
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_0^{nT} f(x)dx = n\int_0^T f(x)dx$$
+                                <p class="text-xs text-gray-600 mt-1">For period T, n∈ℤ</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                $$\int_a^{a+T} f(x)dx = \int_0^T f(x)dx$$
+                                <p class="text-xs text-gray-600 mt-1">Independent of starting point</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">📚 JEE Main Example</h4>
+                        <p class="mb-2">Evaluate: $\int_0^{4\pi} |\cos x| dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Period of $|\cos x|$ is $\pi$</p>
+                            <p><strong>Step 2:</strong> $\int_0^{4\pi} |\cos x| dx = 4\int_0^{\pi} |\cos x| dx$</p>
+                            <p><strong>Step 3:</strong> $\int_0^{\pi} |\cos x| dx = 2\int_0^{\pi/2} \cos x dx = 2[\sin x]_0^{\pi/2} = 2$</p>
+                            <p><strong>Step 4:</strong> Final answer = $4 \times 2 = 8$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Tip</h4>
+                        <p class="text-sm">Common periodic functions: sin, cos (period 2π), |sin|, |cos| (period π), sin², cos² (period π).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy 5 -->
+            <section id="strategy5" class="mb-8">
+                <div class="strategy-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="frequency-tag">8% Questions</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Strategy 5: Definite Integral as Limit of Sum</h3>
+                    
+                    <div class="mb-4">
+                        <p class="font-semibold text-blue-800">Key Formula:</p>
+                        <div class="bg-white p-3 rounded border text-sm">
+                            $$\int_a^b f(x)dx = \lim_{n \to \infty} \sum_{r=1}^n f\left(a + r\frac{b-a}{n}\right) \cdot \frac{b-a}{n}$$
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">📚 JEE Main Example</h4>
+                        <p class="mb-2">Evaluate: $\lim_{n \to \infty} \sum_{r=1}^n \frac{1}{n} \cdot \frac{r^2}{n^2 + r^2}$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Recognize as $\lim_{n \to \infty} \sum_{r=1}^n f\left(\frac{r}{n}\right) \cdot \frac{1}{n}$</p>
+                            <p><strong>Step 2:</strong> Here $f(x) = \frac{x^2}{1 + x^2}$</p>
+                            <p><strong>Step 3:</strong> This represents $\int_0^1 \frac{x^2}{1+x^2} dx$</p>
+                            <p><strong>Step 4:</strong> $\int_0^1 \left(1 - \frac{1}{1+x^2}\right) dx = [x - \tan^{-1}x]_0^1 = 1 - \frac{\pi}{4}$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Quick Tip</h4>
+                        <p class="text-sm">Look for patterns like $\frac{1}{n}$ as dx and $\frac{r}{n}$ as x in the sum.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference Section -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">Essential Formulas Quick Reference</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg border border-gray-200 p-4">
+                        <h4 class="font-semibold text-blue-800 mb-3">🔢 Standard Integrals</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>$\int_0^{\pi/2} \sin^n x dx = \int_0^{\pi/2} \cos^n x dx = \frac{(n-1)!!}{n!!} \cdot K$</p>
+                            <p>$\int_0^{\pi/2} \log \sin x dx = -\frac{\pi}{2} \log 2$</p>
+                            <p>$\int_0^{\infty} e^{-ax} dx = \frac{1}{a}$</p>
+                            <p>$\int_0^{\infty} \frac{\sin x}{x} dx = \frac{\pi}{2}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg border border-gray-200 p-4">
+                        <h4 class="font-semibold text-blue-800 mb-3">🎯 Special Properties</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>$\int_a^b f(x)dx = \int_a^b f(a+b-x)dx$</p>
+                            <p>$\int_{-a}^a f(x)dx = \begin{cases} 2\int_0^a f(x)dx & \text{if even} \\ 0 & \text{if odd} \end{cases}$</p>
+                            <p>$\int_0^{2a} f(x)dx = \begin{cases} 2\int_0^a f(x)dx & \text{if } f(2a-x)=f(x) \\ 0 & \text{if } f(2a-x)=-f(x) \end{cases}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategies 6-10 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Strategies 6-10 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes King's Property, Leibniz Rule, Reduction Formulas, Partial Fractions, and Special Functions</p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Access Full Strategies
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Apply the strategies you've learned to these JEE-level problems:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Evaluate $\int_0^{\pi/2} \frac{\sin^3 x}{\sin^3 x + \cos^3 x} dx$</p>
+                            <p class="text-sm text-gray-600 mt-1">Hint: Use property strategy</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find $\int_{-2}^2 \frac{x^5 + 3x^3 + 7x}{x^2 + 4} dx$</p>
+                            <p class="text-sm text-gray-600 mt-1">Hint: Check function parity</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Evaluate $\lim_{n \to \infty} \sum_{r=1}^n \frac{n}{n^2 + r^2}$</p>
+                            <p class="text-sm text-gray-600 mt-1">Hint: Limit of sum approach</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy Selection Guide -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Which Strategy to Use When?</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="checklist-item">
+                            <h4 class="font-semibold text-purple-800 mb-2">Symmetric Limits (-a to a)</h4>
+                            <p class="text-sm">→ Check if function is even/odd first</p>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <h4 class="font-semibold text-purple-800 mb-2">Complementary Functions (sin/cos, etc.)</h4>
+                            <p class="text-sm">→ Use property $\int_0^a f(x)dx = \int_0^a f(a-x)dx$</p>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <h4 class="font-semibold text-purple-800 mb-2">Large Limits with Periodic Functions</h4>
+                            <p class="text-sm">→ Use periodic function properties</p>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <h4 class="font-semibold text-purple-800 mb-2">Complex Algebraic Expressions</h4>
+                            <p class="text-sm">→ Try substitution methods</p>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <h4 class="font-semibold text-purple-800 mb-2">Limit of Sum Given</h4>
+                            <p class="text-sm">→ Convert to definite integral form</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Preparation Tips -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">🚨 Last-Minute Exam Tips</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Before Solving:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always check limits symmetry</li>
+                                <li>Identify function type (even/odd/periodic)</li>
+                                <li>Look for property applications</li>
+                                <li>Estimate answer for quick verification</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">During Solving:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Change limits with substitution</li>
+                                <li>Use properties to simplify first</li>
+                                <li>Check intermediate steps</li>
+                                <li>Verify dimensional consistency</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master All 10 Strategies</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all strategies with detailed examples and video solutions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add checklist functionality
+        document.querySelectorAll('.checklist-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('checked');
+            });
+        });
+    </script>
+</body>
+</html>

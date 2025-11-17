@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leibnitz Rule: Differentiation Under the Integral Sign | KnowJEE</title>
+    <meta name="description" content="Master Leibnitz Rule for differentiation under integral sign. Essential for JEE Advanced with step-by-step examples, applications, and practice problems.">
+    <meta name="keywords" content="Leibnitz rule, differentiation under integral sign, JEE advanced calculus, integral differentiation, JEE mathematics, Leibniz rule problems">
+    <meta name="author" content="KnowJEE">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .derivation {
+            background: #fef7f7;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .topic-tag {
+            background: #0369a1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .formula-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Part 1 of 3</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leibnitz Rule: Differentiation Under the Integral Sign</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the fundamental theorem for differentiating integrals with variable limits - essential for JEE Advanced calculus problems.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Parts Series</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8+</div>
+                            <div class="text-sm text-blue-600">Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">15min</div>
+                            <div class="text-sm text-blue-700">Avg. Practice Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Leibnitz Rule Matters for JEE Advanced</h2>
+                <p class="mb-4">The Leibnitz Rule, also known as differentiation under the integral sign, is a powerful technique that appears in <strong>15-20% of JEE Advanced calculus problems</strong>. Mastering this rule will help you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li>Solve complex integrals that depend on parameters</li>
+                    <li>Evaluate definite integrals with variable limits</li>
+                    <li>Tackle problems involving integral equations</li>
+                    <li>Save time on lengthy integration problems</li>
+                    <li>Gain 4-8 marks in every JEE Advanced paper</li>
+                </ul>
+            </section>
+
+            <!-- Main Formula -->
+            <section class="mb-8">
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold mb-2">The Leibnitz Rule Formula</h3>
+                    <p class="text-2xl font-mono mb-2">$$\frac{d}{dx} \int_{a(x)}^{b(x)} f(x,t)  dt = f(x,b(x)) \cdot b'(x) - f(x,a(x)) \cdot a'(x) + \int_{a(x)}^{b(x)} \frac{\partial}{\partial x} f(x,t)  dt$$</p>
+                    <p class="text-sm opacity-90">Where $a(x)$ and $b(x)$ are differentiable functions of $x$</p>
+                </div>
+            </section>
+
+            <!-- Special Cases -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Special Case 1</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Constant Limits</h3>
+                    <p class="text-lg mb-4">When both limits are constants: $a(x) = a$, $b(x) = b$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Simplified Formula:</h4>
+                        <p class="text-center text-lg font-mono">$$\frac{d}{dx} \int_{a}^{b} f(x,t)  dt = \int_{a}^{b} \frac{\partial}{\partial x} f(x,t)  dt$$</p>
+                        <p class="text-sm text-gray-600 mt-2">Since $a'(x) = 0$ and $b'(x) = 0$</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Differentiate $I(x) = \int_{0}^{1} e^{xt}  dt$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Apply Leibnitz Rule with constant limits:</p>
+                            <p>$$I'(x) = \int_{0}^{1} \frac{\partial}{\partial x} e^{xt}  dt$$</p>
+                            <p><strong>Step 2:</strong> Compute partial derivative: $\frac{\partial}{\partial x} e^{xt} = te^{xt}$</p>
+                            <p><strong>Step 3:</strong> Integrate: $I'(x) = \int_{0}^{1} te^{xt}  dt$</p>
+                            <p><strong>Step 4:</strong> Solve using integration by parts:</p>
+                            <p>$$I'(x) = \left[\frac{te^{xt}}{x} - \frac{e^{xt}}{x^2}\right]_{0}^{1} = \frac{e^x}{x} - \frac{e^x}{x^2} + \frac{1}{x^2}$$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Case 2 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Special Case 2</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Variable Upper Limit</h3>
+                    <p class="text-lg mb-4">When lower limit is constant and upper limit is variable: $a(x) = a$, $b(x) = x$</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Simplified Formula:</h4>
+                        <p class="text-center text-lg font-mono">$$\frac{d}{dx} \int_{a}^{x} f(x,t)  dt = f(x,x) + \int_{a}^{x} \frac{\partial}{\partial x} f(x,t)  dt$$</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Differentiate $I(x) = \int_{0}^{x} (x-t)e^{t}  dt$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Apply Leibnitz Rule:</p>
+                            <p>$$I'(x) = f(x,x) + \int_{0}^{x} \frac{\partial}{\partial x} (x-t)e^{t}  dt$$</p>
+                            <p><strong>Step 2:</strong> Compute $f(x,x) = (x-x)e^x = 0$</p>
+                            <p><strong>Step 3:</strong> Partial derivative: $\frac{\partial}{\partial x} (x-t)e^{t} = e^{t}$</p>
+                            <p><strong>Step 4:</strong> Integrate: $I'(x) = \int_{0}^{x} e^{t}  dt = e^x - 1$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Derivation -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Understanding</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Derivation of Leibnitz Rule</h3>
+                    <p class="text-lg mb-4">Understanding where the formula comes from helps in applying it correctly.</p>
+                    
+                    <div class="derivation">
+                        <h4 class="font-semibold text-red-800 mb-2">Step-by-step Derivation:</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Define $F(x) = \int_{a(x)}^{b(x)} f(x,t)  dt$</p>
+                            <p><strong>Step 2:</strong> Use chain rule with intermediate variables:</p>
+                            <p>Let $u = a(x)$, $v = b(x)$, and consider $G(x,u,v) = \int_{u}^{v} f(x,t)  dt$</p>
+                            <p><strong>Step 3:</strong> Apply multivariate chain rule:</p>
+                            <p>$$\frac{dF}{dx} = \frac{\partial G}{\partial x} + \frac{\partial G}{\partial u} \cdot \frac{du}{dx} + \frac{\partial G}{\partial v} \cdot \frac{dv}{dx}$$</p>
+                            <p><strong>Step 4:</strong> Compute each partial derivative:</p>
+                            <p>• $\frac{\partial G}{\partial x} = \int_{u}^{v} \frac{\partial f}{\partial x}  dt$</p>
+                            <p>• $\frac{\partial G}{\partial u} = -f(x,u)$ (Fundamental Theorem)</p>
+                            <p>• $\frac{\partial G}{\partial v} = f(x,v)$ (Fundamental Theorem)</p>
+                            <p><strong>Step 5:</strong> Substitute back to get the final formula</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🚀 Problem-Solving Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">When to Use Leibnitz Rule:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Integrals with parameter in integrand</li>
+                                <li>Variable limits of integration</li>
+                                <li>When direct integration is difficult</li>
+                                <li>To establish integral equations</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Common Mistakes to Avoid:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Forgetting the boundary terms</li>
+                                <li>Mixing up partial and total derivatives</li>
+                                <li>Not checking continuity/differentiability</li>
+                                <li>Applying when conditions aren't satisfied</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Applications Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Applications in Parts 2 & 3</h3>
+                    <p class="text-gray-600 mb-4">Includes Gamma function evaluation, parametric integrals, and JEE Advanced level problems</p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Access Full Series
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these problems to test your understanding of Leibnitz Rule:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Differentiate $I(x) = \int_{0}^{x^2} \sin(xt)  dt$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find $\frac{d}{dx} \int_{1}^{x} \frac{e^{t}}{x}  dt$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Evaluate $\frac{d}{dx} \int_{\sin x}^{\cos x} \sqrt{1+t^2}  dt$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Leibnitz Rule?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all 3 parts with step-by-step video solutions and JEE Advanced practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-blue-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-blue-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-blue-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-blue-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-blue-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-blue-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-blue-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-blue-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

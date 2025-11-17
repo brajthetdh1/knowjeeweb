@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration by Parts: ILATE Rule for JEE | KnowJEE Calculus</title>
+    <meta name="description" content="Master Integration by Parts with ILATE Rule for JEE Main & Advanced. Complete guide with examples, formulas, and problem-solving strategies for calculus success.">
+    <meta name="keywords" content="integration by parts, ILATE rule, JEE calculus, JEE integration, integration methods, JEE mathematics, JEE main advanced calculus">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .ilate-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Calculus Mastery</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential for JEE</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Integration by Parts: The ILATE Rule for JEE Success</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the most powerful integration technique with ILATE priority rule. Solve complex JEE integrals systematically.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3</div>
+                            <div class="text-sm text-blue-600">Questions per Paper</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">85%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Key Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12+</div>
+                            <div class="text-sm text-blue-600">Solved Examples</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Integration by Parts is Crucial for JEE</h2>
+                <p class="mb-4">Integration by Parts appears in <strong>2-3 questions in every JEE paper</strong>, making it one of the most frequently tested calculus topics. Mastering this technique with the ILATE rule can help you secure <strong>8-12 marks easily</strong>.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Examination Pattern</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>JEE Main:</strong> 1-2 direct questions on integration by parts</li>
+                        <li><strong>JEE Advanced:</strong> Complex applications in definite integrals</li>
+                        <li><strong>Common combinations:</strong> With trigonometric, exponential, and logarithmic functions</li>
+                        <li><strong>Time-saving:</strong> ILATE rule helps solve in 60-90 seconds</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#formula" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Formula</a>
+                    <a href="#ilate-rule" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">ILATE Rule</a>
+                    <a href="#examples" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Solved Examples</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Applications</a>
+                </div>
+            </div>
+
+            <!-- Basic Formula -->
+            <section id="formula" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">1. The Integration by Parts Formula</h2>
+                
+                <div class="formula-box">
+                    <h3 class="font-semibold text-purple-800 mb-3">Fundamental Formula</h3>
+                    <div class="text-center text-2xl my-4">
+                        $$ \int u \, dv = uv - \int v \, du $$
+                    </div>
+                    <p class="text-center text-gray-600">Where u and v are functions of x</p>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Understanding the Formula</h3>
+                    <p>The formula is derived from the product rule of differentiation:</p>
+                    <div class="text-center my-3">
+                        $$ \frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx} $$
+                    </div>
+                    <p>Integrating both sides:</p>
+                    <div class="text-center my-3">
+                        $$ uv = \int u \, dv + \int v \, du $$
+                    </div>
+                    <p>Rearranging gives us the integration by parts formula.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Memory Aid</h4>
+                    <p>"<strong>Ultra Violet - Very Unusual</strong>" helps remember:</p>
+                    <p class="text-center font-semibold">∫ u dv = uv - ∫ v du</p>
+                </div>
+            </section>
+
+            <!-- ILATE Rule -->
+            <section id="ilate-rule" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">2. The ILATE Rule for Choosing 'u'</h2>
+                
+                <div class="ilate-box">
+                    <h3 class="text-2xl font-bold text-center mb-6">ILATE Priority Order</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-2 text-center">
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="text-xl font-bold">I</div>
+                            <div class="text-sm">Inverse Trigonometric</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="text-xl font-bold">L</div>
+                            <div class="text-sm">Logarithmic</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="text-xl font-bold">A</div>
+                            <div class="text-sm">Algebraic</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="text-xl font-bold">T</div>
+                            <div class="text-sm">Trigonometric</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-3 rounded">
+                            <div class="text-xl font-bold">E</div>
+                            <div class="text-sm">Exponential</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">How ILATE Works</h3>
+                    <p>When faced with product of two functions, choose 'u' according to ILATE priority:</p>
+                    <ul class="list-disc list-inside space-y-2 mt-2">
+                        <li><strong>Inverse Trigonometric</strong> functions have highest priority</li>
+                        <li><strong>Logarithmic</strong> functions come next</li>
+                        <li><strong>Algebraic</strong> functions (polynomials, roots) follow</li>
+                        <li><strong>Trigonometric</strong> functions come after algebraic</li>
+                        <li><strong>Exponential</strong> functions have the lowest priority</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-3">Example: Choosing 'u' with ILATE</h4>
+                    <p>For ∫ x · eˣ dx:</p>
+                    <div class="step-box">
+                        <p><strong>Step 1:</strong> Identify functions: Algebraic (x) and Exponential (eˣ)</p>
+                        <p><strong>Step 2:</strong> According to ILATE: Algebraic > Exponential</p>
+                        <p><strong>Step 3:</strong> Choose u = x (Algebraic), dv = eˣ dx</p>
+                    </div>
+                    <p class="mt-2">This choice simplifies the integral effectively.</p>
+                </div>
+            </section>
+
+            <!-- Step-by-Step Procedure -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Step-by-Step Solving Procedure</h2>
+                
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">5-Step Method for Integration by Parts</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 1: Identify Functions</h4>
+                            <p>Break the integrand into product of two functions</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 2: Apply ILATE Rule</h4>
+                            <p>Choose 'u' according to ILATE priority order</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 3: Differentiate and Integrate</h4>
+                            <p>Find du (differentiate u) and v (integrate dv)</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 4: Apply Formula</h4>
+                            <p>Substitute into ∫ u dv = uv - ∫ v du</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 5: Simplify</h4>
+                            <p>Solve the remaining integral and simplify the expression</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Solved Examples -->
+            <section id="examples" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Solved Examples with ILATE Rule</h2>
+
+                <!-- Example 1 -->
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded">Example 1</span>
+                        <span class="text-gray-500 text-sm">JEE Main 2023 Pattern</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Algebraic × Exponential</h3>
+                    <p class="text-lg mb-4">Evaluate ∫ x · eˣ dx</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Identify functions: Algebraic (x) and Exponential (eˣ)</p>
+                            <p><strong>Step 2:</strong> ILATE: Algebraic > Exponential, so u = x, dv = eˣ dx</p>
+                            <p><strong>Step 3:</strong> du = dx, v = ∫ eˣ dx = eˣ</p>
+                            <p><strong>Step 4:</strong> Apply formula:</p>
+                            <div class="text-center">
+                                ∫ x · eˣ dx = x · eˣ - ∫ eˣ dx
+                            </div>
+                            <p><strong>Step 5:</strong> Simplify:</p>
+                            <div class="text-center">
+                                = x eˣ - eˣ + C = eˣ(x - 1) + C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example 2 -->
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded">Example 2</span>
+                        <span class="text-gray-500 text-sm">JEE Advanced 2022 Pattern</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Logarithmic × Algebraic</h3>
+                    <p class="text-lg mb-4">Evaluate ∫ ln x dx</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Write as ∫ 1 · ln x dx</p>
+                            <p><strong>Step 2:</strong> ILATE: Logarithmic > Algebraic, so u = ln x, dv = dx</p>
+                            <p><strong>Step 3:</strong> du = (1/x) dx, v = x</p>
+                            <p><strong>Step 4:</strong> Apply formula:</p>
+                            <div class="text-center">
+                                ∫ ln x dx = x ln x - ∫ x · (1/x) dx
+                            </div>
+                            <p><strong>Step 5:</strong> Simplify:</p>
+                            <div class="text-center">
+                                = x ln x - ∫ dx = x ln x - x + C = x(ln x - 1) + C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example 3 -->
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded">Example 3</span>
+                        <span class="text-gray-500 text-sm">JEE Main 2021</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Algebraic × Trigonometric</h3>
+                    <p class="text-lg mb-4">Evaluate ∫ x sin x dx</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Step 1:</strong> Identify functions: Algebraic (x) and Trigonometric (sin x)</p>
+                            <p><strong>Step 2:</strong> ILATE: Algebraic > Trigonometric, so u = x, dv = sin x dx</p>
+                            <p><strong>Step 3:</strong> du = dx, v = ∫ sin x dx = -cos x</p>
+                            <p><strong>Step 4:</strong> Apply formula:</p>
+                            <div class="text-center">
+                                ∫ x sin x dx = x(-cos x) - ∫ (-cos x) dx
+                            </div>
+                            <p><strong>Step 5:</strong> Simplify:</p>
+                            <div class="text-center">
+                                = -x cos x + ∫ cos x dx = -x cos x + sin x + C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Cases & Applications -->
+            <section id="applications" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Special Cases & JEE Applications</h2>
+
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Cyclic Integration by Parts</h3>
+                    <p>Some integrals require applying integration by parts twice, bringing you back to the original integral.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: ∫ eˣ sin x dx</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>Let I = ∫ eˣ sin x dx</p>
+                            <p>First application: u = sin x, dv = eˣ dx</p>
+                            <p>I = eˣ sin x - ∫ eˣ cos x dx</p>
+                            <p>Second application on ∫ eˣ cos x dx: u = cos x, dv = eˣ dx</p>
+                            <p>I = eˣ sin x - [eˣ cos x + ∫ eˣ sin x dx]</p>
+                            <p>I = eˣ sin x - eˣ cos x - I</p>
+                            <p>2I = eˣ(sin x - cos x)</p>
+                            <p class="font-semibold">I = (eˣ/2)(sin x - cos x) + C</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Definite Integrals with Integration by Parts</h3>
+                    <p>For definite integrals ∫<sub>a</sub><sup>b</sup> u dv, the formula becomes:</p>
+                    <div class="text-center my-3">
+                        $$ \int_a^b u \, dv = [uv]_a^b - \int_a^b v \, du $$
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: ∫<sub>0</sub><sup>π</sup> x sin x dx</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>u = x, dv = sin x dx</p>
+                            <p>du = dx, v = -cos x</p>
+                            <p>∫<sub>0</sub><sup>π</sup> x sin x dx = [-x cos x]<sub>0</sub><sup>π</sup> + ∫<sub>0</sub><sup>π</sup> cos x dx</p>
+                            <p>= [-π cos π - 0] + [sin x]<sub>0</sub><sup>π</sup></p>
+                            <p>= [-π(-1)] + [0 - 0] = π</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Common Mistakes to Avoid</h2>
+                
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Wrong 'u' Selection</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Choosing exponential over logarithmic</li>
+                                <li>Not following ILATE priority</li>
+                                <li>Making integral more complicated</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Integration Errors</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Wrong integration of dv</li>
+                                <li>Forgetting constant of integration</li>
+                                <li>Sign errors in formula application</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-box mt-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">✅ Prevention Strategy</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Always write ILATE and follow it strictly</li>
+                            <li>Double-check integration of dv</li>
+                            <li>Practice with timer to build speed</li>
+                            <li>Verify answers by differentiation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Practice Problems for JEE</h2>
+                
+                <div class="practice-box">
+                    <h3 class="font-semibold text-orange-800 mb-3">Try These JEE-Level Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. ∫ x² eˣ dx</p>
+                            <div class="text-sm text-gray-600">Hint: Apply integration by parts twice</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. ∫ x ln x dx</p>
+                            <div class="text-sm text-gray-600">Hint: Logarithmic function has priority</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. ∫ eˣ cos x dx</p>
+                            <div class="text-sm text-gray-600">Hint: Cyclic integration by parts</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. ∫<sub>0</sub><sup>1</sup> x eˣ dx</p>
+                            <div class="text-sm text-gray-600">Hint: Definite integral application</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-orange-700">
+                        <p><strong>Time yourself:</strong> Try to solve each problem within 2 minutes!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Quick Revision Checklist</h2>
+                
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">📝 Must-Remember Formulas</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>∫ u dv = uv - ∫ v du</li>
+                                <li>ILATE: I → L → A → T → E</li>
+                                <li>Definite: ∫<sub>a</sub><sup>b</sup> u dv = [uv]<sub>a</sub><sup>b</sup> - ∫<sub>a</sub><sup>b</sup> v du</li>
+                                <li>Cyclic: Remember the pattern</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">🎯 Exam Strategy</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always apply ILATE rule first</li>
+                                <li>Check if integral simplifies</li>
+                                <li>Watch for cyclic patterns</li>
+                                <li>Verify by differentiation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Integration by Parts?</h3>
+                    <p class="mb-4 opacity-90">Continue your calculus journey with these advanced topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="definite-integrals.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Definite Integrals →
+                        </a>
+                        <a href="integration-methods.html" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            All Integration Methods
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
