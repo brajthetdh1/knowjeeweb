@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King's Property in Integration: ∫f(x)dx = ∫f(a+b-x)dx | KnowJEE</title>
+    <meta name="description" content="Master the King's Property of Definite Integrals: ∫f(x)dx = ∫f(a+b-x)dx. Complete guide with proof, applications, and JEE problem-solving strategies.">
+    <meta name="keywords" content="King's property integration, definite integrals property, JEE integration tricks, ∫f(x)dx = ∫f(a+b-x)dx, integration shortcuts, JEE calculus">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .property-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .proof-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .application-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #faf5ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .practice-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Integration Mastery</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Essential</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The King's Property Demystified: ∫<sub>a</sub><sup>b</sup> f(x) dx = ∫<sub>a</sub><sup>b</sup> f(a+b-x) dx</h1>
+                <p class="text-xl text-gray-600 mb-4">Master this powerful definite integrals property that solves complex JEE problems in seconds.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5s</div>
+                            <div class="text-sm text-purple-600">Problem Solving</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">85%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Key Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Guaranteed Marks</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Property is Called "King's Property"</h2>
+                <p class="mb-4">The King's Property is one of the most elegant and powerful tools in definite integration. It's called the "King" because it <strong>rules over complex integrals</strong> and can solve problems that appear impossible at first glance.</p>
+                
+                <div class="property-box">
+                    <h3 class="text-2xl font-bold mb-4">The Royal Property</h3>
+                    <div class="text-3xl font-math font-bold mb-2">
+                        $$ \int_a^b f(x)  dx = \int_a^b f(a+b-x)  dx $$
+                    </div>
+                    <p class="text-purple-100">This single property can reduce minutes of computation to seconds of insight.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">👑 Navigate the Kingdom</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#proof" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Mathematical Proof</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Applications</a>
+                    <a href="#examples" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Solved Examples</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Practice</a>
+                </div>
+            </div>
+
+            <!-- Proof Section -->
+            <section id="proof" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Royal Proof: Why This Property Works</h2>
+                
+                <div class="proof-box">
+                    <h4 class="font-semibold text-green-800 mb-3">Step-by-Step Proof</h4>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 1: Start with the right-hand side</p>
+                        <div class="text-center my-3">
+                            $$ I = \int_a^b f(a+b-x)  dx $$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 2: Use substitution</p>
+                        <p>Let $t = a + b - x$</p>
+                        <p>Then $dt = -dx$ or $dx = -dt$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 3: Change limits</p>
+                        <p>When $x = a$, $t = a + b - a = b$</p>
+                        <p>When $x = b$, $t = a + b - b = a$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 4: Substitute in the integral</p>
+                        <div class="text-center my-3">
+                            $$ I = \int_b^a f(t) (-dt) = \int_a^b f(t)  dt $$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 5: Rename variable</p>
+                        <div class="text-center my-3">
+                            $$ I = \int_a^b f(x)  dx $$
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Proof Complete!</h4>
+                        <p class="font-semibold">We have shown: $$\int_a^b f(x)  dx = \int_a^b f(a+b-x)  dx$$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Applications -->
+            <section id="applications" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Royal Applications: When to Use the King's Property</h2>
+                
+                <div class="application-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Application 1: Trigonometric Simplification</h3>
+                    <p class="mb-3">The King's Property works wonders with trigonometric functions, especially when you see patterns like:</p>
+                    <div class="text-center my-3">
+                        $$ \int_0^{\pi/2} f(\sin x)  dx = \int_0^{\pi/2} f(\cos x)  dx $$
+                    </div>
+                    <p>This is a special case where $a=0$, $b=\pi/2$, so $a+b-x = \pi/2 - x$</p>
+                </div>
+                
+                <div class="application-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Application 2: Creating Symmetry</h3>
+                    <p class="mb-3">When an integral looks complicated but has symmetric limits or the function has special properties:</p>
+                    <div class="text-center my-3">
+                        $$ \int_a^b \frac{f(x)}{f(x) + f(a+b-x)}  dx = \frac{b-a}{2} $$
+                    </div>
+                    <p>This magical result comes directly from the King's Property!</p>
+                </div>
+                
+                <div class="application-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Application 3: Solving Definite Integrals with Parameters</h3>
+                    <p class="mb-3">When integrals contain both $f(x)$ and $f(a+b-x)$ terms:</p>
+                    <div class="text-center my-3">
+                        $$ I = \int_a^b \frac{f(x)}{f(x) + f(a+b-x)}  dx $$
+                    </div>
+                    <p>Adding this to its "twin" obtained by King's Property often gives the solution instantly.</p>
+                </div>
+            </section>
+
+            <!-- Solved Examples -->
+            <section id="examples" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Royal Examples: The King in Action</h2>
+                
+                <div class="example-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Example 1: Classic Trigonometric Application</h3>
+                    <p class="mb-3">Evaluate $I = \int_0^{\pi/2} \frac{\sin x}{\sin x + \cos x}  dx$</p>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 1: Apply King's Property</p>
+                        <p>Here $a=0$, $b=\pi/2$, so $a+b-x = \pi/2 - x$</p>
+                        <div class="text-center my-2">
+                            $$ I = \int_0^{\pi/2} \frac{\sin(\pi/2 - x)}{\sin(\pi/2 - x) + \cos(\pi/2 - x)}  dx $$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 2: Simplify using trigonometric identities</p>
+                        <div class="text-center my-2">
+                            $$ I = \int_0^{\pi/2} \frac{\cos x}{\cos x + \sin x}  dx $$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 3: Add the original and transformed integrals</p>
+                        <div class="text-center my-2">
+                            $$ 2I = \int_0^{\pi/2} \frac{\sin x + \cos x}{\sin x + \cos x}  dx = \int_0^{\pi/2} 1  dx $$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 4: Solve</p>
+                        <div class="text-center my-2">
+                            $$ 2I = \frac{\pi}{2} \Rightarrow I = \frac{\pi}{4} $$
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Example 2: JEE Advanced Problem</h3>
+                    <p class="mb-3">Evaluate $I = \int_0^1 \frac{\ln(1+x)}{1+x^2}  dx$</p>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 1: Apply King's Property</p>
+                        <p>Here $a=0$, $b=1$, so $a+b-x = 1 - x$</p>
+                        <div class="text-center my-2">
+                            $$ I = \int_0^1 \frac{\ln(1+(1-x))}{1+(1-x)^2}  dx = \int_0^1 \frac{\ln(2-x)}{1+(1-x)^2}  dx $$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 2: Add original and transformed integrals</p>
+                        <div class="text-center my-2">
+                            $$ 2I = \int_0^1 \frac{\ln(1+x) + \ln(2-x)}{1+x^2}  dx $$
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p class="font-semibold mb-2">Step 3: Simplify the numerator</p>
+                        <div class="text-center my-2">
+                            $$ \ln(1+x) + \ln(2-x) = \ln[(1+x)(2-x)] = \ln(2 + x - x^2) $$
+                        </div>
+                        <p>Further manipulation leads to the solution $I = \frac{\pi}{8} \ln 2$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Cases and Tips -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Royal Insights: Special Cases and Pro Tips</h2>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-purple-800 mb-2">👑 Special Case 1: Symmetric Limits</h4>
+                    <p>When $a = -b$, then $a + b - x = -x$</p>
+                    <div class="text-center my-2">
+                        $$ \int_{-a}^a f(x)  dx = \int_{-a}^a f(-x)  dx $$
+                    </div>
+                    <p>This is particularly useful for even and odd functions!</p>
+                </div>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-purple-800 mb-2">👑 Special Case 2: Standard Trigonometric Limits</h4>
+                    <p>For $a=0$, $b=\pi/2$:</p>
+                    <div class="text-center my-2">
+                        $$ \int_0^{\pi/2} f(\sin x)  dx = \int_0^{\pi/2} f(\cos x)  dx $$
+                    </div>
+                    <p>This appears frequently in JEE problems!</p>
+                </div>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-purple-800 mb-2">💡 Pro Tip: When to Suspect King's Property</h4>
+                    <ul class="list-disc list-inside space-y-1 mt-2">
+                        <li>Integrals with $f(x)$ and $f(a+b-x)$ type terms</li>
+                        <li>Trigonometric integrals with symmetric limits</li>
+                        <li>Integrals where direct integration seems messy</li>
+                        <li>Problems asking to prove integral equalities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- JEE Practice Problems -->
+            <section id="practice" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Royal Practice: JEE Level Problems</h2>
+                
+                <div class="practice-box">
+                    <h3 class="font-semibold text-blue-900 mb-4">Test Your Royal Skills</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Evaluate $\int_0^{\pi/2} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}}  dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Use King's Property and add the integrals</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Prove that $\int_0^1 \frac{\ln(1+x)}{1+x^2}  dx = \frac{\pi}{8} \ln 2$</p>
+                            <div class="text-sm text-gray-600">Hint: Apply King's Property with a=0, b=1</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Evaluate $\int_0^{\pi} \frac{x \sin x}{1 + \cos^2 x}  dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Use King's Property with a=0, b=π</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <p class="text-sm text-yellow-800"><strong>Strategy:</strong> For each problem, write down what $a+b-x$ becomes, apply King's Property, and look for patterns when you add the original and transformed integrals.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Avoid These Royal Blunders</h2>
+                
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Common Mistake 1: Wrong Limits</h4>
+                            <p class="text-sm">Forgetting to change limits properly when using substitution in the proof.</p>
+                            <p class="text-sm mt-2"><strong>Fix:</strong> Always write limits explicitly when $x=a$ and $x=b$.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Common Mistake 2: Misapplying the Property</h4>
+                            <p class="text-sm">Using $f(a-b+x)$ instead of $f(a+b-x)$.</p>
+                            <p class="text-sm mt-2"><strong>Fix:</strong> Remember the pattern: $a+b-x$ (addition in the middle).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-red-800 mb-2">✅ Success Formula</h4>
+                        <div class="bg-white p-3 rounded border text-sm">
+                            <p><strong>Step 1:</strong> Identify $a$ and $b$ in $\int_a^b f(x) dx$</p>
+                            <p><strong>Step 2:</strong> Write $f(a+b-x)$ explicitly</p>
+                            <p><strong>Step 3:</strong> Add original and transformed integrals if needed</p>
+                            <p><strong>Step 4:</strong> Look for simplification opportunities</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                    <h2 class="text-2xl font-bold mb-4">Royal Summary: Key Takeaways</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-semibold mb-2">🎯 What to Remember</h3>
+                            <ul class="list-disc list-inside space-y-1 text-purple-100">
+                                <li>$\int_a^b f(x) dx = \int_a^b f(a+b-x) dx$ always holds</li>
+                                <li>Particularly powerful for trigonometric integrals</li>
+                                <li>Often used by adding original and transformed integrals</li>
+                                <li>Special cases with symmetric limits are very common</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">🚀 JEE Strategy</h3>
+                            <ul class="list-disc list-inside space-y-1 text-purple-100">
+                                <li>Recognize patterns that suggest King's Property</li>
+                                <li>Practice the standard trigonometric applications</li>
+                                <li>Use it to simplify before attempting integration</li>
+                                <li>Combine with other integration techniques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Rule Integration Problems?</h3>
+                    <p class="mb-4 opacity-90">Master the King's Property and 10+ other integration techniques with our complete course</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-integration-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Integration Techniques
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice King's Property Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

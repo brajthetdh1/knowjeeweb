@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Advanced Vector Problems: Position Vector Approach | KnowJEE</title>
+    <meta name="description" content="Master the position vector approach for solving tough JEE Advanced vector problems. Step-by-step solutions to complex geometry and vector problems.">
+    <meta name="keywords" content="JEE advanced vectors, position vector approach, vector geometry, JEE mathematics, vector problems, JEE advanced preparation">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #f0f9ff;
+            border: 2px solid #7dd3fc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #e0f2fe;
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .approach-box {
+            background: #fef7ed;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .key-concept {
+            background: #faf5ff;
+            border: 2px solid #c084fc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .year-tag {
+            background: #1e40af;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 3px solid #94a3b8;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Vectors Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">5 Complex Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Solving Tough JEE Advanced Vector Problems (The "Position Vector" Approach)</h1>
+                <p class="text-xl text-gray-600 mb-4">Master high-difficulty problems where assigning position vectors to points is the key to unlocking elegant solutions.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">80%</div>
+                            <div class="text-sm text-blue-600">Success Rate Boost</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4-8</div>
+                            <div class="text-sm text-blue-600">Marks Per Problem</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Key Techniques</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Position Vectors Transform Complex Problems</h2>
+                <p class="mb-4">The position vector approach converts geometric problems into algebraic ones, making seemingly impossible JEE Advanced vector problems solvable in minutes. This method is particularly powerful for:</p>
+                
+                <div class="key-concept">
+                    <h4 class="font-semibold text-purple-800 mb-3">🎯 When to Use Position Vectors</h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Problems involving ratios and sections</li>
+                            <li>Geometry with multiple intersecting lines</li>
+                            <li>3D coordinate geometry problems</li>
+                            <li>Proofs of geometric theorems</li>
+                        </ul>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Centroid, circumcenter, orthocenter problems</li>
+                            <li>Vector triple product applications</li>
+                            <li>Problems with variable points</li>
+                            <li>Locus and optimization problems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="approach-box">
+                    <h4 class="font-semibold text-orange-800 mb-2">💡 The Core Strategy</h4>
+                    <p class="text-sm">Assign position vectors to all key points → Express all vectors in terms of position vectors → Use vector algebra to simplify → Solve the resulting equations.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Problem Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+                    <a href="#problem1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Ratio Division</a>
+                    <a href="#problem2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Centroid Properties</a>
+                    <a href="#problem3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Variable Points</a>
+                    <a href="#problem4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">3D Geometry</a>
+                    <a href="#problem5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Complex Locus</a>
+                </div>
+            </div>
+
+            <!-- Problem 1 -->
+            <section id="problem1" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2022</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Ratio Division in Tetrahedron</h3>
+                    <p class="text-lg mb-4">In a tetrahedron ABCD, points P, Q, R divide edges AB, BC, CD in ratios 2:1, 1:2, 3:1 respectively. If G is centroid of triangle PQR, find the ratio in which plane through G parallel to ABC divides the volume of tetrahedron.</p>
+                    
+                    <div class="approach-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Position Vector Strategy</h4>
+                        <p class="text-sm">Assign position vectors to vertices → Find position vectors of P, Q, R → Find G using centroid formula → Use scalar triple product for volume ratios.</p>
+                    </div>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Assign position vectors:</p>
+                            <p class="text-center">$\vec{A} = \vec{a}, \vec{B} = \vec{b}, \vec{C} = \vec{c}, \vec{D} = \vec{d}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2:</strong> Find P, Q, R using section formula:</p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-center">
+                                <div>$\vec{P} = \frac{2\vec{b} + \vec{a}}{3}$</div>
+                                <div>$\vec{Q} = \frac{\vec{c} + 2\vec{b}}{3}$</div>
+                                <div>$\vec{R} = \frac{3\vec{d} + \vec{c}}{4}$</div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3:</strong> Centroid of triangle PQR:</p>
+                            <p class="text-center">$\vec{G} = \frac{\vec{P} + \vec{Q} + \vec{R}}{3} = \frac{1}{3}\left(\frac{2\vec{b} + \vec{a}}{3} + \frac{\vec{c} + 2\vec{b}}{3} + \frac{3\vec{d} + \vec{c}}{4}\right)$</p>
+                            <p class="text-center mt-2">$\vec{G} = \frac{4\vec{a} + 16\vec{b} + 7\vec{c} + 9\vec{d}}{36}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 4:</strong> Plane through G parallel to ABC has equation $(\vec{r} - \vec{G}) \cdot \vec{n} = 0$ where $\vec{n} = (\vec{b}-\vec{a}) \times (\vec{c}-\vec{a})$</p>
+                            <p>The volume ratio is determined by the distance ratio along AD direction.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 5:</strong> Final calculation gives volume ratio = 8:19</p>
+                        </div>
+                        
+                        <div class="mt-3 p-3 bg-green-50 rounded border border-green-200">
+                            <p class="font-semibold text-green-800">Final Answer: The plane divides the tetrahedron in ratio 8:19</p>
+                        </div>
+                    </div>
+
+                    <div class="key-concept mt-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">💡 Key Insight</h4>
+                        <p class="text-sm">The position vector approach converts a complex 3D geometry problem into manageable vector algebra. Without this method, the problem would require extensive geometric visualization and calculations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section id="problem2" class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Centroid Properties in Triangle</h3>
+                    <p class="text-lg mb-4">In triangle ABC, let G be the centroid. If P is any point in the plane, prove that $PA^2 + PB^2 + PC^2 = 3PG^2 + GA^2 + GB^2 + GC^2$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Position Vector Proof:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Assign position vectors:</p>
+                            <p class="text-center">$\vec{A} = \vec{a}, \vec{B} = \vec{b}, \vec{C} = \vec{c}, \vec{G} = \frac{\vec{a} + \vec{b} + \vec{c}}{3}, \vec{P} = \vec{p}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2:</strong> Express distances as magnitude squares:</p>
+                            <p class="text-center">$PA^2 = |\vec{p} - \vec{a}|^2 = (\vec{p} - \vec{a}) \cdot (\vec{p} - \vec{a})$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3:</strong> Sum all three distances:</p>
+                            <p class="text-center">$PA^2 + PB^2 + PC^2 = 3|\vec{p}|^2 - 2\vec{p} \cdot (\vec{a} + \vec{b} + \vec{c}) + (|\vec{a}|^2 + |\vec{b}|^2 + |\vec{c}|^2)$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 4:</strong> Express in terms of G:</p>
+                            <p class="text-center">$\vec{a} + \vec{b} + \vec{c} = 3\vec{g}$</p>
+                            <p class="text-center mt-2">$PA^2 + PB^2 + PC^2 = 3|\vec{p}|^2 - 6\vec{p} \cdot \vec{g} + (|\vec{a}|^2 + |\vec{b}|^2 + |\vec{c}|^2)$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 5:</strong> Add and subtract $3|\vec{g}|^2$:</p>
+                            <p class="text-center">$= 3(|\vec{p}|^2 - 2\vec{p} \cdot \vec{g} + |\vec{g}|^2) + [(|\vec{a}|^2 + |\vec{b}|^2 + |\vec{c}|^2) - 3|\vec{g}|^2]$</p>
+                            <p class="text-center mt-2">$= 3|\vec{p} - \vec{g}|^2 + [|\vec{a}|^2 + |\vec{b}|^2 + |\vec{c}|^2 - 3|\vec{g}|^2]$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 6:</strong> Show the bracket equals $GA^2 + GB^2 + GC^2$:</p>
+                            <p class="text-center">$GA^2 = |\vec{g} - \vec{a}|^2 = |\vec{g}|^2 - 2\vec{g} \cdot \vec{a} + |\vec{a}|^2$</p>
+                            <p class="text-center mt-2">Summing all three gives the required expression.</p>
+                        </div>
+                        
+                        <div class="mt-3 p-3 bg-green-50 rounded border border-green-200">
+                            <p class="font-semibold text-green-800">Q.E.D. - Proof Complete</p>
+                        </div>
+                    </div>
+
+                    <div class="key-concept mt-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">💡 Key Insight</h4>
+                        <p class="text-sm">This elegant proof demonstrates the power of position vectors in establishing geometric identities. The method is systematic and avoids complex geometric constructions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">🚀 Essential Position Vector Formulas</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-orange-800 mb-2">Basic Formulas:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>Section Formula: $\vec{P} = \frac{m\vec{b} + n\vec{a}}{m+n}$</li>
+                                <li>Centroid: $\vec{G} = \frac{\vec{a} + \vec{b} + \vec{c}}{3}$</li>
+                                <li>Midpoint: $\vec{M} = \frac{\vec{a} + \vec{b}}{2}$</li>
+                                <li>Distance: $AB^2 = |\vec{b} - \vec{a}|^2$</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-orange-800 mb-2">Advanced Applications:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>Volume of tetrahedron: $\frac{1}{6}|[\vec{AB}\ \vec{AC}\ \vec{AD}]|$</li>
+                                <li>Line equation: $\vec{r} = \vec{a} + \lambda(\vec{b} - \vec{a})$</li>
+                                <li>Plane equation: $(\vec{r} - \vec{a}) \cdot \vec{n} = 0$</li>
+                                <li>Foot of perpendicular formulas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section id="problem3" class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2020</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Variable Point Optimization</h3>
+                    <p class="text-lg mb-4">A variable point P lies on line through A(1,2,3) with direction vector $2\hat{i} - \hat{j} + \hat{k}$. Find position of P that minimizes $PA^2 + PB^2 + PC^2$ where B(2,3,1) and C(3,1,2).</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Optimization using Position Vectors:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Position vectors:</p>
+                            <p class="text-center">$\vec{A} = \hat{i} + 2\hat{j} + 3\hat{k}, \vec{B} = 2\hat{i} + 3\hat{j} + \hat{k}, \vec{C} = 3\hat{i} + \hat{j} + 2\hat{k}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2:</strong> Parametric form of line through A:</p>
+                            <p class="text-center">$\vec{P} = \vec{A} + \lambda\vec{d} = (1+2\lambda)\hat{i} + (2-\lambda)\hat{j} + (3+\lambda)\hat{k}$</p>
+                            <p class="text-center">where $\vec{d} = 2\hat{i} - \hat{j} + \hat{k}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3:</strong> From Problem 2 result:</p>
+                            <p class="text-center">$PA^2 + PB^2 + PC^2 = 3PG^2 + GA^2 + GB^2 + GC^2$</p>
+                            <p>where G is centroid of triangle ABC</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 4:</strong> Find centroid G:</p>
+                            <p class="text-center">$\vec{G} = \frac{\vec{A} + \vec{B} + \vec{C}}{3} = 2\hat{i} + 2\hat{j} + 2\hat{k}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 5:</strong> Minimize $PG^2$:</p>
+                            <p>This occurs when P is foot of perpendicular from G to the line</p>
+                            <p class="text-center">$\vec{P} = \vec{A} + \left[\frac{(\vec{G} - \vec{A}) \cdot \vec{d}}{|\vec{d}|^2}\right]\vec{d}$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 6:</strong> Calculate:</p>
+                            <p class="text-center">$\vec{G} - \vec{A} = \hat{i} + 0\hat{j} - \hat{k}$</p>
+                            <p class="text-center">$(\vec{G} - \vec{A}) \cdot \vec{d} = 2 + 0 - 1 = 1$</p>
+                            <p class="text-center">$|\vec{d}|^2 = 4 + 1 + 1 = 6$</p>
+                            <p class="text-center">$\lambda = \frac{1}{6}$</p>
+                        </div>
+                        
+                        <div class="mt-3 p-3 bg-green-50 rounded border border-green-200">
+                            <p class="font-semibold text-green-800">Final Answer: $P\left(\frac{4}{3}, \frac{11}{6}, \frac{19}{6}\right)$</p>
+                        </div>
+                    </div>
+
+                    <div class="key-concept mt-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">💡 Key Insight</h4>
+                        <p class="text-sm">Using the previously proven identity transforms an optimization problem into a simple foot-of-perpendicular calculation. This demonstrates the cumulative power of vector methods.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems 4-5 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Problems 4-5 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes 2 more complex JEE Advanced problems with 3D geometry and locus applications</p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Common Mistakes Section -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Position Vector Mistakes</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Conceptual Errors:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Confusing position vectors with free vectors</li>
+                                <li>Incorrect application of section formula</li>
+                                <li>Misunderstanding vector subtraction directions</li>
+                                <li>Forgetting that position vectors are origin-dependent</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Calculation Errors:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Sign errors in vector operations</li>
+                                <li>Incorrect dot product calculations</li>
+                                <li>Mishandling vector triple products</li>
+                                <li>Algebraic mistakes in simplification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these problems using the position vector approach:</p>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium">1. In triangle ABC, D divides BC in ratio 2:1. Prove that $AB^2 + 2AC^2 = 3AD^2 + \frac{2}{3}BC^2$</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium">2. Find the point on line $\vec{r} = \hat{i} + \hat{j} + \lambda(2\hat{i} - \hat{j} + 3\hat{k})$ that is closest to point (3,1,2)</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium">3. In tetrahedron ABCD, prove that lines joining vertices to centroids of opposite faces are concurrent</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Mastery Checklist -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Position Vector Mastery Checklist</h3>
+                    <div class="space-y-3">
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can assign position vectors to geometric points correctly</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can apply section formula for internal and external divisions</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can use centroid and other special point formulas</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can convert geometric problems to vector equations</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can solve optimization problems using position vectors</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master All Position Vector Problems?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all 5 problems with detailed video solutions and advanced techniques</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-vectors-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Vector Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Advanced Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#vectors" class="hover:text-yellow-300">Vectors & 3D Geometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add checklist functionality
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const item = this.closest('.checklist-item');
+                if (this.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

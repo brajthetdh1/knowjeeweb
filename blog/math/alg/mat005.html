@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homogeneous Systems & Consistency Theorems | Linear Algebra | KnowJEE</title>
+    <meta name="description" content="Master homogeneous systems AX=0, trivial vs non-trivial solutions, and consistency theorems. Essential linear algebra concepts for JEE Main & Advanced preparation.">
+    <meta name="keywords" content="homogeneous systems linear algebra, AX=0, trivial solutions, non-trivial solutions, consistency theorems, JEE linear algebra, matrix theory">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem-box {
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .example-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .comparison-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Linear Algebra Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Core Concept</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential Theory</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Heart of Linear Algebra: Homogeneous Systems & Consistency Theorems</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the fundamental concepts of homogeneous systems AX=0 and understand when systems have unique, infinite, or no solutions.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">AX=0</div>
+                            <div class="text-sm text-purple-600">Homogeneous System</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2 Types</div>
+                            <div class="text-sm text-purple-600">of Solutions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5+</div>
+                            <div class="text-sm text-purple-600">Key Theorems</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">JEE</div>
+                            <div class="text-sm text-purple-600">High Weightage</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Homogeneous Systems Matter</h2>
+                <p class="mb-4">Homogeneous systems of linear equations form the <strong>foundation of linear algebra</strong> and appear in <strong>every JEE mathematics paper</strong>. Understanding these systems is crucial because:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li>They help determine <strong>linear independence/dependence</strong> of vectors</li>
+                    <li>They're essential for understanding <strong>eigenvalues and eigenvectors</strong></li>
+                    <li>They form the basis for <strong>vector spaces and subspaces</strong></li>
+                    <li>They appear in <strong>differential equations and transformations</strong></li>
+                </ul>
+                
+                <div class="concept-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">🎯 JEE Relevance</h3>
+                    <p>Homogeneous systems appear in <strong>2-3 questions per JEE paper</strong>, often disguised as:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Linear dependence/independence problems</li>
+                        <li>Matrix rank questions</li>
+                        <li>Eigenvalue problems</li>
+                        <li>Vector space problems</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#definition" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Definition</a>
+                    <a href="#solutions" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Solution Types</a>
+                    <a href="#theorems" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Theorems</a>
+                    <a href="#examples" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Examples</a>
+                </div>
+            </div>
+
+            <!-- Definition Section -->
+            <section id="definition" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Homogeneous System: AX = 0</h2>
+                </div>
+
+                <div class="definition-box">
+                    <h3 class="font-semibold text-purple-800 mb-3">Mathematical Definition</h3>
+                    <p>A system of linear equations is called <strong>homogeneous</strong> if all constant terms are zero.</p>
+                    <div class="text-center my-4">
+                        $$ AX = 0 $$
+                    </div>
+                    <p>Where:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>$A$ is an $m \times n$ coefficient matrix</li>
+                        <li>$X$ is an $n \times 1$ column vector of variables</li>
+                        <li>$0$ is an $m \times 1$ zero vector</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-yellow-800 mb-3">Example: 3×3 Homogeneous System</h4>
+                    <p>Consider the system:</p>
+                    <div class="text-center my-3">
+                        $$
+                        \begin{cases}
+                        2x + 3y - z = 0 \\
+                        x - y + 2z = 0 \\
+                        3x + 2y + z = 0
+                        \end{cases}
+                        $$
+                    </div>
+                    <p>In matrix form: $AX = 0$ where</p>
+                    <div class="text-center my-3">
+                        $$
+                        A = \begin{bmatrix}
+                        2 & 3 & -1 \\
+                        1 & -1 & 2 \\
+                        3 & 2 & 1
+                        \end{bmatrix}, \quad
+                        X = \begin{bmatrix}
+                        x \\ y \\ z
+                        \end{bmatrix}, \quad
+                        0 = \begin{bmatrix}
+                        0 \\ 0 \\ 0
+                        \end{bmatrix}
+                        $$
+                    </div>
+                </div>
+            </section>
+
+            <!-- Solution Types Section -->
+            <section id="solutions" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Trivial vs. Non-Trivial Solutions</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-green-800 mb-3">Trivial Solution</h3>
+                            <div class="text-center my-3">
+                                $$ X = \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 0 \end{bmatrix} $$
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Always exists</strong> for homogeneous systems</li>
+                                <li>All variables equal to zero</li>
+                                <li>Geometrically: Origin point</li>
+                                <li>Exists regardless of matrix A</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-semibold text-blue-800 mb-3">Non-Trivial Solution</h3>
+                            <div class="text-center my-3">
+                                $$ X \neq 0 $$
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>May or may not exist</strong></li>
+                                <li>At least one variable ≠ 0</li>
+                                <li>Geometrically: Line/plane through origin</li>
+                                <li>Exists when system has infinite solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theorem-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Fundamental Theorem</h3>
+                    <p>A homogeneous system $AX = 0$ has:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Only trivial solution</strong> if and only if $\det(A) \neq 0$ (A is invertible)</li>
+                        <li><strong>Non-trivial solutions</strong> if and only if $\det(A) = 0$ (A is singular)</li>
+                    </ul>
+                    <div class="text-center my-3">
+                        $$ \det(A) \neq 0 \Rightarrow \text{Unique solution } X = 0 $$
+                        $$ \det(A) = 0 \Rightarrow \text{Infinite solutions} $$
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Theorems Section -->
+            <section id="theorems" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Essential Consistency Theorems</h2>
+                </div>
+
+                <div class="theorem-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Theorem 1: Rank and Solution Space</h3>
+                    <p>For an $m \times n$ homogeneous system $AX = 0$:</p>
+                    <div class="text-center my-3">
+                        $$ \text{Number of free variables} = n - \text{rank}(A) $$
+                    </div>
+                    <p><strong>Dimension of solution space</strong> = Number of linearly independent solutions</p>
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Interpretation:</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>If $\text{rank}(A) = n$: Only trivial solution</li>
+                            <li>If $\text{rank}(A) < n$: Infinite solutions</li>
+                            <li>Solution space dimension = $n - \text{rank}(A)$</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="theorem-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Theorem 2: Superposition Principle</h3>
+                    <p>If $X_1$ and $X_2$ are solutions of $AX = 0$, then any linear combination is also a solution:</p>
+                    <div class="text-center my-3">
+                        $$ A(c_1X_1 + c_2X_2) = c_1AX_1 + c_2AX_2 = c_1\cdot 0 + c_2\cdot 0 = 0 $$
+                    </div>
+                    <p><strong>Key Insight:</strong> The solution set forms a <strong>vector space</strong> (null space of A)</p>
+                </div>
+
+                <div class="theorem-box">
+                    <h3 class="font-semibold text-green-800 mb-3">Theorem 3: Relation to Non-Homogeneous Systems</h3>
+                    <p>For a non-homogeneous system $AX = B$:</p>
+                    <div class="text-center my-3">
+                        $$ \text{General solution} = \text{Particular solution} + \text{General solution of } AX = 0 $$
+                    </div>
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Structure Theorem:</h4>
+                        <p>If $X_p$ is a particular solution of $AX = B$ and $X_h$ is any solution of $AX = 0$, then:</p>
+                        <div class="text-center my-2">
+                            $$ X = X_p + X_h $$
+                        </div>
+                        <p>is also a solution of $AX = B$.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Examples Section -->
+            <section id="examples" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. JEE Practice Problems</h2>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Problem 1: Determining Solution Type</h3>
+                    <p class="mb-4">For what value of $k$ does the system have non-trivial solutions?</p>
+                    <div class="text-center my-3">
+                        $$
+                        \begin{cases}
+                        x + 2y + 3z = 0 \\
+                        2x + y + z = 0 \\
+                        x + y + kz = 0
+                        \end{cases}
+                        $$
+                    </div>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Non-trivial solutions exist when $\det(A) = 0$</p>
+                            <p><strong>Step 2:</strong> Coefficient matrix:</p>
+                            <div class="text-center my-2">
+                                $$
+                                A = \begin{bmatrix}
+                                1 & 2 & 3 \\
+                                2 & 1 & 1 \\
+                                1 & 1 & k
+                                \end{bmatrix}
+                                $$
+                            </div>
+                            <p><strong>Step 3:</strong> Calculate determinant:</p>
+                            <div class="text-center my-2">
+                                $$
+                                \det(A) = 1(1\cdot k - 1\cdot 1) - 2(2\cdot k - 1\cdot 1) + 3(2\cdot 1 - 1\cdot 1)
+                                $$
+                                $$ = (k-1) - 2(2k-1) + 3(2-1) $$
+                                $$ = k-1 -4k+2 + 3 = -3k + 4 $$
+                            </div>
+                            <p><strong>Step 4:</strong> Set $\det(A) = 0$: $-3k + 4 = 0 \Rightarrow k = \frac{4}{3}$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Problem 2: Finding Complete Solution</h3>
+                    <p class="mb-4">Find all solutions of the system:</p>
+                    <div class="text-center my-3">
+                        $$
+                        \begin{cases}
+                        x + y + z = 0 \\
+                        2x - y + z = 0 \\
+                        x + 2y + 2z = 0
+                        \end{cases}
+                        $$
+                    </div>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Write augmented matrix and reduce:</p>
+                            <div class="text-center my-2">
+                                $$
+                                \begin{bmatrix}
+                                1 & 1 & 1 & | & 0 \\
+                                2 & -1 & 1 & | & 0 \\
+                                1 & 2 & 2 & | & 0
+                                \end{bmatrix}
+                                \rightarrow
+                                \begin{bmatrix}
+                                1 & 1 & 1 & | & 0 \\
+                                0 & -3 & -1 & | & 0 \\
+                                0 & 1 & 1 & | & 0
+                                \end{bmatrix}
+                                $$
+                            </div>
+                            <p><strong>Step 2:</strong> Continue reduction:</p>
+                            <div class="text-center my-2">
+                                $$
+                                \rightarrow
+                                \begin{bmatrix}
+                                1 & 1 & 1 & | & 0 \\
+                                0 & 1 & 1 & | & 0 \\
+                                0 & 0 & 2 & | & 0
+                                \end{bmatrix}
+                                $$
+                            </div>
+                            <p><strong>Step 3:</strong> Back substitution gives $z = 0, y = 0, x = 0$</p>
+                            <p><strong>Step 4:</strong> Only trivial solution exists: $(x, y, z) = (0, 0, 0)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Summary -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Quick Summary & Key Takeaways</h2>
+                
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-3">Homogeneous Systems AX=0</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">⚡</span>
+                                    <span><strong>Always consistent</strong> - trivial solution always exists</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">🎯</span>
+                                    <span><strong>Non-trivial solutions</strong> exist when $\det(A) = 0$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">📝</span>
+                                    <span>Solution space dimension = $n - \text{rank}(A)$</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-yellow-800 mb-3">JEE Problem Solving</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">📥</span>
+                                    <span>Check $\det(A)$ for solution type</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">📤</span>
+                                    <span>Use rank to find solution space dimension</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-600 mr-2">💡</span>
+                                    <span>Remember superposition principle</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems to reinforce your learning:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. For what values of $\lambda$ does the system have non-trivial solutions?</p>
+                            <div class="text-center">
+                                $$
+                                \begin{cases}
+                                (\lambda-1)x + 2y = 0 \\
+                                2x + (\lambda-1)y = 0
+                                \end{cases}
+                                $$
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find the dimension of solution space for:</p>
+                            <div class="text-center">
+                                $$
+                                \begin{cases}
+                                x + 2y - z = 0 \\
+                                2x + 4y - 2z = 0 \\
+                                3x + 6y - 3z = 0
+                                \end{cases}
+                                $$
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. If $X_1$ and $X_2$ are solutions of $AX=0$, prove that $3X_1 - 2X_2$ is also a solution.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Linear Algebra?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey with eigenvalues, eigenvectors, and matrix decompositions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Linear Algebra Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems Set
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#linear-algebra" class="hover:text-yellow-300">Linear Algebra</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

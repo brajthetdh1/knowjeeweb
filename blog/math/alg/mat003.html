@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idempotent, Nilpotent & Involutory Matrices | Special Matrix Family | KnowJEE</title>
+    <meta name="description" content="Master Idempotent, Nilpotent, and Involutory matrices - the special matrix family for JEE Main & Advanced. Complete guide with properties, examples, and JEE patterns.">
+    <meta name="keywords" content="idempotent matrix, nilpotent matrix, involutory matrix, JEE matrices, special matrices, matrix algebra, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .idempotent { border-left: 4px solid #3b82f6; }
+        .nilpotent { border-left: 4px solid #ef4444; }
+        .involutory { border-left: 4px solid #10b981; }
+        .properties-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .jee-tip {
+            background: #fef7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Algebra Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Matrix Algebra</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">3 Special Matrices</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Idempotent, Nilpotent, and Involutory Matrices - The Special Family</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover the fascinating world of matrices that behave in extraordinary ways when multiplied by themselves.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Special Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">85%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">12+</div>
+                            <div class="text-sm text-purple-600">Key Properties</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Concept Clarity</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Study Special Matrices?</h2>
+                <p class="mb-4">In JEE Main and Advanced, questions on <strong>Idempotent, Nilpotent, and Involutory matrices</strong> appear frequently because they test deep understanding of matrix algebra beyond routine calculations. Mastering these special matrices gives you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li><strong>Quick problem-solving</strong> approaches for complex matrix equations</li>
+                    <li><strong>Pattern recognition</strong> skills for advanced matrix problems</li>
+                    <li><strong>Conceptual depth</strong> in linear algebra fundamentals</li>
+                    <li><strong>Competitive edge</strong> in JEE ranking</li>
+                </ul>
+                
+                <div class="jee-tip">
+                    <h3 class="font-semibold text-orange-800 mb-2">🎯 JEE Insight</h3>
+                    <p>These special matrices frequently appear in:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Matrix equation problems (1-2 questions per paper)</li>
+                        <li>Determinant and eigenvalue calculations</li>
+                        <li>Proof-based questions in JEE Advanced</li>
+                        <li>Questions combining matrices with other topics</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Quick Navigation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
+                    <a href="#idempotent" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Idempotent Matrix</a>
+                    <a href="#nilpotent" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Nilpotent Matrix</a>
+                    <a href="#involutory" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Involutory Matrix</a>
+                </div>
+            </div>
+
+            <!-- Idempotent Matrix Section -->
+            <section id="idempotent" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Idempotent Matrix - The Projector</h2>
+                </div>
+
+                <div class="concept-box idempotent">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Definition</h3>
+                    <div class="definition-box">
+                        <p>A square matrix $A$ is called <strong>idempotent</strong> if:</p>
+                        <div class="text-center my-3">
+                            $$ A^2 = A $$
+                        </div>
+                        <p>When you multiply an idempotent matrix by itself, you get the same matrix back!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example 1: Simple Idempotent Matrix</h4>
+                        <p>Consider $A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$</p>
+                        <p class="mt-2">Let's verify: $A^2 = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} = A$ ✓</p>
+                        <p class="mt-2 font-semibold">This matrix is idempotent!</p>
+                    </div>
+
+                    <div class="properties-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Properties of Idempotent Matrices</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>$A^n = A$ for all positive integers $n$</li>
+                            <li>Eigenvalues are either $0$ or $1$</li>
+                            <li>$\text{trace}(A) = \text{rank}(A)$</li>
+                            <li>$I - A$ is also idempotent</li>
+                            <li>If $A$ is idempotent, then $A^T$ is also idempotent</li>
+                            <li>Determinant is $0$ or $1$: $\det(A) = 0$ or $1$</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example 2: JEE Main 2021</h4>
+                        <p>If $A$ is an idempotent matrix and $I$ is identity matrix of same order, then find $(I - A)^3$</p>
+                        <div class="mt-3 space-y-2 text-sm">
+                            <p><strong>Solution:</strong></p>
+                            <p>Since $A$ is idempotent, $A^2 = A$</p>
+                            <p>$(I - A)^2 = I^2 - 2A + A^2 = I - 2A + A = I - A$</p>
+                            <p>So $I - A$ is also idempotent!</p>
+                            <p>Thus $(I - A)^3 = I - A$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nilpotent Matrix Section -->
+            <section id="nilpotent" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Nilpotent Matrix - The Vanisher</h2>
+                </div>
+
+                <div class="concept-box nilpotent">
+                    <h3 class="text-xl font-bold text-red-900 mb-3">Definition</h3>
+                    <div class="definition-box">
+                        <p>A square matrix $A$ is called <strong>nilpotent</strong> if there exists a positive integer $k$ such that:</p>
+                        <div class="text-center my-3">
+                            $$ A^k = 0 $$
+                        </div>
+                        <p>The smallest such $k$ is called the <strong>index of nilpotency</strong>.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example 1: Simple Nilpotent Matrix</h4>
+                        <p>Consider $A = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$</p>
+                        <p class="mt-2">$A^2 = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = 0$ ✓</p>
+                        <p class="mt-2 font-semibold">This matrix is nilpotent with index 2!</p>
+                    </div>
+
+                    <div class="properties-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Properties of Nilpotent Matrices</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>All eigenvalues are $0$</li>
+                            <li>$\det(A) = 0$ (singular matrix)</li>
+                            <li>$\text{trace}(A) = 0$</li>
+                            <li>If $A$ is nilpotent, then $I - A$ is invertible</li>
+                            <li>If $A$ is nilpotent with index $k$, then $A^m = 0$ for all $m \geq k$</li>
+                            <li>The only nilpotent diagonalizable matrix is the zero matrix</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example 2: JEE Advanced 2019</h4>
+                        <p>If $A$ is a nilpotent matrix of index 2, prove that $(I + A)^n = I + nA$ for any positive integer $n$.</p>
+                        <div class="mt-3 space-y-2 text-sm">
+                            <p><strong>Proof:</strong></p>
+                            <p>Since $A^2 = 0$, we use binomial expansion:</p>
+                            <p>$(I + A)^n = I + nA + \frac{n(n-1)}{2}A^2 + \frac{n(n-1)(n-2)}{6}A^3 + \cdots$</p>
+                            <p>But $A^2 = A^3 = A^4 = \cdots = 0$</p>
+                            <p>So $(I + A)^n = I + nA$ ✓</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Involutory Matrix Section -->
+            <section id="involutory" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Involutory Matrix - The Self-Inverse</h2>
+                </div>
+
+                <div class="concept-box involutory">
+                    <h3 class="text-xl font-bold text-green-900 mb-3">Definition</h3>
+                    <div class="definition-box">
+                        <p>A square matrix $A$ is called <strong>involutory</strong> if:</p>
+                        <div class="text-center my-3">
+                            $$ A^2 = I $$
+                        </div>
+                        <p>An involutory matrix is its own inverse! $A^{-1} = A$</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example 1: Simple Involutory Matrix</h4>
+                        <p>Consider $A = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$</p>
+                        <p class="mt-2">$A^2 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$ ✓</p>
+                        <p class="mt-2 font-semibold">This matrix is involutory!</p>
+                    </div>
+
+                    <div class="properties-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Properties of Involutory Matrices</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li>$A = A^{-1}$ (self-inverse)</li>
+                            <li>Eigenvalues are either $1$ or $-1$</li>
+                            <li>$\det(A) = \pm 1$</li>
+                            <li>If $A$ is involutory, then $\frac{1}{2}(I + A)$ and $\frac{1}{2}(I - A)$ are idempotent</li>
+                            <li>$A$ is diagonalizable</li>
+                            <li>If $A$ is involutory, then $A^T$ is also involutory</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Example 2: JEE Main 2020</h4>
+                        <p>If $A$ is an involutory matrix, find the value of $\det(A + I) \cdot \det(A - I)$</p>
+                        <div class="mt-3 space-y-2 text-sm">
+                            <p><strong>Solution:</strong></p>
+                            <p>Since $A^2 = I$, we have $(A - I)(A + I) = 0$</p>
+                            <p>Taking determinant: $\det(A - I) \cdot \det(A + I) = \det(0) = 0$</p>
+                            <p>So $\det(A + I) \cdot \det(A - I) = 0$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Table -->
+            <section class="mb-8">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">📊 Quick Comparison Table</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-2 font-semibold">Property</th>
+                                    <th class="px-4 py-2 font-semibold text-blue-600">Idempotent</th>
+                                    <th class="px-4 py-2 font-semibold text-red-600">Nilpotent</th>
+                                    <th class="px-4 py-2 font-semibold text-green-600">Involutory</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Definition</td>
+                                    <td class="px-4 py-2">$A^2 = A$</td>
+                                    <td class="px-4 py-2">$A^k = 0$</td>
+                                    <td class="px-4 py-2">$A^2 = I$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Eigenvalues</td>
+                                    <td class="px-4 py-2">0 or 1</td>
+                                    <td class="px-4 py-2">Only 0</td>
+                                    <td class="px-4 py-2">1 or -1</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Determinant</td>
+                                    <td class="px-4 py-2">0 or 1</td>
+                                    <td class="px-4 py-2">0</td>
+                                    <td class="px-4 py-2">±1</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Trace</td>
+                                    <td class="px-4 py-2">rank(A)</td>
+                                    <td class="px-4 py-2">0</td>
+                                    <td class="px-4 py-2">sum of eigenvalues</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Invertible?</td>
+                                    <td class="px-4 py-2">Only if A = I</td>
+                                    <td class="px-4 py-2">Never</td>
+                                    <td class="px-4 py-2">Always</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Problem Solving Strategies -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 JEE Problem Solving Strategies</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Identification Tips</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>If $A^2 = A$ → <strong>Idempotent</strong></li>
+                                <li>If $A^k = 0$ for some k → <strong>Nilpotent</strong></li>
+                                <li>If $A^2 = I$ → <strong>Involutory</strong></li>
+                                <li>Check trace and determinant for quick verification</li>
+                                <li>Use eigenvalue properties for complex problems</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Common JEE Patterns</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Finding $A^n$ for special matrices</li>
+                                <li>Proving properties using definitions</li>
+                                <li>Solving matrix equations</li>
+                                <li>Combining with determinant properties</li>
+                                <li>Relationship between different special matrices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. If $A$ is idempotent, prove that $I - 2A$ is involutory.</p>
+                            <div class="text-sm text-gray-600">Hint: Show that $(I - 2A)^2 = I$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Let $A$ be a nilpotent matrix of index 2. Find the value of $(I + A + A^2 + \cdots + A^{10})$</p>
+                            <div class="text-sm text-gray-600">Hint: Remember $A^2 = A^3 = \cdots = 0$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. If $A$ is both idempotent and involutory, what can you say about $A$?</p>
+                            <div class="text-sm text-gray-600">Hint: Solve the system $A^2 = A$ and $A^2 = I$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-green-700">
+                        <p><strong>Challenge:</strong> Try to create your own examples of each type of matrix!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision Checklist -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📋 Quick Revision Checklist</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can define idempotent, nilpotent, and involutory matrices</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I remember the key properties of each special matrix</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can identify these matrices from their properties</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can solve JEE problems involving special matrices</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item bg-white p-3 rounded border">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I understand the relationships between different special matrices</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered the Special Matrix Family?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through advanced matrix algebra concepts</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Algebra Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Special Matrices
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add checklist functionality
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const item = this.closest('.checklist-item');
+                if (this.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

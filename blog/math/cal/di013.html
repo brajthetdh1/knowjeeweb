@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Properties of Definite Integrals (Part 1) | JEE Calculus | KnowJEE</title>
+    <meta name="description" content="Master the fundamental properties of definite integrals for JEE Main & Advanced. Learn additive, reversal, zero-length properties with examples and proofs.">
+    <meta name="keywords" content="definite integrals properties, JEE calculus, integral properties, JEE mathematics, definite integrals basics, integration properties">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .property-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .property-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .proof-box {
+            background: #faf5ff;
+            border-left: 4px solid #a855f7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .importance-high { border-left: 4px solid #ef4444; }
+        .importance-medium { border-left: 4px solid #eab308; }
+        .importance-low { border-left: 4px solid #22c55e; }
+        .jee-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .checklist-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Calculus Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Part 1 of 3</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Essential Properties of Definite Integrals (Part 1): Mastering the Basics</h1>
+                <p class="text-xl text-gray-600 mb-4">Build a strong foundation with the fundamental properties that form the backbone of integral calculus for JEE.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">6</div>
+                            <div class="text-sm text-blue-600">Core Properties</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12+</div>
+                            <div class="text-sm text-blue-600">Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">25min</div>
+                            <div class="text-sm text-blue-600">Mastery Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Master These Properties?</h2>
+                <p class="mb-4">Definite integrals are not just about computation - understanding their properties helps you <strong>solve complex problems efficiently</strong> and <strong>avoid common pitfalls</strong> in JEE.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Importance</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Direct questions worth <strong>2-4 marks</strong> in every paper</li>
+                        <li>Essential for solving <strong>integration application problems</strong></li>
+                        <li>Foundation for <strong>definite integral inequalities</strong> and <strong>limit of sums</strong></li>
+                        <li>Crucial for <strong>problem-solving shortcuts</strong> in advanced problems</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Properties Covered</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                    <a href="#property1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Additive Property</a>
+                    <a href="#property2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Reversal Property</a>
+                    <a href="#property3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Zero-Length Interval</a>
+                    <a href="#property4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Constant Multiple</a>
+                    <a href="#property5" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Sum/Difference</a>
+                    <a href="#property6" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Interval Splitting</a>
+                </div>
+            </div>
+
+            <!-- Property 1 -->
+            <section id="property1" class="mb-8">
+                <div class="property-box importance-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Essential</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Property 1: Additive Property</h3>
+                    
+                    <div class="mb-4">
+                        <p class="text-lg font-semibold text-center">$$ \int_a^b f(x)dx + \int_b^c f(x)dx = \int_a^c f(x)dx $$</p>
+                        <p class="text-center text-sm text-gray-600 mt-1">where $a < b < c$</p>
+                    </div>
+
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">📐 Geometric Interpretation</h4>
+                        <p class="text-sm">The area from $a$ to $c$ equals the sum of areas from $a$ to $b$ and from $b$ to $c$.</p>
+                        <div class="mt-2 text-center">
+                            <div class="inline-block bg-gray-100 p-2 rounded text-sm">
+                                Area<sub>a→c</sub> = Area<sub>a→b</sub> + Area<sub>b→c</sub>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 Example</h4>
+                        <p class="mb-2">If $\int_0^2 f(x)dx = 5$ and $\int_2^4 f(x)dx = 3$, find $\int_0^4 f(x)dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Using additive property:</p>
+                            <p>$\int_0^4 f(x)dx = \int_0^2 f(x)dx + \int_2^4 f(x)dx = 5 + 3 = 8$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Application Tip</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Useful for <strong>splitting integrals at points</strong> where function behavior changes</li>
+                            <li>Essential for <strong>piecewise functions</strong></li>
+                            <li>Helps in <strong>simplifying complex integration limits</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Property 2 -->
+            <section id="property2" class="mb-8">
+                <div class="property-box importance-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Essential</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Property 2: Reversal of Limits</h3>
+                    
+                    <div class="mb-4">
+                        <p class="text-lg font-semibold text-center">$$ \int_a^b f(x)dx = -\int_b^a f(x)dx $$</p>
+                    </div>
+
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">📐 Geometric Interpretation</h4>
+                        <p class="text-sm">Reversing limits changes the direction of integration, which reverses the sign (like negative area).</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 Example</h4>
+                        <p class="mb-2">If $\int_1^3 f(x)dx = 4$, find $\int_3^1 f(x)dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Using reversal property:</p>
+                            <p>$\int_3^1 f(x)dx = -\int_1^3 f(x)dx = -4$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Application Tip</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Useful when <strong>upper limit is smaller than lower limit</strong></li>
+                            <li>Helps in <strong>symmetry problems</strong> and <strong>even/odd function properties</strong></li>
+                            <li>Essential for <strong>change of variables</strong> in definite integrals</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Property 3 -->
+            <section id="property3" class="mb-8">
+                <div class="property-box importance-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Important</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Property 3: Zero-Length Interval</h3>
+                    
+                    <div class="mb-4">
+                        <p class="text-lg font-semibold text-center">$$ \int_a^a f(x)dx = 0 $$</p>
+                    </div>
+
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">📐 Geometric Interpretation</h4>
+                        <p class="text-sm">The area under a curve over zero width is always zero, regardless of the function value.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 Example</h4>
+                        <p class="mb-2">Evaluate $\int_2^2 (x^3 + 2x + 1)dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Using zero-length property:</p>
+                            <p>$\int_2^2 (x^3 + 2x + 1)dx = 0$</p>
+                            <p class="text-gray-600">No need to compute the antiderivative!</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Application Tip</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Useful as a <strong>quick check</strong> in problems</li>
+                            <li>Helps identify <strong>trivial cases</strong> in complex expressions</li>
+                            <li>Important for <strong>theoretical proofs</strong> in advanced problems</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Property 4 -->
+            <section id="property4" class="mb-8">
+                <div class="property-box importance-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Essential</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Property 4: Constant Multiple</h3>
+                    
+                    <div class="mb-4">
+                        <p class="text-lg font-semibold text-center">$$ \int_a^b kf(x)dx = k\int_a^b f(x)dx $$</p>
+                        <p class="text-center text-sm text-gray-600 mt-1">where $k$ is any constant</p>
+                    </div>
+
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">📐 Geometric Interpretation</h4>
+                        <p class="text-sm">Multiplying function by constant $k$ scales the area under the curve by factor $k$.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 Example</h4>
+                        <p class="mb-2">If $\int_0^1 f(x)dx = 3$, find $\int_0^1 5f(x)dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Using constant multiple property:</p>
+                            <p>$\int_0^1 5f(x)dx = 5\int_0^1 f(x)dx = 5 \times 3 = 15$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Application Tip</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Essential for <strong>factoring out constants</strong> before integration</li>
+                            <li>Used extensively in <strong>linear combination of functions</strong></li>
+                            <li>Helps simplify <strong>complex integrands</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Property 5 -->
+            <section id="property5" class="mb-8">
+                <div class="property-box importance-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Essential</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Property 5: Sum/Difference of Functions</h3>
+                    
+                    <div class="mb-4">
+                        <p class="text-lg font-semibold text-center">$$ \int_a^b [f(x) \pm g(x)]dx = \int_a^b f(x)dx \pm \int_a^b g(x)dx $$</p>
+                    </div>
+
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">📐 Geometric Interpretation</h4>
+                        <p class="text-sm">The area under sum/difference of functions equals sum/difference of individual areas.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 Example</h4>
+                        <p class="mb-2">Evaluate $\int_0^1 [2x + 3x^2]dx$ using $\int_0^1 xdx = \frac{1}{2}$ and $\int_0^1 x^2dx = \frac{1}{3}$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Using sum property:</p>
+                            <p>$\int_0^1 [2x + 3x^2]dx = 2\int_0^1 xdx + 3\int_0^1 x^2dx = 2\times\frac{1}{2} + 3\times\frac{1}{3} = 1 + 1 = 2$</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Application Tip</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Allows <strong>term-by-term integration</strong> of polynomials and series</li>
+                            <li>Essential for <strong>linearity of integration</strong> operations</li>
+                            <li>Used in <strong>Fourier series</strong> and <strong>orthogonal functions</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Property 6 -->
+            <section id="property6" class="mb-8">
+                <div class="property-box importance-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Important</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Property 6: Interval Splitting at Arbitrary Point</h3>
+                    
+                    <div class="mb-4">
+                        <p class="text-lg font-semibold text-center">$$ \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx $$</p>
+                        <p class="text-center text-sm text-gray-600 mt-1">where $c$ is any point between $a$ and $b$</p>
+                    </div>
+
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">📐 Geometric Interpretation</h4>
+                        <p class="text-sm">The total area can be split at any interior point, and the sum remains the same.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 Example</h4>
+                        <p class="mb-2">Given $\int_0^4 f(x)dx = 10$, can we find $\int_0^2 f(x)dx + \int_2^4 f(x)dx$?</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Using interval splitting:</p>
+                            <p>$\int_0^2 f(x)dx + \int_2^4 f(x)dx = \int_0^4 f(x)dx = 10$</p>
+                            <p class="text-gray-600">This works regardless of the individual values!</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Application Tip</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Useful when <strong>function has different definitions</strong> on subintervals</li>
+                            <li>Essential for <strong>absolute value functions</strong> and <strong>piecewise functions</strong></li>
+                            <li>Helps in <strong>numerical integration methods</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Self-Assessment -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Properties Mastery Checklist</h3>
+                    <p class="mb-4">Check which properties you can apply confidently:</p>
+                    
+                    <div class="space-y-3">
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can use additive property to split integrals at intermediate points</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I remember to change sign when reversing integration limits</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I recognize that integral over zero-length interval is always zero</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can factor constants out of definite integrals</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I can integrate sums/differences term by term</span>
+                            </label>
+                        </div>
+                        <div class="checklist-item">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600 rounded">
+                                <span>I understand how to split integrals at arbitrary interior points</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-green-700">
+                        <p><strong>Goal:</strong> All 6 checked! If any unchecked, review those properties.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Practice Problems</h3>
+                    <p class="mb-4">Apply the properties you've learned:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. If $\int_1^3 f(x)dx = 4$ and $\int_3^5 f(x)dx = 6$, find $\int_1^5 f(x)dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Use additive property</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Evaluate $\int_2^2 (x^4 - 3x^2 + 1)dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Zero-length interval property</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. If $\int_0^2 f(x)dx = 3$, find $\int_2^0 2f(x)dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Combine reversal and constant multiple properties</div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. Express $\int_0^4 [3f(x) - 2g(x)]dx$ in terms of $\int_0^4 f(x)dx$ and $\int_0^4 g(x)dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Use linearity properties</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes Section -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Forgetting the negative sign in reversal property</h4>
+                            <p class="text-sm text-gray-600">$\int_a^b f(x)dx = -\int_b^a f(x)dx$ - the negative sign is crucial!</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Applying properties to indefinite integrals</h4>
+                            <p class="text-sm text-gray-600">These properties work only for definite integrals with specific limits.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Misapplying additive property with wrong order</h4>
+                            <p class="text-sm text-gray-600">For $\int_a^b + \int_b^c$, ensure $a < b < c$ or adjust signs accordingly.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready for Part 2?</h3>
+                    <p class="mb-4 opacity-90">Continue to advanced properties including even/odd functions, periodicity, and inequality properties</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="definite-integrals-part2.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Continue to Part 2 →
+                        </a>
+                        <a href="jee-calculus-cards.html" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            More Calculus Topics
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add checklist functionality
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const item = this.closest('.checklist-item');
+                if (this.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

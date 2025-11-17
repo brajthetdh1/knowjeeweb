@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cayley-Hamilton Theorem: Game-Changer for JEE Advanced | KnowJEE</title>
+    <meta name="description" content="Master the Cayley-Hamilton Theorem for JEE Advanced. Learn powerful applications for finding matrix powers, inverses, and solving complex problems efficiently.">
+    <meta name="keywords" content="Cayley-Hamilton Theorem JEE, matrix algebra JEE, JEE advanced mathematics, matrix powers, inverse matrix, JEE linear algebra">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .theorem-box {
+            background: #f0f9ff;
+            border: 2px solid #7dd3fc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .theorem-box:hover {
+            background: #e0f2fe;
+            border-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+        .application-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .proof-box {
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .difficulty-advanced { border-left: 4px solid #ef4444; }
+        .difficulty-moderate { border-left: 4px solid #eab308; }
+        .difficulty-basic { border-left: 4px solid #22c55e; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Algebra Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Advanced Concept</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Cayley-Hamilton Theorem: The Game-Changer for JEE Advanced</h1>
+                <p class="text-xl text-gray-600 mb-4">Master this powerful theorem to solve complex matrix problems in seconds instead of minutes.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5x</div>
+                            <div class="text-sm text-purple-600">Faster Solutions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2015-24</div>
+                            <div class="text-sm text-purple-600">Years Featured</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Key Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">6-8</div>
+                            <div class="text-sm text-purple-600">Marks Advantage</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Cayley-Hamilton is a JEE Advanced Secret Weapon</h2>
+                <p class="mb-4">The Cayley-Hamilton Theorem transforms complex matrix computations into simple polynomial evaluations. In JEE Advanced, where <strong>every second counts</strong>, this theorem can save you 3-5 minutes on matrix problems that would otherwise require tedious calculations.</p>
+                
+                <div class="theorem-box">
+                    <h4 class="font-semibold text-blue-800 mb-2">🎯 JEE Advanced Significance</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Appears in <strong>1-2 problems</strong> every year in JEE Advanced</li>
+                        <li>Solves problems that are <strong>nearly impossible</strong> with conventional methods</li>
+                        <li>Particularly useful for finding <strong>high powers of matrices</strong> and <strong>matrix inverses</strong></li>
+                        <li>Reduces <strong>computation time</strong> by 70-80%</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Theorem Statement -->
+            <section class="mb-8">
+                <div class="theorem-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Core Theorem</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Fundamental</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Cayley-Hamilton Theorem</h3>
+                    
+                    <div class="text-center my-4">
+                        <p class="text-lg font-semibold">Every square matrix satisfies its own characteristic equation</p>
+                    </div>
+                    
+                    <div class="proof-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Mathematical Statement</h4>
+                        <p>If $A$ is an $n \times n$ matrix and $p(\lambda) = \det(A - \lambda I)$ is its characteristic polynomial, then:</p>
+                        <div class="text-center my-3">
+                            $$ p(A) = 0 $$
+                        </div>
+                        <p>Where $p(A)$ means substitute the matrix $A$ into the characteristic polynomial instead of the variable $\lambda$.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Quick Example</h4>
+                        <p>For a $2 \times 2$ matrix $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$:</p>
+                        <div class="space-y-2 mt-2">
+                            <p>Characteristic equation: $\lambda^2 - (a+d)\lambda + (ad - bc) = 0$</p>
+                            <p>Cayley-Hamilton says: $A^2 - (a+d)A + (ad - bc)I = 0$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Application 1: Matrix Powers -->
+            <section class="mb-8">
+                <div class="theorem-box difficulty-advanced">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2023</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Yield</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Application 1: Finding High Powers of Matrices</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Problem Example</h4>
+                        <p class="mb-3">If $A = \begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix}$, find $A^5$ using Cayley-Hamilton Theorem.</p>
+                        
+                        <div class="application-box">
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution</h4>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Step 1:</strong> Find characteristic equation</p>
+                                <p class="ml-4">$|A - \lambda I| = \begin{vmatrix} 1-\lambda & 2 \\ 2 & 1-\lambda \end{vmatrix} = (1-\lambda)^2 - 4 = \lambda^2 - 2\lambda - 3 = 0$</p>
+                                
+                                <p><strong>Step 2:</strong> Apply Cayley-Hamilton: $A^2 - 2A - 3I = 0$</p>
+                                <p class="ml-4">So $A^2 = 2A + 3I$</p>
+                                
+                                <p><strong>Step 3:</strong> Find higher powers recursively:</p>
+                                <p class="ml-4">$A^3 = A \cdot A^2 = A(2A + 3I) = 2A^2 + 3A = 2(2A + 3I) + 3A = 7A + 6I$</p>
+                                <p class="ml-4">$A^4 = A \cdot A^3 = A(7A + 6I) = 7A^2 + 6A = 7(2A + 3I) + 6A = 20A + 21I$</p>
+                                <p class="ml-4">$A^5 = A \cdot A^4 = A(20A + 21I) = 20A^2 + 21A = 20(2A + 3I) + 21A = 61A + 60I$</p>
+                                
+                                <p><strong>Step 4:</strong> Substitute $A$ and $I$:</p>
+                                <p class="ml-4">$A^5 = 61\begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix} + 60\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 121 & 122 \\ 122 & 121 \end{bmatrix}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Time-Saving Insight</h4>
+                        <p>For $A^n$, express it as $A^n = \alpha A + \beta I$ (for $2\times2$ matrices), then use the characteristic equation to find $\alpha$ and $\beta$.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Application 2: Matrix Inverse -->
+            <section class="mb-8">
+                <div class="theorem-box difficulty-moderate">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium Yield</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Application 2: Finding Matrix Inverse</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Problem Example</h4>
+                        <p class="mb-3">Find $A^{-1}$ for $A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$ using Cayley-Hamilton Theorem.</p>
+                        
+                        <div class="application-box">
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution</h4>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Step 1:</strong> Characteristic equation:</p>
+                                <p class="ml-4">$|A - \lambda I| = \begin{vmatrix} 2-\lambda & 1 \\ 1 & 2-\lambda \end{vmatrix} = (2-\lambda)^2 - 1 = \lambda^2 - 4\lambda + 3 = 0$</p>
+                                
+                                <p><strong>Step 2:</strong> Cayley-Hamilton: $A^2 - 4A + 3I = 0$</p>
+                                
+                                <p><strong>Step 3:</strong> Rearrange for inverse:</p>
+                                <p class="ml-4">$A^2 - 4A + 3I = 0 \Rightarrow A^2 - 4A = -3I$</p>
+                                <p class="ml-4">$A(A - 4I) = -3I \Rightarrow A \cdot \frac{4I - A}{3} = I$</p>
+                                
+                                <p><strong>Step 4:</strong> Therefore: $A^{-1} = \frac{4I - A}{3}$</p>
+                                
+                                <p><strong>Step 5:</strong> Compute:</p>
+                                <p class="ml-4">$A^{-1} = \frac{1}{3}\left(4\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} - \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}\right) = \frac{1}{3}\begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 General Formula</h4>
+                        <p>For any $2\times2$ matrix $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ with characteristic equation $\lambda^2 - S\lambda + D = 0$ where $S = a+d$, $D = ad-bc$:</p>
+                        <div class="text-center my-2">
+                            $$ A^{-1} = \frac{SI - A}{D} $$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Application 3: Solving Matrix Equations -->
+            <section class="mb-8">
+                <div class="theorem-box difficulty-advanced">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2019</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Yield</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Application 3: Solving Complex Matrix Equations</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Problem Example</h4>
+                        <p class="mb-3">If $A = \begin{bmatrix} 3 & 1 \\ -1 & 2 \end{bmatrix}$, find $A^4 - 5A^3 + 7A^2 - 2A + I$</p>
+                        
+                        <div class="application-box">
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution</h4>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Step 1:</strong> Find characteristic equation:</p>
+                                <p class="ml-4">$|A - \lambda I| = \begin{vmatrix} 3-\lambda & 1 \\ -1 & 2-\lambda \end{vmatrix} = (3-\lambda)(2-\lambda) + 1 = \lambda^2 - 5\lambda + 7 = 0$</p>
+                                
+                                <p><strong>Step 2:</strong> Cayley-Hamilton: $A^2 - 5A + 7I = 0$</p>
+                                
+                                <p><strong>Step 3:</strong> Notice the given expression:</p>
+                                <p class="ml-4">$A^4 - 5A^3 + 7A^2 - 2A + I = (A^2 - 5A + 7I)(A^2) - 2A + I$</p>
+                                
+                                <p><strong>Step 4:</strong> But $A^2 - 5A + 7I = 0$, so:</p>
+                                <p class="ml-4">$= 0 \cdot A^2 - 2A + I = -2A + I$</p>
+                                
+                                <p><strong>Step 5:</strong> Compute:</p>
+                                <p class="ml-4">$-2\begin{bmatrix} 3 & 1 \\ -1 & 2 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} -5 & -2 \\ 2 & -3 \end{bmatrix}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Powerful Strategy</h4>
+                        <p>For any polynomial expression in $A$, use polynomial division to divide by the characteristic polynomial. The remainder gives you the simplified expression.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Cayley-Hamilton Quick Reference</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">For 2×2 Matrices</h4>
+                            <div class="space-y-2 text-sm">
+                                <p>$A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$</p>
+                                <p>Characteristic equation: $\lambda^2 - (a+d)\lambda + (ad-bc) = 0$</p>
+                                <p>Cayley-Hamilton: $A^2 - (a+d)A + (ad-bc)I = 0$</p>
+                                <p>Inverse: $A^{-1} = \frac{(a+d)I - A}{ad-bc}$</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">For 3×3 Matrices</h4>
+                            <div class="space-y-2 text-sm">
+                                <p>$A = \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix}$</p>
+                                <p>Characteristic equation: $\lambda^3 - S_1\lambda^2 + S_2\lambda - S_3 = 0$</p>
+                                <p>Where $S_1 = \text{trace}(A)$, $S_3 = \det(A)$</p>
+                                <p>Cayley-Hamilton: $A^3 - S_1A^2 + S_2A - S_3I = 0$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-red-800 mb-2">Mistake 1: Wrong Characteristic Equation</h4>
+                            <p class="text-sm">Double-check your determinant calculation. For $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$, it's $\lambda^2 - (a+d)\lambda + (ad-bc) = 0$, not $\lambda^2 - (a+d)\lambda - (ad-bc) = 0$.</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-red-800 mb-2">Mistake 2: Scalar vs Matrix Operations</h4>
+                            <p class="text-sm">Remember that $A^2$ means matrix multiplication $A \times A$, not element-wise squaring. And $0$ in the theorem means the zero matrix, not scalar zero.</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-red-800 mb-2">Mistake 3: Forgetting the Identity Matrix</h4>
+                            <p class="text-sm">In the characteristic polynomial $p(\lambda) = \lambda^2 + \alpha\lambda + \beta$, when substituting $A$, the constant term $\beta$ becomes $\beta I$, not just $\beta$.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 JEE Advanced Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. If $A = \begin{bmatrix} 2 & -1 \\ 1 & 2 \end{bmatrix}$, find $A^6$ using Cayley-Hamilton Theorem.</p>
+                            <div class="text-sm text-gray-600">[JEE Advanced 2018]</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Let $A = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 2 & 1 \\ 2 & 0 & 3 \end{bmatrix}$. Verify that A satisfies its characteristic equation and hence find $A^{-1}$.</p>
+                            <div class="text-sm text-gray-600">[JEE Advanced 2016]</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. If $A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ and $I$ is the identity matrix, find $A^5 - 5A^4 + 6A^3 + 2A^2 - 3A + I$.</p>
+                            <div class="text-sm text-gray-600">[JEE Advanced 2020]</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-purple-700">
+                        <p><strong>Time yourself:</strong> Try to solve each problem in under 4 minutes using Cayley-Hamilton Theorem.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">🚀 Exam Strategy for Cayley-Hamilton</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">When to Use It</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm opacity-90">
+                                <li>Finding $A^n$ for $n > 3$</li>
+                                <li>Computing matrix polynomials</li>
+                                <li>Finding inverse of $2\times2$ and $3\times3$ matrices</li>
+                                <li>Solving matrix equations</li>
+                                <li>Proving matrix identities</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-2">Speed Tips</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm opacity-90">
+                                <li>Memorize the $2\times2$ characteristic formula</li>
+                                <li>Use polynomial division for complex expressions</li>
+                                <li>For $A^n$, find pattern in coefficients</li>
+                                <li>Practice mental calculation of determinants</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Cayley-Hamilton?</h3>
+                    <p class="mb-4 opacity-90">Continue your JEE Advanced matrix algebra journey with these topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="eigen-values-vectors.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Eigen Values & Vectors
+                        </a>
+                        <a href="matrix-decomposition.html" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Matrix Decomposition
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

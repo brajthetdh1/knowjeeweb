@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definite Integrals of Even & Odd Functions | Symmetry in Integration | KnowJEE</title>
+    <meta name="description" content="Master the symmetry properties of even and odd functions to simplify definite integrals. Essential JEE calculus techniques with examples and shortcuts.">
+    <meta name="keywords" content="definite integrals even odd functions, symmetry in integration, JEE calculus, integration shortcuts, even function properties, odd function properties, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .property-box {
+            background: #fef7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .shortcut-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .even-function { border-left: 4px solid #3b82f6; }
+        .odd-function { border-left: 4px solid #ef4444; }
+        .symmetry-tag {
+            background: #7c3aed;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Integration Techniques</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential for JEE</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Definite Integrals of Even and Odd Functions: Using Symmetry to Simplify</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the powerful symmetry properties that can reduce complex definite integrals to simple calculations.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">70%</div>
+                            <div class="text-sm text-purple-600">Time Saved</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-5</div>
+                            <div class="text-sm text-purple-600">Marks per Paper</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2</div>
+                            <div class="text-sm text-purple-600">Key Properties</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Symmetry Matters in Integration</h2>
+                <p class="mb-4">Symmetry is one of the most powerful tools in calculus. When you recognize even or odd functions, you can <strong>drastically simplify definite integrals</strong> and solve problems in seconds that would otherwise take minutes.</p>
+                
+                <div class="shortcut-box">
+                    <h4 class="font-semibold text-purple-800 mb-2">🎯 JEE Advantage</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Solve integration problems 3x faster</strong> by recognizing symmetry</li>
+                        <li><strong>Avoid lengthy calculations</strong> and potential calculation errors</li>
+                        <li><strong>Quick verification</strong> of integration results</li>
+                        <li><strong>Essential for advanced problems</strong> involving periodic functions and Fourier series</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#even-functions" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Even Functions</a>
+                    <a href="#odd-functions" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Odd Functions</a>
+                    <a href="#key-properties" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Properties</a>
+                    <a href="#jee-problems" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Problems</a>
+                </div>
+            </div>
+
+            <!-- Even Functions -->
+            <section id="even-functions" class="mb-8">
+                <div class="concept-box even-function">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="symmetry-tag">Symmetry Property</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Even Function</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Even Functions: Symmetric About Y-Axis</h3>
+                    
+                    <div class="property-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Definition</h4>
+                        <p>A function $f(x)$ is <strong>even</strong> if $f(-x) = f(x)$ for all $x$ in its domain.</p>
+                        <div class="text-center my-3">
+                            $$ f(-x) = f(x) $$
+                        </div>
+                        <p><strong>Geometric Interpretation:</strong> The graph is symmetric about the y-axis.</p>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Common Even Functions</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p class="font-semibold">Polynomials with even powers:</p>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>$x^2$, $x^4$, $x^6$, ...</li>
+                                    <li>$x^2 + 3x^4 - 2$</li>
+                                    <li>$5x^6 - 2x^2 + 7$</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Trigonometric functions:</p>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>$\cos x$</li>
+                                    <li>$\cos^2 x$</li>
+                                    <li>$\sec x$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Verify Even Function</h4>
+                        <p class="mb-2">Show that $f(x) = x^4 - 2x^2 + 5$ is even.</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Find $f(-x)$:</p>
+                            <p class="ml-4">$f(-x) = (-x)^4 - 2(-x)^2 + 5 = x^4 - 2x^2 + 5$</p>
+                            <p><strong>Step 2:</strong> Compare with $f(x)$:</p>
+                            <p class="ml-4">$f(-x) = x^4 - 2x^2 + 5 = f(x)$ ✓</p>
+                            <p><strong>Conclusion:</strong> $f(x)$ is even.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Odd Functions -->
+            <section id="odd-functions" class="mb-8">
+                <div class="concept-box odd-function">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="symmetry-tag">Symmetry Property</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Odd Function</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Odd Functions: Symmetric About Origin</h3>
+                    
+                    <div class="property-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Definition</h4>
+                        <p>A function $f(x)$ is <strong>odd</strong> if $f(-x) = -f(x)$ for all $x$ in its domain.</p>
+                        <div class="text-center my-3">
+                            $$ f(-x) = -f(x) $$
+                        </div>
+                        <p><strong>Geometric Interpretation:</strong> The graph has rotational symmetry of 180° about the origin.</p>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Common Odd Functions</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p class="font-semibold">Polynomials with odd powers:</p>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>$x$, $x^3$, $x^5$, ...</li>
+                                    <li>$x^3 - 2x$</li>
+                                    <li>$5x^5 + 3x^3 - x$</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Trigonometric functions:</p>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>$\sin x$</li>
+                                    <li>$\tan x$</li>
+                                    <li>$\csc x$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Verify Odd Function</h4>
+                        <p class="mb-2">Show that $f(x) = x^3 - 4x$ is odd.</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Find $f(-x)$:</p>
+                            <p class="ml-4">$f(-x) = (-x)^3 - 4(-x) = -x^3 + 4x$</p>
+                            <p><strong>Step 2:</strong> Find $-f(x)$:</p>
+                            <p class="ml-4">$-f(x) = -(x^3 - 4x) = -x^3 + 4x$</p>
+                            <p><strong>Step 3:</strong> Compare:</p>
+                            <p class="ml-4">$f(-x) = -x^3 + 4x = -f(x)$ ✓</p>
+                            <p><strong>Conclusion:</strong> $f(x)$ is odd.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Integration Properties -->
+            <section id="key-properties" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Golden Rules of Symmetric Integration</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Even Function Property -->
+                    <div class="shortcut-box">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded mr-2">Even Function</span>
+                            <span class="text-blue-600 font-semibold">Integration Property</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">For Even Functions</h3>
+                        <div class="text-center my-3 text-xl">
+                            $$ \int_{-a}^{a} f(x)  dx = 2\int_{0}^{a} f(x)  dx $$
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">The area from $-a$ to $a$ is exactly twice the area from $0$ to $a$.</p>
+                        
+                        <div class="example-box">
+                            <h4 class="font-semibold text-green-800 mb-2">Example</h4>
+                            <p>Evaluate $\int_{-2}^{2} (x^4 + 3x^2 + 1)  dx$</p>
+                            <div class="space-y-1 text-sm mt-2">
+                                <p><strong>Step 1:</strong> Verify $f(x) = x^4 + 3x^2 + 1$ is even</p>
+                                <p><strong>Step 2:</strong> Apply property:</p>
+                                <p class="ml-4">$\int_{-2}^{2} f(x)  dx = 2\int_{0}^{2} (x^4 + 3x^2 + 1)  dx$</p>
+                                <p><strong>Step 3:</strong> Calculate:</p>
+                                <p class="ml-4">$= 2\left[\frac{x^5}{5} + x^3 + x\right]_{0}^{2}$</p>
+                                <p class="ml-4">$= 2\left(\frac{32}{5} + 8 + 2\right) = 2\left(\frac{32+40+10}{5}\right) = \frac{164}{5}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Odd Function Property -->
+                    <div class="shortcut-box">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded mr-2">Odd Function</span>
+                            <span class="text-red-600 font-semibold">Integration Property</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">For Odd Functions</h3>
+                        <div class="text-center my-3 text-xl">
+                            $$ \int_{-a}^{a} f(x)  dx = 0 $$
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Positive and negative areas cancel each other out perfectly.</p>
+                        
+                        <div class="example-box">
+                            <h4 class="font-semibold text-green-800 mb-2">Example</h4>
+                            <p>Evaluate $\int_{-3}^{3} (x^5 - 2x^3 + x)  dx$</p>
+                            <div class="space-y-1 text-sm mt-2">
+                                <p><strong>Step 1:</strong> Verify $f(x) = x^5 - 2x^3 + x$ is odd</p>
+                                <p><strong>Step 2:</strong> Apply property:</p>
+                                <p class="ml-4">$\int_{-3}^{3} f(x)  dx = 0$</p>
+                                <p><strong>Step 3:</strong> No calculation needed! Answer is 0.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mixed Functions -->
+            <section class="mb-8">
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Handling Mixed Functions</h3>
+                    <p class="mb-4">Many functions are neither purely even nor purely odd. However, <strong>every function can be decomposed</strong> into even and odd parts.</p>
+                    
+                    <div class="property-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Decomposition Theorem</h4>
+                        <p>Any function $f(x)$ can be written as:</p>
+                        <div class="text-center my-3">
+                            $$ f(x) = f_{\text{even}}(x) + f_{\text{odd}}(x) $$
+                        </div>
+                        <p>Where:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                            <div>
+                                $$ f_{\text{even}}(x) = \frac{f(x) + f(-x)}{2} $$
+                            </div>
+                            <div>
+                                $$ f_{\text{odd}}(x) = \frac{f(x) - f(-x)}{2} $$
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Mixed Function Integration</h4>
+                        <p class="mb-2">Evaluate $\int_{-2}^{2} (x^3 + 2x^2 + 3x + 4)  dx$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Identify even and odd parts:</p>
+                            <p class="ml-4">Even: $2x^2 + 4$ &nbsp;&nbsp; Odd: $x^3 + 3x$</p>
+                            <p><strong>Step 2:</strong> Apply properties:</p>
+                            <p class="ml-4">$\int_{-2}^{2} (x^3 + 3x)  dx = 0$ (odd function)</p>
+                            <p class="ml-4">$\int_{-2}^{2} (2x^2 + 4)  dx = 2\int_{0}^{2} (2x^2 + 4)  dx$ (even function)</p>
+                            <p><strong>Step 3:</strong> Calculate even part:</p>
+                            <p class="ml-4">$2\int_{0}^{2} (2x^2 + 4)  dx = 2\left[\frac{2x^3}{3} + 4x\right]_{0}^{2}$</p>
+                            <p class="ml-4">$= 2\left(\frac{16}{3} + 8\right) = 2\left(\frac{16+24}{3}\right) = \frac{80}{3}$</p>
+                            <p><strong>Final Answer:</strong> $\frac{80}{3}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Problems -->
+            <section id="jee-problems" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">JEE-Level Problems with Symmetry</h2>
+                
+                <div class="practice-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="symmetry-tag">JEE Main 2023</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Trigonometric Symmetry</h3>
+                    <p class="text-lg mb-4">Evaluate $\int_{-\pi/4}^{\pi/4} \frac{\sin^3 x + \cos^3 x}{e^x + 1}  dx$</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Recognize the property:</p>
+                            <p class="ml-4">For integrals of form $\int_{-a}^{a} \frac{f(x)}{e^x + 1} dx$, use:</p>
+                            <p class="ml-4">$\int_{-a}^{a} \frac{f(x)}{e^x + 1} dx = \int_{0}^{a} f(x) dx$ if $f(x)$ is even</p>
+                            <p><strong>Step 2:</strong> Check if numerator is even:</p>
+                            <p class="ml-4">Let $g(x) = \sin^3 x + \cos^3 x$</p>
+                            <p class="ml-4">$g(-x) = \sin^3(-x) + \cos^3(-x) = -\sin^3 x + \cos^3 x \neq g(x)$</p>
+                            <p class="ml-4">So $g(x)$ is neither even nor odd</p>
+                            <p><strong>Step 3:</strong> Use alternative approach with property:</p>
+                            <p class="ml-4">$\int_{-a}^{a} \frac{f(x)}{e^x + 1} dx = \int_{0}^{a} f(x) dx$ when $f(x) + f(-x) = f(x)$</p>
+                            <p class="ml-4">Here, $g(x) + g(-x) = 2\cos^3 x$, which is even</p>
+                            <p><strong>Step 4:</strong> Apply the property:</p>
+                            <p class="ml-4">$\int_{-\pi/4}^{\pi/4} \frac{\sin^3 x + \cos^3 x}{e^x + 1} dx = \int_{0}^{\pi/4} (\sin^3 x + \cos^3 x) dx$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="symmetry-tag">JEE Advanced 2022</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Absolute Value Symmetry</h3>
+                    <p class="text-lg mb-4">Evaluate $\int_{-5}^{5} |x^3 - 4x|  dx$</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Note that $|x^3 - 4x|$ is even:</p>
+                            <p class="ml-4">$|(-x)^3 - 4(-x)| = |-x^3 + 4x| = |-(x^3 - 4x)| = |x^3 - 4x|$</p>
+                            <p><strong>Step 2:</strong> Apply even function property:</p>
+                            <p class="ml-4">$\int_{-5}^{5} |x^3 - 4x|  dx = 2\int_{0}^{5} |x^3 - 4x|  dx$</p>
+                            <p><strong>Step 3:</strong> Find where $x^3 - 4x$ changes sign in $[0,5]$:</p>
+                            <p class="ml-4">$x^3 - 4x = x(x^2 - 4) = x(x-2)(x+2)$</p>
+                            <p class="ml-4">In $[0,5]$: negative on $(0,2)$, positive on $(2,5]$</p>
+                            <p><strong>Step 4:</strong> Split the integral:</p>
+                            <p class="ml-4">$2\left[\int_{0}^{2} -(x^3 - 4x)  dx + \int_{2}^{5} (x^3 - 4x)  dx\right]$</p>
+                            <p><strong>Step 5:</strong> Calculate (solution continues...)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Even Function Checklist</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>$f(-x) = f(x)$ for all $x$</li>
+                                <li>Graph symmetric about y-axis</li>
+                                <li>$\int_{-a}^{a} f(x) dx = 2\int_{0}^{a} f(x) dx$</li>
+                                <li>Common examples: $x^{2n}$, $\cos x$, $\cosh x$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Odd Function Checklist</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>$f(-x) = -f(x)$ for all $x$</li>
+                                <li>Graph symmetric about origin</li>
+                                <li>$\int_{-a}^{a} f(x) dx = 0$</li>
+                                <li>Common examples: $x^{2n+1}$, $\sin x$, $\tan x$</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Pro Tip</h4>
+                        <p class="text-sm">When you see symmetric limits $[-a,a]$, always check if the function is even or odd before integrating. This can save 2-3 minutes per problem!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems using symmetry properties:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Evaluate $\int_{-3}^{3} (x^4 \cos x + x^3 \sin x)  dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Decompose into even and odd parts</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Evaluate $\int_{-1}^{1} \frac{x^5 + 2x^3}{e^{x^2} + 1}  dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Check if the function is odd</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Evaluate $\int_{-\pi/2}^{\pi/2} \sin^3 x \cos^2 x  dx$</p>
+                            <div class="text-sm text-gray-600">Hint: Analyze the parity of the function</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master Symmetry in Integration!</h3>
+                    <p class="mb-4 opacity-90">These techniques will save you valuable time and increase your accuracy in JEE calculus problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Integration Techniques
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Quick Reference
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

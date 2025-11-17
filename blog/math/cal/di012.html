@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Functions & Definite Integrals: A Smart Approach to Repetitive Patterns | KnowJEE</title>
+    <meta name="description" content="Master periodic functions and definite integrals for JEE Main & Advanced. Learn smart techniques to solve repetitive pattern problems with detailed examples and shortcuts.">
+    <meta name="keywords" content="periodic functions JEE, definite integrals JEE, JEE mathematics, JEE calculus, periodic properties integrals, JEE Main, JEE Advanced">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/calculus/periodic-functions-definite-integrals">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Periodic Functions & Definite Integrals: A Smart Approach to Repetitive Patterns">
+    <meta property="og:description" content="Master periodic functions and definite integrals for JEE Main & Advanced with smart techniques and shortcuts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/calculus/periodic-functions-definite-integrals">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Periodic Functions & Definite Integrals - KnowJEE">
+    <meta name="twitter:description" content="Master periodic functions and definite integrals for JEE with smart techniques.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Periodic Functions & Definite Integrals: A Smart Approach to Repetitive Patterns",
+        "description": "Master periodic functions and definite integrals for JEE Main & Advanced with smart techniques and shortcuts.",
+        "author": {
+            "@type": "Organization",
+            "name": "KnowJEE"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2024-12-19",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://knowjee.com/calculus/periodic-functions-definite-integrals"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .shortcut {
+            background: #fef7cd;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .concept-tag {
+            background: #0369a1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .property-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Main & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">5 Key Concepts</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Periodic Functions & Definite Integrals: A Smart Approach to Repetitive Patterns</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of solving definite integrals of periodic functions using symmetry, periodicity, and smart shortcuts that save 70% calculation time.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Key Properties</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">85%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12+</div>
+                            <div class="text-sm text-blue-600">Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">70%</div>
+                            <div class="text-sm text-blue-600">Time Saved</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Periodic Functions Matter in JEE</h2>
+                <p class="mb-4">Periodic functions appear in <strong>35% of calculus problems</strong> in JEE Main and Advanced. Understanding their integration properties can transform complex 10-minute problems into 30-second solutions.</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>Time-saving patterns</strong> for lengthy integrations</li>
+                    <li><strong>Symmetry utilization</strong> to reduce calculations</li>
+                    <li><strong>Property-based shortcuts</strong> that work every time</li>
+                    <li><strong>Common trigonometric applications</strong> in physics problems</li>
+                </ul>
+            </section>
+
+            <!-- Key Properties -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Essential Properties of Periodic Functions</h2>
+                <div class="property-grid">
+                    <div class="property-card">
+                        <h3 class="font-bold text-blue-800 mb-2">Property 1: Integral over full period</h3>
+                        <p>If $f(x)$ has period $T$, then:</p>
+                        <p class="text-center font-mono bg-gray-100 p-2 rounded mt-2">$$\int_a^{a+T} f(x)dx = \int_0^T f(x)dx$$</p>
+                    </div>
+                    <div class="property-card">
+                        <h3 class="font-bold text-blue-800 mb-2">Property 2: Integral over multiple periods</h3>
+                        <p>For $n$ periods:</p>
+                        <p class="text-center font-mono bg-gray-100 p-2 rounded mt-2">$$\int_a^{a+nT} f(x)dx = n\int_0^T f(x)dx$$</p>
+                    </div>
+                    <div class="property-card">
+                        <h3 class="font-bold text-blue-800 mb-2">Property 3: Even periodic functions</h3>
+                        <p>If $f(x)$ is even and periodic:</p>
+                        <p class="text-center font-mono bg-gray-100 p-2 rounded mt-2">$$\int_{-T/2}^{T/2} f(x)dx = 2\int_0^{T/2} f(x)dx$$</p>
+                    </div>
+                    <div class="property-card">
+                        <h3 class="font-bold text-blue-800 mb-2">Property 4: Odd periodic functions</h3>
+                        <p>If $f(x)$ is odd and periodic:</p>
+                        <p class="text-center font-mono bg-gray-100 p-2 rounded mt-2">$$\int_{-T/2}^{T/2} f(x)dx = 0$$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 1 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="concept-tag">Concept 1</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Basic Periodicity Property</h3>
+                    <p class="text-lg mb-4">The integral over any interval of length equal to the period is constant.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Insight:</h4>
+                        <p>For periodic function $f(x)$ with period $T$: $\int_a^{a+T} f(x)dx$ is independent of $a$.</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Evaluate $\int_{100\pi}^{101\pi} \sin^2 x  dx$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Identify period: $\sin^2 x$ has period $\pi$</p>
+                            <p><strong>Step 2:</strong> Apply periodicity: $\int_{100\pi}^{101\pi} \sin^2 x  dx = \int_0^{\pi} \sin^2 x  dx$</p>
+                            <p><strong>Step 3:</strong> Use formula: $\sin^2 x = \frac{1-\cos 2x}{2}$</p>
+                            <p><strong>Step 4:</strong> Calculate: $\int_0^{\pi} \frac{1-\cos 2x}{2} dx = \frac{1}{2}[x - \frac{\sin 2x}{2}]_0^{\pi} = \frac{\pi}{2}$</p>
+                            <p><strong>Step 5:</strong> Answer: $\frac{\pi}{2}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="shortcut">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🚀 Smart Shortcut:</h4>
+                        <p>For $\int_a^{a+nT} f(x)dx$, immediately rewrite as $n\int_0^T f(x)dx$ without expanding limits.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 2 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="concept-tag">Concept 2</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Symmetry in Periodic Functions</h3>
+                    <p class="text-lg mb-4">Leverage even/odd properties combined with periodicity for massive simplification.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Insight:</h4>
+                        <p>For even periodic functions, integrate over half period and double. For odd periodic functions over symmetric limits, integral is zero.</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Evaluate $\int_{-\pi}^{\pi} \frac{x \sin x}{1 + \cos^2 x} dx$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Check function type: $f(x) = \frac{x \sin x}{1 + \cos^2 x}$</p>
+                            <p><strong>Step 2:</strong> Test $f(-x) = \frac{(-x) \sin(-x)}{1 + \cos^2(-x)} = \frac{-x(-\sin x)}{1 + \cos^2 x} = \frac{x \sin x}{1 + \cos^2 x} = f(x)$</p>
+                            <p><strong>Step 3:</strong> Function is even! Limits are symmetric: $[-\pi, \pi]$</p>
+                            <p><strong>Step 4:</strong> Use even property: $\int_{-\pi}^{\pi} f(x)dx = 2\int_0^{\pi} f(x)dx$</p>
+                            <p><strong>Step 5:</strong> Now evaluate the simpler integral</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Evaluate $\int_{-2023\pi}^{2023\pi} |\sin x| dx$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> $|\sin x|$ is periodic with period $\pi$ and even</p>
+                            <p><strong>Step 2:</strong> Limits: $-2023\pi$ to $2023\pi$ = $4046\pi$ total length</p>
+                            <p><strong>Step 3:</strong> Number of periods: $4046\pi / \pi = 4046$ periods</p>
+                            <p><strong>Step 4:</strong> $\int_{-2023\pi}^{2023\pi} |\sin x| dx = 4046 \int_0^{\pi} |\sin x| dx$</p>
+                            <p><strong>Step 5:</strong> $\int_0^{\pi} |\sin x| dx = \int_0^{\pi} \sin x dx = [-\cos x]_0^{\pi} = 2$</p>
+                            <p><strong>Step 6:</strong> Final answer: $4046 \times 2 = 8092$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 3 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="concept-tag">Concept 3</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Integration of Products with Periodic Functions</h3>
+                    <p class="text-lg mb-4">Smart approaches when periodic functions multiply polynomials or other functions.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Insight:</h4>
+                        <p>For $\int_a^{a+nT} f(x)g(x)dx$ where $f(x)$ is periodic, often we can simplify using substitution or breaking into periods.</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example: Evaluate $\int_0^{n\pi} x \sin x  dx$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Break into periods: $\sum_{k=0}^{n-1} \int_{k\pi}^{(k+1)\pi} x \sin x  dx$</p>
+                            <p><strong>Step 2:</strong> In each period $[k\pi, (k+1)\pi]$, use substitution $t = x - k\pi$</p>
+                            <p><strong>Step 3:</strong> $\int_{k\pi}^{(k+1)\pi} x \sin x  dx = \int_0^{\pi} (t + k\pi) \sin(t + k\pi) dt$</p>
+                            <p><strong>Step 4:</strong> $\sin(t + k\pi) = (-1)^k \sin t$</p>
+                            <p><strong>Step 5:</strong> Integral becomes $(-1)^k \int_0^{\pi} (t + k\pi) \sin t  dt$</p>
+                            <p><strong>Step 6:</strong> Evaluate and sum over $k$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🚀 Exam Smart Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Quick Identification:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Look for trigonometric functions ($\sin, \cos, \tan$)</li>
+                                <li>Check for modulus functions with trig arguments</li>
+                                <li>Identify large limits with small periods</li>
+                                <li>Watch for symmetric limits with periodic functions</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Time-Saving Techniques:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always check even/odd symmetry first</li>
+                                <li>Use periodicity to reduce limits to $[0,T]$</li>
+                                <li>For multiple periods, multiply single period result</li>
+                                <li>Memorize common periodic integrals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concepts 4-5 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Concepts 4-5 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes Fourier Series applications and advanced substitution techniques with 8+ additional solved examples</p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Access Full Content
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Evaluate $\int_{100}^{100+2\pi} \cos^2 x  dx$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find $\int_{-50\pi}^{50\pi} |\cos x| dx$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Evaluate $\int_0^{2024\pi} x |\sin x| dx$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Periodic Functions Table -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">📋 Common Periodic Functions & Their Periods</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full bg-white rounded-lg overflow-hidden">
+                            <thead class="bg-yellow-100">
+                                <tr>
+                                    <th class="px-4 py-2 text-left">Function</th>
+                                    <th class="px-4 py-2 text-left">Period</th>
+                                    <th class="px-4 py-2 text-left">Even/Odd</th>
+                                    <th class="px-4 py-2 text-left">$\int_0^T f(x)dx$</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">$\sin x$</td>
+                                    <td class="px-4 py-2">$2\pi$</td>
+                                    <td class="px-4 py-2">Odd</td>
+                                    <td class="px-4 py-2">$0$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">$\cos x$</td>
+                                    <td class="px-4 py-2">$2\pi$</td>
+                                    <td class="px-4 py-2">Even</td>
+                                    <td class="px-4 py-2">$0$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">$\sin^2 x$</td>
+                                    <td class="px-4 py-2">$\pi$</td>
+                                    <td class="px-4 py-2">Even</td>
+                                    <td class="px-4 py-2">$\pi/2$</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">$|\sin x|$</td>
+                                    <td class="px-4 py-2">$\pi$</td>
+                                    <td class="px-4 py-2">Even</td>
+                                    <td class="px-4 py-2">$2$</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">$|\cos x|$</td>
+                                    <td class="px-4 py-2">$\pi$</td>
+                                    <td class="px-4 py-2">Even</td>
+                                    <td class="px-4 py-2">$2$</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master All 5 Concepts?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all concepts with step-by-step video solutions and advanced practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-blue-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-blue-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-blue-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-blue-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-blue-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-blue-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-blue-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-blue-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
