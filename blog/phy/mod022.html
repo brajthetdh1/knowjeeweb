@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Fusion & Proton-Proton Cycle: The Sun's Energy Source | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Discover how the Sun creates energy through nuclear fusion and the proton-proton cycle. Master mass defect and binding energy concepts for JEE Physics.">
+    <meta name="keywords" content="nuclear fusion, proton-proton cycle, sun energy source, mass defect, binding energy, JEE physics, nuclear physics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .fusion-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .energy-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .analogy-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .jee-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .sun-glow {
+            box-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-orange-100 text-orange-800 text-sm font-semibold px-3 py-1 rounded-full">Nuclear Physics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Main & Advanced</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Star in a Lab: Understanding Nuclear Fusion & The Proton-Proton Cycle</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how the Sun transforms mass into energy and powers our solar system through the incredible physics of nuclear fusion.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-orange-700">15M°C</div>
+                            <div class="text-sm text-orange-600">Sun's Core Temp</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-orange-700">4M</div>
+                            <div class="text-sm text-orange-600">Tons/sec Converted</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-orange-700">93M</div>
+                            <div class="text-sm text-orange-600">Miles to Sun</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-orange-700">5B</div>
+                            <div class="text-sm text-orange-600">Years More</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Sun's Secret Power Source</h2>
+                <p class="mb-4">Every second, the Sun converts <strong>4 million tons</strong> of mass into pure energy through nuclear fusion. This isn't just distant astronomy - it's practical physics that appears in <strong>2-3 JEE questions every year</strong>.</p>
+                
+                <div class="analogy-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🌞 Think of It This Way</h4>
+                    <p>The Sun is nature's most powerful nuclear reactor, running continuously for 4.6 billion years. Understanding how it works reveals the deep connection between <strong>mass, energy, and the fundamental forces</strong> that govern our universe.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#what-is-fusion" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">What is Fusion?</a>
+                    <a href="#mass-energy" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Mass-Energy Link</a>
+                    <a href="#proton-cycle" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Proton-Proton Cycle</a>
+                    <a href="#jee-connection" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Connection</a>
+                </div>
+            </div>
+
+            <!-- What is Nuclear Fusion Section -->
+            <section id="what-is-fusion" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. What is Nuclear Fusion?</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Power of Combining Nuclei</h3>
+                    <p class="mb-4">Nuclear fusion occurs when <strong>two light atomic nuclei combine</strong> to form a heavier nucleus, releasing enormous amounts of energy in the process.</p>
+                    
+                    <div class="energy-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Conditions for Fusion</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="font-semibold">🌡️ Extreme Temperature</p>
+                                <p class="text-sm">~15 million °C in Sun's core to overcome electrostatic repulsion</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">⚡ High Pressure</p>
+                                <p class="text-sm">200 billion times Earth's atmospheric pressure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fusion-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fusion vs Fission: The Critical Difference</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">Fusion (The Sun's Method)</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Light nuclei → Heavy nucleus</li>
+                                <li>Occurs in stars</li>
+                                <li>Extremely high energy output</li>
+                                <li>Clean, minimal radioactive waste</li>
+                                <li>Hard to achieve on Earth</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">Fission (Nuclear Reactors)</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Heavy nucleus → Lighter nuclei</li>
+                                <li>Used in power plants</li>
+                                <li>Lower energy output than fusion</li>
+                                <li>Radioactive waste produced</li>
+                                <li>Easier to control on Earth</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mass-Energy Connection Section -->
+            <section id="mass-energy" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Mass-Energy Connection: Einstein's $E=mc^2$</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Where Does the Sun's Energy Really Come From?</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Secret: Mass Defect</h4>
+                        <p>When nuclei fuse, the <strong>total mass decreases slightly</strong>. This "missing mass" is converted directly into energy according to Einstein's famous equation:</p>
+                        <div class="text-center my-4">
+                            <div class="text-2xl font-bold text-orange-600">$$E = \Delta m \cdot c^2$$</div>
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$E$ = Energy released (Joules)</li>
+                            <li>$\Delta m$ = Mass defect (kilograms)</li>
+                            <li>$c$ = Speed of light ($3 \times 10^8$ m/s)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="energy-box">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 The Power of $c^2$</h4>
+                        <p>The speed of light squared ($c^2$) is an <strong>enormous number</strong>: $9 \times 10^{16}$ m²/s². This means:</p>
+                        <div class="text-center my-3 bg-white p-3 rounded border">
+                            <p class="font-semibold">1 gram of mass = 90 trillion joules of energy</p>
+                            <p class="text-sm text-gray-600">Enough to power 30,000 homes for a year!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fusion-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Binding Energy: The Nuclear Glue</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Understanding Binding Energy</h4>
+                        <p>Binding energy is the energy required to <strong>split a nucleus</strong> into its individual protons and neutrons. Higher binding energy means <strong>more stable nucleus</strong>.</p>
+                        
+                        <div class="mt-4">
+                            <p><strong>Key Pattern:</strong> Binding energy per nucleon increases until iron-56, then decreases.</p>
+                            <div class="bg-white p-3 rounded border mt-2">
+                                <p class="text-sm"><strong>Fusion:</strong> Move toward iron (light elements) → Release energy</p>
+                                <p class="text-sm"><strong>Fission:</strong> Move toward iron (heavy elements) → Release energy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proton-Proton Cycle Section -->
+            <section id="proton-cycle" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. The Proton-Proton Cycle: Sun's Energy Engine</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Step-by-Step: How Hydrogen Becomes Helium</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 1: Proton Collision</h4>
+                            <p>Two protons (hydrogen nuclei) collide and fuse:</p>
+                            <div class="text-center my-2">
+                                <div class="text-lg font-semibold">$$p + p \rightarrow {}^2_1H + e^+ + \nu_e + 1.44\text{ MeV}$$</div>
+                            </div>
+                            <p class="text-sm text-gray-600">This creates deuterium, a positron, a neutrino, and releases energy</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 2: Deuterium Fusion</h4>
+                            <p>Deuterium fuses with another proton:</p>
+                            <div class="text-center my-2">
+                                <div class="text-lg font-semibold">$${}^2_1H + p \rightarrow {}^3_2He + \gamma + 5.49\text{ MeV}$$</div>
+                            </div>
+                            <p class="text-sm text-gray-600">Creates helium-3 and releases a gamma ray photon</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 3: Helium Formation</h4>
+                            <p>Two helium-3 nuclei combine to form helium-4:</p>
+                            <div class="text-center my-2">
+                                <div class="text-lg font-semibold">$${}^3_2He + {}^3_2He \rightarrow {}^4_2He + 2p + 12.86\text{ MeV}$$</div>
+                            </div>
+                            <p class="text-sm text-gray-600">Releases two protons and substantial energy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="energy-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Net Result of Proton-Proton Cycle</h4>
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-green-700">$$4p \rightarrow {}^4_2He + 2e^+ + 2\nu_e + 2\gamma + 26.7\text{ MeV}$$</div>
+                        </div>
+                        <p class="text-center mt-2 text-sm">Four protons create one helium nucleus and release 26.7 MeV of energy</p>
+                    </div>
+                </div>
+
+                <div class="analogy-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🏭 The Sun as a Nuclear Factory</h4>
+                    <p>Think of the Sun as a giant factory where:</p>
+                    <ul class="list-disc list-inside space-y-1 mt-2 text-sm">
+                        <li><strong>Raw material:</strong> Hydrogen protons (90% of Sun)</li>
+                        <li><strong>Product:</strong> Helium nuclei</li>
+                        <li><strong>Byproducts:</strong> Positrons, neutrinos, gamma rays</li>
+                        <li><strong>Waste heat:</strong> Sunlight that reaches Earth</li>
+                    </ul>
+                    <p class="mt-2 font-semibold">Production rate: 600 million tons of hydrogen → 596 million tons of helium every second!</p>
+                </div>
+            </section>
+
+            <!-- JEE Connection Section -->
+            <section id="jee-connection" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. JEE Physics: What You Need to Know</h2>
+                </div>
+
+                <div class="jee-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Exam-Focused Concepts</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-800 mb-2">🎯 Must-Know Formulas</h4>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p><strong>Mass-Energy Equivalence:</strong></p>
+                                    <p class="text-center">$E = \Delta m \cdot c^2$</p>
+                                </div>
+                                <div>
+                                    <p><strong>Mass Defect:</strong></p>
+                                    <p class="text-center">$\Delta m = [Zm_p + (A-Z)m_n] - M_{nucleus}$</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-800 mb-2">📊 Binding Energy Calculations</h4>
+                            <p class="text-sm mb-2">Typical JEE problem: Calculate energy released in a fusion reaction</p>
+                            <div class="step-box text-sm">
+                                <p><strong>Example:</strong> Calculate energy released when deuterium and tritium fuse:</p>
+                                <p class="text-center">${}^2_1H + {}^3_1H \rightarrow {}^4_2He + {}^1_0n$</p>
+                                <p class="mt-2">Given masses: ${}^2_1H = 2.014102u$, ${}^3_1H = 3.016049u$, ${}^4_2He = 4.002603u$, ${}^1_0n = 1.008665u$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-800 mb-2">🔍 Common Question Types</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Energy calculations from mass defect</li>
+                                <li>Identifying fusion vs fission reactions</li>
+                                <li>Binding energy per nucleon comparisons</li>
+                                <li>Proton-proton cycle step identification</li>
+                                <li>Q-value calculations for nuclear reactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Quick Problem-Solving Strategy</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">4-Step Approach for Fusion Problems</h4>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li><strong>Write the nuclear reaction</strong> with proper atomic notation</li>
+                            <li><strong>Calculate total mass before and after</strong> using given atomic masses</li>
+                            <li><strong>Find mass defect:</strong> $\Delta m = m_{initial} - m_{final}$</li>
+                            <li><strong>Convert to energy:</strong> $E = \Delta m \times 931.5$ MeV (using $1u = 931.5$ MeV/c²)</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-World Applications -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🌍 Beyond the Sun: Fusion on Earth</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Current Research</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>ITER Project:</strong> International experimental reactor</li>
+                                <li><strong>Tokamak reactors:</strong> Using magnetic confinement</li>
+                                <li><strong>Laser fusion:</strong> National Ignition Facility (NIF)</li>
+                                <li><strong>Stellarators:</strong> Alternative to tokamaks</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Future Possibilities</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Virtually limitless clean energy</li>
+                                <li>No greenhouse gas emissions</li>
+                                <li>Abundant fuel from seawater</li>
+                                <li>Minimal radioactive waste</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded border">
+                        <p class="text-sm"><strong>JEE Connection:</strong> Understanding fusion principles is crucial for students interested in nuclear engineering, astrophysics, and energy research careers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Revision Checklist</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Concepts</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Fusion combines light nuclei → heavier nucleus + energy</li>
+                                <li>Mass defect: $\Delta m = m_{initial} - m_{final}$</li>
+                                <li>$E = \Delta m \cdot c^2$ (Einstein's mass-energy equivalence)</li>
+                                <li>Proton-proton cycle has 3 main steps</li>
+                                <li>Binding energy determines nuclear stability</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Must-Remember Numbers</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Sun's core temperature: ~15 million °C</li>
+                                <li>Mass converted: 4 million tons/second</li>
+                                <li>Energy from P-P cycle: 26.7 MeV per helium</li>
+                                <li>$1u = 931.5$ MeV/c² (conversion factor)</li>
+                                <li>Speed of light: $c = 3 \times 10^8$ m/s</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Thoughts -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg p-6 sun-glow">
+                    <h3 class="text-xl font-bold mb-2">The Universe's Ultimate Power Source</h3>
+                    <p class="mb-4 opacity-90">Nuclear fusion doesn't just power stars - it's the reason we exist. Every element in your body was forged in stellar furnaces.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Fusion Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

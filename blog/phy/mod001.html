@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Rays: Continuous & Characteristic Spectrum | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master X-ray spectra for JEE Physics. Understand continuous braking radiation vs characteristic lines, photoelectric effect connection, and atomic energy levels.">
+    <meta name="keywords" content="X-rays spectrum, continuous spectrum, characteristic X-rays, braking radiation, photoelectric effect, atomic energy levels, JEE physics, modern physics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .comparison-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .spectrum-visual {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #ef4444);
+            height: 20px;
+            border-radius: 10px;
+            margin: 1rem 0;
+            position: relative;
+        }
+        .characteristic-line {
+            position: absolute;
+            height: 40px;
+            width: 3px;
+            background: #22c55e;
+            top: -10px;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Modern Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Modern Physics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">2 Spectrum Types</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">X-Rays: The Unseen Photons and Their Spectrum</h1>
+                <p class="text-xl text-gray-600 mb-4">Demystifying continuous braking radiation vs sharp characteristic lines, and their connection to atomic energy levels.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2</div>
+                            <div class="text-sm text-purple-600">Spectrum Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">4-6</div>
+                            <div class="text-sm text-purple-600">JEE Marks/Year</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">1895</div>
+                            <div class="text-sm text-purple-600">Discovery Year</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Conceptual</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Dual Nature of X-Ray Spectrum</h2>
+                <p class="mb-4">When Wilhelm Röntgen discovered X-rays in 1895, he couldn't have imagined that these "unseen rays" would reveal one of the most important spectra in physics. The X-ray spectrum consists of two distinct parts that tell different stories about atomic interactions.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Importance</h4>
+                    <p>X-ray spectra consistently appear in <strong>JEE Main and Advanced</strong>, testing your understanding of atomic physics, energy levels, and the photoelectric effect. Mastering this topic can earn you <strong>4-6 guaranteed marks</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#continuous" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Continuous Spectrum</a>
+                    <a href="#characteristic" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Characteristic Lines</a>
+                    <a href="#comparison" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Differences</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice Problems</a>
+                </div>
+            </div>
+
+            <!-- X-Ray Spectrum Visual -->
+            <section class="mb-8">
+                <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Typical X-Ray Spectrum</h3>
+                    <div class="spectrum-visual mx-auto max-w-2xl">
+                        <div class="characteristic-line" style="left: 25%"></div>
+                        <div class="characteristic-line" style="left: 40%"></div>
+                        <div class="characteristic-line" style="left: 65%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2 max-w-2xl mx-auto">
+                        <span>Low Energy</span>
+                        <span class="text-green-600 font-semibold">Kα, Kβ Lines</span>
+                        <span>High Energy</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">Continuous spectrum (background) + Characteristic lines (peaks)</p>
+                </div>
+            </section>
+
+            <!-- Continuous Spectrum Section -->
+            <section id="continuous" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Continuous Spectrum: Braking Radiation</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Physics of Sudden Stops</h3>
+                    <p class="mb-4">Also known as <strong>Bremsstrahlung</strong> (German for "braking radiation"), the continuous spectrum arises when high-energy electrons are dramatically decelerated by atomic nuclei.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 Simple Analogy</h4>
+                        <p>Think of a fast-moving car suddenly hitting the brakes - the kinetic energy converts to heat and sound. Similarly, when electrons "brake" near nuclei, their kinetic energy converts to X-ray photons.</p>
+                    </div>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Key Features of Continuous Spectrum</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Origin Mechanism</h4>
+                            <p>When high-speed electrons approach atomic nuclei, they experience strong Coulomb attraction and are deflected. During this acceleration/deceleration, they emit electromagnetic radiation.</p>
+                            <div class="mt-2 p-3 bg-blue-50 rounded">
+                                <p class="text-sm"><strong>Energy Conversion:</strong> Electron kinetic energy → X-ray photon energy</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Mathematical Description</h4>
+                            <p>The maximum photon energy (minimum wavelength) occurs when electron loses all its kinetic energy in a single interaction:</p>
+                            <div class="text-center my-3">
+                                $$ \lambda_{\text{min}} = \frac{hc}{eV} $$
+                            </div>
+                            <p>Where $V$ is the accelerating voltage, $e$ is electron charge, $h$ is Planck's constant, and $c$ is speed of light.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Experimental Observations</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong>Depends on accelerating voltage</strong> - Higher voltage shifts spectrum to shorter wavelengths</li>
+                                <li><strong>Independent of target material</strong> - Same for all metals at same voltage</li>
+                                <li><strong>Continuous distribution</strong> - All wavelengths up to $\lambda_{\text{min}}$ are present</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Memory Aid</h4>
+                    <p><strong>"Continuous spectrum = Braking electrons = All wavelengths = Depends only on voltage"</strong></p>
+                </div>
+            </section>
+
+            <!-- Characteristic Spectrum Section -->
+            <section id="characteristic" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Characteristic Spectrum: Atomic Fingerprints</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Atomic Signature</h3>
+                    <p class="mb-4">Characteristic X-rays are the <strong>unique fingerprints</strong> of elements. They arise from electron transitions between inner atomic shells and are specific to each element.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 Simple Analogy</h4>
+                        <p>Like every person has unique fingerprints, every element has unique characteristic X-ray lines. This is why X-ray spectroscopy can identify elements in unknown samples.</p>
+                    </div>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Electron Transition Process</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 1: Electron Ejection</h4>
+                            <p>High-energy incident electrons knock out inner-shell electrons (typically from K or L shell), creating vacancies.</p>
+                            <div class="mt-2 p-3 bg-red-50 rounded">
+                                <p class="text-sm"><strong>Threshold:</strong> Incident electron energy must exceed the binding energy of the inner-shell electron</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 2: Electron Transition</h4>
+                            <p>Outer-shell electrons fall into the vacancies, releasing energy as characteristic X-rays.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2 text-sm">
+                                <div class="bg-green-50 p-2 rounded">
+                                    <strong>Kα line:</strong> L → K transition
+                                </div>
+                                <div class="bg-blue-50 p-2 rounded">
+                                    <strong>Kβ line:</strong> M → K transition  
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded">
+                                    <strong>Lα line:</strong> M → L transition
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 3: Energy Calculation</h4>
+                            <p>The energy of characteristic X-rays is given by the difference in energy levels:</p>
+                            <div class="text-center my-3">
+                                $$ E = E_{\text{initial}} - E_{\text{final}} $$
+                            </div>
+                            <p>For Kα line: $E_{K\alpha} = E_L - E_K$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Moseley's Law: The Quantitative Relationship</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Discovery</h4>
+                        <p>Henry Moseley (1913) found that the square root of frequency of characteristic X-rays is proportional to atomic number:</p>
+                        <div class="text-center my-3">
+                            $$ \sqrt{\nu} = a(Z - b) $$
+                        </div>
+                        <p>Where $Z$ is atomic number, and $a$, $b$ are constants for each series.</p>
+                        
+                        <div class="mt-3 p-3 bg-yellow-50 rounded border border-yellow-200">
+                            <p class="text-sm"><strong>JEE Significance:</strong> Moseley's law provided the first experimental evidence for atomic number being more fundamental than atomic weight.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Section -->
+            <section id="comparison" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Key Differences: Continuous vs Characteristic</h2>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <table class="min-w-full">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold">Feature</th>
+                                <th class="px-4 py-3 text-left font-semibold text-blue-600">Continuous Spectrum</th>
+                                <th class="px-4 py-3 text-left font-semibold text-green-600">Characteristic Spectrum</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Origin</td>
+                                <td class="px-4 py-3">Deceleration of electrons by nuclei</td>
+                                <td class="px-4 py-3">Electron transitions between inner shells</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">Dependence on Target</td>
+                                <td class="px-4 py-3">Independent of target material</td>
+                                <td class="px-4 py-3">Unique to each element (fingerprint)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Dependence on Voltage</td>
+                                <td class="px-4 py-3">Strong dependence - shifts with voltage</td>
+                                <td class="px-4 py-3">Weak dependence - appears only above threshold</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">Spectrum Nature</td>
+                                <td class="px-4 py-3">Continuous distribution of wavelengths</td>
+                                <td class="px-4 py-3">Discrete sharp lines at specific wavelengths</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Minimum Wavelength</td>
+                                <td class="px-4 py-3">$\lambda_{\text{min}} = \frac{hc}{eV}$</td>
+                                <td class="px-4 py-3">No minimum wavelength concept</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">JEE Focus</td>
+                                <td class="px-4 py-3">$\lambda_{\text{min}}$ calculations</td>
+                                <td class="px-4 py-3">Moseley's law, energy transitions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Connection to Photoelectric Effect -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. The Photoelectric Effect Connection</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Two Sides of the Same Quantum Coin</h3>
+                    <p class="mb-4">Both X-ray production and photoelectric effect demonstrate particle nature of electromagnetic radiation, but in reverse processes.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-3">X-Ray Production</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Process:</strong> Electron kinetic energy → Photon energy</li>
+                                <li><strong>Equation:</strong> $eV = h\nu_{\text{max}}$</li>
+                                <li><strong>Quantum Nature:</strong> Energy quantized in photons</li>
+                                <li><strong>Application:</strong> Medical imaging, material analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-3">Photoelectric Effect</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Process:</strong> Photon energy → Electron kinetic energy</li>
+                                <li><strong>Equation:</strong> $h\nu = \phi + \frac{1}{2}mv^2_{\text{max}}$</li>
+                                <li><strong>Quantum Nature:</strong> Energy transfer in quanta</li>
+                                <li><strong>Application:</strong> Solar cells, photodetectors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. JEE Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: An X-ray tube operates at 20 kV. Find the shortest wavelength produced in the continuous spectrum.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $\lambda_{\text{min}} = \frac{hc}{eV}$ with proper units</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: The Kα line for copper (Z=29) has wavelength 1.54 Å. Estimate the wavelength of Kα line for zinc (Z=30).</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Apply Moseley's law: $\sqrt{\nu} \propto (Z-1)$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Why does the continuous X-ray spectrum depend on accelerating voltage but not target material?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Think about the physical origin of continuous spectrum</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Calculate the energy of Kα X-ray photon for tungsten (Z=74) given that the energy difference between K and L shells is 59.3 keV.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Kα transition is from L shell to K shell</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Problem Solving Strategy</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For continuous spectrum: Always check if you need $\lambda_{\text{min}}$ or complete spectrum</li>
+                            <li>For characteristic lines: Identify the transition (Kα, Kβ, Lα etc.)</li>
+                            <li>Remember constants: $hc = 12400$ eV·Å (useful for wavelength calculations)</li>
+                            <li>Unit consistency: Convert everything to eV or J before calculations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Formulas</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Continuous spectrum:</strong> $\lambda_{\text{min}} = \frac{hc}{eV}$</li>
+                                <li><strong>Moseley's law:</strong> $\sqrt{\nu} = a(Z - b)$</li>
+                                <li><strong>Characteristic X-ray energy:</strong> $E = E_i - E_f$</li>
+                                <li><strong>Useful constant:</strong> $hc = 12400$ eV·Å</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Common Transitions</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Kα:</strong> L shell → K shell (most intense)</li>
+                                <li><strong>Kβ:</strong> M shell → K shell (higher energy)</li>
+                                <li><strong>Lα:</strong> M shell → L shell</li>
+                                <li><strong>K series:</strong> All transitions to K shell</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">JEE Focus Areas</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Conceptual:</strong> Difference between continuous and characteristic spectra
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Numerical:</strong> $\lambda_{\text{min}}$ calculations
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Derivation:</strong> Moseley's law applications
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Graphical:</strong> Interpreting X-ray spectrum graphs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Exam Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Quick Identification</span>
+                                <p class="text-sm text-gray-600">If question mentions "shortest wavelength" or "accelerating voltage" → Continuous spectrum</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Pattern Recognition</span>
+                                <p class="text-sm text-gray-600">If question gives atomic numbers and asks for wavelengths → Characteristic spectrum + Moseley's law</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Common Mistakes</span>
+                                <p class="text-sm text-gray-600">Don't confuse continuous spectrum cutoff with characteristic lines. They have different origins.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Units Alert</span>
+                                <p class="text-sm text-gray-600">Always convert kV to V, Å to m, keV to eV before calculations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Modern Physics?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through quantum physics and atomic structure</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Modern Physics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice X-Ray Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

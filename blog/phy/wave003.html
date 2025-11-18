@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Optics Formula Bible | Complete JEE Physics Formulas | KnowJEE</title>
+    <meta name="description" content="Master Wave Optics with this complete formula sheet. All YDSE, diffraction, polarization formulas with variable definitions for JEE Main & Advanced preparation.">
+    <meta name="keywords" content="wave optics formulas, YDSE formulas, diffraction formulas, polarization formulas, JEE physics formulas, wave optics equations">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+
+        // Print functionality
+        function printFormulas() {
+            window.print();
+        }
+
+        // Copy to clipboard functionality
+        function copyToClipboard() {
+            const formulas = document.querySelectorAll('.formula-box');
+            let text = "Wave Optics Formulas\n\n";
+            
+            formulas.forEach(box => {
+                const title = box.querySelector('h3').textContent;
+                const formula = box.querySelector('.formula').textContent;
+                const variables = box.querySelector('.variables')?.textContent || '';
+                
+                text += `${title}\n`;
+                text += `${formula}\n`;
+                if (variables) text += `${variables}\n`;
+                text += '\n';
+            });
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Formulas copied to clipboard!');
+            });
+        }
+    </script>
+    
+    <style>
+        .formula-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .formula-box:hover {
+            background: #f0f9ff;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula {
+            background: #ffffff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .variables {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .quick-tip {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .ydse-color { border-left: 4px solid #ef4444; }
+        .diffraction-color { border-left: 4px solid #3b82f6; }
+        .polarization-color { border-left: 4px solid #10b981; }
+        .interference-color { border-left: 4px solid #f59e0b; }
+        
+        @media print {
+            .no-print { display: none; }
+            .formula-box { break-inside: avoid; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6 no-print">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Formula Sheet</span>
+                    <span class="text-gray-500 text-sm ml-3">Complete Reference</span>
+                    <span class="text-gray-500 text-sm ml-3">40+ Formulas</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Formula Bible for Wave Optics</h1>
+                <p class="text-xl text-gray-600 mb-4">Every equation you'll ever need for YDSE, diffraction, polarization, and interference - organized and explained.</p>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 mt-6 no-print">
+                    <button onclick="printFormulas()" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z"/>
+                        </svg>
+                        Print Formulas
+                    </button>
+                    <button onclick="copyToClipboard()" class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                        Copy All Formulas
+                    </button>
+                </div>
+            </header>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 no-print">
+                <h3 class="font-semibold text-blue-900 mb-3">🔍 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#interference" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Interference</a>
+                    <a href="#ydse" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">YDSE</a>
+                    <a href="#diffraction" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Diffraction</a>
+                    <a href="#polarization" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Polarization</a>
+                </div>
+            </div>
+
+            <!-- Interference Section -->
+            <section id="interference" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Interference Formulas</h2>
+                </div>
+
+                <div class="formula-box interference-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Path Difference and Phase Difference</h3>
+                    <div class="formula">
+                        $$\Delta x = \frac{\lambda}{2\pi}\Delta\phi$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$\Delta x$ = Path difference</li>
+                            <li>$\Delta\phi$ = Phase difference</li>
+                            <li>$\lambda$ = Wavelength of light</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box interference-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Condition for Constructive Interference</h3>
+                    <div class="formula">
+                        $$\Delta x = n\lambda \quad \text{or} \quad \Delta\phi = 2n\pi$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$n = 0, 1, 2, 3, \ldots$ (Order of maximum)</li>
+                            <li>Bright fringe condition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box interference-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Condition for Destructive Interference</h3>
+                    <div class="formula">
+                        $$\Delta x = (2n+1)\frac{\lambda}{2} \quad \text{or} \quad \Delta\phi = (2n+1)\pi$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$n = 0, 1, 2, 3, \ldots$ (Order of minimum)</li>
+                            <li>Dark fringe condition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box interference-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Resultant Intensity</h3>
+                    <div class="formula">
+                        $$I = I_1 + I_2 + 2\sqrt{I_1I_2}\cos\delta$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$I_1, I_2$ = Intensities of individual waves</li>
+                            <li>$\delta$ = Phase difference between waves</li>
+                            <li>For equal intensities: $I = 4I_0\cos^2\left(\frac{\delta}{2}\right)$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- YDSE Section -->
+            <section id="ydse" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Young's Double Slit Experiment (YDSE)</h2>
+                </div>
+
+                <div class="formula-box ydse-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fringe Width</h3>
+                    <div class="formula">
+                        $$\beta = \frac{\lambda D}{d}$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$\beta$ = Fringe width (distance between consecutive bright/dark fringes)</li>
+                            <li>$\lambda$ = Wavelength of light</li>
+                            <li>$D$ = Distance between slits and screen</li>
+                            <li>$d$ = Distance between two slits</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box ydse-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Position of nth Bright Fringe</h3>
+                    <div class="formula">
+                        $$y_n = \frac{n\lambda D}{d}$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$y_n$ = Distance of nth bright fringe from central maximum</li>
+                            <li>$n = 0, 1, 2, 3, \ldots$ (Order of fringe)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box ydse-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Position of nth Dark Fringe</h3>
+                    <div class="formula">
+                        $$y_n = \frac{(2n-1)\lambda D}{2d}$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$y_n$ = Distance of nth dark fringe from central maximum</li>
+                            <li>$n = 1, 2, 3, \ldots$ (Order of fringe)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box ydse-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Angular Position of Fringes</h3>
+                    <div class="formula">
+                        $$\theta_n \approx \frac{n\lambda}{d} \quad \text{(for small angles)}$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$\theta_n$ = Angular position of nth fringe</li>
+                            <li>Valid for $\theta < 10^\circ$</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box ydse-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Path Difference at Point P on Screen</h3>
+                    <div class="formula">
+                        $$\Delta x = \frac{yd}{D}$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$y$ = Distance of point P from central maximum</li>
+                            <li>Valid for $y \ll D$</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box ydse-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Effect of Placing Thin Film</h3>
+                    <div class="formula">
+                        $$\Delta x_{\text{film}} = (\mu - 1)t$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$\mu$ = Refractive index of film</li>
+                            <li>$t$ = Thickness of film</li>
+                            <li>Shift in fringes: $\Delta y = \frac{D}{d}(\mu - 1)t$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diffraction Section -->
+            <section id="diffraction" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Diffraction Formulas</h2>
+                </div>
+
+                <div class="formula-box diffraction-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Single Slit Diffraction - Minima</h3>
+                    <div class="formula">
+                        $$a\sin\theta = n\lambda$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$a$ = Width of the slit</li>
+                            <li>$\theta$ = Angle of diffraction</li>
+                            <li>$n = \pm 1, \pm 2, \pm 3, \ldots$ (Order of minimum)</li>
+                            <li>Condition for destructive interference</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box diffraction-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Single Slit Diffraction - Intensity</h3>
+                    <div class="formula">
+                        $$I = I_0\left(\frac{\sin\beta}{\beta}\right)^2$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$I_0$ = Maximum intensity at central maximum</li>
+                            <li>$\beta = \frac{\pi a\sin\theta}{\lambda}$</li>
+                            <li>Central maximum at $\theta = 0$</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box diffraction-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Angular Width of Central Maximum</h3>
+                    <div class="formula">
+                        $$\theta = \frac{\lambda}{a}$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$\theta$ = Half angular width</li>
+                            <li>Full angular width = $2\theta = \frac{2\lambda}{a}$</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box diffraction-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Diffraction Grating - Principal Maxima</h3>
+                    <div class="formula">
+                        $$(a + b)\sin\theta = n\lambda$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$a$ = Width of slit</li>
+                            <li>$b$ = Width of opaque portion</li>
+                            <li>$a + b$ = Grating element</li>
+                            <li>$n = 0, 1, 2, 3, \ldots$ (Order of spectrum)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box diffraction-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Resolving Power of Grating</h3>
+                    <div class="formula">
+                        $$R = \frac{\lambda}{\Delta\lambda} = nN$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$R$ = Resolving power</li>
+                            <li>$\Delta\lambda$ = Smallest wavelength difference that can be resolved</li>
+                            <li>$n$ = Order of spectrum</li>
+                            <li>$N$ = Total number of rulings on grating</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box diffraction-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Missing Orders in Double Slit</h3>
+                    <div class="formula">
+                        $$\frac{a + b}{a} = \frac{n}{m}$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$n$ = Order of interference maximum</li>
+                            <li>$m$ = Order of diffraction minimum</li>
+                            <li>When ratio is integer, that interference maximum is missing</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Polarization Section -->
+            <section id="polarization" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Polarization Formulas</h2>
+                </div>
+
+                <div class="formula-box polarization-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Brewster's Law</h3>
+                    <div class="formula">
+                        $$\mu = \tan i_p$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$\mu$ = Refractive index of medium</li>
+                            <li>$i_p$ = Polarizing angle (Brewster's angle)</li>
+                            <li>At this angle, reflected light is completely polarized</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box polarization-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Malus' Law</h3>
+                    <div class="formula">
+                        $$I = I_0\cos^2\theta$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$I$ = Intensity of transmitted light</li>
+                            <li>$I_0$ = Intensity of incident polarized light</li>
+                            <li>$\theta$ = Angle between transmission axis and plane of polarization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box polarization-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Polarization by Reflection</h3>
+                    <div class="formula">
+                        $$i_p + r = 90^\circ$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$i_p$ = Angle of incidence (Brewster's angle)</li>
+                            <li>$r$ = Angle of refraction</li>
+                            <li>Reflected and refracted rays are perpendicular</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="formula-box polarization-color">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Polarizing Angle and Refractive Index</h3>
+                    <div class="formula">
+                        $$\mu = \frac{\sin i_p}{\sin r} = \frac{\sin i_p}{\sin(90^\circ - i_p)} = \tan i_p$$
+                    </div>
+                    <div class="variables">
+                        <p><strong>Where:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Alternative derivation of Brewster's Law</li>
+                            <li>Using Snell's Law: $\mu = \frac{\sin i_p}{\sin r}$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference - Important Constants & Values</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Common Wavelengths</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Red light: ~700 nm</li>
+                                <li>Green light: ~550 nm</li>
+                                <li>Blue light: ~450 nm</li>
+                                <li>Sodium D-line: 589.3 nm</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Typical Values in Problems</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Slit separation (d): 0.1 - 1 mm</li>
+                                <li>Screen distance (D): 1 - 2 m</li>
+                                <li>Fringe width (β): 0.5 - 5 mm</li>
+                                <li>Wavelength (λ): 400 - 700 nm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Memory Tips -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">🎯 Memory Tips & Tricks</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-yellow-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Fringe Width Formula</span>
+                                <p class="text-sm text-gray-600">Remember: $\beta = \frac{\lambda D}{d}$ - "Lambda D over d"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-yellow-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Bright vs Dark Fringes</span>
+                                <p class="text-sm text-gray-600">Bright: $n\lambda$, Dark: $(2n-1)\frac{\lambda}{2}$ (for position from center)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-yellow-600 mr-2 mt-1">📐</span>
+                            <div>
+                                <span class="font-semibold">Brewster's Law</span>
+                                <p class="text-sm text-gray-600">$\mu = \tan i_p$ - "The tangent of polarizing angle gives refractive index"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-yellow-600 mr-2 mt-1">🎪</span>
+                            <div>
+                                <span class="font-semibold">Malus' Law</span>
+                                <p class="text-sm text-gray-600">$I = I_0\cos^2\theta$ - Intensity depends on cosine squared</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Notes -->
+            <section class="mb-8 text-center no-print">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Wave Optics Formulas?</h3>
+                    <p class="mb-4 opacity-90">Practice applying these formulas with our curated problem sets and mock tests</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

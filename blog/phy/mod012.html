@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PN Junction & Zener Diode I-V Characteristics | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master I-V characteristics of PN junction and Zener diodes. Comparative analysis, reverse breakdown explanation, and voltage regulation applications for JEE preparation.">
+    <meta name="keywords" content="PN junction diode, Zener diode, I-V characteristics, reverse breakdown, voltage regulation, JEE physics, semiconductor devices">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .comparison-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .graph-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .application-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .graph-container {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Semiconductor Physics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Comparative Analysis</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">I-V Characteristics of PN Junction & Zener Diodes</h1>
+                <p class="text-xl text-gray-600 mb-4">Understanding reverse breakdown and voltage regulation applications through comparative graph analysis.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2</div>
+                            <div class="text-sm text-blue-600">Diode Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4-6</div>
+                            <div class="text-sm text-blue-600">JEE Marks</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Key Regions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Practical Relevance</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Diode Characteristics Matter in JEE</h2>
+                <p class="mb-4">The I-V characteristics of diodes form the foundation of modern electronics. For JEE aspirants, understanding these graphs is crucial because:</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Examination Pattern</h4>
+                    <p>Diode characteristics appear in <strong>1-2 questions per JEE paper</strong>, testing conceptual understanding through graph analysis, numerical problems, and circuit applications.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#pn-junction" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">PN Junction</a>
+                    <a href="#zener-diode" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Zener Diode</a>
+                    <a href="#comparison" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Comparison</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                </div>
+            </div>
+
+            <!-- PN Junction Diode Section -->
+            <section id="pn-junction" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. PN Junction Diode Characteristics</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Basic Structure & Operation</h3>
+                    <p class="mb-4">A PN junction diode is formed by joining P-type and N-type semiconductors, creating a depletion region that controls current flow.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Forward Bias</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Positive terminal to P-side</li>
+                                <li>Negative terminal to N-side</li>
+                                <li>Depletion region narrows</li>
+                                <li>Current flows easily after knee voltage</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Reverse Bias</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Positive terminal to N-side</li>
+                                <li>Negative terminal to P-side</li>
+                                <li>Depletion region widens</li>
+                                <li>Very small reverse saturation current</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">I-V Characteristic Graph</h3>
+                    
+                    <div class="graph-container">
+                        <!-- Simplified I-V Graph Representation -->
+                        <div class="text-center mb-4">
+                            <div class="inline-block bg-white p-4 border rounded-lg">
+                                <div class="flex items-end justify-center space-x-8 mb-2">
+                                    <div class="text-center">
+                                        <div class="h-24 bg-red-100 w-8 rounded-t"></div>
+                                        <div class="text-xs mt-1">Reverse<br>Current</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="h-8 bg-green-100 w-16 rounded-t"></div>
+                                        <div class="text-xs mt-1">Forward<br>Current</div>
+                                    </div>
+                                </div>
+                                <div class="border-t border-l border-gray-400 h-32 w-64 mx-auto relative">
+                                    <!-- Graph axes -->
+                                    <div class="absolute bottom-0 left-0 right-0 border-t border-gray-400"></div>
+                                    <div class="absolute left-0 top-0 bottom-0 border-l border-gray-400"></div>
+                                    
+                                    <!-- Graph curve -->
+                                    <div class="absolute bottom-8 left-32 w-24 h-16 border-b-2 border-r-2 border-blue-600 rounded-tr-lg"></div>
+                                    <div class="absolute bottom-8 right-8 w-16 h-24 border-t-2 border-l-2 border-red-600 rounded-tl-lg"></div>
+                                    
+                                    <!-- Labels -->
+                                    <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2">Voltage (V)</div>
+                                    <div class="absolute -left-8 top-1/2 transform -translate-y-1/2 -rotate-90">Current (I)</div>
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-sm">0</div>
+                                    <div class="absolute bottom-2 right-2 text-sm text-red-600">-V</div>
+                                    <div class="absolute bottom-2 left-2 text-sm text-green-600">+V</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mt-4 text-sm">
+                            <div class="text-center p-2 bg-red-50 rounded">
+                                <strong>Region I: Reverse Bias</strong>
+                                <p class="mt-1">Small saturation current (~μA)</p>
+                            </div>
+                            <div class="text-center p-2 bg-yellow-50 rounded">
+                                <strong>Region II: Breakdown</strong>
+                                <p class="mt-1">Avalanche breakdown (destructive)</p>
+                            </div>
+                            <div class="text-center p-2 bg-green-50 rounded">
+                                <strong>Region III: Forward Bias</strong>
+                                <p class="mt-1">Exponential current increase after knee voltage</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <h4 class="font-semibold text-gray-700 mb-2">Key Parameters</h4>
+                    <div class="space-y-2">
+                        <p><strong>Knee Voltage (Vₖ):</strong> ~0.7V for Si, ~0.3V for Ge</p>
+                        <p><strong>Reverse Saturation Current (I₀):</strong> ~10⁻⁹A for Si, ~10⁻⁶A for Ge</p>
+                        <p><strong>Breakdown Voltage (V<sub>BR</sub>):</strong> Typically 50-100V for standard diodes</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Zener Diode Section -->
+            <section id="zener-diode" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Zener Diode Characteristics</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Specialized Reverse Breakdown</h3>
+                    <p class="mb-4">Zener diodes are specially designed to operate in the reverse breakdown region without damage, making them ideal for voltage regulation.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Zener Breakdown</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Occurs at lower voltages (&lt;5V)</li>
+                                <li>Due to high electric field</li>
+                                <li>Quantum tunneling effect</li>
+                                <li>Reversible process</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Avalanche Breakdown</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Occurs at higher voltages (&gt;7V)</li>
+                                <li>Due to impact ionization</li>
+                                <li>Carrier multiplication</li>
+                                <li>Also reversible in Zener diodes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Zener Diode I-V Characteristic</h3>
+                    
+                    <div class="graph-container">
+                        <!-- Zener Diode Graph -->
+                        <div class="text-center mb-4">
+                            <div class="inline-block bg-white p-4 border rounded-lg">
+                                <div class="flex items-end justify-center space-x-8 mb-2">
+                                    <div class="text-center">
+                                        <div class="h-32 bg-purple-100 w-12 rounded-t"></div>
+                                        <div class="text-xs mt-1">Reverse<br>Region</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="h-8 bg-green-100 w-16 rounded-t"></div>
+                                        <div class="text-xs mt-1">Forward<br>Region</div>
+                                    </div>
+                                </div>
+                                <div class="border-t border-l border-gray-400 h-32 w-64 mx-auto relative">
+                                    <!-- Graph axes -->
+                                    <div class="absolute bottom-0 left-0 right-0 border-t border-gray-400"></div>
+                                    <div class="absolute left-0 top-0 bottom-0 border-l border-gray-400"></div>
+                                    
+                                    <!-- Graph curve - Sharp reverse breakdown -->
+                                    <div class="absolute bottom-8 left-32 w-24 h-16 border-b-2 border-r-2 border-blue-600 rounded-tr-lg"></div>
+                                    <div class="absolute bottom-8 right-4 w-20 h-32 border-l-2 border-purple-600" style="border-bottom: 2px solid purple;"></div>
+                                    
+                                    <!-- Labels -->
+                                    <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2">Voltage (V)</div>
+                                    <div class="absolute -left-8 top-1/2 transform -translate-y-1/2 -rotate-90">Current (I)</div>
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-sm">0</div>
+                                    <div class="absolute bottom-2 right-8 text-sm text-purple-600">-V<sub>Z</sub></div>
+                                    <div class="absolute bottom-2 left-2 text-sm text-green-600">+V</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <p class="text-sm text-purple-700 font-semibold">Note the sharp reverse breakdown at Zener voltage (V<sub>Z</sub>)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <h4 class="font-semibold text-gray-700 mb-2">Zener Diode Specifications</h4>
+                    <div class="space-y-2">
+                        <p><strong>Zener Voltage (V<sub>Z</sub>):</strong> Ranges from 2.4V to 200V</p>
+                        <p><strong>Power Rating:</strong> Typically 400mW to 1W</p>
+                        <p><strong>Zener Impedance (Z<sub>Z</sub>):</strong> Dynamic resistance in breakdown region</p>
+                        <p><strong>Temperature Coefficient:</strong> Varies with V<sub>Z</sub> value</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparative Analysis -->
+            <section id="comparison" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Comparative Analysis</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Side-by-Side Comparison</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-4 py-2 text-left">Parameter</th>
+                                    <th class="border px-4 py-2 text-left">PN Junction Diode</th>
+                                    <th class="border px-4 py-2 text-left">Zener Diode</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Forward Characteristics</td>
+                                    <td class="border px-4 py-2">Similar to regular diode</td>
+                                    <td class="border px-4 py-2">Similar to regular diode</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Reverse Breakdown</td>
+                                    <td class="border px-4 py-2">Destructive, avoid operation</td>
+                                    <td class="border px-4 py-2">Non-destructive, designed for operation</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Breakdown Voltage</td>
+                                    <td class="border px-4 py-2">High (50-100V), not controlled</td>
+                                    <td class="border px-4py-2">Precise (2.4-200V), tightly controlled</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Reverse Current</td>
+                                    <td class="border px-4 py-2">Very small until breakdown</td>
+                                    <td class="border px-4 py-2">Increases sharply at V<sub>Z</sub></td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Primary Application</td>
+                                    <td class="border px-4 py-2">Rectification, switching</td>
+                                    <td class="border px-4 py-2">Voltage regulation, reference</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Symbol</td>
+                                    <td class="border px-4 py-2 text-center">
+                                        <div class="inline-flex items-center">
+                                            <div class="w-6 h-4 bg-gray-200 mr-1"></div>
+                                            <div class="w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-black transform rotate-90"></div>
+                                        </div>
+                                    </td>
+                                    <td class="border px-4 py-2 text-center">
+                                        <div class="inline-flex items-center">
+                                            <div class="w-6 h-4 bg-gray-200 mr-1"></div>
+                                            <div class="w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-black transform rotate-90"></div>
+                                            <div class="w-4 h-4 border-l-2 border-black ml-1"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="comparison-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Key Differences in Reverse Bias Operation</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="font-semibold text-red-600">PN Junction Diode</h5>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Breakdown is destructive</li>
+                                <li>Avoid reverse bias near breakdown</li>
+                                <li>Not designed for breakdown operation</li>
+                                <li>High breakdown voltage</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-purple-600">Zener Diode</h5>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Breakdown is non-destructive</li>
+                                <li>Designed to operate in breakdown</li>
+                                <li>Sharp breakdown characteristic</li>
+                                <li>Precise, controlled breakdown voltage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications Section -->
+            <section id="applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Practical Applications</h2>
+                </div>
+
+                <div class="application-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-3">Voltage Regulation using Zener Diode</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Basic Zener Voltage Regulator Circuit</h4>
+                        
+                        <div class="bg-white p-4 rounded border mb-4">
+                            <!-- Circuit Diagram Representation -->
+                            <div class="text-center">
+                                <div class="inline-block p-4 border rounded-lg bg-gray-50">
+                                    <div class="flex items-center justify-center space-x-8">
+                                        <div class="text-center">
+                                            <div class="w-12 h-1 bg-black"></div>
+                                            <div class="text-xs">V<sub>in</sub></div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-8 h-8 border-2 border-black rounded"></div>
+                                            <div class="text-xs">R<sub>S</sub></div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-6 h-4 bg-gray-200"></div>
+                                            <div class="w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-black transform rotate-90"></div>
+                                            <div class="w-4 h-4 border-l-2 border-black"></div>
+                                            <div class="text-xs mt-1">Zener</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-12 h-1 bg-black"></div>
+                                            <div class="text-xs">V<sub>out</sub></div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-xs">
+                                        <p>Input: V<sub>in</sub> (Variable) | Output: V<sub>out</sub> = V<sub>Z</sub> (Constant)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Working Principle:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm mt-2">
+                            <li>Zener diode is reverse biased</li>
+                            <li>When V<sub>in</sub> > V<sub>Z</sub>, diode enters breakdown</li>
+                            <li>Voltage across diode remains constant at V<sub>Z</sub></li>
+                            <li>Excess voltage drops across series resistor R<sub>S</sub></li>
+                            <li>Load voltage V<sub>out</sub> = V<sub>Z</sub> remains stable</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="concept-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">PN Junction Diode Applications</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li><strong>Rectifiers:</strong> AC to DC conversion</li>
+                            <li><strong>Clippers:</strong> Waveform shaping</li>
+                            <li><strong>Clampers:</strong> DC level shifting</li>
+                            <li><strong>Switches:</strong> Digital logic circuits</li>
+                            <li><strong>Protection:</strong> Reverse polarity protection</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Zener Diode Applications</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li><strong>Voltage Regulation:</strong> Constant voltage sources</li>
+                            <li><strong>Voltage Reference:</strong> Precision reference voltages</li>
+                            <li><strong>Overvoltage Protection:</strong> Shunt regulators</li>
+                            <li><strong>Waveform Clipping:</strong> Precision clipping circuits</li>
+                            <li><strong>Surge Suppressors:</strong> Transient voltage suppression</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Focus Section -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">🎯 JEE Examination Focus</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Common Question Types</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Graph interpretation and comparison</li>
+                                <li>Circuit analysis with diodes</li>
+                                <li>Numerical problems on knee voltage, breakdown voltage</li>
+                                <li>Zener regulator design calculations</li>
+                                <li>Conceptual questions on breakdown mechanisms</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Must-Know Formulas</h4>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p><strong>Diode Current Equation:</strong></p>
+                                    <p class="text-center">$$I = I_0(e^{V/ηV_T} - 1)$$</p>
+                                </div>
+                                <div>
+                                    <p><strong>Zener Regulator:</strong></p>
+                                    <p class="text-center">$$R_S = \frac{V_{in} - V_Z}{I_Z + I_L}$$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Revision Checklist</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">PN Junction Diode</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Forward bias: Low resistance after knee voltage</li>
+                                <li>Reverse bias: High resistance, small saturation current</li>
+                                <li>Breakdown: Avoid this region in normal operation</li>
+                                <li>Applications: Rectification, switching</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Zener Diode</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Forward bias: Similar to regular diode</li>
+                                <li>Reverse bias: Sharp breakdown at V<sub>Z</sub></li>
+                                <li>Breakdown: Non-destructive, designed for operation</li>
+                                <li>Applications: Voltage regulation, reference</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded border">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Memory Points</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+                            <div class="text-center p-2 bg-blue-50 rounded">Si Knee Voltage: 0.7V</div>
+                            <div class="text-center p-2 bg-purple-50 rounded">Zener operates in breakdown</div>
+                            <div class="text-center p-2 bg-green-50 rounded">Reverse saturation current: nano/micro amps</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Diode Characteristics?</h3>
+                    <p class="mb-4 opacity-90">Continue your semiconductor physics journey with more advanced topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

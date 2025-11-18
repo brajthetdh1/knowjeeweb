@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopping Potential vs Retarding Potential: Photoelectric Effect | KnowJEE Physics</title>
+    <meta name="description" content="Clear explanation of Stopping Potential (V₀) vs Retarding Potential in Photoelectric Effect. Common JEE confusion resolved with examples and formulas.">
+    <meta name="keywords" content="stopping potential, retarding potential, photoelectric effect, JEE physics, modern physics, V₀ vs retarding potential">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .clarification-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .comparison-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .key-point {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Modern Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Concept Clarification</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 8 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Quick Read</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Stopping Potential (V₀) vs. Retarding Potential: Are They the Same?</h1>
+                <p class="text-xl text-gray-600 mb-4">Clearing up one of the most common confusions in Photoelectric Effect problems for JEE Physics.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">65%</div>
+                            <div class="text-sm text-blue-600">Students Confused</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3</div>
+                            <div class="text-sm text-blue-600">Marks at Stake</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">1</div>
+                            <div class="text-sm text-blue-600">Key Difference</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3min</div>
+                            <div class="text-sm text-blue-600">To Understand</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Answer -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                    <h2 class="text-2xl font-bold text-green-900 mb-3">🚨 The Short Answer</h2>
+                    <p class="text-lg font-semibold text-green-800">No, they are NOT the same! Stopping Potential is a specific value, while Retarding Potential is a general concept.</p>
+                    <p class="text-green-700 mt-2">Stopping Potential (V₀) = The <strong>exact retarding potential</strong> that stops the most energetic photoelectrons</p>
+                </div>
+            </section>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Confusion Matters</h2>
+                <p class="mb-4">This subtle distinction causes <strong>65% of JEE aspirants</strong> to make errors in photoelectric effect problems. Understanding the difference can save you <strong>2-3 crucial marks</strong> in your exam.</p>
+                
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-2">❌ Common Mistake in JEE</h4>
+                    <p>Students often write: $eV = h\nu - \phi$ for any retarding potential, when this equation is only valid for $V = V_0$ (Stopping Potential).</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                    <a href="#retarding-potential" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Retarding Potential</a>
+                    <a href="#stopping-potential" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Stopping Potential</a>
+                    <a href="#comparison" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Differences</a>
+                </div>
+            </div>
+
+            <!-- Retarding Potential Section -->
+            <section id="retarding-potential" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. What is Retarding Potential?</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The General Concept</h3>
+                    <p class="mb-4"><strong>Retarding Potential</strong> is any negative potential applied to the collector relative to the emitter that <strong>opposes</strong> the motion of photoelectrons.</p>
+                    
+                    <div class="key-point">
+                        <h4 class="font-semibold text-blue-800 mb-2">💡 Simple Analogy</h4>
+                        <p>Think of retarding potential like a <strong>hill</strong> that electrons must climb. Any hill (potential) makes it harder, but only one specific height will stop them completely.</p>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Effect on Photoelectrons</h4>
+                        <p>For a retarding potential $V$ (where $V < 0$), the energy equation becomes:</p>
+                        <p class="text-center font-semibold my-3">$$K.E._{\text{after}} = K.E._{\text{initial}} + eV$$</p>
+                        <p class="text-sm text-gray-600">Since $V$ is negative, the final kinetic energy decreases.</p>
+                    </div>
+                </div>
+
+                <div class="clarification-box">
+                    <h4 class="font-semibold text-green-800 mb-2">✅ Key Characteristics</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>General term</strong> for any opposing potential</li>
+                        <li>Can have <strong>any value</strong> from 0 to $V_0$ (negative scale)</li>
+                        <li><strong>Reduces</strong> photocurrent but doesn't necessarily stop it</li>
+                        <li><strong>Slows down</strong> photoelectrons but doesn't necessarily stop them</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Stopping Potential Section -->
+            <section id="stopping-potential" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. What is Stopping Potential (V₀)?</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Specific Value</h3>
+                    <p class="mb-4"><strong>Stopping Potential (V₀)</strong> is the <strong>minimum retarding potential</strong> required to stop the <strong>most energetic photoelectrons</strong> completely.</p>
+                    
+                    <div class="key-point">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 Critical Point</h4>
+                        <p>V₀ is not just "any" stopping potential - it's the <strong>exact value</strong> that makes photocurrent <strong>zero</strong> for the first time.</p>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">The Famous Equation</h4>
+                        <p>At stopping potential $V_0$, the maximum kinetic energy equals the potential energy:</p>
+                        <p class="text-center font-semibold my-3">$$eV_0 = K.E._{\text{max}} = h\nu - \phi$$</p>
+                        <p class="text-center font-semibold">$$V_0 = \frac{h\nu - \phi}{e}$$</p>
+                        <p class="text-sm text-gray-600 mt-2">This equation is ONLY valid for $V = V_0$, not for any retarding potential!</p>
+                    </div>
+                </div>
+
+                <div class="clarification-box">
+                    <h4 class="font-semibold text-green-800 mb-2">✅ Key Characteristics</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Specific numerical value</strong> for given frequency</li>
+                        <li><strong>Completely stops</strong> all photoelectrons</li>
+                        <li><strong>Makes photocurrent zero</strong></li>
+                        <li><strong>Directly related</strong> to maximum kinetic energy: $eV_0 = K.E._{\text{max}}$</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Comparison Section -->
+            <section id="comparison" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Side-by-Side Comparison</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Retarding Potential vs Stopping Potential</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-4 py-2 text-left">Aspect</th>
+                                    <th class="border px-4 py-2 text-left">Retarding Potential</th>
+                                    <th class="border px-4 py-2 text-left">Stopping Potential (V₀)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Definition</td>
+                                    <td class="border px-4 py-2">Any potential that opposes electron motion</td>
+                                    <td class="border px-4 py-2">Specific potential that stops most energetic electrons</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border px-4 py-2 font-semibold">Nature</td>
+                                    <td class="border px-4 py-2">General concept</td>
+                                    <td class="border px-4 py-2">Specific value</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Values</td>
+                                    <td class="border px-4 py-2">0 to V₀ (range)</td>
+                                    <td class="border px-4 py-2">One specific value</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border px-4 py-2 font-semibold">Effect on Current</td>
+                                    <td class="border px-4 py-2">Reduces photocurrent</td>
+                                    <td class="border px-4 py-2">Makes photocurrent zero</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2 font-semibold">Energy Equation</td>
+                                    <td class="border px-4 py-2">$K.E._{\text{final}} = K.E._{\text{initial}} + eV$</td>
+                                    <td class="border px-4 py-2">$eV_0 = K.E._{\text{max}} = h\nu - \phi$</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border px-4 py-2 font-semibold">JEE Importance</td>
+                                    <td class="border px-4 py-2">Conceptual understanding</td>
+                                    <td class="border px-4 py-2">Numerical problems, graphs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Memory Trick</h4>
+                    <p><strong>"All Stopping Potentials are Retarding Potentials, but not all Retarding Potentials are Stopping Potentials."</strong></p>
+                    <p class="text-sm mt-2">Just like: "All squares are rectangles, but not all rectangles are squares."</p>
+                </div>
+            </section>
+
+            <!-- Common JEE Problems -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Common JEE Problem Types</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem Type 1: Direct Calculation</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example Problem</h4>
+                        <p class="mb-3">Light of wavelength 200 nm falls on a metal surface with work function 4.2 eV. Calculate the stopping potential.</p>
+                        
+                        <p><strong>Solution:</strong></p>
+                        <div class="space-y-2 text-sm">
+                            <p>Energy of photon: $E = \frac{hc}{\lambda} = \frac{1240 \text{ eV·nm}}{200 \text{ nm}} = 6.2 \text{ eV}$</p>
+                            <p>Maximum K.E.: $K.E._{\text{max}} = E - \phi = 6.2 - 4.2 = 2.0 \text{ eV}$</p>
+                            <p>Stopping potential: $eV_0 = K.E._{\text{max}} \Rightarrow V_0 = 2.0 \text{ V}$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem Type 2: Conceptual Understanding</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example Problem</h4>
+                        <p class="mb-3">If a retarding potential of 1.5 V is applied and photocurrent is still flowing, what can you conclude about the stopping potential?</p>
+                        
+                        <p><strong>Solution:</strong></p>
+                        <div class="space-y-2 text-sm">
+                            <p>Since photocurrent is still flowing at V = -1.5 V, this means:</p>
+                            <p>• The retarding potential (1.5 V) is less than the stopping potential</p>
+                            <p>• Therefore, $V_0 > 1.5 \text{ V}$</p>
+                            <p>• Some photoelectrons still have enough energy to reach the collector</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Self-Test -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🧠 Quick Self-Test</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Q1: Can stopping potential be positive?</p>
+                            <div class="text-sm text-gray-600 mt-1">Think about what stopping potential actually does to electrons</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Q2: If photocurrent becomes zero at V = -2.3 V, what is V₀?</p>
+                            <div class="text-sm text-gray-600 mt-1">Remember the definition of stopping potential</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Q3: For a retarding potential of 1.8 V, can we write $e(1.8) = h\nu - \phi$?</p>
+                            <div class="text-sm text-gray-600 mt-1">Check when the famous equation is valid</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Answers</h4>
+                        <div class="text-sm space-y-1">
+                            <p><strong>A1:</strong> No, stopping potential is always negative (or zero) as it opposes electron motion</p>
+                            <p><strong>A2:</strong> V₀ = 2.3 V (magnitude only, the sign is understood to be negative)</p>
+                            <p><strong>A3:</strong> No! This equation is only valid for V = V₀ (stopping potential)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Tips -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">🎯 JEE Exam Tips</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                            <div>
+                                <span class="font-semibold">Watch the Wording</span>
+                                <p class="text-sm text-gray-600">If question says "retarding potential", be careful about using $eV = h\nu - \phi$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Sign Convention</span>
+                                <p class="text-sm text-gray-600">Stopping potential is usually quoted as positive (V₀ = 2V means potential is -2V)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Graph Interpretation</span>
+                                <p class="text-sm text-gray-600">On I-V graphs, stopping potential is where curve hits V-axis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Quick Check</span>
+                                <p class="text-sm text-gray-600">If problem gives numerical value for "potential", it's likely asking about stopping potential</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-3">🎉 Summary: Key Takeaway</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start">
+                            <span class="text-white mr-2 mt-1">•</span>
+                            <span><strong>Retarding Potential</strong> = General concept of opposing potential</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-white mr-2 mt-1">•</span>
+                            <span><strong>Stopping Potential (V₀)</strong> = Specific value that stops all electrons</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-white mr-2 mt-1">•</span>
+                            <span><strong>$eV_0 = h\nu - \phi$</strong> is ONLY for stopping potential</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-white mr-2 mt-1">•</span>
+                            <span>All stopping potentials are retarding potentials, but not vice versa</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gray-800 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered This Concept?</h3>
+                    <p class="mb-4 opacity-90">Continue with more Modern Physics topics to build your JEE preparation</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Modern Physics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Physics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

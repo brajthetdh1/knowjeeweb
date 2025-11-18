@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bohr Model Cheat Sheet: Solving Atomic Structure Problems Fast | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master Bohr's Atomic Model with essential formulas for radius, energy, velocity. Quick calculation methods for electron transitions in hydrogen-like atoms for JEE Main & Advanced.">
+    <meta name="keywords" content="Bohr model, atomic structure JEE, hydrogen atom formulas, electron transitions, energy levels, JEE physics, Bohr radius, Rydberg formula">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/blog/physics/atomic-structure/bohr-model.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="The Bohr Model Cheat Sheet: Solving Atomic Structure Problems Fast">
+    <meta property="og:description" content="Essential Bohr model formulas and quick calculation methods for JEE Physics atomic structure problems">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/blog/physics/atomic-structure/bohr-model.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bohr Model Cheat Sheet for JEE Physics">
+    <meta name="twitter:description" content="Master atomic structure with Bohr model formulas and quick calculation methods">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Bohr Model Cheat Sheet: Solving Atomic Structure Problems Fast",
+        "description": "Essential Bohr model formulas for radius, energy, velocity and quick calculation methods for electron transitions in hydrogen-like atoms",
+        "author": {
+            "@type": "Person",
+            "name": "Braj Bhushan Kumar"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2024-12-19",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://knowjee.com/blog/physics/atomic-structure/bohr-model.html"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .formula-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .derivation-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .cheat-sheet {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #10b981; }
+        .difficulty-medium { border-left: 4px solid #f59e0b; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .physics-tag {
+            background: #8b5cf6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-highlight {
+            background: #fef3c7;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #f59e0b;
+        }
+        .transition-diagram {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Physics Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 10 min</span>
+                    <span class="text-gray-500 text-sm ml-3">5 Key Formulas</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Bohr Model Cheat Sheet: Solving Atomic Structure Problems Fast</h1>
+                <p class="text-xl text-gray-600 mb-4">Master essential Bohr model formulas for radius, energy, velocity and quick calculation methods for electron transitions.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5</div>
+                            <div class="text-sm text-purple-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Quick Methods</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">12min</div>
+                            <div class="text-sm text-purple-600">Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Bohr Model is Crucial for JEE</h2>
+                <p class="mb-4">Bohr's atomic model appears in <strong>2-3 questions per JEE paper</strong>. Mastering these formulas can help you solve problems in under 60 seconds:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li><strong>Direct formula application</strong> problems</li>
+                    <li><strong>Electron transition</strong> energy calculations</li>
+                    <li><strong>Hydrogen-like ions</strong> (He⁺, Li²⁺ etc.)</li>
+                    <li><strong>Wavelength and frequency</strong> of emitted photons</li>
+                </ul>
+            </section>
+
+            <!-- Cheat Sheet Section -->
+            <section class="mb-8">
+                <div class="cheat-sheet">
+                    <h2 class="text-2xl font-bold text-white text-center mb-6">🚀 Bohr Model Cheat Sheet</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <h3 class="font-bold text-white mb-2">Radius of nth Orbit</h3>
+                            <p class="text-2xl text-center">$r_n = \frac{n^2h^2}{4\pi^2mkZe^2}$</p>
+                            <p class="text-sm text-center mt-2">Simplified: $r_n = \frac{n^2}{Z}a_0$</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <h3 class="font-bold text-white mb-2">Energy of nth Orbit</h3>
+                            <p class="text-2xl text-center">$E_n = -\frac{2\pi^2mk^2Z^2e^4}{n^2h^2}$</p>
+                            <p class="text-sm text-center mt-2">Simplified: $E_n = -\frac{13.6Z^2}{n^2}$ eV</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <h3 class="font-bold text-white mb-2">Electron Velocity</h3>
+                            <p class="text-2xl text-center">$v_n = \frac{2\pi kZe^2}{nh}$</p>
+                            <p class="text-sm text-center mt-2">Simplified: $v_n = \frac{Z}{n}v_1$</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <h3 class="font-bold text-white mb-2">Transition Energy</h3>
+                            <p class="text-2xl text-center">$\Delta E = 13.6Z^2\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)$</p>
+                            <p class="text-sm text-center mt-2">In eV (n₂ > n₁)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formula 1: Radius -->
+            <section class="mb-8">
+                <div class="formula-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="physics-tag">Formula 1</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Essential</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Radius of nth Orbit</h3>
+                    <div class="text-2xl font-bold text-center my-4">
+                        $$r_n = \frac{n^2h^2}{4\pi^2mke^2} \cdot \frac{1}{Z} = \frac{n^2}{Z}a_0$$
+                    </div>
+                    <p class="text-white text-center mb-4">Where $a_0 = 0.529 × 10^{-10}$ m (Bohr radius)</p>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 Quick Application Method:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>For Hydrogen (Z=1):</strong> $r_n = n^2 × 0.529$ Å</p>
+                            <p><strong>For Hydrogen-like ions:</strong> $r_n = \frac{n^2}{Z} × 0.529$ Å</p>
+                            <p><strong>Ratio problems:</strong> $\frac{r_{n1}}{r_{n2}} = \frac{n_1^2}{n_2^2}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">⚡ JEE Example:</h4>
+                        <p class="mb-2"><strong>Problem:</strong> Find radius ratio for 2nd orbit of He⁺ to 3rd orbit of Li²⁺</p>
+                        <div class="step-highlight">
+                            <p><strong>Quick Solution:</strong></p>
+                            <p>$\frac{r_2(\text{He}^+)}{r_3(\text{Li}^{2+})} = \frac{\frac{2^2}{2}}{\frac{3^2}{3}} = \frac{2}{3}$</p>
+                            <p class="text-sm text-gray-600 mt-1"><em>Solved in 15 seconds!</em></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formula 2: Energy -->
+            <section class="mb-8">
+                <div class="formula-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="physics-tag">Formula 2</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Most Important</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Energy of nth Orbit</h3>
+                    <div class="text-2xl font-bold text-center my-4">
+                        $$E_n = -\frac{13.6Z^2}{n^2} \text{ eV}$$
+                    </div>
+                    <p class="text-white text-center mb-4">Ground state energy for Hydrogen: -13.6 eV</p>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 Quick Application Method:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>For Hydrogen (Z=1):</strong> $E_n = -\frac{13.6}{n^2}$ eV</p>
+                            <p><strong>Ionization energy:</strong> $E_{\infty} - E_n = \frac{13.6Z^2}{n^2}$ eV</p>
+                            <p><strong>Energy ratios:</strong> $\frac{E_{n1}}{E_{n2}} = \frac{n_2^2}{n_1^2}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">⚡ JEE Example:</h4>
+                        <p class="mb-2"><strong>Problem:</strong> Ionization energy of He⁺ in ground state</p>
+                        <div class="step-highlight">
+                            <p><strong>Quick Solution:</strong></p>
+                            <p>$E_1 = -\frac{13.6 × 2^2}{1^2} = -54.4$ eV</p>
+                            <p>Ionization energy = $0 - (-54.4) = 54.4$ eV</p>
+                            <p class="text-sm text-gray-600 mt-1"><em>Solved in 10 seconds!</em></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Transition Method -->
+            <section class="mb-8">
+                <div class="formula-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="physics-tag">Quick Method</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Time Saver</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Electron Transition Energy Calculation</h3>
+                    <div class="text-2xl font-bold text-center my-4">
+                        $$\Delta E = 13.6Z^2\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right) \text{ eV}$$
+                    </div>
+                    
+                    <div class="transition-diagram">
+                        <h4 class="font-semibold text-gray-800 mb-3">Common Transitions (Hydrogen):</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                            <div class="bg-blue-100 p-2 rounded text-center">
+                                <p class="font-bold">n=2→1</p>
+                                <p>10.2 eV</p>
+                            </div>
+                            <div class="bg-green-100 p-2 rounded text-center">
+                                <p class="font-bold">n=3→1</p>
+                                <p>12.1 eV</p>
+                            </div>
+                            <div class="bg-yellow-100 p-2 rounded text-center">
+                                <p class="font-bold">n=3→2</p>
+                                <p>1.89 eV</p>
+                            </div>
+                            <div class="bg-red-100 p-2 rounded text-center">
+                                <p class="font-bold">n=4→2</p>
+                                <p>2.55 eV</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">⚡ JEE Example:</h4>
+                        <p class="mb-2"><strong>Problem:</strong> Energy released when electron jumps from n=4 to n=2 in Hydrogen</p>
+                        <div class="step-highlight">
+                            <p><strong>Quick Solution:</strong></p>
+                            <p>$\Delta E = 13.6\left(\frac{1}{2^2} - \frac{1}{4^2}\right) = 13.6\left(\frac{1}{4} - \frac{1}{16}\right)$</p>
+                            <p>$= 13.6 × \frac{3}{16} = 2.55$ eV</p>
+                            <p class="text-sm text-gray-600 mt-1"><em>Memorize common transitions for instant answers!</em></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-indigo-900 mb-4">🚀 Problem-Solving Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">Memory Techniques:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>$r_n ∝ n^2/Z$ - Radius increases with n²</li>
+                                <li>$E_n ∝ -Z^2/n^2$ - Energy becomes less negative</li>
+                                <li>$v_n ∝ Z/n$ - Velocity decreases with n</li>
+                                <li>Ground state H: -13.6 eV (memorize!)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">JEE Exam Tips:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Use eV units for faster calculation</li>
+                                <li>Memorize common transition energies</li>
+                                <li>For wavelength: $\lambda = \frac{12400}{\Delta E(eV)}$ Å</li>
+                                <li>Practice hydrogen-like ions (He⁺, Li²⁺)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Applications -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Applications Available</h3>
+                    <p class="text-gray-600 mb-4">Includes spectral series, wavelength calculations, and JEE Advanced level problems</p>
+                    <button class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Access Advanced Content
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your speed:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Radius of 3rd orbit in He⁺ ion (in terms of a₀)</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Energy required to excite electron from n=1 to n=4 in Li²⁺</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Ratio of velocities in 1st and 3rd orbits of Hydrogen</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Atomic Structure?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to modern physics concepts and JEE practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Atomic Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-purple-900 text-purple-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Subjects</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#physics" class="hover:text-purple-300">Physics</a></li>
+                        <li><a href="#chemistry" class="hover:text-purple-300">Chemistry</a></li>
+                        <li><a href="#mathematics" class="hover:text-purple-300">Mathematics</a></li>
+                        <li><a href="#mock-tests" class="hover:text-purple-300">Mock Tests</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-purple-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-purple-300">JEE Chemistry</a></li>
+                        <li><a href="math.html" class="hover:text-purple-300">JEE Mathematics</a></li>
+                        <li><a href="index.html" class="hover:text-purple-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-purple-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

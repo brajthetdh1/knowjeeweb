@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Identify Interference Experiments: YDSE, Biprism, Lloyd's Mirror | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Learn to identify YDSE, Fresnel's Biprism, and Lloyd's Mirror experiments from JEE problems. Key differences, setup recognition, and problem-solving strategies.">
+    <meta name="keywords" content="YDSE identification, biprism experiment, Lloyd's mirror, interference experiments, wave optics JEE, JEE physics experiments, interference pattern recognition">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/blog/physics/wave-optics/interference-experiments.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="How to Identify Interference Experiments: YDSE, Biprism, Lloyd's Mirror">
+    <meta property="og:description" content="Master the art of identifying interference setups in JEE Physics problems with key differences and recognition strategies">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/blog/physics/wave-optics/interference-experiments.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Identify Interference Experiments: YDSE, Biprism, Lloyd's Mirror">
+    <meta name="twitter:description" content="Complete guide to recognizing interference setups in JEE Physics">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Identify Interference Experiments: YDSE, Biprism, Lloyd's Mirror",
+        "description": "Learn to identify YDSE, Fresnel's Biprism, and Lloyd's Mirror experiments from JEE problems with key differences and recognition strategies",
+        "author": {
+            "@type": "Person",
+            "name": "Braj Bhushan Kumar"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2024-12-19",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://knowjee.com/blog/physics/wave-optics/interference-experiments.html"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .experiment-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .experiment-box:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .identification-guide {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .key-features {
+            background: #eff6ff;
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .experiment-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .feature-highlight {
+            background: #fef3c7;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #f59e0b;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #3b82f6;
+            color: white;
+            font-weight: 600;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Physics Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 14 min</span>
+                    <span class="text-gray-500 text-sm ml-3">3 Experiments</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How to Identify the Experiment: YDSE, Biprism, or Lloyd's Mirror?</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of recognizing interference setups from JEE problem statements, diagrams, and key parameters.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Key Experiments</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">10+</div>
+                            <div class="text-sm text-blue-600">Identification Clues</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">20min</div>
+                            <div class="text-sm text-blue-700">Practice Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Experiment Identification Matters in JEE</h2>
+                <p class="mb-4">Correctly identifying the interference experiment is crucial because:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>Each setup has different fringe width formulas</strong></li>
+                    <li><strong>Path difference calculations vary significantly</strong></li>
+                    <li><strong>Phase changes differ (especially in Lloyd's Mirror)</strong></li>
+                    <li><strong>JEE often tests conceptual understanding through identification</strong></li>
+                </ul>
+            </section>
+
+            <!-- Experiment 1: YDSE -->
+            <section class="mb-8">
+                <div class="experiment-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="experiment-tag">Experiment 1</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy to Identify</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Young's Double Slit Experiment (YDSE)</h3>
+                    
+                    <div class="identification-guide">
+                        <h4 class="font-semibold text-green-800 mb-2">🔍 Key Identification Features:</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="feature-highlight">
+                                <p><strong>Two distinct slits</strong> mentioned explicitly</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p><strong>Slit separation 'd'</strong> is a key parameter</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p><strong>Monochromatic light source</strong> before slits</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p><strong>No additional optical elements</strong> between source and screen</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-features">
+                        <h4 class="font-semibold text-blue-800 mb-2">📐 Characteristic Formula:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Fringe width:</strong> $\beta = \frac{\lambda D}{d}$</p>
+                            <p><strong>Path difference:</strong> $\Delta x = \frac{yd}{D}$</p>
+                            <p><strong>No phase change</strong> at reflection (both waves from same source)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 Problem Recognition Example:</h4>
+                        <p class="mb-2"><strong>Problem Statement:</strong> "In a double-slit experiment with slit separation 0.2 mm and screen distance 1 m, find fringe width for light of wavelength 600 nm."</p>
+                        <div class="step-highlight">
+                            <p><strong>Identification:</strong> ✅ <strong>YDSE</strong> - Clear mention of "double-slit" and parameters d, D, λ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiment 2: Biprism -->
+            <section class="mb-8">
+                <div class="experiment-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="experiment-tag">Experiment 2</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium Difficulty</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fresnel's Biprism Experiment</h3>
+                    
+                    <div class="identification-guide">
+                        <h4 class="font-semibold text-green-800 mb-2">🔍 Key Identification Features:</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="feature-highlight">
+                                <p><strong>Single slit</strong> with a <strong>biprism</strong> in the path</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p><strong>Virtual sources</strong> created by refraction</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p>Mention of <strong>prism angle</strong> or refractive index</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p><strong>Distance between virtual sources</strong> calculated from prism parameters</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-features">
+                        <h4 class="font-semibold text-blue-800 mb-2">📐 Characteristic Features:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Virtual source separation:</strong> $d = 2a(\mu - 1)\alpha$</p>
+                            <p><strong>Single physical slit</strong> but two virtual sources</p>
+                            <p><strong>Uses refraction</strong> to create interference</p>
+                            <p><strong>Fringe width formula same as YDSE</strong> but 'd' is virtual</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 Problem Recognition Example:</h4>
+                        <p class="mb-2"><strong>Problem Statement:</strong> "A biprism of refractive index 1.5 and angle 1° is placed 10 cm from a slit. Find fringe width if screen is 1 m away and wavelength is 600 nm."</p>
+                        <div class="step-highlight">
+                            <p><strong>Identification:</strong> ✅ <strong>Biprism</strong> - Mention of biprism, refractive index, prism angle</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiment 3: Lloyd's Mirror -->
+            <section class="mb-8">
+                <div class="experiment-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="experiment-tag">Experiment 3</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Tricky to Identify</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lloyd's Mirror Experiment</h3>
+                    
+                    <div class="identification-guide">
+                        <h4 class="font-semibold text-green-800 mb-2">🔍 Key Identification Features:</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="feature-highlight">
+                                <p><strong>Mirror</strong> used to create virtual source</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p><strong>Phase change of π</strong> upon reflection</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p><strong>Central fringe is dark</strong> instead of bright</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <p>Interference between <strong>direct and reflected</strong> waves</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-features">
+                        <h4 class="font-semibold text-blue-800 mb-2">📐 Characteristic Features:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Additional path difference</strong> of $\frac{\lambda}{2}$ due to phase change</p>
+                            <p><strong>Fringe width:</strong> $\beta = \frac{\lambda D}{d}$ (same as YDSE)</p>
+                            <p><strong>Central fringe is minima</strong> due to phase inversion</p>
+                            <p><strong>Uses reflection</strong> to create interference</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 Problem Recognition Example:</h4>
+                        <p class="mb-2"><strong>Problem Statement:</strong> "In an interference pattern using a mirror, the central fringe appears dark. If slit-mirror distance is 2 mm and screen distance is 1 m, find fringe width for wavelength 500 nm."</p>
+                        <div class="step-highlight">
+                            <p><strong>Identification:</strong> ✅ <strong>Lloyd's Mirror</strong> - Mention of mirror and dark central fringe</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Comparison Table -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📊 Quick Comparison Table</h3>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>YDSE</th>
+                                <th>Biprism</th>
+                                <th>Lloyd's Mirror</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Number of slits</strong></td>
+                                <td>Two physical slits</td>
+                                <td>One physical slit</td>
+                                <td>One physical slit</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Source creation</strong></td>
+                                <td>Division of wavefront</td>
+                                <td>Refraction (virtual sources)</td>
+                                <td>Reflection (virtual source)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phase change</strong></td>
+                                <td>No phase change</td>
+                                <td>No phase change</td>
+                                <td>π phase change in reflected wave</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Central fringe</strong></td>
+                                <td>Bright</td>
+                                <td>Bright</td>
+                                <td>Dark</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key element</strong></td>
+                                <td>Double slit</td>
+                                <td>Biprism</td>
+                                <td>Mirror</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Problem-Solving Strategies -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🚀 Problem-Solving Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Identification:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Step 1:</strong> Look for keywords - "double slit", "biprism", "mirror"</li>
+                                <li><strong>Step 2:</strong> Check number of physical slits mentioned</li>
+                                <li><strong>Step 3:</strong> Identify optical elements in the setup</li>
+                                <li><strong>Step 4:</strong> Note any mention of phase changes or fringe pattern</li>
+                                <li><strong>Step 5:</strong> Verify with given parameters</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Common Pitfalls to Avoid:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Don't confuse biprism with double slit</li>
+                                <li>Remember phase change in Lloyd's mirror</li>
+                                <li>Virtual vs physical source separation</li>
+                                <li>Central fringe brightness is a key clue</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">📝 Quick Identification Test</h3>
+                    <p class="mb-4">Identify which experiment each problem describes:</p>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. "In an interference setup using a glass prism of angle 2°, interference fringes are observed on a screen. The prism creates two virtual sources from a single slit."</p>
+                            <div class="flex gap-2 mt-2">
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="biprism">Biprism</button>
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="ydse">YDSE</button>
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="lloyd">Lloyd's</button>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. "In an interference pattern, the central fringe appears dark. The setup uses a mirror to reflect light from a single source."</p>
+                            <div class="flex gap-2 mt-2">
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="biprism">Biprism</button>
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="ydse">YDSE</button>
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="lloyd">Lloyd's</button>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. "Two parallel slits separated by 0.5 mm are illuminated by monochromatic light. Interference fringes are observed on a screen 2 m away."</p>
+                            <div class="flex gap-2 mt-2">
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="biprism">Biprism</button>
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="ydse">YDSE</button>
+                                <button class="identify-btn px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm" data-answer="lloyd">Lloyd's</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Wave Optics?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all wave optics topics with detailed solutions and practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-physics-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Interference Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-blue-300">Mechanics</a></li>
+                        <li><a href="#optics" class="hover:text-blue-300">Wave Optics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-blue-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-blue-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../math/math.html" class="hover:text-blue-300">JEE Mathematics</a></li>
+                        <li><a href="../chem/chem.html" class="hover:text-blue-300">JEE Chemistry</a></li>
+                        <li><a href="../quiz/quiz.html" class="hover:text-blue-300">Mock Tests</a></li>
+                        <li><a href="../../index.html" class="hover:text-blue-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-blue-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Physics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple identification test functionality
+        document.querySelectorAll('.identify-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const problem = this.closest('.bg-white');
+                const buttons = problem.querySelectorAll('.identify-btn');
+                
+                // Remove all highlights
+                buttons.forEach(btn => {
+                    btn.classList.remove('bg-green-500', 'text-white', 'bg-red-500');
+                    btn.classList.add('bg-blue-100', 'text-blue-800');
+                });
+                
+                // Check answer (simplified - in real implementation, you'd have correct answers stored)
+                const answers = {
+                    'biprism': 'biprism',
+                    'ydse': 'ydse', 
+                    'lloyd': 'lloyd'
+                };
+                
+                // For demo purposes - first problem is biprism, second is lloyd, third is ydse
+                const problemIndex = Array.from(document.querySelectorAll('.bg-white')).indexOf(problem);
+                const correctAnswers = ['biprism', 'lloyd', 'ydse'];
+                
+                if (this.dataset.answer === correctAnswers[problemIndex]) {
+                    this.classList.remove('bg-blue-100', 'text-blue-800');
+                    this.classList.add('bg-green-500', 'text-white');
+                } else {
+                    this.classList.remove('bg-blue-100', 'text-blue-800');
+                    this.classList.add('bg-red-500', 'text-white');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

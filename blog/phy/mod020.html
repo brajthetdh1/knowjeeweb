@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoelectric Effect: 4-Step Problem Solving | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master Photoelectric Effect problems in JEE Physics with our 4-step method. Learn to identify threshold frequency, use Einstein's equation, find stopping potential, and analyze graphs.">
+    <meta name="keywords" content="photoelectric effect JEE, Einstein equation physics, stopping potential, threshold frequency, JEE physics problems, modern physics JEE">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .step-box {
+            background: #f0f9ff;
+            border: 2px solid #7dd3fc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .step-box:hover {
+            background: #e0f2fe;
+            border-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .graph-box {
+            background: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .step-number {
+            background: #ef4444;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Modern Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">Physics Strategy</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">4 Systematic Steps</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Cracking Photoelectric Effect Problems in 4 Simple Steps</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the systematic approach to solve any Photoelectric Effect problem in JEE Main and Advanced.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">95%</div>
+                            <div class="text-sm text-red-600">Problem Coverage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">3-4</div>
+                            <div class="text-sm text-red-600">Marks per Question</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">4</div>
+                            <div class="text-sm text-red-600">Key Steps</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">5min</div>
+                            <div class="text-sm text-red-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This 4-Step Method Works</h2>
+                <p class="mb-4">Photoelectric Effect questions follow predictable patterns in JEE. This systematic approach ensures you never miss key concepts and can solve even the trickiest problems efficiently.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Relevance</h4>
+                    <p>Photoelectric Effect appears in <strong>1-2 questions per JEE paper</strong>, carrying <strong>3-4 marks each</strong>. Mastering this topic can give you a significant advantage in Modern Physics section.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 The 4-Step Framework</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#step1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 1: Find ν₀</a>
+                    <a href="#step2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 2: Einstein's Eq</a>
+                    <a href="#step3" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 3: Stopping Potential</a>
+                    <a href="#step4" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Step 4: Graph Analysis</a>
+                </div>
+            </div>
+
+            <!-- Fundamental Formulas -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">Essential Formulas You Must Know</h2>
+                </div>
+
+                <div class="formula-box">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-orange-800 mb-3">Einstein's Photoelectric Equation</h4>
+                            <div class="text-center text-lg font-semibold my-4">
+                                $$ E_k = h\nu - h\nu_0 = h\nu - \phi $$
+                            </div>
+                            <p class="text-sm text-gray-600">Where:<br>
+                            $E_k$ = Maximum kinetic energy of photoelectrons<br>
+                            $h$ = Planck's constant ($6.626 \times 10^{-34}$ Js)<br>
+                            $\nu$ = Frequency of incident light<br>
+                            $\nu_0$ = Threshold frequency<br>
+                            $\phi$ = Work function</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-orange-800 mb-3">Key Relationships</h4>
+                            <div class="space-y-3 text-sm">
+                                <div>
+                                    <p class="font-semibold">Stopping Potential:</p>
+                                    <p class="text-center">$ eV_0 = E_k = h\nu - h\nu_0 $</p>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Work Function:</p>
+                                    <p class="text-center">$ \phi = h\nu_0 = \frac{hc}{\lambda_0} $</p>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Kinetic Energy vs Frequency:</p>
+                                    <p class="text-center">$ E_k = h(\nu - \nu_0) $</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 1 -->
+            <section id="step1" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number">1</div>
+                        <h3 class="text-xl font-bold text-gray-900">Identify Threshold Frequency (ν₀) or Work Function (φ)</h3>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example Problem</h4>
+                        <p class="mb-3">A metal surface has work function 2.3 eV. Light of wavelength 400 nm is incident on it. Calculate the maximum kinetic energy of emitted electrons.</p>
+                        
+                        <p><strong>Step 1.1: Convert units if necessary</strong></p>
+                        <p>Work function: $\phi = 2.3$ eV</p>
+                        <p>Convert to joules: $\phi = 2.3 \times 1.6 \times 10^{-19} = 3.68 \times 10^{-19}$ J</p>
+                        
+                        <p><strong>Step 1.2: Find threshold frequency</strong></p>
+                        <p>Using $\phi = h\nu_0$:</p>
+                        <p>$\nu_0 = \frac{\phi}{h} = \frac{3.68 \times 10^{-19}}{6.626 \times 10^{-34}} = 5.55 \times 10^{14}$ Hz</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Insights</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Threshold frequency is the <strong>minimum frequency</strong> needed for photoemission</li>
+                            <li>If $\nu < \nu_0$, <strong>no photoelectrons</strong> are emitted regardless of intensity</li>
+                            <li>Work function is a <strong>material property</strong> - different for each metal</li>
+                            <li>Common conversions: 1 eV = $1.6 \times 10^{-19}$ J</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section id="step2" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number">2</div>
+                        <h3 class="text-xl font-bold text-gray-900">Apply Einstein's Photoelectric Equation</h3>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Continuing Our Example</h4>
+                        
+                        <p><strong>Step 2.1: Find frequency of incident light</strong></p>
+                        <p>Wavelength $\lambda = 400$ nm = $400 \times 10^{-9}$ m</p>
+                        <p>$\nu = \frac{c}{\lambda} = \frac{3 \times 10^8}{400 \times 10^{-9}} = 7.5 \times 10^{14}$ Hz</p>
+                        
+                        <p><strong>Step 2.2: Apply Einstein's equation</strong></p>
+                        <p>$E_k = h\nu - h\nu_0 = h(\nu - \nu_0)$</p>
+                        <p>$E_k = 6.626 \times 10^{-34} \times (7.5 - 5.55) \times 10^{14}$</p>
+                        <p>$E_k = 6.626 \times 10^{-34} \times 1.95 \times 10^{14} = 1.29 \times 10^{-19}$ J</p>
+                        <p>In eV: $E_k = \frac{1.29 \times 10^{-19}}{1.6 \times 10^{-19}} = 0.806$ eV</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Common Variations</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Sometimes given in terms of wavelength: $E_k = \frac{hc}{\lambda} - \phi$</li>
+                            <li>If $\nu < \nu_0$, $E_k$ is negative ⇒ no photoemission</li>
+                            <li>Intensity affects <strong>number</strong> of photoelectrons, not their <strong>energy</strong></li>
+                            <li>Remember: $hc = 1240$ eV·nm (useful conversion)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section id="step3" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number">3</div>
+                        <h3 class="text-xl font-bold text-gray-900">Find Stopping Potential (V₀)</h3>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Complete the Calculation</h4>
+                        
+                        <p><strong>Step 3.1: Use stopping potential relation</strong></p>
+                        <p>$eV_0 = E_k$</p>
+                        <p>$V_0 = \frac{E_k}{e} = \frac{1.29 \times 10^{-19}}{1.6 \times 10^{-19}} = 0.806$ V</p>
+                        
+                        <p class="mt-3 font-semibold">Final Answers:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Maximum kinetic energy = 0.806 eV</li>
+                            <li>Stopping potential = 0.806 V</li>
+                            <li>Threshold frequency = $5.55 \times 10^{14}$ Hz</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Physical Significance</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Stopping potential <strong>measures maximum kinetic energy</strong> of photoelectrons</li>
+                            <li>$V_0$ vs $\nu$ graph gives <strong>straight line</strong> with slope $h/e$</li>
+                            <li>X-intercept gives <strong>threshold frequency</strong></li>
+                            <li>Y-intercept gives <strong>-φ/e</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4 -->
+            <section id="step4" class="mb-8">
+                <div class="step-box">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number">4</div>
+                        <h3 class="text-xl font-bold text-gray-900">Analyze Graphs and Experimental Data</h3>
+                    </div>
+                    
+                    <div class="graph-box">
+                        <h4 class="font-semibold text-gray-800 mb-3">Key Graphs in Photoelectric Effect</h4>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h5 class="font-semibold mb-2">1. $E_k$ vs $\nu$ Graph</h5>
+                                <div class="bg-white p-3 border rounded text-center">
+                                    <div class="h-32 bg-gray-100 flex items-end justify-center">
+                                        <div class="w-full bg-blue-200 h-16 relative">
+                                            <div class="absolute left-0 bottom-0 w-3/4 h-16 bg-blue-400"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs mt-2">Straight line with slope = h, intercept = -φ</p>
+                                </div>
+                                <p class="text-sm mt-2">Equation: $E_k = h\nu - \phi$</p>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-2">2. $V_0$ vs $\nu$ Graph</h5>
+                                <div class="bg-white p-3 border rounded text-center">
+                                    <div class="h-32 bg-gray-100 flex items-end justify-center">
+                                        <div class="w-full bg-green-200 h-16 relative">
+                                            <div class="absolute left-0 bottom-0 w-3/4 h-16 bg-green-400"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs mt-2">Straight line with slope = h/e</p>
+                                </div>
+                                <p class="text-sm mt-2">Equation: $eV_0 = h\nu - \phi$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5 class="font-semibold mb-2">3. Photocurrent vs Voltage Graphs</h5>
+                            <div class="bg-white p-3 border rounded">
+                                <div class="h-32 bg-gray-100 relative">
+                                    <div class="absolute bottom-0 left-0 right-0 h-20 bg-purple-200">
+                                        <div class="absolute right-0 top-0 w-16 h-full bg-purple-400"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs mt-2 text-center">Saturation current depends on intensity, stopping potential depends on frequency</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Graph Analysis Tips</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Slope of $V_0$ vs $\nu$ graph = $h/e$ (can be used to find h)</li>
+                            <li>X-intercept = threshold frequency $\nu_0$</li>
+                            <li>Changing intensity shifts saturation current, not stopping potential</li>
+                            <li>Changing frequency shifts stopping potential and saturation current</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Complete Worked Example -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">Complete JEE-Level Problem</h2>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-3">JEE Main 2022 Problem</h4>
+                    <p class="mb-4">Light of wavelength 248 nm is incident on a cesium surface ($\phi = 1.95$ eV). Calculate:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Threshold wavelength for cesium</li>
+                        <li>Maximum kinetic energy of photoelectrons</li>
+                        <li>Stopping potential</li>
+                    </ol>
+                    
+                    <div class="mt-4 space-y-3">
+                        <div>
+                            <p><strong>Step 1: Find threshold wavelength</strong></p>
+                            <p>$\phi = 1.95$ eV = $1.95 \times 1.6 \times 10^{-19}$ J</p>
+                            <p>$\lambda_0 = \frac{hc}{\phi} = \frac{6.626 \times 10^{-34} \times 3 \times 10^8}{1.95 \times 1.6 \times 10^{-19}} = 6.37 \times 10^{-7}$ m = 637 nm</p>
+                        </div>
+                        
+                        <div>
+                            <p><strong>Step 2: Apply Einstein's equation</strong></p>
+                            <p>Using $hc = 1240$ eV·nm (convenient units):</p>
+                            <p>$E_k = \frac{hc}{\lambda} - \phi = \frac{1240}{248} - 1.95 = 5.0 - 1.95 = 3.05$ eV</p>
+                        </div>
+                        
+                        <div>
+                            <p><strong>Step 3: Find stopping potential</strong></p>
+                            <p>$V_0 = \frac{E_k}{e} = 3.05$ V</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Conceptual Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Thinking intensity affects photoelectron energy</li>
+                                <li>Confusing threshold frequency with threshold wavelength</li>
+                                <li>Forgetting to convert eV to joules (or vice versa)</li>
+                                <li>Mixing up slope interpretations in graphs</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Calculation Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Using wrong value of Planck's constant</li>
+                                <li>Not paying attention to units (nm vs m, eV vs J)</li>
+                                <li>Sign errors in Einstein's equation</li>
+                                <li>Misreading graph intercepts and slopes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">📝 Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: A metal has work function 4.2 eV. Light of wavelength 200 nm is incident. Will photoemission occur? If yes, find stopping potential.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Compare incident energy with work function</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: The stopping potential for light of wavelength 4000 Å is 1.3 V. Find the work function of the metal.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $eV_0 = \frac{hc}{\lambda} - \phi$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Light of frequencies 1.5ν₀ and 2ν₀ are incident on a metal surface. Find the ratio of maximum kinetic energies of photoelectrons.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $E_k = h(\nu - \nu_0)$</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 4-Step Method Summary</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Checklist</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-sm">
+                                <li><strong>Find ν₀/φ:</strong> Identify threshold frequency or work function</li>
+                                <li><strong>Einstein's Eq:</strong> Apply $E_k = h\nu - \phi$</li>
+                                <li><strong>Stopping Potential:</strong> Use $V_0 = E_k/e$</li>
+                                <li><strong>Graph Analysis:</strong> Interpret slopes and intercepts</li>
+                            </ol>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Constants & Formulas</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>$h = 6.626 \times 10^{-34}$ Js</li>
+                                <li>$hc = 1240$ eV·nm</li>
+                                <li>1 eV = $1.6 \times 10^{-19}$ J</li>
+                                <li>$\phi = h\nu_0 = hc/\lambda_0$</li>
+                                <li>$E_k = h\nu - \phi = eV_0$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Photoelectric Effect?</h3>
+                    <p class="mb-4 opacity-90">Continue your Modern Physics journey with more advanced topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Modern Physics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electrodynamics" class="hover:text-yellow-300">Electrodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Physics Formula Sheet: Last-Minute JEE Revision | KnowJEE</title>
+    <meta name="description" content="Complete Modern Physics formula sheet for JEE Main & Advanced. All essential formulas, constants, and definitions for quick last-minute revision.">
+    <meta name="keywords" content="modern physics formulas, JEE physics formula sheet, JEE revision, photoelectric effect, nuclear physics, semiconductor formulas">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+            
+            // Print functionality
+            document.getElementById('printBtn').addEventListener('click', function() {
+                window.print();
+            });
+        });
+    </script>
+    
+    <style>
+        .formula-section {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .formula-section:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: white;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .constant-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .definition-box {
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .important {
+            background: #fef3c7;
+            border-left: 4px solid #d97706;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        @media print {
+            .no-print { display: none; }
+            .formula-section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6 no-print">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Formula Sheet</span>
+                    <span class="text-gray-500 text-sm ml-3">Last-Minute Revision</span>
+                    <span class="text-gray-500 text-sm ml-3">25+ Essential Formulas</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Modern Physics Formula Sheet: The Last-Minute Revision Guide for JEE</h1>
+                <p class="text-xl text-gray-600 mb-4">All essential formulas, constants, and definitions from Modern Physics unit - perfectly organized for quick revision.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6 no-print">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12-15</div>
+                            <div class="text-sm text-blue-600">Questions in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">25+</div>
+                            <div class="text-sm text-blue-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5</div>
+                            <div class="text-sm text-blue-600">Main Topics</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Covered</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Print Button -->
+                <div class="text-center mt-6 no-print">
+                    <button id="printBtn" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                        </svg>
+                        Print Formula Sheet
+                    </button>
+                </div>
+            </header>
+
+            <!-- Important Constants -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">Essential Physical Constants</h2>
+                </div>
+
+                <div class="constant-box">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                        <div>
+                            <span class="font-semibold">Speed of light</span><br>
+                            $c = 3 \times 10^8  \text{m/s}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Planck's constant</span><br>
+                            $h = 6.63 \times 10^{-34}  \text{J·s}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Electron charge</span><br>
+                            $e = 1.6 \times 10^{-19}  \text{C}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Electron mass</span><br>
+                            $m_e = 9.1 \times 10^{-31}  \text{kg}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Proton mass</span><br>
+                            $m_p = 1.67 \times 10^{-27}  \text{kg}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Boltzmann constant</span><br>
+                            $k = 1.38 \times 10^{-23}  \text{J/K}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Rydberg constant</span><br>
+                            $R = 1.097 \times 10^7  \text{m}^{-1}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Avogadro's number</span><br>
+                            $N_A = 6.022 \times 10^{23}  \text{mol}^{-1}$
+                        </div>
+                        <div>
+                            <span class="font-semibold">Atomic mass unit</span><br>
+                            $1  \text{u} = 931.5  \text{MeV/c}^2$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photoelectric Effect -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Photoelectric Effect</h2>
+                </div>
+
+                <div class="formula-section">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Energy of Photon</h4>
+                                <p class="text-lg">$$E = h\nu = \frac{hc}{\lambda}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">where $\nu$ = frequency, $\lambda$ = wavelength</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Einstein's Photoelectric Equation</h4>
+                                <p class="text-lg">$$h\nu = \phi + K_{max}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">$\phi$ = work function, $K_{max}$ = maximum kinetic energy</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Cut-off Frequency</h4>
+                                <p class="text-lg">$$\nu_0 = \frac{\phi}{h}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Minimum frequency for photoemission</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Stopping Potential</h4>
+                                <p class="text-lg">$$eV_0 = K_{max} = h\nu - \phi$$</p>
+                                <p class="text-sm text-gray-600 mt-1">$V_0$ = stopping potential</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Maximum Kinetic Energy</h4>
+                                <p class="text-lg">$$K_{max} = h(\nu - \nu_0)$$</p>
+                                <p class="text-sm text-gray-600 mt-1">When $\nu > \nu_0$</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Photocurrent</h4>
+                                <p class="text-lg">$$I \propto \text{Intensity}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Independent of frequency</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="important mt-4">
+                        <h4 class="font-semibold text-orange-800 mb-2">🎯 Key Points to Remember</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Photoelectric effect demonstrates particle nature of light</li>
+                            <li>Maximum KE depends on frequency, not intensity</li>
+                            <li>Photocurrent depends on intensity, not frequency</li>
+                            <li>No time lag between illumination and emission</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Atomic Physics -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Atomic Physics</h2>
+                </div>
+
+                <div class="formula-section">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Bohr's Postulates</h4>
+                                <p class="text-lg">$$mvr = \frac{nh}{2\pi}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Angular momentum quantization</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Radius of nth Orbit</h4>
+                                <p class="text-lg">$$r_n = \frac{n^2h^2}{4\pi^2kZe^2m}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">For hydrogen: $r_n = 0.529  \text{Å} \times n^2$</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Velocity in nth Orbit</h4>
+                                <p class="text-lg">$$v_n = \frac{2\pi ke^2}{nh}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">For hydrogen: $v_n = \frac{2.18 \times 10^6}{n}  \text{m/s}$</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Energy of nth Orbit</h4>
+                                <p class="text-lg">$$E_n = -\frac{2\pi^2k^2Z^2e^4m}{n^2h^2}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">For hydrogen: $E_n = -\frac{13.6}{n^2}  \text{eV}$</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Rydberg Formula</h4>
+                                <p class="text-lg">$$\frac{1}{\lambda} = RZ^2\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)$$</p>
+                                <p class="text-sm text-gray-600 mt-1">For hydrogen-like atoms</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Photon Energy in Transition</h4>
+                                <p class="text-lg">$$\Delta E = E_2 - E_1 = h\nu$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Energy of emitted/absorbed photon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nuclear Physics -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Nuclear Physics</h2>
+                </div>
+
+                <div class="formula-section">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Nuclear Size</h4>
+                                <p class="text-lg">$$R = R_0A^{1/3}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">$R_0 = 1.2  \text{fm}$, A = mass number</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Binding Energy</h4>
+                                <p class="text-lg">$$BE = [Zm_p + (A-Z)m_n - M]c^2$$</p>
+                                <p class="text-sm text-gray-600 mt-1">M = mass of nucleus</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Binding Energy per Nucleon</h4>
+                                <p class="text-lg">$$\frac{BE}{A} = \frac{[Zm_p + (A-Z)m_n - M]c^2}{A}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Maximum for iron (Fe-56)</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Radioactive Decay Law</h4>
+                                <p class="text-lg">$$N = N_0e^{-\lambda t}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">$\lambda$ = decay constant</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Half-life</h4>
+                                <p class="text-lg">$$T_{1/2} = \frac{\ln 2}{\lambda} = \frac{0.693}{\lambda}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Time for half the nuclei to decay</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Activity</h4>
+                                <p class="text-lg">$$A = \lambda N = A_0e^{-\lambda t}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Decays per second</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="important mt-4">
+                        <h4 class="font-semibold text-orange-800 mb-2">🎯 Nuclear Reactions</h4>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p class="font-semibold">Fission:</p>
+                                <p>$^{235}_{92}U + ^1_0n \rightarrow ^{141}_{56}Ba + ^{92}_{36}Kr + 3^1_0n + Q$</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Fusion:</p>
+                                <p>$^2_1H + ^3_1H \rightarrow ^4_2He + ^1_0n + 17.6  \text{MeV}$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Semiconductor Devices -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Semiconductor Devices</h2>
+                </div>
+
+                <div class="formula-section">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Electrical Conductivity</h4>
+                                <p class="text-lg">$$\sigma = e(n_e\mu_e + n_h\mu_h)$$</p>
+                                <p class="text-sm text-gray-600 mt-1">$n$ = carrier concentration, $\mu$ = mobility</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Resistivity</h4>
+                                <p class="text-lg">$$\rho = \frac{1}{\sigma}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Inverse of conductivity</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Diode Current</h4>
+                                <p class="text-lg">$$I = I_0(e^{eV/kT} - 1)$$</p>
+                                <p class="text-sm text-gray-600 mt-1">$I_0$ = reverse saturation current</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Energy Gap</h4>
+                                <p class="text-lg">$$E_g = E_c - E_v$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Conduction band - Valence band</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Intrinsic Carrier Concentration</h4>
+                                <p class="text-lg">$$n_i^2 = n_e n_h$$</p>
+                                <p class="text-sm text-gray-600 mt-1">For intrinsic semiconductors</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Transistor Current Gain</h4>
+                                <p class="text-lg">$$\beta = \frac{I_c}{I_b}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Common emitter configuration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wave-Particle Duality -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Wave-Particle Duality & X-rays</h2>
+                </div>
+
+                <div class="formula-section">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">de Broglie Wavelength</h4>
+                                <p class="text-lg">$$\lambda = \frac{h}{p} = \frac{h}{mv}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">For massive particles</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">For accelerated electron</h4>
+                                <p class="text-lg">$$\lambda = \frac{12.27}{\sqrt{V}}  \text{Å}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">V in volts</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Heisenberg Uncertainty Principle</h4>
+                                <p class="text-lg">$$\Delta x \cdot \Delta p \geq \frac{h}{4\pi}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Position-momentum uncertainty</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">X-ray Minimum Wavelength</h4>
+                                <p class="text-lg">$$\lambda_{min} = \frac{hc}{eV}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">V = accelerating voltage</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Bragg's Law</h4>
+                                <p class="text-lg">$$2d\sin\theta = n\lambda$$</p>
+                                <p class="text-sm text-gray-600 mt-1">d = interplanar spacing</p>
+                            </div>
+
+                            <div class="formula-box">
+                                <h4 class="font-semibold text-blue-800 mb-2">Moseley's Law</h4>
+                                <p class="text-lg">$$\sqrt{\nu} = a(Z - b)$$</p>
+                                <p class="text-sm text-gray-600 mt-1">For characteristic X-rays</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision Tips -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">🚀 Last-Minute Revision Strategy</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">High-Yield Formulas</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Photoelectric effect: $K_{max} = h\nu - \phi$</li>
+                                <li>Bohr model: $E_n = -13.6/n^2  \text{eV}$</li>
+                                <li>Radioactive decay: $N = N_0e^{-\lambda t}$</li>
+                                <li>de Broglie: $\lambda = h/p$</li>
+                                <li>Stopping potential: $eV_0 = K_{max}$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Common Mistakes to Avoid</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Confusing work function with threshold frequency</li>
+                                <li>Mixing up fission and fusion reactions</li>
+                                <li>Forgetting units conversion (eV to Joules)</li>
+                                <li>Not remembering constants (h, c, e, m_e)</li>
+                                <li>Confusing n-type and p-type semiconductors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Memory Aids -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🧠 Memory Aids & Mnemonics</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 text-sm">
+                        <div>
+                            <div class="bg-white p-3 rounded border mb-3">
+                                <p class="font-semibold text-green-800">Photoelectric Effect</p>
+                                <p>"<strong>K</strong>eep <strong>E</strong>very <strong>P</strong>hoton <strong>F</strong>or <strong>W</strong>ork"</p>
+                                <p class="text-gray-600">$K_{max} = E_{photon} - \phi_{work}$</p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <p class="font-semibold text-green-800">Radioactive Decay</p>
+                                <p>"<strong>N</strong>ever <strong>E</strong>xpect <strong>L</strong>ong <strong>T</strong>ime"</p>
+                                <p class="text-gray-600">$N = N_0e^{-\lambda t}$</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-white p-3 rounded border mb-3">
+                                <p class="font-semibold text-green-800">Bohr's Model</p>
+                                <p>"<strong>R</strong>adius <strong>V</strong>aries with <strong>n²</strong>, <strong>E</strong>nergy with <strong>1/n²</strong>"</p>
+                                <p class="text-gray-600">$r_n \propto n^2$, $E_n \propto 1/n^2$</p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <p class="font-semibold text-green-800">de Broglie</p>
+                                <p>"<strong>L</strong>ong <strong>W</strong>avelength for <strong>S</strong>low <strong>P</strong>articles"</p>
+                                <p class="text-gray-600">$\lambda = h/p$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Encouragement -->
+            <section class="mb-8 text-center no-print">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">You're Ready for Modern Physics!</h3>
+                    <p class="mb-4 opacity-90">You now have all the essential formulas at your fingertips. Practice applying them!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Take Practice Test
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12 no-print">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

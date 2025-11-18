@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radioactive Decay: Complete JEE Physics Guide | Parallel & Successive Decay | KnowJEE</title>
+    <meta name="description" content="Master radioactive decay for JEE Physics. Understand decay laws, half-life vs mean life, and solve complex parallel & successive decay problems with step-by-step solutions.">
+    <meta name="keywords" content="radioactive decay JEE, half-life mean life, parallel decay, successive decay, nuclear physics JEE, decay laws, JEE physics modern physics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .decay-diagram {
+            background: #fffbeb;
+            border: 2px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .comparison-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Modern Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Modern Physics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Problem Types</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mastering Radioactive Decay: From Basics to Parallel & Successive Decay</h1>
+                <p class="text-xl text-gray-600 mb-4">Your complete guide to decay laws, half-life vs mean life, and solving complex JEE problems with radioactive chains.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-4</div>
+                            <div class="text-sm text-purple-600">Questions in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">12-16</div>
+                            <div class="text-sm text-purple-600">Marks Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">4</div>
+                            <div class="text-sm text-purple-600">Key Concepts</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Guaranteed Topic</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Radioactive Decay is Crucial for JEE</h2>
+                <p class="mb-4">Radioactive decay appears in <strong>every JEE paper</strong> with 3-4 questions carrying significant marks. Mastering this topic gives you an edge in Modern Physics section.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Focus Areas</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Basic decay laws and formulas (2-3 marks)</li>
+                        <li>Half-life vs mean life calculations (3-4 marks)</li>
+                        <li>Successive decay problems (4-5 marks)</li>
+                        <li>Parallel decay and equilibrium (3-4 marks)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-laws" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Laws</a>
+                    <a href="#half-life" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Half-Life</a>
+                    <a href="#successive" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Successive Decay</a>
+                    <a href="#parallel" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Parallel Decay</a>
+                </div>
+            </div>
+
+            <!-- Basic Laws Section -->
+            <section id="basic-laws" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Fundamental Laws of Radioactive Decay</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Decay Law</h3>
+                    <p class="mb-4">Radioactive decay follows first-order kinetics, meaning the decay rate is proportional to the number of undecayed nuclei.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Mathematical Formulation</h4>
+                        <p><strong>Differential Form:</strong></p>
+                        <div class="text-center my-3">
+                            $$\frac{dN}{dt} = -\lambda N$$
+                        </div>
+                        <p><strong>Integrated Form:</strong></p>
+                        <div class="text-center my-3">
+                            $$N = N_0 e^{-\lambda t}$$
+                        </div>
+                        <p><strong>Activity:</strong></p>
+                        <div class="text-center my-3">
+                            $$A = \lambda N = A_0 e^{-\lambda t}$$
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
+                            <li>$N$ = Number of undecayed nuclei at time $t$</li>
+                            <li>$N_0$ = Initial number of nuclei</li>
+                            <li>$\lambda$ = Decay constant</li>
+                            <li>$A$ = Activity (decays per second)</li>
+                            <li>$A_0$ = Initial activity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example: Basic Decay Calculation</h4>
+                    <p><strong>Problem:</strong> A radioactive sample has an initial activity of 8000 Bq. After 2 hours, its activity reduces to 1000 Bq. Find the decay constant.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution:</h4>
+                        <p><strong>Step 1:</strong> Use the activity formula: $A = A_0 e^{-\lambda t}$</p>
+                        <p><strong>Step 2:</strong> Substitute values: $1000 = 8000 e^{-\lambda \times 7200}$ (time in seconds)</p>
+                        <p><strong>Step 3:</strong> Simplify: $\frac{1}{8} = e^{-7200\lambda}$</p>
+                        <p><strong>Step 4:</strong> Take natural log: $\ln(\frac{1}{8}) = -7200\lambda$</p>
+                        <p><strong>Step 5:</strong> Solve: $\lambda = \frac{\ln(8)}{7200} = \frac{2.079}{7200} = 2.89 \times 10^{-4} \text{ s}^{-1}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Half-Life vs Mean Life Section -->
+            <section id="half-life" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Half-Life vs Mean Life: Key Differences</h2>
+                </div>
+
+                <div class="comparison-table mb-6">
+                    <table class="w-full">
+                        <thead class="bg-purple-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold text-purple-900">Parameter</th>
+                                <th class="px-4 py-3 text-left font-semibold text-purple-900">Half-Life ($T_{1/2}$)</th>
+                                <th class="px-4 py-3 text-left font-semibold text-purple-900">Mean Life ($\tau$)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Definition</td>
+                                <td class="px-4 py-3">Time for half the nuclei to decay</td>
+                                <td class="px-4 py-3">Average lifetime of a nucleus</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">Formula</td>
+                                <td class="px-4 py-3">$T_{1/2} = \frac{\ln 2}{\lambda}$</td>
+                                <td class="px-4 py-3">$\tau = \frac{1}{\lambda}$</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Relationship</td>
+                                <td class="px-4 py-3" colspan="2">$T_{1/2} = \tau \ln 2 \approx 0.693\tau$</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">After 1 mean life</td>
+                                <td class="px-4 py-3" colspan="2">$N = \frac{N_0}{e} \approx 0.368N_0$ (36.8% remain)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="formula-box">
+                    <h4 class="font-semibold text-purple-800 mb-3">Important Relationships</h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-center">
+                        <div>
+                            <p>$\lambda = \frac{\ln 2}{T_{1/2}}$</p>
+                            <p class="text-sm text-gray-600">Decay constant from half-life</p>
+                        </div>
+                        <div>
+                            <p>$\tau = \frac{T_{1/2}}{\ln 2} \approx 1.443 T_{1/2}$</p>
+                            <p class="text-sm text-gray-600">Mean life from half-life</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example: Half-Life Calculation</h4>
+                    <p><strong>Problem:</strong> A radioactive element has a half-life of 10 days. What fraction of the original sample remains after 30 days?</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution:</h4>
+                        <p><strong>Method 1: Using half-life concept</strong></p>
+                        <p>Number of half-lives = $\frac{30}{10} = 3$</p>
+                        <p>Fraction remaining = $\left(\frac{1}{2}\right)^3 = \frac{1}{8}$</p>
+                        
+                        <p class="mt-3"><strong>Method 2: Using decay formula</strong></p>
+                        <p>$\lambda = \frac{\ln 2}{T_{1/2}} = \frac{0.693}{10} = 0.0693 \text{ day}^{-1}$</p>
+                        <p>$\frac{N}{N_0} = e^{-\lambda t} = e^{-0.0693 \times 30} = e^{-2.079} = \frac{1}{8}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Successive Decay Section -->
+            <section id="successive" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Successive Radioactive Decay</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Radioactive Series Decay</h3>
+                    <p class="mb-4">When a parent nuclide decays into a daughter nuclide that is also radioactive, we have successive decay.</p>
+                    
+                    <div class="decay-diagram">
+                        <p class="font-semibold mb-3">Typical Successive Decay Chain</p>
+                        <div class="flex justify-center items-center space-x-6 mb-4">
+                            <div class="text-center">
+                                <div class="bg-blue-100 px-4 py-2 rounded-lg">Parent</div>
+                                <div class="text-sm">$N_1, \lambda_1$</div>
+                            </div>
+                            <div class="text-2xl">→</div>
+                            <div class="text-center">
+                                <div class="bg-green-100 px-4 py-2 rounded-lg">Daughter</div>
+                                <div class="text-sm">$N_2, \lambda_2$</div>
+                            </div>
+                            <div class="text-2xl">→</div>
+                            <div class="text-center">
+                                <div class="bg-gray-100 px-4 py-2 rounded-lg">Stable</div>
+                                <div class="text-sm">Final Product</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Bateman Equations</h4>
+                        <p><strong>Daughter Nucleus Amount:</strong></p>
+                        <div class="text-center my-3">
+                            $$N_2 = \frac{\lambda_1 N_{10}}{\lambda_2 - \lambda_1} \left(e^{-\lambda_1 t} - e^{-\lambda_2 t}\right)$$
+                        </div>
+                        <p><strong>Special Case - Transient Equilibrium ($\lambda_1 < \lambda_2$):</strong></p>
+                        <div class="text-center my-3">
+                            $$\frac{N_2}{N_1} = \frac{\lambda_1}{\lambda_2 - \lambda_1}$$
+                        </div>
+                        <p><strong>Special Case - Secular Equilibrium ($\lambda_1 << \lambda_2$):</strong></p>
+                        <div class="text-center my-3">
+                            $$\lambda_1 N_1 = \lambda_2 N_2$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example: Successive Decay Problem</h4>
+                    <p><strong>Problem:</strong> A → B → C (stable). If $T_{1/2}(A) = 10$ min and $T_{1/2}(B) = 2$ min, find the time when daughter B reaches maximum activity.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution:</h4>
+                        <p><strong>Step 1:</strong> Calculate decay constants</p>
+                        <p>$\lambda_A = \frac{\ln 2}{10} = 0.0693 \text{ min}^{-1}$</p>
+                        <p>$\lambda_B = \frac{\ln 2}{2} = 0.3466 \text{ min}^{-1}$</p>
+                        
+                        <p><strong>Step 2:</strong> Time for maximum daughter activity</p>
+                        <p>$t_{max} = \frac{\ln(\lambda_B/\lambda_A)}{\lambda_B - \lambda_A}$</p>
+                        <p>$t_{max} = \frac{\ln(0.3466/0.0693)}{0.3466 - 0.0693} = \frac{\ln(5)}{0.2773} = \frac{1.609}{0.2773} = 5.8$ min</p>
+                        
+                        <p><strong>Step 3:</strong> Verify this is reasonable</p>
+                        <p>Since B decays faster than A, maximum occurs relatively quickly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parallel Decay Section -->
+            <section id="parallel" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Parallel Radioactive Decay</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Multiple Decay Modes</h3>
+                    <p class="mb-4">Some nuclides can decay through multiple independent channels simultaneously.</p>
+                    
+                    <div class="decay-diagram">
+                        <p class="font-semibold mb-3">Parallel Decay Scheme</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="text-center">
+                                <div class="bg-purple-100 px-4 py-3 rounded-lg mb-2">Parent Nucleus</div>
+                                <div class="text-sm">$\lambda_1 + \lambda_2 + \lambda_3$</div>
+                            </div>
+                            <div class="flex flex-col space-y-2 justify-center">
+                                <div class="flex items-center space-x-2">
+                                    <div class="text-sm">Branch 1: $\lambda_1$</div>
+                                    <div class="text-xl">↓</div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="text-sm">Branch 2: $\lambda_2$</div>
+                                    <div class="text-xl">↓</div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="text-sm">Branch 3: $\lambda_3$</div>
+                                    <div class="text-xl">↓</div>
+                                </div>
+                            </div>
+                            <div class="text-center space-y-2">
+                                <div class="bg-blue-100 px-3 py-2 rounded text-sm">Daughter 1</div>
+                                <div class="bg-green-100 px-3 py-2 rounded text-sm">Daughter 2</div>
+                                <div class="bg-yellow-100 px-3 py-2 rounded text-sm">Daughter 3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Key Formulas for Parallel Decay</h4>
+                        <p><strong>Total Decay Constant:</strong></p>
+                        <div class="text-center my-3">
+                            $$\lambda_{total} = \lambda_1 + \lambda_2 + \lambda_3 + \cdots$$
+                        </div>
+                        <p><strong>Branching Ratio:</strong></p>
+                        <div class="text-center my-3">
+                            $$\text{Branching ratio for mode i} = \frac{\lambda_i}{\lambda_{total}}$$
+                        </div>
+                        <p><strong>Partial Half-Life:</strong></p>
+                        <div class="text-center my-3">
+                            $$T_{1/2}^{(i)} = \frac{\ln 2}{\lambda_i} = \frac{T_{1/2}^{total}}{f_i}$$
+                        </div>
+                        <p>Where $f_i$ is the branching fraction for mode i.</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example: Parallel Decay Calculation</h4>
+                    <p><strong>Problem:</strong> A nuclide decays 60% by α-emission and 40% by β-emission. The half-life for α-decay alone would be 100 years. Find the actual half-life.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution:</h4>
+                        <p><strong>Step 1:</strong> Find decay constant for α-decay</p>
+                        <p>$\lambda_α = \frac{\ln 2}{100} = 0.00693 \text{ year}^{-1}$</p>
+                        
+                        <p><strong>Step 2:</strong> Relate branching ratio to decay constants</p>
+                        <p>Branching ratio $= \frac{\lambda_α}{\lambda_{total}} = 0.6$</p>
+                        <p>Therefore: $\lambda_{total} = \frac{\lambda_α}{0.6} = \frac{0.00693}{0.6} = 0.01155 \text{ year}^{-1}$</p>
+                        
+                        <p><strong>Step 3:</strong> Calculate actual half-life</p>
+                        <p>$T_{1/2}^{total} = \frac{\ln 2}{\lambda_{total}} = \frac{0.693}{0.01155} = 60$ years</p>
+                        
+                        <p class="mt-2 font-semibold">The actual half-life is 60 years due to multiple decay channels.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. JEE Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: The half-life of a radioactive substance is 20 days. What percentage decays in 10 days?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $N/N_0 = (1/2)^{t/T}$ or exponential formula</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: A radioactive sample has mean life of 100 seconds. Calculate the time taken for 75% decay.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Find decay constant first, then solve $N/N_0 = 0.25$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: In the decay A → B → C (stable), if λ_A = 0.1 min⁻¹ and λ_B = 0.4 min⁻¹, find when B's activity is maximum.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $t_{max} = \frac{\ln(\lambda_B/\lambda_A)}{\lambda_B - \lambda_A}$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: A nuclide can decay by both α and β emission with partial half-lives of 50 years and 25 years respectively. Find total half-life.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Add decay constants, then find half-life</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Formula Quick Sheet</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Basic Decay</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$N = N_0 e^{-\lambda t}$</li>
+                                <li>$A = \lambda N = A_0 e^{-\lambda t}$</li>
+                                <li>$\lambda T_{1/2} = \ln 2$</li>
+                                <li>$\tau = 1/\lambda$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Advanced Concepts</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>Successive decay: Use Bateman equations</li>
+                                <li>Parallel decay: $\lambda_{total} = \sum \lambda_i$</li>
+                                <li>Branching ratio: $f_i = \lambda_i/\lambda_{total}$</li>
+                                <li>Equilibrium: $\lambda_1 N_1 = \lambda_2 N_2$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Strategy -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Time Allocation</span>
+                                <p class="text-sm text-gray-600">Spend 2-3 minutes on basic decay problems, 4-5 minutes on successive decay.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Problem Identification</span>
+                                <p class="text-sm text-gray-600">Quickly identify if it's basic decay, successive, parallel, or equilibrium problem.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Unit Consistency</span>
+                                <p class="text-sm text-gray-600">Ensure time units match between half-life and the given time.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Approximation</span>
+                                <p class="text-sm text-gray-600">Use $\ln 2 \approx 0.693$, $1/e \approx 0.368$ for quick calculations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Modern Physics?</h3>
+                    <p class="mb-4 opacity-90">Continue your JEE preparation with our comprehensive physics modules</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Modern Physics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Take Practice Test
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electrodynamics" class="hover:text-yellow-300">Electrodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

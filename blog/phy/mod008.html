@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Correspondence Principle: Quantum to Classical Physics | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master the Correspondence Principle for JEE Physics. Understand how quantum mechanics merges into classical physics using Bohr model examples with large quantum numbers.">
+    <meta name="keywords" content="correspondence principle, quantum mechanics classical physics, Bohr model, JEE physics modern physics, quantum numbers, JEE preparation">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .principle-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .derivation-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .comparison-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .quantum-classical-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Modern Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Modern Physics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Key Principle</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">From Modern Physics to Classical: The Correspondence Principle</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how quantum mechanics smoothly transitions into classical physics for large quantum numbers, using the Bohr model as a perfect example.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-5</div>
+                            <div class="text-sm text-purple-600">Marks per Question</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">1913</div>
+                            <div class="text-sm text-purple-600">Bohr Model Year</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">∞</div>
+                            <div class="text-sm text-purple-600">n → Limit</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Bridge Between Two Worlds</h2>
+                <p class="mb-4">The Correspondence Principle, formulated by Niels Bohr in 1920, states that <strong>quantum mechanics must reduce to classical physics in the limit of large quantum numbers</strong>. This principle served as a crucial guide in the development of quantum theory.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 Why This Matters for JEE</h4>
+                    <p>This principle appears frequently in JEE questions testing conceptual understanding of quantum-classical relationships. Mastering it helps you solve problems that bridge both domains.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#principle" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">The Principle</a>
+                    <a href="#bohr-model" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Bohr Model</a>
+                    <a href="#frequency" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Frequency Match</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                </div>
+            </div>
+
+            <!-- The Principle Section -->
+            <section id="principle" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Understanding the Correspondence Principle</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Fundamental Idea</h3>
+                    <p class="mb-4">Quantum mechanics describes the microscopic world with discrete energy levels and probabilities, while classical physics describes the macroscopic world with continuous energies and deterministic trajectories. The Correspondence Principle ensures they don't contradict each other.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Simple Analogy</h4>
+                        <p>Think of a piano keyboard:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li><strong>Low notes (small n):</strong> Clearly distinct, quantum-like behavior</li>
+                            <li><strong>High notes (large n):</strong> Blend together, classical-like continuum</li>
+                        </ul>
+                        <p class="mt-2">As you go to very high frequencies, the discrete notes merge into a continuous spectrum.</p>
+                    </div>
+                </div>
+
+                <div class="principle-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Mathematical Statement</h3>
+                    <p class="text-center text-lg font-semibold mb-4">For large quantum numbers (n → ∞), quantum predictions → classical predictions</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">Quantum World (Small n)</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Discrete energy levels</li>
+                                <li>Quantized angular momentum</li>
+                                <li>Probability distributions</li>
+                                <li>Wave-particle duality</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">Classical World (Large n)</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Continuous energy spectrum</li>
+                                <li>Continuous angular momentum</li>
+                                <li>Definite trajectories</li>
+                                <li>Particle behavior dominates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bohr Model Section -->
+            <section id="bohr-model" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Bohr Model: The Perfect Example</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bohr's Quantization Conditions</h3>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Key Formulas in Bohr Model</h4>
+                        
+                        <p><strong>Radius of nth orbit:</strong></p>
+                        <p>$$r_n = \frac{n^2 h^2 \varepsilon_0}{\pi m Z e^2} = n^2 a_0$$</p>
+                        <p class="text-sm text-gray-600">where $a_0$ is Bohr radius = 0.529 Å</p>
+                        
+                        <p class="mt-3"><strong>Velocity in nth orbit:</strong></p>
+                        <p>$$v_n = \frac{Z e^2}{2 \varepsilon_0 n h} = \frac{v_1}{n}$$</p>
+                        
+                        <p class="mt-3"><strong>Energy of nth orbit:</strong></p>
+                        <p>$$E_n = -\frac{m Z^2 e^4}{8 \varepsilon_0^2 h^2 n^2} = -\frac{13.6 Z^2}{n^2} \text{ eV}$$</p>
+                    </div>
+                </div>
+
+                <div class="principle-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Classical Limit: n → ∞</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p><strong>As n becomes very large:</strong></p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li><strong>Radius:</strong> $r_n \propto n^2$ → becomes macroscopic</li>
+                                <li><strong>Velocity:</strong> $v_n \propto \frac{1}{n}$ → approaches zero</li>
+                                <li><strong>Energy levels:</strong> $E_n \propto -\frac{1}{n^2}$ → become closely spaced</li>
+                                <li><strong>Energy difference:</strong> $\Delta E \propto \frac{1}{n^3}$ → becomes infinitesimal</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example-box">
+                            <h4 class="font-semibold text-green-800 mb-2">Numerical Example</h4>
+                            <p>Compare energy differences for different n values in hydrogen atom (Z=1):</p>
+                            <div class="grid grid-cols-3 gap-2 mt-2 text-sm text-center">
+                                <div class="bg-white p-2 rounded border">
+                                    <strong>n=1 to n=2</strong><br>
+                                    $\Delta E = 10.2$ eV
+                                </div>
+                                <div class="bg-white p-2 rounded border">
+                                    <strong>n=10 to n=11</strong><br>
+                                    $\Delta E = 0.025$ eV
+                                </div>
+                                <div class="bg-white p-2 rounded border">
+                                    <strong>n=100 to n=101</strong><br>
+                                    $\Delta E = 2.7 \times 10^{-5}$ eV
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm">For large n, energy levels are essentially continuous!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Frequency Match Section -->
+            <section id="frequency" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Frequency Correspondence: The Key Test</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Radiation Frequency Matching</h3>
+                    <p class="mb-4">The most dramatic demonstration of the Correspondence Principle is how the frequency of radiation matches in both descriptions for large quantum numbers.</p>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Quantum Frequency</h4>
+                        <p>For transition from n+k to n:</p>
+                        <p>$$\nu_{\text{quantum}} = \frac{E_{n+k} - E_n}{h} = \frac{m Z^2 e^4}{8 \varepsilon_0^2 h^3} \left[\frac{1}{n^2} - \frac{1}{(n+k)^2}\right]$$</p>
+                        
+                        <p class="mt-3"><strong>For large n and small k (k << n):</strong></p>
+                        <p>$$\frac{1}{n^2} - \frac{1}{(n+k)^2} \approx \frac{2k}{n^3}$$</p>
+                        <p>$$\nu_{\text{quantum}} \approx \frac{m Z^2 e^4}{8 \varepsilon_0^2 h^3} \cdot \frac{2k}{n^3}$$</p>
+                    </div>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Classical Frequency</h4>
+                        <p>According to classical electrodynamics, an electron in circular orbit radiates with frequency equal to its orbital frequency:</p>
+                        <p>$$\nu_{\text{classical}} = \frac{v}{2\pi r} = \frac{Z e^2}{4\pi \varepsilon_0 n h} \cdot \frac{1}{2\pi \cdot n^2 a_0}$$</p>
+                        <p>$$\nu_{\text{classical}} = \frac{m Z^2 e^4}{4 \varepsilon_0^2 h^3 n^3}$$</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">The Perfect Match!</h4>
+                        <p>Comparing both expressions:</p>
+                        <p>$$\nu_{\text{quantum}} = \frac{m Z^2 e^4}{8 \varepsilon_0^2 h^3} \cdot \frac{2k}{n^3} = \frac{m Z^2 e^4}{4 \varepsilon_0^2 h^3 n^3} \cdot k$$</p>
+                        <p>$$\nu_{\text{classical}} = \frac{m Z^2 e^4}{4 \varepsilon_0^2 h^3 n^3}$$</p>
+                        <p class="mt-2 font-semibold">For k=1 transition: $\nu_{\text{quantum}} = \nu_{\text{classical}}$ ✓</p>
+                        <p class="text-sm mt-2">The quantum frequency for adjacent levels equals the classical orbital frequency!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications Section -->
+            <section id="applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Applications and Implications</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Quantum vs Classical: The Transition</h3>
+                    
+                    <div class="quantum-classical-table">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="p-3 text-left">Property</th>
+                                    <th class="p-3 text-center">Quantum (Small n)</th>
+                                    <th class="p-3 text-center">Correspondence Limit</th>
+                                    <th class="p-3 text-center">Classical (Large n)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t">
+                                    <td class="p-3 font-semibold">Energy Levels</td>
+                                    <td class="p-3 text-center">Discrete, widely spaced</td>
+                                    <td class="p-3 text-center bg-yellow-50">Closely spaced</td>
+                                    <td class="p-3 text-center">Continuous</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 font-semibold">Angular Momentum</td>
+                                    <td class="p-3 text-center">Quantized: $n\hbar$</td>
+                                    <td class="p-3 text-center bg-yellow-50">$\hbar$ negligible</td>
+                                    <td class="p-3 text-center">Continuous</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 font-semibold">Radiation</td>
+                                    <td class="p-3 text-center">Photon emission</td>
+                                    <td class="p-3 text-center bg-yellow-50">Continuous radiation</td>
+                                    <td class="p-3 text-center">Continuous radiation</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 font-semibold">Electron Path</td>
+                                    <td class="p-3 text-center">Probability cloud</td>
+                                    <td class="p-3 text-center bg-yellow-50">Well-defined orbit</td>
+                                    <td class="p-3 text-center">Definite trajectory</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="concept-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Beyond Bohr Model</h3>
+                        <p>The Correspondence Principle applies to all quantum systems:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li><strong>Quantum Harmonic Oscillator:</strong> For large n, probability distribution peaks at classical turning points</li>
+                            <li><strong>Particle in a Box:</strong> For large n, quantum probability becomes uniform like classical</li>
+                            <li><strong>Quantum Field Theory:</strong> Coherent states behave classically</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Historical Significance</h3>
+                        <p>This principle guided physicists in:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Developing quantum mechanics rules</li>
+                            <li>Finding the correct quantization conditions</li>
+                            <li>Ensuring consistency with known classical results</li>
+                            <li>Building confidence in the new quantum theory</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 JEE Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: Calculate the ratio of orbital frequencies for n=100 and n=101 in hydrogen atom. Show that it approaches 1.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $\nu \propto \frac{1}{n^3}$ for large n</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: For a hydrogen atom in n=1000 state, calculate the energy difference between adjacent levels. Compare with thermal energy at room temperature (0.025 eV).</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: $\Delta E = \frac{2 \times 13.6}{n^3}$ eV for large n</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Show that for large n, the angular momentum in Bohr model becomes $L = mvr$, matching the classical expression.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Quantum angular momentum is $n\hbar$</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Key Takeaways for JEE</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Definition</span>
+                                <p class="text-sm text-gray-600">Quantum mechanics reduces to classical physics for large quantum numbers (n → ∞)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Bohr Model Proof</span>
+                                <p class="text-sm text-gray-600">For large n, quantum frequency = classical orbital frequency</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📊</span>
+                            <div>
+                                <span class="font-semibold">Mathematical Signs</span>
+                                <p class="text-sm text-gray-600">Energy differences ∝ 1/n³ → 0, radii ∝ n² → ∞</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🎓</span>
+                            <div>
+                                <span class="font-semibold">Exam Focus</span>
+                                <p class="text-sm text-gray-600">Be prepared to explain this principle and apply it to Bohr model calculations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Modern Physics?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through quantum mechanics and atomic physics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Modern Physics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electrodynamics" class="hover:text-yellow-300">Electrodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation Complete Guide. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
