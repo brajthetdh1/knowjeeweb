@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromatic Aberration: The Defect and Its Correction in Lenses | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master chromatic aberration in lenses - understand the cause, effects, and how achromatic doublet lenses correct this optical defect. Complete guide for JEE Physics preparation.">
+    <meta name="keywords" content="chromatic aberration, lens defects, achromatic doublet, JEE physics, optics, lens correction, dispersion in lenses">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/blog/physics/optics/chromatic-aberration.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Chromatic Aberration: The Defect and Its Correction in Lenses | JEE Physics">
+    <meta property="og:description" content="Complete guide to chromatic aberration - causes, effects, and correction using achromatic doublet lenses for JEE preparation">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/blog/physics/optics/chromatic-aberration.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chromatic Aberration: Lens Defect & Correction">
+    <meta name="twitter:description" content="Master chromatic aberration and achromatic doublet correction for JEE Physics">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Chromatic Aberration: The Defect and Its Correction in Lenses",
+        "description": "Complete guide to chromatic aberration - causes, effects, and correction using achromatic doublet lenses for JEE Physics preparation",
+        "author": {
+            "@type": "Person",
+            "name": "Braj Bhushan Kumar"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2024-12-19",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://knowjee.com/blog/physics/optics/chromatic-aberration.html"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .explanation-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .correction-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #10b981; }
+        .difficulty-medium { border-left: 4px solid #f59e0b; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .physics-tag {
+            background: #ef4444;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-highlight {
+            background: #fef3c7;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #f59e0b;
+        }
+        .diagram-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+            border: 2px dashed #d1d5db;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Physics Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 14 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Key Concept</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Chromatic Aberration: The Defect and Its Correction in Lenses</h1>
+                <p class="text-xl text-gray-600 mb-4">Understand the cause of chromatic aberration and how achromatic doublet lenses eliminate this optical defect. Complete guide for JEE Physics.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">1</div>
+                            <div class="text-sm text-red-600">Key Defect</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">100%</div>
+                            <div class="text-sm text-red-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">2</div>
+                            <div class="text-sm text-red-600">Correction Methods</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">20min</div>
+                            <div class="text-sm text-red-600">Study Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What is Chromatic Aberration?</h2>
+                <p class="mb-4">Chromatic aberration is an optical phenomenon where a lens fails to focus all colors to the same convergence point, resulting in colored fringes around images. This occurs because:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-red-50 p-4 rounded-lg">
+                    <li><strong>Different wavelengths of light</strong> bend at different angles when passing through a lens</li>
+                    <li><strong>Refractive index varies with wavelength</strong> (dispersion)</li>
+                    <li><strong>Violet light bends more</strong> than red light in glass</li>
+                    <li>This causes <strong>color separation</strong> at the focal point</li>
+                </ul>
+            </section>
+
+            <!-- The Defect -->
+            <section class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="physics-tag">The Defect</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Understanding Chromatic Aberration</h3>
+                    
+                    <div class="diagram-container">
+                        <div class="text-gray-600 mb-2 text-sm">[Diagram: White light splitting into colors through a convex lens]</div>
+                        <div class="bg-gradient-to-r from-red-500 via-green-500 to-blue-500 h-4 rounded-full mb-4 mx-auto max-w-md"></div>
+                        <p class="text-sm text-gray-600">White light → Lens → Color separation at different focal points</p>
+                    </div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🔬 Scientific Explanation:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Dispersion Principle:</strong> The refractive index (μ) of glass decreases with increasing wavelength:</p>
+                            <p class="text-center">$μ_v > μ_r$ where $μ_v$ = refractive index for violet, $μ_r$ = refractive index for red</p>
+                            <p><strong>Lens Maker's Formula:</strong> $f = \frac{1}{(μ-1)(\frac{1}{R_1} - \frac{1}{R_2})}$</p>
+                            <p>Since $μ_v > μ_r$, focal length for violet light $f_v$ is shorter than for red light $f_r$:</p>
+                            <p class="text-center">$f_v < f_r$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 Key Points:</h4>
+                        <div class="step-highlight">
+                            <p><strong>Longitudinal Chromatic Aberration:</strong> Different colors focus at different distances along the optical axis</p>
+                            <p><strong>Lateral Chromatic Aberration:</strong> Different colors focus at different positions in the focal plane</p>
+                            <p><strong>Axial Chromatic Aberration:</strong> Variation of focal length with wavelength</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mathematical Analysis -->
+            <section class="mb-8">
+                <div class="concept-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="physics-tag">Mathematics</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mathematical Analysis of Chromatic Aberration</h3>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">📐 Lens Formula and Dispersion:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>For a thin lens:</strong> $\frac{1}{f} = (μ-1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)$</p>
+                            <p><strong>Differentiating with respect to wavelength:</strong></p>
+                            <p>$\frac{-1}{f^2}\frac{df}{dλ} = \frac{dμ}{dλ}\left(\frac{1}{R_1} - \frac{1}{R_2}\right)$</p>
+                            <p><strong>Chromatic aberration:</strong> $df = -f^2 \frac{dμ}{dλ}\left(\frac{1}{R_1} - \frac{1}{R_2}\right) dλ$</p>
+                            <p><strong>Dispersive power:</strong> $ω = \frac{μ_v - μ_r}{μ_y - 1}$ where $μ_y$ = refractive index for yellow light</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 JEE Application Example:</h4>
+                        <p class="mb-2"><strong>Problem:</strong> A convex lens has focal length 20 cm for red light and 18 cm for violet light. Calculate the dispersive power of the lens material.</p>
+                        <div class="step-highlight">
+                            <p><strong>Solution:</strong></p>
+                            <p>Mean focal length $f_y = \sqrt{f_r f_v} = \sqrt{20 × 18} = 18.97$ cm</p>
+                            <p>Mean refractive index $μ_y = 1 + \frac{R_1 R_2}{f_y(R_2 - R_1)}$ (using lens maker's formula)</p>
+                            <p>Dispersive power $ω = \frac{f_r - f_v}{f_y} = \frac{20 - 18}{18.97} = 0.105$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Correction Method -->
+            <section class="mb-8">
+                <div class="concept-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="physics-tag">Correction</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Essential</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Achromatic Doublet: The Solution</h3>
+                    
+                    <div class="diagram-container">
+                        <div class="text-gray-600 mb-2 text-sm">[Diagram: Achromatic doublet combining convex and concave lenses]</div>
+                        <div class="flex justify-center items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 bg-blue-200 rounded-full border-2 border-blue-400"></div>
+                            <div class="text-xl">+</div>
+                            <div class="w-16 h-16 bg-red-200 rounded-full border-2 border-red-400" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 20% 50%)"></div>
+                            <div class="text-xl">=</div>
+                            <div class="w-20 h-16 bg-gradient-to-r from-blue-200 to-red-200 rounded-full border-2 border-purple-400"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">Convex (crown glass) + Concave (flint glass) = Achromatic combination</p>
+                    </div>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🔧 Working Principle:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Two lenses of different materials:</strong></p>
+                            <p class="ml-4">• <strong>Convex lens</strong> made of crown glass (lower dispersion)</p>
+                            <p class="ml-4">• <strong>Concave lens</strong> made of flint glass (higher dispersion)</p>
+                            <p><strong>Condition for achromatism:</strong></p>
+                            <p class="text-center">$\frac{ω_1}{f_1} + \frac{ω_2}{f_2} = 0$</p>
+                            <p>Where $ω_1$, $ω_2$ are dispersive powers and $f_1$, $f_2$ are focal lengths</p>
+                            <p><strong>Combined focal length:</strong> $\frac{1}{F} = \frac{1}{f_1} + \frac{1}{f_2}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="correction-box">
+                        <h4 class="font-semibold text-red-800 mb-2">✅ Why This Works:</h4>
+                        <div class="step-highlight">
+                            <p><strong>The convex lens</strong> converges light but separates colors</p>
+                            <p><strong>The concave lens</strong> diverges light but separates colors in opposite direction</p>
+                            <p><strong>Net effect:</strong> Colors recombine at the same focal point while maintaining overall convergence</p>
+                            <p><strong>Result:</strong> Sharp, color-free image!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-indigo-900 mb-4">🚀 Problem-Solving Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">For Chromatic Aberration:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Remember: violet focuses closer than red</li>
+                                <li>Dispersive power ω = (μ_v - μ_r)/(μ_y - 1)</li>
+                                <li>Longitudinal CA = f_r - f_v</li>
+                                <li>CA increases with lens power</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">For Achromatic Doublet:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Condition: ω₁/f₁ + ω₂/f₂ = 0</li>
+                                <li>Combined power: P = P₁ + P₂</li>
+                                <li>Crown glass: lower ω, convex shape</li>
+                                <li>Flint glass: higher ω, concave shape</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Applications -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Applications Available</h3>
+                    <p class="text-gray-600 mb-4">Includes apochromatic lenses, photographic lens design, and JEE Advanced level problems</p>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Advanced Content
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Why does violet light focus closer to a lens than red light?</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Calculate the focal length of an achromatic doublet with given dispersive powers</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Explain why a single lens cannot eliminate chromatic aberration completely</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Optics?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to advanced optics topics and JEE practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Optics Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-red-900 text-red-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#optics" class="hover:text-red-300">Optics</a></li>
+                        <li><a href="#mechanics" class="hover:text-red-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-red-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-red-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../math/math.html" class="hover:text-red-300">JEE Mathematics</a></li>
+                        <li><a href="../chem/chem.html" class="hover:text-red-300">JEE Chemistry</a></li>
+                        <li><a href="../quiz/quiz.html" class="hover:text-red-300">Mock Tests</a></li>
+                        <li><a href="../../index.html" class="hover:text-red-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-red-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-red-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-red-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-red-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Physics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

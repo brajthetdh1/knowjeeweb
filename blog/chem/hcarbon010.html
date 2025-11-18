@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friedel-Crafts Reactions: Alkylation & Acylation | JEE Chemistry | KnowJEE</title>
+    <meta name="description" content="Master Friedel-Crafts Alkylation and Acylation reactions with detailed mechanisms, key limitations, carbocation rearrangements, and JEE-level practice problems.">
+    <meta name="keywords" content="friedel crafts reaction, alkylation acylation, carbocation rearrangement, polyalkylation, deactivating groups, JEE chemistry, organic chemistry">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/blog/chemistry/organic/friedel-crafts.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Friedel-Crafts Reactions: Alkylation & Acylation | JEE Chemistry">
+    <meta property="og:description" content="Complete guide to Friedel-Crafts reactions with mechanisms, limitations, and JEE practice problems">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/blog/chemistry/organic/friedel-crafts.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Friedel-Crafts Reactions: The Power and The Limitations">
+    <meta name="twitter:description" content="Master alkylation and acylation mechanisms for JEE Main & Advanced">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Friedel-Crafts Reactions: Alkylation & Acylation - JEE Chemistry",
+        "description": "Complete guide to Friedel-Crafts reactions with mechanisms, limitations, and JEE practice problems",
+        "author": {
+            "@type": "Person",
+            "name": "Braj Bhushan Kumar"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2024-12-19",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://knowjee.com/blog/chemistry/organic/friedel-crafts.html"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .reaction-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .mechanism-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .limitation-box {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .example-box {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #10b981; }
+        .difficulty-medium { border-left: 4px solid #f59e0b; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .reaction-tag {
+            background: #8b5cf6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-highlight {
+            background: #fef3c7;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #f59e0b;
+        }
+        .chemical-structure {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Chemistry Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Chemistry Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">2 Key Reactions</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Friedel-Crafts Reactions: The Power and The Limitations</h1>
+                <p class="text-xl text-gray-600 mb-4">Master alkylation and acylation mechanisms with carbocation rearrangements, polyalkylation issues, and deactivating group limitations.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">2</div>
+                            <div class="text-sm text-green-600">Key Reactions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">100%</div>
+                            <div class="text-sm text-green-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">3</div>
+                            <div class="text-sm text-green-600">Major Limitations</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">20min</div>
+                            <div class="text-sm text-green-600">Practice Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Friedel-Crafts Reactions Matter in JEE</h2>
+                <p class="mb-4">Friedel-Crafts reactions are fundamental electrophilic aromatic substitution reactions that appear frequently in JEE examinations. Understanding their mechanisms and limitations is crucial for:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-green-50 p-4 rounded-lg">
+                    <li><strong>Mechanism-based questions</strong> (JEE Main & Advanced)</li>
+                    <li><strong>Predicting reaction products</strong> with rearrangements</li>
+                    <li><strong>Understanding limitations</strong> for synthetic planning</li>
+                    <li><strong>Differentiating between</strong> alkylation and acylation</li>
+                </ul>
+            </section>
+
+            <!-- Reaction 1: Alkylation -->
+            <section class="mb-8">
+                <div class="reaction-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="reaction-tag">Reaction 1</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Fundamental</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Friedel-Crafts Alkylation</h3>
+                    <div class="chemical-structure bg-white bg-opacity-20 p-4 rounded-lg">
+                        <p class="font-semibold">Ar-H + R-X + AlCl₃ → Ar-R + HX</p>
+                        <p class="text-sm opacity-90 mt-2">(Where R-X is alkyl halide, Ar-H is aromatic compound)</p>
+                    </div>
+                    
+                    <div class="mechanism-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">⚗️ Mechanism Steps:</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="step-highlight">
+                                <p><strong>Step 1: Generation of Electrophile</strong></p>
+                                <p>R-X + AlCl₃ → R⁺ + [AlCl₄]⁻</p>
+                                <p class="text-xs text-gray-600">Lewis acid AlCl₃ polarizes R-X bond, creating carbocation</p>
+                            </div>
+                            <div class="step-highlight">
+                                <p><strong>Step 2: Electrophilic Attack</strong></p>
+                                <p>Ar-H + R⁺ → Ar-R-H⁺ (arenium ion intermediate)</p>
+                            </div>
+                            <div class="step-highlight">
+                                <p><strong>Step 3: Deprotonation</strong></p>
+                                <p>Ar-R-H⁺ + [AlCl₄]⁻ → Ar-R + AlCl₃ + HCl</p>
+                                <p class="text-xs text-gray-600">Base removes proton to restore aromaticity</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 JEE Application Example:</h4>
+                        <p class="mb-2"><strong>Problem:</strong> Predict the product when benzene reacts with CH₃-CH₂-Cl in presence of AlCl₃</p>
+                        <div class="step-highlight">
+                            <p><strong>Solution:</strong></p>
+                            <p>Benzene + CH₃CH₂Cl + AlCl₃ → Ethylbenzene</p>
+                            <div class="chemical-structure text-sm bg-yellow-50 p-2 rounded mt-2">
+                                C₆H₆ + CH₃CH₂Cl → C₆H₅-CH₂CH₃
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reaction 2: Acylation -->
+            <section class="mb-8">
+                <div class="reaction-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="reaction-tag">Reaction 2</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Important</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Friedel-Crafts Acylation</h3>
+                    <div class="chemical-structure bg-white bg-opacity-20 p-4 rounded-lg">
+                        <p class="font-semibold">Ar-H + R-CO-X + AlCl₃ → Ar-CO-R + HX</p>
+                        <p class="text-sm opacity-90 mt-2">(Where R-CO-X is acid chloride, forms ketone product)</p>
+                    </div>
+                    
+                    <div class="mechanism-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">⚗️ Mechanism Steps:</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="step-highlight">
+                                <p><strong>Step 1: Acylium Ion Formation</strong></p>
+                                <p>R-CO-Cl + AlCl₃ → R-C≡O⁺ + [AlCl₄]⁻</p>
+                                <p class="text-xs text-gray-600">Forms stable acylium ion resonance structure</p>
+                            </div>
+                            <div class="step-highlight">
+                                <p><strong>Step 2: Electrophilic Substitution</strong></p>
+                                <p>Ar-H + R-C≡O⁺ → Ar-CO-R-H⁺ (arenium ion)</p>
+                            </div>
+                            <div class="step-highlight">
+                                <p><strong>Step 3: Regeneration of Catalyst</strong></p>
+                                <p>Ar-CO-R-H⁺ + [AlCl₄]⁻ → Ar-CO-R + AlCl₃ + HCl</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎯 JEE Application Example:</h4>
+                        <p class="mb-2"><strong>Problem:</strong> What product forms when benzene reacts with CH₃COCl in presence of AlCl₃?</p>
+                        <div class="step-highlight">
+                            <p><strong>Solution:</strong></p>
+                            <p>Benzene + CH₃COCl + AlCl₃ → Acetophenone</p>
+                            <div class="chemical-structure text-sm bg-yellow-50 p-2 rounded mt-2">
+                                C₆H₆ + CH₃COCl → C₆H₅-CO-CH₃
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Limitations -->
+            <section class="mb-8">
+                <div class="reaction-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="reaction-tag">Key Limitations</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Critical</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Major Limitations of Friedel-Crafts Reactions</h3>
+                    
+                    <!-- Limitation 1 -->
+                    <div class="limitation-box">
+                        <h4 class="font-semibold text-red-800 mb-2">🚫 1. Carbocation Rearrangement</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Problem:</strong> Primary carbocations can rearrange to more stable secondary/tertiary carbocations</p>
+                            <p><strong>Example:</strong> 1-Chloropropane with benzene gives isopropyl benzene instead of n-propyl benzene</p>
+                            <div class="step-highlight">
+                                <p>CH₃-CH₂-CH₂⁺ → CH₃-CH⁺-CH₃ (more stable 2° carbocation)</p>
+                                <p class="text-xs">Results in unexpected product formation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Limitation 2 -->
+                    <div class="limitation-box">
+                        <h4 class="font-semibold text-red-800 mb-2">🚫 2. Polyalkylation</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Problem:</strong> Alkylated products are more reactive than starting material</p>
+                            <p><strong>Result:</strong> Multiple substitutions occur, giving mixture of mono-, di-, and tri-substituted products</p>
+                            <div class="step-highlight">
+                                <p>Benzene → Toluene → Xylene → Mesitylene</p>
+                                <p class="text-xs">Electron-donating alkyl groups activate ring for further substitution</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Limitation 3 -->
+                    <div class="limitation-box">
+                        <h4 class="font-semibold text-red-800 mb-2">🚫 3. Deactivating Groups Prevent Reaction</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Problem:</strong> Strong electron-withdrawing groups deactivate benzene ring</p>
+                            <p><strong>Groups that prevent reaction:</strong> -NO₂, -CN, -SO₃H, -COOH, -CHO, -COR</p>
+                            <div class="step-highlight">
+                                <p>Nitrobenzene does not undergo Friedel-Crafts reaction</p>
+                                <p class="text-xs">-NO₂ group strongly deactivates ring towards electrophilic substitution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-indigo-900 mb-4">🚀 Problem-Solving Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">For Alkylation vs Acylation:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Acylation doesn't have rearrangement issues</li>
+                                <li>Acylation gives only mono-substituted product</li>
+                                <li>Alkylation can use alcohols and alkenes too</li>
+                                <li>Remember the catalyst (AlCl₃) is required</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">JEE Exam Tips:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always check for possible rearrangements</li>
+                                <li>Identify deactivating groups first</li>
+                                <li>Predict polyalkylation products when relevant</li>
+                                <li>Practice mechanism writing for both reactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Applications -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Applications Available</h3>
+                    <p class="text-gray-600 mb-4">Includes Clemmensen reduction, Gattermann-Koch reaction, and JEE Advanced level problems</p>
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        Access Advanced Content
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Predict the major product when benzene reacts with CH₃-CH₂-CH₂-Cl + AlCl₃</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Why does nitrobenzene not undergo Friedel-Crafts reaction?</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Compare and contrast Friedel-Crafts alkylation and acylation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Organic Chemistry?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to advanced organic reactions and JEE practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-chemistry-cards.html" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Chemistry Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Reaction Mechanisms
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-green-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Chemistry Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#organic" class="hover:text-green-300">Organic Chemistry</a></li>
+                        <li><a href="#inorganic" class="hover:text-green-300">Inorganic Chemistry</a></li>
+                        <li><a href="#physical" class="hover:text-green-300">Physical Chemistry</a></li>
+                        <li><a href="#coordination" class="hover:text-green-300">Coordination Chemistry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-green-300">JEE Physics</a></li>
+                        <li><a href="math.html" class="hover:text-green-300">JEE Mathematics</a></li>
+                        <li><a href="quiz.html" class="hover:text-green-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-green-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-green-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-green-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-green-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-green-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Chemistry Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

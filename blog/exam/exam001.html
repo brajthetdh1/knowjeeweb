@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Section Strategy: Physics, Chemistry, or Maths First? | KnowJEE</title>
+    <meta name="description" content="Master JEE exam strategy: Learn the optimal order to attempt Physics, Chemistry, and Mathematics based on your strengths. Maximize your score with smart section sequencing.">
+    <meta name="keywords" content="JEE strategy, JEE section order, JEE exam pattern, JEE time management, JEE physics chemistry maths order, JEE preparation">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .strategy-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .strategy-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .analysis-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .comparison-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .quiz-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .profile-box {
+            background: #f3e8ff;
+            border: 2px solid #c084fc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #e2e8f0;
+            font-weight: 600;
+        }
+        .strategy-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+        }
+        .physics-card { border-left-color: #ef4444; }
+        .chemistry-card { border-left-color: #10b981; }
+        .maths-card { border-left-color: #3b82f6; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to JEE Strategy Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Exam Strategy</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 10 min</span>
+                    <span class="text-gray-500 text-sm ml-3">3 Custom Strategies</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Best Order to Attempt Sections: Physics, Chemistry, or Maths First?</h1>
+                <p class="text-xl text-gray-600 mb-4">Solve the biggest exam-hall dilemma. Discover personalized strategies to maximize your JEE score based on your unique strengths.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">15-25%</div>
+                            <div class="text-sm text-purple-600">Score Improvement</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Custom Plans</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">90min</div>
+                            <div class="text-sm text-purple-600">Exam Duration</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Personalized</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Section Order Matters in JEE</h2>
+                <p class="mb-4">The order in which you attempt Physics, Chemistry, and Mathematics can impact your final score by <strong>15-25%</strong>. This isn't about working harder, but working smarter by leveraging your psychological and academic strengths.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 The Mental Game</h4>
+                    <p>Starting with your strongest subject builds <strong>confidence and momentum</strong>, while saving the toughest for later prevents <strong>early frustration and time wastage</strong>. The right order can be the difference between a good score and a great one.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Find Your Strategy</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#strength-analysis" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Strength Analysis</a>
+                    <a href="#strategy-plans" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Strategy Plans</a>
+                    <a href="#time-management" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Time Management</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Quick Quiz</a>
+                </div>
+            </div>
+
+            <!-- Strength Analysis Section -->
+            <section id="strength-analysis" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Analyze Your Strength Profile</h2>
+                </div>
+
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Identify Your Subject Personality</h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="strategy-card physics-card">
+                            <h4 class="font-semibold text-red-700 mb-2">Physics Profile</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Strong in conceptual understanding</li>
+                                <li>Good at problem visualization</li>
+                                <li>Comfortable with lengthy calculations</li>
+                                <li>Time-consuming but high-scoring</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-card chemistry-card">
+                            <h4 class="font-semibold text-green-700 mb-2">Chemistry Profile</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Strong memory and recall</li>
+                                <li>Good at factual knowledge</li>
+                                <li>Quick problem solving</li>
+                                <li>Less time-consuming</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-card maths-card">
+                            <h4 class="font-semibold text-blue-700 mb-2">Mathematics Profile</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Strong analytical skills</li>
+                                <li>Good at pattern recognition</li>
+                                <li>Comfortable with abstractions</li>
+                                <li>Variable time requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Subject Characteristics Analysis</h3>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Average Time/Question</th>
+                                <th>Score Potential</th>
+                                <th>Mental Load</th>
+                                <th>Best For Starting When...</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Physics</strong></td>
+                                <td>3-4 minutes</td>
+                                <td>High (if conceptual clarity)</td>
+                                <td>High</td>
+                                <td>You're fresh and focused</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chemistry</strong></td>
+                                <td>1-2 minutes</td>
+                                <td>Consistent</td>
+                                <td>Medium</td>
+                                <td>You need quick confidence boost</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mathematics</strong></td>
+                                <td>2-5 minutes</td>
+                                <td>Variable</td>
+                                <td>Very High</td>
+                                <td>You have time and mental energy</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Strategy Plans Section -->
+            <section id="strategy-plans" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Choose Your Battle Plan</h2>
+                </div>
+
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Strategy A: The Confidence Builder</h3>
+                    
+                    <div class="profile-box">
+                        <h4 class="font-semibold text-purple-700 mb-2">👑 For Students Strong in Chemistry</h4>
+                        <p><strong>Recommended Order: Chemistry → Physics → Mathematics</strong></p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Why This Works:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li><strong>Quick start:</strong> Chemistry questions are faster to solve, giving you early momentum</li>
+                            <li><strong>Confidence boost:</strong> Securing 25-30 questions quickly builds psychological advantage</li>
+                            <li><strong>Energy management:</strong> Tackle Physics when still fresh, save Maths for last</li>
+                            <li><strong>Time optimization:</strong> Chemistry's predictability helps with time allocation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="analysis-box">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Ideal For:</h4>
+                        <p>Students who are strong in Organic Chemistry and can quickly recall Inorganic facts. Perfect if you tend to get nervous at the start.</p>
+                    </div>
+                </div>
+
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Strategy B: The Momentum Creator</h3>
+                    
+                    <div class="profile-box">
+                        <h4 class="font-semibold text-purple-700 mb-2">⚡ For Students Strong in Mathematics</h4>
+                        <p><strong>Recommended Order: Mathematics → Chemistry → Physics</strong></p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Why This Works:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li><strong>Peak performance:</strong> Attack toughest subject when mental energy is highest</li>
+                            <li><strong>Time buffer:</strong> Complete time-consuming Maths early, creating time cushion</li>
+                            <li><strong>Stress reduction:</strong> Getting Maths out of the way reduces overall pressure</li>
+                            <li><strong>Progressive ease:</strong> Move from complex (Maths) to moderate (Chemistry) to manageable (Physics)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="analysis-box">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Ideal For:</h4>
+                        <p>Students with strong analytical skills who don't get stuck easily. Best for those who want to tackle the biggest challenge first.</p>
+                    </div>
+                </div>
+
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Strategy C: The Steady Performer</h3>
+                    
+                    <div class="profile-box">
+                        <h4 class="font-semibold text-purple-700 mb-2">🎯 For Balanced Students</h4>
+                        <p><strong>Recommended Order: Physics → Chemistry → Mathematics</strong></p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Why This Works:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li><strong>Conceptual start:</strong> Physics requires fresh mind for complex concepts</li>
+                            <li><strong>Natural progression:</strong> Move from calculation-heavy to memory-based to analytical</li>
+                            <li><strong>Risk management:</strong> Don't put all difficult subjects together</li>
+                            <li><strong>Energy conservation:</strong> Moderate start prevents early burnout</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="analysis-box">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Ideal For:</h4>
+                        <p>Students with consistent performance across subjects. Perfect for those who want a balanced approach without extreme peaks and valleys.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Management Section -->
+            <section id="time-management" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Master Time Allocation</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Time Distribution</h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-600 mb-2">25-30 min</div>
+                            <div class="text-sm font-semibold">Physics</div>
+                            <div class="text-xs text-gray-600">8-10 questions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600 mb-2">20-25 min</div>
+                            <div class="text-sm font-semibold">Chemistry</div>
+                            <div class="text-xs text-gray-600">10-12 questions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600 mb-2">25-30 min</div>
+                            <div class="text-sm font-semibold">Mathematics</div>
+                            <div class="text-xs text-gray-600">8-10 questions</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <p class="text-sm"><strong>Buffer Time:</strong> Always keep 5-10 minutes for review and attempting skipped questions. Never allocate all 90 minutes initially.</p>
+                    </div>
+                </div>
+
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The 2-Pass System</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-green-700 mb-2">First Pass (60-65 minutes)</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Attempt all <strong>sure-shot</strong> questions</li>
+                                <li>Skip moderately difficult ones</li>
+                                <li>Mark questions you're unsure about</li>
+                                <li>Maintain steady pace - don't get stuck</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-700 mb-2">Second Pass (20-25 minutes)</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Return to marked questions</li>
+                                <li>Attempt moderate difficulty ones</li>
+                                <li>Make educated guesses if needed</li>
+                                <li>Review all answers in last 5 minutes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">⏰ Golden Time Rules</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>2-minute rule:</strong> If stuck for 2 minutes, mark and move on</li>
+                        <li><strong>Section timer:</strong> Set mental deadlines for each section</li>
+                        <li><strong>Buffer principle:</strong> Always finish section 5 minutes early</li>
+                        <li><strong>Review mandatory:</strong> Never submit without final review</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Practice Quiz Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Find Your Perfect Strategy</h2>
+                </div>
+
+                <div class="quiz-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Quick Self-Assessment</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-3">1. Which subject gives you the most confidence during mock tests?</p>
+                            <div class="grid grid-cols-3 gap-2 text-sm">
+                                <button class="p-2 border rounded hover:bg-gray-50">Physics</button>
+                                <button class="p-2 border rounded hover:bg-gray-50">Chemistry</button>
+                                <button class="p-2 border rounded hover:bg-gray-50">Mathematics</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-3">2. Where do you typically lose the most time?</p>
+                            <div class="grid grid-cols-3 gap-2 text-sm">
+                                <button class="p-2 border rounded hover:bg-gray-50">Lengthy Physics problems</button>
+                                <button class="p-2 border rounded hover:bg-gray-50">Chemistry reaction mechanisms</button>
+                                <button class="p-2 border rounded hover:bg-gray-50">Complex Maths calculations</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-3">3. How do you usually feel in the first 15 minutes of an exam?</p>
+                            <div class="grid grid-cols-3 gap-2 text-sm">
+                                <button class="p-2 border rounded hover:bg-gray-50">Nervous, need warm-up</button>
+                                <button class="p-2 border rounded hover:bg-gray-50">Confident and ready</button>
+                                <button class="p-2 border rounded hover:bg-gray-50">Mixed, depends on questions</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-blue-50 rounded border border-blue-200">
+                        <h4 class="font-semibold text-blue-800 mb-2">Your Recommended Strategy</h4>
+                        <p class="text-sm" id="strategyResult">Complete the assessment above to see your personalized strategy...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pro Tips Section -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 Final Pro Tips</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">During Preparation</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Practice your chosen order</strong> in every mock test</li>
+                                <li><strong>Time each section</strong> to understand your pace</li>
+                                <li><strong>Identify your 2-minute questions</strong> in each subject</li>
+                                <li><strong>Create a mental trigger</strong> for section switching</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Exam Day Execution</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Stick to your practiced order</strong> - no last-minute changes</li>
+                                <li><strong>Use the first minute</strong> to scan all sections quickly</li>
+                                <li><strong>Trust your preparation</strong> and avoid overthinking</li>
+                                <li><strong>Maintain positive self-talk</strong> throughout the exam</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Avoid These Common Mistakes</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Changing strategy mid-exam</span>
+                                <p class="text-sm text-gray-600">Stick to your practiced order unless there's a major paper pattern change</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Falling in love with questions</span>
+                                <p class="text-sm text-gray-600">Don't spend disproportionate time on one question - maintain overall balance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Panic switching sections</span>
+                                <p class="text-sm text-gray-600">Complete your planned section before moving, unless absolutely stuck</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Ignoring time alerts</span>
+                                <p class="text-sm text-gray-600">Set mental checkpoints and respect them strictly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Action -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Optimize Your JEE Strategy?</h3>
+                    <p class="mb-4 opacity-90">Practice your chosen strategy in our simulated mock tests with detailed analytics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Strategy Guides
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Take Mock Test
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Preparation</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#physics" class="hover:text-yellow-300">Physics</a></li>
+                        <li><a href="#chemistry" class="hover:text-yellow-300">Chemistry</a></li>
+                        <li><a href="#mathematics" class="hover:text-yellow-300">Mathematics</a></li>
+                        <li><a href="#strategy" class="hover:text-yellow-300">Exam Strategy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chemistry.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="maths.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Complete Preparation Strategy. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple quiz functionality
+        document.querySelectorAll('.quiz-box button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove existing selections in the same question
+                const parent = this.closest('.bg-white');
+                parent.querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('bg-blue-100', 'border-blue-300');
+                });
+                
+                // Add selection to clicked button
+                this.classList.add('bg-blue-100', 'border-blue-300');
+                
+                // Update strategy recommendation
+                updateStrategyRecommendation();
+            });
+        });
+
+        function updateStrategyRecommendation() {
+            const selectedButtons = document.querySelectorAll('.quiz-box .bg-blue-100');
+            if (selectedButtons.length === 3) {
+                const answers = Array.from(selectedButtons).map(btn => btn.textContent);
+                
+                let strategy = '';
+                if (answers[0] === 'Chemistry' || answers[1] === 'Chemistry reaction mechanisms') {
+                    strategy = 'Strategy A: The Confidence Builder (Chemistry → Physics → Mathematics)';
+                } else if (answers[0] === 'Mathematics' || answers[2] === 'Confident and ready') {
+                    strategy = 'Strategy B: The Momentum Creator (Mathematics → Chemistry → Physics)';
+                } else {
+                    strategy = 'Strategy C: The Steady Performer (Physics → Chemistry → Mathematics)';
+                }
+                
+                document.getElementById('strategyResult').textContent = strategy;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Problems: Deviation & Refractive Index | JEE Physics Optics | KnowJEE</title>
+    <meta name="description" content="Master prism problems in JEE Physics. Step-by-step guide to solving deviation and refractive index problems using prism formula μ = sin((A+δₘ)/2) / sin(A/2)">
+    <meta name="keywords" content="prism problems JEE, prism formula, minimum deviation, refractive index, JEE physics optics, prism deviation problems">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .diagram-box {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Physics Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Solved Examples</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Solving the Prism: A Step-by-Step Guide to Deviation and Refractive Index Problems</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the prism formula and minimum deviation concept to solve any JEE optics problem with confidence.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3</div>
+                            <div class="text-sm text-blue-600">Questions per JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4-8</div>
+                            <div class="text-sm text-blue-600">Marks Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">95%</div>
+                            <div class="text-sm text-blue-600">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Prism Problems are Scoring Opportunities</h2>
+                <p class="mb-4">Prism problems in JEE Physics follow <strong>predictable patterns</strong> and use <strong>standard formulas</strong>. Once you understand the core concepts, you can solve them quickly and accurately, making them high-value questions.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Analysis</h4>
+                    <p>Prism problems appear in <strong>2-3 questions per JEE paper</strong> with <strong>4-8 marks weightage</strong>. They're often considered "sure-shot" marks by prepared students.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-concepts" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Concepts</a>
+                    <a href="#prism-formula" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Prism Formula</a>
+                    <a href="#minimum-deviation" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Min Deviation</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice</a>
+                </div>
+            </div>
+
+            <!-- Basic Concepts Section -->
+            <section id="basic-concepts" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Basic Prism Concepts and Terminology</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Essential Prism Terminology</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Key Parameters</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>A</strong> - Angle of Prism</li>
+                                <li><strong>δ</strong> - Angle of Deviation</li>
+                                <li><strong>δₘ</strong> - Minimum Angle of Deviation</li>
+                                <li><strong>μ</strong> - Refractive Index</li>
+                                <li><strong>i</strong> - Angle of Incidence</li>
+                                <li><strong>e</strong> - Angle of Emergence</li>
+                                <li><strong>r₁, r₂</strong> - Angles of Refraction</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Fundamental Relations</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>$A = r_1 + r_2$</li>
+                                <li>$δ = i + e - A$</li>
+                                <li>At minimum deviation: $i = e$ and $r_1 = r_2$</li>
+                                <li>$r_1 = r_2 = \frac{A}{2}$ at δₘ</li>
+                                <li>$i = e = \frac{A + δ_m}{2}$ at δₘ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diagram-box">
+                    <h4 class="font-semibold text-gray-700 mb-3">Prism Geometry</h4>
+                    <div class="bg-white p-4 rounded-lg border inline-block">
+                        <div class="text-center text-sm text-gray-600 mb-2">
+                            [Prism Diagram: Showing A, δ, i, e, r₁, r₂]
+                        </div>
+                        <div class="w-64 h-48 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="font-semibold">A = r₁ + r₂</div>
+                                <div class="text-xs mt-2">δ = i + e - A</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">Remember: The angle of prism (A) equals the sum of the two refraction angles inside the prism.</p>
+                </div>
+            </section>
+
+            <!-- Prism Formula Section -->
+            <section id="prism-formula" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Prism Formula and Its Applications</h2>
+                </div>
+
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Master Formula</h3>
+                    
+                    <div class="text-center my-4 p-4 bg-white rounded-lg border">
+                        <div class="text-2xl font-bold text-blue-700">
+                            $$μ = \frac{\sin\left(\frac{A + δ_m}{2}\right)}{\sin\left(\frac{A}{2}\right)}$$
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">This formula applies specifically at minimum deviation condition</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Derivation Insight</h4>
+                        <p>At minimum deviation:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$i = e = \frac{A + δ_m}{2}$</li>
+                            <li>$r_1 = r_2 = \frac{A}{2}$</li>
+                            <li>Using Snell's Law at first surface: $μ = \frac{\sin i}{\sin r_1}$</li>
+                            <li>Substitute: $μ = \frac{\sin\left(\frac{A + δ_m}{2}\right)}{\sin\left(\frac{A}{2}\right)}$</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example 1: Basic Refractive Index Calculation</h4>
+                    <p><strong>Problem:</strong> A prism with angle 60° produces minimum deviation of 40°. Find refractive index.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution</h4>
+                        <p><strong>Step 1:</strong> Identify given values</p>
+                        <p>$A = 60°$, $δ_m = 40°$</p>
+                        
+                        <p><strong>Step 2:</strong> Apply prism formula</p>
+                        <p>$μ = \frac{\sin\left(\frac{60° + 40°}{2}\right)}{\sin\left(\frac{60°}{2}\right)} = \frac{\sin(50°)}{\sin(30°)}$</p>
+                        
+                        <p><strong>Step 3:</strong> Calculate</p>
+                        <p>$μ = \frac{0.7660}{0.5} = 1.532$</p>
+                        
+                        <p class="mt-2 font-semibold">Answer: μ = 1.532</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Minimum Deviation Section -->
+            <section id="minimum-deviation" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Understanding Minimum Deviation</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What is Minimum Deviation?</h3>
+                    <p class="mb-4">Minimum deviation (δₘ) occurs when the light ray passes <strong>symmetrically</strong> through the prism. This is a special condition where:</p>
+                    
+                    <ul class="list-disc list-inside space-y-2 bg-blue-50 p-4 rounded-lg">
+                        <li>Angle of incidence = Angle of emergence ($i = e$)</li>
+                        <li>First refraction angle = Second refraction angle ($r_1 = r_2$)</li>
+                        <li>The light ray inside the prism is parallel to the base</li>
+                        <li>Deviation is minimum for that prism-material combination</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example 2: Finding Minimum Deviation</h4>
+                    <p><strong>Problem:</strong> A prism of refractive index 1.5 and angle 60° is used. Find the minimum deviation.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution</h4>
+                        <p><strong>Step 1:</strong> Write the prism formula</p>
+                        <p>$μ = \frac{\sin\left(\frac{A + δ_m}{2}\right)}{\sin\left(\frac{A}{2}\right)}$</p>
+                        
+                        <p><strong>Step 2:</strong> Substitute known values</p>
+                        <p>$1.5 = \frac{\sin\left(\frac{60° + δ_m}{2}\right)}{\sin(30°)}$</p>
+                        
+                        <p><strong>Step 3:</strong> Solve for δₘ</p>
+                        <p>$\sin\left(\frac{60° + δ_m}{2}\right) = 1.5 × \sin(30°) = 1.5 × 0.5 = 0.75$</p>
+                        <p>$\frac{60° + δ_m}{2} = \sin^{-1}(0.75) ≈ 48.59°$</p>
+                        <p>$60° + δ_m = 97.18°$</p>
+                        <p>$δ_m = 37.18°$</p>
+                        
+                        <p class="mt-2 font-semibold">Answer: δₘ ≈ 37.2°</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Important Characteristics at Minimum Deviation</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Symmetric path:</strong> i = e and r₁ = r₂ = A/2</li>
+                        <li><strong>Unique value:</strong> For given A and μ, δₘ is fixed</li>
+                        <li><strong>Experimental use:</strong> Used to determine refractive index accurately</li>
+                        <li><strong>Dispersion:</strong> Different colors have different δₘ values</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Advanced Applications -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Advanced Problem Solving Techniques</h2>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example 3: Finding Prism Angle</h4>
+                    <p><strong>Problem:</strong> A prism produces minimum deviation of 50° for a light ray. If refractive index is 1.6, find the prism angle.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution</h4>
+                        <p><strong>Step 1:</strong> Use prism formula</p>
+                        <p>$μ = \frac{\sin\left(\frac{A + δ_m}{2}\right)}{\sin\left(\frac{A}{2}\right)}$</p>
+                        
+                        <p><strong>Step 2:</strong> Substitute values</p>
+                        <p>$1.6 = \frac{\sin\left(\frac{A + 50°}{2}\right)}{\sin\left(\frac{A}{2}\right)}$</p>
+                        
+                        <p><strong>Step 3:</strong> Let $x = \frac{A}{2}$, then:</p>
+                        <p>$1.6 = \frac{\sin(x + 25°)}{\sin x}$</p>
+                        <p>$1.6 \sin x = \sin(x + 25°) = \sin x \cos 25° + \cos x \sin 25°$</p>
+                        
+                        <p><strong>Step 4:</strong> Rearrange and solve</p>
+                        <p>$1.6 \sin x - \sin x \cos 25° = \cos x \sin 25°$</p>
+                        <p>$\sin x (1.6 - \cos 25°) = \cos x \sin 25°$</p>
+                        <p>$\tan x = \frac{\sin 25°}{1.6 - \cos 25°}$</p>
+                        <p>$\tan x = \frac{0.4226}{1.6 - 0.9063} = \frac{0.4226}{0.6937} ≈ 0.609$</p>
+                        <p>$x ≈ 31.3°$</p>
+                        <p>$A = 2x ≈ 62.6°$</p>
+                        
+                        <p class="mt-2 font-semibold">Answer: A ≈ 62.6°</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example 4: Grazing Incidence and Emergence</h4>
+                    <p><strong>Problem:</strong> For a prism with A = 60° and μ = 1.5, find the maximum possible deviation.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Solution</h4>
+                        <p><strong>Step 1:</strong> Maximum deviation occurs at grazing incidence or emergence</p>
+                        
+                        <p><strong>Step 2:</strong> For grazing incidence, i = 90°</p>
+                        <p>Using Snell's Law at first surface: $\sin i = μ \sin r_1$</p>
+                        <p>$\sin 90° = 1.5 \sin r_1$ ⇒ $\sin r_1 = \frac{1}{1.5} = 0.6667$</p>
+                        <p>$r_1 = \sin^{-1}(0.6667) ≈ 41.81°$</p>
+                        
+                        <p><strong>Step 3:</strong> Find r₂ using A = r₁ + r₂</p>
+                        <p>$r_2 = A - r_1 = 60° - 41.81° = 18.19°$</p>
+                        
+                        <p><strong>Step 4:</strong> Find angle of emergence e</p>
+                        <p>$\sin e = μ \sin r_2 = 1.5 × \sin 18.19° = 1.5 × 0.3123 = 0.4685$</p>
+                        <p>$e = \sin^{-1}(0.4685) ≈ 27.93°$</p>
+                        
+                        <p><strong>Step 5:</strong> Calculate deviation δ = i + e - A</p>
+                        <p>$δ = 90° + 27.93° - 60° = 57.93°$</p>
+                        
+                        <p class="mt-2 font-semibold">Answer: Maximum δ ≈ 57.9°</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Prism Problem Solving Framework</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Approach</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-sm">
+                                <li><strong>Identify given parameters</strong> (A, μ, δ, i, e, r₁, r₂)</li>
+                                <li><strong>Check if at minimum deviation</strong> (if δₘ given or implied)</li>
+                                <li><strong>Apply relevant formulas</strong> based on available data</li>
+                                <li><strong>Use Snell's Law</strong> at refraction surfaces</li>
+                                <li><strong>Apply geometry relations</strong> (A = r₁ + r₂, δ = i + e - A)</li>
+                                <li><strong>Solve systematically</strong> for unknown variables</li>
+                            </ol>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Formulas to Remember</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Prism formula:</strong> $μ = \frac{\sin\left(\frac{A + δ_m}{2}\right)}{\sin\left(\frac{A}{2}\right)}$</li>
+                                <li><strong>Geometry:</strong> $A = r_1 + r_2$</li>
+                                <li><strong>Deviation:</strong> $δ = i + e - A$</li>
+                                <li><strong>At δₘ:</strong> $i = e = \frac{A + δ_m}{2}$, $r_1 = r_2 = \frac{A}{2}$</li>
+                                <li><strong>Snell's Law:</strong> $μ = \frac{\sin i}{\sin r}$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: A prism with A = 70° has μ = 1.6. Calculate the minimum deviation.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use the prism formula directly</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: For a prism, A = 60° and δₘ = 45°. Light is incident at 55°. Find the deviation.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: First find μ, then apply general deviation formula</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: A prism deviates a ray by 40° at minimum deviation. If A = 60°, find i and e.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: At minimum deviation, i = e = (A + δₘ)/2</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Calculate the refractive index of a prism for which A = 60° and i = e = 50°.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: i = e indicates minimum deviation condition</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Problem Solving Tips</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Always check if the problem involves minimum deviation</li>
+                            <li>Remember the symmetric conditions at δₘ</li>
+                            <li>Use the prism formula only at minimum deviation</li>
+                            <li>For general cases, use Snell's Law at both surfaces</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Using prism formula for non-minimum deviation</span>
+                                <p class="text-sm text-gray-600">The formula μ = sin((A+δₘ)/2)/sin(A/2) works ONLY at minimum deviation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Forgetting A = r₁ + r₂ relation</span>
+                                <p class="text-sm text-gray-600">This geometric relation is fundamental to all prism problems</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Mixing degrees and radians</span>
+                                <p class="text-sm text-gray-600">JEE prism problems typically use degrees for angles</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Assuming i = e when not at minimum deviation</span>
+                                <p class="text-sm text-gray-600">This symmetry occurs only at minimum deviation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Quick Identification</span>
+                                <p class="text-sm text-gray-600">Recognize minimum deviation problems quickly - they're the fastest to solve</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔢</span>
+                            <div>
+                                <span class="font-semibold">Numerical Accuracy</span>
+                                <p class="text-sm text-gray-600">Keep trigonometric values handy: sin 30°=0.5, sin 45°=0.707, sin 60°=0.866</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Step-wise Solution</span>
+                                <p class="text-sm text-gray-600">Show key steps clearly for partial credit in case of calculation errors</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⏱️</span>
+                            <div>
+                                <span class="font-semibold">Time Management</span>
+                                <p class="text-sm text-gray-600">Prism problems should take 3-5 minutes maximum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Prism Problems?</h3>
+                    <p class="mb-4 opacity-90">Continue your optics journey with lens systems, wave optics, and more advanced topics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Prism Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

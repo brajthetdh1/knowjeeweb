@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diels-Alder Reaction: Master Ring Formation | JEE Organic Chemistry | KnowJEE</title>
+    <meta name="description" content="Master the Diels-Alder reaction for JEE Organic Chemistry. Learn to identify diene and dienophile, predict products with correct regiochemistry and stereochemistry.">
+    <meta name="keywords" content="Diels-Alder reaction, JEE organic chemistry, ring formation, diene dienophile, pericyclic reactions, JEE advanced chemistry">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .mechanism-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .stereo-box {
+            background: #fae8ff;
+            border: 1px solid #e879f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .chemical-structure {
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Organic Chemistry Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">Pericyclic Reactions</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Detailed Examples</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Diels-Alder Reaction: The One-Step Wonder for Ring Formation</h1>
+                <p class="text-xl text-gray-600 mb-4">Master this powerful pericyclic reaction that creates six-membered rings in a single, stereospecific step.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">1-2</div>
+                            <div class="text-sm text-green-600">Questions per JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">4-6</div>
+                            <div class="text-sm text-green-600">Marks Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">100%</div>
+                            <div class="text-sm text-green-600">Stereospecific</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">3min</div>
+                            <div class="text-sm text-green-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Diels-Alder is a JEE Favorite</h2>
+                <p class="mb-4">The Diels-Alder reaction is a <strong>concerted pericyclic reaction</strong> between a conjugated diene and a dienophile to form a six-membered ring. It's beloved by JEE examiners because it tests multiple concepts in one question:</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Examination Pattern</h4>
+                    <p>Diels-Alder appears in <strong>1-2 questions per JEE paper</strong>, testing your understanding of:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Molecular orbital symmetry</li>
+                        <li>Stereochemistry concepts</li>
+                        <li>Regiochemical control</li>
+                        <li>Reaction mechanism analysis</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basics" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Concepts</a>
+                    <a href="#diene-dienophile" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Diene & Dienophile</a>
+                    <a href="#regiochemistry" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Regiochemistry</a>
+                    <a href="#stereochemistry" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Stereochemistry</a>
+                </div>
+            </div>
+
+            <!-- Basic Concepts Section -->
+            <section id="basics" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Basic Diels-Alder Reaction</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Fundamental Reaction</h3>
+                    
+                    <div class="chemical-structure bg-white p-4 rounded-lg border">
+                        <div class="text-lg font-semibold mb-2">General Diels-Alder Reaction:</div>
+                        <div class="text-center text-xl">
+                            Diene + Dienophile → Cyclohexene
+                        </div>
+                        <div class="mt-3 grid grid-cols-3 gap-4 items-center">
+                            <div class="text-center">
+                                <div class="font-semibold">Diene</div>
+                                <div class="text-sm text-gray-600">4π electron system</div>
+                            </div>
+                            <div class="text-center text-2xl">+</div>
+                            <div class="text-center">
+                                <div class="font-semibold">Dienophile</div>
+                                <div class="text-sm text-gray-600">2π electron system</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3 text-2xl">↓</div>
+                        <div class="text-center font-semibold mt-2">Cyclohexene derivative</div>
+                    </div>
+                    
+                    <div class="example-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Classic Example</h4>
+                        <p><strong>1,3-Butadiene + Ethene → Cyclohexene</strong></p>
+                        <div class="chemical-structure bg-yellow-50 p-3 rounded mt-2">
+                            <div>CH₂=CH-CH=CH₂ + CH₂=CH₂ → Cyclohexene</div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">This is the simplest Diels-Alder reaction showing the formation of a six-membered ring.</p>
+                    </div>
+                </div>
+
+                <div class="mechanism-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Key Characteristics</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-green-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Concerted Mechanism</span>
+                                <p class="text-sm text-gray-600">All bond breaking and formation happens simultaneously in a single step</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-green-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Stereospecific</span>
+                                <p class="text-sm text-gray-600">Stereochemistry of reactants is preserved in the product</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-green-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Regioselective</span>
+                                <p class="text-sm text-gray-600">Follows predictable orientation rules</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-green-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">No Intermediates</span>
+                                <p class="text-sm text-gray-600">Proceeds through a cyclic transition state</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diene and Dienophile Section -->
+            <section id="diene-dienophile" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Identifying Diene and Dienophile</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Diene (4π Electron System)</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Characteristics of a Good Diene:</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Conjugated system:</strong> Alternating single and double bonds</li>
+                            <li><strong>s-cis conformation:</strong> Must be able to adopt cisoid geometry</li>
+                            <li><strong>Electron-rich:</strong> Better reaction rates with electron-donating groups</li>
+                            <li><strong>Examples:</strong> 1,3-butadiene, cyclopentadiene, furan</li>
+                        </ul>
+                        
+                        <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+                            <div class="bg-white p-3 rounded border">
+                                <div class="font-semibold text-green-700">Good Diene</div>
+                                <div class="mt-1">1,3-Butadiene</div>
+                                <div class="text-xs text-gray-600">Flexible, can adopt s-cis</div>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <div class="font-semibold text-red-700">Poor Diene</div>
+                                <div class="mt-1">1,2-Butadiene</div>
+                                <div class="text-xs text-gray-600">Not conjugated</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Dienophile (2π Electron System)</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Characteristics of a Good Dienophile:</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Electron-deficient:</strong> Reacts better with electron-withdrawing groups</li>
+                            <li><strong>Common groups:</strong> -CHO, -COR, -COOR, -CN, -NO₂</li>
+                            <li><strong>Activated alkenes:</strong> Maleic anhydride, acrylonitrile</li>
+                            <li><strong>Can be alkynes:</strong> Forms cyclohexadiene products</li>
+                        </ul>
+                        
+                        <div class="mt-4">
+                            <h5 class="font-semibold mb-2">Relative Reactivity of Dienophiles:</h5>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between items-center bg-white p-2 rounded border">
+                                    <span>Tetracyanoethylene</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Very High</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-2 rounded border">
+                                    <span>Maleic anhydride</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">High</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-2 rounded border">
+                                    <span>Acrylonitrile</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Medium</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-2 rounded border">
+                                    <span>Ethene</span>
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Low</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Regiochemistry Section -->
+            <section id="regiochemistry" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Regiochemistry: Predicting Product Orientation</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Ortho-Para Rule</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Rule Statement</h4>
+                        <p>When both diene and dienophile are substituted, the major product has substituents in <strong>ortho or para</strong> relationship relative to each other.</p>
+                        
+                        <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+                            <div class="bg-white p-3 rounded border text-center">
+                                <div class="font-semibold">Ortho Product</div>
+                                <div class="mt-1 text-gray-600">Substituents on adjacent carbons</div>
+                                <div class="mt-2 text-xs bg-blue-50 p-2 rounded">Major product usually</div>
+                            </div>
+                            <div class="bg-white p-3 rounded border text-center">
+                                <div class="font-semibold">Meta Product</div>
+                                <div class="mt-1 text-gray-600">Substituents separated by one carbon</div>
+                                <div class="mt-2 text-xs bg-red-50 p-2 rounded">Minor product usually</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mechanism-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Practical Examples</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example 1: 1-Substituted Diene</h4>
+                        <p><strong>1-Methoxybutadiene + Acrolein</strong></p>
+                        <div class="chemical-structure bg-yellow-50 p-3 rounded mt-2 text-center">
+                            <div>CH₂=CH-CH=CH-OCH₃ + CH₂=CH-CHO</div>
+                            <div class="mt-2 text-xl">↓</div>
+                            <div>4-Methoxycyclohex-3-ene carbaldehyde (ortho)</div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">The methoxy and aldehyde groups end up adjacent to each other (ortho).</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example 2: 2-Substituted Diene</h4>
+                        <p><strong>Isoprene (2-methylbutadiene) + Maleic anhydride</strong></p>
+                        <div class="chemical-structure bg-yellow-50 p-3 rounded mt-2 text-center">
+                            <div>CH₂=C(CH₃)-CH=CH₂ + Maleic anhydride</div>
+                            <div class="mt-2 text-xl">↓</div>
+                            <div>4-Methylcyclohex-4-ene-1,2-dicarboxylic anhydride (para)</div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">The methyl group and anhydride end up para to each other.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stereochemistry Section -->
+            <section id="stereochemistry" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Stereochemistry: The Suprafacial Rule</h2>
+                </div>
+
+                <div class="stereo-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Stereochemical Principles</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-purple-800 mb-2">Suprafacial Addition</h4>
+                            <p>Both new σ-bonds form on the <strong>same face</strong> of the π-system for both diene and dienophile.</p>
+                            <div class="mt-2 text-sm bg-purple-50 p-2 rounded">
+                                This leads to complete stereospecificity - stereochemistry of reactants is preserved.
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-purple-800 mb-2">Endo vs Exo Rule</h4>
+                            <p>In cyclic systems, the <strong>endo product</strong> is usually favored due to secondary orbital interactions.</p>
+                            <div class="mt-2 grid grid-cols-2 gap-4 text-sm">
+                                <div class="text-center">
+                                    <div class="font-semibold">Endo Product</div>
+                                    <div class="text-green-600">Kinetic product</div>
+                                    <div class="text-xs mt-1">Faster forming, more stable transition state</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="font-semibold">Exo Product</div>
+                                    <div class="text-red-600">Thermodynamic product</div>
+                                    <div class="text-xs mt-1">Slower forming, more stable product</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Stereochemical Examples</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example: cis-Dienophile</h4>
+                        <p><strong>Maleic acid (cis) gives cis product</strong></p>
+                        <div class="chemical-structure bg-yellow-50 p-3 rounded mt-2 text-center">
+                            <div>cis-HOOC-CH=CH-COOH + Butadiene</div>
+                            <div class="mt-2 text-xl">↓</div>
+                            <div>cis-4-Cyclohexene-1,2-dicarboxylic acid</div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">The cis configuration of the dienophile is preserved in the product.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example: trans-Dienophile</h4>
+                        <p><strong>Fumaric acid (trans) gives trans product</strong></p>
+                        <div class="chemical-structure bg-yellow-50 p-3 rounded mt-2 text-center">
+                            <div>trans-HOOC-CH=CH-COOH + Butadiene</div>
+                            <div class="mt-2 text-xl">↓</div>
+                            <div>trans-4-Cyclohexene-1,2-dicarboxylic acid</div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">The trans configuration of the dienophile is preserved in the product.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Diels-Alder Skills</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: Predict the product of reaction between 1,3-cyclohexadiene and acrolein.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider regiochemistry and stereochemistry</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: Which would be a better dienophile: acrylonitrile or vinyl acetate? Why?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider electron-withdrawing ability</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Predict the major product of reaction between trans-1-methoxybutadiene and maleic anhydride.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider stereospecificity and endo rule</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Why does cyclopentadiene undergo Diels-Alder so readily?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider ring strain and s-cis conformation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">JEE Pro Tip</h4>
+                        <p class="text-sm">Always check if the diene can adopt s-cis conformation. Rigid transoid dienes won't react in Diels-Alder.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Diels-Alder Quick Reference</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Diene Requirements</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Conjugated π-system</li>
+                                <li>s-cis conformation possible</li>
+                                <li>Electron-donating groups help</li>
+                                <li>Cyclic dienes often more reactive</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Dienophile Requirements</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Electron-withdrawing groups essential</li>
+                                <li>Common: -CHO, -COR, -CN, -NO₂</li>
+                                <li>Stereochemistry preserved</li>
+                                <li>Can be alkenes or alkynes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Rules to Remember</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Regiochemistry:</strong> Ortho/para preference
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Stereochemistry:</strong> Suprafacial addition
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Endo Rule:</strong> Kinetic control preferred
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Concerted:</strong> No intermediates formed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common JEE Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Forgetting s-cis requirement</span>
+                                <p class="text-sm text-gray-600">Transoid dienes cannot react in Diels-Alder</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Mixing up regiochemistry</span>
+                                <p class="text-sm text-gray-600">Ortho/para rule must be applied correctly</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Ignoring stereochemistry</span>
+                                <p class="text-sm text-gray-600">Diels-Alder is completely stereospecific</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Wrong product ring size</span>
+                                <p class="text-sm text-gray-600">Always forms six-membered rings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Diels-Alder? Explore More Pericyclic Reactions!</h3>
+                    <p class="mb-4 opacity-90">Continue your organic chemistry journey with other important pericyclic reactions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Organic Chemistry
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Chemistry Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#organic" class="hover:text-yellow-300">Organic Chemistry</a></li>
+                        <li><a href="#inorganic" class="hover:text-yellow-300">Inorganic Chemistry</a></li>
+                        <li><a href="#physical" class="hover:text-yellow-300">Physical Chemistry</a></li>
+                        <li><a href="#coordination" class="hover:text-yellow-300">Coordination Chemistry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Chemistry Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

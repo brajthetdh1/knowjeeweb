@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Does a Prism Disperse Light? | Rainbow Science | Physics of Light | KnowJEE</title>
+    <meta name="description" content="Understand the science behind prism dispersion - how refractive index depends on wavelength, causing angular dispersion and creating pure spectrum. Essential for JEE Physics.">
+    <meta name="keywords" content="prism dispersion, rainbow creation, refractive index wavelength, angular dispersion, pure spectrum, JEE physics optics, light dispersion science">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .experiment-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .rainbow-text {
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full">Wave Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential for JEE</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Does a Prism Disperse Light? <span class="rainbow-text">The Science of Rainbow Creation</span></h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how white light splits into beautiful colors through the magic of dispersion, angular separation, and pure spectrum formation.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">1666</div>
+                            <div class="text-sm text-indigo-600">Newton's Discovery</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">7</div>
+                            <div class="text-sm text-indigo-600">VIBGYOR Colors</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">2-3</div>
+                            <div class="text-sm text-indigo-600">JEE Marks</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">100%</div>
+                            <div class="text-sm text-indigo-600">Conceptual</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Magic Behind the Colors</h2>
+                <p class="mb-4">When Isaac Newton first passed sunlight through a prism in 1666, he unlocked one of physics' most beautiful phenomena - <strong>dispersion</strong>. But what exactly causes white light to separate into the vibrant colors of <span class="rainbow-text">VIBGYOR</span>?</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Relevance</h4>
+                    <p>Dispersion appears in <strong>every JEE paper</strong>, often as 2-3 mark questions testing conceptual understanding of refractive index dependence on wavelength and angular dispersion calculations.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🔍 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-concept" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Concept</a>
+                    <a href="#refractive-index" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Refractive Index</a>
+                    <a href="#angular-dispersion" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Angular Dispersion</a>
+                    <a href="#pure-spectrum" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Pure Spectrum</a>
+                </div>
+            </div>
+
+            <!-- Basic Concept Section -->
+            <section id="basic-concept" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. The Fundamental Concept: What is Dispersion?</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Definition</h3>
+                    <p class="mb-4"><strong>Dispersion</strong> is the phenomenon of splitting of white light into its constituent colors when it passes through a transparent medium.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🌈 Simple Analogy</h4>
+                        <p>Think of white light as a team of 7 runners (VIBGYOR colors) with different speeds. When they enter a muddy field (the prism), faster runners (violet) get slowed down more than slower runners (red), causing them to spread out.</p>
+                    </div>
+                </div>
+
+                <div class="experiment-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Newton's Classic Experiment</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Setup</h4>
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <div class="flex-1">
+                                <p><strong>Apparatus:</strong> Glass prism, white light source, screen</p>
+                                <p><strong>Observation:</strong> White light enters → Color spectrum emerges</p>
+                                <p><strong>Color Order:</strong> Red, Orange, Yellow, Green, Blue, Indigo, Violet</p>
+                            </div>
+                            <div class="flex-1 mt-4 md:mt-0 md:ml-6">
+                                <div class="bg-white p-4 rounded-lg border text-center">
+                                    <div class="font-mono text-sm">
+                                        <div>White Light → |Prism| → <span class="rainbow-text">VIBGYOR Spectrum</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Key Discovery</h4>
+                        <p>Newton proved that:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Different colors have <strong>different refractive indices</strong> in the same medium</li>
+                            <li>Violet light bends the <strong>most</strong>, red light bends the <strong>least</strong></li>
+                            <li>Colors are <strong>property of light</strong>, not property of prism</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Refractive Index Section -->
+            <section id="refractive-index" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Heart of Dispersion: Refractive Index & Wavelength</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cauchy's Formula</h3>
+                    <p class="mb-4">The refractive index (μ) of a material depends on the wavelength (λ) of light according to Cauchy's formula:</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Cauchy's Formula</h4>
+                        <div class="text-center text-xl">
+                            $$ \mu = A + \frac{B}{\lambda^2} + \frac{C}{\lambda^4} + \cdots $$
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">Where A, B, C are material constants and λ is wavelength</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">What This Means</h4>
+                        <p>Since B is positive for most materials, <strong>μ decreases as λ increases</strong>. Therefore:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                            <div class="bg-red-50 p-3 rounded">
+                                <p class="font-semibold text-red-800">Red Light (λ ≈ 700 nm)</p>
+                                <p>Long wavelength → Smaller μ → Less bending</p>
+                            </div>
+                            <div class="bg-violet-50 p-3 rounded">
+                                <p class="font-semibold text-violet-800">Violet Light (λ ≈ 400 nm)</p>
+                                <p>Short wavelength → Larger μ → More bending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experiment-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Why Different Refractive Indices?</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Physics Behind It</h4>
+                        <p>When light enters a medium:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Light waves interact with electrons in the material</li>
+                            <li>Electrons oscillate and re-radiate light</li>
+                            <li>This interaction depends on frequency (color)</li>
+                            <li>Higher frequency (violet) → Stronger interaction → Slower speed → Higher μ</li>
+                            <li>Lower frequency (red) → Weaker interaction → Faster speed → Lower μ</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Mathematical Relationship</h4>
+                        <p>From electromagnetic theory:</p>
+                        <div class="text-center my-3">
+                            $$ \mu = \frac{c}{v} $$
+                        </div>
+                        <p>Where c = speed in vacuum, v = speed in medium</p>
+                        <p class="mt-2">Since violet light travels slower in glass than red light:</p>
+                        <p class="text-center font-semibold">$v_{violet} < v_{red}$ ⇒ $μ_{violet} > μ_{red}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Angular Dispersion Section -->
+            <section id="angular-dispersion" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Angular Dispersion: The Color Separation</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Definition</h3>
+                    <p class="mb-4"><strong>Angular dispersion</strong> is the angular separation between extreme colors (red and violet) of the spectrum.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Angular Dispersion Formula</h4>
+                        <div class="text-center text-xl">
+                            $$ \theta = A(\mu_V - \mu_R) $$
+                        </div>
+                        <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
+                            <div>$\theta$ = Angular dispersion</div>
+                            <div>A = Angle of prism</div>
+                            <div>$\mu_V, \mu_R$ = Refractive indices</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experiment-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Derivation & Understanding</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">For Small Angle Prism</h4>
+                        <p>Using prism formula for small angles:</p>
+                        <div class="space-y-2 text-sm">
+                            <p>Deviation for red light: $\delta_R = A(\mu_R - 1)$</p>
+                            <p>Deviation for violet light: $\delta_V = A(\mu_V - 1)$</p>
+                            <p>Angular dispersion: $\theta = \delta_V - \delta_R = A(\mu_V - \mu_R)$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Numerical Example</h4>
+                        <p><strong>Given:</strong> Prism angle A = 60°, $\mu_V = 1.665$, $\mu_R = 1.645$</p>
+                        <p><strong>Calculate:</strong> Angular dispersion θ</p>
+                        <div class="bg-blue-50 p-3 rounded mt-2">
+                            <p>$\theta = A(\mu_V - \mu_R) = 60° × (1.665 - 1.645) = 60° × 0.02 = 1.2°$</p>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">The red and violet rays are separated by 1.2 degrees.</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Insight</h4>
+                    <p>Angular dispersion depends on:</p>
+                    <ul class="list-disc list-inside mt-1 space-y-1 text-sm">
+                        <li><strong>Prism angle (A)</strong> - Larger angle → More dispersion</li>
+                        <li><strong>Material property ($\mu_V - \mu_R$)</strong> - Larger difference → More dispersion</li>
+                        <li><strong>It's independent of the size of prism</strong> - Only shape matters!</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Pure Spectrum Section -->
+            <section id="pure-spectrum" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Pure Spectrum: Perfect Color Separation</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What is a Pure Spectrum?</h3>
+                    <p class="mb-4">A <strong>pure spectrum</strong> is one in which colors are perfectly separated without overlapping. Each wavelength appears as a distinct, sharp image.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🔬 Comparison</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-green-50 p-3 rounded">
+                                <p class="font-semibold text-green-800">✓ Pure Spectrum</p>
+                                <ul class="list-disc list-inside mt-1 text-sm space-y-1">
+                                    <li>Colors don't overlap</li>
+                                    <li>Sharp boundaries</li>
+                                    <li>Each λ has unique position</li>
+                                    <li>Requires special setup</li>
+                                </ul>
+                            </div>
+                            <div class="bg-red-50 p-3 rounded">
+                                <p class="font-semibold text-red-800">✗ Impure Spectrum</p>
+                                <ul class="list-disc list-inside mt-1 text-sm space-y-1">
+                                    <li>Colors overlap</li>
+                                    <li>Fuzzy boundaries</li>
+                                    <li>Mixed colors appear</li>
+                                    <li>Simple prism gives this</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experiment-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Creating a Pure Spectrum</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Apparatus Setup</h4>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li><strong>Slit:</strong> Narrow slit to get parallel beam</li>
+                            <li><strong>Collimating Lens:</strong> Makes light rays parallel</li>
+                            <li><strong>Prism:</strong> At minimum deviation position</li>
+                            <li><strong>Telescope:</strong> To view the spectrum</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Why This Setup Works</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Narrow slit → Each color comes from specific direction</li>
+                            <li>Parallel rays → Each color focuses at unique point</li>
+                            <li>Minimum deviation → Symmetric path reduces aberrations</li>
+                            <li>Telescope focusing → Sharp image formation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Application</h4>
+                    <p>Questions often ask:</p>
+                    <ul class="list-disc list-inside mt-1 space-y-1 text-sm">
+                        <li>"Why does a simple prism not give pure spectrum?"</li>
+                        <li>"What modifications are needed for pure spectrum?"</li>
+                        <li>"Calculate angular dispersion for given parameters"</li>
+                        <li>"Compare refractive indices for different colors"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Rainbow Connection -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-red-500 to-violet-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">🌈 Nature's Prism: How Rainbows Form</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">In Raindrops</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm opacity-90">
+                                <li>Water droplets act as tiny prisms</li>
+                                <li>Light refracts, reflects internally, refracts again</li>
+                                <li>Different colors emerge at different angles</li>
+                                <li>Red appears at 42°, violet at 40° from anti-solar point</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-2">Key Differences from Prism</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm opacity-90">
+                                <li>Rainbow has red on top, violet at bottom</li>
+                                <li>Prism gives violet on top, red at bottom</li>
+                                <li>Rainbow involves total internal reflection</li>
+                                <li>Secondary rainbow has reversed colors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Revision Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Formulas</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Cauchy's formula: $\mu = A + \frac{B}{\lambda^2}$</li>
+                                <li>Angular dispersion: $\theta = A(\mu_V - \mu_R)$</li>
+                                <li>Dispersive power: $\omega = \frac{\mu_V - \mu_R}{\mu_Y - 1}$</li>
+                                <li>Deviation: $\delta = A(\mu - 1)$ (small angles)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Must Remember</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Violet bends most (highest μ)</li>
+                                <li>Red bends least (lowest μ)</li>
+                                <li>Angular dispersion ∝ prism angle</li>
+                                <li>Pure spectrum needs parallel rays</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. A prism of angle 60° has μ₍ᵥ₎ = 1.5 and μ₍ᵣ₎ = 1.48. Calculate angular dispersion.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use θ = A(μᵥ - μᵣ)</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Why does violet light deviate more than red light in a prism?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Think about refractive index dependence on wavelength</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. What modifications are needed to obtain pure spectrum from a prism?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider slit, collimating lens, and telescope</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Prism Dispersion?</h3>
+                    <p class="mb-4 opacity-90">You now understand the beautiful physics behind rainbows and color separation!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Take Quiz
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microscope vs. Telescope: Complete JEE Comparison | Ray Optics | KnowJEE</title>
+    <meta name="description" content="Master the differences between microscope and telescope for JEE Physics. Compare ray diagrams, magnifying power formulas, adjustments for normal and relaxed vision with detailed explanations.">
+    <meta name="keywords" content="microscope telescope comparison, JEE ray optics, JEE physics, optical instruments, magnifying power, normal vision relaxed vision">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .comparison-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .comparison-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .microscope-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .telescope-box {
+            background: #fef7ed;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .diagram-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .comparison-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .ray-diagram {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Ray Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Detailed Comparison</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Microscope vs. Telescope: A Detailed Comparison for JEE</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the key differences in ray diagrams, magnifying power formulas, and adjustments for normal vs. relaxed vision.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3</div>
+                            <div class="text-sm text-blue-600">Questions per JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Concept Clarity</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">6</div>
+                            <div class="text-sm text-blue-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4</div>
+                            <div class="text-sm text-blue-600">Adjustment Types</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Comparison Matters for JEE</h2>
+                <p class="mb-4">Microscopes and telescopes are <strong>frequently asked together in JEE</strong> to test your understanding of optical instruments. Students often confuse their working principles, formulas, and adjustments.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Exam Pattern</h4>
+                    <p>Expect <strong>1-2 questions</strong> from optical instruments in every JEE paper. Mastering this comparison can secure <strong>4-8 easy marks</strong> and help you avoid common pitfalls.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-differences" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Differences</a>
+                    <a href="#ray-diagrams" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Ray Diagrams</a>
+                    <a href="#magnifying-power" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Magnifying Power</a>
+                    <a href="#adjustments" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Adjustments</a>
+                </div>
+            </div>
+
+            <!-- Basic Differences Section -->
+            <section id="basic-differences" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Fundamental Differences</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Purpose and Function</h3>
+                    
+                    <div class="comparison-table">
+                        <table class="min-w-full">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-3 text-left font-semibold">Parameter</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-green-700">Microscope</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-orange-700">Telescope</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">Purpose</td>
+                                    <td class="px-4 py-3">Viewing very small nearby objects</td>
+                                    <td class="px-4 py-3">Viewing distant objects</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-3 font-medium">Object Distance</td>
+                                    <td class="px-4 py-3">Just beyond focal length of objective</td>
+                                    <td class="px-4 py-3">At infinity</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">Final Image</td>
+                                    <td class="px-4 py-3">At distinct vision (25 cm) or infinity</td>
+                                    <td class="px-4 py-3">At infinity or distinct vision</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-3 font-medium">Focal Lengths</td>
+                                    <td class="px-4 py-3">$f_o$ small, $f_e$ small</td>
+                                    <td class="px-4 py-3">$f_o$ large, $f_e$ small</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">Aperture</td>
+                                    <td class="px-4 py-3">Small</td>
+                                    <td class="px-4 py-3">Large</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Memory Aid</h4>
+                    <p><strong>"Micro" = Small objects, Small focal lengths</strong><br>
+                    <strong>"Tele" = Distant objects, Large objective focal length</strong></p>
+                </div>
+            </section>
+
+            <!-- Ray Diagrams Section -->
+            <section id="ray-diagrams" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Ray Diagrams Comparison</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Microscope Diagram -->
+                    <div class="comparison-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Compound Microscope</h3>
+                        
+                        <div class="diagram-box">
+                            <div class="bg-gray-100 p-4 rounded mb-3">
+                                <p class="text-sm font-semibold">Ray Diagram (Normal Adjustment)</p>
+                                <!-- Placeholder for diagram -->
+                                <div class="h-48 bg-white border border-gray-300 rounded flex items-center justify-center text-gray-500">
+                                    [Microscope Ray Diagram]
+                                </div>
+                            </div>
+                            
+                            <div class="microscope-box">
+                                <h4 class="font-semibold text-green-800 mb-2">Key Points:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li>Object placed just beyond $f_o$ of objective</li>
+                                    <li>Objective forms real, inverted, magnified image</li>
+                                    <li>This image acts as object for eyepiece</li>
+                                    <li>Eyepiece acts as simple microscope</li>
+                                    <li>Final image at infinity (normal adjustment)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Telescope Diagram -->
+                    <div class="comparison-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Astronomical Telescope</h3>
+                        
+                        <div class="diagram-box">
+                            <div class="bg-gray-100 p-4 rounded mb-3">
+                                <p class="text-sm font-semibold">Ray Diagram (Normal Adjustment)</p>
+                                <!-- Placeholder for diagram -->
+                                <div class="h-48 bg-white border border-gray-300 rounded flex items-center justify-center text-gray-500">
+                                    [Telescope Ray Diagram]
+                                </div>
+                            </div>
+                            
+                            <div class="telescope-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">Key Points:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li>Distant object at infinity</li>
+                                    <li>Objective forms real image at its focal plane</li>
+                                    <li>This image acts as object for eyepiece</li>
+                                    <li>Eyepiece placed so final image at infinity</li>
+                                    <li>$f_o$ + $f_e$ = length of telescope</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Magnifying Power Section -->
+            <section id="magnifying-power" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Magnifying Power Formulas</h2>
+                </div>
+
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Compound Microscope Formulas</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="microscope-box">
+                            <h4 class="font-semibold text-green-800 mb-2">When final image at infinity:</h4>
+                            <div class="text-center my-3">
+                                $$M = \frac{v_o}{u_o} \times \frac{D}{f_e}$$
+                            </div>
+                            <p class="text-sm">Where:<br>
+                            $v_o$ = image distance from objective<br>
+                            $u_o$ = object distance from objective<br>
+                            $D$ = least distance of distinct vision (25 cm)<br>
+                            $f_e$ = focal length of eyepiece</p>
+                        </div>
+                        
+                        <div class="microscope-box">
+                            <h4 class="font-semibold text-green-800 mb-2">When final image at D:</h4>
+                            <div class="text-center my-3">
+                                $$M = \frac{v_o}{u_o} \left(1 + \frac{D}{f_e}\right)$$
+                            </div>
+                            <p class="text-sm">Approximately:<br>
+                            $$M \approx \frac{L}{f_o} \times \frac{D}{f_e}$$<br>
+                            Where $L$ = tube length</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Astronomical Telescope Formulas</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="telescope-box">
+                            <h4 class="font-semibold text-orange-800 mb-2">When final image at infinity (Normal Adjustment):</h4>
+                            <div class="text-center my-3">
+                                $$M = \frac{f_o}{f_e}$$
+                            </div>
+                            <p class="text-sm">Where:<br>
+                            $f_o$ = focal length of objective<br>
+                            $f_e$ = focal length of eyepiece<br>
+                            Length of telescope = $f_o + f_e$</p>
+                        </div>
+                        
+                        <div class="telescope-box">
+                            <h4 class="font-semibold text-orange-800 mb-2">When final image at D:</h4>
+                            <div class="text-center my-3">
+                                $$M = \frac{f_o}{f_e} \left(1 + \frac{f_e}{D}\right)$$
+                            </div>
+                            <p class="text-sm">Length of telescope:<br>
+                            $$L = f_o + u_e$$<br>
+                            Where $u_e$ = object distance for eyepiece</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Formula Strategy</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Microscope:</strong> Remember both cases (infinity and D)</li>
+                        <li><strong>Telescope:</strong> $M = \frac{f_o}{f_e}$ for normal adjustment is most important</li>
+                        <li><strong>Sign Convention:</strong> All measurements are positive for optical instruments</li>
+                        <li><strong>Approximations:</strong> Often $u_o \approx f_o$ for microscope calculations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Adjustments Section -->
+            <section id="adjustments" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Adjustments for Different Vision Conditions</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Normal vs. Relaxed Vision</h3>
+                    
+                    <div class="comparison-table">
+                        <table class="min-w-full">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-3 text-left font-semibold">Condition</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-green-700">Microscope</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-orange-700">Telescope</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">Normal Adjustment<br><span class="text-sm text-gray-600">(Final image at infinity)</span></td>
+                                    <td class="px-4 py-3">
+                                        <p>• Eyepiece adjusted so final image at infinity</p>
+                                        <p>• Less strain on eyes</p>
+                                        <p>• $M = \frac{v_o}{u_o} \times \frac{D}{f_e}$</p>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <p>• Final image at infinity</p>
+                                        <p>• $f_o + f_e$ = tube length</p>
+                                        <p>• $M = \frac{f_o}{f_e}$</p>
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-3 font-medium">Relaxed Vision<br><span class="text-sm text-gray-600">(Final image at D = 25 cm)</span></td>
+                                    <td class="px-4 py-3">
+                                        <p>• Final image at least distance of distinct vision</p>
+                                        <p>• Higher magnification</p>
+                                        <p>• $M = \frac{v_o}{u_o} \left(1 + \frac{D}{f_e}\right)$</p>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <p>• Final image at D = 25 cm</p>
+                                        <p>• Tube length increases</p>
+                                        <p>• $M = \frac{f_o}{f_e} \left(1 + \frac{f_e}{D}\right)$</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="microscope-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Microscope Adjustment Steps</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-sm">
+                            <li>Place object just beyond $f_o$ of objective</li>
+                            <li>Adjust objective to get real, magnified image</li>
+                            <li>For normal vision: Adjust eyepiece so final image at infinity</li>
+                            <li>For maximum magnification: Adjust eyepiece so final image at D</li>
+                            <li>Use rack and pinion for fine adjustments</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="telescope-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">Telescope Adjustment Steps</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-sm">
+                            <li>Point telescope towards distant object</li>
+                            <li>Adjust objective to get real image at its focal plane</li>
+                            <li>For normal vision: Place eyepiece so final image at infinity</li>
+                            <li>For maximum magnification: Adjust eyepiece so final image at D</li>
+                            <li>Use focusing knob for sharp image</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes Section -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common JEE Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border border-red-200">
+                            <h4 class="font-semibold text-red-800 mb-2">Mistake 1: Confusing Magnifying Power Formulas</h4>
+                            <p class="text-sm">Using telescope formula for microscope or vice versa. Remember: <strong>Microscope deals with small nearby objects, Telescope with distant objects.</strong></p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border border-red-200">
+                            <h4 class="font-semibold text-red-800 mb-2">Mistake 2: Wrong Sign Convention</h4>
+                            <p class="text-sm">Applying Cartesian sign convention to optical instruments. In optical instruments, <strong>all distances are taken as positive.</strong></p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border border-red-200">
+                            <h4 class="font-semibold text-red-800 mb-2">Mistake 3: Confusing Adjustments</h4>
+                            <p class="text-sm">Mixing up normal and relaxed vision conditions. Remember: <strong>Normal = image at infinity, Relaxed = image at D (25 cm).</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Revision Sheet</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Microscope Key Points</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>For viewing small nearby objects</li>
+                                <li>$f_o$ and $f_e$ both small</li>
+                                <li>Object just beyond $f_o$</li>
+                                <li>Normal: $M = \frac{v_o}{u_o} \times \frac{D}{f_e}$</li>
+                                <li>Relaxed: $M = \frac{v_o}{u_o} \left(1 + \frac{D}{f_e}\right)$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Telescope Key Points</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>For viewing distant objects</li>
+                                <li>$f_o$ large, $f_e$ small</li>
+                                <li>Object at infinity</li>
+                                <li>Normal: $M = \frac{f_o}{f_e}$, $L = f_o + f_e$</li>
+                                <li>Relaxed: $M = \frac{f_o}{f_e} \left(1 + \frac{f_e}{D}\right)$</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🎯 Exam Tips</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Always specify which adjustment you're considering</li>
+                            <li>Draw quick ray diagrams for better understanding</li>
+                            <li>Remember D = 25 cm for least distance of distinct vision</li>
+                            <li>Practice numericals with both adjustment conditions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: A compound microscope has objective and eyepiece of focal lengths 2 cm and 5 cm respectively. The tube length is 20 cm. Calculate magnifying power when final image is at infinity.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $M = \frac{L}{f_o} \times \frac{D}{f_e}$ with D = 25 cm</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: An astronomical telescope has objective of focal length 100 cm and eyepiece of focal length 5 cm. Calculate length of telescope and magnifying power in normal adjustment.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: $M = \frac{f_o}{f_e}$, $L = f_o + f_e$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Compare the magnifying power of a microscope when final image is at infinity vs at D = 25 cm.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Ratio = $\frac{1 + \frac{D}{f_e}}{\frac{D}{f_e}}$</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Ray Optics?</h3>
+                    <p class="mb-4 opacity-90">Continue your JEE Physics preparation with our comprehensive optical instruments module</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Numerical
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation Complete Guide. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometrical Isomerism in Alkenes: CIS-TRANS & E-Z System | JEE Chemistry | KnowJEE</title>
+    <meta name="description" content="Master Geometrical Isomerism in alkenes with CIS-TRANS and E-Z nomenclature. Learn priority rules, configuration assignment, and predicting number of isomers for JEE Chemistry.">
+    <meta name="keywords" content="geometrical isomerism, cis trans isomers, E Z nomenclature, JEE chemistry, alkene stereochemistry, organic chemistry isomerism">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .method-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .molecule-diagram {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .priority-rule {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Organic Chemistry Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">Stereochemistry</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">2 Nomenclature Systems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Geometrical Isomerism in Alkenes: The CIS-TRANS and E-Z Nomenclature</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of distinguishing between different spatial arrangements in alkenes and predict geometrical isomers with confidence.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">100%</div>
+                            <div class="text-sm text-green-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">2-4</div>
+                            <div class="text-sm text-green-600">Marks per Question</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">2</div>
+                            <div class="text-sm text-green-600">Nomenclature Systems</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">5min</div>
+                            <div class="text-sm text-green-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Geometrical Isomerism Matters</h2>
+                <p class="mb-4">Geometrical isomerism arises due to <strong>restricted rotation around double bonds</strong> in alkenes. These isomers have the same molecular formula but different spatial arrangements, leading to distinct physical and chemical properties.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Importance</h4>
+                    <p>Geometrical isomerism questions appear in <strong>every JEE paper</strong>, testing your understanding of stereochemistry, priority rules, and isomer prediction. Mastering this topic can secure <strong>2-4 easy marks</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#conditions" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Conditions</a>
+                    <a href="#cis-trans" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">CIS-TRANS</a>
+                    <a href="#e-z" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">E-Z System</a>
+                    <a href="#prediction" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Isomer Prediction</a>
+                </div>
+            </div>
+
+            <!-- Conditions for Geometrical Isomerism -->
+            <section id="conditions" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Conditions for Geometrical Isomerism</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Essential Requirements</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="text-green-600 mr-2 mt-1 text-xl">✓</span>
+                            <div>
+                                <span class="font-semibold">Restricted Rotation</span>
+                                <p class="text-sm text-gray-600">Double bond prevents free rotation, locking groups in position</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-green-600 mr-2 mt-1 text-xl">✓</span>
+                            <div>
+                                <span class="font-semibold">Different Groups</span>
+                                <p class="text-sm text-gray-600">Each carbon of double bond must have two different substituents</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Examples</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="molecule-diagram">
+                                <p class="font-semibold">Shows Geometrical Isomerism</p>
+                                <p class="text-sm">CH₃-CH=CH-CH₃</p>
+                                <p class="text-xs text-green-600 mt-1">Different groups on both carbons</p>
+                            </div>
+                            <div class="molecule-diagram">
+                                <p class="font-semibold">No Geometrical Isomerism</p>
+                                <p class="text-sm">CH₂=CH-CH₃</p>
+                                <p class="text-xs text-red-600 mt-1">Same groups on one carbon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CIS-TRANS System -->
+            <section id="cis-trans" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. CIS-TRANS Nomenclature System</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Traditional Approach</h3>
+                    <p class="mb-4">CIS-TRANS system works when each carbon of the double bond has at least one identical group.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">CIS Configuration</h4>
+                        <p><strong>Definition:</strong> Similar groups are on the <strong>same side</strong> of the double bond</p>
+                        <div class="molecule-diagram">
+                            <p class="font-semibold">CIS-2-Butene</p>
+                            <div class="flex justify-center items-center space-x-8 mt-2">
+                                <div class="text-center">
+                                    <div>CH₃</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>CH₃</div>
+                                </div>
+                                <div class="text-sm text-gray-600">
+                                    <p>Both CH₃ groups on same side</p>
+                                    <p class="text-green-600">Higher boiling point</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">TRANS Configuration</h4>
+                        <p><strong>Definition:</strong> Similar groups are on the <strong>opposite sides</strong> of the double bond</p>
+                        <div class="molecule-diagram">
+                            <p class="font-semibold">TRANS-2-Butene</p>
+                            <div class="flex justify-center items-center space-x-8 mt-2">
+                                <div class="text-center">
+                                    <div>CH₃</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>H</div>
+                                </div>
+                                <div class="text-center">
+                                    <div>H</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>CH₃</div>
+                                </div>
+                                <div class="text-sm text-gray-600">
+                                    <p>CH₃ groups on opposite sides</p>
+                                    <p class="text-blue-600">Lower boiling point</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Physical Property Differences</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>CIS isomers</strong> have higher boiling points (more polar)</li>
+                        <li><strong>TRANS isomers</strong> have lower melting points (better packing)</li>
+                        <li><strong>CIS isomers</strong> are less stable due to steric hindrance</li>
+                        <li><strong>TRANS isomers</strong> are more thermodynamically stable</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- E-Z System -->
+            <section id="e-z" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. E-Z Nomenclature System (IUPAC)</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Comprehensive Approach</h3>
+                    <p class="mb-4">E-Z system works for all alkenes using <strong>Cahn-Ingold-Prelog priority rules</strong> to assign configurations.</p>
+                    
+                    <div class="method-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Cahn-Ingold-Prelog Priority Rules</h3>
+                        
+                        <div class="priority-rule">
+                            <h4 class="font-semibold text-green-800 mb-2">Rule 1: Atomic Number</h4>
+                            <p>Higher atomic number gets higher priority</p>
+                            <p class="text-sm text-gray-600 mt-1">Br (35) > Cl (17) > S (16) > O (8) > N (7) > C (6) > H (1)</p>
+                        </div>
+                        
+                        <div class="priority-rule">
+                            <h4 class="font-semibold text-green-800 mb-2">Rule 2: Isotopes</h4>
+                            <p>Higher mass number gets higher priority</p>
+                            <p class="text-sm text-gray-600 mt-1">D (²H) > H (¹H), T (³H) > D > H</p>
+                        </div>
+                        
+                        <div class="priority-rule">
+                            <h4 class="font-semibold text-green-800 mb-2">Rule 3: Sequential Comparison</h4>
+                            <p>If first atoms are same, compare second atoms</p>
+                            <p class="text-sm text-gray-600 mt-1">-CH₂CH₃ > -CH₃ (C,C,H vs C,H,H)</p>
+                        </div>
+                        
+                        <div class="priority-rule">
+                            <h4 class="font-semibold text-green-800 mb-2">Rule 4: Multiple Bonds</h4>
+                            <p>Treat multiple bonds as duplicate atoms</p>
+                            <p class="text-sm text-gray-600 mt-1">-CH=O treated as C(O,O), -C≡N as C(N,N,N)</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Assigning E/Z Configuration</h4>
+                        
+                        <p><strong>Step 1: Assign priorities</strong> to groups on each carbon using CIP rules</p>
+                        <p><strong>Step 2: Check positions</strong> of high priority groups</p>
+                        <p><strong>Step 3: Assign configuration:</strong></p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                            <div class="molecule-diagram">
+                                <p class="font-semibold">E Configuration (Entgegen)</p>
+                                <p class="text-sm">High priority groups OPPOSITE</p>
+                                <div class="text-center mt-2">
+                                    <div>1 → High</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>2 ← Low</div>
+                                </div>
+                                <div class="text-center">
+                                    <div>2 ← Low</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>1 → High</div>
+                                </div>
+                            </div>
+                            
+                            <div class="molecule-diagram">
+                                <p class="font-semibold">Z Configuration (Zusammen)</p>
+                                <p class="text-sm">High priority groups TOGETHER</p>
+                                <div class="text-center mt-2">
+                                    <div>1 → High</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>1 → High</div>
+                                </div>
+                                <div class="text-center">
+                                    <div>2 ← Low</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>2 ← Low</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Example: 1-Bromo-1,2-dichloroethene</h4>
+                    
+                    <div class="step-box">
+                        <p><strong>Step 1: Assign priorities</strong></p>
+                        <p>Left carbon: Br (35) > Cl (17) → Priority: Br > Cl</p>
+                        <p>Right carbon: Cl (17) > H (1) → Priority: Cl > H</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p><strong>Step 2: Check positions</strong></p>
+                        <div class="molecule-diagram">
+                            <div class="flex justify-center space-x-8">
+                                <div class="text-center">
+                                    <div>Br (1)</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>Cl (2)</div>
+                                </div>
+                                <div class="text-center">
+                                    <div>Cl (1)</div>
+                                    <div>│</div>
+                                    <div>C=C</div>
+                                    <div>│</div>
+                                    <div>H (2)</div>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold">High priority groups are TOGETHER → Z configuration</p>
+                        </div>
+                    </div>
+                    
+                    <p class="font-semibold text-center">Correct name: (Z)-1-bromo-1,2-dichloroethene</p>
+                </div>
+            </section>
+
+            <!-- Predicting Number of Isomers -->
+            <section id="prediction" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Predicting Number of Geometrical Isomers</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Systematic Approach</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">For Simple Alkenes: C=C</h4>
+                        <p><strong>Formula:</strong> 2ⁿ where n = number of carbons with two different groups</p>
+                        
+                        <div class="overflow-x-auto mt-3">
+                            <table class="min-w-full border border-gray-300 text-sm">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="border px-3 py-2">Alkene Type</th>
+                                        <th class="border px-3 py-2">Formula</th>
+                                        <th class="border px-3 py-2">n value</th>
+                                        <th class="border px-3 py-2">Isomers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border px-3 py-2">abC=Cab</td>
+                                        <td class="border px-3 py-2">2²</td>
+                                        <td class="border px-3 py-2">2</td>
+                                        <td class="border px-3 py-2">4 (2 pairs of enantiomers)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border px-3 py-2">abC=Cac</td>
+                                        <td class="border px-3 py-2">2¹</td>
+                                        <td class="border px-3 py-2">1</td>
+                                        <td class="border px-3 py-2">2 (CIS & TRANS)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border px-3 py-2">abC=Ccd</td>
+                                        <td class="border px-3 py-2">2²</td>
+                                        <td class="border px-3 py-2">2</td>
+                                        <td class="border px-3 py-2">4 (EE, EZ, ZE, ZZ)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">For Polyenes</h4>
+                        <p><strong>Independent double bonds:</strong> Multiply possibilities for each double bond</p>
+                        <p><strong>Cumulated dienes:</strong> Consider overall molecule symmetry</p>
+                        <p><strong>Conjugated dienes:</strong> s-CIS and s-TRANS conformers possible</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Practice: Predict isomers for CH₃-CH=CH-CH=CH-CH₃</h4>
+                    
+                    <div class="step-box">
+                        <p><strong>Step 1: Identify double bonds</strong></p>
+                        <p>Two double bonds: C₂=C₃ and C₄=C₅</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p><strong>Step 2: Analyze each double bond</strong></p>
+                        <p>C₂=C₃: CH₃, H on C₂ and H, CH on C₃ → Shows geometrical isomerism</p>
+                        <p>C₄=C₅: CH, H on C₄ and H, CH₃ on C₅ → Shows geometrical isomerism</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <p><strong>Step 3: Calculate total isomers</strong></p>
+                        <p>Each double bond can have E or Z configuration</p>
+                        <p>Total possibilities = 2 × 2 = 4 geometrical isomers</p>
+                        <p class="font-semibold mt-2">Possible isomers: EE, EZ, ZE, ZZ</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: Assign E/Z configuration to Br-CH=CH-Cl</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Compare atomic numbers of substituents</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: How many geometrical isomers for CH₃-CH₂-CH=CH-CH₃?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Check if both carbons have different substituents</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Assign configuration to HOOC-CH=CH-COOH</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: -COOH has higher priority than -H</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Predict isomers for CH₃-CH=CH-CH=CH-COOH</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider both double bonds independently</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Need Help?</h4>
+                        <p class="text-sm">Draw the molecules, assign priorities using CIP rules, and determine relative positions of high priority groups.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">CIP Priority Order</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>I > Br > Cl > S > P > F > O > N > C > H</li>
+                                <li>-CH₂OH > -C≡CH > -CH=CH₂ > -CH₂CH₃</li>
+                                <li>-COOH > -CHO > -CH₂OH > -C₆H₅</li>
+                                <li>R > H (always)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Memory Aids</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>E</strong> = Enemy (opposite sides)</li>
+                                <li><strong>Z</strong> = Zame Zide (same side)</li>
+                                <li><strong>CIS</strong> = Same side (like siblings)</li>
+                                <li><strong>TRANS</strong> = Across (like transformers)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Common Mistakes to Avoid</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            <div class="bg-white p-2 rounded border border-red-200">
+                                <strong>Wrong:</strong> Using CIS-TRANS when no identical groups
+                            </div>
+                            <div class="bg-white p-2 rounded border border-red-200">
+                                <strong>Wrong:</strong> Forgetting to check both carbons of double bond
+                            </div>
+                            <div class="bg-white p-2 rounded border border-red-200">
+                                <strong>Wrong:</strong> Not following CIP rules sequentially
+                            </div>
+                            <div class="bg-white p-2 rounded border border-red-200">
+                                <strong>Wrong:</strong> Confusing E/Z with optical isomerism
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Quick Identification</span>
+                                <p class="text-sm text-gray-600">First check if geometrical isomerism is possible</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Systematic Approach</span>
+                                <p class="text-sm text-gray-600">Always use CIP rules step-by-step for E/Z assignment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Verification</span>
+                                <p class="text-sm text-gray-600">Verify your answer by checking both double bond carbons</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Drawing Helps</span>
+                                <p class="text-sm text-gray-600">Draw the molecule to visualize group positions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Stereochemistry?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through organic chemistry with optical isomerism and conformational analysis</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Organic Chemistry
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Isomerism Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Chemistry Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#organic" class="hover:text-yellow-300">Organic Chemistry</a></li>
+                        <li><a href="#inorganic" class="hover:text-yellow-300">Inorganic Chemistry</a></li>
+                        <li><a href="#physical" class="hover:text-yellow-300">Physical Chemistry</a></li>
+                        <li><a href="#stereo" class="hover:text-yellow-300">Stereochemistry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Chemistry Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

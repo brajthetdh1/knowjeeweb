@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allylic Bromination with NBS: Master Free Radical Reaction | JEE Chemistry | KnowJEE</title>
+    <meta name="description" content="Master Allylic Bromination using N-Bromosuccinimide (NBS) for selective bromination. Complete mechanism, examples, and JEE preparation guide.">
+    <meta name="keywords" content="allylic bromination, NBS chemistry, free radical reaction, JEE organic chemistry, N-bromosuccinimide, selective bromination">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .mechanism-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .reaction-scheme {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #e2e8f0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Organic Chemistry Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">Organic Chemistry</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Free Radical Reaction</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Allylic Bromination Niche: A Special Free Radical Reaction</h1>
+                <p class="text-xl text-gray-600 mb-4">Master selective bromination at allylic position using N-Bromosuccinimide (NBS) - A crucial tool for JEE Organic Chemistry.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">95%</div>
+                            <div class="text-sm text-green-600">Selectivity</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">3-4</div>
+                            <div class="text-sm text-green-600">JEE Marks</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">4</div>
+                            <div class="text-sm text-green-600">Key Steps</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-700">NBS</div>
+                            <div class="text-sm text-green-600">Special Reagent</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Allylic Bromination is Special</h2>
+                <p class="mb-4">Allylic bromination using <strong>N-Bromosuccinimide (NBS)</strong> is one of the most selective free radical reactions in organic chemistry. Unlike regular bromination that adds across double bonds, NBS specifically targets the <strong>allylic position</strong> - the carbon adjacent to the double bond.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Importance</h4>
+                    <p>This reaction appears in <strong>1-2 questions per JEE paper</strong>, testing understanding of free radical mechanisms, stability of intermediates, and selective organic transformations.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#what-is-nbs" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">NBS Reagent</a>
+                    <a href="#mechanism" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Mechanism</a>
+                    <a href="#selectivity" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Selectivity</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice</a>
+                </div>
+            </div>
+
+            <!-- What is NBS Section -->
+            <section id="what-is-nbs" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Understanding N-Bromosuccinimide (NBS)</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Special Brominating Agent</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">NBS Structure</h4>
+                            <div class="reaction-scheme">
+                                <p class="font-mono text-lg mb-2">N-Bromosuccinimide</p>
+                                <div class="text-sm text-gray-600">
+                                    O=C(NBr)C(=O)NC<br>
+                                    A cyclic bromoamide that provides<br>
+                                    <strong>low concentration of Br₂</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Key Features</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Provides <strong>low, constant concentration</strong> of Br₂</li>
+                                <li>Prevents <strong>addition reaction</strong> to double bond</li>
+                                <li>Facilitates <strong>selective free radical substitution</strong></li>
+                                <li>Works under <strong>mild conditions</strong> (light or peroxide)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Why Not Use Br₂ Directly?</h3>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Br₂ (Direct)</th>
+                                <th>NBS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Reaction Type</strong></td>
+                                <td>Electrophilic Addition</td>
+                                <td>Free Radical Substitution</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Position</strong></td>
+                                <td>Across double bond</td>
+                                <td>Allylic position only</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Selectivity</strong></td>
+                                <td>Low</td>
+                                <td>High (95%+)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Br₂ Concentration</strong></td>
+                                <td>High</td>
+                                <td>Low and constant</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Mechanism Section -->
+            <section id="mechanism" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Free Radical Mechanism</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Step-by-Step Mechanism</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Initiation - Br₂ Generation</h4>
+                        <p>NBS reacts with traces of HBr to generate low concentration of Br₂:</p>
+                        <div class="reaction-scheme">
+                            <p class="font-mono text-sm">NBS + HBr → Succinimide + Br₂</p>
+                        </div>
+                        <p class="mt-2">Light or peroxide generates Br• radicals:</p>
+                        <div class="reaction-scheme">
+                            <p class="font-mono text-sm">Br₂ → 2Br• (under light/Δ)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Hydrogen Abstraction</h4>
+                        <p>Br• radical abstracts hydrogen from allylic position:</p>
+                        <div class="reaction-scheme">
+                            <p class="font-mono text-sm">CH₃-CH=CH₂ + Br• → •CH₂-CH=CH₂ + HBr</p>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">Forms resonance-stabilized allylic radical</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 3: Resonance Stabilization</h4>
+                        <p>The allylic radical is stabilized by resonance:</p>
+                        <div class="reaction-scheme">
+                            <p class="font-mono text-sm">•CH₂-CH=CH₂ ↔ CH₂=CH-CH₂•</p>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">This resonance stabilization makes the reaction selective for allylic position</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 4: Bromine Atom Transfer</h4>
+                        <p>The allylic radical reacts with Br₂ to form product and regenerate Br•:</p>
+                        <div class="reaction-scheme">
+                            <p class="font-mono text-sm">•CH₂-CH=CH₂ + Br₂ → BrCH₂-CH=CH₂ + Br•</p>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">The chain reaction continues until all NBS is consumed</p>
+                    </div>
+                </div>
+
+                <div class="mechanism-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Complete Reaction Example</h4>
+                    <div class="reaction-scheme">
+                        <p class="text-lg font-semibold mb-2">Propene + NBS → 3-Bromopropene</p>
+                        <div class="grid grid-cols-3 gap-4 text-sm items-center">
+                            <div class="text-center">
+                                <div>CH₃-CH=CH₂</div>
+                                <div class="text-xs text-gray-600">Propene</div>
+                            </div>
+                            <div class="text-center">+ NBS →</div>
+                            <div class="text-center">
+                                <div>BrCH₂-CH=CH₂</div>
+                                <div class="text-xs text-gray-600">3-Bromopropene</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selectivity Section -->
+            <section id="selectivity" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Understanding Selectivity & Regiochemistry</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Why Allylic Position?</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Resonance Stabilization</h4>
+                            <p class="text-sm mb-3">Allylic radicals are stabilized by resonance, making them more stable than other radical positions:</p>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Allylic radical:</strong> Resonance stabilized</li>
+                                <li><strong>Primary radical:</strong> Less stable</li>
+                                <li><strong>Vinylic radical:</strong> Less stable (sp² hybridized)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Bond Dissociation Energies</h4>
+                            <table class="comparison-table text-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Bond Type</th>
+                                        <th>Energy (kcal/mol)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Allylic C-H</td>
+                                        <td>~88</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Primary C-H</td>
+                                        <td>~101</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vinylic C-H</td>
+                                        <td>~111</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Regiochemistry in Unsymmetrical Alkenes</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example: 1-Butene with NBS</h4>
+                        <p>Two possible allylic positions lead to two products:</p>
+                        <div class="reaction-scheme">
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <div>CH₃-CH₂-CH=CH₂</div>
+                                    <div class="text-xs text-gray-600">1-Butene</div>
+                                    <div class="mt-2">↓ NBS</div>
+                                </div>
+                                <div>
+                                    <div>CH₃-CHBr-CH=CH₂ (Major)</div>
+                                    <div class="text-xs text-gray-600">More substituted</div>
+                                    <div>+</div>
+                                    <div>BrCH₂-CH₂-CH=CH₂ (Minor)</div>
+                                    <div class="text-xs text-gray-600">Less substituted</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">The more substituted allylic position is preferred due to greater radical stability</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Selectivity Rules</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Allylic > Benzylic > Tertiary > Secondary > Primary > Methyl > Vinylic</strong></li>
+                        <li>More substituted allylic positions are preferred</li>
+                        <li>Symmetrical alkenes give single product</li>
+                        <li>Unsymmetrical alkenes give mixture (follow radical stability)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reaction Conditions Section -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Reaction Conditions & Limitations</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Optimal Conditions</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Required Conditions</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Initiator:</strong> Light (hv) or Peroxides (ROOR)</li>
+                                <li><strong>Solvent:</strong> CCl₄ (inert, non-nucleophilic)</li>
+                                <li><strong>Temperature:</strong> Room temperature or reflux</li>
+                                <li><strong>Atmosphere:</strong> Often under N₂ to prevent O₂ inhibition</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">What Doesn't Work</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Alkanes without allylic positions</li>
+                                <li>Compounds with only vinylic hydrogens</li>
+                                <li>In presence of strong nucleophiles</li>
+                                <li>Under ionic conditions (gives addition)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Using high concentration of Br₂</span>
+                                <p class="text-sm text-gray-600">Leads to addition reaction instead of substitution</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Forgetting the initiator</span>
+                                <p class="text-sm text-gray-600">Reaction won't start without light or peroxide</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Wrong solvent choice</span>
+                                <p class="text-sm text-gray-600">Polar solvents can lead to side reactions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: Predict the product when cyclohexene reacts with NBS in CCl₄ under light.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Look for allylic positions in the ring</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: Why does NBS give substitution while Br₂ gives addition with alkenes?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Think about Br₂ concentration and reaction mechanism</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Predict all possible products when 2-pentene reacts with NBS.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Identify all allylic positions and their relative stability</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Explain why vinylic bromination doesn't occur with NBS.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider bond strengths and radical stability</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">JEE Tip</h4>
+                        <p class="text-sm">Always draw the resonance structures of allylic radicals - this is frequently asked in JEE to test fundamental understanding.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Features</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Reagent:</strong> N-Bromosuccinimide (NBS)</li>
+                                <li><strong>Mechanism:</strong> Free radical substitution</li>
+                                <li><strong>Position:</strong> Allylic carbons only</li>
+                                <li><strong>Conditions:</strong> Light/peroxide, CCl₄</li>
+                                <li><strong>Selectivity:</strong> 95%+ for allylic position</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Mechanism Steps</h4>
+                            <ol class="list-decimal list-inside space-y-1 text-sm">
+                                <li>Br₂ generation from NBS + HBr</li>
+                                <li>Initiation: Br• formation</li>
+                                <li>Propagation: H-abstraction → allylic radical</li>
+                                <li>Resonance stabilization</li>
+                                <li>Product formation + chain continuation</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Common Substrates</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                            <div class="bg-white p-2 rounded border text-center">
+                                <strong>Propene</strong><br>→ 3-Bromopropene
+                            </div>
+                            <div class="bg-white p-2 rounded border text-center">
+                                <strong>Cyclohexene</strong><br>→ 3-Bromocyclohexene
+                            </div>
+                            <div class="bg-white p-2 rounded border text-center">
+                                <strong>Toluene</strong><br>→ Benzyl bromide
+                            </div>
+                            <div class="bg-white p-2 rounded border text-center">
+                                <strong>1-Butene</strong><br>→ 1-Bromo-2-butene
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Mechanism First</span>
+                                <p class="text-sm text-gray-600">Always start by writing the free radical mechanism - it helps predict products correctly.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Identify Allylic Positions</span>
+                                <p class="text-sm text-gray-600">Quickly mark all allylic carbons before predicting products.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Check Resonance</span>
+                                <p class="text-sm text-gray-600">Draw resonance structures for allylic radicals - often asked directly.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Conditions Matter</span>
+                                <p class="text-sm text-gray-600">Mention "light or peroxide" and "CCl₄ solvent" for complete answers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Allylic Bromination?</h3>
+                    <p class="mb-4 opacity-90">Continue exploring more selective organic reactions in our comprehensive chemistry modules</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Organic Chemistry
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Chemistry Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#organic" class="hover:text-yellow-300">Organic Chemistry</a></li>
+                        <li><a href="#inorganic" class="hover:text-yellow-300">Inorganic Chemistry</a></li>
+                        <li><a href="#physical" class="hover:text-yellow-300">Physical Chemistry</a></li>
+                        <li><a href="#coordination" class="hover:text-yellow-300">Coordination Chemistry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Chemistry Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
