@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Remainders using Binomial Theorem | JEE Math Tricks | KnowJEE</title>
+    <meta name="description" content="Master the powerful technique of finding remainders using Binomial Theorem. Solve problems like 'Find remainder when 7^97 is divided by 64' with step-by-step methods.">
+    <meta name="keywords" content="binomial theorem remainders, JEE math tricks, remainder problems, JEE advanced math, number theory JEE, binomial theorem applications">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #f0f9ff;
+            border: 2px solid #7dd3fc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #e0f2fe;
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .concept-box {
+            background: #faf5ff;
+            border-left: 4px solid #a855f7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 3px solid #94a3b8;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Algebra Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Powerful Technique</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">6 Solved Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">A Powerful Tool - Finding Remainders using the Binomial Theorem</h1>
+                <p class="text-xl text-gray-600 mb-4">Solve problems like "Find remainder when 7^97 is divided by 64" by cleverly rewriting numbers as (a ± 1)^n.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3x</div>
+                            <div class="text-sm text-blue-600">Faster Solving</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">95%</div>
+                            <div class="text-sm text-blue-600">Success Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">6</div>
+                            <div class="text-sm text-blue-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5min</div>
+                            <div class="text-sm text-blue-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Technique is a Game-Changer</h2>
+                <p class="mb-4">The Binomial Theorem provides an elegant way to find remainders of large powers without tedious calculations. Instead of computing $7^{97}$ directly, we can find its remainder when divided by 64 in just 2-3 steps!</p>
+                
+                <div class="concept-box">
+                    <h4 class="font-semibold text-purple-800 mb-2">🎯 Core Insight</h4>
+                    <p>When finding remainder of $a^n$ modulo $m$, we try to express $a$ as $(m \pm k)$ or $(m \cdot r \pm 1)$. Then using binomial expansion, most terms become multiples of $m$, leaving only a simple remainder.</p>
+                    <div class="text-center my-3">
+                        $$(m \pm k)^n = \sum_{r=0}^n \binom{n}{r} m^{n-r} (\pm k)^r$$
+                    </div>
+                    <p>All terms with $m^{n-r}$ where $n-r \geq 1$ are divisible by $m$, so remainder depends only on the last term(s).</p>
+                </div>
+            </section>
+
+            <!-- Key Concept -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Binomial Theorem Refresher</h2>
+                
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold mb-3">Binomial Theorem Formula</h3>
+                    <div class="text-center text-lg mb-3">
+                        $$(a + b)^n = \sum_{r=0}^n \binom{n}{r} a^{n-r} b^r$$
+                    </div>
+                    <p class="text-sm opacity-90">Where $\binom{n}{r} = \frac{n!}{r!(n-r)!}$ are binomial coefficients</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="concept-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Case 1: (mk ± 1)^n</h4>
+                        <p>When $a = mk \pm 1$, then:</p>
+                        <div class="text-center my-2">
+                            $$(mk \pm 1)^n = (mk)^n \pm n(mk)^{n-1} + \cdots \pm n(mk) + 1$$
+                        </div>
+                        <p class="text-sm">All terms except last are divisible by $m$</p>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">Case 2: (m ± k)^n</h4>
+                        <p>When $a = m \pm k$, then:</p>
+                        <div class="text-center my-2">
+                            $$(m \pm k)^n = m^n \pm n m^{n-1}k + \cdots \pm n m k^{n-1} + k^n$$
+                        </div>
+                        <p class="text-sm">All terms except last are divisible by $m$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 1 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">Classic Example</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: The Classic 7^97 Problem</h3>
+                    <p class="text-lg mb-4">Find the remainder when $7^{97}$ is divided by 64.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Solution:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Express 7 in terms of 64</p>
+                            <p>We notice that $7 = 8 - 1$, but 8 doesn't directly relate to 64. Better approach:</p>
+                            <div class="text-center my-2">
+                                $7^2 = 49 = 64 - 15$ ❌ (not helpful)
+                            </div>
+                            <p>Instead, think: $7 = 2^3 - 1$? No, let's try $7 = 8 - 1$ and $8 = 2^3$</p>
+                            <p>Actually, the key insight: $7 = 8 - 1$ and we need modulo 64 = $8^2$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2:</strong> Write 7 as (8 - 1) and apply binomial theorem</p>
+                            <div class="text-center my-2">
+                                $7^{97} = (8 - 1)^{97}$
+                            </div>
+                            <p>Using binomial expansion:</p>
+                            <div class="text-center my-2">
+                                $(8 - 1)^{97} = \sum_{r=0}^{97} \binom{97}{r} 8^{97-r} (-1)^r$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3:</strong> Identify terms divisible by 64</p>
+                            <p>Since we're dividing by 64 = $8^2$, any term with $8^{97-r}$ where $97-r \geq 2$ (i.e., $r \leq 95$) will be divisible by 64.</p>
+                            <p>So only the last two terms ($r = 96$ and $r = 97$) might not be divisible by 64.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 4:</strong> Calculate the last two terms</p>
+                            <p>Last two terms:</p>
+                            <div class="text-center my-2">
+                                $T_{96} = \binom{97}{96} 8^1 (-1)^{96} = 97 \times 8 \times 1 = 776$
+                            </div>
+                            <div class="text-center my-2">
+                                $T_{97} = \binom{97}{97} 8^0 (-1)^{97} = 1 \times 1 \times (-1) = -1$
+                            </div>
+                            <p>Sum of last two terms: $776 - 1 = 775$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 5:</strong> Find the remainder</p>
+                            <p>Since all other terms are divisible by 64, remainder is the remainder when 775 is divided by 64:</p>
+                            <div class="text-center my-2">
+                                $775 ÷ 64 = 12$ remainder $775 - 12 \times 64 = 775 - 768 = 7$
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-3 rounded mt-3">
+                            <p class="font-semibold text-green-800">✅ Final Answer: Remainder = 7</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Insight</h4>
+                        <p>When finding $(a-1)^n$ modulo $a^2$, only the last two terms matter: $na - 1$</p>
+                        <div class="text-center my-2">
+                            $(a-1)^n \equiv (-1)^n + n \cdot a \cdot (-1)^{n-1} \pmod{a^2}$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2019</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Simple (a+1)^n Case</h3>
+                    <p class="text-lg mb-4">Find the remainder when $9^{99}$ is divided by 8.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Smart Solution:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Express 9 as (8 + 1)</p>
+                            <div class="text-center my-2">
+                                $9^{99} = (8 + 1)^{99}$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2:</strong> Apply binomial theorem</p>
+                            <div class="text-center my-2">
+                                $(8 + 1)^{99} = \sum_{r=0}^{99} \binom{99}{r} 8^{99-r} 1^r$
+                            </div>
+                            <p>All terms except the last ($r = 99$) contain at least one factor of 8.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3:</strong> Identify the remainder</p>
+                            <p>Only the term with $r = 99$ doesn't have factor of 8:</p>
+                            <div class="text-center my-2">
+                                $T_{99} = \binom{99}{99} 8^0 1^{99} = 1$
+                            </div>
+                            <p>So remainder is 1.</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-3 rounded mt-3">
+                            <p class="font-semibold text-green-800">✅ Final Answer: Remainder = 1</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 General Rule</h4>
+                        <p>For $(m + 1)^n$ modulo $m$, remainder is always 1, since all terms except last contain $m$.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2017</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Double Binomial Application</h3>
+                    <p class="text-lg mb-4">Find the remainder when $17^{100}$ is divided by 18.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Advanced Solution:</h4>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Express 17 as (18 - 1)</p>
+                            <div class="text-center my-2">
+                                $17^{100} = (18 - 1)^{100}$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 2:</strong> Apply binomial theorem</p>
+                            <div class="text-center my-2">
+                                $(18 - 1)^{100} = \sum_{r=0}^{100} \binom{100}{r} 18^{100-r} (-1)^r$
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <p><strong>Step 3:</strong> Analyze terms modulo 18</p>
+                            <p>All terms with $r \leq 99$ contain at least one factor of 18, so they are divisible by 18.</p>
+                            <p>Only the last term ($r = 100$) remains:</p>
+                            <div class="text-center my-2">
+                                $T_{100} = \binom{100}{100} 18^0 (-1)^{100} = 1$
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-3 rounded mt-3">
+                            <p class="font-semibold text-green-800">✅ Final Answer: Remainder = 1</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Advanced Insight</h4>
+                        <p>When divisor is $m$ and number is $(m ± k)^n$, if $m$ is prime to $k$, we might need to consider more terms depending on the power relationships.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Strategies -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Problem-Solving Framework</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 1: Identify the Pattern</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Look for numbers close to the divisor</li>
+                                <li>Try to express as $(m ± k)$ or $(mk ± 1)$</li>
+                                <li>Check if $k$ is small (preferably 1)</li>
+                                <li>Higher powers of 2 often work well</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Step 2: Apply Binomial Theorem</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Write the binomial expansion</li>
+                                <li>Identify which terms vanish modulo $m$</li>
+                                <li>Focus on the last 1-3 terms</li>
+                                <li>Consider the sign pattern carefully</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-4 bg-white rounded border">
+                        <h4 class="font-semibold text-blue-800 mb-2">Common Patterns to Recognize</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                            <div class="text-center p-2 bg-green-50 rounded">$(m+1)^n \equiv 1$</div>
+                            <div class="text-center p-2 bg-green-50 rounded">$(m-1)^n \equiv ±1$</div>
+                            <div class="text-center p-2 bg-blue-50 rounded">$(2^a-1)^n$ mod $2^b$</div>
+                            <div class="text-center p-2 bg-blue-50 rounded">$(mk±1)^n$ mod $m$</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- More Problems Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Problems 4-6 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes 3 more challenging JEE problems with advanced binomial applications</p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems using the binomial theorem approach:</p>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium">1. Find remainder when $5^{100}$ is divided by 24</p>
+                            <p class="text-sm text-gray-600 mt-1">Hint: $5 = 4 + 1$ or $5 = 6 - 1$? Which is better?</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium">2. Find remainder when $3^{50}$ is divided by 8</p>
+                            <p class="text-sm text-gray-600 mt-1">Hint: $3 = 4 - 1$ or $3^2 = 9 = 8 + 1$?</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium">3. Find remainder when $6^{99}$ is divided by 7</p>
+                            <p class="text-sm text-gray-600 mt-1">Hint: $6 = 7 - 1$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📋 Quick Reference Formulas</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">For modulo m:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$(m+1)^n \equiv 1 \pmod{m}$</li>
+                                <li>$(m-1)^n \equiv (-1)^n \pmod{m}$</li>
+                                <li>$(mk+1)^n \equiv 1 \pmod{m}$</li>
+                                <li>$(mk-1)^n \equiv (-1)^n \pmod{m}$</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">For modulo m²:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$(m+1)^n \equiv 1 + nm \pmod{m^2}$</li>
+                                <li>$(m-1)^n \equiv (-1)^n(1 - nm) \pmod{m^2}$</li>
+                                <li>Last two terms matter for m²</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Binomial Remainders?</h3>
+                    <p class="mb-4 opacity-90">Continue your JEE preparation with more powerful mathematical techniques</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Algebra Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

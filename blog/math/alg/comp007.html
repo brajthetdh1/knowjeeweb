@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Roots & nth Roots of Unity | Complex Numbers | KnowJEE</title>
+    <meta name="description" content="Master Cube Roots and nth Roots of Unity for JEE Main & Advanced. Complete guide with properties, formulas, geometric interpretation and solved problems.">
+    <meta name="keywords" content="cube roots of unity, nth roots of unity, complex numbers JEE, roots of unity properties, JEE complex numbers, omega in complex numbers">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .property-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .example-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .geometric-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .jee-tip {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .complex-plane {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Complex Numbers Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Complex Numbers</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Main & Advanced</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Unlocking the Roots: Cube Roots and nth Roots of Unity</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the geometric beauty and algebraic properties of roots of unity - essential for JEE Complex Numbers.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2-3</div>
+                            <div class="text-sm text-purple-600">Questions in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">Concept Coverage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5</div>
+                            <div class="text-sm text-purple-600">Key Properties</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">12+</div>
+                            <div class="text-sm text-purple-600">Solved Examples</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Roots of Unity Matter in JEE</h2>
+                <p class="mb-4">Roots of unity are among the most beautiful concepts in complex numbers. They appear in <strong>2-3 questions every year</strong> in JEE Main and Advanced, testing your understanding of:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li><strong>Geometric interpretation</strong> of complex numbers</li>
+                    <li><strong>Algebraic manipulation</strong> with complex roots</li>
+                    <li><strong>Properties of omega (ω)</strong> and their applications</li>
+                    <li><strong>Problem-solving</strong> with symmetric expressions</li>
+                </ul>
+                
+                <div class="jee-tip">
+                    <h4 class="font-semibold text-red-800 mb-2">🎯 JEE Insight</h4>
+                    <p>Questions on roots of unity often combine <strong>complex numbers with algebra, geometry, and even calculus</strong>. Mastering this topic gives you an edge in multiple areas.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#cube-roots" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Cube Roots</a>
+                    <a href="#nth-roots" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">nth Roots</a>
+                    <a href="#properties" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Properties</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                </div>
+            </div>
+
+            <!-- Cube Roots of Unity -->
+            <section id="cube-roots" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Cube Roots of Unity</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Definition and Derivation</h3>
+                    <p class="mb-4">The cube roots of unity are the solutions to the equation:</p>
+                    <div class="formula-box text-center">
+                        $$ z^3 = 1 $$
+                    </div>
+                    
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Step-by-step Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> $z^3 - 1 = 0$</p>
+                            <p><strong>Step 2:</strong> Factorize: $(z - 1)(z^2 + z + 1) = 0$</p>
+                            <p><strong>Step 3:</strong> Solve $z - 1 = 0$ ⇒ $z = 1$</p>
+                            <p><strong>Step 4:</strong> Solve $z^2 + z + 1 = 0$ using quadratic formula:</p>
+                            <p class="ml-4">$z = \frac{-1 \pm \sqrt{1 - 4}}{2} = \frac{-1 \pm i\sqrt{3}}{2}$</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-4 mt-4">
+                        <div class="text-center p-4 bg-white rounded-lg border">
+                            <p class="font-bold text-lg">$1$</p>
+                            <p class="text-sm text-gray-600">Real root</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border">
+                            <p class="font-bold text-lg">$\omega$</p>
+                            <p class="text-sm text-gray-600">$= \frac{-1 + i\sqrt{3}}{2}$</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border">
+                            <p class="font-bold text-lg">$\omega^2$</p>
+                            <p class="text-sm text-gray-600">$= \frac{-1 - i\sqrt{3}}{2}$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="geometric-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Geometric Interpretation</h3>
+                    <p class="mb-4">The cube roots of unity form an equilateral triangle when plotted on the complex plane:</p>
+                    
+                    <div class="complex-plane">
+                        <div class="mb-4">
+                            <p class="font-semibold text-gray-700">Unit Circle with vertices at:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>$1$ at angle $0^\circ$ (real axis)</li>
+                                <li>$\omega$ at angle $120^\circ$</li>
+                                <li>$\omega^2$ at angle $240^\circ$</li>
+                            </ul>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded border">
+                            <p class="text-sm"><strong>Key Insight:</strong> Each root is obtained by rotating the previous root by $120^\circ$ about the origin.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Properties of Cube Roots -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Key Properties of Cube Roots of Unity</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 1: Sum of Roots</h4>
+                        <div class="formula-box text-center">
+                            $$ 1 + \omega + \omega^2 = 0 $$
+                        </div>
+                        <p class="text-sm mt-2"><strong>Proof:</strong> From $z^2 + z + 1 = 0$, the sum of roots is $-1$ (for $\omega$ and $\omega^2$), plus 1 gives 0.</p>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 2: Product of Roots</h4>
+                        <div class="formula-box text-center">
+                            $$ 1 \cdot \omega \cdot \omega^2 = \omega^3 = 1 $$
+                        </div>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 3: Cyclic Nature</h4>
+                        <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                            <div class="bg-white p-3 rounded border">
+                                <p>$\omega^3 = 1$</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <p>$\omega^4 = \omega$</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <p>$\omega^5 = \omega^2$</p>
+                            </div>
+                        </div>
+                        <p class="text-sm mt-2"><strong>General Rule:</strong> $\omega^{3n} = 1$, $\omega^{3n+1} = \omega$, $\omega^{3n+2} = \omega^2$</p>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 4: Reciprocal Relations</h4>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white p-3 rounded border">
+                                <p>$\frac{1}{\omega} = \omega^2$</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <p>$\frac{1}{\omega^2} = \omega$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 5: Conjugate Relations</h4>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white p-3 rounded border">
+                                <p>$\overline{\omega} = \omega^2$</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <p>$\overline{\omega^2} = \omega$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- nth Roots of Unity -->
+            <section id="nth-roots" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. nth Roots of Unity</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">General Definition</h3>
+                    <p class="mb-4">The nth roots of unity are the solutions to:</p>
+                    <div class="formula-box text-center">
+                        $$ z^n = 1 $$
+                    </div>
+                    
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">General Solution:</h4>
+                        <p>The n roots are given by:</p>
+                        <div class="formula-box text-center">
+                            $$ z_k = e^{2\pi i k/n} = \cos\left(\frac{2\pi k}{n}\right) + i\sin\left(\frac{2\pi k}{n}\right) $$
+                        </div>
+                        <p class="text-sm mt-2">where $k = 0, 1, 2, \dots, n-1$</p>
+                    </div>
+                </div>
+
+                <div class="geometric-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Geometric Interpretation</h3>
+                    <p class="mb-4">The nth roots of unity form a regular n-gon inscribed in the unit circle:</p>
+                    
+                    <div class="complex-plane">
+                        <div class="mb-4">
+                            <p class="font-semibold text-gray-700">Key Features:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>All roots lie on the unit circle $|z| = 1$</li>
+                                <li>They are equally spaced at angles of $\frac{2\pi}{n}$</li>
+                                <li>Roots occur in conjugate pairs (except real roots)</li>
+                                <li>The roots are vertices of a regular n-sided polygon</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Properties of nth Roots -->
+            <section id="properties" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Properties of nth Roots of Unity</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 1: Sum of All Roots</h4>
+                        <div class="formula-box text-center">
+                            $$ 1 + \alpha + \alpha^2 + \cdots + \alpha^{n-1} = 0 $$
+                        </div>
+                        <p class="text-sm mt-2">where $\alpha$ is any primitive nth root of unity ($\alpha^n = 1$ but $\alpha^k \neq 1$ for $0 < k < n$)</p>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 2: Product of All Roots</h4>
+                        <div class="formula-box text-center">
+                            $$ 1 \cdot \alpha \cdot \alpha^2 \cdots \alpha^{n-1} = (-1)^{n-1} $$
+                        </div>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 3: Cyclic Nature</h4>
+                        <p>If $\alpha$ is a primitive nth root, then:</p>
+                        <div class="formula-box text-center">
+                            $$ \alpha^{kn+r} = \alpha^r $$
+                        </div>
+                        <p class="text-sm mt-2">The powers repeat with period n</p>
+                    </div>
+
+                    <div class="property-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Property 4: Reciprocal Relations</h4>
+                        <div class="formula-box text-center">
+                            $$ \frac{1}{\alpha^k} = \alpha^{n-k} $$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications and Examples -->
+            <section id="applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Applications & Solved Examples</h2>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 1: Simplification using ω</h3>
+                    <p class="mb-4">Simplify $(1 + \omega - \omega^2)^3$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Use $1 + \omega + \omega^2 = 0$ ⇒ $1 + \omega = -\omega^2$</p>
+                            <p><strong>Step 2:</strong> Substitute: $(1 + \omega - \omega^2) = (-\omega^2 - \omega^2) = -2\omega^2$</p>
+                            <p><strong>Step 3:</strong> Cube: $(-2\omega^2)^3 = -8\omega^6 = -8(\omega^3)^2 = -8(1)^2 = -8$</p>
+                            <p class="font-semibold mt-2">Answer: $-8$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 2: Fourth Roots of Unity</h3>
+                    <p class="mb-4">Find all fourth roots of unity and verify their properties</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Solve $z^4 = 1$ ⇒ $z^4 - 1 = 0$</p>
+                            <p><strong>Step 2:</strong> Factorize: $(z^2 - 1)(z^2 + 1) = (z-1)(z+1)(z^2+1) = 0$</p>
+                            <p><strong>Step 3:</strong> Roots: $1, -1, i, -i$</p>
+                            <p><strong>Step 4:</strong> Verify sum: $1 + (-1) + i + (-i) = 0$ ✓</p>
+                            <p><strong>Step 5:</strong> Verify product: $1 \cdot (-1) \cdot i \cdot (-i) = (-1) \cdot (-i^2) = (-1) \cdot (1) = -1 = (-1)^{4-1}$ ✓</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 3: JEE Advanced Problem</h3>
+                    <p class="mb-4">If $\omega$ is a complex cube root of unity, find the value of $(1 - \omega + \omega^2)(1 + \omega - \omega^2)$</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Use $1 + \omega + \omega^2 = 0$</p>
+                            <p><strong>Step 2:</strong> $1 - \omega + \omega^2 = (1 + \omega + \omega^2) - 2\omega = 0 - 2\omega = -2\omega$</p>
+                            <p><strong>Step 3:</strong> $1 + \omega - \omega^2 = (1 + \omega + \omega^2) - 2\omega^2 = 0 - 2\omega^2 = -2\omega^2$</p>
+                            <p><strong>Step 4:</strong> Multiply: $(-2\omega)(-2\omega^2) = 4\omega^3 = 4(1) = 4$</p>
+                            <p class="font-semibold mt-2">Answer: $4$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📚 Quick Revision Formulas</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Cube Roots of Unity</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>Roots: $1, \omega, \omega^2$</li>
+                                <li>$\omega = \frac{-1 + i\sqrt{3}}{2}$</li>
+                                <li>$\omega^2 = \frac{-1 - i\sqrt{3}}{2}$</li>
+                                <li>$1 + \omega + \omega^2 = 0$</li>
+                                <li>$\omega^3 = 1$</li>
+                                <li>$\frac{1}{\omega} = \omega^2$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">nth Roots of Unity</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$z_k = e^{2\pi i k/n}$</li>
+                                <li>Sum of all roots = 0</li>
+                                <li>Product = $(-1)^{n-1}$</li>
+                                <li>Form regular n-gon on unit circle</li>
+                                <li>Primitive roots: $\alpha^k$ where gcd(k,n)=1</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-level problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. If $\omega$ is cube root of unity, find $(1 + \omega)(1 + \omega^2)(1 + \omega^4)(1 + \omega^8)$</p>
+                            <div class="text-sm text-gray-600">Hint: Use $\omega^3 = 1$ to simplify powers</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find all sixth roots of unity and show they form a regular hexagon</p>
+                            <div class="text-sm text-gray-600">Hint: Use the formula for nth roots</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Prove that $1 + \omega^n + \omega^{2n} = 3$ if n is multiple of 3, and 0 otherwise</p>
+                            <div class="text-sm text-gray-600">Hint: Consider cases based on n mod 3</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Strategy -->
+            <section class="mb-8">
+                <div class="jee-tip">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Common Question Types</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Simplification using ω properties</li>
+                                <li>Finding specific roots of unity</li>
+                                <li>Geometric interpretation problems</li>
+                                <li>Complex number equations involving roots</li>
+                                <li>Application in solving polynomials</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Time-Saving Tips</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Memorize the key properties of ω</li>
+                                <li>Use geometric intuition for complex plane</li>
+                                <li>Practice mental calculation with powers of ω</li>
+                                <li>Look for symmetric expressions</li>
+                                <li>Verify answers using multiple methods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Complex Numbers?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through advanced complex number concepts</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="complex-numbers-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Complex Number Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Test
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

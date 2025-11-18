@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequences & Series in Calculus: The Valuable Connection | KnowJEE</title>
+    <meta name="description" content="Discover how sequences and series form the foundation of calculus concepts. Master the connection between infinite series, limits, and integration for JEE preparation.">
+    <meta name="keywords" content="sequences and series calculus, infinite series JEE, convergence tests, Taylor series, JEE mathematics series">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .connection-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .application-box {
+            background: #fef7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .importance-high { border-left: 4px solid #ef4444; }
+        .importance-medium { border-left: 4px solid #eab308; }
+        .importance-low { border-left: 4px solid #22c55e; }
+        .jee-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Calculus Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Calculus Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Key Connections</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Sequences & Series in Calculus: The Valuable Connection</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how infinite processes in sequences & series form the bedrock of calculus concepts like limits, derivatives, and integrals.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">30%</div>
+                            <div class="text-sm text-blue-600">JEE Calculus</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5+</div>
+                            <div class="text-sm text-blue-600">Key Connections</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Foundation</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8-12</div>
+                            <div class="text-sm text-blue-600">Marks/Year</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Connection Matters for JEE</h2>
+                <p class="mb-4">Sequences and series are not just standalone topics in JEE Mathematics - they form the <strong>conceptual foundation</strong> for understanding calculus. The bridge between discrete sums and continuous integrals is where the real magic of mathematics happens.</p>
+                
+                <div class="application-box">
+                    <h4 class="font-semibold text-orange-800 mb-2">🎯 JEE Relevance</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>8-12 marks annually</strong> in JEE Main from combined sequence/series + calculus problems</li>
+                        <li>Essential for understanding <strong>Taylor and Maclaurin series</strong> in advanced calculus</li>
+                        <li>Forms basis for <strong>numerical methods</strong> and approximation techniques</li>
+                        <li>Crucial for <strong>probability and statistics</strong> applications</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🔗 Key Connections</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#limits" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Limits & Convergence</a>
+                    <a href="#integration" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Riemann Sums</a>
+                    <a href="#taylor" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Taylor Series</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                </div>
+            </div>
+
+            <!-- Connection 1: Limits -->
+            <section id="limits" class="mb-8">
+                <div class="concept-box importance-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Essential</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">1. Sequences → Limits: The Fundamental Bridge</h3>
+                    
+                    <div class="connection-box">
+                        <h4 class="font-semibold text-green-800 mb-2">The Core Idea</h4>
+                        <p>Sequences teach us about <strong>approaching behavior</strong> - exactly what limits are about in calculus.</p>
+                        <div class="text-center my-3">
+                            $$ \lim_{n \to \infty} a_n = L \quad \text{vs} \quad \lim_{x \to c} f(x) = L $$
+                        </div>
+                        <p>The concept of a sequence converging to a limit is the discrete version of a function approaching a limit.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example: Understanding Limits Through Sequences</h4>
+                        <p>Consider the sequence: $a_n = \frac{n}{n+1}$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Sequence terms:</strong> $\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \ldots$</p>
+                            <p><strong>Limit:</strong> $\lim_{n \to \infty} \frac{n}{n+1} = 1$</p>
+                            <p><strong>Function version:</strong> $\lim_{x \to \infty} \frac{x}{x+1} = 1$</p>
+                        </div>
+                        <p class="mt-2">The sequence gives us concrete numbers approaching the limit, building intuition for the continuous case.</p>
+                    </div>
+
+                    <div class="application-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">💡 JEE Application</h4>
+                        <p><strong>Problem:</strong> Find $\lim_{x \to 0} \frac{\sin x}{x}$ using series expansion</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution approach:</strong> Use $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$</p>
+                            <p>Then $\frac{\sin x}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \cdots$</p>
+                            <p>As $x \to 0$, all terms except 1 vanish, so limit = 1</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connection 2: Integration -->
+            <section id="integration" class="mb-8">
+                <div class="concept-box importance-high">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Critical</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">High Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">2. Series → Integration: Riemann Sums</h3>
+                    
+                    <div class="connection-box">
+                        <h4 class="font-semibold text-green-800 mb-2">The Fundamental Insight</h4>
+                        <p>Integration is essentially the <strong>limit of infinite series</strong> - this is the concept of Riemann sums.</p>
+                        <div class="text-center my-3">
+                            $$ \int_a^b f(x)dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x $$
+                        </div>
+                        <p>Where $\Delta x = \frac{b-a}{n}$ and $x_i^*$ is a point in the $i$-th subinterval.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Visualizing the Connection</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Discrete Sum:</strong></p>
+                                <p>$\sum_{i=1}^n f(x_i) \Delta x$</p>
+                                <p>• Finite number of terms</p>
+                                <p>• Approximates area</p>
+                                <p>• Exact for piecewise constant functions</p>
+                            </div>
+                            <div>
+                                <p><strong>Integral (Continuous Sum):</strong></p>
+                                <p>$\int_a^b f(x)dx$</p>
+                                <p>• Infinite terms in limit</p>
+                                <p>• Exact area</p>
+                                <p>• Works for continuous functions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="application-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">💡 JEE Application</h4>
+                        <p><strong>Problem:</strong> Evaluate $\int_0^1 x^2 dx$ as a limit of sum</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Use Riemann sum with right endpoints:</p>
+                            <p>$\int_0^1 x^2 dx = \lim_{n \to \infty} \sum_{i=1}^n \left(\frac{i}{n}\right)^2 \cdot \frac{1}{n}$</p>
+                            <p>$= \lim_{n \to \infty} \frac{1}{n^3} \sum_{i=1}^n i^2 = \lim_{n \to \infty} \frac{1}{n^3} \cdot \frac{n(n+1)(2n+1)}{6}$</p>
+                            <p>$= \lim_{n \to \infty} \frac{2n^3 + 3n^2 + n}{6n^3} = \frac{1}{3}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connection 3: Taylor Series -->
+            <section id="taylor" class="mb-8">
+                <div class="concept-box importance-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">JEE Advanced</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">3. Power Series → Function Approximation</h3>
+                    
+                    <div class="connection-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Taylor and Maclaurin Series</h4>
+                        <p>Any sufficiently smooth function can be represented as an <strong>infinite power series</strong>:</p>
+                        <div class="text-center my-3">
+                            $$ f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^n $$
+                        </div>
+                        <p>This connects derivatives (calculus) with infinite series (algebra).</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Important Series Expansions for JEE</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Exponential:</strong></p>
+                                <p>$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$</p>
+                                <p><strong>Sine:</strong></p>
+                                <p>$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$</p>
+                            </div>
+                            <div>
+                                <p><strong>Cosine:</strong></p>
+                                <p>$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots$</p>
+                                <p><strong>Logarithm:</strong></p>
+                                <p>$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="application-box">
+                        <h4 class="font-semibold text-orange-800 mb-2">💡 JEE Application</h4>
+                        <p><strong>Problem:</strong> Find the Maclaurin series for $f(x) = \frac{1}{1-x}$</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Recognize this as a geometric series:</p>
+                            <p>$\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots$ for $|x| < 1$</p>
+                            <p><strong>Alternative using derivatives:</strong></p>
+                            <p>$f(0) = 1$, $f'(0) = 1$, $f''(0) = 2$, $f'''(0) = 6$, $\ldots$</p>
+                            <p>So $f^{(n)}(0) = n!$</p>
+                            <p>Thus $\frac{1}{1-x} = \sum_{n=0}^{\infty} \frac{n!}{n!} x^n = \sum_{n=0}^{\infty} x^n$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connection 4: Applications -->
+            <section id="applications" class="mb-8">
+                <div class="concept-box importance-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="jee-tag">Practical Applications</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium Importance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">4. Real-World Applications</h3>
+                    
+                    <div class="connection-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Where Sequences/Series Meet Calculus in Practice</h4>
+                        <p>This connection isn't just theoretical - it has powerful practical applications:</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Numerical Integration</h4>
+                            <p class="text-sm">Methods like Simpson's Rule and Trapezoidal Rule use finite series to approximate definite integrals:</p>
+                            <p class="text-center text-sm mt-2">$\int_a^b f(x)dx \approx \frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + \cdots + f(x_n)]$</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Differential Equations</h4>
+                            <p class="text-sm">Power series solutions to differential equations:</p>
+                            <p class="text-center text-sm mt-2">$y = \sum_{n=0}^{\infty} a_n x^n$</p>
+                            <p class="text-sm">Substitute into DE to find coefficients $a_n$</p>
+                        </div>
+                    </div>
+
+                    <div class="application-box mt-4">
+                        <h4 class="font-semibold text-orange-800 mb-2">💡 JEE Application</h4>
+                        <p><strong>Problem:</strong> Estimate $\int_0^1 e^{-x^2} dx$ using first three terms of series expansion</p>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Solution:</strong> Use $e^u = 1 + u + \frac{u^2}{2!} + \cdots$ with $u = -x^2$</p>
+                            <p>$e^{-x^2} = 1 - x^2 + \frac{x^4}{2} - \cdots$</p>
+                            <p>$\int_0^1 e^{-x^2} dx \approx \int_0^1 (1 - x^2 + \frac{x^4}{2}) dx$</p>
+                            <p>$= \left[x - \frac{x^3}{3} + \frac{x^5}{10}\right]_0^1 = 1 - \frac{1}{3} + \frac{1}{10} = \frac{23}{30} \approx 0.767$</p>
+                            <p class="text-xs text-gray-600">(Actual value ≈ 0.747, so good approximation!)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Problem-Solving Guide -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🚀 Quick Problem-Solving Framework</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">When you see sequences/series in calculus:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Identify the connection:</strong> Is this about limits? Integration? Approximation?</li>
+                                <li><strong>Check convergence:</strong> Does the series converge? What test to use?</li>
+                                <li><strong>Look for patterns:</strong> Geometric? Arithmetic? Power series?</li>
+                                <li><strong>Connect to calculus:</strong> How can derivatives/integrals help?</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Common JEE Problem Types:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Limit of sequence → Function limit</li>
+                                <li>Sum of series → Definite integral</li>
+                                <li>Series expansion → Function approximation</li>
+                                <li>Convergence tests → Limit comparison</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Test Your Understanding</h3>
+                    <p class="mb-4">Try these problems that bridge sequences/series and calculus:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Express $\lim_{n \to \infty} \sum_{i=1}^n \frac{1}{n} \sqrt{\frac{i}{n}}$ as a definite integral and evaluate it.</p>
+                            <div class="text-sm text-gray-600">Hint: Recognize the Riemann sum pattern</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find the Maclaurin series for $f(x) = \ln(1+x)$ and use it to approximate $\ln(1.1)$ with error < 0.001.</p>
+                            <div class="text-sm text-gray-600">Hint: Use alternating series error estimate</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Show that $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$ using integration techniques.</p>
+                            <div class="text-sm text-gray-600">Hint: Consider the Fourier series connection</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Convergence Tests Reference -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">📋 Essential Convergence Tests</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-yellow-100">
+                                    <th class="p-2 text-left">Test</th>
+                                    <th class="p-2 text-left">When to Use</th>
+                                    <th class="p-2 text-left">Condition</th>
+                                    <th class="p-2 text-left">Conclusion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-2 font-medium">Ratio Test</td>
+                                    <td class="p-2">Factorials, exponentials</td>
+                                    <td class="p-2">$\lim |a_{n+1}/a_n| = L$</td>
+                                    <td class="p-2">$L < 1$: converge<br>$L > 1$: diverge</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-2 font-medium">Root Test</td>
+                                    <td class="p-2">n-th powers</td>
+                                    <td class="p-2">$\lim |a_n|^{1/n} = L$</td>
+                                    <td class="p-2">$L < 1$: converge<br>$L > 1$: diverge</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-2 font-medium">Integral Test</td>
+                                    <td class="p-2">Positive, decreasing</td>
+                                    <td class="p-2">$\int_1^\infty f(x)dx$</td>
+                                    <td class="p-2">Integral conv. ⇒ series conv.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-medium">Comparison</td>
+                                    <td class="p-2">Similar to known series</td>
+                                    <td class="p-2">$0 \leq a_n \leq b_n$</td>
+                                    <td class="p-2">$b_n$ conv. ⇒ $a_n$ conv.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Takeaways -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Key Takeaways</h3>
+                    <p class="mb-4 opacity-90">Sequences and series provide the discrete foundation for continuous calculus concepts</p>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm text-left">
+                        <div>
+                            <h4 class="font-semibold mb-2">🔗 Connections</h4>
+                            <ul class="space-y-1 opacity-90">
+                                <li>Sequences → Limits</li>
+                                <li>Series → Integration</li>
+                                <li>Power Series → Function Representation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">🎯 JEE Focus</h4>
+                            <ul class="space-y-1 opacity-90">
+                                <li>Riemann Sums</li>
+                                <li>Taylor Series</li>
+                                <li>Convergence Tests</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">💡 Strategy</h4>
+                            <ul class="space-y-1 opacity-90">
+                                <li>Recognize patterns</li>
+                                <li>Connect discrete/continuous</li>
+                                <li>Use series for approximation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Ready to Master This Connection?</h3>
+                    <p class="text-gray-600 mb-4">Practice with more integrated sequence/series and calculus problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-calculus-cards.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            More Calculus Topics
+                        </a>
+                        <button class="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

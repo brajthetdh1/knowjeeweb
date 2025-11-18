@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequences & Series: Final Revision Sheet & Must-Know Formulas | JEE Math | KnowJEE</title>
+    <meta name="description" content="Complete JEE Sequences & Series revision sheet with all essential formulas, shortcuts, and problem-solving strategies. Perfect for last-minute JEE Main & Advanced preparation.">
+    <meta name="keywords" content="JEE sequences series, arithmetic progression, geometric progression, JEE math formulas, sequences series revision, JEE shortcuts, AP GP formulas">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+
+        // Checklist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // Load saved state from localStorage
+            checkboxes.forEach(checkbox => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                // Save state when changed
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.checked);
+                });
+            });
+
+            // Reset all checkboxes
+            document.getElementById('resetChecklist')?.addEventListener('click', function() {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    localStorage.setItem(checkbox.id, false);
+                });
+                updateProgress();
+            });
+        });
+
+        // Update progress bar
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            const progress = (checked.length / checkboxes.length) * 100;
+            
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progress) + '%';
+            
+            // Update checklist item styles
+            checkboxes.forEach(checkbox => {
+                const item = checkbox.closest('.checklist-item');
+                if (checkbox.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        }
+        
+        // Add event listeners to all checkboxes
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+            updateProgress();
+        });
+    </script>
+    
+    <style>
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .quick-tip {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .checklist-item {
+            transition: all 0.3s ease;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .checklist-item.checked {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+        .jump-link {
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            display: inline-block;
+            font-size: 0.875rem;
+        }
+        .table-formula {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .table-formula th {
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .table-formula td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .table-formula tr:nth-child(even) {
+            background: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to All Math Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Final Revision</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">40+ Formulas</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Sequences & Series: Your Final Revision Sheet & Must-Know Formulas</h1>
+                <p class="text-xl text-gray-600 mb-4">Everything you need to master Sequences & Series for JEE Main & Advanced - from basic definitions to advanced problem-solving strategies.</p>
+                
+                <!-- Progress Bar -->
+                <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-gray-700">Revision Progress</span>
+                        <span id="progressPercent" class="text-sm font-bold text-blue-600">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between mt-4">
+                        <button id="resetChecklist" class="text-sm text-red-600 hover:text-red-800 font-medium">Reset Checklist</button>
+                        <span class="text-sm text-gray-500">Tick formulas as you master them</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#ap" class="jump-link">Arithmetic Progression</a>
+                    <a href="#gp" class="jump-link">Geometric Progression</a>
+                    <a href="#hp" class="jump-link">Harmonic Progression</a>
+                    <a href="#special" class="jump-link">Special Series</a>
+                    <a href="#means" class="jump-link">Arithmetic Mean</a>
+                    <a href="#summation" class="jump-link">Summation Formulas</a>
+                    <a href="#jee-tips" class="jump-link">JEE Strategies</a>
+                </div>
+            </div>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Sequences & Series Matter in JEE</h2>
+                <p class="mb-4">Sequences & Series contribute <strong>4-8 marks in every JEE paper</strong> and form the foundation for many advanced mathematical concepts. Mastering this topic gives you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li><strong>Quick, guaranteed marks</strong> in objective-type questions</li>
+                    <li><strong>Strong foundation</strong> for calculus and algebra</li>
+                    <li><strong>Problem-solving patterns</strong> applicable across mathematics</li>
+                    <li><strong>Time efficiency</strong> - most problems can be solved in 2-3 minutes</li>
+                </ul>
+            </section>
+
+            <!-- Arithmetic Progression Section -->
+            <section id="ap" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Arithmetic Progression (AP)</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="ap1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">General Form & nth Term</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>General AP:</strong> $a, a+d, a+2d, a+3d, \dots$</p>
+                                    <p><strong>nth term:</strong> $T_n = a + (n-1)d$</p>
+                                    <p><strong>Where:</strong> $a$ = first term, $d$ = common difference</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="ap2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Sum of First n Terms</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>Standard formula:</strong> $S_n = \frac{n}{2}[2a + (n-1)d]$</p>
+                                    <p><strong>Alternative form:</strong> $S_n = \frac{n}{2}(a + l)$ where $l$ = last term</p>
+                                    <p><strong>Relation:</strong> $T_n = S_n - S_{n-1}$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="ap3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Properties of AP</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>Three terms in AP:</strong> $a-d, a, a+d$</p>
+                                    <p><strong>Four terms in AP:</strong> $a-3d, a-d, a+d, a+3d$</p>
+                                    <p><strong>Five terms in AP:</strong> $a-2d, a-d, a, a+d, a+2d$</p>
+                                    <p><strong>Arithmetic Mean:</strong> $AM = \frac{a+b}{2}$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quick-tip">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 AP Problem-Solving Tips</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>If sum of n terms is given as $S_n = An^2 + Bn$, then $d = 2A$ and $a = A + B$</li>
+                        <li>For symmetric terms in AP, use the property: $T_k + T_{n-k+1} = \text{constant}$</li>
+                        <li>If $p$th term = $q$ and $q$th term = $p$, then $(p+q)$th term = $0$</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Geometric Progression Section -->
+            <section id="gp" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Geometric Progression (GP)</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="gp1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">General Form & nth Term</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>General GP:</strong> $a, ar, ar^2, ar^3, \dots$</p>
+                                    <p><strong>nth term:</strong> $T_n = ar^{n-1}$</p>
+                                    <p><strong>Where:</strong> $a$ = first term, $r$ = common ratio</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="gp2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Sum of First n Terms</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>When |r| < 1:</strong> $S_n = \frac{a(1-r^n)}{1-r}$</p>
+                                    <p><strong>When |r| > 1:</strong> $S_n = \frac{a(r^n-1)}{r-1}$</p>
+                                    <p><strong>Infinite GP (|r| < 1):</strong> $S_\infty = \frac{a}{1-r}$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="gp3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Properties of GP</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>Three terms in GP:</strong> $\frac{a}{r}, a, ar$</p>
+                                    <p><strong>Four terms in GP:</strong> $\frac{a}{r^3}, \frac{a}{r}, ar, ar^3$</p>
+                                    <p><strong>Geometric Mean:</strong> $GM = \sqrt{ab}$</p>
+                                    <p><strong>Product of n terms:</strong> $P_n = a^n r^{\frac{n(n-1)}{2}}$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-2">⚠️ Common GP Mistakes</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Using infinite GP formula when |r| ≥ 1</li>
+                        <li>Forgetting that common ratio can be negative</li>
+                        <li>Mishandling product of terms in GP</li>
+                        <li>Confusing AM and GM inequality conditions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Harmonic Progression Section -->
+            <section id="hp" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Harmonic Progression (HP)</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="hp1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">HP Definition & nth Term</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>General HP:</strong> $\frac{1}{a}, \frac{1}{a+d}, \frac{1}{a+2d}, \dots$</p>
+                                    <p><strong>Reciprocal forms AP:</strong> $a, a+d, a+2d, \dots$</p>
+                                    <p><strong>nth term:</strong> $T_n = \frac{1}{a+(n-1)d}$</p>
+                                    <p><strong>Harmonic Mean:</strong> $HM = \frac{2ab}{a+b}$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="hp2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Relation between AM, GM, HM</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>For two numbers:</strong> $AM \geq GM \geq HM$</p>
+                                    <p><strong>Equality:</strong> When $a = b$</p>
+                                    <p><strong>Relation:</strong> $(GM)^2 = AM \times HM$</p>
+                                    <p><strong>For n numbers:</strong> $AM \geq GM \geq HM$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quick-tip">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 HP Problem Approach</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Always convert HP to AP by taking reciprocals</li>
+                        <li>Solve the AP problem, then convert back to HP</li>
+                        <li>Remember: No direct sum formula for HP - work with corresponding AP</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Arithmetic & Geometric Means Section -->
+            <section id="means" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Arithmetic & Geometric Means</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="means1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">n Arithmetic Means</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>Between a and b:</strong> $A_k = a + k\left(\frac{b-a}{n+1}\right)$</p>
+                                    <p><strong>Common difference:</strong> $d = \frac{b-a}{n+1}$</p>
+                                    <p><strong>Sum of n AMs:</strong> $S = n \times \frac{a+b}{2}$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="means2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">n Geometric Means</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>Between a and b:</strong> $G_k = a\left(\frac{b}{a}\right)^{\frac{k}{n+1}}$</p>
+                                    <p><strong>Common ratio:</strong> $r = \left(\frac{b}{a}\right)^{\frac{1}{n+1}}$</p>
+                                    <p><strong>Product of n GMs:</strong> $P = (\sqrt{ab})^n$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Series Section -->
+            <section id="special" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Special Series & Summation Formulas</h2>
+                </div>
+
+                <table class="table-formula">
+                    <thead>
+                        <tr>
+                            <th>Series Type</th>
+                            <th>Sum Formula</th>
+                            <th>Check</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sum of first n natural numbers</td>
+                            <td>$\sum_{k=1}^n k = \frac{n(n+1)}{2}$</td>
+                            <td><input type="checkbox" id="sum1" class="h-4 w-4 text-blue-600 rounded"></td>
+                        </tr>
+                        <tr>
+                            <td>Sum of squares of first n natural numbers</td>
+                            <td>$\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}$</td>
+                            <td><input type="checkbox" id="sum2" class="h-4 w-4 text-blue-600 rounded"></td>
+                        </tr>
+                        <tr>
+                            <td>Sum of cubes of first n natural numbers</td>
+                            <td>$\sum_{k=1}^n k^3 = \left[\frac{n(n+1)}{2}\right]^2$</td>
+                            <td><input type="checkbox" id="sum3" class="h-4 w-4 text-blue-600 rounded"></td>
+                        </tr>
+                        <tr>
+                            <td>Sum of first n odd numbers</td>
+                            <td>$\sum_{k=1}^n (2k-1) = n^2$</td>
+                            <td><input type="checkbox" id="sum4" class="h-4 w-4 text-blue-600 rounded"></td>
+                        </tr>
+                        <tr>
+                            <td>Sum of first n even numbers</td>
+                            <td>$\sum_{k=1}^n 2k = n(n+1)$</td>
+                            <td><input type="checkbox" id="sum5" class="h-4 w-4 text-blue-600 rounded"></td>
+                        </tr>
+                        <tr>
+                            <td>Arithmetic-Geometric Series</td>
+                            <td>$\sum_{k=1}^n (a+kd)r^{k-1} = \frac{a}{1-r} + \frac{rd(1-r^{n-1})}{(1-r)^2}$</td>
+                            <td><input type="checkbox" id="sum6" class="h-4 w-4 text-blue-600 rounded"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Summation Formulas Section -->
+            <section id="summation" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">6. Advanced Summation Techniques</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="adv1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Method of Differences</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>Telescoping Series:</strong> $\sum_{k=1}^n [f(k) - f(k+1)] = f(1) - f(n+1)$</p>
+                                    <p><strong>When $T_k = f(k) - f(k+1)$, sum telescopes</strong></p>
+                                    <p><strong>Example:</strong> $\sum \frac{1}{k(k+1)} = \sum \left(\frac{1}{k} - \frac{1}{k+1}\right)$</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="adv2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Vn Method</span>
+                                <div class="formula-box text-sm">
+                                    <p><strong>For series where $T_k$ is product of factors</strong></p>
+                                    <p><strong>Find V_k such that $T_k = V_k - V_{k-1}$</strong></p>
+                                    <p><strong>Sum = $V_n - V_0$</strong></p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Tips Section -->
+            <section id="jee-tips" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">7. JEE Problem-Solving Strategies</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="tip1" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Quick Identification Techniques</span>
+                                <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>If terms are equally spaced → AP</li>
+                                    <li>If ratio of consecutive terms is constant → GP</li>
+                                    <li>If reciprocals form AP → HP</li>
+                                    <li>If terms involve both addition and multiplication → AGP</li>
+                                </ul>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="tip2" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Time-Saving Shortcuts</span>
+                                <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>For sum of series, check if it's standard type first</li>
+                                    <li>Use symmetric terms property in AP: $T_k + T_{n-k+1} = \text{constant}$</li>
+                                    <li>For product in GP: $T_k \times T_{n-k+1} = \text{constant}$</li>
+                                    <li>Remember: Sum of infinite GP exists only when |r| < 1</li>
+                                </ul>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <label class="flex items-start cursor-pointer">
+                            <input type="checkbox" id="tip3" class="mt-1 mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <div>
+                                <span class="font-semibold text-gray-900">Common Pitfalls to Avoid</span>
+                                <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>Applying infinite GP formula when |r| ≥ 1</li>
+                                    <li>Forgetting to check domain in logarithmic sequences</li>
+                                    <li>Mishandling negative common ratios in GP</li>
+                                    <li>Confusing AM-GM-HM inequality conditions</li>
+                                </ul>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Revision Test</h3>
+                    <p class="mb-4">Solve these typical JEE problems to test your understanding:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. If the sum of n terms of an AP is $3n^2 + 5n$, find its 15th term.</p>
+                            <div class="text-sm text-gray-600">Hint: Use $T_n = S_n - S_{n-1}$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find the sum of the series: $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots$ to infinity</p>
+                            <div class="text-sm text-gray-600">Hint: Infinite GP with |r| < 1</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Insert 3 arithmetic means between 3 and 19.</p>
+                            <div class="text-sm text-gray-600">Hint: Total terms = 5, find common difference</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Formula Summary -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6">
+                    <h2 class="text-2xl font-bold mb-4">Final Formula Cheat Sheet</h2>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <h3 class="font-semibold mb-2">🎯 AP Formulas</h3>
+                            <ul class="space-y-1">
+                                <li>$T_n = a + (n-1)d$</li>
+                                <li>$S_n = \frac{n}{2}[2a + (n-1)d]$</li>
+                                <li>$S_n = \frac{n}{2}(a + l)$</li>
+                                <li>$AM = \frac{a+b}{2}$</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">🚀 GP Formulas</h3>
+                            <ul class="space-y-1">
+                                <li>$T_n = ar^{n-1}$</li>
+                                <li>$S_n = \frac{a(1-r^n)}{1-r}$ (|r| < 1)</li>
+                                <li>$S_\infty = \frac{a}{1-r}$ (|r| < 1)</li>
+                                <li>$GM = \sqrt{ab}$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download & Share -->
+            <section class="text-center mb-12">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Save This Revision Sheet</h3>
+                    <p class="text-gray-600 mb-4">Your progress is automatically saved. Return anytime to continue your revision!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            📄 Print Revision Sheet
+                        </button>
+                        <button class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                            📱 Save as PDF
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            <div class="mt-4 flex justify-center space-x-6 text-sm">
+                <a href="privacy.html" class="hover:text-yellow-300">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-yellow-300">Terms of Service</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

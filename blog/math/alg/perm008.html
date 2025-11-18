@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometrical Combinatorics: Lines, Triangles, and Polygons | JEE Mathematics</title>
+    <meta name="description" content="Master geometrical combinatorics for JEE: Number of lines from n points, triangles formation, polygon diagonals. Formulas, examples, and practice problems.">
+    <meta name="keywords" content="JEE combinatorics, geometrical combinatorics, permutation combination, JEE mathematics, lines from points, triangles formation, polygon diagonals">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f8f7ff;
+            border: 2px solid #c7d2fe;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #f0efff;
+            border-color: #a5b4fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #fef7f7;
+            border-left: 4px solid #f87171;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .topic-tag {
+            background: #6366f1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Permutation & Combination
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Mains & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">3 Core Concepts</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Geometrical Combinatorics: Lines, Triangles, and Polygons</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the core concepts of selection minus degenerate cases with formulas, examples, and JEE-level practice problems.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">3</div>
+                            <div class="text-sm text-indigo-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">100%</div>
+                            <div class="text-sm text-indigo-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">8+</div>
+                            <div class="text-sm text-indigo-600">Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-indigo-700">15min</div>
+                            <div class="text-sm text-indigo-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Geometrical Combinatorics Matters for JEE</h2>
+                <p class="mb-4">Geometrical combinatorics bridges combinatorial mathematics with geometry, appearing frequently in both JEE Mains and Advanced. These problems test your understanding of:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-indigo-50 p-4 rounded-lg">
+                    <li><strong>Selection principles</strong> applied to geometric configurations</li>
+                    <li><strong>Elimination of degenerate cases</strong> (collinear points, etc.)</li>
+                    <li><strong>Systematic counting approaches</strong> for complex geometric figures</li>
+                    <li><strong>Formula application</strong> with careful condition checking</li>
+                </ul>
+            </section>
+
+            <!-- Concept 1 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Concept 1</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Number of Straight Lines from n Points</h3>
+                    <p class="text-lg mb-4">Finding maximum and actual number of straight lines formed by n points in a plane.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Formula:</h4>
+                        <p class="text-lg font-mono">Number of lines = $^nC_2 - ^mC_2 + 1$</p>
+                        <p class="text-sm mt-2">Where m points are collinear (lie on the same straight line)</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Understanding the Formula:</h4>
+                        <p>Maximum lines from n points = $^nC_2$ (if no three points are collinear)</p>
+                        <p class="mt-2">When m points are collinear:</p>
+                        <ul class="list-disc list-inside ml-4 mt-1">
+                            <li>We lose $^mC_2 - 1$ lines (all combinations of m points give only 1 line instead of mC₂ lines)</li>
+                            <li>Add 1 for the single line through all collinear points</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 1: 10 points, no three collinear</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Maximum lines = $^{10}C_2 = \frac{10 \times 9}{2} = 45$</p>
+                            <p><strong>Step 2:</strong> Since no three collinear, all 45 lines are distinct</p>
+                            <p><strong>Answer:</strong> 45 straight lines</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 2: 8 points with 5 collinear</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Maximum lines if no collinear = $^8C_2 = 28$</p>
+                            <p><strong>Step 2:</strong> Apply formula: Lines = $^8C_2 - ^5C_2 + 1$</p>
+                            <p><strong>Step 3:</strong> Calculate: $28 - 10 + 1 = 19$</p>
+                            <p><strong>Verification:</strong> From 5 collinear points, we get only 1 line instead of 10 possible lines</p>
+                            <p><strong>Answer:</strong> 19 straight lines</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 2 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Concept 2</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Number of Triangles from n Points</h3>
+                    <p class="text-lg mb-4">Finding triangles formed by n points with various collinear conditions.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Formula:</h4>
+                        <p class="text-lg font-mono">Number of triangles = $^nC_3 - ^mC_3$</p>
+                        <p class="text-sm mt-2">Where m points are collinear (cannot form triangles)</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Understanding the Formula:</h4>
+                        <p>Maximum triangles from n points = $^nC_3$ (if no three points are collinear)</p>
+                        <p class="mt-2">When m points are collinear:</p>
+                        <ul class="list-disc list-inside ml-4 mt-1">
+                            <li>We subtract $^mC_3$ because any 3 points from m collinear points cannot form a triangle</li>
+                            <li>The formula eliminates these "degenerate" cases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 1: 12 points, no three collinear</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Maximum triangles = $^{12}C_3 = \frac{12 \times 11 \times 10}{3 \times 2 \times 1} = 220$</p>
+                            <p><strong>Answer:</strong> 220 triangles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 2: 10 points with 4 collinear</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Maximum triangles = $^{10}C_3 = 120$</p>
+                            <p><strong>Step 2:</strong> Apply formula: Triangles = $^{10}C_3 - ^4C_3$</p>
+                            <p><strong>Step 3:</strong> Calculate: $120 - 4 = 116$</p>
+                            <p><strong>Verification:</strong> From 4 collinear points, any 3 points give 0 triangles (4C₃ = 4 invalid combinations)</p>
+                            <p><strong>Answer:</strong> 116 triangles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 3: 15 points with two sets: 5 collinear and 4 collinear</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Maximum triangles = $^{15}C_3 = 455$</p>
+                            <p><strong>Step 2:</strong> Subtract invalid triangles from both collinear sets</p>
+                            <p><strong>Step 3:</strong> Triangles = $^{15}C_3 - ^5C_3 - ^4C_3$</p>
+                            <p><strong>Step 4:</strong> Calculate: $455 - 10 - 4 = 441$</p>
+                            <p><strong>Answer:</strong> 441 triangles</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 3 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Concept 3</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Number of Diagonals in an n-sided Polygon</h3>
+                    <p class="text-lg mb-4">Finding diagonals in convex polygons and special cases.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Formula:</h4>
+                        <p class="text-lg font-mono">Number of diagonals = $^nC_2 - n = \frac{n(n-3)}{2}$</p>
+                        <p class="text-sm mt-2">Total lines minus sides of the polygon</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Understanding the Formula:</h4>
+                        <p>From n vertices, total lines = $^nC_2$</p>
+                        <p class="mt-2">We subtract n because:</p>
+                        <ul class="list-disc list-inside ml-4 mt-1">
+                            <li>n of these lines are sides of the polygon</li>
+                            <li>The remaining are diagonals</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 1: Hexagon (6-sided polygon)</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Using formula: Diagonals = $\frac{6(6-3)}{2} = \frac{6 \times 3}{2} = 9$</p>
+                            <p><strong>Step 2:</strong> Verification: Total lines = $^6C_2 = 15$, minus 6 sides = 9 diagonals</p>
+                            <p><strong>Answer:</strong> 9 diagonals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 2: Decagon (10-sided polygon)</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Using formula: Diagonals = $\frac{10(10-3)}{2} = \frac{10 \times 7}{2} = 35$</p>
+                            <p><strong>Answer:</strong> 35 diagonals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-red-800 mb-2">Example 3: Number of diagonals that can be drawn from one vertex</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> From one vertex, we can draw diagonals to all other vertices except:</p>
+                            <p class="ml-4">• The vertex itself</p>
+                            <p class="ml-4">• The two adjacent vertices (these would be sides)</p>
+                            <p><strong>Step 2:</strong> Diagonals from one vertex = $n - 3$</p>
+                            <p><strong>Example:</strong> For octagon (n=8): $8 - 3 = 5$ diagonals from one vertex</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🚀 Problem-Solving Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">For Lines & Triangles:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always check for collinear points first</li>
+                                <li>Remember: 2 points always give 1 line</li>
+                                <li>3 collinear points give 0 triangles</li>
+                                <li>For multiple collinear sets, subtract each separately</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">For Polygons:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Diagonals = Total lines − Sides</li>
+                                <li>From one vertex: n − 3 diagonals</li>
+                                <li>Regular polygons have equal diagonal lengths</li>
+                                <li>Convex polygons have all diagonals inside</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Applications -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Applications Available</h3>
+                    <p class="text-gray-600 mb-4">Includes intersection points of diagonals, triangles in polygons, and special geometrical configurations</p>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                        Access Advanced Content
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Find number of lines from 12 points with exactly 4 collinear</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. How many triangles from 15 points with 6 collinear?</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Find diagonals in a 12-sided polygon and from one vertex</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">4. 20 points with two collinear sets: 5 and 4 points. Find triangles.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Geometrical Combinatorics?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to advanced problems, video solutions, and practice worksheets</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="permutation-combination-cards.html" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More P&C Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-indigo-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-indigo-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-indigo-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-indigo-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-indigo-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-indigo-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-indigo-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-indigo-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-indigo-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-indigo-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-indigo-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-indigo-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-indigo-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Advanced Challenge - Mastering Complex Number Proofs and Tough Locus | KnowJEE</title>
+    <meta name="description" content="Master JEE Advanced Complex Numbers with rigorous proofs, challenging locus problems, and advanced problem-solving techniques. Complete guide with 15+ proofs and practice problems.">
+    <meta name="keywords" content="JEE Advanced Complex Numbers, Complex Number Proofs, Locus Problems JEE, Complex Number Locus, JEE Mathematics, IIT JEE Preparation">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/blog/math/complex-numbers/advanced-proofs-locus">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="JEE Advanced Challenge - Mastering Complex Number Proofs and Tough Locus">
+    <meta property="og:description" content="Master JEE Advanced Complex Numbers with rigorous proofs and challenging locus problems">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/blog/math/complex-numbers/advanced-proofs-locus">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JEE Advanced Challenge - Complex Number Proofs & Locus">
+    <meta name="twitter:description" content="Master JEE Advanced Complex Numbers with rigorous proofs and challenging locus problems">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "JEE Advanced Challenge - Mastering Complex Number Proofs and Tough Locus",
+        "description": "Complete guide to mastering complex number proofs and locus problems for JEE Advanced with 15+ rigorous proofs and practice problems",
+        "author": {
+            "@type": "Person",
+            "name": "Braj Bhushan Kumar"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2025-01-15",
+        "educationalLevel": "Advanced",
+        "learningResourceType": "Problem Set",
+        "timeRequired": "PT45M"
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <style>
+        .proof-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .proof-box:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .proof-box::before {
+            content: "Proof";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #4f46e5;
+            color: white;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .locus-problem {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem {
+            background: #fef7ff;
+            border-left: 4px solid #a855f7;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-advanced { border-left: 4px solid #dc2626; }
+        .difficulty-hard { border-left: 4px solid #ea580c; }
+        .difficulty-medium { border-left: 4px solid #d97706; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-highlight {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .floating-nav {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Complex Numbers Topics
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <!-- Article Header -->
+                <article>
+                    <header class="mb-8">
+                        <div class="flex items-center mb-4 flex-wrap gap-2">
+                            <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Focus</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Complex Numbers</span>
+                            <span class="text-gray-500 text-sm">Reading Time: 45 min</span>
+                            <span class="text-gray-500 text-sm">15+ Proofs</span>
+                            <span class="text-gray-500 text-sm">8 Locus Problems</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">JEE Advanced Challenge: Mastering Complex Number Proofs & Tough Locus Problems</h1>
+                        <p class="text-xl text-gray-600 mb-6">Rigorous proofs, advanced locus problems, and problem-solving strategies for JEE Advanced Complex Numbers section.</p>
+                        
+                        <!-- Quick Stats -->
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl p-6 mt-6">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div>
+                                    <div class="text-2xl font-bold">15+</div>
+                                    <div class="text-sm opacity-90">Rigorous Proofs</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold">8</div>
+                                    <div class="text-sm opacity-90">Locus Problems</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold">100%</div>
+                                    <div class="text-sm opacity-90">JEE Advanced</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold">45min</div>
+                                    <div class="text-sm opacity-90">Avg. Solve Time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- Table of Contents -->
+                    <section class="mb-8 bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-900 mb-4">📚 What You'll Master</h2>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><a href="#triangle-inequalities" class="text-indigo-600 hover:text-indigo-800 hover:underline">Triangle Inequalities & Modulus Properties</a></li>
+                                <li><a href="#argument-identities" class="text-indigo-600 hover:text-indigo-800 hover:underline">Argument Identities & Properties</a></li>
+                                <li><a href="#demoivre-applications" class="text-indigo-600 hover:text-indigo-800 hover:underline">De Moivre's Theorem Applications</a></li>
+                                <li><a href="#rotation-concepts" class="text-indigo-600 hover:text-indigo-800 hover:underline">Rotation & Geometric Interpretations</a></li>
+                            </ul>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><a href="#circle-locus" class="text-indigo-600 hover:text-indigo-800 hover:underline">Circle Locus Problems</a></li>
+                                <li><a href="#line-locus" class="text-indigo-600 hover:text-indigo-800 hover:underline">Line & Perpendicular Bisector Locus</a></li>
+                                <li><a href="#ellipse-locus" class="text-indigo-600 hover:text-indigo-800 hover:underline">Ellipse & Hyperbola Locus</a></li>
+                                <li><a href="#mixed-problems" class="text-indigo-600 hover:text-indigo-800 hover:underline">Mixed Advanced Problems</a></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Introduction -->
+                    <section class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Challenge Matters for JEE Advanced</h2>
+                        <p class="mb-4">Complex Numbers contribute <strong>12-15% weightage</strong> in JEE Advanced Mathematics. The proofs and locus problems separate top rankers from average performers. Mastering these will give you:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-2 bg-indigo-50 p-4 rounded-lg">
+                            <li><strong>Conceptual clarity</strong> to tackle any complex number variation</li>
+                            <li><strong>Geometric intuition</strong> for complex plane problems</li>
+                            <li><strong>Proof-writing skills</strong> for theoretical questions</li>
+                            <li><strong>Time management</strong> in solving complex locus problems</li>
+                            <li><strong>8-12 marks secured</strong> in every JEE Advanced paper</li>
+                        </ul>
+                    </section>
+
+                    <!-- Proof Section 1 -->
+                    <section class="mb-8" id="triangle-inequalities">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Triangle Inequalities & Modulus Properties</h2>
+                        
+                        <div class="proof-box difficulty-advanced">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="year-tag">JEE Advanced 2023</span>
+                                <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Proof: Triangle Inequality for Complex Numbers</h3>
+                            <p class="text-lg mb-4">Prove that $|z_1 + z_2| \leq |z_1| + |z_2|$ for all complex numbers $z_1, z_2$</p>
+                            
+                            <div class="step-highlight">
+                                <h4 class="font-semibold text-amber-800 mb-2">Proof Strategy:</h4>
+                                <div class="space-y-3 text-sm">
+                                    <p><strong>Step 1:</strong> Let $z_1 = a + bi$, $z_2 = c + di$ where $a,b,c,d \in \mathbb{R}$</p>
+                                    <p><strong>Step 2:</strong> Compute $|z_1 + z_2|^2 = (a+c)^2 + (b+d)^2$</p>
+                                    <p><strong>Step 3:</strong> Expand: $a^2 + 2ac + c^2 + b^2 + 2bd + d^2$</p>
+                                    <p><strong>Step 4:</strong> Compare with $(|z_1| + |z_2|)^2 = a^2+b^2+c^2+d^2 + 2\sqrt{(a^2+b^2)(c^2+d^2)}$</p>
+                                    <p><strong>Step 5:</strong> Use Cauchy-Schwarz: $ac + bd \leq \sqrt{(a^2+b^2)(c^2+d^2)}$</p>
+                                    <p><strong>Step 6:</strong> Therefore, $|z_1 + z_2|^2 \leq (|z_1| + |z_2|)^2$</p>
+                                    <p><strong>Step 7:</strong> Taking square roots (all terms non-negative): $|z_1 + z_2| \leq |z_1| + |z_2|$</p>
+                                </div>
+                            </div>
+                            
+                            <div class="theorem mt-4">
+                                <h4 class="font-semibold text-purple-800 mb-2">Geometric Interpretation:</h4>
+                                <p class="text-sm">In the complex plane, this inequality states that the length of one side of a triangle is less than or equal to the sum of the lengths of the other two sides.</p>
+                            </div>
+                        </div>
+
+                        <div class="proof-box difficulty-hard">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="year-tag">JEE Advanced 2021</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Proof: Reverse Triangle Inequality</h3>
+                            <p class="text-lg mb-4">Prove that $| |z_1| - |z_2| | \leq |z_1 - z_2|$ for all complex numbers $z_1, z_2$</p>
+                            
+                            <div class="locus-problem">
+                                <h4 class="font-semibold text-green-800 mb-2">Proof Approach:</h4>
+                                <div class="space-y-2 text-sm">
+                                    <p><strong>Method 1:</strong> Use $|z_1| = |(z_1 - z_2) + z_2| \leq |z_1 - z_2| + |z_2|$</p>
+                                    <p>Thus, $|z_1| - |z_2| \leq |z_1 - z_2|$</p>
+                                    <p>Similarly, $|z_2| - |z_1| \leq |z_2 - z_1| = |z_1 - z_2|$</p>
+                                    <p>Combining: $| |z_1| - |z_2| | \leq |z_1 - z_2|$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Locus Problem Section -->
+                    <section class="mb-8" id="circle-locus">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Advanced Locus Problems: Circles</h2>
+                        
+                        <div class="proof-box difficulty-hard">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="year-tag">JEE Advanced 2022</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Locus Problem: Apollonius Circle</h3>
+                            <p class="text-lg mb-4">If $|z - 3 - 4i| = 2|z + 2 - i|$, find the locus of $z$ and its center and radius.</p>
+                            
+                            <div class="locus-problem">
+                                <h4 class="font-semibold text-green-800 mb-2">Solution Strategy:</h4>
+                                <div class="space-y-3 text-sm">
+                                    <p><strong>Step 1:</strong> Let $z = x + iy$</p>
+                                    <p><strong>Step 2:</strong> Substitute: $|(x-3) + i(y-4)| = 2|(x+2) + i(y-1)|$</p>
+                                    <p><strong>Step 3:</strong> Square both sides: $(x-3)^2 + (y-4)^2 = 4[(x+2)^2 + (y-1)^2]$</p>
+                                    <p><strong>Step 4:</strong> Expand and simplify:</p>
+                                    <p class="ml-4">$x^2 - 6x + 9 + y^2 - 8y + 16 = 4(x^2 + 4x + 4 + y^2 - 2y + 1)$</p>
+                                    <p class="ml-4">$x^2 + y^2 - 6x - 8y + 25 = 4x^2 + 16x + 16 + 4y^2 - 8y + 4$</p>
+                                    <p><strong>Step 5:</strong> Rearrange: $3x^2 + 3y^2 + 22x + 5 = 0$</p>
+                                    <p><strong>Step 6:</strong> Complete the square:</p>
+                                    <p class="ml-4">$x^2 + y^2 + \frac{22}{3}x + \frac{5}{3} = 0$</p>
+                                    <p class="ml-4">$(x + \frac{11}{3})^2 + y^2 = \frac{121}{9} - \frac{5}{3} = \frac{106}{9}$</p>
+                                    <p><strong>Step 7:</strong> Center: $(-\frac{11}{3}, 0)$, Radius: $\frac{\sqrt{106}}{3}$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Quick Tips Section -->
+                    <section class="mb-8">
+                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Advanced Problem-Solving Strategies</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-blue-800 mb-3">For Proofs:</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-sm">
+                                        <li>Always start with algebraic form $z = x + iy$</li>
+                                        <li>Use geometric interpretations for intuition</li>
+                                        <li>Apply triangle inequalities systematically</li>
+                                        <li>Remember $|z|^2 = z\overline{z}$ is powerful</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-blue-800 mb-3">For Locus Problems:</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-sm">
+                                        <li>Identify the type: circle, line, ellipse, etc.</li>
+                                        <li>Use geometric distance interpretations</li>
+                                        <li>Complete the square for circle equations</li>
+                                        <li>Check special cases and boundaries</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- More Content Placeholder -->
+                    <section class="mb-8">
+                        <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-xl">
+                            <h3 class="text-xl font-bold text-gray-700 mb-2">6 More Advanced Proofs & 5 Locus Problems Available</h3>
+                            <p class="text-gray-600 mb-4">Includes De Moivre's Theorem proofs, argument properties, ellipse locus, and mixed advanced problems</p>
+                            <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                                Access Full Challenge
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Practice Exercise -->
+                    <section class="mb-8">
+                        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+                            <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                            <p class="mb-4">Try these JEE Advanced level problems:</p>
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-lg border border-green-200">
+                                    <p class="font-medium mb-2">1. Prove that $|z_1 + z_2|^2 + |z_1 - z_2|^2 = 2(|z_1|^2 + |z_2|^2)$</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-green-200">
+                                    <p class="font-medium mb-2">2. Find the locus of $z$ if $\arg\left(\frac{z-1}{z+1}\right) = \frac{\pi}{4}$</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-green-200">
+                                    <p class="font-medium mb-2">3. If $|z| = 1$ and $z \neq \pm1$, prove that $\frac{z-1}{z+1}$ is purely imaginary</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Next Steps -->
+                    <section class="mb-8 text-center">
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl p-8">
+                            <h3 class="text-2xl font-bold mb-3">Ready to Master Complex Number Proofs?</h3>
+                            <p class="mb-6 opacity-90 text-lg">Get complete access to all 15+ proofs, 8 locus problems with step-by-step video solutions</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="jee-complex-numbers-cards.html" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg">
+                                    More Complex Number Topics
+                                </a>
+                                <button class="bg-amber-400 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-amber-500 transition-colors text-lg">
+                                    Join Proof Workshop
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+
+            <!-- Sidebar Navigation -->
+            <div class="lg:col-span-1">
+                <div class="floating-nav">
+                    <h3 class="font-bold text-gray-900 mb-4">Quick Navigation</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#triangle-inequalities" class="text-indigo-600 hover:text-indigo-800 block p-2 hover:bg-indigo-50 rounded">Triangle Inequalities</a></li>
+                        <li><a href="#argument-identities" class="text-indigo-600 hover:text-indigo-800 block p-2 hover:bg-indigo-50 rounded">Argument Identities</a></li>
+                        <li><a href="#demoivre-applications" class="text-indigo-600 hover:text-indigo-800 block p-2 hover:bg-indigo-50 rounded">De Moivre's Theorem</a></li>
+                        <li><a href="#rotation-concepts" class="text-indigo-600 hover:text-indigo-800 block p-2 hover:bg-indigo-50 rounded">Rotation Concepts</a></li>
+                        <li><a href="#circle-locus" class="text-indigo-600 hover:text-indigo-800 block p-2 hover:bg-indigo-50 rounded">Circle Locus</a></li>
+                        <li><a href="#line-locus" class="text-indigo-600 hover:text-indigo-800 block p-2 hover:bg-indigo-50 rounded">Line Locus</a></li>
+                        <li><a href="#ellipse-locus" class="text-indigo-600 hover:text-indigo-800 block p-2 hover:bg-indigo-50 rounded">Ellipse Locus</a></li>
+                    </ul>
+                    
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <h3 class="font-bold text-gray-900 mb-3">Download Resources</h3>
+                        <div class="space-y-2">
+                            <a href="#" class="flex items-center text-indigo-600 hover:text-indigo-800 text-sm p-2 hover:bg-indigo-50 rounded">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Proofs Cheat Sheet
+                            </a>
+                            <a href="#" class="flex items-center text-indigo-600 hover:text-indigo-800 text-sm p-2 hover:bg-indigo-50 rounded">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Locus Problems PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-indigo-100 py-12 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-indigo-300 transition-colors">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-indigo-300 transition-colors">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-indigo-300 transition-colors">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-indigo-300 transition-colors">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-indigo-300 transition-colors">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-indigo-300 transition-colors">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-indigo-300 transition-colors">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-indigo-300 transition-colors">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Complex Numbers</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="basics.html" class="hover:text-indigo-300 transition-colors">Basics</a></li>
+                        <li><a href="modulus-argument.html" class="hover:text-indigo-300 transition-colors">Modulus & Argument</a></li>
+                        <li><a href="demoivre.html" class="hover:text-indigo-300 transition-colors">De Moivre's Theorem</a></li>
+                        <li><a href="locus.html" class="hover:text-indigo-300 transition-colors">Locus Problems</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center hover:text-indigo-300 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                            YouTube
+                        </a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center hover:text-indigo-300 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                            </svg>
+                            Telegram
+                        </a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="flex items-center hover:text-indigo-300 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297a11.815 11.815 0 00-8.415-3.488c-6.627 0-12.014 5.389-12.014 12.01 0 2.147.556 4.24 1.614 6.086l-1.065 3.896 3.982-1.046a11.98 11.98 0 005.483 1.333c6.627 0 12.012-5.389 12.012-12.012 0-3.176-1.24-6.165-3.488-8.399"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-indigo-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

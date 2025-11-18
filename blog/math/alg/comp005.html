@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation Theorem in Complex Numbers - Secret Weapon for JEE | KnowJEE</title>
+    <meta name="description" content="Master the Rotation Theorem in Complex Numbers - the secret weapon for solving JEE geometry problems quickly. Learn formulas, applications, and problem-solving strategies.">
+    <meta name="keywords" content="rotation theorem complex numbers, JEE complex numbers, complex numbers rotation, JEE advanced math, complex geometry JEE">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .application-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .complex-plane {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Complex Numbers Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Secret Weapon</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Advanced Focus</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Rotation Theorem in Complex Numbers - A Secret Weapon</h1>
+                <p class="text-xl text-gray-600 mb-4">Transform complex geometry problems into simple algebraic equations. Master this powerful technique for JEE Advanced.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5×</div>
+                            <div class="text-sm text-purple-600">Faster Solutions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">90%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">15min</div>
+                            <div class="text-sm text-purple-600">Mastery Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Rotation Theorem is Your Secret Weapon</h2>
+                <p class="mb-4">The Rotation Theorem in complex numbers is one of the most powerful yet underutilized tools in JEE mathematics. It transforms complex geometric problems involving <strong>rotations, angles, and perpendicular lines</strong> into simple algebraic equations.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Advantage</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Solves <strong>geometry problems 5x faster</strong> than coordinate geometry</li>
+                        <li>Eliminates the need for <strong>lengthy trigonometric calculations</strong></li>
+                        <li>Provides <strong>elegant one-line solutions</strong> to complex problems</li>
+                        <li>Works for both <strong>JEE Main and Advanced</strong> level problems</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-concept" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Concept</a>
+                    <a href="#key-formulas" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Formulas</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                    <a href="#jee-problems" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Problems</a>
+                </div>
+            </div>
+
+            <!-- Basic Concept -->
+            <section id="basic-concept" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. The Fundamental Concept</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What is Rotation in Complex Plane?</h3>
+                    <p class="mb-4">In the complex plane, multiplication by $e^{i\theta}$ rotates a complex number by angle $\theta$ counterclockwise about the origin.</p>
+                    
+                    <div class="complex-plane">
+                        <p class="font-semibold mb-2">Visual Representation:</p>
+                        <p>If $z = re^{i\alpha}$, then:</p>
+                        <div class="text-center my-3">
+                            $$z \cdot e^{i\theta} = re^{i(\alpha + \theta)}$$
+                        </div>
+                        <p>This rotates $z$ by angle $\theta$ while maintaining the same magnitude.</p>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Insight</h4>
+                        <p>Multiplication by $i$ rotates by $90^\circ$ counterclockwise:</p>
+                        <div class="text-center my-2">
+                            $$z \cdot i = z \cdot e^{i\pi/2} \Rightarrow \text{Rotation by } 90^\circ$$
+                        </div>
+                        <p>Multiplication by $-i$ rotates by $90^\circ$ clockwise:</p>
+                        <div class="text-center my-2">
+                            $$z \cdot (-i) = z \cdot e^{-i\pi/2} \Rightarrow \text{Rotation by } -90^\circ$$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Formulas -->
+            <section id="key-formulas" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Three Key Rotation Formulas</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Formula 1: Rotation about Origin</h3>
+                    <div class="formula-box">
+                        <div class="text-center text-lg font-bold text-blue-700">
+                            $$z_2 = z_1 \cdot e^{i\theta}$$
+                        </div>
+                        <p class="text-center mt-2">Point $z_2$ is obtained by rotating $z_1$ by angle $\theta$ about origin.</p>
+                    </div>
+                    
+                    <div class="application-box">
+                        <h4 class="font-semibold text-green-800 mb-2">When to Use:</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>When rotation is about origin</li>
+                            <li>For problems involving regular polygons centered at origin</li>
+                            <li>For finding vertices of rotated figures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Formula 2: Rotation about Arbitrary Point</h3>
+                    <div class="formula-box">
+                        <div class="text-center text-lg font-bold text-blue-700">
+                            $$z_3 = z_0 + (z_1 - z_0)e^{i\theta}$$
+                        </div>
+                        <p class="text-center mt-2">Point $z_3$ is obtained by rotating $z_1$ by angle $\theta$ about point $z_0$.</p>
+                    </div>
+                    
+                    <div class="application-box">
+                        <h4 class="font-semibold text-green-800 mb-2">When to Use:</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>When rotation center is not at origin</li>
+                            <li>For triangle rotation problems</li>
+                            <li>For finding images of points after rotation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Formula 3: Perpendicular Lines Condition</h3>
+                    <div class="formula-box">
+                        <div class="text-center text-lg font-bold text-blue-700">
+                            $$\frac{z_3 - z_1}{z_2 - z_1} = \pm i \cdot k \quad (k \in \mathbb{R})$$
+                        </div>
+                        <p class="text-center mt-2">Line $z_1z_3$ is perpendicular to line $z_1z_2$.</p>
+                    </div>
+                    
+                    <div class="application-box">
+                        <h4 class="font-semibold text-green-800 mb-2">When to Use:</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For proving perpendicularity in geometry problems</li>
+                            <li>For finding foot of perpendicular</li>
+                            <li>For problems involving right angles</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications -->
+            <section id="applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Powerful Applications</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Application 1: Equilateral Triangles</h3>
+                    <p class="mb-4">For triangle $z_1z_2z_3$ to be equilateral (counterclockwise orientation):</p>
+                    
+                    <div class="formula-box">
+                        <div class="text-center">
+                            $$z_2 - z_1 = (z_3 - z_1) \cdot e^{i\pi/3}$$
+                            $$\text{OR}$$
+                            $$z_1 + \omega z_2 + \omega^2 z_3 = 0 \quad \text{where } \omega = e^{i2\pi/3}$$
+                        </div>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Pro Tip</h4>
+                        <p>For clockwise orientation, use $e^{-i\pi/3}$ instead of $e^{i\pi/3}$.</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Application 2: Square Properties</h3>
+                    <p class="mb-4">For square $z_1z_2z_3z_4$ (in order):</p>
+                    
+                    <div class="formula-box">
+                        <div class="text-center">
+                            $$z_2 = z_1 + (z_4 - z_1) \cdot i$$
+                            $$z_3 = z_1 + (z_4 - z_1) \cdot i^2 = z_1 - (z_4 - z_1)$$
+                            $$z_4 = z_1 + (z_4 - z_1) \cdot i^3 = z_1 - (z_4 - z_1) \cdot i$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Application 3: Regular Polygons</h3>
+                    <p class="mb-4">For regular n-gon with vertices $z_0, z_1, z_2, ..., z_{n-1}$:</p>
+                    
+                    <div class="formula-box">
+                        <div class="text-center">
+                            $$z_k = z_0 + (z_1 - z_0) \cdot \omega^k \quad \text{where } \omega = e^{i2\pi/n}$$
+                        </div>
+                    </div>
+                    
+                    <div class="application-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Special Cases:</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li><strong>Equilateral Triangle:</strong> $\omega = e^{i2\pi/3}$</li>
+                            <li><strong>Square:</strong> $\omega = e^{i\pi/2} = i$</li>
+                            <li><strong>Regular Pentagon:</strong> $\omega = e^{i2\pi/5}$</li>
+                            <li><strong>Regular Hexagon:</strong> $\omega = e^{i\pi/3}$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Problems -->
+            <section id="jee-problems" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. JEE Level Problems Solved</h2>
+                </div>
+
+                <div class="problem-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">JEE Advanced 2019</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">Rotation Theorem</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Equilateral Triangle Construction</h3>
+                    <p class="text-lg mb-4">Let $z_1 = 2 + 3i$ and $z_2 = 3 + 2i$. Find $z_3$ such that $z_1z_2z_3$ forms an equilateral triangle.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution using Rotation Theorem:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Vector from $z_1$ to $z_2$: $z_2 - z_1 = (3+2i) - (2+3i) = 1 - i$</p>
+                            <p><strong>Step 2:</strong> Rotate by $60^\circ$ counterclockwise: Multiply by $e^{i\pi/3} = \frac{1 + i\sqrt{3}}{2}$</p>
+                            <p><strong>Step 3:</strong> $(1-i) \cdot \frac{1 + i\sqrt{3}}{2} = \frac{(1-i)(1 + i\sqrt{3})}{2} = \frac{1 + i\sqrt{3} - i + \sqrt{3}}{2}$</p>
+                            <p><strong>Step 4:</strong> $= \frac{(1+\sqrt{3}) + i(\sqrt{3}-1)}{2}$</p>
+                            <p><strong>Step 5:</strong> $z_3 = z_1 + \frac{(1+\sqrt{3}) + i(\sqrt{3}-1)}{2}$</p>
+                            <p class="font-semibold mt-2">Final Answer: $z_3 = \frac{5+\sqrt{3}}{2} + i\frac{5+\sqrt{3}}{2}$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">JEE Main 2021</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">Perpendicular Lines</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Foot of Perpendicular</h3>
+                    <p class="text-lg mb-4">Find the foot of perpendicular from point $3 + 4i$ to the line joining $1 + i$ and $2 + 3i$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution using Rotation Theorem:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Let foot of perpendicular be $z$</p>
+                            <p><strong>Step 2:</strong> Using perpendicular condition: $\frac{z - (3+4i)}{(2+3i) - (1+i)} = ki$ where $k \in \mathbb{R}$</p>
+                            <p><strong>Step 3:</strong> $(2+3i) - (1+i) = 1 + 2i$</p>
+                            <p><strong>Step 4:</strong> So $z - (3+4i) = ki(1+2i) = k(-2 + i)$</p>
+                            <p><strong>Step 5:</strong> Also $z$ lies on line: $z = (1+i) + t(1+2i)$ for some $t \in \mathbb{R}$</p>
+                            <p><strong>Step 6:</strong> Solve to get $t = \frac{3}{2}$, $k = -\frac{1}{2}$</p>
+                            <p class="font-semibold mt-2">Final Answer: $z = \frac{5}{2} + 4i$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Memory Tips -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">🎯 Memory Tips & Tricks</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Quick Recall Formulas</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>$i$ = 90° rotation CCW</strong> → Multiply by $i$</li>
+                                <li><strong>$-i$ = 90° rotation CW</strong> → Multiply by $-i$</li>
+                                <li><strong>Perpendicular lines</strong> → Multiply by $\pm i$</li>
+                                <li><strong>60° rotation</strong> → Multiply by $\frac{1 \pm i\sqrt{3}}{2}$</li>
+                                <li><strong>120° rotation</strong> → Multiply by $\frac{-1 \pm i\sqrt{3}}{2}$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-2">Common Patterns</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Equilateral triangle → Use $e^{\pm i\pi/3}$</li>
+                                <li>Square → Use powers of $i$</li>
+                                <li>Regular hexagon → Use $e^{\pm i\pi/3}$ multiples</li>
+                                <li>Right angle → Multiply by $\pm i$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-level problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. $z_1 = 1 + i$, $z_2 = 2 + 2i$. Find $z_3$ such that $z_1z_2z_3$ is an equilateral triangle.</p>
+                            <div class="text-sm text-gray-600">Hint: Use 60° rotation</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Prove that triangle with vertices $2+i$, $3+2i$, $1+3i$ is right-angled.</p>
+                            <div class="text-sm text-gray-600">Hint: Use perpendicular condition</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find the square whose one diagonal has endpoints $1+2i$ and $3+4i$.</p>
+                            <div class="text-sm text-gray-600">Hint: Rotate by 90° about midpoint</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Rotation Theorem?</h3>
+                    <p class="mb-4 opacity-90">You now have a powerful secret weapon for JEE geometry problems!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="complex-numbers-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Complex Number Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

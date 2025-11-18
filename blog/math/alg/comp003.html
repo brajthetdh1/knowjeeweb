@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hidden Link: Complex Numbers to Trigonometry & Calculus | KnowJEE</title>
+    <meta name="description" content="Discover how Euler's Formula connects complex numbers with trigonometry and calculus. Master this powerful JEE concept with visual explanations and practice problems.">
+    <meta name="keywords" content="complex numbers trigonometry, Euler's formula, JEE complex numbers, complex numbers calculus, De Moivre's theorem, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .derivation {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .application {
+            background: #fef7ed;
+            border-left: 4px solid #ea580c;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .insight-box {
+            background: #faf5ff;
+            border: 2px solid #c084fc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .complex-plane {
+            background: #fffbeb;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .difficulty-intermediate { border-left: 4px solid #eab308; }
+        .importance-tag {
+            background: #7c3aed;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Mathematics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Advanced Concept</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">3 Subjects Connected</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Hidden Link: Connecting Complex Numbers to Trigonometry and Calculus</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how Euler's Formula creates a beautiful bridge between three major branches of mathematics that every JEE aspirant must understand.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">1</div>
+                            <div class="text-sm text-purple-600">Formula Connects All</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">15+</div>
+                            <div class="text-sm text-purple-600">JEE Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3</div>
+                            <div class="text-sm text-purple-600">Subjects Unified</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5★</div>
+                            <div class="text-sm text-purple-600">JEE Importance</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Connection Matters for JEE</h2>
+                <p class="mb-4">Euler's Formula isn't just another equation—it's a <strong>powerful bridge</strong> that connects three major areas of JEE mathematics. Understanding this connection will help you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li>Solve <strong>complex trigonometric identities</strong> in seconds</li>
+                    <li>Understand <strong>exponential functions</strong> at a deeper level</li>
+                    <li>Master <strong>De Moivre's theorem</strong> applications</li>
+                    <li>Tackle <strong>integration problems</strong> with exponential forms</li>
+                    <li>Develop <strong>geometric intuition</strong> for complex numbers</li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Navigation Guide</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#euler-formula" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Euler's Formula</a>
+                    <a href="#complex-trig" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Complex → Trig</a>
+                    <a href="#trig-complex" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Trig → Complex</a>
+                    <a href="#calculus" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Calculus Link</a>
+                </div>
+            </div>
+
+            <!-- Euler's Formula Section -->
+            <section id="euler-formula" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="importance-tag">JEE Essential</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Core Formula</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Master Key: Euler's Formula</h3>
+                    
+                    <div class="text-center my-6">
+                        <div class="text-3xl font-bold text-purple-700 mb-2">$$e^{i\theta} = \cos\theta + i\sin\theta$$</div>
+                        <p class="text-gray-600">The most beautiful equation in mathematics</p>
+                    </div>
+
+                    <div class="complex-plane">
+                        <h4 class="font-semibold text-orange-800 mb-3">🎯 Geometric Interpretation</h4>
+                        <p>Euler's Formula represents a point on the <strong>unit circle</strong> in the complex plane:</p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-3">
+                            <div>
+                                <p><strong>Real part:</strong> $\cos\theta$ (x-coordinate)</p>
+                                <p><strong>Imaginary part:</strong> $\sin\theta$ (y-coordinate)</p>
+                                <p><strong>Magnitude:</strong> $|e^{i\theta}| = 1$ (unit circle)</p>
+                                <p><strong>Argument:</strong> $\theta$ (angle from real axis)</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border text-center">
+                                <div class="text-sm text-gray-500 mb-2">Visual Representation</div>
+                                <div class="h-32 bg-gray-100 rounded flex items-center justify-center">
+                                    <span class="text-gray-400">[Unit Circle Diagram]</span>
+                                </div>
+                                <p class="text-xs mt-2">Point rotates around unit circle as θ changes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="derivation">
+                        <h4 class="font-semibold text-green-800 mb-2">🔍 Why This Works: Taylor Series Connection</h4>
+                        <p>The formula emerges naturally from Taylor series expansions:</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p>$$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots$$</p>
+                            <p>$$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots$$</p>
+                            <p>$$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$$</p>
+                            <p class="mt-2">Substitute $x = i\theta$ into $e^x$ and magic happens!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Complex to Trigonometry -->
+            <section id="complex-trig" class="mb-8">
+                <div class="concept-box difficulty-intermediate">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="importance-tag">JEE Frequent</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Applications</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">From Complex Numbers to Trigonometry</h3>
+                    
+                    <div class="application">
+                        <h4 class="font-semibold text-orange-800 mb-2">1. Deriving Trigonometric Identities</h4>
+                        <p><strong>Problem:</strong> Prove $\cos(A+B) = \cos A\cos B - \sin A\sin B$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Using Euler's Formula:</strong></p>
+                            <p>$$e^{i(A+B)} = \cos(A+B) + i\sin(A+B)$$</p>
+                            <p>But also: $$e^{i(A+B)} = e^{iA} \cdot e^{iB} = (\cos A + i\sin A)(\cos B + i\sin B)$$</p>
+                            <p>Expand: $$\cos A\cos B - \sin A\sin B + i(\cos A\sin B + \sin A\cos B)$$</p>
+                            <p>Compare real parts: $$\cos(A+B) = \cos A\cos B - \sin A\sin B$$</p>
+                        </div>
+                    </div>
+
+                    <div class="application">
+                        <h4 class="font-semibold text-orange-800 mb-2">2. De Moivre's Theorem</h4>
+                        <p>Euler's Formula gives us De Moivre's Theorem naturally:</p>
+                        <div class="text-center my-3">
+                            $$(\cos\theta + i\sin\theta)^n = e^{in\theta} = \cos(n\theta) + i\sin(n\theta)$$
+                        </div>
+                        <p><strong>JEE Application:</strong> Finding roots of unity, solving equations</p>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">💡 Pro Tip for JEE</h4>
+                        <p>Use this approach for <strong>multiple-angle formulas</strong>:</p>
+                        <div class="text-sm mt-2">
+                            <p>To find $\cos 3\theta$ and $\sin 3\theta$:</p>
+                            <p>$$e^{i3\theta} = (e^{i\theta})^3 = (\cos\theta + i\sin\theta)^3$$</p>
+                            <p>Expand using binomial theorem and compare real/imaginary parts!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trigonometry to Complex -->
+            <section id="trig-complex" class="mb-8">
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">From Trigonometry to Complex Numbers</h3>
+                    
+                    <div class="application">
+                        <h4 class="font-semibold text-orange-800 mb-2">Expressing Trig Functions in Exponential Form</h4>
+                        <p>From Euler's Formula, we can derive:</p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-3">
+                            <div class="text-center">
+                                <p>$$\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Cosine as average of two rotating vectors</p>
+                            </div>
+                            <div class="text-center">
+                                <p>$$\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}$$</p>
+                                <p class="text-sm text-gray-600 mt-1">Sine as difference of two rotating vectors</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="application">
+                        <h4 class="font-semibold text-orange-800 mb-2">JEE Problem: Sum of Cosines</h4>
+                        <p><strong>Problem:</strong> Find $\cos\theta + \cos 2\theta + \cos 3\theta + \cdots + \cos n\theta$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Complex Approach:</strong></p>
+                            <p>Consider $S = e^{i\theta} + e^{i2\theta} + e^{i3\theta} + \cdots + e^{in\theta}$</p>
+                            <p>This is a geometric series! Sum = $\frac{e^{i\theta}(1 - e^{in\theta})}{1 - e^{i\theta}}$</p>
+                            <p>Real part of S gives the sum of cosines</p>
+                            <p class="font-semibold mt-2">Much faster than trigonometric identities!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calculus Connection -->
+            <section id="calculus" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="importance-tag">JEE Advanced</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Calculus Connection</h3>
+                    
+                    <div class="application">
+                        <h4 class="font-semibold text-orange-800 mb-2">1. Derivatives Become Algebraic</h4>
+                        <p>Compare derivatives in different forms:</p>
+                        <div class="grid md:grid-cols-3 gap-4 mt-3 text-center">
+                            <div>
+                                <p>$\frac{d}{d\theta}e^{i\theta} = ie^{i\theta}$</p>
+                                <p class="text-xs text-gray-600">Simple multiplication by i</p>
+                            </div>
+                            <div>
+                                <p>$\frac{d}{d\theta}(\cos\theta + i\sin\theta) = -\sin\theta + i\cos\theta$</p>
+                                <p class="text-xs text-gray-600">More complicated</p>
+                            </div>
+                            <div>
+                                <p>$i(\cos\theta + i\sin\theta) = -\sin\theta + i\cos\theta$</p>
+                                <p class="text-xs text-gray-600">Same result!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="application">
+                        <h4 class="font-semibold text-orange-800 mb-2">2. Integration Made Easier</h4>
+                        <p><strong>JEE Problem:</strong> Evaluate $\int e^{ax}\cos(bx) dx$</p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Complex Method:</strong></p>
+                            <p>Consider $\int e^{ax} \cdot e^{ibx} dx = \int e^{(a+ib)x} dx$</p>
+                            <p>This equals $\frac{e^{(a+ib)x}}{a+ib} + C$</p>
+                            <p>Take real part to get the answer for $\int e^{ax}\cos(bx) dx$</p>
+                            <p class="mt-2 font-semibold">No integration by parts needed!</p>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <h4 class="font-semibold text-purple-800 mb-2">🎯 JEE Marking Scheme Insight</h4>
+                        <p>Using complex methods for integration problems often:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm mt-2">
+                            <li>Saves <strong>3-4 minutes</strong> per problem</li>
+                            <li>Reduces <strong>calculation errors</strong></li>
+                            <li>Shows <strong>conceptual depth</strong> to examiners</li>
+                            <li>Works for <strong>both definite and indefinite</strong> integrals</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Ultimate Connection -->
+            <section class="mb-8">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Euler's Identity: The Ultimate Connection</h3>
+                    <div class="text-center mb-4">
+                        <div class="text-4xl font-bold mb-2">$$e^{i\pi} + 1 = 0$$</div>
+                        <p class="opacity-90">Connecting 5 fundamental mathematical constants in one equation</p>
+                    </div>
+                    <div class="grid md:grid-cols-5 gap-2 text-center text-sm">
+                        <div class="bg-white bg-opacity-20 p-2 rounded">
+                            <div class="font-bold">e</div>
+                            <div>Base of natural logarithms</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-2 rounded">
+                            <div class="font-bold">i</div>
+                            <div>Imaginary unit</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-2 rounded">
+                            <div class="font-bold">π</div>
+                            <div>Circle constant</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-2 rounded">
+                            <div class="font-bold">1</div>
+                            <div>Multiplicative identity</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-2 rounded">
+                            <div class="font-bold">0</div>
+                            <div>Additive identity</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 JEE Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Using complex numbers, prove that:</p>
+                            <p class="text-center">$\cos^3\theta = \frac{3\cos\theta + \cos 3\theta}{4}$</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Evaluate using complex methods:</p>
+                            <p class="text-center">$\int_0^{\pi} e^{2x}\cos 3x  dx$</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Find all roots of $z^5 = 1$ using exponential form</p>
+                            <p class="text-sm text-gray-600 mt-1">(Roots of unity)</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. Sum the series using complex numbers:</p>
+                            <p class="text-center">$S = \cos\theta + \cos 3\theta + \cos 5\theta + \cdots + \cos(2n-1)\theta$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Key Formulas</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>$e^{i\theta} = \cos\theta + i\sin\theta$</li>
+                                <li>$\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$</li>
+                                <li>$\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}$</li>
+                                <li>$(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta$</li>
+                                <li>$e^{i\pi} + 1 = 0$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">When to Use This Approach</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Multiple-angle trigonometric identities</li>
+                                <li>Summation of trigonometric series</li>
+                                <li>Integration of $e^{ax}\cos(bx)$ or $e^{ax}\sin(bx)$</li>
+                                <li>Finding roots of complex equations</li>
+                                <li>Geometric interpretations of complex numbers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master This Powerful Connection!</h3>
+                    <p class="mb-4 opacity-90">This single concept can help you solve 15+ different types of JEE problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="complex-numbers-cards.html" class="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Complex Numbers
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

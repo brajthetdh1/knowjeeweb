@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Theorem: Introduction & First Principle | JEE Algebra | KnowJEE</title>
+    <meta name="description" content="Master the Binomial Theorem from basics. Learn the first principle, Pascal's Triangle, and binomial expansion for JEE Main & Advanced preparation.">
+    <meta name="keywords" content="binomial theorem JEE, binomial expansion, Pascal triangle, JEE algebra, binomial coefficients, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .historical-box {
+            background: #faf5ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .pascal-box {
+            background: #fffbeb;
+            border: 2px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Algebra Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Algebra Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">JEE Weightage: 4-6%</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Binomial Theorem: Introduction & The First Principle</h1>
+                <p class="text-xl text-gray-600 mb-4">From basic expansion patterns to Pascal's Triangle - build your foundation for JEE success.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4-6%</div>
+                            <div class="text-sm text-blue-600">JEE Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Appears Every Year</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Key Concepts</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">1665</div>
+                            <div class="text-sm text-blue-600">Year Discovered</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What is the Binomial Theorem?</h2>
+                <p class="mb-4">The Binomial Theorem provides a powerful formula to expand expressions of the form $(a + b)^n$ where $n$ is a positive integer. Instead of multiplying $(a + b)$ by itself $n$ times, we can use this theorem to directly write the expansion.</p>
+                
+                <div class="historical-box">
+                    <h4 class="font-semibold text-purple-800 mb-2">📜 Historical Context</h4>
+                    <p>The Binomial Theorem was discovered by <strong>Sir Isaac Newton</strong> in 1665. While the case for positive integer exponents was known to Indian and Persian mathematicians, Newton generalized it to rational exponents, opening doors to calculus and infinite series.</p>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-lg font-bold text-blue-900 mb-3">Why Learn Binomial Theorem for JEE?</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Direct Questions:</strong> 1-2 questions appear every year in JEE Main</li>
+                        <li><strong>Tool for Other Topics:</strong> Essential for probability, sequences, and calculus</li>
+                        <li><strong>Time Saver:</strong> Avoid lengthy multiplication in problems</li>
+                        <li><strong>Conceptual Foundation:</strong> Builds intuition for series and patterns</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#first-principle" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">First Principle</a>
+                    <a href="#pascal-triangle" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Pascal's Triangle</a>
+                    <a href="#binomial-formula" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Binomial Formula</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice</a>
+                </div>
+            </div>
+
+            <!-- First Principle -->
+            <section id="first-principle" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Understanding Through First Principle</h2>
+                </div>
+
+                <p class="mb-4">Let's build intuition by expanding binomials manually for small values of $n$:</p>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-3">Manual Expansion Patterns</h4>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p><strong>For n = 0:</strong></p>
+                            <div class="formula-box">
+                                $$(a + b)^0 = 1$$
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p><strong>For n = 1:</strong></p>
+                            <div class="formula-box">
+                                $$(a + b)^1 = a + b$$
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p><strong>For n = 2:</strong></p>
+                            <div class="formula-box">
+                                $$(a + b)^2 = (a + b)(a + b) = a^2 + 2ab + b^2$$
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p><strong>For n = 3:</strong></p>
+                            <div class="formula-box">
+                                $$(a + b)^3 = (a + b)(a + b)(a + b) = a^3 + 3a^2b + 3ab^2 + b^3$$
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p><strong>For n = 4:</strong></p>
+                            <div class="formula-box">
+                                $$(a + b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-lg font-bold text-blue-900 mb-3">🔍 Key Observations</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Number of terms:</strong> $n + 1$ terms in the expansion</li>
+                        <li><strong>Powers of a:</strong> Decrease from $n$ to $0$</li>
+                        <li><strong>Powers of b:</strong> Increase from $0$ to $n$</li>
+                        <li><strong>Sum of powers:</strong> In each term, power of a + power of b = $n$</li>
+                        <li><strong>Coefficients:</strong> Follow a symmetric pattern</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Pascal's Triangle -->
+            <section id="pascal-triangle" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Pascal's Triangle - The Coefficient Pattern</h2>
+                </div>
+
+                <p class="mb-4">Blaise Pascal discovered this beautiful triangular arrangement of binomial coefficients that gives us the coefficients for $(a + b)^n$ expansion.</p>
+
+                <div class="pascal-box">
+                    <h4 class="font-semibold text-yellow-800 mb-4 text-center">Pascal's Triangle</h4>
+                    
+                    <div class="text-center space-y-2">
+                        <div class="flex justify-center">
+                            <div class="text-center mx-4">
+                                <div class="font-bold">n = 0</div>
+                                <div class="text-blue-600 font-semibold">1</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="text-center mx-3">
+                                <div class="font-bold">n = 1</div>
+                                <div class="text-blue-600 font-semibold">1 &nbsp;&nbsp; 1</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="text-center mx-2">
+                                <div class="font-bold">n = 2</div>
+                                <div class="text-blue-600 font-semibold">1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 1</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="text-center mx-1">
+                                <div class="font-bold">n = 3</div>
+                                <div class="text-blue-600 font-semibold">1 &nbsp;&nbsp; 3 &nbsp;&nbsp; 3 &nbsp;&nbsp; 1</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="text-center">
+                                <div class="font-bold">n = 4</div>
+                                <div class="text-blue-600 font-semibold">1 &nbsp;&nbsp; 4 &nbsp;&nbsp; 6 &nbsp;&nbsp; 4 &nbsp;&nbsp; 1</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="text-center">
+                                <div class="font-bold">n = 5</div>
+                                <div class="text-blue-600 font-semibold">1 &nbsp; 5 &nbsp; 10 &nbsp; 10 &nbsp; 5 &nbsp; 1</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-sm text-gray-600">
+                        <p><strong>Pattern:</strong> Each number is the sum of the two numbers directly above it.</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-lg font-bold text-blue-900 mb-3">🎯 How to Use Pascal's Triangle</h3>
+                    <p class="mb-3"><strong>Example:</strong> Find expansion of $(x + y)^4$</p>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Step 1:</strong> Look at row for n = 4: <span class="font-semibold">1, 4, 6, 4, 1</span></p>
+                        <p><strong>Step 2:</strong> Write terms with decreasing powers of x and increasing powers of y:</p>
+                        <p class="text-center">$1\cdot x^4y^0 + 4\cdot x^3y^1 + 6\cdot x^2y^2 + 4\cdot x^1y^3 + 1\cdot x^0y^4$</p>
+                        <p><strong>Step 3:</strong> Simplify:</p>
+                        <p class="text-center font-semibold">$x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Binomial Theorem Formula -->
+            <section id="binomial-formula" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. The Binomial Theorem Formula</h2>
+                </div>
+
+                <p class="mb-4">For any positive integer $n$, the binomial theorem states:</p>
+
+                <div class="formula-box">
+                    <h4 class="font-semibold text-blue-800 mb-3 text-center">Binomial Theorem Formula</h4>
+                    <div class="text-center text-lg">
+                        $$(a + b)^n = \sum_{r=0}^{n} \binom{n}{r} a^{n-r} b^r$$
+                    </div>
+                    <p class="text-center mt-2">where $\binom{n}{r} = \frac{n!}{r!(n-r)!}$</p>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-3">Written in Expanded Form</h4>
+                    <div class="text-center">
+                        $$(a + b)^n = \binom{n}{0}a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \cdots + \binom{n}{n}b^n$$
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-lg font-bold text-blue-900 mb-3">📚 Understanding the Notation</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <p><strong>$\binom{n}{r}$</strong> - Binomial Coefficient</p>
+                            <p>Read as "n choose r"</p>
+                            <p>Formula: $\binom{n}{r} = \frac{n!}{r!(n-r)!}$</p>
+                            <p>Also written as: $^nC_r$ or $C(n, r)$</p>
+                        </div>
+                        <div>
+                            <p><strong>Properties:</strong></p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>$\binom{n}{0} = \binom{n}{n} = 1$</li>
+                                <li>$\binom{n}{r} = \binom{n}{n-r}$ (Symmetric)</li>
+                                <li>$\binom{n}{r} + \binom{n}{r-1} = \binom{n+1}{r}$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-3">Example: Expand $(2x + 3)^4$</h4>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Step 1:</strong> Identify a = 2x, b = 3, n = 4</p>
+                        <p><strong>Step 2:</strong> Use binomial theorem:</p>
+                        <p>$(2x + 3)^4 = \binom{4}{0}(2x)^4 + \binom{4}{1}(2x)^3(3) + \binom{4}{2}(2x)^2(3)^2 + \binom{4}{3}(2x)(3)^3 + \binom{4}{4}(3)^4$</p>
+                        <p><strong>Step 3:</strong> Calculate coefficients:</p>
+                        <p>$\binom{4}{0} = 1$, $\binom{4}{1} = 4$, $\binom{4}{2} = 6$, $\binom{4}{3} = 4$, $\binom{4}{4} = 1$</p>
+                        <p><strong>Step 4:</strong> Compute each term:</p>
+                        <p>$1\cdot 16x^4 + 4\cdot 8x^3\cdot 3 + 6\cdot 4x^2\cdot 9 + 4\cdot 2x\cdot 27 + 1\cdot 81$</p>
+                        <p><strong>Step 5:</strong> Simplify:</p>
+                        <p class="font-semibold">$16x^4 + 96x^3 + 216x^2 + 216x + 81$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- General Term -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. The General Term</h2>
+                </div>
+
+                <p class="mb-4">In the expansion of $(a + b)^n$, the $(r+1)^{th}$ term is called the general term:</p>
+
+                <div class="formula-box">
+                    <h4 class="font-semibold text-blue-800 mb-3 text-center">General Term Formula</h4>
+                    <div class="text-center text-lg">
+                        $$T_{r+1} = \binom{n}{r} a^{n-r} b^r$$
+                    </div>
+                    <p class="text-center mt-2">where r = 0, 1, 2, ..., n</p>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-3">Example: Find 3rd term in $(x - 2y)^5$</h4>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Step 1:</strong> For 3rd term, r + 1 = 3 ⇒ r = 2</p>
+                        <p><strong>Step 2:</strong> a = x, b = -2y, n = 5</p>
+                        <p><strong>Step 3:</strong> Apply formula:</p>
+                        <p>$T_3 = \binom{5}{2} x^{5-2} (-2y)^2$</p>
+                        <p><strong>Step 4:</strong> Calculate:</p>
+                        <p>$\binom{5}{2} = 10$, $(-2y)^2 = 4y^2$</p>
+                        <p><strong>Step 5:</strong> $T_3 = 10 \cdot x^3 \cdot 4y^2 = 40x^3y^2$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Practice Problems</h2>
+                </div>
+
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Basic Practice</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. Expand $(x + 2)^4$ using binomial theorem</p>
+                            <div class="text-sm text-gray-600">Hint: Use a = x, b = 2, n = 4</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find the 4th term in the expansion of $(2a - b)^6$</p>
+                            <div class="text-sm text-gray-600">Hint: Remember T₄ means r+1=4 ⇒ r=3</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Write the expansion of $(1 + x)^5$ using Pascal's triangle</p>
+                            <div class="text-sm text-gray-600">Hint: Row n=5: 1, 5, 10, 10, 5, 1</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mt-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">🎯 JEE Level Practice</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. Find the coefficient of $x^3$ in $(2 + 3x)^8$</p>
+                            <div class="text-sm text-gray-600">Hint: Use general term and equate power of x to 3</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">5. If the 3rd term in $(1 + x)^n$ is 36x², find n</p>
+                            <div class="text-sm text-gray-600">Hint: T₃ = ⁿC₂ x² = 36x²</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Summary -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">📋 Quick Summary</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Key Formulas</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>$(a + b)^n = \sum_{r=0}^{n} \binom{n}{r} a^{n-r} b^r$</li>
+                                <li>General term: $T_{r+1} = \binom{n}{r} a^{n-r} b^r$</li>
+                                <li>Binomial coefficient: $\binom{n}{r} = \frac{n!}{r!(n-r)!}$</li>
+                                <li>Number of terms: $n + 1$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Properties to Remember</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Sum of coefficients: Put a = b = 1</li>
+                                <li>Middle term: Depends on whether n is even or odd</li>
+                                <li>Greatest coefficient: For (1 + x)ⁿ, middle term(s) have max coefficient</li>
+                                <li>Pascal's identity: $\binom{n}{r} + \binom{n}{r-1} = \binom{n+1}{r}$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready for Advanced Binomial Theorem?</h3>
+                    <p class="mb-4 opacity-90">Learn about middle terms, greatest coefficients, and binomial theorem for rational indices</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="binomial-advanced.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Advanced Binomial Theorem →
+                        </a>
+                        <a href="../../../blog.html" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            More Algebra Topics
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

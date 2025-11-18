@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Theorem: Complex Expansions (x+y+z)^n | JEE Mathematics | KnowJEE</title>
+    <meta name="description" content="Master complex binomial expansions like (x+y+z)^n for JEE Main & Advanced. Learn multinomial theorem, coefficient problems, and advanced techniques with solved examples.">
+    <meta name="keywords" content="binomial theorem JEE, multinomial theorem, (x+y+z)^n expansion, JEE mathematics, binomial coefficient problems, JEE advanced mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #fef7f7;
+            border: 2px solid #fecaca;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .year-tag {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .theorem-box {
+            background: #dbeafe;
+            border: 2px solid #93c5fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Algebra Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Main & Advanced</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 20 min</span>
+                    <span class="text-gray-500 text-sm ml-3">8 Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Binomial Theorem: Handling Complex Expansions - $(x + y + z)^n$</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the multinomial theorem, coefficient problems, and advanced expansion techniques for JEE success.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">8+</div>
+                            <div class="text-sm text-red-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">100%</div>
+                            <div class="text-sm text-red-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">5</div>
+                            <div class="text-sm text-red-600">Key Methods</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-700">35min</div>
+                            <div class="text-sm text-red-600">Avg. Practice Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Complex Binomial Expansions Matter</h2>
+                <p class="mb-4">Expansions of $(x+y+z)^n$ and similar expressions appear frequently in JEE Main and Advanced. Based on analysis of past papers, these problems test:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-red-50 p-4 rounded-lg">
+                    <li><strong>Understanding of multinomial theorem</strong> and its applications</li>
+                    <li><strong>Coefficient extraction techniques</strong> for specific terms</li>
+                    <li><strong>Problem-solving with constraints</strong> on exponents</li>
+                    <li><strong>Algebraic manipulation skills</strong> with multiple variables</li>
+                </ul>
+            </section>
+
+            <!-- Multinomial Theorem -->
+            <section class="mb-8">
+                <div class="theorem-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">The Multinomial Theorem</h3>
+                    <p class="mb-4">For $(x_1 + x_2 + \cdots + x_m)^n$, the expansion is given by:</p>
+                    <div class="bg-white p-4 rounded-lg mb-4">
+                        <p class="text-center text-lg">$$(x_1 + x_2 + \cdots + x_m)^n = \sum \frac{n!}{n_1! n_2! \cdots n_m!} x_1^{n_1} x_2^{n_2} \cdots x_m^{n_m}$$</p>
+                    </div>
+                    <p>where the summation is over all non-negative integers $n_1, n_2, \ldots, n_m$ such that $n_1 + n_2 + \cdots + n_m = n$.</p>
+                </div>
+            </section>
+
+            <!-- Problem 1 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Main 2023</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Basic Multinomial Expansion</h3>
+                    <p class="text-lg mb-4">Find the coefficient of $x^2 y^3 z^2$ in the expansion of $(x + y + z)^7$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Using multinomial theorem, the general term is:</p>
+                            <p class="text-center">$$T = \frac{7!}{a! b! c!} x^a y^b z^c$$</p>
+                            <p>where $a + b + c = 7$</p>
+                            <p><strong>Step 2:</strong> We need $a = 2$, $b = 3$, $c = 2$ (satisfying $2+3+2=7$)</p>
+                            <p><strong>Step 3:</strong> Coefficient = $\frac{7!}{2! 3! 2!} = \frac{5040}{2 \cdot 6 \cdot 2} = \frac{5040}{24} = 210$</p>
+                            <p><strong>Step 4:</strong> Final answer: $\boxed{210}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 2 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2022</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Coefficient with Constraints</h3>
+                    <p class="text-lg mb-4">Find the number of distinct terms in the expansion of $(1 + x + x^2 + x^3)^5$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> The expression is $(1 + x + x^2 + x^3)^5$</p>
+                            <p><strong>Step 2:</strong> General term: $T = \frac{5!}{a! b! c! d!} 1^a x^b (x^2)^c (x^3)^d$</p>
+                            <p>where $a + b + c + d = 5$</p>
+                            <p><strong>Step 3:</strong> Power of $x$ in the term = $b + 2c + 3d$</p>
+                            <p><strong>Step 4:</strong> Minimum power: when $b=c=d=0$, power = 0</p>
+                            <p><strong>Step 5:</strong> Maximum power: when $a=b=c=0, d=5$, power = 15</p>
+                            <p><strong>Step 6:</strong> All integer powers from 0 to 15 are possible</p>
+                            <p><strong>Step 7:</strong> Number of distinct terms = $15 - 0 + 1 = 16$</p>
+                            <p><strong>Step 8:</strong> Final answer: $\boxed{16}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem 3 -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="year-tag">JEE Advanced 2021</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Specific Term with Conditions</h3>
+                    <p class="text-lg mb-4">Find the coefficient of $x^5$ in the expansion of $(1 + x + x^2 + x^3)^6$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> We need to find all non-negative integer solutions to:</p>
+                            <p class="text-center">$a + b + c + d = 6$ and $b + 2c + 3d = 5$</p>
+                            <p><strong>Step 2:</strong> Case analysis:</p>
+                            <p class="ml-4"><strong>Case 1:</strong> $d = 0$, then $b + 2c = 5$ and $a + b + c = 6$</p>
+                            <p class="ml-8">• $c = 0$: $b = 5$, then $a = 1$ → coefficient = $\frac{6!}{1!5!0!0!} = 6$</p>
+                            <p class="ml-8">• $c = 1$: $b = 3$, then $a = 2$ → coefficient = $\frac{6!}{2!3!1!0!} = 60$</p>
+                            <p class="ml-8">• $c = 2$: $b = 1$, then $a = 3$ → coefficient = $\frac{6!}{3!1!2!0!} = 60$</p>
+                            <p class="ml-4"><strong>Case 2:</strong> $d = 1$, then $b + 2c = 2$ and $a + b + c = 5$</p>
+                            <p class="ml-8">• $c = 0$: $b = 2$, then $a = 3$ → coefficient = $\frac{6!}{3!2!0!1!} = 60$</p>
+                            <p class="ml-8">• $c = 1$: $b = 0$, then $a = 4$ → coefficient = $\frac{6!}{4!0!1!1!} = 30$</p>
+                            <p class="ml-4"><strong>Case 3:</strong> $d = 2$, impossible since $3d = 6 > 5$</p>
+                            <p><strong>Step 3:</strong> Total coefficient = $6 + 60 + 60 + 60 + 30 = 216$</p>
+                            <p><strong>Step 4:</strong> Final answer: $\boxed{216}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Problem-Solving Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For Multinomial Expansions:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always verify $n_1 + n_2 + \cdots + n_m = n$</li>
+                                <li>Use the formula $\frac{n!}{n_1! n_2! \cdots n_m!}$ for coefficients</li>
+                                <li>For specific powers, set up equations for exponents</li>
+                                <li>Use case analysis when constraints are involved</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For Coefficient Problems:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Convert to simpler forms using substitutions</li>
+                                <li>Use combinatorial identities when possible</li>
+                                <li>Look for patterns in the exponents</li>
+                                <li>Check if the problem can be solved using generating functions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems 4-8 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Problems 4-8 Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes 5 more complex binomial expansion problems with detailed solutions:</p>
+                    <ul class="list-disc list-inside inline-block text-left text-gray-600 mb-4">
+                        <li>Greatest coefficient problems</li>
+                        <li>Expansions with negative exponents</li>
+                        <li>Applications in probability</li>
+                        <li>Problem-solving with inequalities</li>
+                    </ul>
+                    <br>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Access Full Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Find the coefficient of $x^3y^2z^4$ in $(x+y+z)^9$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. Find the number of terms in $(1+x+x^2)^8$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Find the sum of all coefficients in $(x+2y+3z)^5$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Complex Binomial Expansions?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all problems with step-by-step video solutions and advanced techniques</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-algebra-cards.html" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Algebra Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

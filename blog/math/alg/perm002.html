@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multinomial Theorem: A Bridge to Binomial & Beyond | KnowJEE</title>
+    <meta name="description" content="Master the Multinomial Theorem for expansion of (x1 + x2 + ... + xk)^n. Complete guide with formulas, examples, and JEE applications.">
+    <meta name="keywords" content="multinomial theorem, binomial theorem extension, JEE mathematics, permutation combinations, JEE advanced math, polynomial expansion">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #fef7f7;
+            border-left: 4px solid #fecaca;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .topic-tag {
+            background: #0369a1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Algebra Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">5 Key Concepts</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Multinomial Theorem: A Bridge to Binomial & Beyond</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the generalization of binomial expansion to multiple variables with applications in JEE Advanced problems.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3+</div>
+                            <div class="text-sm text-blue-600">JEE Appearances</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Concept Coverage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8</div>
+                            <div class="text-sm text-blue-600">Solved Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">15min</div>
+                            <div class="text-sm text-blue-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Multinomial Theorem Matters for JEE</h2>
+                <p class="mb-4">The Multinomial Theorem extends the familiar Binomial Theorem to multiple variables, providing powerful tools for:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>Complex expansions</strong> of $(x_1 + x_2 + \cdots + x_k)^n$</li>
+                    <li><strong>Coefficient problems</strong> in JEE Advanced</li>
+                    <li><strong>Combinatorial identities</strong> and proofs</li>
+                    <li><strong>Probability applications</strong> with multiple outcomes</li>
+                </ul>
+            </section>
+
+            <!-- Concept 1 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Foundation</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Multinomial Theorem Formula</h3>
+                    <p class="text-lg mb-4">For any positive integer $n$ and any non-negative integers $n_1, n_2, \ldots, n_k$ such that $n_1 + n_2 + \cdots + n_k = n$:</p>
+                    
+                    <div class="formula-box">
+                        <p class="text-center text-lg font-semibold">$$(x_1 + x_2 + \cdots + x_k)^n = \sum \frac{n!}{n_1! n_2! \cdots n_k!} x_1^{n_1} x_2^{n_2} \cdots x_k^{n_k}$$</p>
+                        <p class="text-center mt-2 text-sm text-gray-600">where the sum is over all k-tuples of non-negative integers $(n_1, n_2, \ldots, n_k)$ with $\sum n_i = n$</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Understanding the Formula:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Multinomial Coefficient:</strong> $\frac{n!}{n_1! n_2! \cdots n_k!}$ counts the number of ways to arrange $n$ objects where there are $n_1$ of type 1, $n_2$ of type 2, etc.</p>
+                            <p><strong>Connection to Binomial:</strong> When $k=2$, this reduces to the familiar binomial theorem with $\frac{n!}{n_1! n_2!} = \binom{n}{n_1}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 2 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Application</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Basic Expansion Examples</h3>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 1: Expand $(x + y + z)^2$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>All possible combinations where $n_1 + n_2 + n_3 = 2$:</p>
+                            <p><strong>Case 1:</strong> $(2,0,0)$: $\frac{2!}{2!0!0!}x^2 = x^2$</p>
+                            <p><strong>Case 2:</strong> $(0,2,0)$: $\frac{2!}{0!2!0!}y^2 = y^2$</p>
+                            <p><strong>Case 3:</strong> $(0,0,2)$: $\frac{2!}{0!0!2!}z^2 = z^2$</p>
+                            <p><strong>Case 4:</strong> $(1,1,0)$: $\frac{2!}{1!1!0!}xy = 2xy$</p>
+                            <p><strong>Case 5:</strong> $(1,0,1)$: $\frac{2!}{1!0!1!}xz = 2xz$</p>
+                            <p><strong>Case 6:</strong> $(0,1,1)$: $\frac{2!}{0!1!1!}yz = 2yz$</p>
+                            <p><strong>Result:</strong> $(x + y + z)^2 = x^2 + y^2 + z^2 + 2xy + 2xz + 2yz$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 2: Expand $(a + b + c)^3$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>All combinations where $n_1 + n_2 + n_3 = 3$:</p>
+                            <p>• $(3,0,0)$: $a^3$</p>
+                            <p>• $(0,3,0)$: $b^3$</p>
+                            <p>• $(0,0,3)$: $c^3$</p>
+                            <p>• $(2,1,0)$: $3a^2b$</p>
+                            <p>• $(2,0,1)$: $3a^2c$</p>
+                            <p>• $(1,2,0)$: $3ab^2$</p>
+                            <p>• $(0,2,1)$: $3b^2c$</p>
+                            <p>• $(1,0,2)$: $3ac^2$</p>
+                            <p>• $(0,1,2)$: $3bc^2$</p>
+                            <p>• $(1,1,1)$: $6abc$</p>
+                            <p><strong>Result:</strong> $(a + b + c)^3 = a^3 + b^3 + c^3 + 3a^2b + 3a^2c + 3ab^2 + 3b^2c + 3ac^2 + 3bc^2 + 6abc$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 3 -->
+            <section class="mb-8">
+                <div class="concept-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">JEE Advanced</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Coefficient Problems in JEE</h3>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 3: Find coefficient of $x^2y^3z^2$ in $(x + y + z)^7$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Identify exponents: $n_1=2$, $n_2=3$, $n_3=2$</p>
+                            <p><strong>Step 2:</strong> Check sum: $2 + 3 + 2 = 7$ ✓</p>
+                            <p><strong>Step 3:</strong> Apply multinomial coefficient:</p>
+                            <p>$\frac{7!}{2!3!2!} = \frac{5040}{2 \cdot 6 \cdot 2} = \frac{5040}{24} = 210$</p>
+                            <p><strong>Answer:</strong> Coefficient is 210</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 4: Find coefficient of $a^3b^2c^4$ in $(2a - b + 3c)^9$</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Identify exponents: $n_1=3$, $n_2=2$, $n_3=4$</p>
+                            <p><strong>Step 2:</strong> Check sum: $3 + 2 + 4 = 9$ ✓</p>
+                            <p><strong>Step 3:</strong> Apply multinomial coefficient:</p>
+                            <p>$\frac{9!}{3!2!4!} = \frac{362880}{6 \cdot 2 \cdot 24} = \frac{362880}{288} = 1260$</p>
+                            <p><strong>Step 4:</strong> Include coefficient factors: $(2)^3 \cdot (-1)^2 \cdot (3)^4 = 8 \cdot 1 \cdot 81 = 648$</p>
+                            <p><strong>Step 5:</strong> Multiply: $1260 \times 648 = 816,480$</p>
+                            <p><strong>Answer:</strong> Coefficient is 816,480</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🚀 Problem-Solving Strategies</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">For Coefficient Problems:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Always verify $n_1 + n_2 + \cdots + n_k = n$</li>
+                                <li>Remember to include coefficient factors from each term</li>
+                                <li>Watch for negative signs in the expansion</li>
+                                <li>Use symmetry when possible to reduce calculations</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">For Special Cases:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>When finding sum of coefficients, set all variables = 1</li>
+                                <li>For specific term problems, use the general term formula</li>
+                                <li>Remember the multinomial coefficient counts arrangements</li>
+                                <li>Practice with substitution methods for complex problems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concepts 4-5 Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Advanced Applications Available in Full Version</h3>
+                    <p class="text-gray-600 mb-4">Includes Number of Terms analysis, Relationship with Permutations, and JEE Advanced level problems</p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Access Full Content
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. Find the coefficient of $x^3y^2z$ in $(x + y + z)^6$</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. How many terms are in the expansion of $(x + y + z + w)^5$?</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Find the sum of all coefficients in $(2x - 3y + z)^4$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Multinomial Theorem?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all concepts with step-by-step video solutions and JEE practice problems</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-algebra-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Algebra Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Join Practice Session
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-blue-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-blue-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-blue-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-blue-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-blue-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-blue-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-blue-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-blue-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-blue-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

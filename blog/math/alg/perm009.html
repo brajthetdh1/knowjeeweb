@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star and Bar Method | Identical Objects Distribution | JEE Combinatorics | KnowJEE</title>
+    <meta name="description" content="Master the Star and Bar method for distributing identical objects. Learn formulas for non-negative and positive integer solutions with JEE-level practice problems.">
+    <meta name="keywords" content="star and bar method, identical objects distribution, JEE combinatorics, permutation combination, JEE maths, non-negative integer solutions">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Combinatorics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Combinatorics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential Formulas + Problems</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Division & Distribution of Identical Objects: The "Star and Bar" Method</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the powerful combinatorial technique for counting distributions of identical items among distinct groups.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2</div>
+                            <div class="text-sm text-blue-600">Key Formulas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">85%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5+</div>
+                            <div class="text-sm text-blue-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Concept Clarity</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Star and Bar Method Matters for JEE</h2>
+                <p class="mb-4">The <strong>Stars and Bars method</strong> is a powerful combinatorial technique used to solve distribution problems where we need to count the number of ways to distribute <strong>identical objects</strong> among <strong>distinct recipients</strong>.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Significance</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Appears in <strong>every JEE Main</strong> paper (1-2 questions)</li>
+                        <li>Forms basis for <strong>advanced combinatorial problems</strong></li>
+                        <li>Essential for <strong>probability and statistics</strong> applications</li>
+                        <li>Saves <strong>3-5 minutes</strong> per problem compared to casework</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-concept" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Concept</a>
+                    <a href="#formula1" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Non-Negative Solutions</a>
+                    <a href="#formula2" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Positive Solutions</a>
+                    <a href="#applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Applications</a>
+                </div>
+            </div>
+
+            <!-- Basic Concept -->
+            <section id="basic-concept" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Understanding the Stars and Bars Concept</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What are "Stars" and "Bars"?</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">🌟 Stars Represent:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Identical objects</strong> being distributed</li>
+                                <li>Coins, pens, balls, or any identical items</li>
+                                <li>The total number we're distributing (n)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">｜ Bars Represent:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Dividers</strong> between different groups</li>
+                                <li>Separate distinct recipients or boxes</li>
+                                <li>Number of bars = (number of groups - 1)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="example-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">📖 Simple Example</h4>
+                        <p class="mb-2">Distribute 5 identical stars among 3 people:</p>
+                        <div class="text-center my-3">
+                            <p>🌟 🌟 | 🌟 | 🌟 🌟</p>
+                            <p class="text-sm text-gray-600">Person 1 gets 2, Person 2 gets 1, Person 3 gets 2</p>
+                        </div>
+                        <p class="text-sm">The arrangement of 5 stars and 2 bars uniquely determines one distribution!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formula 1: Non-Negative Solutions -->
+            <section id="formula1" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Non-Negative Integer Solutions</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When recipients can get ZERO objects</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 The Fundamental Formula</h4>
+                        <div class="text-center my-3">
+                            <p class="text-lg">Number of non-negative integer solutions to:</p>
+                            <p class="text-2xl font-bold my-2">$$x_1 + x_2 + \cdots + x_r = n$$</p>
+                            <p class="text-lg">is given by:</p>
+                            <p class="text-2xl font-bold my-2">$$\binom{n + r - 1}{r - 1}$$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🧠 Derivation Insight</h4>
+                        <p class="mb-2">We have <strong>n stars</strong> (identical objects) and <strong>(r-1) bars</strong> (dividers between r groups).</p>
+                        <p class="mb-2">Total items to arrange: <strong>n + (r-1)</strong></p>
+                        <p class="mb-2">We choose positions for either the bars OR the stars:</p>
+                        <div class="text-center my-2">
+                            <p>$$\binom{n + r - 1}{r - 1} = \binom{n + r - 1}{n}$$</p>
+                        </div>
+                        <p class="text-sm">Both expressions are equivalent and equally valid!</p>
+                    </div>
+
+                    <div class="practice-box difficulty-easy">
+                        <h4 class="font-semibold text-green-800 mb-3">📝 Example Problem 1</h4>
+                        <p class="mb-3">Find the number of ways to distribute 10 identical chocolates among 4 children.</p>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">✅ Solution</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Identify n and r</p>
+                                <p class="ml-4">n = 10 (chocolates), r = 4 (children)</p>
+                                <p><strong>Step 2:</strong> Apply formula for non-negative solutions:</p>
+                                <p class="ml-4">$$\binom{10 + 4 - 1}{4 - 1} = \binom{13}{3}$$</p>
+                                <p><strong>Step 3:</strong> Calculate:</p>
+                                <p class="ml-4">$$\binom{13}{3} = \frac{13 \times 12 \times 11}{3 \times 2 \times 1} = 286$$</p>
+                            </div>
+                            <p class="mt-2 font-semibold">Answer: 286 ways</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formula 2: Positive Solutions -->
+            <section id="formula2" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Positive Integer Solutions</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">When each recipient gets AT LEAST ONE object</h3>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">🎯 The Positive Solutions Formula</h4>
+                        <div class="text-center my-3">
+                            <p class="text-lg">Number of positive integer solutions to:</p>
+                            <p class="text-2xl font-bold my-2">$$x_1 + x_2 + \cdots + x_r = n$$</p>
+                            <p class="text-lg">is given by:</p>
+                            <p class="text-2xl font-bold my-2">$$\binom{n - 1}{r - 1}$$</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🧠 Derivation Insight</h4>
+                        <p class="mb-2">Give 1 object to each recipient first, then distribute the remaining freely.</p>
+                        <p class="mb-2">If each $x_i \geq 1$, then let $y_i = x_i - 1$, so $y_i \geq 0$</p>
+                        <p class="mb-2">The equation becomes:</p>
+                        <div class="text-center my-2">
+                            <p>$$y_1 + y_2 + \cdots + y_r = n - r$$</p>
+                        </div>
+                        <p class="mb-2">Number of non-negative solutions:</p>
+                        <div class="text-center my-2">
+                            <p>$$\binom{(n-r) + r - 1}{r - 1} = \binom{n - 1}{r - 1}$$</p>
+                        </div>
+                    </div>
+
+                    <div class="practice-box difficulty-medium">
+                        <h4 class="font-semibold text-yellow-800 mb-3">📝 Example Problem 2</h4>
+                        <p class="mb-3">Find the number of ways to distribute 15 identical pens among 5 students such that each student gets at least one pen.</p>
+                        
+                        <div class="solution">
+                            <h4 class="font-semibold text-green-800 mb-2">✅ Solution</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Step 1:</strong> Identify n and r</p>
+                                <p class="ml-4">n = 15 (pens), r = 5 (students)</p>
+                                <p><strong>Step 2:</strong> Apply formula for positive solutions:</p>
+                                <p class="ml-4">$$\binom{15 - 1}{5 - 1} = \binom{14}{4}$$</p>
+                                <p><strong>Step 3:</strong> Calculate:</p>
+                                <p class="ml-4">$$\binom{14}{4} = \frac{14 \times 13 \times 12 \times 11}{4 \times 3 \times 2 \times 1} = 1001$$</p>
+                            </div>
+                            <p class="mt-2 font-semibold">Answer: 1001 ways</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Common Mistakes & How to Avoid Them</h2>
+                </div>
+
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-3">❌ Mistake 1: Confusing Identical vs Distinct Objects</h4>
+                    <p class="mb-2"><strong>Wrong:</strong> Using stars and bars for distinct objects</p>
+                    <p><strong>Correct:</strong> Stars and bars only works when objects are IDENTICAL</p>
+                    <div class="tip-box mt-2">
+                        <p class="text-sm"><strong>💡 Remember:</strong> If objects are distinct, use different methods like functions or permutations</p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-3">❌ Mistake 2: Misapplying the Formulas</h4>
+                    <p class="mb-2"><strong>Wrong:</strong> Using $\binom{n-1}{r-1}$ when zero is allowed</p>
+                    <p><strong>Correct:</strong> Use $\binom{n+r-1}{r-1}$ for non-negative, $\binom{n-1}{r-1}$ for positive</p>
+                    <div class="tip-box mt-2">
+                        <p class="text-sm"><strong>💡 Memory Aid:</strong> "Add for zero" - add (r-1) in the top when zero is allowed</p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4 class="font-semibold text-red-800 mb-3">❌ Mistake 3: Forgetting Lower Bounds > 1</h4>
+                    <p class="mb-2"><strong>Wrong:</strong> Not adjusting when minimum is more than 1</p>
+                    <p><strong>Correct:</strong> If each $x_i \geq k$, give k to each first, then use non-negative formula</p>
+                </div>
+            </section>
+
+            <!-- Advanced Applications -->
+            <section id="applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Advanced Applications & Variations</h2>
+                </div>
+
+                <div class="practice-box difficulty-hard">
+                    <h4 class="font-semibold text-red-800 mb-3">🎯 Problem Type 1: Lower Bounds > 0</h4>
+                    <p class="mb-3">Find number of solutions to $x_1 + x_2 + x_3 + x_4 = 20$ where each $x_i \geq 2$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Solution Approach</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Give minimum to each variable first</p>
+                            <p class="ml-4">Give 2 to each: $2 \times 4 = 8$ distributed</p>
+                            <p><strong>Step 2:</strong> Remaining to distribute freely:</p>
+                            <p class="ml-4">$20 - 8 = 12$ remaining</p>
+                            <p><strong>Step 3:</strong> Now distribute 12 among 4 with no restrictions:</p>
+                            <p class="ml-4">$$\binom{12 + 4 - 1}{4 - 1} = \binom{15}{3} = 455$$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box difficulty-hard">
+                    <h4 class="font-semibold text-red-800 mb-3">🎯 Problem Type 2: Upper Bounds</h4>
+                    <p class="mb-3">Find number of solutions to $x_1 + x_2 + x_3 = 10$ where $0 \leq x_i \leq 4$.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Solution Approach</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Total without restrictions:</p>
+                            <p class="ml-4">$$\binom{10 + 3 - 1}{3 - 1} = \binom{12}{2} = 66$$</p>
+                            <p><strong>Step 2:</strong> Subtract cases where any $x_i \geq 5$</p>
+                            <p class="ml-4">Use inclusion-exclusion principle</p>
+                            <p><strong>Step 3:</strong> Final answer: 66 - 3×[cases with $x_1 \geq 5$] + ...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box difficulty-medium">
+                    <h4 class="font-semibold text-yellow-800 mb-3">🎯 Problem Type 3: Natural Number vs Whole Number</h4>
+                    <p class="mb-3">Distribute 8 identical books among 3 shelves. Find number of distributions if:</p>
+                    <p class="ml-4">(a) Shelves can be empty</p>
+                    <p class="ml-4">(b) Each shelf gets at least one book</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Solution</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Part (a):</strong> Shelves can be empty → Non-negative solutions</p>
+                            <p class="ml-4">$$\binom{8 + 3 - 1}{3 - 1} = \binom{10}{2} = 45$$</p>
+                            <p><strong>Part (b):</strong> Each shelf gets at least one → Positive solutions</p>
+                            <p class="ml-4">$$\binom{8 - 1}{3 - 1} = \binom{7}{2} = 21$$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Formulas to Memorize</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded border">
+                                    <p class="font-medium">Non-negative solutions:</p>
+                                    <p class="text-center font-bold">$$\binom{n + r - 1}{r - 1}$$</p>
+                                    <p class="text-sm text-gray-600">When zero is allowed</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border">
+                                    <p class="font-medium">Positive solutions:</p>
+                                    <p class="text-center font-bold">$$\binom{n - 1}{r - 1}$$</p>
+                                    <p class="text-sm text-gray-600">When each gets ≥ 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Step-by-Step Approach</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-sm">
+                                <li>Identify if objects are <strong>identical</strong></li>
+                                <li>Determine if distribution allows <strong>zero</strong> or needs <strong>positive</strong></li>
+                                <li>Apply the correct formula based on conditions</li>
+                                <li>For special bounds, use the "give minimum first" strategy</li>
+                                <li>Double-check your n and r values</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-level problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. How many ways to distribute 12 identical chocolates among 5 children?</p>
+                            <div class="text-sm text-gray-600">[Answer: 1820 ways]</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find number of positive integer solutions to x + y + z = 15</p>
+                            <div class="text-sm text-gray-600">[Answer: 91 solutions]</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. Distribute 20 identical coins among 4 people such that each gets at least 3 coins</p>
+                            <div class="text-sm text-gray-600">[Answer: 165 ways]</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">4. Find number of non-negative integer solutions to a + b + c + d = 10</p>
+                            <div class="text-sm text-gray-600">[Answer: 286 solutions]</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Stars and Bars?</h3>
+                    <p class="mb-4 opacity-90">This powerful technique will help you solve distribution problems in seconds during JEE!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Combinatorics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#combinatorics" class="hover:text-yellow-300">Combinatorics</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

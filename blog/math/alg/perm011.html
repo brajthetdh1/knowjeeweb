@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinatorics Selection Problems | Permutation Combination Toolkit | KnowJEE</title>
+    <meta name="description" content="Master standard selection problems in combinatorics - committee formations, team selections, and ball picking with step-by-step approaches for JEE preparation.">
+    <meta name="keywords" content="JEE combinatorics, permutation combination, selection problems, committee formation, team selection, ball picking problems, JEE mathematics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .problem-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .problem-box:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .solution {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .approach-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .topic-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Mathematics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Combinatorics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">8 Problem Types</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Standard Selection Problems: The Combinatorics Toolkit</h1>
+                <p class="text-xl text-gray-600 mb-4">Master committee formations, team selections, and ball picking problems with systematic approaches.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Main Categories</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8+</div>
+                            <div class="text-sm text-blue-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">25min</div>
+                            <div class="text-sm text-blue-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Selection Problems Matter in JEE</h2>
+                <p class="mb-4">Selection problems in combinatorics appear in <strong>every JEE paper</strong> and test your ability to break down complex word problems into simple combinations and permutations. Mastering these will help you:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li>Solve <strong>3-6 mark problems</strong> in under 5 minutes</li>
+                    <li>Develop <strong>systematic thinking</strong> for complex scenarios</li>
+                    <li>Avoid <strong>common pitfalls</strong> like double counting</li>
+                    <li>Build <strong>conceptual clarity</strong> for probability problems</li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#formulas" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Key Formulas</a>
+                    <a href="#committee" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Committee Problems</a>
+                    <a href="#teams" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Team Formation</a>
+                    <a href="#balls" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Ball Selection</a>
+                </div>
+            </div>
+
+            <!-- Key Formulas Section -->
+            <section id="formulas" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Essential Combinatorics Formulas</h2>
+                
+                <div class="formula-box">
+                    <h3 class="font-semibold text-blue-800 mb-3">Fundamental Formulas</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-2">Combination Formula:</p>
+                            <div class="text-center mb-3">
+                                $$ C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!} $$
+                            </div>
+                            <p class="text-sm text-gray-600">Use when <strong>order doesn't matter</strong></p>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-2">Permutation Formula:</p>
+                            <div class="text-center mb-3">
+                                $$ P(n, r) = \frac{n!}{(n-r)!} $$
+                            </div>
+                            <p class="text-sm text-gray-600">Use when <strong>order matters</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="approach-box">
+                    <h3 class="font-semibold text-yellow-800 mb-3">🎯 Decision Framework</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-green-600 mr-2">✓</span>
+                            <div>
+                                <strong>Use Combination when:</strong>
+                                <ul class="list-disc list-inside ml-4 text-sm text-gray-600">
+                                    <li>Selecting committee members</li>
+                                    <li>Choosing teams without specific roles</li>
+                                    <li>Picking balls from a bag</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2">✓</span>
+                            <div>
+                                <strong>Use Permutation when:</strong>
+                                <ul class="list-disc list-inside ml-4 text-sm text-gray-600">
+                                    <li>Assigning specific roles (captain, vice-captain)</li>
+                                    <li>Arranging people in a line</li>
+                                    <li>Forming numbers with digits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Committee Problems -->
+            <section id="committee" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Committee Formation Problems</h2>
+
+                <!-- Problem 1 -->
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Basic Committee</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 1: Simple Committee Selection</h3>
+                    <p class="text-lg mb-4">From 10 people, in how many ways can we select a committee of 4 people?</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Identify this as a combination problem (order doesn't matter)</p>
+                            <p><strong>Step 2:</strong> Apply combination formula:</p>
+                            <div class="text-center my-2">
+                                $$ C(10, 4) = \frac{10!}{4!(10-4)!} = \frac{10 × 9 × 8 × 7}{4 × 3 × 2 × 1} = 210 $$
+                            </div>
+                            <p><strong>Step 3:</strong> Verify: No restrictions, no specific roles</p>
+                        </div>
+                        <p class="mt-2 font-semibold">Answer: 210 ways</p>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Restricted Committee</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 2: Committee with Restrictions</h3>
+                    <p class="text-lg mb-4">From 7 men and 5 women, select a committee of 5 with at least 3 men.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Break into cases based on "at least 3 men":</p>
+                            <div class="ml-4 space-y-1">
+                                <p>• Case 1: 3 men + 2 women</p>
+                                <p>• Case 2: 4 men + 1 woman</p>
+                                <p>• Case 3: 5 men + 0 women</p>
+                            </div>
+                            <p><strong>Step 2:</strong> Calculate each case:</p>
+                            <div class="ml-4 space-y-1">
+                                <p>Case 1: $C(7,3) × C(5,2) = 35 × 10 = 350$</p>
+                                <p>Case 2: $C(7,4) × C(5,1) = 35 × 5 = 175$</p>
+                                <p>Case 3: $C(7,5) × C(5,0) = 21 × 1 = 21$</p>
+                            </div>
+                            <p><strong>Step 3:</strong> Add all cases: $350 + 175 + 21 = 546$</p>
+                        </div>
+                        <p class="mt-2 font-semibold">Answer: 546 ways</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Formation -->
+            <section id="teams" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Team Formation Problems</h2>
+
+                <!-- Problem 3 -->
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Specific Roles</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 3: Team with Specific Roles</h3>
+                    <p class="text-lg mb-4">From 12 players, select a team of 5 with specific roles: captain, vice-captain, and 3 players.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Select captain and vice-captain (order matters):</p>
+                            <div class="text-center my-2">
+                                $$ P(12, 2) = 12 × 11 = 132 $$
+                            </div>
+                            <p><strong>Step 2:</strong> Select remaining 3 players from remaining 10 (order doesn't matter):</p>
+                            <div class="text-center my-2">
+                                $$ C(10, 3) = 120 $$
+                            </div>
+                            <p><strong>Step 3:</strong> Multiply: $132 × 120 = 15,840$</p>
+                        </div>
+                        <p class="mt-2 font-semibold">Answer: 15,840 ways</p>
+                    </div>
+                </div>
+
+                <!-- Problem 4 -->
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Multiple Teams</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 4: Dividing into Multiple Teams</h3>
+                    <p class="text-lg mb-4">Divide 10 different people into two teams of 5 each. In how many ways?</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Select first team of 5 from 10:</p>
+                            <div class="text-center my-2">
+                                $$ C(10, 5) = 252 $$
+                            </div>
+                            <p><strong>Step 2:</strong> The remaining 5 automatically form second team</p>
+                            <p><strong>Step 3:</strong> Since teams are unlabeled, divide by 2 to avoid double counting:</p>
+                            <div class="text-center my-2">
+                                $$ \frac{252}{2} = 126 $$
+                            </div>
+                        </div>
+                        <p class="mt-2 font-semibold">Answer: 126 ways</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ball Selection -->
+            <section id="balls" class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Ball Selection Problems</h2>
+
+                <!-- Problem 5 -->
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Identical Balls</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 5: Selecting Identical Balls</h3>
+                    <p class="text-lg mb-4">A bag contains 8 identical red balls and 6 identical blue balls. In how many ways can we select 5 balls?</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Since balls are identical, we count distributions:</p>
+                            <p><strong>Step 2:</strong> Let r = number of red balls, b = number of blue balls</p>
+                            <p><strong>Step 3:</strong> r + b = 5, with 0 ≤ r ≤ 8, 0 ≤ b ≤ 6</p>
+                            <p><strong>Step 4:</strong> Possible (r, b) pairs: (5,0), (4,1), (3,2), (2,3), (1,4), (0,5)</p>
+                            <p><strong>Step 5:</strong> But (0,5) is invalid since we only have 4 blue balls maximum</p>
+                            <p><strong>Step 6:</strong> Valid pairs: (5,0), (4,1), (3,2), (2,3), (1,4)</p>
+                        </div>
+                        <p class="mt-2 font-semibold">Answer: 5 ways</p>
+                    </div>
+                </div>
+
+                <!-- Problem 6 -->
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Distinct Balls</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Problem 6: Selecting Distinct Balls with Conditions</h3>
+                    <p class="text-lg mb-4">A bag has 5 distinct red balls, 4 distinct blue balls, and 3 distinct green balls. Select 6 balls with at least 2 of each color.</p>
+                    
+                    <div class="solution">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution Approach:</h4>
+                        <div class="space-y-2 text-sm">
+                            <p><strong>Step 1:</strong> Start with minimum required: 2 red + 2 blue + 2 green = 6 balls</p>
+                            <p><strong>Step 2:</strong> Since we need exactly 6 balls, this is the only possibility</p>
+                            <p><strong>Step 3:</strong> Select 2 red from 5: $C(5,2) = 10$</p>
+                            <p><strong>Step 4:</strong> Select 2 blue from 4: $C(4,2) = 6$</p>
+                            <p><strong>Step 5:</strong> Select 2 green from 3: $C(3,2) = 3$</p>
+                            <p><strong>Step 6:</strong> Multiply: $10 × 6 × 3 = 180$</p>
+                        </div>
+                        <p class="mt-2 font-semibold">Answer: 180 ways</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Pitfalls Section -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Conceptual Errors:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Using permutation when combination is needed</li>
+                                <li>Forgetting to divide by 2 for identical teams</li>
+                                <li>Missing "at least" or "at most" conditions</li>
+                                <li>Double counting identical objects</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Calculation Errors:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Not simplifying factorial expressions</li>
+                                <li>Missing cases in case-based problems</li>
+                                <li>Incorrect application of addition/multiplication principles</li>
+                                <li>Confusing C(n,r) with P(n,r) formulas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Solving Framework -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🔧 Systematic Problem Solving Framework</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 1: Identify the Type</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>Committee formation → Combination</li>
+                                <li>Team with roles → Permutation + Combination</li>
+                                <li>Ball selection → Check if objects are identical or distinct</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 2: Note Restrictions</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>"At least" → Break into cases</li>
+                                <li>"At most" → Use complement if easier</li>
+                                <li>Specific inclusions/exclusions → Adjust total count</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 3: Apply Formulas</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>Use combination C(n,r) when order doesn't matter</li>
+                                <li>Use permutation P(n,r) when order matters</li>
+                                <li>Multiply for independent choices</li>
+                                <li>Add for mutually exclusive cases</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h4 class="font-semibold text-gray-700 mb-2">Step 4: Check for Overcounting</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>Divide by k! if k objects are identical</li>
+                                <li>Check if teams/groups are labeled or unlabeled</li>
+                                <li>Verify each case is distinct</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📝 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. From 8 men and 7 women, select a committee of 6 with exactly 4 men.</p>
+                            <div class="text-sm text-gray-600">Hint: Use multiplication principle</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. In how many ways can 12 different books be distributed equally among 3 students?</p>
+                            <div class="text-sm text-gray-600">Hint: Consider if students are distinct</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. A box contains 5 red, 4 blue, and 3 green distinct balls. Select 4 balls with at least one of each color.</p>
+                            <div class="text-sm text-gray-600">Hint: Break into cases based on the extra ball</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 text-sm">
+                        <div>
+                            <h4 class="font-semibold mb-2">Key Formulas:</h4>
+                            <ul class="space-y-2">
+                                <li>$C(n,r) = \frac{n!}{r!(n-r)!}$</li>
+                                <li>$P(n,r) = \frac{n!}{(n-r)!}$</li>
+                                <li>$C(n,r) = C(n,n-r)$</li>
+                                <li>$P(n,r) = r! × C(n,r)$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-2">Common Scenarios:</h4>
+                            <ul class="space-y-2">
+                                <li>Committee without roles → Combination</li>
+                                <li>Team with captain → Permutation × Combination</li>
+                                <li>Identical objects → Distribution counting</li>
+                                <li>"At least" conditions → Case analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Encouragement -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master Combinatorics for JEE Success!</h3>
+                    <p class="mb-4 opacity-90">These selection problems are guaranteed in every JEE paper. Practice systematically and build confidence.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Math Topics
+                        </a>
+                        <button class="bg-green-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 transition-colors">
+                            Download Practice Set
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

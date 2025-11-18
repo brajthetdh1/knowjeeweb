@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Principle of Counting | Combinatorics Foundation | KnowJEE</title>
+    <meta name="description" content="Master the Multiplication and Addition Principles - the foundation of all combinatorics. Learn when to multiply vs when to add with real-life examples for JEE preparation.">
+    <meta name="keywords" content="fundamental principle of counting, multiplication principle, addition principle, combinatorics foundation, JEE permutations combinations, counting principles">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .principle-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .comparison-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .practice-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .interactive-choice {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .interactive-choice:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+        .interactive-choice.correct {
+            background: #dcfce7;
+            border-color: #22c55e;
+        }
+        .interactive-choice.incorrect {
+            background: #fecaca;
+            border-color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Combinatorics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Foundation</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Essential Principles</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Fundamental Principle of Counting: The Bedrock of All Combinatorics</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the logic that powers permutations, combinations, and all of counting mathematics. Build intuition with simple, real-life examples.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2</div>
+                            <div class="text-sm text-purple-600">Core Principles</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5+</div>
+                            <div class="text-sm text-purple-600">Real-life Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">30min</div>
+                            <div class="text-sm text-purple-600">To Master</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Foundation Matters</h2>
+                <p class="mb-4">The Fundamental Principle of Counting is the <strong>cornerstone of all combinatorics</strong>. Every permutation, combination, and advanced counting technique you'll learn builds upon these two simple principles.</p>
+                
+                <div class="principle-box">
+                    <h3 class="font-semibold text-purple-800 mb-3">🎯 JEE Significance</h3>
+                    <p>These principles appear <strong>directly or indirectly in 3-4 questions</strong> in every JEE Main paper. Mastering them will help you in:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Permutations & Combinations (direct applications)</li>
+                        <li>Probability (counting favorable outcomes)</li>
+                        <li>Binomial Theorem (understanding coefficients)</li>
+                        <li>Statistics (counting arrangements)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🧭 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#multiplication" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Multiplication Principle</a>
+                    <a href="#addition" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Addition Principle</a>
+                    <a href="#when-to-use" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">When to Use Which</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice Problems</a>
+                </div>
+            </div>
+
+            <!-- Multiplication Principle -->
+            <section id="multiplication" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. The Multiplication Principle (AND Principle)</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">The Core Idea</h3>
+                    <p class="mb-4">If one operation can be performed in <strong>m ways</strong> AND another operation can be performed in <strong>n ways</strong>, then the two operations together can be performed in <strong>m × n ways</strong>.</p>
+                    
+                    <div class="text-center my-4 p-4 bg-white rounded-lg border">
+                        <div class="text-2xl font-bold text-blue-600">$$ \text{Total ways} = m \times n $$</div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🍕 Real-life Example: Pizza Order</h4>
+                        <p><strong>Situation:</strong> You're ordering pizza with 3 crust options AND 4 topping options.</p>
+                        <div class="mt-3 space-y-2">
+                            <p><strong>Crust options:</strong> Thin, Thick, Stuffed (3 ways)</p>
+                            <p><strong>Topping options:</strong> Cheese, Pepperoni, Veggie, Supreme (4 ways)</p>
+                            <p class="font-semibold mt-2">Total combinations = 3 × 4 = 12 different pizzas</p>
+                        </div>
+                        <div class="mt-3 text-sm text-gray-600">
+                            <p><strong>Why multiply?</strong> Because you choose crust <strong>AND</strong> topping - both choices happen together.</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">👕 Real-life Example: Outfit Selection</h4>
+                        <p><strong>Situation:</strong> You have 5 shirts AND 3 pants AND 2 pairs of shoes.</p>
+                        <div class="mt-3 space-y-2">
+                            <p><strong>Shirts:</strong> 5 options</p>
+                            <p><strong>Pants:</strong> 3 options</p>
+                            <p><strong>Shoes:</strong> 2 options</p>
+                            <p class="font-semibold mt-2">Total outfits = 5 × 3 × 2 = 30 different outfits</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Insight</h4>
+                        <p>Use multiplication when events happen <strong>sequentially</strong> or <strong>simultaneously</strong> - when you do one thing <strong>AND</strong> then another.</p>
+                        <p class="mt-2"><strong>Memory Aid:</strong> "AND means MULTIPLY"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Addition Principle -->
+            <section id="addition" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Addition Principle (OR Principle)</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">The Core Idea</h3>
+                    <p class="mb-4">If one operation can be performed in <strong>m ways</strong> OR another operation can be performed in <strong>n ways</strong>, and these operations are mutually exclusive, then total ways = <strong>m + n</strong>.</p>
+                    
+                    <div class="text-center my-4 p-4 bg-white rounded-lg border">
+                        <div class="text-2xl font-bold text-blue-600">$$ \text{Total ways} = m + n $$</div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎬 Real-life Example: Movie Night</h4>
+                        <p><strong>Situation:</strong> You can watch either an Action movie OR a Comedy movie.</p>
+                        <div class="mt-3 space-y-2">
+                            <p><strong>Action movies:</strong> 5 options</p>
+                            <p><strong>Comedy movies:</strong> 7 options</p>
+                            <p class="font-semibold mt-2">Total choices = 5 + 7 = 12 movies</p>
+                        </div>
+                        <div class="mt-3 text-sm text-gray-600">
+                            <p><strong>Why add?</strong> Because you watch either Action <strong>OR</strong> Comedy - these are separate, mutually exclusive choices.</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🚌 Real-life Example: Transportation</h4>
+                        <p><strong>Situation:</strong> You can go to college by Bus OR Metro.</p>
+                        <div class="mt-3 space-y-2">
+                            <p><strong>Bus routes:</strong> 3 different routes</p>
+                            <p><strong>Metro lines:</strong> 2 different lines</p>
+                            <p class="font-semibold mt-2">Total options = 3 + 2 = 5 ways to reach college</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Insight</h4>
+                        <p>Use addition when events are <strong>mutually exclusive</strong> - when you do one thing <strong>OR</strong> another, but not both.</p>
+                        <p class="mt-2"><strong>Memory Aid:</strong> "OR means ADD"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- When to Use Which -->
+            <section id="when-to-use" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. The Critical Decision: Multiply vs Add</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-4">Decision Framework</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-3">Use Multiplication (×) WHEN:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Events happen <strong>sequentially</strong></li>
+                                <li>You do one thing <strong>AND THEN</strong> another</li>
+                                <li>Choices are <strong>independent</strong></li>
+                                <li>You're counting <strong>ordered pairs/triples</strong></li>
+                                <li>Keywords: <strong>"and", "then", "followed by"</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-3">Use Addition (+) WHEN:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Events are <strong>mutually exclusive</strong></li>
+                                <li>You do one thing <strong>OR</strong> another</li>
+                                <li>Cases are <strong>separate and distinct</strong></li>
+                                <li>You're counting <strong>different categories</strong></li>
+                                <li>Keywords: <strong>"or", "either", "different cases"</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="font-semibold text-purple-800 mb-3">🔍 Quick Identification Exercise</h4>
+                        <p class="mb-4">For each scenario, identify whether you should multiply or add:</p>
+                        
+                        <div id="interactive-exercise" class="space-y-3">
+                            <div class="interactive-choice" data-correct="multiply">
+                                <p class="font-medium">Choosing a shirt AND pants for an outfit</p>
+                                <div class="feedback hidden mt-2 text-sm"></div>
+                            </div>
+                            
+                            <div class="interactive-choice" data-correct="add">
+                                <p class="font-medium">Traveling by car OR by train to Delhi</p>
+                                <div class="feedback hidden mt-2 text-sm"></div>
+                            </div>
+                            
+                            <div class="interactive-choice" data-correct="multiply">
+                                <p class="font-medium">Rolling a die AND flipping a coin</p>
+                                <div class="feedback hidden mt-2 text-sm"></div>
+                            </div>
+                            
+                            <div class="interactive-choice" data-correct="add">
+                                <p class="font-medium">Eating pizza OR burgers for dinner</p>
+                                <div class="feedback hidden mt-2 text-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box mt-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Complex Scenarios: Both Principles Together</h3>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">🎓 Real-life Example: College Applications</h4>
+                        <p><strong>Situation:</strong> You can apply to Engineering colleges OR Medical colleges.</p>
+                        <div class="mt-3 space-y-2">
+                            <p><strong>Engineering path:</strong> Choose from 3 IITs AND 5 NITs</p>
+                            <p class="ml-4">Engineering options = 3 × 5 = 15 combinations</p>
+                            
+                            <p><strong>Medical path:</strong> Choose from 2 AIIMS AND 4 other medical colleges</p>
+                            <p class="ml-4">Medical options = 2 × 4 = 8 combinations</p>
+                            
+                            <p class="font-semibold mt-2">Total application strategies = 15 + 8 = 23 options</p>
+                        </div>
+                        <div class="mt-3 text-sm text-gray-600">
+                            <p><strong>Pattern:</strong> Multiply within each category, then add across categories</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Practice Problems (JEE Level)</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">Problem 1: Restaurant Menu</h3>
+                    <p class="mb-4">A restaurant offers 4 appetizers, 6 main courses, and 3 desserts. If a meal consists of one appetizer AND one main course AND one dessert, how many different meals are possible?</p>
+                    
+                    <div class="solution hidden bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <p>Since we choose appetizer AND main course AND dessert, we multiply:</p>
+                        <div class="text-center my-2">
+                            $4 \times 6 \times 3 = 72$ different meals
+                        </div>
+                    </div>
+                    
+                    <button class="show-solution bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                        Show Solution
+                    </button>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">Problem 2: Transportation Routes</h3>
+                    <p class="mb-4">From home to school, you can take either Route A (which has 3 different bus options) OR Route B (which has 2 different train options). How many different ways can you travel from home to school?</p>
+                    
+                    <div class="solution hidden bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <p>Since we take either Route A OR Route B (mutually exclusive), we add:</p>
+                        <div class="text-center my-2">
+                            $3 + 2 = 5$ different ways
+                        </div>
+                    </div>
+                    
+                    <button class="show-solution bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                        Show Solution
+                    </button>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-orange-900 mb-4">Problem 3: Complex Combination</h3>
+                    <p class="mb-4">A student can choose either Science stream OR Commerce stream. In Science, they must choose one subject from Physics/Chemistry AND one from Biology/Mathematics. In Commerce, they choose one subject from Accounts/Economics AND one from Business/Statistics. How many subject combinations are possible?</p>
+                    
+                    <div class="solution hidden bg-green-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Solution:</h4>
+                        <p><strong>Science:</strong> 2 options AND 2 options = 2 × 2 = 4 combinations</p>
+                        <p><strong>Commerce:</strong> 2 options AND 2 options = 2 × 2 = 4 combinations</p>
+                        <p><strong>Total:</strong> Science OR Commerce = 4 + 4 = 8 combinations</p>
+                    </div>
+                    
+                    <button class="show-solution bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                        Show Solution
+                    </button>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Multiplication Principle</h4>
+                            <div class="bg-white p-3 rounded border">
+                                <p class="text-sm"><strong>Formula:</strong> $m \times n$</p>
+                                <p class="text-sm mt-1"><strong>When:</strong> Sequential, independent events</p>
+                                <p class="text-sm mt-1"><strong>Keywords:</strong> AND, THEN, FOLLOWED BY</p>
+                                <p class="text-sm mt-1"><strong>Example:</strong> Outfits, meals, passwords</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">Addition Principle</h4>
+                            <div class="bg-white p-3 rounded border">
+                                <p class="text-sm"><strong>Formula:</strong> $m + n$</p>
+                                <p class="text-sm mt-1"><strong>When:</strong> Mutually exclusive events</p>
+                                <p class="text-sm mt-1"><strong>Keywords:</strong> OR, EITHER, DIFFERENT CASES</p>
+                                <p class="text-sm mt-1"><strong>Example:</strong> Transportation, movie choices</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <p class="text-sm text-purple-700"><strong>Pro Tip:</strong> Always ask: "Am I doing this AND that? Or am I doing this OR that?"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 Final Check: Self-Assessment</h3>
+                    <p class="mb-4">Test your understanding with these quick questions:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. You have 5 T-shirts, 4 jeans, and 3 caps. How many different outfits (T-shirt + jeans + cap) can you create?</p>
+                            <div class="text-sm text-gray-600">Think: Do you wear T-shirt AND jeans AND cap?</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. You can travel to Mumbai by 3 flights OR 2 trains. How many transportation options do you have?</p>
+                            <div class="text-sm text-gray-600">Think: Are flights and trains mutually exclusive?</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. A password requires 2 letters (from A,B,C) AND 2 digits (from 1,2). How many passwords?</p>
+                            <div class="text-sm text-gray-600">Think: Are these sequential choices?</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready for Permutations & Combinations?</h3>
+                    <p class="mb-4 opacity-90">These fundamental principles are the foundation for all advanced combinatorics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="permutations-combinations.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Learn Permutations & Combinations
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice More Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#combinatorics" class="hover:text-yellow-300">Combinatorics</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive exercise functionality
+        document.querySelectorAll('.interactive-choice').forEach(choice => {
+            choice.addEventListener('click', function() {
+                const correctAnswer = this.getAttribute('data-correct');
+                const feedback = this.querySelector('.feedback');
+                
+                // Remove any existing classes
+                this.classList.remove('correct', 'incorrect');
+                
+                // Show feedback based on answer
+                if (correctAnswer === 'multiply') {
+                    this.classList.add('correct');
+                    feedback.innerHTML = '<span class="text-green-600">✓ Correct! Use multiplication because these are sequential choices (AND relationship).</span>';
+                } else {
+                    this.classList.add('correct');
+                    feedback.innerHTML = '<span class="text-green-600">✓ Correct! Use addition because these are mutually exclusive choices (OR relationship).</span>';
+                }
+                
+                feedback.classList.remove('hidden');
+            });
+        });
+
+        // Show solution functionality
+        document.querySelectorAll('.show-solution').forEach(button => {
+            button.addEventListener('click', function() {
+                const solution = this.previousElementSibling;
+                solution.classList.toggle('hidden');
+                
+                if (solution.classList.contains('hidden')) {
+                    this.textContent = 'Show Solution';
+                } else {
+                    this.textContent = 'Hide Solution';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation of Numbers: Playing with Digits | JEE Permutations & Combinations | KnowJEE</title>
+    <meta name="description" content="Master number formation problems for JEE Main & Advanced. Learn to count n-digit numbers with/without repetition, sum of numbers, and divisibility rules with permutations & combinations.">
+    <meta name="keywords" content="JEE permutations combinations, number formation, digit problems, JEE mathematics, n-digit numbers, sum of numbers, divisibility rules">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fffbeb;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .difficulty-easy { border-left: 4px solid #22c55e; }
+        .difficulty-medium { border-left: 4px solid #eab308; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .topic-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Permutations & Combinations
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Permutations & Combinations</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">3 Key Topics</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Formation of Numbers: Playing with Digits</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of counting numbers, calculating sums, and applying divisibility rules using permutations and combinations.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5-8%</div>
+                            <div class="text-sm text-blue-600">JEE Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Conceptual</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">12+</div>
+                            <div class="text-sm text-blue-600">Formulas</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Number Formation Matters in JEE</h2>
+                <p class="mb-4">Number formation problems test your understanding of <strong>permutations and combinations</strong> in practical scenarios. These questions appear regularly in JEE and cover three main areas:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-blue-50 p-4 rounded-lg">
+                    <li><strong>Counting n-digit numbers</strong> with various constraints</li>
+                    <li><strong>Finding sum of all numbers</strong> formed by given digits</li>
+                    <li><strong>Numbers divisible</strong> by specific numbers using divisibility rules</li>
+                </ul>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Topic Navigation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
+                    <a href="#counting-numbers" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Counting n-digit Numbers</a>
+                    <a href="#sum-numbers" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Sum of Numbers</a>
+                    <a href="#divisibility" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Divisibility Rules</a>
+                </div>
+            </div>
+
+            <!-- Topic 1: Counting n-digit Numbers -->
+            <section id="counting-numbers" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Topic 1</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Fundamental</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">1. Counting n-digit Numbers</h3>
+                    <p class="mb-4">Learn to count numbers with different constraints on digits and repetition.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Formulas</h4>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Without repetition, without 0:</strong></p>
+                                <p class="text-center">$^nP_r$ or $n \times (n-1) \times \cdots \times (n-r+1)$</p>
+                            </div>
+                            <div>
+                                <p><strong>Without repetition, with 0:</strong></p>
+                                <p class="text-center">$(n-1) \times {}^{n-1}P_{r-1}$</p>
+                            </div>
+                            <div>
+                                <p><strong>With repetition, without 0:</strong></p>
+                                <p class="text-center">$n^r$</p>
+                            </div>
+                            <div>
+                                <p><strong>With repetition, with 0:</strong></p>
+                                <p class="text-center">$(n-1) \times n^{r-1}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 1: Basic Counting</h4>
+                        <p class="mb-2">How many 3-digit numbers can be formed from digits {1,2,3,4,5} without repetition?</p>
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> We need to fill 3 positions: _ _ _</p>
+                            <p><strong>Step 2:</strong> Hundreds place: 5 choices (1,2,3,4,5)</p>
+                            <p><strong>Step 3:</strong> Tens place: 4 choices (remaining digits)</p>
+                            <p><strong>Step 4:</strong> Units place: 3 choices (remaining digits)</p>
+                            <p><strong>Step 5:</strong> Total = $5 \times 4 \times 3 = 60$</p>
+                        </div>
+                        <p class="font-semibold">Answer: 60 numbers</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 2: With Zero Constraint</h4>
+                        <p class="mb-2">How many 4-digit numbers can be formed from {0,1,2,3,4,5} without repetition?</p>
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Thousands place cannot be 0 → 5 choices (1,2,3,4,5)</p>
+                            <p><strong>Step 2:</strong> Remaining 3 places from remaining 5 digits: ${}^5P_3 = 5 \times 4 \times 3 = 60$</p>
+                            <p><strong>Step 3:</strong> Total = $5 \times 60 = 300$</p>
+                        </div>
+                        <p class="font-semibold">Answer: 300 numbers</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Quick Tips</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Always check if <strong>0 is included</strong> in the digit set</li>
+                            <li>For numbers, the <strong>first digit cannot be 0</strong></li>
+                            <li>Use $^nP_r$ when <strong>no repetition</strong> is allowed</li>
+                            <li>Use $n^r$ when <strong>repetition</strong> is allowed</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 2: Sum of Numbers -->
+            <section id="sum-numbers" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Topic 2</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Advanced</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">2. Sum of All Numbers Formed</h3>
+                    <p class="mb-4">Learn to calculate the sum of all numbers formed by given digits with/without repetition.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Formulas</h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <p><strong>Sum of all n-digit numbers without repetition:</strong></p>
+                                <p class="text-center">$\text{Sum} = (\text{Sum of digits}) \times (n-1)! \times (111\ldots1 \text{ n times})$</p>
+                            </div>
+                            <div>
+                                <p><strong>Sum with repetition allowed:</strong></p>
+                                <p class="text-center">$\text{Sum} = (\text{Sum of digits}) \times n^{n-1} \times (111\ldots1 \text{ n times})$</p>
+                            </div>
+                            <div>
+                                <p><strong>When 0 is included:</strong></p>
+                                <p class="text-center">Adjust for the fact that 0 cannot be the first digit</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 3: Sum Without Repetition</h4>
+                        <p class="mb-2">Find the sum of all 3-digit numbers formed using {1,2,3} without repetition.</p>
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Sum of digits = 1+2+3 = 6</p>
+                            <p><strong>Step 2:</strong> Each digit appears in each position equally</p>
+                            <p><strong>Step 3:</strong> Number of times each digit appears in each position = $2! = 2$</p>
+                            <p><strong>Step 4:</strong> Sum at each position = $6 \times 2 = 12$</p>
+                            <p><strong>Step 5:</strong> Total sum = $12 \times 100 + 12 \times 10 + 12 \times 1 = 1332$</p>
+                        </div>
+                        <p class="font-semibold">Answer: 1332</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 4: Sum With Zero</h4>
+                        <p class="mb-2">Find the sum of all 3-digit numbers formed using {0,1,2} without repetition.</p>
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> Sum of digits = 0+1+2 = 3</p>
+                            <p><strong>Step 2:</strong> Hundreds place: digits appear (n-1)! = 2 times each (except 0)</p>
+                            <p><strong>Step 3:</strong> Tens/Units place: each digit appears 2 times</p>
+                            <p><strong>Step 4:</strong> Sum at hundreds place = (1+2) × 2 = 6</p>
+                            <p><strong>Step 5:</strong> Sum at tens/units place = 3 × 2 = 6</p>
+                            <p><strong>Step 6:</strong> Total sum = $6 \times 100 + 6 \times 10 + 6 \times 1 = 666$</p>
+                        </div>
+                        <p class="font-semibold">Answer: 666</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Quick Tips</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Use <strong>symmetry</strong> - each digit appears equally in each position</li>
+                            <li>When 0 is included, <strong>adjust for hundreds place</strong> separately</li>
+                            <li>The multiplier $(111\ldots1)$ comes from place values</li>
+                            <li>For n-digit numbers, use $(n-1)!$ for permutations without repetition</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 3: Divisibility Rules -->
+            <section id="divisibility" class="mb-8">
+                <div class="concept-box">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="topic-tag">Topic 3</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">JEE Favorite</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">3. Numbers Divisible by Specific Numbers</h3>
+                    <p class="mb-4">Apply divisibility rules with permutations to count numbers divisible by given numbers.</p>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Divisibility Rules</h4>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Divisible by 2:</strong> Last digit even (0,2,4,6,8)</p>
+                                <p><strong>Divisible by 3:</strong> Sum of digits divisible by 3</p>
+                                <p><strong>Divisible by 4:</strong> Last two digits divisible by 4</p>
+                            </div>
+                            <div>
+                                <p><strong>Divisible by 5:</strong> Last digit 0 or 5</p>
+                                <p><strong>Divisible by 6:</strong> Divisible by both 2 and 3</p>
+                                <p><strong>Divisible by 8:</strong> Last three digits divisible by 8</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 5: Divisible by 2</h4>
+                        <p class="mb-2">How many 4-digit numbers can be formed from {1,2,3,4,5} that are divisible by 2?</p>
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> For divisibility by 2, last digit must be even</p>
+                            <p><strong>Step 2:</strong> Even digits available: {2,4} → 2 choices</p>
+                            <p><strong>Step 3:</strong> First digit: cannot be 0, and cannot be the last digit used</p>
+                            <p><strong>Step 4:</strong> Thousands place: 4 choices (remaining digits)</p>
+                            <p><strong>Step 5:</strong> Remaining two places: ${}^3P_2 = 3 \times 2 = 6$ choices</p>
+                            <p><strong>Step 6:</strong> Total = $2 \times 4 \times 6 = 48$</p>
+                        </div>
+                        <p class="font-semibold">Answer: 48 numbers</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Example 6: Divisible by 4</h4>
+                        <p class="mb-2">How many 5-digit numbers from {0,1,2,3,4,5} are divisible by 4?</p>
+                        <div class="step-box">
+                            <p><strong>Step 1:</strong> For divisibility by 4, last two digits must form a number divisible by 4</p>
+                            <p><strong>Step 2:</strong> Possible last two digits: 04, 12, 20, 24, 32, 40, 52</p>
+                            <p><strong>Step 3:</strong> Case 1: Last two digits don't contain 0 → 12, 24, 32, 52 (4 cases)</p>
+                            <p><strong>Step 4:</strong> For these: First digit has 3 choices, remaining two places: ${}^3P_2 = 6$</p>
+                            <p><strong>Step 5:</strong> Case 2: Last two digits contain 0 → 04, 20, 40 (3 cases)</p>
+                            <p><strong>Step 6:</strong> For these: First digit has 3 choices, remaining: ${}^3P_2 = 6$</p>
+                            <p><strong>Step 7:</strong> Total = $(4 \times 3 \times 6) + (3 \times 3 \times 6) = 72 + 54 = 126$</p>
+                        </div>
+                        <p class="font-semibold">Answer: 126 numbers</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">💡 Quick Tips</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>For divisibility by $2^n$, focus on <strong>last n digits</strong></li>
+                            <li>For divisibility by 3, check <strong>sum of all digits</strong></li>
+                            <li>Break complex problems into <strong>cases</strong></li>
+                            <li>Watch for <strong>special constraints</strong> with 0</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Formulas</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Counting Numbers</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>n-digit without 0:</strong> ${}^nP_r$ or $n \times (n-1) \times \cdots$</li>
+                                <li><strong>n-digit with 0:</strong> $(n-1) \times {}^{n-1}P_{r-1}$</li>
+                                <li><strong>With repetition, no 0:</strong> $n^r$</li>
+                                <li><strong>With repetition, with 0:</strong> $(n-1) \times n^{r-1}$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Sum of Numbers</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Without repetition:</strong> $(sum) \times (n-1)! \times 111\ldots1$</li>
+                                <li><strong>With repetition:</strong> $(sum) \times n^{n-1} \times 111\ldots1$</li>
+                                <li><strong>With 0:</strong> Adjust hundreds place separately</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Practice Problems</h3>
+                    <p class="mb-4">Test your understanding with these JEE-level problems:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. How many 4-digit even numbers can be formed from {0,1,2,3,4,5} without repetition?</p>
+                            <div class="text-sm text-gray-600">Hint: Consider cases for 0 in different positions</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Find the sum of all 4-digit numbers formed by {1,3,5,7} without repetition.</p>
+                            <div class="text-sm text-gray-600">Hint: Use the sum formula with symmetry</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. How many numbers between 1000 and 5000 can be formed from {0,1,2,3,4,5} that are divisible by 5?</p>
+                            <div class="text-sm text-gray-600">Hint: Consider the range constraint and divisibility by 5</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Conceptual Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Forgetting that <strong>0 cannot be the first digit</strong> in a number</li>
+                                <li>Confusing <strong>permutations vs combinations</strong> in counting</li>
+                                <li>Missing <strong>special cases</strong> in divisibility problems</li>
+                                <li>Incorrect application of <strong>factorial formulas</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-2">Calculation Errors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Miscounting <strong>available choices</strong> at each step</li>
+                                <li>Errors in <strong>summation formulas</strong> for total sum</li>
+                                <li>Wrong application of <strong>divisibility rules</strong></li>
+                                <li>Overcounting or <strong>undercounting</strong> cases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Master Number Formation for JEE Success!</h3>
+                    <p class="mb-4 opacity-90">These concepts appear in 1-2 questions in every JEE Main paper</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="permutations-combinations-cards.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More P&C Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Download Formula Sheet
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Math Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#algebra" class="hover:text-yellow-300">Algebra</a></li>
+                        <li><a href="#calculus" class="hover:text-yellow-300">Calculus</a></li>
+                        <li><a href="#trigonometry" class="hover:text-yellow-300">Trigonometry</a></li>
+                        <li><a href="#coordinate" class="hover:text-yellow-300">Coordinate Geometry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-yellow-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Mathematics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
