@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Orders: Interference & Diffraction Collusion | JEE Wave Optics | KnowJEE</title>
+    <meta name="description" content="Master the Missing Orders phenomenon in wave optics - when interference maxima coincide with diffraction minima. Essential for JEE Advanced preparation.">
+    <meta name="keywords" content="missing orders, interference diffraction, wave optics JEE, JEE advanced physics, diffraction grating, double slit experiment">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .derivation-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .phenomenon-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .intensity-plot {
+            background: linear-gradient(90deg, #3b82f6, #ef4444, #10b981);
+            height: 4px;
+            border-radius: 2px;
+            margin: 1rem 0;
+            position: relative;
+        }
+        .missing-order {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ef4444;
+            border-radius: 50%;
+            top: -8px;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Wave Optics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Advanced Concept</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Key Formula</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The "Missing Orders" Phenomenon: When Interference and Diffraction Collude</h1>
+                <p class="text-xl text-gray-600 mb-4">Understanding why certain interference maxima mysteriously disappear due to diffraction effects - a classic JEE Advanced puzzle.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">95%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">3-4</div>
+                            <div class="text-sm text-purple-600">Marks per Question</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">1</div>
+                            <div class="text-sm text-purple-600">Key Condition</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">2min</div>
+                            <div class="text-sm text-purple-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Great Disappearance Act in Wave Optics</h2>
+                <p class="mb-4">In the double-slit experiment with finite slit width, something peculiar happens: <strong>certain interference maxima go missing</strong>. This isn't an error - it's the fascinating interplay between interference and diffraction.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 Why JEE Loves This Concept</h4>
+                    <p>This phenomenon beautifully tests your understanding of <strong>superposition principles</strong> and appears in <strong>1-2 questions per JEE Advanced paper</strong>. Mastering it demonstrates deep conceptual clarity.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-concept" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Concept</a>
+                    <a href="#mathematical-condition" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Mathematical Condition</a>
+                    <a href="#visual-explanation" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Visual Explanation</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice Problems</a>
+                </div>
+            </div>
+
+            <!-- Basic Concept Section -->
+            <section id="basic-concept" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Understanding the Two Effects</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Interference vs. Diffraction: The Dual Nature</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg border">
+                            <h4 class="font-semibold text-blue-700 mb-2">💡 Interference Effect</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Due to <strong>two slits</strong> acting as coherent sources</li>
+                                <li>Determines <strong>positions</strong> of maxima and minima</li>
+                                <li>Condition for maxima: $d\sin\theta = n\lambda$</li>
+                                <li>Uniform intensity if slits were point sources</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border">
+                            <h4 class="font-semibold text-green-700 mb-2">🌊 Diffraction Effect</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Due to <strong>finite width</strong> of each slit</li>
+                                <li>Determines <strong>intensity distribution</strong></li>
+                                <li>Condition for minima: $a\sin\theta = m\lambda$</li>
+                                <li>Acts as an "envelope" for interference pattern</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phenomenon-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Collusion: When Effects Overlap</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Critical Insight</h4>
+                        <p>In real double-slit experiments, both effects occur simultaneously. The <strong>actual intensity</strong> at any point is:</p>
+                        <div class="text-center my-3">
+                            $$I(\theta) = I_0 \left(\frac{\sin\beta}{\beta}\right)^2 \cos^2\alpha$$
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$\beta = \frac{\pi a \sin\theta}{\lambda}$ (Diffraction term)</li>
+                            <li>$\alpha = \frac{\pi d \sin\theta}{\lambda}$ (Interference term)</li>
+                            <li>$a$ = slit width, $d$ = slit separation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mathematical Condition Section -->
+            <section id="mathematical-condition" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Missing Orders Condition</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Deriving the Disappearance Formula</h3>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Step-by-Step Derivation</h4>
+                        
+                        <p><strong>Step 1: Interference Maxima Condition</strong></p>
+                        <p>For constructive interference between two slits:</p>
+                        <div class="text-center my-2">
+                            $$d\sin\theta = n\lambda \quad \text{where } n = 0, \pm1, \pm2, \ldots$$
+                        </div>
+                        
+                        <p><strong>Step 2: Diffraction Minima Condition</strong></p>
+                        <p>For destructive interference due to single-slit diffraction:</p>
+                        <div class="text-center my-2">
+                            $$a\sin\theta = m\lambda \quad \text{where } m = \pm1, \pm2, \pm3, \ldots$$
+                        </div>
+                        
+                        <p><strong>Step 3: The Collision Condition</strong></p>
+                        <p>When both conditions are satisfied simultaneously:</p>
+                        <div class="text-center my-2">
+                            $$\frac{d\sin\theta}{a\sin\theta} = \frac{n\lambda}{m\lambda}$$
+                        </div>
+                        <div class="text-center my-2">
+                            $$\frac{d}{a} = \frac{n}{m}$$
+                        </div>
+                        
+                        <p><strong>Step 4: The Final Condition</strong></p>
+                        <p>For interference maximum of order $n$ to be missing:</p>
+                        <div class="text-center my-3 bg-yellow-50 p-3 rounded border">
+                            $$n = \frac{d}{a} \cdot m \quad \text{where } m = \pm1, \pm2, \pm3, \ldots$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Interpretation</h4>
+                    <p>The ratio $\frac{d}{a}$ determines <strong>which interference orders disappear</strong>. If $\frac{d}{a} = 3$, then every 3rd interference maximum (n = 3, 6, 9...) will be missing due to diffraction minima.</p>
+                </div>
+            </section>
+
+            <!-- Visual Explanation Section -->
+            <section id="visual-explanation" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Visualizing the Phenomenon</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Intensity Distribution Pattern</h3>
+                    
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h4 class="font-semibold text-gray-700 mb-4 text-center">Intensity Pattern for d/a = 3</h4>
+                        
+                        <!-- Simplified intensity plot -->
+                        <div class="intensity-plot">
+                            <div class="missing-order" style="left: 16.67%">3</div>
+                            <div class="missing-order" style="left: 50%">6</div>
+                            <div class="missing-order" style="left: 83.33%">9</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-7 gap-2 text-xs text-center mt-4">
+                            <div>-3</div>
+                            <div>-2</div>
+                            <div>-1</div>
+                            <div>0</div>
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </div>
+                        
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p><strong>Observation:</strong> The 3rd, 6th, 9th... interference maxima are missing because they coincide with diffraction minima.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phenomenon-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Physical Interpretation</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Why Do Orders Disappear?</h4>
+                        <p>Think of it this way:</p>
+                        <ul class="list-disc list-inside space-y-2 text-sm">
+                            <li><strong>Interference</strong> says: "At this angle, waves from two slits should constructively interfere"</li>
+                            <li><strong>Diffraction</strong> says: "But at this same angle, each slit itself produces zero intensity"</li>
+                            <li><strong>Result:</strong> Zero times anything is still zero! The maximum disappears.</li>
+                        </ul>
+                        
+                        <div class="mt-3 p-3 bg-blue-50 rounded border border-blue-200">
+                            <p class="text-sm"><strong>Analogy:</strong> It's like having two singers (slits) who would normally harmonize perfectly (interference maxima), but if both singers lose their voices (diffraction minima) at that particular note, no sound is produced!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Examples Section -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Worked Examples</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 1: Basic Missing Order Calculation</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Problem Statement</h4>
+                        <p>In a double-slit experiment, slit separation is 0.2 mm and slit width is 0.05 mm. Which interference maxima will be missing?</p>
+                        
+                        <p><strong>Step 1: Calculate the ratio</strong></p>
+                        <p>$$\frac{d}{a} = \frac{0.2}{0.05} = 4$$</p>
+                        
+                        <p><strong>Step 2: Apply missing orders condition</strong></p>
+                        <p>Missing orders occur when: $n = 4m$ where $m = \pm1, \pm2, \pm3, \ldots$</p>
+                        
+                        <p><strong>Step 3: List missing orders</strong></p>
+                        <p>Missing orders: $n = \pm4, \pm8, \pm12, \ldots$</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Example 2: JEE Advanced Level</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Problem Statement</h4>
+                        <p>In Young's double-slit experiment, the 5th interference maximum is observed to be missing. If the slit separation is 1.5 mm, find the slit width.</p>
+                        
+                        <p><strong>Step 1: Understand the given information</strong></p>
+                        <p>5th maximum is missing ⇒ n = 5 is a missing order</p>
+                        
+                        <p><strong>Step 2: Apply missing orders formula</strong></p>
+                        <p>$$n = \frac{d}{a} \cdot m \Rightarrow 5 = \frac{d}{a} \cdot m$$</p>
+                        <p>The smallest possible m is 1 (since m = ±1, ±2, ...)</p>
+                        
+                        <p><strong>Step 3: Solve for slit width</strong></p>
+                        <p>$$5 = \frac{1.5}{a} \cdot 1 \Rightarrow a = \frac{1.5}{5} = 0.3 \text{ mm}$$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: In a double-slit experiment, d = 0.3 mm and a = 0.1 mm. Which interference maxima will be missing?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Calculate d/a ratio first</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: If the 3rd and 6th interference maxima are missing, what is the ratio d/a?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Missing orders occur at n = (d/a)×m</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: In an experiment, slit width is halved while keeping separation constant. How does this affect missing orders?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider what happens to d/a ratio</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Can the central maximum (n=0) ever be missing? Explain why or why not.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Think about diffraction pattern at θ=0</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Formulas</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Missing orders:</strong> $n = \frac{d}{a} \cdot m$</li>
+                                <li><strong>Interference maxima:</strong> $d\sin\theta = n\lambda$</li>
+                                <li><strong>Diffraction minima:</strong> $a\sin\theta = m\lambda$</li>
+                                <li><strong>Intensity:</strong> $I = I_0\left(\frac{\sin\beta}{\beta}\right)^2\cos^2\alpha$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Points</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Missing orders occur when interference maxima coincide with diffraction minima</li>
+                                <li>The ratio d/a determines which orders disappear</li>
+                                <li>Central maximum (n=0) is never missing</li>
+                                <li>As slit width decreases, more orders disappear</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Confusing m and n</span>
+                                <p class="text-sm text-gray-600">m is for diffraction minima, n is for interference maxima</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Forgetting absolute values</span>
+                                <p class="text-sm text-gray-600">Missing orders occur on both sides of central maximum</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Mixing up conditions</span>
+                                <p class="text-sm text-gray-600">Interference maxima: d sinθ = nλ; Diffraction minima: a sinθ = mλ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Missing Orders?</h3>
+                    <p class="mb-4 opacity-90">This concept demonstrates the beautiful complexity of wave optics and your ability to handle multi-layered physical phenomena</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Wave Optics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

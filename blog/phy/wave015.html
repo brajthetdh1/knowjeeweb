@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interference Intensity Formula: Master I = I₁ + I₂ + 2√(I₁I₂) cos φ | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master the interference intensity formula I = I₁ + I₂ + 2√(I₁I₂) cos φ for JEE Physics. Complete derivation, applications, and problem-solving strategies for wave optics.">
+    <meta name="keywords" content="interference intensity formula, JEE wave optics, coherent superposition, I = I1 + I2 + 2√(I1I2) cos φ, physics interference, JEE physics formulas">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .derivation-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .comparison-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .comparison-table th {
+            background: #4f46e5;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .comparison-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Wave Optics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Wave Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Key Formula Mastery</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Intensity in Interference: Why I = I₁ + I₂ + 2√(I₁I₂) cos φ is Your Best Friend</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the most important formula in wave optics that unlocks interference patterns, fringe visibility, and intensity distribution.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">95%</div>
+                            <div class="text-sm text-blue-600">JEE Appearance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4-6</div>
+                            <div class="text-sm text-blue-600">Marks per Question</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3</div>
+                            <div class="text-sm text-blue-700">Key Applications</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2min</div>
+                            <div class="text-sm text-blue-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Formula is a Game-Changer</h2>
+                <p class="mb-4">The interference intensity formula $I = I_1 + I_2 + 2\sqrt{I_1I_2} \cos\phi$ is not just another equation—it's the <strong>fundamental bridge</strong> between wave nature and observable interference patterns. Understanding this formula means understanding interference itself.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Relevance</h4>
+                    <p>This formula appears in <strong>2-3 questions per JEE Physics paper</strong>, often as the key to solving complex interference problems involving Young's double slit, thin films, and other wave phenomena.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-purple-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#derivation" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Formula Derivation</a>
+                    <a href="#equal-intensity" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Equal Intensity Case</a>
+                    <a href="#unequal-intensity" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Unequal Intensity</a>
+                    <a href="#coherence" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Coherence Types</a>
+                </div>
+            </div>
+
+            <!-- Formula Derivation Section -->
+            <section id="derivation" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Deriving the Master Formula</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Starting from Wave Superposition</h3>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Step 1: Wave Equations</h4>
+                        <p>Consider two coherent waves with same frequency ω:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                            <div>$$y_1 = a_1 \sin(\omega t)$$</div>
+                            <div>$$y_2 = a_2 \sin(\omega t + \phi)$$</div>
+                        </div>
+                        <p class="mt-2">where $\phi$ is the phase difference between the waves.</p>
+                    </div>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Step 2: Resultant Wave</h4>
+                        <p>By principle of superposition:</p>
+                        <p>$$y = y_1 + y_2 = a_1 \sin(\omega t) + a_2 \sin(\omega t + \phi)$$</p>
+                        <p>Using trigonometric identity:</p>
+                        <p>$$y = R \sin(\omega t + \theta)$$</p>
+                        <p>where the resultant amplitude $R$ is:</p>
+                        <p>$$R = \sqrt{a_1^2 + a_2^2 + 2a_1a_2 \cos\phi}$$</p>
+                    </div>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Step 3: Intensity Relation</h4>
+                        <p>Intensity $I$ is proportional to square of amplitude:</p>
+                        <p>$$I \propto R^2 = a_1^2 + a_2^2 + 2a_1a_2 \cos\phi$$</p>
+                        <p>Since $I_1 \propto a_1^2$ and $I_2 \propto a_2^2$, we get:</p>
+                        <div class="text-center my-4">
+                            <div class="bg-yellow-100 border border-yellow-300 rounded-lg p-4 inline-block">
+                                <p class="text-xl font-bold text-gray-900">$$I = I_1 + I_2 + 2\sqrt{I_1I_2} \cos\phi$$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Key Insight</h4>
+                    <p>The term $2\sqrt{I_1I_2} \cos\phi$ is the <strong>interference term</strong>. It's what makes interference patterns possible and contains all the information about constructive and destructive interference.</p>
+                </div>
+            </section>
+
+            <!-- Equal Intensity Case -->
+            <section id="equal-intensity" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Special Case: Equal Intensities (I₁ = I₂ = I₀)</h2>
+                </div>
+
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Simplified Formula</h3>
+                    <p>When both waves have equal intensity $I_1 = I_2 = I_0$, the formula simplifies beautifully:</p>
+                    
+                    <div class="step-box">
+                        <p>$$I = I_0 + I_0 + 2\sqrt{I_0 \cdot I_0} \cos\phi$$</p>
+                        <p>$$I = 2I_0 + 2I_0 \cos\phi$$</p>
+                        <p>$$I = 2I_0 (1 + \cos\phi)$$</p>
+                        <p>Using identity $1 + \cos\phi = 2\cos^2(\frac{\phi}{2})$:</p>
+                        <div class="text-center my-4">
+                            <div class="bg-green-100 border border-green-300 rounded-lg p-4 inline-block">
+                                <p class="text-xl font-bold text-gray-900">$$I = 4I_0 \cos^2\left(\frac{\phi}{2}\right)$$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Extreme Cases Analysis</h3>
+                    
+                    <div class="comparison-table mt-4">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th>Condition</th>
+                                    <th>Phase Difference</th>
+                                    <th>Intensity</th>
+                                    <th>Interpretation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">Constructive</td>
+                                    <td>$\phi = 2n\pi$</td>
+                                    <td>$I_{max} = 4I_0$</td>
+                                    <td>Bright fringe</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Destructive</td>
+                                    <td>$\phi = (2n+1)\pi$</td>
+                                    <td>$I_{min} = 0$</td>
+                                    <td>Dark fringe</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">General</td>
+                                    <td>Any $\phi$</td>
+                                    <td>$I = 4I_0 \cos^2(\frac{\phi}{2})$</td>
+                                    <td>Intermediate intensity</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Application: Young's Double Slit</h4>
+                    <p>In Young's experiment with identical slits, $\phi = \frac{2\pi}{\lambda} \Delta x$, where $\Delta x$ is path difference. This gives the familiar interference pattern with:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Bright fringes when $\Delta x = n\lambda$</li>
+                        <li>Dark fringes when $\Delta x = (n+\frac{1}{2})\lambda$</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Unequal Intensity Case -->
+            <section id="unequal-intensity" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. General Case: Unequal Intensities</h2>
+                </div>
+
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Complete Analysis</h3>
+                    <p>Using the general formula $I = I_1 + I_2 + 2\sqrt{I_1I_2} \cos\phi$:</p>
+                    
+                    <div class="step-box">
+                        <p><strong>Maximum Intensity:</strong> When $\cos\phi = +1$</p>
+                        <p>$$I_{max} = I_1 + I_2 + 2\sqrt{I_1I_2} = (\sqrt{I_1} + \sqrt{I_2})^2$$</p>
+                        
+                        <p class="mt-3"><strong>Minimum Intensity:</strong> When $\cos\phi = -1$</p>
+                        <p>$$I_{min} = I_1 + I_2 - 2\sqrt{I_1I_2} = (\sqrt{I_1} - \sqrt{I_2})^2$$</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fringe Visibility (Contrast)</h3>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Definition</h4>
+                        <p>Fringe visibility measures contrast between bright and dark fringes:</p>
+                        <p>$$V = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}$$</p>
+                        
+                        <p class="mt-2">Substituting our expressions:</p>
+                        <p>$$V = \frac{(\sqrt{I_1} + \sqrt{I_2})^2 - (\sqrt{I_1} - \sqrt{I_2})^2}{(\sqrt{I_1} + \sqrt{I_2})^2 + (\sqrt{I_1} - \sqrt{I_2})^2}$$</p>
+                        <p>$$V = \frac{4\sqrt{I_1I_2}}{2(I_1 + I_2)} = \frac{2\sqrt{I_1I_2}}{I_1 + I_2}$$</p>
+                        
+                        <div class="text-center my-4">
+                            <div class="bg-blue-100 border border-blue-300 rounded-lg p-4 inline-block">
+                                <p class="text-xl font-bold text-gray-900">$$V = \frac{2\sqrt{I_1I_2}}{I_1 + I_2}$$</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-gray-700 mb-2">Special Cases:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Equal intensities</strong> ($I_1 = I_2$): $V = 1$ (Perfect visibility)</li>
+                            <li><strong>Very unequal intensities</strong> ($I_1 \gg I_2$): $V \approx 0$ (No visible pattern)</li>
+                            <li><strong>General case</strong>: $0 < V < 1$</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coherence Types -->
+            <section id="coherence" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Coherent vs. Incoherent Superposition</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Fundamental Difference</h3>
+                    
+                    <div class="comparison-table mt-4">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th>Aspect</th>
+                                    <th>Coherent Sources</th>
+                                    <th>Incoherent Sources</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">Phase Relationship</td>
+                                    <td>Constant phase difference</td>
+                                    <td>Random phase difference</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Interference Term</td>
+                                    <td>$2\sqrt{I_1I_2} \cos\phi$ (fixed)</td>
+                                    <td>$\langle 2\sqrt{I_1I_2} \cos\phi \rangle = 0$</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Resultant Intensity</td>
+                                    <td>$I = I_1 + I_2 + 2\sqrt{I_1I_2} \cos\phi$</td>
+                                    <td>$I = I_1 + I_2$</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Pattern Formation</td>
+                                    <td>Clear interference pattern</td>
+                                    <td>No interference pattern</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Examples</td>
+                                    <td>Laser light, same source divided</td>
+                                    <td>Two separate bulbs, sunlight</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Why Cosφ Averages to Zero for Incoherent Sources</h4>
+                    <p>For incoherent sources, the phase difference $\phi$ changes randomly with time. Therefore:</p>
+                    <p>$$\langle \cos\phi \rangle = \frac{1}{2\pi} \int_0^{2\pi} \cos\phi  d\phi = 0$$</p>
+                    <p class="mt-2">This makes the interference term vanish, leaving simple addition of intensities.</p>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. JEE Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Apply Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: Two coherent sources have intensities I and 4I. Find the ratio of maximum to minimum intensity in the interference pattern.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $I_{max} = (\sqrt{I_1} + \sqrt{I_2})^2$ and $I_{min} = (\sqrt{I_1} - \sqrt{I_2})^2$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: In Young's double slit experiment, the intensity at a point where path difference is λ/6 is I. If I₀ is the intensity of each wave, find I/I₀.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Phase difference $\phi = \frac{2\pi}{\lambda} \times \frac{\lambda}{6} = \frac{\pi}{3}$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Two waves with intensities I and 9I interfere. Calculate the fringe visibility.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $V = \frac{2\sqrt{I_1I_2}}{I_1 + I_2}$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Prove that for two incoherent sources, the resultant intensity is simply I₁ + I₂.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider time averaging of the interference term</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Formula Quick Reference</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">General Formulas</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>Resultant Intensity:</strong> $I = I_1 + I_2 + 2\sqrt{I_1I_2} \cos\phi$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>Max Intensity:</strong> $I_{max} = (\sqrt{I_1} + \sqrt{I_2})^2$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>Min Intensity:</strong> $I_{min} = (\sqrt{I_1} - \sqrt{I_2})^2$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>Fringe Visibility:</strong> $V = \frac{2\sqrt{I_1I_2}}{I_1 + I_2}$</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Equal Intensity Case (I₁ = I₂ = I₀)</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>General:</strong> $I = 4I_0 \cos^2(\frac{\phi}{2})$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>Bright Fringe:</strong> $I_{max} = 4I_0$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>Dark Fringe:</strong> $I_{min} = 0$</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2 mt-1">•</span>
+                                    <span><strong>Visibility:</strong> $V = 1$</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Strategy -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 JEE Exam Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Quick Identification</span>
+                                <p class="text-sm text-gray-600">Recognize when to use the general formula vs. equal intensity simplification.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Phase Difference Calculation</span>
+                                <p class="text-sm text-gray-600">Remember $\phi = \frac{2\pi}{\lambda} \Delta x$ for path-related problems.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Verification</span>
+                                <p class="text-sm text-gray-600">Always check if $I_{max} \geq I_{min}$ and $0 \leq V \leq 1$.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Show Key Steps</span>
+                                <p class="text-sm text-gray-600">Clearly write the formula substitution for partial credit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Interference Intensity?</h3>
+                    <p class="mb-4 opacity-90">Continue your wave optics journey with diffraction and polarization concepts</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Wave Optics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Wave Optics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffraction Grating Numericals: How to Find Wavelength, Order & More | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master diffraction grating numericals for JEE Main & Advanced. Step-by-step guide to find wavelength, order, maximum orders, and grating element with solved problems.">
+    <meta name="keywords" content="diffraction grating numericals, diffraction grating JEE, wavelength calculation, grating formula, physics numericals, JEE Main physics, JEE Advanced optics">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knowjee.com/blog/physics/optics/diffraction-grating.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Diffraction Grating Numericals: How to Find Wavelength, Order & More | JEE Physics">
+    <meta property="og:description" content="Master diffraction grating numericals with step-by-step solutions for JEE Main & Advanced">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knowjee.com/blog/physics/optics/diffraction-grating.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diffraction Grating Numericals - JEE Physics Guide">
+    <meta name="twitter:description" content="Complete problem-solving guide for diffraction grating numericals in JEE">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Diffraction Grating Numericals: How to Find Wavelength, Order & More",
+        "description": "Master diffraction grating numericals with step-by-step solutions for JEE Main & Advanced",
+        "author": {
+            "@type": "Person",
+            "name": "Braj Bhushan Kumar"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KnowJEE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://knowjee.com/logo.png"
+            }
+        },
+        "datePublished": "2024-12-19",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://knowjee.com/blog/physics/optics/diffraction-grating.html"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .formula-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .problem-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .solution-box {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .difficulty-easy { border-left: 4px solid #10b981; }
+        .difficulty-medium { border-left: 4px solid #f59e0b; }
+        .difficulty-hard { border-left: 4px solid #ef4444; }
+        .grating-tag {
+            background: #8b5cf6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-highlight {
+            background: #fef3c7;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #f59e0b;
+        }
+        .key-point {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">JEE Physics Focus</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 15 min</span>
+                    <span class="text-gray-500 text-sm ml-3">5 Problem Types</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Diffraction Grating Numericals: How to Find Wavelength, Order, and More</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the most common JEE question types with step-by-step problem-solving approaches and shortcuts.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">5</div>
+                            <div class="text-sm text-purple-600">Problem Types</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">100%</div>
+                            <div class="text-sm text-purple-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">8+</div>
+                            <div class="text-sm text-purple-600">Solved Examples</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-700">20min</div>
+                            <div class="text-sm text-purple-600">Practice Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Master Diffraction Grating Numericals?</h2>
+                <p class="mb-4">Diffraction grating problems appear in <strong>85% of JEE Main papers</strong> and are essential for JEE Advanced. These numericals test your understanding of:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 bg-purple-50 p-4 rounded-lg">
+                    <li><strong>Grating formula application</strong> under different conditions</li>
+                    <li><strong>Wave optics concepts</strong> and interference principles</li>
+                    <li><strong>Mathematical manipulation</strong> of trigonometric equations</li>
+                    <li><strong>Practical understanding</strong> of optical instruments</li>
+                </ul>
+            </section>
+
+            <!-- Key Formula -->
+            <section class="mb-8">
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">The Fundamental Grating Formula</h3>
+                    <div class="text-2xl font-bold text-center my-4">
+                        $$(a + b)\sin\theta = n\lambda$$
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white">
+                        <div>
+                            <p><strong>Where:</strong></p>
+                            <p>$a + b$ = Grating element (width of slit + spacing)</p>
+                            <p>$\theta$ = Diffraction angle</p>
+                            <p>$n$ = Order of spectrum</p>
+                            <p>$\lambda$ = Wavelength of light</p>
+                        </div>
+                        <div>
+                            <p><strong>Key Points:</strong></p>
+                            <p>• $n = 0, 1, 2, 3, ...$ (Order number)</p>
+                            <p>• Maximum order: $n_{max} = \frac{a+b}{\lambda}$</p>
+                            <p>• $\sin\theta \leq 1$ (Physical constraint)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Type 1: Finding Wavelength -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-medium">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="grating-tag">Type 1</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Finding Wavelength of Light</h3>
+                    <p class="text-lg mb-4">Given grating parameters and diffraction angle, find the wavelength.</p>
+                    
+                    <div class="solution-box">
+                        <h4 class="font-semibold text-green-800 mb-2">📝 Problem Statement:</h4>
+                        <p>A diffraction grating has 5000 lines per cm. The second order spectrum is observed at an angle of 30°. Find the wavelength of light used.</p>
+                        
+                        <div class="step-highlight">
+                            <h4 class="font-semibold text-gray-800 mb-2">🧮 Step-by-Step Solution:</h4>
+                            <p><strong>Step 1:</strong> Find grating element $(a + b)$</p>
+                            <p>Number of lines = 5000 per cm = 500,000 per meter</p>
+                            <p>$(a + b) = \frac{1}{500000} = 2 \times 10^{-6}$ m</p>
+                            
+                            <p><strong>Step 2:</strong> Apply grating formula</p>
+                            <p>$(a + b)\sin\theta = n\lambda$</p>
+                            <p>$2 \times 10^{-6} \times \sin 30° = 2 \times \lambda$</p>
+                            
+                            <p><strong>Step 3:</strong> Solve for wavelength</p>
+                            <p>$2 \times 10^{-6} \times 0.5 = 2\lambda$</p>
+                            <p>$1 \times 10^{-6} = 2\lambda$</p>
+                            <p>$\lambda = 5 \times 10^{-7}$ m = 500 nm</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Type 2: Finding Maximum Order -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-hard">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="grating-tag">Type 2</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Hard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Finding Maximum Possible Order</h3>
+                    <p class="text-lg mb-4">Determine the highest order spectrum visible for given grating and wavelength.</p>
+                    
+                    <div class="solution-box">
+                        <h4 class="font-semibold text-green-800 mb-2">📝 Problem Statement:</h4>
+                        <p>A diffraction grating has 6000 lines per cm. Find the maximum order for light of wavelength 600 nm.</p>
+                        
+                        <div class="step-highlight">
+                            <h4 class="font-semibold text-gray-800 mb-2">🧮 Step-by-Step Solution:</h4>
+                            <p><strong>Step 1:</strong> Find grating element</p>
+                            <p>$(a + b) = \frac{1}{6000 \times 100} = 1.667 \times 10^{-6}$ m</p>
+                            
+                            <p><strong>Step 2:</strong> Use maximum order condition</p>
+                            <p>$(a + b)\sin\theta = n\lambda$ and $\sin\theta \leq 1$</p>
+                            <p>Maximum when $\sin\theta = 1$</p>
+                            <p>$n_{max} = \frac{a + b}{\lambda}$</p>
+                            
+                            <p><strong>Step 3:</strong> Calculate maximum order</p>
+                            <p>$n_{max} = \frac{1.667 \times 10^{-6}}{600 \times 10^{-9}} = 2.778$</p>
+                            <p>Since order must be integer: $n_{max} = 2$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Type 3: Finding Angle -->
+            <section class="mb-8">
+                <div class="problem-box difficulty-easy">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="grating-tag">Type 3</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Easy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Finding Diffraction Angle</h3>
+                    <p class="text-lg mb-4">Calculate the angle at which a particular order is observed.</p>
+                    
+                    <div class="solution-box">
+                        <h4 class="font-semibold text-green-800 mb-2">📝 Problem Statement:</h4>
+                        <p>A grating with 4000 lines/cm is used with light of wavelength 500 nm. Find the angle for first order maximum.</p>
+                        
+                        <div class="step-highlight">
+                            <h4 class="font-semibold text-gray-800 mb-2">🧮 Step-by-Step Solution:</h4>
+                            <p><strong>Step 1:</strong> Find grating element</p>
+                            <p>$(a + b) = \frac{1}{4000 \times 100} = 2.5 \times 10^{-6}$ m</p>
+                            
+                            <p><strong>Step 2:</strong> Apply grating formula</p>
+                            <p>$(a + b)\sin\theta = n\lambda$</p>
+                            <p>$2.5 \times 10^{-6} \times \sin\theta = 1 \times 500 \times 10^{-9}$</p>
+                            
+                            <p><strong>Step 3:</strong> Solve for angle</p>
+                            <p>$\sin\theta = \frac{500 \times 10^{-9}}{2.5 \times 10^{-6}} = 0.2$</p>
+                            <p>$\theta = \sin^{-1}(0.2) = 11.54°$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips Section -->
+            <section class="mb-8">
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-indigo-900 mb-4">🚀 Problem-Solving Shortcuts</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">Unit Conversion Tips:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>1 cm = 0.01 m (for grating element)</li>
+                                <li>1 nm = $10^{-9}$ m (for wavelength)</li>
+                                <li>Lines/cm to lines/m: multiply by 100</li>
+                                <li>Grating element = 1/(lines per meter)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-indigo-800 mb-2">Common Mistakes to Avoid:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Forgetting $\sin\theta \leq 1$ constraint</li>
+                                <li>Unit inconsistency (nm vs m)</li>
+                                <li>Taking fractional order values</li>
+                                <li>Missing the integer condition for n</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Points -->
+            <section class="mb-8">
+                <div class="key-point">
+                    <h3 class="text-lg font-bold text-blue-900 mb-3">💡 Important Physical Insights</h3>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>• Angular Dispersion:</strong> Rate of change of angle with wavelength $\frac{d\theta}{d\lambda} = \frac{n}{(a+b)\cos\theta}$</p>
+                        <p><strong>• Resolving Power:</strong> $R = \frac{\lambda}{d\lambda} = nN$ (where N = total lines)</p>
+                        <p><strong>• Overlapping Orders:</strong> $n_1\lambda_1 = n_2\lambda_2$ for overlapping spectra</p>
+                        <p><strong>• Missing Orders:</strong> Occur when diffraction minimum coincides with interference maximum</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Problem Types Placeholder -->
+            <section class="mb-8">
+                <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">More Problem Types Available</h3>
+                    <p class="text-gray-600 mb-4">Includes overlapping orders, resolving power, angular dispersion, and JEE Advanced level problems</p>
+                    <button class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Access Complete Guide
+                    </button>
+                </div>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📝 Quick Self-Test</h3>
+                    <p class="mb-4">Try these JEE-level problems to test your understanding:</p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">1. A grating has 8000 lines/cm. Find wavelength if 3rd order is at 45°.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">2. For λ=550 nm and 10000 lines/cm, find maximum visible order.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="font-medium">3. Calculate angular separation between 400 nm and 700 nm in first order.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Wave Optics?</h3>
+                    <p class="mb-4 opacity-90">Get complete access to all diffraction grating problems with video solutions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="jee-physics-cards.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Wave Optics
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-purple-900 text-purple-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Subjects</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#physics" class="hover:text-purple-300">Physics</a></li>
+                        <li><a href="#chemistry" class="hover:text-purple-300">Chemistry</a></li>
+                        <li><a href="#mathematics" class="hover:text-purple-300">Mathematics</a></li>
+                        <li><a href="#mock-tests" class="hover:text-purple-300">Mock Tests</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="physics.html" class="hover:text-purple-300">JEE Physics</a></li>
+                        <li><a href="chem.html" class="hover:text-purple-300">JEE Chemistry</a></li>
+                        <li><a href="math.html" class="hover:text-purple-300">JEE Mathematics</a></li>
+                        <li><a href="index.html" class="hover:text-purple-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-purple-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-purple-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

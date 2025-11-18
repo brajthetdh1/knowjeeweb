@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Sky is Blue & Sunset Red? Wave Optics Explanation | Physics | KnowJEE</title>
+    <meta name="description" content="Discover how Rayleigh Scattering in wave optics explains why the sky appears blue and sunsets turn red. Complete physics explanation with diagrams and math.">
+    <meta name="keywords" content="why sky is blue, rayleigh scattering, wave optics, sunset red, physics of sky, light scattering, JEE physics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .phenomenon-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .phenomenon-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .explanation-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .physics-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .demo-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .color-sky { color: #3b82f6; font-weight: bold; }
+        .color-sunset { color: #ef4444; font-weight: bold; }
+        .scattering-demo {
+            background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 25%, #93c5fd 50%, #fbbf24 75%, #ef4444 100%);
+            height: 20px;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Wave Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Physics Explained</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why is the Sky Blue and the Sunset Red? Wave Optics has the Answer</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how Rayleigh Scattering explains one of nature's most beautiful phenomena through the physics of light waves.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">1871</div>
+                            <div class="text-sm text-blue-600">Rayleigh's Discovery</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">λ⁴</div>
+                            <div class="text-sm text-blue-600">Scattering Law</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2x</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Real-world Physics</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Everyday Mystery</h2>
+                <p class="mb-4">We see it every day but rarely stop to wonder: <strong>why is the sky blue during the day but turns red during sunset?</strong> The answer lies in the fascinating physics of light scattering, specifically <strong>Rayleigh Scattering</strong>.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Connection</h4>
+                    <p>This phenomenon connects <strong>Wave Optics, Electromagnetic Waves, and Ray Optics</strong> - making it a favorite for JEE questions that test conceptual understanding across topics.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🔍 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#rayleigh" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Rayleigh Scattering</a>
+                    <a href="#blue-sky" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Blue Sky Physics</a>
+                    <a href="#red-sunset" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Red Sunset</a>
+                    <a href="#polarization" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Polarization</a>
+                </div>
+            </div>
+
+            <!-- Rayleigh Scattering Section -->
+            <section id="rayleigh" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Rayleigh Scattering: The Core Principle</h2>
+                </div>
+
+                <div class="physics-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">What is Rayleigh Scattering?</h3>
+                    <p class="mb-4">Rayleigh scattering occurs when light waves interact with particles much smaller than their wavelength (like air molecules). The key insight is that <strong>scattering efficiency depends strongly on wavelength</strong>.</p>
+                    
+                    <div class="explanation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">The Mathematical Law</h4>
+                        <p>Rayleigh scattering intensity follows this fundamental relationship:</p>
+                        <div class="text-center my-3">
+                            $$ I_s \propto \frac{1}{\lambda^4} $$
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>$I_s$ = Scattered light intensity</li>
+                            <li>$\lambda$ = Wavelength of light</li>
+                            <li>The $\lambda^4$ dependence is crucial!</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Wavelength Comparison</h4>
+                        <p>Visible light wavelengths and their relative scattering:</p>
+                        <div class="overflow-x-auto mt-3">
+                            <table class="min-w-full border border-gray-300 text-sm">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="border px-3 py-2">Color</th>
+                                        <th class="border px-3 py-2">Wavelength (nm)</th>
+                                        <th class="border px-3 py-2">Relative Scattering</th>
+                                        <th class="border px-3 py-2">Scattering Ratio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border px-3 py-2 font-semibold color-sky">Violet</td>
+                                        <td class="border px-3 py-2">400 nm</td>
+                                        <td class="border px-3 py-2">Most scattered</td>
+                                        <td class="border px-3 py-2">9.4× Blue</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border px-3 py-2 color-sky">Blue</td>
+                                        <td class="border px-3 py-2">450 nm</td>
+                                        <td class="border px-3 py-2">Highly scattered</td>
+                                        <td class="border px-3 py-2">Reference (1×)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border px-3 py-2">Green</td>
+                                        <td class="border px-3 py-2">550 nm</td>
+                                        <td class="border px-3 py-2">Moderately scattered</td>
+                                        <td class="border px-3 py-2">0.44× Blue</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border px-3 py-2 color-sunset">Red</td>
+                                        <td class="border px-3 py-2">700 nm</td>
+                                        <td class="border px-3 py-2">Least scattered</td>
+                                        <td class="border px-3 py-2">0.17× Blue</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-3 text-sm text-gray-600">Calculation: $(450/700)^4 ≈ 0.17$ - Red light scatters only 17% as much as blue light!</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Why λ⁴ Dependence?</h4>
+                    <p>The $\lambda^4$ dependence comes from the <strong>dipole radiation pattern</strong> of oscillating electrons in air molecules when excited by electromagnetic waves. Shorter wavelengths resonate better with smaller particles.</p>
+                </div>
+            </section>
+
+            <!-- Blue Sky Section -->
+            <section id="blue-sky" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Why the Sky Appears Blue</h2>
+                </div>
+
+                <div class="phenomenon-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Daylight Scenario</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">During the Day:</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>Sunlight travels through <strong>minimum atmosphere</strong></li>
+                                <li><span class="color-sky">Blue light scatters strongly</span> in all directions</li>
+                                <li>This scattered blue light reaches our eyes from all parts of the sky</li>
+                                <li>Direct sunlight appears slightly yellowish (blue deficient)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Visual Demonstration:</h4>
+                            <div class="scattering-demo"></div>
+                            <p class="text-sm text-center mt-2">Blue scatters everywhere → Sky appears blue</p>
+                        </div>
+                    </div>
+
+                    <div class="explanation-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">But Why Not Violet?</h4>
+                        <p>You might wonder: Violet light (400 nm) scatters even more than blue (450 nm), so why isn't the sky violet?</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Sun emits <strong>less violet light</strong> to begin with</li>
+                            <li>Our eyes are <strong>less sensitive to violet</strong> than blue</li>
+                            <li>Some violet light gets <strong>absorbed by ozone</strong> in atmosphere</li>
+                        </ul>
+                        <p class="mt-2 font-semibold">Result: Our eyes perceive the sky as blue, not violet!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Red Sunset Section -->
+            <section id="red-sunset" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. The Magic of Red Sunsets</h2>
+                </div>
+
+                <div class="phenomenon-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Evening Transformation</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Sunset Physics</h4>
+                        <p><strong>At sunset</strong>, sunlight must travel through <strong>much more atmosphere</strong> to reach your eyes:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                            <div>
+                                <p class="font-semibold">Daytime (Overhead Sun):</p>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>~10-20 km atmosphere thickness</li>
+                                    <li>Minimal scattering of all colors</li>
+                                    <li>Some blue scattering → blue sky</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Sunset (Horizon Sun):</p>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>~200-300 km atmosphere thickness</li>
+                                    <li>Most blue light scattered away</li>
+                                    <li>Only red/orange reaches directly</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explanation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">The Color Filter Effect</h4>
+                        <p>Think of the atmosphere as a <strong>color filter</strong> that becomes thicker at sunset:</p>
+                        <div class="scattering-demo mt-3"></div>
+                        <div class="flex justify-between text-xs mt-1">
+                            <span>Blue scattered out</span>
+                            <span>Red passes through</span>
+                        </div>
+                        <p class="mt-3">The long path through atmosphere acts like a filter that removes blue light, letting only <span class="color-sunset">red and orange wavelengths</span> pass through directly to our eyes.</p>
+                    </div>
+                </div>
+
+                <div class="physics-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Mathematical Insight</h3>
+                    <p>The scattering probability increases with atmospheric path length:</p>
+                    <div class="text-center my-3">
+                        $$ P_{\text{scatter}} \propto L \cdot \frac{1}{\lambda^4} $$
+                    </div>
+                    <p>Where $L$ is the path length through atmosphere. At sunset, $L$ increases 10-20 times, making blue scattering nearly complete while red still transmits through.</p>
+                </div>
+            </section>
+
+            <!-- Polarization Section -->
+            <section id="polarization" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. The Polarization Connection</h2>
+                </div>
+
+                <div class="physics-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Skylight is Polarized!</h3>
+                    <p class="mb-4">Rayleigh scattering doesn't just explain colors - it also explains why skylight is <strong>partially polarized</strong>. This is a crucial connection between scattering and wave optics.</p>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Why Scattered Light is Polarized</h4>
+                        <p>When unpolarized sunlight encounters air molecules:</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-2">
+                            <li>Electrons in molecules oscillate perpendicular to the incident direction</li>
+                            <li>This oscillation creates dipole radiation</li>
+                            <li>The scattered light is <strong>linearly polarized perpendicular to the scattering plane</strong></li>
+                            <li>Maximum polarization occurs at 90° from the Sun</li>
+                        </ol>
+                    </div>
+
+                    <div class="demo-box">
+                        <h4 class="font-semibold text-pink-800 mb-2">🎯 JEE Application</h4>
+                        <p>This polarization effect is why:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Polarized sunglasses</strong> reduce glare from the sky</li>
+                            <li>Photographers use <strong>polarizing filters</strong> to darken blue skies</li>
+                            <li>This is a <strong>classic JEE question</strong> connecting multiple concepts</li>
+                        </ul>
+                        <div class="mt-3 p-3 bg-blue-50 rounded border border-blue-200">
+                            <p class="text-sm"><strong>Memory Aid:</strong> "Scattered light at 90° is polarized perpendicular to the scattering plane."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-world Applications -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Beyond the Sky: Other Applications</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="phenomenon-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Why Clouds are White</h3>
+                        <p>Cloud droplets are <strong>much larger than light wavelengths</strong>, so all colors scatter equally (Mie scattering). This makes clouds appear white when they reflect all wavelengths equally.</p>
+                    </div>
+
+                    <div class="phenomenon-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Blue Eyes & Blue Feathers</h3>
+                        <p>The same Rayleigh scattering principle explains why some eyes and bird feathers appear blue - they contain fine particles that scatter blue light more efficiently.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Summary -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Summary</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Physics Principles</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Rayleigh Scattering</strong>: $I_s \propto 1/\lambda^4$</li>
+                                <li><strong>Blue sky</strong>: Short path, blue scatters to eyes</li>
+                                <li><strong>Red sunset</strong>: Long path, blue removed, red remains</li>
+                                <li><strong>Polarization</strong>: Scattered light at 90° is polarized</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">JEE Focus Areas</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>Wave optics - scattering principles</li>
+                                <li>Electromagnetic waves - polarization</li>
+                                <li>Ray optics - atmospheric refraction</li>
+                                <li>Numerical problems on $\lambda^4$ dependence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Questions -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. If the wavelength of blue light is 450 nm and red is 700 nm, how many times more does blue light scatter compared to red?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use the Rayleigh scattering formula</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Why is the light from the sky partially polarized? At what angle from the Sun is polarization maximum?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Think about dipole radiation pattern</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. What would happen to sky color if Earth had no atmosphere? What if atmosphere were thicker?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Consider the role of atmospheric thickness</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Thought -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-red-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Physics in Everyday Life</h3>
+                    <p class="mb-4 opacity-90">The beautiful colors of our sky are not just art - they're perfect demonstrations of fundamental physics principles at work</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Try Interactive Demo
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Wave Optics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

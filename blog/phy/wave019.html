@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polarization: Proving Light is a Transverse Wave | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master polarization concepts for JEE Physics. Understand mechanical analogs, Malus' Law, and methods of polarization with detailed explanations and examples.">
+    <meta name="keywords"content="polarization JEE physics, transverse wave proof, Malus law, polaroids, Brewster's angle, light waves, JEE wave optics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .method-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .analogy-box {
+            background: #f3e8ff;
+            border: 1px solid #d8b4fe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .wave-diagram {
+            background: linear-gradient(90deg, #e0f2fe, #f0f9ff);
+            border: 2px solid #7dd3fc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Wave Optics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Wave Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">4 Key Methods</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Polarization: Proving Light is a Transverse Wave</h1>
+                <p class="text-xl text-gray-600 mb-4">Discover how polarization provides conclusive evidence that light waves vibrate perpendicular to their direction of propagation.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Transverse Proof</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-5</div>
+                            <div class="text-sm text-blue-600">Marks in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4</div>
+                            <div class="text-sm text-blue-600">Methods Covered</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2</div>
+                            <div class="text-sm text-blue-600">Key Laws</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Fundamental Question: Transverse or Longitudinal?</h2>
+                <p class="mb-4">For centuries, scientists debated whether light waves were <strong>transverse</strong> (vibrations perpendicular to direction) or <strong>longitudinal</strong> (vibrations parallel to direction). Polarization settled this debate conclusively.</p>
+                
+                <div class="wave-diagram">
+                    <h4 class="font-semibold text-blue-800 mb-3">Wave Types Comparison</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <div class="font-semibold text-green-600">Transverse Wave</div>
+                            <div class="text-sm mt-2">• Vibrations perpendicular to direction</div>
+                            <div class="text-sm">• Can be polarized</div>
+                            <div class="text-sm">• Example: Light waves, rope waves</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-semibold text-red-600">Longitudinal Wave</div>
+                            <div class="text-sm mt-2">• Vibrations parallel to direction</div>
+                            <div class="text-sm">• Cannot be polarized</div>
+                            <div class="text-sm">• Example: Sound waves, spring waves</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🎯 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#mechanical-analog" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Mechanical Analog</a>
+                    <a href="#malus-law" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Malus' Law</a>
+                    <a href="#polarization-methods" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Methods</a>
+                    <a href="#jee-applications" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">JEE Problems</a>
+                </div>
+            </div>
+
+            <!-- Mechanical Analog Section -->
+            <section id="mechanical-analog" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Mechanical Analog: The Rope & Slit Experiment</h2>
+                </div>
+
+                <div class="analogy-box">
+                    <h3 class="text-xl font-bold text-purple-900 mb-3">Visualizing Polarization Mechanically</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Rope Experiment Setup</h4>
+                        <p>Imagine a rope passing through two fences with vertical slits:</p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mt-3 text-center">
+                            <div class="bg-white p-3 rounded border">
+                                <div class="font-semibold text-blue-600">Step 1</div>
+                                <div class="text-sm mt-2">Create waves in all directions (up-down, left-right, circular)</div>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <div class="font-semibold text-blue-600">Step 2</div>
+                                <div class="text-sm mt-2">First vertical slit allows only vertical vibrations to pass</div>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <div class="font-semibold text-blue-600">Step 3</div>
+                                <div class="text-sm mt-2">Second vertical slit allows the already polarized wave</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Observation</h4>
+                        <p>If the second slit is rotated 90°, <strong>no waves pass through</strong>. This proves the waves are transverse!</p>
+                        <p class="mt-2"><strong>Longitudinal waves</strong> would pass through regardless of slit orientation because their vibrations are parallel to direction.</p>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Connecting to Light</h3>
+                    <p>The rope experiment perfectly mirrors how <strong>polarizers</strong> work with light:</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Mechanical System</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Rope = Light wave</li>
+                                <li>Vertical slit = Polarizer</li>
+                                <li>Vibration direction = Electric field direction</li>
+                                <li>Wave blocking = Absorption of perpendicular components</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-blue-800 mb-2">Light System</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Unpolarized light = Random vibrations</li>
+                                <li>Polarizer = Allows specific orientation</li>
+                                <li>Transmission axis = Allowed vibration direction</li>
+                                <li>Crossed polarizers = Complete blockage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Malus' Law Section -->
+            <section id="malus-law" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Malus' Law: The Mathematical Proof</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Understanding Malus' Law</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Law Statement</h4>
+                        <p>When completely plane polarized light is incident on an analyzer, the intensity of transmitted light is given by:</p>
+                        <div class="text-center my-4">
+                            $$ I = I_0 \cos^2\theta $$
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$I$ = Intensity of transmitted light</li>
+                            <li>$I_0$ = Intensity of incident polarized light</li>
+                            <li>$\theta$ = Angle between transmission axes of polarizer and analyzer</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Why This Proves Transverse Nature</h4>
+                        <p><strong>Vector Resolution:</strong> The electric field vector $E_0$ is resolved into components:</p>
+                        <p>• Parallel to analyzer axis: $E_0 \cos\theta$ ✓ (transmitted)</p>
+                        <p>• Perpendicular to analyzer axis: $E_0 \sin\theta$ ✗ (absorbed)</p>
+                        <p class="mt-2">Since <strong>intensity ∝ (amplitude)$^2$</strong>, we get $I = I_0 \cos^2\theta$</p>
+                        <p class="mt-2 font-semibold">This cosine dependence is ONLY possible for transverse waves!</p>
+                    </div>
+                </div>
+
+                <div class="method-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Special Cases & JEE Applications</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-3 py-2">Angle θ</th>
+                                    <th class="border px-3 py-2">$\cos^2\theta$</th>
+                                    <th class="border px-3 py-2">Transmitted Intensity</th>
+                                    <th class="border px-3 py-2">JEE Significance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-3 py-2">0°</td>
+                                    <td class="border px-3 py-2">1</td>
+                                    <td class="border px-3 py-2">$I = I_0$ (Maximum)</td>
+                                    <td class="border px-3 py-2">Parallel polarizers</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2">30°</td>
+                                    <td class="border px-3 py-2">3/4</td>
+                                    <td class="border px-3 py-2">$I = \frac{3}{4}I_0$</td>
+                                    <td class="border px-3 py-2">Common calculation</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2">45°</td>
+                                    <td class="border px-3 py-2">1/2</td>
+                                    <td class="border px-3 py-2">$I = \frac{1}{2}I_0$</td>
+                                    <td class="border px-3 py-2">Half intensity</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2">60°</td>
+                                    <td class="border px-3 py-2">1/4</td>
+                                    <td class="border px-3 py-2">$I = \frac{1}{4}I_0$</td>
+                                    <td class="border px-3 py-2">Quarter intensity</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2">90°</td>
+                                    <td class="border px-3 py-2">0</td>
+                                    <td class="border px-3 py-2">$I = 0$</td>
+                                    <td class="border px-3 py-2">Crossed polarizers</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Polarization Methods Section -->
+            <section id="polarization-methods" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Methods of Polarization</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">1. Polarization by Polaroids</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">How Polaroids Work</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Contains long-chain polymer molecules</li>
+                                <li>Molecules aligned in specific direction</li>
+                                <li>Absorb light vibrating parallel to molecules</li>
+                                <li>Transmit light vibrating perpendicular to molecules</li>
+                                <li>Transmission axis is perpendicular to molecular alignment</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">JEE Applications</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Intensity reduction calculations</li>
+                                <li>Multiple polarizer setups</li>
+                                <li>Polarization direction changes</li>
+                                <li>Malus' Law problems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">2. Polarization by Reflection (Brewster's Law)</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Brewster's Angle</h4>
+                        <p>At a specific angle of incidence, reflected light is completely plane polarized:</p>
+                        <div class="text-center my-3">
+                            $$ \tan i_p = \mu $$
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>$i_p$ = Brewster's angle (polarizing angle)</li>
+                            <li>$\mu$ = Refractive index of medium</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Characteristics</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Reflected light is polarized <strong>perpendicular</strong> to plane of incidence</li>
+                            <li>Refracted light is partially polarized</li>
+                            <li>Reflected and refracted rays are perpendicular to each other at Brewster's angle</li>
+                            <li>At $i_p$: $i_p + r = 90°$ where r is angle of refraction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">3. Polarization by Scattering</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Sky Polarization</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Sunlight gets polarized when scattered by air molecules</li>
+                                <li>Maximum polarization at 90° from sun direction</li>
+                                <li>Explains why sky appears blue (Rayleigh scattering)</li>
+                                <li>Polarization helps insects navigate</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Why Scattering Polarizes</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Air molecules act as oscillating dipoles</li>
+                                <li>Dipoles radiate perpendicular to their oscillation</li>
+                                <li>No radiation along oscillation direction</li>
+                                <li>Results in polarized scattered light</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">4. Polarization by Double Refraction</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Birefringent Crystals</h4>
+                        <p>Certain crystals like calcite split unpolarized light into two polarized rays:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                            <div class="bg-white p-3 rounded border">
+                                <div class="font-semibold text-green-600">Ordinary Ray (O-ray)</div>
+                                <div class="text-sm mt-2">• Obeys Snell's law</div>
+                                <div class="text-sm">• Polarized perpendicular to optic axis</div>
+                            </div>
+                            <div class="bg-white p-3 rounded border">
+                                <div class="font-semibold text-blue-600">Extraordinary Ray (E-ray)</div>
+                                <div class="text-sm mt-2">• Doesn't obey Snell's law</div>
+                                <div class="text-sm">• Polarized parallel to optic axis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Applications Section -->
+            <section id="jee-applications" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. JEE Problem Solving Strategies</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Common JEE Problem Types</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem Type 1: Malus' Law Calculations</p>
+                            <p class="text-sm text-gray-600">Unpolarized light of intensity I₀ passes through two polarizers at angle θ. Find final intensity.</p>
+                            <div class="mt-2 text-xs bg-yellow-50 p-2 rounded">
+                                <strong>Solution Approach:</strong> First polarizer reduces intensity to I₀/2. Second polarizer applies Malus' Law: I = (I₀/2)cos²θ
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem Type 2: Brewster's Angle</p>
+                            <p class="text-sm text-gray-600">Find Brewster's angle for light incident from air to glass (μ=1.5). Also find angle between reflected and refracted rays.</p>
+                            <div class="mt-2 text-xs bg-yellow-50 p-2 rounded">
+                                <strong>Solution Approach:</strong> iₚ = tan⁻¹(μ) = tan⁻¹(1.5) ≈ 56.3°. At Brewster's angle, reflected and refracted rays are perpendicular.
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem Type 3: Multiple Polarizers</p>
+                            <p class="text-sm text-gray-600">Unpolarized light passes through three polarizers with transmission axes at 0°, 30°, and 60°. Find final intensity.</p>
+                            <div class="mt-2 text-xs bg-yellow-50 p-2 rounded">
+                                <strong>Solution Approach:</strong> Apply step-by-step: I₁ = I₀/2, I₂ = I₁cos²30°, I₃ = I₂cos²30° (since 60°-30°=30°)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 JEE Exam Tips</h4>
+                    <ul class="list-disc list-inside space-y-2 text-sm">
+                        <li>Remember: <strong>Unpolarized light → First polarizer → Intensity halves</strong></li>
+                        <li>For crossed polarizers (90° difference): <strong>I = 0</strong></li>
+                        <li>Brewster's angle: <strong>Reflected ray ⊥ Refracted ray</strong></li>
+                        <li>Maximum polarization by scattering: <strong>90° from light source</strong></li>
+                        <li>Polaroid sunglasses work by <strong>blocking horizontally polarized glare</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Polarization Quick Reference</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Formulas</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Malus' Law:</strong> $I = I_0 \cos^2\theta$</li>
+                                <li><strong>Brewster's Law:</strong> $\tan i_p = \mu$</li>
+                                <li><strong>First Polarizer:</strong> $I_1 = I_0/2$ (unpolarized light)</li>
+                                <li><strong>Polarizing Angle:</strong> $i_p + r = 90°$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Proof of Transverse Nature</h4>
+                            <ol class="list-decimal list-inside space-y-1 text-sm">
+                                <li>Longitudinal waves cannot be polarized</li>
+                                <li>Polarization shows directional preference</li>
+                                <li>Malus' Law shows cosine dependence</li>
+                                <li>All methods rely on vibration direction</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Real-World Applications</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Polaroid Sunglasses</strong><br>
+                                Reduce glare from horizontal surfaces
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>LCD Displays</strong><br>
+                                Use polarized light for image formation
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Photography Filters</strong><br>
+                                Enhance sky contrast and reduce reflections
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Conclusive Evidence Summary</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Mechanical Analog</span>
+                                <p class="text-sm text-gray-600">Rope experiment shows transverse waves can be polarized, longitudinal cannot</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Malus' Law</span>
+                                <p class="text-sm text-gray-600">Cosine dependence proves vector nature of light vibrations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Polarization Methods</span>
+                                <p class="text-sm text-gray-600">All four methods rely on directional vibration filtering</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">JEE Significance</span>
+                                <p class="text-sm text-gray-600">Direct proof questions worth 3-5 marks appear regularly</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded border">
+                        <p class="font-semibold text-center">Conclusion: Polarization provides irrefutable evidence that light is a transverse wave</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Wave Optics?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through interference, diffraction, and other wave phenomena</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Wave Optics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Polarization Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Physics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

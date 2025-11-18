@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young's Double Slit Experiment: Complete Graphical Guide | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master Young's Double Slit Experiment with visual explanations of fringe patterns, intensity variation, and how fringe width changes with D, d, and λ. Essential for JEE Physics.">
+    <meta name="keywords" content="Young's double slit experiment, JEE physics, wave optics, fringe patterns, interference, JEE preparation, fringe width">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .graph-box {
+            background: #fffbeb;
+            border: 2px solid #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .interactive-demo {
+            background: #fce7f3;
+            border: 2px solid #f9a8d4;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .demo-controls {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .fringe-canvas {
+            width: 100%;
+            height: 200px;
+            background: #1e293b;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Wave Optics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Wave Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Interactive Demos</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Young's Double Slit Experiment: The Complete Graphical Guide to Fringe Patterns</h1>
+                <p class="text-xl text-gray-600 mb-4">Visualize how fringe width changes with D, d, and λ. Master intensity variation graphs for JEE Physics.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">JEE Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-5</div>
+                            <div class="text-sm text-blue-600">Marks per Question</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">4</div>
+                            <div class="text-sm text-blue-600">Key Parameters</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2min</div>
+                            <div class="text-sm text-blue-600">Avg. Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Young's Experiment Matters in JEE</h2>
+                <p class="mb-4">Young's Double Slit Experiment is the <strong>cornerstone of wave optics</strong> and appears in <strong>every JEE paper</strong>. Understanding the graphical relationships between parameters is crucial for solving problems quickly and accurately.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Focus Areas</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Fringe width calculation and variation</li>
+                        <li>Intensity distribution graphs</li>
+                        <li>Path difference and phase difference relationships</li>
+                        <li>Effect of changing parameters (D, d, λ)</li>
+                        <li>Position of maxima and minima</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-setup" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Setup</a>
+                    <a href="#fringe-width" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Fringe Width</a>
+                    <a href="#intensity" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Intensity Graph</a>
+                    <a href="#interactive" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Interactive Demo</a>
+                </div>
+            </div>
+
+            <!-- Basic Setup Section -->
+            <section id="basic-setup" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Understanding the Basic Setup</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Experimental Arrangement</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="mb-4">Young's experiment demonstrates the <strong>wave nature of light</strong> through interference patterns created by two coherent sources.</p>
+                            
+                            <div class="example-box">
+                                <h4 class="font-semibold text-green-800 mb-2">Key Components</h4>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li><strong>Monochromatic source</strong> (S) - produces coherent light</li>
+                                    <li><strong>Double slits</strong> (S₁ and S₂) - act as coherent sources</li>
+                                    <li><strong>Screen</strong> - where interference pattern is observed</li>
+                                    <li><strong>Distance D</strong> - between slits and screen</li>
+                                    <li><strong>Slit separation d</strong> - distance between S₁ and S₂</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border">
+                            <div class="text-center font-semibold mb-2">Schematic Diagram</div>
+                            <div class="text-center text-gray-500 text-sm">
+                                <!-- Simple ASCII art representation -->
+                                <pre class="text-xs">
+        Source S
+           |
+           |
+        S₁ | S₂   (Double Slits)
+         \ | /
+          \|/
+        ---+---  (Screen)
+        Bright & Dark Fringes
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-box">
+                    <h3 class="text-xl font-bold text-purple-900 mb-3">Fundamental Formulas</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold">Fringe Width (β):</p>
+                            <div class="text-center my-2">
+                                $$ \beta = \frac{\lambda D}{d} $$
+                            </div>
+                            <p class="text-sm text-gray-600">Where:<br>
+                            $\lambda$ = Wavelength of light<br>
+                            $D$ = Distance from slits to screen<br>
+                            $d$ = Distance between the two slits</p>
+                        </div>
+                        
+                        <div>
+                            <p class="font-semibold">Path Difference:</p>
+                            <div class="text-center my-2">
+                                $$ \Delta x = \frac{yd}{D} $$
+                            </div>
+                            <p class="text-sm text-gray-600">Where $y$ is the distance from central maximum</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fringe Width Section -->
+            <section id="fringe-width" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Fringe Width Variation with Parameters</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">How Fringe Width Changes</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-red-50 p-4 rounded border">
+                                <h4 class="font-semibold text-red-800 mb-2">With Wavelength (λ)</h4>
+                                <p class="text-sm">$$ \beta \propto \lambda $$</p>
+                                <p class="text-xs mt-2">Red light (λ ≈ 700 nm) gives wider fringes than blue light (λ ≈ 400 nm)</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded border">
+                                <h4 class="font-semibold text-green-800 mb-2">With Distance (D)</h4>
+                                <p class="text-sm">$$ \beta \propto D $$</p>
+                                <p class="text-xs mt-2">Moving screen farther increases fringe width proportionally</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded border">
+                                <h4 class="font-semibold text-blue-800 mb-2">With Slit Separation (d)</h4>
+                                <p class="text-sm">$$ \beta \propto \frac{1}{d} $$</p>
+                                <p class="text-xs mt-2">Closer slits give wider fringes, farther slits give narrower fringes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph-box">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-3">Graphical Relationships</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">β vs λ (Keeping D, d constant)</h4>
+                            <div class="bg-white p-4 rounded border text-center">
+                                <div class="text-gray-500 text-sm mb-2">Linear Relationship</div>
+                                <div class="h-32 bg-gradient-to-r from-blue-200 to-red-200 flex items-end">
+                                    <div class="w-full h-1/3 bg-blue-500"></div>
+                                </div>
+                                <div class="text-xs mt-2">λ (wavelength) →</div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-2">β vs d (Keeping λ, D constant)</h4>
+                            <div class="bg-white p-4 rounded border text-center">
+                                <div class="text-gray-500 text-sm mb-2">Inverse Relationship</div>
+                                <div class="h-32 bg-gradient-to-r from-green-200 to-green-200 flex items-end">
+                                    <div class="w-full h-3/4 bg-green-500"></div>
+                                </div>
+                                <div class="text-xs mt-2">d (slit separation) →</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">JEE Problem Example</h4>
+                    <p class="mb-3"><strong>Question:</strong> In Young's experiment, if the distance between slits is halved and screen distance is doubled, what happens to fringe width?</p>
+                    
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Solution:</strong></p>
+                        <p>Original: $\beta = \frac{\lambda D}{d}$</p>
+                        <p>New: $d' = \frac{d}{2}$, $D' = 2D$</p>
+                        <p>$\beta' = \frac{\lambda (2D)}{d/2} = \frac{4\lambda D}{d} = 4\beta$</p>
+                        <p class="font-semibold mt-2">Fringe width becomes 4 times larger</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Intensity Variation Section -->
+            <section id="intensity" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Intensity Variation Graph</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Understanding the Interference Pattern</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="mb-4">The intensity variation follows a <strong>cos² pattern</strong> due to the interference of two waves.</p>
+                            
+                            <div class="formula-box">
+                                <p class="font-semibold">Intensity Formula:</p>
+                                <div class="text-center my-2">
+                                    $$ I = 4I_0 \cos^2\left(\frac{\phi}{2}\right) $$
+                                </div>
+                                <p class="text-sm">Where:<br>
+                                $I_0$ = Intensity from single slit<br>
+                                $\phi$ = Phase difference between waves</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border">
+                            <h4 class="font-semibold text-center mb-3">Intensity Distribution</h4>
+                            <div class="h-48 relative border-l-2 border-b-2 border-gray-300">
+                                <!-- Simplified intensity graph -->
+                                <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-100 to-transparent"></div>
+                                <div class="absolute bottom-0 left-1/4 w-8 h-32 bg-blue-500 opacity-50"></div>
+                                <div class="absolute bottom-0 left-2/4 w-8 h-32 bg-blue-500"></div>
+                                <div class="absolute bottom-0 left-3/4 w-8 h-32 bg-blue-500 opacity-50"></div>
+                                <div class="absolute -bottom-6 left-0 right-0 text-center text-xs">
+                                    -3β -2β -β 0 β 2β 3β
+                                </div>
+                                <div class="absolute -left-8 top-1/2 transform -rotate-90 text-xs">Intensity</div>
+                            </div>
+                            <div class="text-center text-xs mt-2">Position on Screen</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🔍 Key Observations</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Central maximum</strong> has maximum intensity ($4I_0$)</li>
+                        <li><strong>All bright fringes</strong> have same intensity ($4I_0$)</li>
+                        <li><strong>Dark fringes</strong> have zero intensity</li>
+                        <li><strong>Intensity decreases</strong> gradually in actual experiments due to slit width</li>
+                        <li>The pattern is <strong>symmetrical</strong> about central maximum</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4 class="font-semibold text-green-800 mb-2">Phase Difference Relationships</h4>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-3 py-2">Condition</th>
+                                    <th class="border px-3 py-2">Path Difference</th>
+                                    <th class="border px-3 py-2">Phase Difference</th>
+                                    <th class="border px-3 py-2">Intensity</th>
+                                    <th class="border px-3 py-2">Fringe Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-3 py-2">$\Delta x = n\lambda$</td>
+                                    <td class="border px-3 py-2">$n\lambda$</td>
+                                    <td class="border px-3 py-2">$2n\pi$</td>
+                                    <td class="border px-3 py-2">$4I_0$</td>
+                                    <td class="border px-3 py-2">Bright</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2">$\Delta x = (n+\frac{1}{2})\lambda$</td>
+                                    <td class="border px-3 py-2">$(n+\frac{1}{2})\lambda$</td>
+                                    <td class="border px-3 py-2">$(2n+1)\pi$</td>
+                                    <td class="border px-3 py-2">$0$</td>
+                                    <td class="border px-3 py-2">Dark</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Demo Section -->
+            <section id="interactive" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Interactive Fringe Pattern Demo</h2>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3 class="text-xl font-bold text-pink-900 mb-3">See How Parameters Affect Fringe Pattern</h3>
+                    
+                    <div class="demo-controls">
+                        <div class="grid md:grid-cols-3 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Wavelength λ (nm)</label>
+                                <input type="range" min="400" max="700" value="550" class="w-full" id="wavelengthSlider">
+                                <div class="text-center text-sm" id="wavelengthValue">550 nm</div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Slit Separation d (mm)</label>
+                                <input type="range" min="1" max="10" value="2" step="0.1" class="w-full" id="slitSeparationSlider">
+                                <div class="text-center text-sm" id="slitSeparationValue">2.0 mm</div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Screen Distance D (m)</label>
+                                <input type="range" min="1" max="5" value="2" step="0.1" class="w-full" id="screenDistanceSlider">
+                                <div class="text-center text-sm" id="screenDistanceValue">2.0 m</div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="inline-block bg-blue-100 px-4 py-2 rounded-lg">
+                                <span class="font-semibold">Fringe Width: </span>
+                                <span id="fringeWidthValue">1.65 mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fringe-canvas" id="fringePattern">
+                        <!-- Fringe pattern will be drawn here by JavaScript -->
+                        <div class="h-full flex items-center justify-center text-white">
+                            <div>Interactive Fringe Pattern Visualization</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center text-sm text-gray-600">
+                        <p>Adjust the sliders to see how each parameter affects the fringe pattern</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Formulas</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Fringe width: $\beta = \frac{\lambda D}{d}$</li>
+                                <li>Path difference: $\Delta x = \frac{yd}{D}$</li>
+                                <li>Phase difference: $\phi = \frac{2\pi}{\lambda}\Delta x$</li>
+                                <li>Intensity: $I = 4I_0 \cos^2\left(\frac{\phi}{2}\right)$</li>
+                                <li>Position of nth maxima: $y_n = \frac{n\lambda D}{d}$</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">JEE Problem Solving Tips</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Remember $\beta \propto \lambda$, $\beta \propto D$, $\beta \propto \frac{1}{d}$</li>
+                                <li>Central fringe is always bright</li>
+                                <li>All bright fringes have equal intensity</li>
+                                <li>White light gives colored fringes with central white</li>
+                                <li>For minima: $\Delta x = (n+\frac{1}{2})\lambda$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common JEE Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Confusing maxima and minima conditions</span>
+                                <p class="text-sm text-gray-600">Maxima: $\Delta x = n\lambda$, Minima: $\Delta x = (n+\frac{1}{2})\lambda$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Forgetting units conversion</span>
+                                <p class="text-sm text-gray-600">λ in meters, D in meters, d in meters for consistent results</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Mixing up direct and inverse proportions</span>
+                                <p class="text-sm text-gray-600">β ∝ λ and D, but β ∝ 1/d</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Ignoring the cos² nature of intensity</span>
+                                <p class="text-sm text-gray-600">Intensity doesn't drop suddenly but follows cos² pattern</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎯 Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">1. In Young's experiment, the fringe width is 0.6 mm. If the entire apparatus is immersed in water (μ = 4/3), what will be the new fringe width?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Wavelength changes in medium</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">2. Two slits 0.2 mm apart are illuminated by light of wavelength 6000 Å. The interference fringes are observed on a screen 1 m away. Find the distance between 3rd bright fringe and 5th dark fringe.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use positions formula</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">3. In a double slit experiment, the intensity at the central maximum is I₀. What will be the intensity at a point where the path difference is λ/4?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use intensity formula with phase difference</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Wave Optics?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through wave optics with our comprehensive practice modules</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Wave Optics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Wave Optics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Demo Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const wavelengthSlider = document.getElementById('wavelengthSlider');
+            const slitSeparationSlider = document.getElementById('slitSeparationSlider');
+            const screenDistanceSlider = document.getElementById('screenDistanceSlider');
+            
+            const wavelengthValue = document.getElementById('wavelengthValue');
+            const slitSeparationValue = document.getElementById('slitSeparationValue');
+            const screenDistanceValue = document.getElementById('screenDistanceValue');
+            const fringeWidthValue = document.getElementById('fringeWidthValue');
+            const fringePattern = document.getElementById('fringePattern');
+            
+            function updateFringePattern() {
+                const λ = parseInt(wavelengthSlider.value) * 1e-9; // Convert to meters
+                const d = parseFloat(slitSeparationSlider.value) * 1e-3; // Convert to meters
+                const D = parseFloat(screenDistanceSlider.value); // Already in meters
+                
+                // Calculate fringe width
+                const β = (λ * D) / d;
+                const β_mm = (β * 1000).toFixed(2); // Convert to mm
+                
+                // Update display values
+                wavelengthValue.textContent = wavelengthSlider.value + ' nm';
+                slitSeparationValue.textContent = slitSeparationSlider.value + ' mm';
+                screenDistanceValue.textContent = screenDistanceSlider.value + ' m';
+                fringeWidthValue.textContent = β_mm + ' mm';
+                
+                // Update visual pattern (simplified representation)
+                updateFringeVisualization(β_mm);
+            }
+            
+            function updateFringeVisualization(fringeWidth) {
+                const β = parseFloat(fringeWidth);
+                fringePattern.innerHTML = '';
+                
+                // Create a simple visual representation of fringes
+                const patternWidth = fringePattern.clientWidth;
+                const patternHeight = fringePattern.clientHeight;
+                
+                const centerX = patternWidth / 2;
+                const fringeSpacing = Math.min(β * 10, 50); // Scale for visualization
+                
+                // Draw central bright fringe
+                drawFringe(centerX, patternHeight, true);
+                
+                // Draw fringes to the right
+                for (let i = 1; i <= 3; i++) {
+                    const x = centerX + i * fringeSpacing;
+                    if (x < patternWidth - 20) {
+                        drawFringe(x, patternHeight, i % 2 === 1);
+                    }
+                }
+                
+                // Draw fringes to the left
+                for (let i = 1; i <= 3; i++) {
+                    const x = centerX - i * fringeSpacing;
+                    if (x > 20) {
+                        drawFringe(x, patternHeight, i % 2 === 1);
+                    }
+                }
+            }
+            
+            function drawFringe(x, height, isBright) {
+                const fringe = document.createElement('div');
+                fringe.className = 'absolute top-0 bottom-0 w-8';
+                fringe.style.left = (x - 4) + 'px';
+                
+                if (isBright) {
+                    fringe.style.background = 'linear-gradient(to bottom, #3b82f6, #1e40af)';
+                    fringe.style.boxShadow = '0 0 10px #3b82f6';
+                } else {
+                    fringe.style.background = 'linear-gradient(to bottom, #1e293b, #0f172a)';
+                }
+                
+                fringePattern.style.position = 'relative';
+                fringePattern.appendChild(fringe);
+            }
+            
+            // Initial update
+            updateFringePattern();
+            
+            // Add event listeners
+            wavelengthSlider.addEventListener('input', updateFringePattern);
+            slitSeparationSlider.addEventListener('input', updateFringePattern);
+            screenDistanceSlider.addEventListener('input', updateFringePattern);
+        });
+    </script>
+</body>
+</html>

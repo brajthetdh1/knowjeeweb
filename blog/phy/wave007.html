@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lloyd's Mirror: Interference with Phase Change | JEE Wave Optics | KnowJEE</title>
+    <meta name="description" content="Master Lloyd's Mirror experiment for JEE Physics. Understand phase change on reflection, fringe pattern complementarity with YDSE, and key concepts for wave optics.">
+    <meta name="keywords" content="Lloyd's mirror, JEE wave optics, interference experiments, phase change reflection, JEE physics, fringe pattern">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .experiment-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .comparison-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .phase-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .derivation-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .diagram-container {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Wave Optics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Wave Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Key Experiment</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lloyd's Mirror: The Interference Experiment with a Built-In Phase Change</h1>
+                <p class="text-xl text-gray-600 mb-4">Understand why this experiment produces complementary fringes to YDSE and master the crucial concept of phase change on reflection.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">1834</div>
+                            <div class="text-sm text-blue-600">Discovery Year</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-4</div>
+                            <div class="text-sm text-blue-600">JEE Marks</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">1</div>
+                            <div class="text-sm text-blue-600">Key Concept</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">π</div>
+                            <div class="text-sm text-blue-600">Phase Change</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Lloyd's Mirror is Special</h2>
+                <p class="mb-4">Lloyd's Mirror demonstrates one of the most important concepts in wave optics: <strong>phase change of π radians when light reflects from a denser medium</strong>. This single phenomenon makes its interference pattern complementary to Young's Double Slit Experiment.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-pink-800 mb-2">🎯 JEE Significance</h4>
+                    <p>This experiment appears frequently in JEE as it tests fundamental understanding of wave nature of light. Mastering it can help you secure <strong>2-4 marks</strong> and understand more complex interference phenomena.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#experiment-setup" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Setup</a>
+                    <a href="#phase-change" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Phase Change</a>
+                    <a href="#fringe-pattern" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Fringe Pattern</a>
+                    <a href="#comparison" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">vs YDSE</a>
+                </div>
+            </div>
+
+            <!-- Experiment Setup -->
+            <section id="experiment-setup" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Experimental Setup</h2>
+                </div>
+
+                <div class="experiment-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Simple Yet Brilliant Design</h3>
+                    
+                    <div class="diagram-container">
+                        <div class="text-sm text-gray-600 mb-4">Schematic Diagram of Lloyd's Mirror Setup</div>
+                        <div class="bg-gray-100 p-6 rounded-lg border-2 border-gray-300">
+                            <!-- Simple ASCII-style diagram -->
+                            <div class="text-center font-mono text-sm">
+                                <div class="mb-2">S ● (Light Source)</div>
+                                <div class="mb-2">│</div>
+                                <div class="mb-2">│ Direct ray</div>
+                                <div class="mb-2">│</div>
+                                <div class="flex justify-center items-center mb-2">
+                                    <div class="w-32 border-t border-gray-400"></div>
+                                    <div>Screen</div>
+                                    <div class="w-32 border-t border-gray-400"></div>
+                                </div>
+                                <div class="mb-2">│ Reflected ray</div>
+                                <div class="mb-2">│</div>
+                                <div>━━━━━━━━━━━ (Mirror - Denser Medium)</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs text-gray-600">
+                            <p>• S: Monochromatic light source</p>
+                            <p>• Two coherent sources: Direct (S) and Virtual (S') from reflection</p>
+                            <p>• Interference occurs on the screen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Key Components</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Monochromatic light source</strong> (S)</li>
+                                <li><strong>Plane mirror</strong> placed vertically</li>
+                                <li><strong>Screen</strong> for observing interference</li>
+                                <li>Source very close to mirror plane</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Working Principle</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Light reaches screen via two paths</li>
+                                <li><strong>Direct path</strong>: Straight from source</li>
+                                <li><strong>Reflected path</strong>: Via mirror reflection</li>
+                                <li>Two waves interfere on screen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Crucial Phase Change -->
+            <section id="phase-change" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. The Crucial Phase Change</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reflection from Denser Medium</h3>
+                    
+                    <div class="phase-box">
+                        <h4 class="font-semibold text-yellow-800 mb-2">The Golden Rule of Phase Change</h4>
+                        <p class="text-lg font-bold text-center">When light reflects from a denser medium, it suffers a phase change of π radians (180°)</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">In Lloyd's Mirror:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Mirror acts as <strong>denser medium</strong></li>
+                                <li>Reflected ray gets <strong>additional phase of π</strong></li>
+                                <li>Direct ray has <strong>no phase change</strong></li>
+                                <li>This creates inherent path difference</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Mathematical Representation:</h4>
+                            <div class="text-sm space-y-1">
+                                <p>Direct wave: $y_1 = a \sin(\omega t)$</p>
+                                <p>Reflected wave: $y_2 = a \sin(\omega t + \pi)$</p>
+                                <p class="font-semibold">$y_2 = -a \sin(\omega t)$</p>
+                                <p>They are <strong>completely out of phase</strong> initially</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="derivation-box">
+                    <h4 class="font-semibold text-gray-700 mb-2">Effective Path Difference</h4>
+                    <p>Due to the phase change of π upon reflection:</p>
+                    <div class="space-y-2 text-sm mt-2">
+                        <p>Actual path difference: $\Delta x = S'P - SP$</p>
+                        <p>But effective path difference: $\Delta x_{eff} = \Delta x + \frac{\lambda}{2}$</p>
+                        <p>The extra $\frac{\lambda}{2}$ comes from the π phase change</p>
+                        <p class="font-semibold">$$\Delta x_{eff} = (S'P - SP) + \frac{\lambda}{2}$$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fringe Pattern -->
+            <section id="fringe-pattern" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Fringe Pattern Analysis</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bright and Dark Fringes</h3>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Condition for Bright Fringes</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>For constructive interference:</p>
+                            <p>$$\Delta x_{eff} = n\lambda$$</p>
+                            <p>$$(S'P - SP) + \frac{\lambda}{2} = n\lambda$$</p>
+                            <p>$$S'P - SP = (n - \frac{1}{2})\lambda$$</p>
+                            <p class="font-semibold">Bright fringes when path difference = $(n - \frac{1}{2})\lambda$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Condition for Dark Fringes</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>For destructive interference:</p>
+                            <p>$$\Delta x_{eff} = (n + \frac{1}{2})\lambda$$</p>
+                            <p>$$(S'P - SP) + \frac{\lambda}{2} = (n + \frac{1}{2})\lambda$$</p>
+                            <p>$$S'P - SP = n\lambda$$</p>
+                            <p class="font-semibold">Dark fringes when path difference = $n\lambda$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experiment-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Key Observations</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Central Fringe</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>At point directly opposite to S</li>
+                                <li>Path difference = 0</li>
+                                <li>But effective path difference = $\frac{\lambda}{2}$</li>
+                                <li class="font-semibold text-red-600">Central fringe is DARK</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Fringe Width</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Fringe width, $\beta = \frac{\lambda D}{d}$</li>
+                                <li>Same as YDSE formula</li>
+                                <li>D: Distance to screen</li>
+                                <li>d: Distance between S and S'</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison with YDSE -->
+            <section id="comparison" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Lloyd's Mirror vs Young's Double Slit</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Complementary Fringe Patterns</h3>
+                    
+                    <div class="comparison-box">
+                        <h4 class="font-semibold text-green-800 mb-2">The Key Difference</h4>
+                        <p class="text-lg font-bold text-center">Lloyd's Mirror produces exactly complementary fringes to YDSE</p>
+                        <p class="text-center text-sm mt-2">Where YDSE has bright fringe, Lloyd's Mirror has dark fringe, and vice versa</p>
+                    </div>
+                    
+                    <div class="overflow-x-auto mt-4">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-3 py-2 text-left">Feature</th>
+                                    <th class="border px-3 py-2 text-left">Young's Double Slit</th>
+                                    <th class="border px-3 py-2 text-left">Lloyd's Mirror</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Central Fringe</td>
+                                    <td class="border px-3 py-2 text-green-600">Bright</td>
+                                    <td class="border px-3 py-2 text-red-600">Dark</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Condition for Bright</td>
+                                    <td class="border px-3 py-2">$\Delta x = n\lambda$</td>
+                                    <td class="border px-3 py-2">$\Delta x = (n-\frac{1}{2})\lambda$</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Condition for Dark</td>
+                                    <td class="border px-3 py-2">$\Delta x = (n+\frac{1}{2})\lambda$</td>
+                                    <td class="border px-3 py-2">$\Delta x = n\lambda$</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Phase Change</td>
+                                    <td class="border px-3 py-2">No inherent phase change</td>
+                                    <td class="border px-3 py-2">π phase change on reflection</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Fringe Width</td>
+                                    <td class="border px-3 py-2">$\beta = \frac{\lambda D}{d}$</td>
+                                    <td class="border px-3 py-2">$\beta = \frac{\lambda D}{d}$</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-pink-800 mb-2">💡 Memory Aid</h4>
+                    <p class="text-sm"><strong>"Lloyd Looks Different"</strong> - Remember that Lloyd's Mirror has different (complementary) fringes compared to YDSE due to the phase change on reflection.</p>
+                </div>
+            </section>
+
+            <!-- Mathematical Derivation -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Mathematical Treatment</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Complete Interference Conditions</h3>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Position of Bright Fringes</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>For bright fringes: $S'P - SP = (n - \frac{1}{2})\lambda$</p>
+                            <p>Using geometry: $\frac{x d}{D} = (n - \frac{1}{2})\lambda$</p>
+                            <p>$$x = \frac{(n - \frac{1}{2})\lambda D}{d}$$</p>
+                            <p class="font-semibold">Bright fringes at $x = \frac{(2n-1)\lambda D}{2d}$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Position of Dark Fringes</h4>
+                        <div class="space-y-2 text-sm">
+                            <p>For dark fringes: $S'P - SP = n\lambda$</p>
+                            <p>Using geometry: $\frac{x d}{D} = n\lambda$</p>
+                            <p>$$x = \frac{n\lambda D}{d}$$</p>
+                            <p class="font-semibold">Dark fringes at $x = \frac{n\lambda D}{d}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Practice Problems -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">🎯 JEE Practice Problems</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: In Lloyd's mirror experiment, the central fringe is observed to be dark. Why?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Think about phase change on reflection</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: The fringe width in Lloyd's mirror is 0.2 mm. If wavelength is 6000 Å and screen distance is 1m, find distance between source and its virtual image.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $\beta = \frac{\lambda D}{d}$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Compare positions of 3rd bright fringe in YDSE and Lloyd's mirror with same setup parameters.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Remember they are complementary</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">📋 Key Takeaways for JEE</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Must Remember Facts</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Central fringe is DARK</strong> in Lloyd's Mirror</li>
+                                <li>Due to <strong>π phase change</strong> on reflection from denser medium</li>
+                                <li>Fringes are <strong>complementary</strong> to YDSE</li>
+                                <li>Fringe width formula is <strong>same</strong> as YDSE</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Problem Solving Approach</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-sm">
+                                <li>Identify the phase change factor</li>
+                                <li>Add $\frac{\lambda}{2}$ to actual path difference</li>
+                                <li>Apply standard interference conditions</li>
+                                <li>Remember complementary nature with YDSE</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Summary -->
+            <section class="mb-8">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">🎓 Conceptual Mastery</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-purple-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Phase Change is Key</span>
+                                <p class="text-sm text-gray-600">The entire difference from YDSE comes from the π phase change on reflection from denser medium.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-purple-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Experimental Proof</span>
+                                <p class="text-sm text-gray-600">Lloyd's Mirror provides experimental evidence for phase change on reflection.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-purple-600 mr-2 mt-1">📐</span>
+                            <div>
+                                <span class="font-semibold">Same Mathematics</span>
+                                <p class="text-sm text-gray-600">Once you account for the extra $\frac{\lambda}{2}$, the mathematics is identical to YDSE.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Wave Optics?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through interference and diffraction phenomena</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Wave Optics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electrodynamics" class="hover:text-yellow-300">Electrodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
