@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Least Count Game: Vernier Calipers & Screw Gauge | JEE Physics Experiments | KnowJEE</title>
+    <meta name="description" content="Master Vernier Calipers and Screw Gauge for JEE Physics experiments. Learn precision measurement, error analysis, and focal length calculations with practical examples.">
+    <meta name="keywords" content="vernier calipers, screw gauge, least count, JEE physics experiments, precision measurement, error analysis, focal length calculation">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .instrument-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .instrument-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .calculation-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .error-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .component-diagram {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Experiments
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Practical Physics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">4 Detailed Experiments</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The "Least Count" Game: Vernier Calipers & Screw Gauge in Optical Experiments</h1>
+                <p class="text-xl text-gray-600 mb-4">Master precision measurement techniques for JEE Physics practicals with complete error analysis and calculations.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8-10</div>
+                            <div class="text-sm text-blue-600">Marks in JEE</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Practical Relevance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2</div>
+                            <div class="text-sm text-blue-600">Key Instruments</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">0.01mm</div>
+                            <div class="text-sm text-blue-600">Precision Level</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Precision Measurement Matters in Optics</h2>
+                <p class="mb-4">In optical experiments, small measurement errors can lead to significant inaccuracies in calculated parameters like focal length. Mastering Vernier Calipers and Screw Gauge is crucial because:</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Practical Importance</h4>
+                    <p>These instruments regularly appear in <strong>JEE Main and Advanced practical questions</strong>, carrying <strong>8-10 marks collectively</strong>. Understanding least count and error analysis can make the difference between selection and rejection.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#vernier" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Vernier Calipers</a>
+                    <a href="#screw-gauge" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Screw Gauge</a>
+                    <a href="#focal-length" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Focal Length</a>
+                    <a href="#error-analysis" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Error Analysis</a>
+                </div>
+            </div>
+
+            <!-- Vernier Calipers Section -->
+            <section id="vernier" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Vernier Calipers: The Precision Champion</h2>
+                </div>
+
+                <div class="instrument-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Understanding the Instrument</h3>
+                    
+                    <div class="component-diagram">
+                        <h4 class="font-semibold text-gray-700 mb-3">Main Components of Vernier Calipers</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Main Scale</strong><br>
+                                Fixed scale in cm/mm
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Vernier Scale</strong><br>
+                                Movable scale with divisions
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Jaws</strong><br>
+                                For external measurements
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Depth Gauge</strong><br>
+                                For depth measurements
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Least Count Calculation</h4>
+                        <p><strong>Formula:</strong> $LC = \frac{\text{1 Main Scale Division}}{\text{Number of Vernier Scale Divisions}}$</p>
+                        
+                        <div class="step-box">
+                            <p><strong>Standard Case:</strong></p>
+                            <p>1 MSD = 1 mm = 0.1 cm</p>
+                            <p>Number of VSD = 10 divisions</p>
+                            <p class="font-semibold">$$LC = \frac{1 \text{ mm}}{10} = 0.1 \text{ mm} = 0.01 \text{ cm}$$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reading Vernier Calipers: Step-by-Step</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example Reading</h4>
+                        
+                        <p><strong>Given:</strong> MSD = 1 mm, 10 VSD = 9 MSD</p>
+                        
+                        <p><strong>Step 1: Read Main Scale</strong></p>
+                        <p>Note the main scale reading just before zero of vernier scale</p>
+                        <p>Let's say: 2.3 cm = 23 mm</p>
+                        
+                        <p><strong>Step 2: Find Vernier Coincidence</strong></p>
+                        <p>Find which vernier division coincides with main scale</p>
+                        <p>Let's say: 7th division coincides</p>
+                        
+                        <p><strong>Step 3: Calculate Vernier Contribution</strong></p>
+                        <p>Vernier reading = Coincidence × LC = 7 × 0.1 mm = 0.7 mm</p>
+                        
+                        <p><strong>Step 4: Total Reading</strong></p>
+                        <p>Total = Main scale reading + Vernier reading</p>
+                        <p class="font-semibold">$$= 23 \text{ mm} + 0.7 \text{ mm} = 23.7 \text{ mm} = 2.37 \text{ cm}$$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screw Gauge Section -->
+            <section id="screw-gauge" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Screw Gauge: Micro-Level Precision</h2>
+                </div>
+
+                <div class="instrument-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Instrument Fundamentals</h3>
+                    
+                    <div class="component-diagram">
+                        <h4 class="font-semibold text-gray-700 mb-3">Screw Gauge Components</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Main Scale</strong><br>
+                                Linear scale in mm/half mm
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Circular Scale</strong><br>
+                                Rotating scale with divisions
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Ratchet</strong><br>
+                                Prevents over-tightening
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Least Count Calculation</h4>
+                        <p><strong>Formula:</strong> $LC = \frac{\text{Pitch}}{\text{Number of Circular Scale Divisions}}$</p>
+                        
+                        <div class="step-box">
+                            <p><strong>Standard Case:</strong></p>
+                            <p>Pitch = 1 mm (distance moved per revolution)</p>
+                            <p>Number of CSD = 100 divisions</p>
+                            <p class="font-semibold">$$LC = \frac{1 \text{ mm}}{100} = 0.01 \text{ mm} = 0.001 \text{ cm}$$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reading Screw Gauge: Complete Process</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example: Measuring Wire Diameter</h4>
+                        
+                        <p><strong>Step 1: Find Zero Error</strong></p>
+                        <p>Close jaws gently using ratchet</p>
+                        <p>If zero of circular scale coincides with reference line: Zero error = 0</p>
+                        <p>If not, note the division and apply correction</p>
+                        
+                        <p><strong>Step 2: Take Main Scale Reading</strong></p>
+                        <p>Main scale reading just visible = 2.5 mm</p>
+                        
+                        <p><strong>Step 3: Take Circular Scale Reading</strong></p>
+                        <p>Division coinciding with reference line = 45</p>
+                        
+                        <p><strong>Step 4: Calculate Total Reading</strong></p>
+                        <p>Total = MSR + (CSR × LC)</p>
+                        <p class="font-semibold">$$= 2.5 \text{ mm} + (45 × 0.01 \text{ mm}) = 2.5 + 0.45 = 2.95 \text{ mm}$$</p>
+                        
+                        <p><strong>Step 5: Apply Zero Error Correction</strong></p>
+                        <p>If zero error was +0.03 mm, correct reading = 2.95 - 0.03 = 2.92 mm</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Focal Length Experiments Section -->
+            <section id="focal-length" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Focal Length Calculations with Precision</h2>
+                </div>
+
+                <div class="instrument-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lens Formula Application</h3>
+                    
+                    <div class="calculation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Lens Maker's Formula</h4>
+                        <p>$$\frac{1}{f} = (n-1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)$$</p>
+                        <p class="text-sm mt-2">Where $R_1$ and $R_2$ are radii of curvature measured using spherometer</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Experiment: Finding Focal Length of Convex Lens</h4>
+                        
+                        <p><strong>Apparatus:</strong> Optical bench, convex lens, object pin, image pin, Vernier calipers</p>
+                        
+                        <p><strong>Step 1: Measure Object Distance (u)</strong></p>
+                        <p>Using Vernier calipers: $u = 25.4 \text{ cm} \pm 0.01 \text{ cm}$</p>
+                        
+                        <p><strong>Step 2: Measure Image Distance (v)</strong></p>
+                        <p>Using Vernier calipers: $v = 38.2 \text{ cm} \pm 0.01 \text{ cm}$</p>
+                        
+                        <p><strong>Step 3: Apply Lens Formula</strong></p>
+                        <p>$$\frac{1}{f} = \frac{1}{v} + \frac{1}{u} = \frac{1}{38.2} + \frac{1}{25.4}$$</p>
+                        <p>$$\frac{1}{f} = 0.02618 + 0.03937 = 0.06555$$</p>
+                        <p class="font-semibold">$$f = 15.25 \text{ cm}$$</p>
+                    </div>
+                </div>
+
+                <div class="error-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Spherometer: Measuring Radius of Curvature</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Radius Calculation Formula</h4>
+                        <p>$$R = \frac{l^2}{6h} + \frac{h}{2}$$</p>
+                        <p>Where:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li>$l$ = distance between legs (measured with Vernier)</li>
+                            <li>$h$ = sagitta (measured with Screw Gauge)</li>
+                        </ul>
+                        
+                        <p class="mt-3"><strong>Example Calculation:</strong></p>
+                        <p>$l = 4.52 \text{ cm} \pm 0.01 \text{ cm}$ (Vernier measurement)</p>
+                        <p>$h = 0.245 \text{ cm} \pm 0.001 \text{ cm}$ (Screw gauge measurement)</p>
+                        <p>$$R = \frac{(4.52)^2}{6 × 0.245} + \frac{0.245}{2}$$</p>
+                        <p>$$R = \frac{20.4304}{1.47} + 0.1225 = 13.90 + 0.12 = 14.02 \text{ cm}$$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Analysis Section -->
+            <section id="error-analysis" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Complete Error Analysis</h2>
+                </div>
+
+                <div class="instrument-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Propagation of Errors</h3>
+                    
+                    <div class="calculation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Basic Error Formulas</h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p><strong>Addition/Subtraction:</strong></p>
+                                <p>If $Z = A + B$ or $Z = A - B$</p>
+                                <p>$$\Delta Z = \Delta A + \Delta B$$</p>
+                            </div>
+                            <div>
+                                <p><strong>Multiplication/Division:</strong></p>
+                                <p>If $Z = AB$ or $Z = A/B$</p>
+                                <p>$$\frac{\Delta Z}{Z} = \frac{\Delta A}{A} + \frac{\Delta B}{B}$$</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Error in Focal Length Calculation</h4>
+                        
+                        <p><strong>From lens formula:</strong> $\frac{1}{f} = \frac{1}{u} + \frac{1}{v}$</p>
+                        
+                        <p><strong>Error propagation:</strong></p>
+                        <p>$$\frac{\Delta f}{f^2} = \frac{\Delta u}{u^2} + \frac{\Delta v}{v^2}$$</p>
+                        
+                        <p><strong>Example:</strong> $u = 25.4 \pm 0.1$ cm, $v = 38.2 \pm 0.1$ cm, $f = 15.25$ cm</p>
+                        
+                        <p>$$\frac{\Delta f}{(15.25)^2} = \frac{0.1}{(25.4)^2} + \frac{0.1}{(38.2)^2}$$</p>
+                        <p>$$\frac{\Delta f}{232.56} = \frac{0.1}{645.16} + \frac{0.1}{1459.24}$$</p>
+                        <p>$$\frac{\Delta f}{232.56} = 0.000155 + 0.0000685 = 0.0002235$$</p>
+                        <p class="font-semibold">$$\Delta f = 232.56 × 0.0002235 = 0.052 \text{ cm}$$</p>
+                        
+                        <p class="mt-2"><strong>Final Result:</strong> $f = 15.25 \pm 0.05$ cm</p>
+                    </div>
+                </div>
+
+                <div class="error-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Percentage Error and Significant Figures</h3>
+                    
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Calculating Percentage Error</h4>
+                        
+                        <p><strong>Formula:</strong> Percentage error = $\frac{\text{Absolute Error}}{\text{Measured Value}} × 100\%$</p>
+                        
+                        <p><strong>Example:</strong> For focal length measurement:</p>
+                        <p>Percentage error = $\frac{0.05}{15.25} × 100\% = 0.33\%$</p>
+                        
+                        <p class="mt-3"><strong>Significant Figures Rules:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li>Least count determines significant figures</li>
+                            <li>Vernier calipers: 3 significant figures (0.01 cm precision)</li>
+                            <li>Screw gauge: 4 significant figures (0.001 cm precision)</li>
+                            <li>Final answer should match the least precise measurement</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: A Vernier calipers has 20 divisions on vernier scale matching 19 mm of main scale. What is its least count?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: LC = 1 MSD / Number of VSD</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: Screw gauge has pitch 0.5 mm and 50 divisions on circular scale. Find its least count.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: LC = Pitch / Number of CSD</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: In lens experiment, u = 30.2 ± 0.1 cm, v = 45.3 ± 0.1 cm. Find f with error.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use lens formula and error propagation</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: Spherometer gives l = 3.85 cm, h = 0.156 cm. Find radius of curvature.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use R = l²/6h + h/2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">JEE Exam Tips</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Always mention units in final answers</li>
+                            <li>Show error calculations step by step</li>
+                            <li>Round off to appropriate significant figures</li>
+                            <li>Draw neat diagrams for instrument readings</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Guide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Vernier Calipers</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>LC:</strong> 1 MSD / Number of VSD</li>
+                                <li><strong>Standard:</strong> 0.1 mm or 0.01 cm</li>
+                                <li><strong>Reading:</strong> MSR + (VSR × LC)</li>
+                                <li><strong>Zero Error:</strong> Apply correction</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Screw Gauge</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>LC:</strong> Pitch / Number of CSD</li>
+                                <li><strong>Standard:</strong> 0.01 mm or 0.001 cm</li>
+                                <li><strong>Reading:</strong> MSR + (CSR × LC)</li>
+                                <li><strong>Zero Error:</strong> Crucial for accuracy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Common Formulas</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Lens Formula:</strong><br>
+                                $\frac{1}{f} = \frac{1}{u} + \frac{1}{v}$
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Radius of Curvature:</strong><br>
+                                $R = \frac{l^2}{6h} + \frac{h}{2}$
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Error Addition:</strong><br>
+                                $\Delta Z = \Delta A + \Delta B$
+                            </div>
+                            <div class="bg-white p-2 rounded border">
+                                <strong>Error Multiplication:</strong><br>
+                                $\frac{\Delta Z}{Z} = \frac{\Delta A}{A} + \frac{\Delta B}{B}$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 JEE Practical Strategy</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">⚡</span>
+                            <div>
+                                <span class="font-semibold">Time Management</span>
+                                <p class="text-sm text-gray-600">Allocate 12-15 minutes for measurement-based questions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">🔍</span>
+                            <div>
+                                <span class="font-semibold">Reading Accuracy</span>
+                                <p class="text-sm text-gray-600">Always take multiple readings and calculate average</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-semibold">Error Calculation</span>
+                                <p class="text-sm text-gray-600">Never skip error analysis - it carries separate marks</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-2 mt-1">📝</span>
+                            <div>
+                                <span class="font-semibold">Presentation</span>
+                                <p class="text-sm text-gray-600">Draw neat diagrams and tabulate readings properly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mastered Precision Measurements?</h3>
+                    <p class="mb-4 opacity-90">Continue your physics practical journey with more experimental techniques</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Experiments
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Physics Complete Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

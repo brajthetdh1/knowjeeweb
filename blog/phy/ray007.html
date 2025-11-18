@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Microscope: Magnification & Ray Diagram | JEE Physics | KnowJEE</title>
+    <meta name="description" content="Master compound microscope concepts for JEE Physics. Detailed ray diagrams, magnification derivation, and lens roles explained with step-by-step solutions.">
+    <meta name="keywords"content="compound microscope, JEE physics optics, microscope magnification, ray diagram, objective lens, eyepiece lens, JEE advanced physics">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .concept-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .concept-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .derivation-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .diagram-box {
+            background: #fef7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .practice-box {
+            background: #fce7f3;
+            border: 1px solid #f9a8d4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .microscope-diagram {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Ray Optics</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 18 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Detailed Analysis</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How a Compound Microscope Achieves High Magnification: A Deep Dive</h1>
+                <p class="text-xl text-gray-600 mb-4">Understanding the optical principles behind microscope magnification with detailed ray diagrams and mathematical derivations.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2</div>
+                            <div class="text-sm text-blue-600">Lens System</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">1000×</div>
+                            <div class="text-sm text-blue-600">Max Magnification</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">3-5</div>
+                            <div class="text-sm text-blue-600">JEE Marks</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">5min</div>
+                            <div class="text-sm text-blue-600">Solve Time</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Magic of Two Lenses Working Together</h2>
+                <p class="mb-4">A compound microscope achieves remarkable magnification by using <strong>two convex lenses in sequence</strong>: the objective lens creates a real, enlarged image, and the eyepiece acts as a simple microscope to further magnify this image.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Importance</h4>
+                    <p>Compound microscope problems appear frequently in JEE Mains and Advanced, testing your understanding of <strong>lens combinations, magnification, and ray optics principles</strong>. Mastering this topic can secure 3-5 marks.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-blue-900 mb-3">🔭 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#basic-structure" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Basic Structure</a>
+                    <a href="#ray-diagram" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Ray Diagram</a>
+                    <a href="#magnification" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Magnification</a>
+                    <a href="#practice" class="text-blue-700 hover:text-blue-900 text-center bg-white py-2 px-3 rounded border">Practice</a>
+                </div>
+            </div>
+
+            <!-- Basic Structure Section -->
+            <section id="basic-structure" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Basic Structure of a Compound Microscope</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Two-Lens System</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Objective Lens</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Focal length:</strong> Short ($f_o$ = few mm)</li>
+                                <li><strong>Position:</strong> Close to the object</li>
+                                <li><strong>Function:</strong> Creates real, inverted, enlarged image</li>
+                                <li><strong>Aperture:</strong> Small to reduce aberrations</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Eyepiece Lens</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Focal length:</strong> Longer ($f_e$ = few cm)</li>
+                                <li><strong>Position:</strong> Near the eye</li>
+                                <li><strong>Function:</strong> Acts as simple microscope</li>
+                                <li><strong>Aperture:</strong> Larger for better viewing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-white rounded border">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Parameters</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                            <div class="text-center">
+                                <div class="font-semibold">$f_o$</div>
+                                <div class="text-gray-600">Objective focal length</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">$f_e$</div>
+                                <div class="text-gray-600">Eyepiece focal length</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">$L$</div>
+                                <div class="text-gray-600">Tube length</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">$D$</div>
+                                <div class="text-gray-600">Least distance of distinct vision</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">💡 Memory Aid</h4>
+                    <p><strong>"Objective - Real Image, Eyepiece - Virtual Image"</strong></p>
+                    <p class="text-sm mt-1">The objective forms a real image that serves as the object for the eyepiece, which then forms a virtual image at infinity or at the near point.</p>
+                </div>
+            </section>
+
+            <!-- Ray Diagram Section -->
+            <section id="ray-diagram" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. Detailed Ray Diagram and Image Formation</h2>
+                </div>
+
+                <div class="diagram-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Step-by-Step Ray Tracing</h3>
+                    
+                    <div class="microscope-diagram">
+                        <!-- Simplified ASCII-style representation -->
+                        <div class="text-center text-sm font-mono bg-gray-100 p-4 rounded">
+                            <p>OBJECTIVE LENS --- REAL IMAGE --- EYEPIECE LENS --- VIRTUAL IMAGE</p>
+                            <p class="mt-2">AB (object) → A'B' (real, inverted) → A"B" (virtual, enlarged)</p>
+                        </div>
+                        <p class="text-center text-gray-600 text-sm mt-2">Visual ray diagram showing two-stage magnification process</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 1: Objective Lens Action</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Object AB placed just beyond focus of objective</li>
+                            <li>Rays from A:
+                                <ul class="list-circle list-inside ml-4">
+                                    <li>Ray parallel to principal axis → passes through focus</li>
+                                    <li>Ray through optical center → undeviated</li>
+                                </ul>
+                            </li>
+                            <li>Forms real, inverted, enlarged image A'B'</li>
+                            <li>This image lies within focus of eyepiece</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Step 2: Eyepiece Lens Action</h4>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Image A'B' acts as object for eyepiece</li>
+                            <li>Positioned between eyepiece and its focus</li>
+                            <li>Eyepiece acts as simple microscope</li>
+                            <li>Forms virtual, erect, highly enlarged final image A"B"</li>
+                            <li>Final image at infinity or at least distance of distinct vision</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Image Characteristics</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-3 py-2">Stage</th>
+                                    <th class="border px-3 py-2">Nature</th>
+                                    <th class="border px-3 py-2">Size</th>
+                                    <th class="border px-3 py-2">Position</th>
+                                    <th class="border px-3 py-2">Orientation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">After Objective</td>
+                                    <td class="border px-3 py-2">Real</td>
+                                    <td class="border px-3 py-2">Enlarged</td>
+                                    <td class="border px-3 py-2">Within $f_e$</td>
+                                    <td class="border px-3 py-2">Inverted</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Final Image</td>
+                                    <td class="border px-3 py-2">Virtual</td>
+                                    <td class="border px-3 py-2">Highly Enlarged</td>
+                                    <td class="border px-3 py-2">At infinity/D</td>
+                                    <td class="border px-3 py-2">Inverted*</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">*Note: Final image is inverted relative to original object</p>
+                </div>
+            </section>
+
+            <!-- Magnification Derivation Section -->
+            <section id="magnification" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. Magnifying Power Derivation</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Total Magnification = Objective × Eyepiece</h3>
+                    
+                    <div class="derivation-box">
+                        <h4 class="font-semibold text-green-800 mb-2">Case 1: Final Image at Infinity (Normal Adjustment)</h4>
+                        
+                        <p><strong>Step 1: Objective Lens Magnification</strong></p>
+                        <p>$$m_o = \frac{v_o}{u_o} \approx \frac{L}{f_o}$$</p>
+                        <p class="text-sm text-gray-600">Since $u_o \approx f_o$ and $v_o \approx L$ (tube length)</p>
+                        
+                        <p class="mt-3"><strong>Step 2: Eyepiece Magnification</strong></p>
+                        <p>$$m_e = \frac{D}{f_e}$$</p>
+                        <p class="text-sm text-gray-600">Standard magnification for simple microscope with image at infinity</p>
+                        
+                        <p class="mt-3"><strong>Step 3: Total Magnifying Power</strong></p>
+                        <p>$$M = m_o × m_e = \frac{L}{f_o} × \frac{D}{f_e}$$</p>
+                        <p class="font-semibold mt-2">$$M = \frac{LD}{f_o f_e}$$</p>
+                    </div>
+
+                    <div class="derivation-box mt-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Case 2: Final Image at Least Distance of Distinct Vision (D)</h4>
+                        
+                        <p><strong>Step 1: Objective Lens Magnification</strong></p>
+                        <p>$$m_o = \frac{v_o}{u_o} \approx \frac{L}{f_o}$$</p>
+                        
+                        <p class="mt-3"><strong>Step 2: Eyepiece Magnification</strong></p>
+                        <p>$$m_e = 1 + \frac{D}{f_e}$$</p>
+                        <p class="text-sm text-gray-600">Maximum magnification for simple microscope</p>
+                        
+                        <p class="mt-3"><strong>Step 3: Total Magnifying Power</strong></p>
+                        <p>$$M = m_o × m_e = \frac{L}{f_o} × \left(1 + \frac{D}{f_e}\right)$$</p>
+                        <p class="font-semibold mt-2">$$M = \frac{L}{f_o} \left(1 + \frac{D}{f_e}\right)$$</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 Key Points to Remember</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Normal adjustment:</strong> Image at infinity, eye relaxed → $M = \frac{LD}{f_o f_e}$</li>
+                        <li><strong>Maximum magnification:</strong> Image at D, eye strained → $M = \frac{L}{f_o}(1 + \frac{D}{f_e})$</li>
+                        <li><strong>Tube length (L):</strong> Distance between second focus of objective and first focus of eyepiece</li>
+                        <li><strong>D = 25 cm</strong> for standard calculations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Working Explanation Section -->
+            <section class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Why Two Lenses? The Optical Advantage</h2>
+                </div>
+
+                <div class="concept-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Power of Cascaded Magnification</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Single Lens Limitations</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Maximum practical magnification ~20×</li>
+                                <li>Short focal length required</li>
+                                <li>Spherical and chromatic aberrations</li>
+                                <li>Small field of view</li>
+                                <li>Eye needs to be very close to lens</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">Two-Lens Advantages</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>Magnification = $m_o × m_e$ (can reach 1000×)</li>
+                                <li>Each lens optimized for specific function</li>
+                                <li>Better aberration correction</li>
+                                <li>Comfortable viewing position</li>
+                                <li>Larger working distance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-yellow-50 rounded border border-yellow-200">
+                        <h4 class="font-semibold text-yellow-800 mb-2">🔍 Resolution vs Magnification</h4>
+                        <p class="text-sm">Remember: High magnification alone doesn't guarantee good resolution. Resolution depends on wavelength of light and numerical aperture. Empty magnification occurs when image is enlarged but no new details are visible.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Problems Section -->
+            <section id="practice" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">5. JEE Practice Problems</h2>
+                </div>
+
+                <div class="practice-box">
+                    <h3 class="text-xl font-bold text-pink-900 mb-4">Test Your Understanding</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 1: A compound microscope has objective and eyepiece of focal lengths 1 cm and 5 cm respectively. If tube length is 20 cm and final image is at infinity, find magnifying power. (D = 25 cm)</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $M = \frac{LD}{f_o f_e}$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 2: In above microscope, if final image is formed at least distance of distinct vision, calculate new magnifying power.</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Use $M = \frac{L}{f_o}(1 + \frac{D}{f_e})$</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 3: Why must the image formed by objective lie within focal length of eyepiece?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Think about eyepiece functioning as simple microscope</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded border">
+                            <p class="font-medium mb-2">Problem 4: If focal length of objective is reduced while keeping other parameters same, how does magnification change?</p>
+                            <div class="text-sm text-gray-600 mt-1">Hint: Analyze the magnification formula</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-green-50 rounded border border-green-200">
+                        <h4 class="font-semibold text-green-800 mb-2">Solutions Approach</h4>
+                        <p class="text-sm">For numerical problems: Always identify the case (image at infinity or at D) first, then apply appropriate formula. For theoretical questions: Focus on the ray diagram and image formation process.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Reference Formulas</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Magnifying Power</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>
+                                    <strong>Image at infinity:</strong>
+                                    <div class="bg-white p-2 rounded border mt-1">$$M = \frac{LD}{f_o f_e}$$</div>
+                                </li>
+                                <li>
+                                    <strong>Image at D:</strong>
+                                    <div class="bg-white p-2 rounded border mt-1">$$M = \frac{L}{f_o}\left(1 + \frac{D}{f_e}\right)$$</div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">Key Parameters</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>$f_o$: Objective focal length (small)</li>
+                                <li>$f_e$: Eyepiece focal length (larger)</li>
+                                <li>$L$: Tube length (15-20 cm typically)</li>
+                                <li>$D$: Least distance (25 cm)</li>
+                                <li>$m_o = \frac{L}{f_o}$: Objective magnification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Mistakes -->
+            <section class="mb-8">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Common JEE Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Confusing cases</span>
+                                <p class="text-sm text-gray-600">Using wrong formula for image at infinity vs at D</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Sign conventions</span>
+                                <p class="text-sm text-gray-600">Forgetting that focal lengths are positive for convex lenses</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Tube length confusion</span>
+                                <p class="text-sm text-gray-600">Thinking L is distance between lenses rather than specific optical distance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-red-600 mr-2 mt-1">❌</span>
+                            <div>
+                                <span class="font-semibold">Nature of images</span>
+                                <p class="text-sm text-gray-600">Mixing up real/virtual and erect/inverted characteristics at different stages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master More Optical Instruments?</h3>
+                    <p class="mb-4 opacity-90">Continue your journey through ray optics with telescopes, simple microscopes, and more</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Problems
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#optics" class="hover:text-yellow-300">Optics</a></li>
+                        <li><a href="#electromagnetism" class="hover:text-yellow-300">Electromagnetism</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation. Founded by Braj Bhushan Kumar (IIT Roorkee)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

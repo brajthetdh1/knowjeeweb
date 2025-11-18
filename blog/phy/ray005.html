@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Mains vs Advanced: Ray Optics Comparison | Physics Strategy | KnowJEE</title>
+    <meta name="description" content="Understand the key differences between JEE Main and Advanced Ray Optics questions. Master the right preparation strategy for each exam pattern.">
+    <meta name="keywords" content="JEE Main vs Advanced Ray Optics, JEE physics strategy, ray optics questions, JEE preparation, optics comparison">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    
+    <style>
+        .comparison-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .comparison-box:hover {
+            background: #e0f2fe;
+            border-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+        .mains-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .advanced-box {
+            background: #fef7ed;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .strategy-box {
+            background: #faf5ff;
+            border: 2px solid #e9d5ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .example-box {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+        }
+        .pattern-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Back to Cards Link -->
+        <div class="mb-6">
+            <a href="../../blog.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Physics Topics
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <article>
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Strategy Guide</span>
+                    <span class="text-gray-500 text-sm ml-3">Reading Time: 12 min</span>
+                    <span class="text-gray-500 text-sm ml-3">Detailed Comparison</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">JEE Mains vs. Advanced: Different Flavors of Ray Optics Questions</h1>
+                <p class="text-xl text-gray-600 mb-4">Master the art of tackling Ray Optics differently for JEE Main (formula-based) and Advanced (concept-heavy) exams.</p>
+                
+                <!-- Quick Stats -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">2-3</div>
+                            <div class="text-sm text-blue-600">Questions per Paper</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">8-12</div>
+                            <div class="text-sm text-blue-600">Marks Weightage</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">85%</div>
+                            <div class="text-sm text-blue-600">Different Approach</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-700">100%</div>
+                            <div class="text-sm text-blue-600">Scoring Potential</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Fundamental Difference</h2>
+                <p class="mb-4">Ray Optics appears in <strong>both JEE Main and Advanced</strong>, but the nature of questions is dramatically different. Understanding this distinction is crucial for efficient preparation.</p>
+                
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 Key Insight</h4>
+                    <p>JEE Main tests <strong>formula application and quick calculations</strong>, while JEE Advanced tests <strong>conceptual depth, multi-concept integration, and problem-solving creativity</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-8">
+                <h3 class="font-semibold text-purple-900 mb-3">🚀 Quick Navigation</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                    <a href="#pattern-analysis" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Pattern Analysis</a>
+                    <a href="#mains-style" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">JEE Main Style</a>
+                    <a href="#advanced-style" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">JEE Advanced Style</a>
+                    <a href="#strategy" class="text-purple-700 hover:text-purple-900 text-center bg-white py-2 px-3 rounded border">Preparation Strategy</a>
+                </div>
+            </div>
+
+            <!-- Pattern Analysis -->
+            <section id="pattern-analysis" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">1. Pattern Analysis: Last 5 Years Trend</h2>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Question Distribution Analysis</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="pattern-card">
+                            <h4 class="font-semibold text-green-600 mb-3">JEE Main Pattern</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Direct formula applications</strong> (65%)</li>
+                                <li><strong>Numerical value types</strong> (25%)</li>
+                                <li><strong>Conceptual MCQs</strong> (10%)</li>
+                                <li>Average solving time: <strong>2-3 minutes</strong></li>
+                                <li>Focus: <strong>Speed and accuracy</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <h4 class="font-semibold text-orange-600 mb-3">JEE Advanced Pattern</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Multi-concept integration</strong> (40%)</li>
+                                <li><strong>Paragraph-based questions</strong> (30%)</li>
+                                <li><strong>Mathematical complexity</strong> (20%)</li>
+                                <li><strong>Experimental scenarios</strong> (10%)</li>
+                                <li>Average solving time: <strong>5-8 minutes</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-purple-900 mb-3">Topic-wise Weightage Analysis</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-3 py-2 text-left">Topic</th>
+                                    <th class="border px-3 py-2 text-center">JEE Main Frequency</th>
+                                    <th class="border px-3 py-2 text-center">JEE Advanced Frequency</th>
+                                    <th class="border px-3 py-2 text-center">Key Difference</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Mirror Formula</td>
+                                    <td class="border px-3 py-2 text-center">High</td>
+                                    <td class="border px-3 py-2 text-center">Medium</td>
+                                    <td class="border px-3 py-2 text-sm">Main: Direct substitution<br>Advanced: With constraints</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Lens Formula</td>
+                                    <td class="border px-3 py-2 text-center">Very High</td>
+                                    <td class="border px-3 py-2 text-center">High</td>
+                                    <td class="border px-3 py-2 text-sm">Main: Single lens<br>Advanced: Combination problems</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Prism</td>
+                                    <td class="border px-3 py-2 text-center">Medium</td>
+                                    <td class="border px-3 py-2 text-center">Very High</td>
+                                    <td class="border px-3 py-2 text-sm">Main: Angle calculations<br>Advanced: Minimum deviation complexities</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Optical Instruments</td>
+                                    <td class="border px-3 py-2 text-center">Low</td>
+                                    <td class="border px-3 py-2 text-center">Medium</td>
+                                    <td class="border px-3 py-2 text-sm">Main: Magnification formula<br>Advanced: Design modifications</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JEE Main Style -->
+            <section id="mains-style" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">2. JEE Main: Formula-Based Approach</h2>
+                </div>
+
+                <div class="mains-box">
+                    <h3 class="text-xl font-bold text-green-800 mb-3">Typical JEE Main Question Pattern</h3>
+                    <p class="mb-4">JEE Main Ray Optics questions typically test your ability to <strong>quickly recall and apply standard formulas</strong> with minimal conceptual depth.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example 1: Direct Formula Application (JEE Main 2023)</h4>
+                        <p class="mb-3">A convex lens of focal length 20 cm is placed in contact with a concave lens of focal length 30 cm. What is the power of the combination?</p>
+                        
+                        <p><strong>Solution Approach:</strong></p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Step 1:</strong> Recall power formula: $P = \frac{1}{f}$ (in meters)</p>
+                            <p><strong>Step 2:</strong> Convert to power: $P_1 = \frac{1}{0.2} = 5D$, $P_2 = \frac{1}{-0.3} = -3.33D$</p>
+                            <p><strong>Step 3:</strong> Combined power: $P = P_1 + P_2 = 5 - 3.33 = 1.67D$</p>
+                        </div>
+                        <p class="mt-2 font-semibold">Time required: 45-60 seconds</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example 2: Numerical Value Type (JEE Main 2022)</h4>
+                        <p class="mb-3">A concave mirror of focal length 15 cm forms an image twice the size of the object. If the object is real, find the object distance (in cm).</p>
+                        
+                        <p><strong>Solution Approach:</strong></p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Step 1:</strong> Mirror formula: $\frac{1}{f} = \frac{1}{u} + \frac{1}{v}$</p>
+                            <p><strong>Step 2:</strong> Magnification: $m = -\frac{v}{u} = -2$ (real, inverted image)</p>
+                            <p><strong>Step 3:</strong> Solve: $v = 2u$, $\frac{1}{-15} = \frac{1}{u} + \frac{1}{2u} = \frac{3}{2u}$</p>
+                            <p><strong>Step 4:</strong> $u = -\frac{45}{2} = -22.5$ cm (object distance = 22.5 cm)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Main Preparation Strategy</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li><strong>Memorize all standard formulas</strong> with sign conventions</li>
+                        <li>Practice <strong>quick calculations</strong> and unit conversions</li>
+                        <li>Focus on <strong>high-frequency topics</strong>: mirrors, lenses, refraction</li>
+                        <li>Learn <strong>shortcut methods</strong> for common problems</li>
+                        <li>Time yourself: <strong>2-3 minutes per question max</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- JEE Advanced Style -->
+            <section id="advanced-style" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">3. JEE Advanced: Conceptual Depth</h2>
+                </div>
+
+                <div class="advanced-box">
+                    <h3 class="text-xl font-bold text-orange-800 mb-3">Advanced-Level Thinking Required</h3>
+                    <p class="mb-4">JEE Advanced Ray Optics questions demand <strong>deep conceptual understanding, multi-step reasoning, and often integration with other physics concepts</strong>.</p>
+                    
+                    <div class="example-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example 1: Multi-Concept Integration (JEE Advanced 2022)</h4>
+                        <p class="mb-3">A light ray enters a glass prism (μ = 1.5) of refracting angle 60° at grazing incidence. The ray undergoes multiple internal reflections. Find the minimum number of reflections after which the ray will emerge from the prism.</p>
+                        
+                        <p><strong>Solution Approach:</strong></p>
+                        <div class="space-y-2 text-sm mt-2">
+                            <p><strong>Step 1:</strong> Analyze critical angle: $\theta_c = \sin^{-1}(\frac{1}{1.5}) = 41.8°$</p>
+                            <p><strong>Step 2:</strong> At each reflection, angle changes by 60° (prism geometry)</p>
+                            <p><strong>Step 3:</strong> Track ray path through successive reflections</p>
+                            <p><strong>Step 4:</strong> Determine when incident angle < critical angle for emergence</p>
+                            <p><strong>Step 5:</strong> Mathematical pattern recognition required</p>
+                        </div>
+                        <p class="mt-2 font-semibold">Time required: 6-8 minutes</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4 class="font-semibold text-gray-700 mb-2">Example 2: Experimental Scenario (JEE Advanced 2021)</h4>
+                        <p class="mb-3">A compound microscope has objective and eyepiece of focal lengths 2 cm and 5 cm respectively. The tube length is 20 cm. If the final image is formed at infinity and the object is 2.2 cm from the objective, calculate the angular magnification. Also discuss how changing the tube length affects the resolution.</p>
+                        
+                        <p><strong>Key Challenges:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-sm mt-2">
+                            <li>Multiple formulas application in sequence</li>
+                            <li>Understanding angular vs linear magnification</li>
+                            <li>Integration with wave optics concept (resolution)</li>
+                            <li>Conceptual explanation required</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 class="font-semibold text-yellow-800 mb-2">🎯 JEE Advanced Preparation Strategy</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Focus on <strong>derivations and conceptual understanding</strong></li>
+                        <li>Practice <strong>multi-step problems</strong> with 3+ concepts</li>
+                        <li>Learn <strong>ray diagram drawing</strong> and analysis</li>
+                        <li>Study <strong>experimental setups and modifications</strong></li>
+                        <li>Integrate with <strong>wave optics and modern physics</strong></li>
+                        <li>Develop <strong>mathematical modeling skills</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Preparation Strategy -->
+            <section id="strategy" class="mb-8">
+                <div class="section-header">
+                    <h2 class="text-2xl font-bold">4. Smart Preparation Strategy</h2>
+                </div>
+
+                <div class="strategy-box">
+                    <h3 class="text-xl font-bold text-purple-900 mb-4">Dual Preparation Approach</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-3">For JEE Main Focus</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Formula mastery:</strong> Create flashcards for all ray optics formulas</li>
+                                <li><strong>Speed practice:</strong> Solve 20-30 questions with 2-minute timer</li>
+                                <li><strong>Previous years:</strong> Focus on 2019-2024 JEE Main papers</li>
+                                <li><strong>High-yield topics:</strong> Mirror formula, lens combinations, refraction at plane surfaces</li>
+                                <li><strong>Avoid:</strong> Spending too much time on complex derivations</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-orange-800 mb-3">For JEE Advanced Focus</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Conceptual depth:</strong> Understand why formulas work</li>
+                                <li><strong>Problem solving:</strong> Practice IIT-JEE archives (1990-2024)</li>
+                                <li><strong>Integration:</strong> Combine ray optics with calculus and geometry</li>
+                                <li><strong>Critical topics:</strong> Prisms, optical instruments, lens design</li>
+                                <li><strong>Time management:</strong> Learn when to skip ultra-complex problems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-box">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Study Plan Comparison</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 text-sm">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border px-3 py-2 text-left">Topic</th>
+                                    <th class="border px-3 py-2 text-center">JEE Main Priority</th>
+                                    <th class="border px-3 py-2 text-center">JEE Advanced Priority</th>
+                                    <th class="border px-3 py-2 text-center">Recommended Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Reflection at Plane Surface</td>
+                                    <td class="border px-3 py-2 text-center">Medium</td>
+                                    <td class="border px-3 py-2 text-center">Low</td>
+                                    <td class="border px-3 py-2 text-center">2-3 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Spherical Mirrors</td>
+                                    <td class="border px-3 py-2 text-center">Very High</td>
+                                    <td class="border px-3 py-2 text-center">High</td>
+                                    <td class="border px-3 py-2 text-center">4-5 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Refraction at Plane Surface</td>
+                                    <td class="border px-3 py-2 text-center">High</td>
+                                    <td class="border px-3 py-2 text-center">Medium</td>
+                                    <td class="border px-3 py-2 text-center">3-4 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Prisms</td>
+                                    <td class="border px-3 py-2 text-center">Medium</td>
+                                    <td class="border px-3 py-2 text-center">Very High</td>
+                                    <td class="border px-3 py-2 text-center">5-6 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-3 py-2 font-semibold">Optical Instruments</td>
+                                    <td class="border px-3 py-2 text-center">Low</td>
+                                    <td class="border px-3 py-2 text-center">High</td>
+                                    <td class="border px-3 py-2 text-center">4-5 hours</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Revision -->
+            <section class="mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-900 mb-4">📋 Quick Revision Checklist</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">JEE Main Must-Do</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>All sign conventions for mirrors and lenses</li>
+                                <li>Lens maker's formula applications</li>
+                                <li>Combination of lenses/mirrors</li>
+                                <li>Refraction through glass slab</li>
+                                <li>Speed calculation in different media</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-green-800 mb-2">JEE Advanced Must-Do</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Prism derivation and minimum deviation</li>
+                                <li>Microscope and telescope design problems</li>
+                                <li>Compound optical systems</li>
+                                <li>Ray optics with calculus applications</li>
+                                <li>Experimental setup analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Tips -->
+            <section class="mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎯 Exam Day Strategy</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For JEE Main</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>First pass:</strong> Identify direct formula questions</li>
+                                <li><strong>Time allocation:</strong> Max 2.5 minutes per ray optics question</li>
+                                <li><strong>Verification:</strong> Quick check of sign conventions</li>
+                                <li><strong>Skip strategy:</strong> If not solved in 2 minutes, mark and move</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">For JEE Advanced</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>First pass:</strong> Read all ray optics questions thoroughly</li>
+                                <li><strong>Time allocation:</strong> 5-7 minutes for moderate complexity</li>
+                                <li><strong>Diagram:</strong> Always draw ray diagrams for complex problems</li>
+                                <li><strong>Partial credit:</strong> Show conceptual approach even if stuck</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="mb-8 text-center">
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Ready to Master Ray Optics for Both Exams?</h3>
+                    <p class="mb-4 opacity-90">Access our specialized practice sets for JEE Main and Advanced Ray Optics</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../../blog.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            More Physics Topics
+                        </a>
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                            Practice Sets
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-900 text-yellow-100 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JEE Physics Topics</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mechanics" class="hover:text-yellow-300">Mechanics</a></li>
+                        <li><a href="#electrodynamics" class="hover:text-yellow-300">Electrodynamics</a></li>
+                        <li><a href="#modern-physics" class="hover:text-yellow-300">Modern Physics</a></li>
+                        <li><a href="#thermodynamics" class="hover:text-yellow-300">Thermodynamics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="math.html" class="hover:text-yellow-300">JEE Mathematics</a></li>
+                        <li><a href="chem.html" class="hover:text-yellow-300">JEE Chemistry</a></li>
+                        <li><a href="quiz.html" class="hover:text-yellow-300">Mock Tests</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.youtube.com/@know_jEE" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">YouTube</a>
+                        <a href="https://t.me/knowiitjee" target="_blank" rel="noopener noreferrer"
+                            class="block hover:text-yellow-300">Telegram</a>
+                        <a href="https://whatsapp.com/channel/0029VbBxmhlKQuJGuLYcDJ13" target="_blank"
+                            rel="noopener noreferrer" class="block hover:text-yellow-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-yellow-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2026 KnowJEE - JEE Preparation Complete Guide. Founded by Braj Bhushan Kumar (IIT Roorkee)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
